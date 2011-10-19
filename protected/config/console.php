@@ -15,7 +15,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=asep',
 			'emulatePrepare' => true,
 			'username' => 'asep',
-			'password' => 'student',
+			'password' => 'students',
 			'charset' => 'utf8',
 
 		),
