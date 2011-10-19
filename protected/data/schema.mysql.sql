@@ -4,7 +4,7 @@ CREATE TABLE t_student (
     grade integer NOT NULL,
     emergency_1 VARCHAR(256) NOT NULL,
     emergency_2 VARCHAR(256) ,
-    emergency_2 VARCHAR(256) 
+    emergency_3 VARCHAR(256) 
 );
 
 CREATE TABLE t_teacher (
