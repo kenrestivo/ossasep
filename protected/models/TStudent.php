@@ -1,9 +1,15 @@
 <?php
 
 /**
- * This is the model class for table "TStudent".
+ * This is the model class for table "t_student".
  *
- * The followings are the available columns in table 'TStudent':
+ * The followings are the available columns in table 't_student':
+ * @property integer $id
+ * @property string $full_name
+ * @property integer $grade
+ * @property string $emergency_1
+ * @property string $emergency_2
+ * @property string $emergency_3
  */
 class TStudent extends CActiveRecord
 {
@@ -21,7 +27,7 @@ class TStudent extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'TStudent';
+		return 't_student';
 	}
 
 	/**
@@ -32,9 +38,13 @@ class TStudent extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('full_name, grade, emergency_1', 'required'),
+			array('grade', 'numerical', 'integerOnly'=>true),
+			array('full_name', 'length', 'max'=>128),
+			array('emergency_1, emergency_2, emergency_3', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('', 'safe', 'on'=>'search'),
+			array('id, full_name, grade, emergency_1, emergency_2, emergency_3', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +65,12 @@ class TStudent extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'Id',
+			'full_name' => 'Full Name',
+			'grade' => 'Grade',
+			'emergency_1' => 'Emergency 1',
+			'emergency_2' => 'Emergency 2',
+			'emergency_3' => 'Emergency 3',
 		);
 	}
 
@@ -68,6 +84,18 @@ class TStudent extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+
+		$criteria->compare('full_name',$this->full_name,true);
+
+		$criteria->compare('grade',$this->grade);
+
+		$criteria->compare('emergency_1',$this->emergency_1,true);
+
+		$criteria->compare('emergency_2',$this->emergency_2,true);
+
+		$criteria->compare('emergency_3',$this->emergency_3,true);
 
 		return new CActiveDataProvider('TStudent', array(
 			'criteria'=>$criteria,
