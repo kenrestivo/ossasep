@@ -47,7 +47,7 @@ CREATE TABLE `check_income` (
   `payee` varchar(128) DEFAULT NULL,
   `check_num` int(11) DEFAULT NULL,
   `check_date` date NOT NULL,
-  `deposit_id` int(11) NOT NULL,
+  `deposit_id` int(11),
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
   CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`)
