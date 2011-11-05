@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'class-info-form',
+	'id'=>'class-inf-oform',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -77,7 +77,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'session_id'); ?>
-		<?php echo $form->textField($model,'session_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'session_id',
+        CHtml::listData(ClassSession::model()->findAll(), 'id', 'description')); ?>
 		<?php echo $form->error($model,'session_id'); ?>
 	</div>
 
