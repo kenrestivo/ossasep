@@ -41,7 +41,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'instructor_type_id'); ?>
-		<?php echo $form->textField($model,'instructor_type_id'); ?>
+
+<?php echo $form->dropDownList(
+    $model,'instructor_type_id',
+    CHtml::listData(InstructorType::model()->findAll(), 
+                    'id', 'description')); ?>
+
 		<?php echo $form->error($model,'instructor_type_id'); ?>
 	</div>
 

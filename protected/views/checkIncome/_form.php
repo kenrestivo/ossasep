@@ -41,7 +41,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'deposit_id'); ?>
-		<?php echo $form->textField($model,'deposit_id'); ?>
+<?php echo $form->dropDownList(
+    $model,'deposit_id',
+    CHtml::listData(DepositDetails::model()->findAll(), 
+                    'id', 'deposited_date')); ?>
 		<?php echo $form->error($model,'deposit_id'); ?>
 	</div>
 

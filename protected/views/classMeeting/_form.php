@@ -23,7 +23,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'class_id'); ?>
-		<?php echo $form->textField($model,'class_id'); ?>
+
+<?php echo $form->dropDownList(
+    $model,'class_id',
+    CHtml::listData(ClassInfo::model()->findAll(), 
+                    'id', 'description')); ?>
+
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
 
