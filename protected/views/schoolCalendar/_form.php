@@ -29,7 +29,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'school_year_id'); ?>
-		<?php echo $form->textField($model,'school_year_id'); ?>
+
+<?php echo $form->dropDownList(
+    $model,'school_year_id',
+    CHtml::listData(SchoolYear::model()->findAll(), 
+                    'id', 'description')); ?>
 		<?php echo $form->error($model,'school_year_id'); ?>
 	</div>
 
