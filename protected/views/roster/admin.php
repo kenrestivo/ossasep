@@ -48,7 +48,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'grade',
 		'teacher',
 		'parent_1',
-		/*
 		'parent_2',
 		'parent_3',
 		'parent_4',
@@ -64,7 +63,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'zip_code',
 		'home_address_2',
 		'school_job',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

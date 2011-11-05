@@ -48,7 +48,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'pennies',
 		'nickels',
 		'dimes',
-		/*
 		'quarters',
 		'dollar_coins',
 		'ones',
@@ -57,7 +56,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'twenties',
 		'fifties',
 		'hundreds',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

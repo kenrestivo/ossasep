@@ -48,7 +48,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'max_grade_allowed',
 		'start_time',
 		'end_time',
-		/*
 		'description',
 		'cost_per_class',
 		'max_students',
@@ -56,7 +55,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'location',
 		'status',
 		'session_id',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -28,7 +28,7 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<?php /*
+	<?php 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('cost_per_class')); ?>:</b>
 	<?php echo CHtml::encode($data->cost_per_class); ?>
 	<br />
@@ -53,6 +53,6 @@
 	<?php echo CHtml::encode($data->session_id); ?>
 	<br />
 
-	*/ ?>
+	?>
 
 </div>

@@ -28,7 +28,7 @@
 	<?php echo CHtml::encode($data->quarters); ?>
 	<br />
 
-	<?php /*
+	<?php 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dollar_coins')); ?>:</b>
 	<?php echo CHtml::encode($data->dollar_coins); ?>
 	<br />
@@ -57,6 +57,6 @@
 	<?php echo CHtml::encode($data->hundreds); ?>
 	<br />
 
-	*/ ?>
+	?>
 
 </div>
