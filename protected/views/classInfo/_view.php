@@ -28,8 +28,8 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<?php 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cost_per_class')); ?>:</b>
+    <b>
+	<?php echo CHtml::encode($data->getAttributeLabel('cost_per_class')); ?>:</b>
 	<?php echo CHtml::encode($data->cost_per_class); ?>
 	<br />
 
