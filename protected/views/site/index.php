@@ -20,3 +20,6 @@
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolYear">SchoolYear</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Student</a><br />
 
+
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Signup">Signup</a><br />
+

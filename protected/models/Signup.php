@@ -28,6 +28,10 @@ class Signup extends CActiveRecord
         return 'signup';
     }
 
+    public function primaryKey(){
+        return array('student_id', 'class_id');
+    }
+
     /**
      * @return array validation rules for model attributes.
      */
