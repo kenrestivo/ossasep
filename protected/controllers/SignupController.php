@@ -164,7 +164,7 @@ class SignupController extends Controller
 		{
 			if(isset($_GET['student_id']) && isset($_GET['class_id']))
                 // XXX this is stupid and tedious. fix.
-				$this->_model=Signup::model()->findbyAttributes(
+				$this->_model=Signup::model()->findbyPk(
                     array(
                     'student_id' => $_GET['student_id'],
                     'class_id' =>$_GET['class_id'])
