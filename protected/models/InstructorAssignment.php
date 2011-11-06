@@ -26,6 +26,9 @@ class InstructorAssignment extends CActiveRecord
 	{
 		return 'instructor_assignment';
 	}
+    public function primaryKey(){
+        return array('instructor_id','class_id');
+    }
 
 	/**
 	 * @return array validation rules for model attributes.

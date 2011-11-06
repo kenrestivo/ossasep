@@ -27,6 +27,9 @@ class RequirementStatus extends CActiveRecord
 	{
 		return 'requirement_status';
 	}
+    public function primaryKey(){
+        return array('instructor_id','requirement_type_id');
+    }
 
 	/**
 	 * @return array validation rules for model attributes.
