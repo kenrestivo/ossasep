@@ -11,9 +11,12 @@ $this->menu=array(
 	array('label'=>'Delete ClassInfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage ClassInfo', 'url'=>array('admin')),
 );
+
+xdebug_break();
 ?>
 
 <h1>View ClassInfo #<?php echo $model->id; ?></h1>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -33,3 +36,12 @@ $this->menu=array(
 		'session.description',
 	),
 )); ?>
+
+
+<?php
+
+$this->widget('zii.widgets.grid.CGridView', array(
+    'dataProvider'=>new CArrayDataProvider($model->students, array()),
+));
+
+?>
