@@ -63,7 +63,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'home_address_2',
 		'school_job',
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'ButtonColumn',
 		),
 	),
 )); ?>
