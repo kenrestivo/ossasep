@@ -47,7 +47,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                             'signup',
                             'status',
                             array(
-                                'class'=>'CButtonColumn',
+                                'class'=>'ButtonColumn',
                                 'viewButtonUrl'=>Yii::app()->controller->createUrl("view",$model->primaryKey),
                                 'updateButtonUrl'=>Yii::app()->controller->createUrl("update",$model->primaryKey),
                                 'deleteButtonUrl'=>Yii::app()->controller->createUrl("delete",$model->primaryKey),
