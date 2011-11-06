@@ -57,7 +57,9 @@ class Signup extends CActiveRecord
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-        );
+			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
+			'class' => array(self::BELONGS_TO, 'ClassInfo', 'class_id'),
+            );
     }
 
     /**

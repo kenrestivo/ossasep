@@ -42,8 +42,8 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'dataProvider'=>$model->search(),
                         'filter'=>$model,
                         'columns'=>array(
-                            'student_id',
-                            'class_id',
+                            'student.full_name',
+                            'class.class_name',
                             'signup',
                             'status',
                             array(
