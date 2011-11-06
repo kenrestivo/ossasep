@@ -15,7 +15,7 @@ $this->menu=array(
 xdebug_break();
 ?>
 
-<h1>View ClassInfo #<?php echo $model->id; ?></h1>
+<h1>View ClassInfo <?php echo $model->class_name; ?></h1>
 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -38,10 +38,20 @@ xdebug_break();
 )); ?>
 
 
-<?php
-
-$this->widget('zii.widgets.grid.CGridView', array(
-    'dataProvider'=>new CArrayDataProvider($model->students, array()),
-));
-
-?>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'student-grid',
+	'dataProvider'=>new CArrayDataProvider($model->students, array()),
+//	'filter'=>$model->students,
+	'columns'=>array(
+		'id',
+		'full_name',
+		'grade',
+		'emergency_1',
+		'emergency_2',
+		'emergency_3',
+		'parent_email',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>
