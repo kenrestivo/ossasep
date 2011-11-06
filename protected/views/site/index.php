@@ -1,11 +1,23 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<p>This is a test page <br />
-<a href="<?=Yii::app()->request->baseUrl?>?r=tStudent/admin">Students</a><br />
-<a href="<?=Yii::app()->request->baseUrl?>?r=tClass/admin">Classes</a><br />
-<a href="<?=Yii::app()->request->baseUrl?>?r=tTeacher/admin">Teachers</a><br />
-<a href="<?=Yii::app()->request->baseUrl?>?r=tCheck/admin">Checks</a><br />
-<a href="<?=Yii::app()->request->baseUrl?>?r=tDeposit/admin">Deposits</a><br />
-</p>
 
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckExpense">CheckExpense</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckIncome">CheckIncome</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">ClassInfo</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassMeeting">ClassMeeting</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">ClassSession</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">DepositDetails</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ExtraFee">ExtraFee</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Income">Income</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructor</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequiredFor">RequiredFor</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Roster">Roster</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolCalendar">SchoolCalendar</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolYear">SchoolYear</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Student</a><br />
+
+
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Signup">Signup</a><br />
 
