@@ -6,7 +6,6 @@
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">ClassInfo</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassMeeting">ClassMeeting</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">ClassSession</a><br />
- <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ContactForm">ContactForm</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">DepositDetails</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ExtraFee">ExtraFee</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Income">Income</a><br />
