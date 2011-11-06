@@ -162,8 +162,13 @@ class SignupController extends Controller
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['id']))
-				$this->_model=Signup::model()->findbyPk($_GET['id']);
+			if(isset($_GET['student_id']) && isset($_GET['class_id']))
+                // XXX this is stupid and tedious. fix.
+				$this->_model=Signup::model()->findbyAttributes(
+                    array(
+                    'student_id' => $_GET['student_id'],
+                    'class_id' =>$_GET['class_id'])
+                    );
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
 		}

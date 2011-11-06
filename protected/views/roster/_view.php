@@ -28,7 +28,6 @@
 	<?php echo CHtml::encode($data->parent_2); ?>
 	<br />
 
-	<?php 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_3')); ?>:</b>
 	<?php echo CHtml::encode($data->parent_3); ?>
 	<br />
