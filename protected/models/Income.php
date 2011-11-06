@@ -28,6 +28,10 @@ class Income extends CActiveRecord
 		return 'income';
 	}
 
+    public function primaryKey(){
+        return array('','');
+    }
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

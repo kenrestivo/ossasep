@@ -26,6 +26,11 @@ class RequiredFor extends CActiveRecord
 		return 'required_for';
 	}
 
+    public function primaryKey(){
+        return array('instructor_type_id', 'requirement_type_id');
+    }
+       
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
