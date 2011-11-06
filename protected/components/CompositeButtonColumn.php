@@ -9,7 +9,7 @@
  * @author Jeff Soo
  */
 
-class ButtonColumn extends CButtonColumn
+class CompositeButtonColumn extends CButtonColumn
 {
 	protected function initDefaultButtons()
 	{	
