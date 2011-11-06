@@ -12,7 +12,6 @@
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Income">Income</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructor</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a><br />
- <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/LoginForm">LoginForm</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequiredFor">RequiredFor</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Roster">Roster</a><br />
