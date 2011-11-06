@@ -74,7 +74,9 @@ class SignupController extends Controller
 		{
 			$model->attributes=$_POST['Signup'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view',
+                                      'student_id'=>$model->student_id,
+                                      'class_id'=>$model->class_id));
 		}
 
 		$this->render('create',array(
@@ -97,7 +99,9 @@ class SignupController extends Controller
 		{
 			$model->attributes=$_POST['Signup'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view',
+                                      'student_id'=>$model->student_id,
+                                      'class_id'=>$model->class_id));
 		}
 
 		$this->render('update',array(
