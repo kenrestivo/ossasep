@@ -30,6 +30,6 @@ $this->menu=array(
 		'day_of_week',
 		'location',
 		'status',
-		'session_id',
+		'session.description',
 	),
 )); ?>

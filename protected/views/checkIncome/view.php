@@ -24,6 +24,6 @@ $this->menu=array(
 		'payee',
 		'check_num',
 		'check_date',
-		'deposit_id',
+		'deposit.deposited_date',
 	),
 )); ?>

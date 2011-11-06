@@ -48,7 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'cell_phone',
 		'other_phone',
 		'note',
-		'instructor_type_id',
+		'instructor_type.description',
 		array(
 			'class'=>'CButtonColumn',
 		),

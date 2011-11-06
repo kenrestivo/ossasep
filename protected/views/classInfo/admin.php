@@ -54,7 +54,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'day_of_week',
 		'location',
 		'status',
-		'session_id',
+		'session.description',
 		array(
 			'class'=>'CButtonColumn',
 		),

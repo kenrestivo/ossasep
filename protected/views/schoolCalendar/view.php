@@ -22,7 +22,7 @@ $this->menu=array(
 		'school_day',
 		'school_in_session',
 		'minimum',
-		'school_year_id',
+		'school_year.description',
 		'note',
 	),
 )); ?>

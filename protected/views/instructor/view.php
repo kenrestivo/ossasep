@@ -24,6 +24,6 @@ $this->menu=array(
 		'cell_phone',
 		'other_phone',
 		'note',
-		'instructor_type_id',
+		'instructor_type.description',
 	),
 )); ?>

@@ -6,11 +6,6 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'school_year_id'); ?>
 		<?php echo $form->textField($model,'school_year_id'); ?>
 	</div>

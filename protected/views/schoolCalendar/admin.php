@@ -46,7 +46,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'school_day',
 		'school_in_session',
 		'minimum',
-		'school_year_id',
+		'school_year.description',
 		'note',
 		array(
 			'class'=>'CButtonColumn',

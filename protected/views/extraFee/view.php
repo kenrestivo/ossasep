@@ -21,6 +21,6 @@ $this->menu=array(
 		'id',
 		'amount',
 		'description',
-		'class_id',
+		'class.class_name',
 	),
 )); ?>
