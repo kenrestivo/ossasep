@@ -129,9 +129,10 @@ class ClassInfoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ClassInfo');
+		$model=new ClassInfo('search');
+		$model->unsetAttributes();  // clear any default values
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                          'model' => $model
 		));
 	}
 

@@ -11,7 +11,25 @@ $this->menu=array(
 
 <h1>Class Infos</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'class-info-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		'class_name',
+		'min_grade_allowed',
+		'max_grade_allowed',
+		'start_time',
+		'end_time',
+		'description',
+		'cost_per_class',
+		'max_students',
+		'day_of_week',
+		'location',
+		'status',
+		'session.description',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
 )); ?>
