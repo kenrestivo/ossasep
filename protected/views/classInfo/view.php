@@ -21,7 +21,6 @@ xdebug_break();
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'class_name',
 		'min_grade_allowed',
 		'max_grade_allowed',
@@ -43,7 +42,6 @@ xdebug_break();
 	'dataProvider'=>new CArrayDataProvider($model->students, array()),
 //	'filter'=>$model->students,
 	'columns'=>array(
-		'id',
 		'full_name',
 		'grade',
 		'emergency_1',

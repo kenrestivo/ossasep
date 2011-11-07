@@ -18,7 +18,6 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('start_time')); ?>:</b>
 	<?php echo CHtml::encode($data->start_time); ?>
-	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('end_time')); ?>:</b>
 	<?php echo CHtml::encode($data->end_time); ?>
