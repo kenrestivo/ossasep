@@ -11,7 +11,25 @@ $this->menu=array(
 
 <h1>Rosters</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'roster-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		'last_name',
+		'first_name',
+		'grade',
+		'teacher',
+		'parent_1',
+		'parent_2',
+		'phone',
+		'cell__parent_1',
+		'cell_parent_2',
+		'email_parent_1',
+		'email__parent_2',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
 )); ?>

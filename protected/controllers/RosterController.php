@@ -129,9 +129,14 @@ class RosterController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Roster');
+		$model=new Roster('search');
+        /*
+        'sort'=>array(
+        'defaultOrder'=>'last_name ASC',
+        ),
+        */
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
