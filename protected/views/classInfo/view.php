@@ -37,6 +37,7 @@ xdebug_break();
 )); ?>
 
 
+<h3>Students </h3>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
 	'dataProvider'=>new CArrayDataProvider($model->students, array()),
@@ -47,6 +48,11 @@ xdebug_break();
 		'emergency_2',
 		'emergency_3',
 		'parent_email',
+        array( 'class' => 'CDataColumn',
+               'name' => 'test',
+               'type' => 'text',
+               'value' => '"fubar"',
+            ),
 		array(
 			'class'=>'CButtonColumn',
             'viewButtonUrl'=>
