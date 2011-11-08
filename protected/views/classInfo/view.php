@@ -46,8 +46,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,class_id',
                           )),
                   'columns'=>array(
-                      'student.full_name',
-                      'student.grade',
+                      array('name' => "Name",
+                            'value' => '$data->student->full_name'),
+                      array('name' => "Grade",
+                            'value' => '$data->student->grade'),
+                      /// TODO fix the rest of these
                       'student.emergency_1',
                       'student.emergency_2',
                       'student.emergency_3',
