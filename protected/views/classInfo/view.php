@@ -35,6 +35,7 @@ xdebug_break();
                             array('name' => "Session",
                                   'value' =>  $model->session->fmtName()
                             ),
+                            'note',
                         ),
                         )
     ); 

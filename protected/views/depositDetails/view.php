@@ -32,5 +32,6 @@ $this->menu=array(
 		'twenties',
 		'fifties',
 		'hundreds',
+        'note'
 	),
 )); ?>

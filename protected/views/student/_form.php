@@ -44,6 +44,12 @@
 		<?php echo $form->textField($model,'parent_email',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'parent_email'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'note'); ?>
+		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'note'); ?>
+	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

@@ -25,5 +25,6 @@ $this->menu=array(
 		'emergency_2',
 		'emergency_3',
 		'parent_email',
+        'note'
 	),
 )); ?>

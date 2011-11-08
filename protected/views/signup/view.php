@@ -22,6 +22,7 @@ $this->menu=array(
         'student.full_name',
         'class.class_name',
         'signup',
-        'status'
+        'status',
+        'note'
 	),
 )); ?>

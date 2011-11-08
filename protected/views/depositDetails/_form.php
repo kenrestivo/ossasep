@@ -86,6 +86,11 @@
 		<?php echo $form->textField($model,'hundreds'); ?>
 		<?php echo $form->error($model,'hundreds'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'note'); ?>
+		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'note'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

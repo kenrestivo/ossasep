@@ -23,6 +23,9 @@
 	<?php echo CHtml::encode($data->status); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
+	<?php echo CHtml::encode($data->note); ?>
+	<br />
 
 
 </div>
