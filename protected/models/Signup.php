@@ -41,8 +41,8 @@ class Signup extends CActiveRecord
         // will receive user inputs.
         return array(
             array('student_id, class_id', 'required'),
-            array('student_id, class_id, status', 'numerical', 'integerOnly'=>true),
-            array('signup', 'safe'),
+            array('student_id, class_id', 'numerical', 'integerOnly'=>true),
+            array('signup, status,note', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('student_id, class_id, signup, status', 'safe', 'on'=>'search'),
@@ -72,6 +72,7 @@ class Signup extends CActiveRecord
             'class_id' => 'Class',
             'signup' => 'Signup',
             'status' => 'Status',
+            'note' => 'Admin private note'
         );
     }
 

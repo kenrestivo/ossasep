@@ -74,7 +74,8 @@ CREATE TABLE `class_info` (
   `day_of_week` ENUM('Sunday','Monday', 'Tuesday', 'Wednesday', 
     'Thursday', 'Friday', 'Saturday') ,
   `location` varchar(256) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
+  `status` ENUM('Active', 'New', 'Cancelled') default 'Active',
+  `note` longtext,
   `session_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `session_id` (`session_id`),
@@ -139,6 +140,7 @@ CREATE TABLE `deposit_details` (
   `twenties` int(11) DEFAULT NULL,
   `fifties` int(11) DEFAULT NULL,
   `hundreds` int(11) DEFAULT NULL,
+  note VARCHAR(256),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -380,7 +382,8 @@ CREATE TABLE `signup` (
   `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
   `signup` date DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
+  `status` ENUM('Enrolled', 'Waitlist' ,'Cancelled') default 'Enrolled',
+    note VARCHAR(256),
   PRIMARY KEY (`student_id`,`class_id`),
   KEY `class_id` (`class_id`),
   CONSTRAINT `signup_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
@@ -403,6 +406,7 @@ CREATE TABLE `student` (
   `emergency_2` varchar(256) DEFAULT NULL,
   `emergency_3` varchar(256) DEFAULT NULL,
   `parent_email` varchar(256) DEFAULT NULL,
+    note VARCHAR(256),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

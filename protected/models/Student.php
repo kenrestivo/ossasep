@@ -42,7 +42,8 @@ class Student extends CActiveRecord
 			array('full_name, grade, emergency_1', 'required'),
 			array('grade', 'numerical', 'integerOnly'=>true),
 			array('full_name', 'length', 'max'=>128),
-			array('emergency_1, emergency_2, emergency_3, parent_email', 'length', 'max'=>256),
+			array('emergency_1, emergency_2, emergency_3, parent_email, note', 'length', 'max'=>256),
+            array('note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, full_name, grade, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
@@ -74,7 +75,8 @@ class Student extends CActiveRecord
 			'emergency_1' => 'Emergency 1',
 			'emergency_2' => 'Emergency 2',
 			'emergency_3' => 'Emergency 3',
-			'parent_email' => 'Parent Email',
+            'parent_email' => 'Parent Email',
+	        'note' => 'Admin Private Note',
 		);
 	}
 

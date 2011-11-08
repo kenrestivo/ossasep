@@ -37,7 +37,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>60,'maxlength'=>128)); ?>
+    <?php echo ZHtml::enumDropDownList( $model,'status'); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

@@ -46,13 +46,13 @@ class ClassInfo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('class_name, session_id', 'required'),
-			array('min_grade_allowed, max_grade_allowed, max_students, status, session_id', 'numerical', 'integerOnly'=>true),
+			array('min_grade_allowed, max_grade_allowed, max_students, session_id', 'numerical', 'integerOnly'=>true),
 			array('class_name', 'length', 'max'=>128),
 			array('cost_per_class', 'length', 'max'=>19),
-			array('day_of_week', 'length', 'max'=>19),
+			array('day_of_week, status', 'length', 'max'=>100),
             //TODO: check that the value is valid for the enum
-			array('location', 'length', 'max'=>256),
-			array('start_time, end_time, description', 'safe'),
+			array('location, note', 'length', 'max'=>256),
+			array('start_time, end_time, description, note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
@@ -95,6 +95,7 @@ class ClassInfo extends CActiveRecord
 			'day_of_week' => 'Day Of Week',
 			'location' => 'Location',
 			'status' => 'Status',
+            'note' => 'Admin Private Note',
 			'session_id' => 'Session',
 		);
 	}
