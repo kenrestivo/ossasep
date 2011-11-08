@@ -15,7 +15,7 @@ $this->menu=array(
 xdebug_break();
 ?>
 
-<h1>View ClassInfo <?php echo $model->class_name; ?></h1>
+<h1>Class Details <?php echo $model->class_name; ?></h1>
 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -40,7 +40,6 @@ xdebug_break();
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
 	'dataProvider'=>new CArrayDataProvider($model->students, array()),
-//	'filter'=>$model->students,
 	'columns'=>array(
 		'full_name',
 		'grade',
