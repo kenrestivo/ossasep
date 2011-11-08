@@ -39,7 +39,6 @@ xdebug_break();
 
 <h3>Student signups </h3>
 <?php 
-xdebug_break();
 $this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'student-grid',
                         'dataProvider'=>new KArrayDataProvider(
