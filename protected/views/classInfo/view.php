@@ -50,18 +50,11 @@ xdebug_break();
                             'status',
                             array(
                                 'class'=>'CompositeButtonColumn',
+                                'modelClassName' => 'Signup',
                                 'viewButtonUrl'=> 
-                                Yii::app()->controller->createUrl(
-                                    "view",
-                                    array('student_id', 'class_id')),
-                                'updateButtonUrl'=>
-                                Yii::app()->controller->createUrl(
-                                    "update",
-                                    array('student_id', 'class_id')),
-                                'deleteButtonUrl'=>
-                                Yii::app()->controller->createUrl(
-                                    "delete",
-                                    array('student_id', 'class_id')),
+                                    'Yii::app()->createUrl("/Signup/view", array("student_id" => $data["student_id"], "class_id" =>$data["student_id"]))',
+                                'updateButtonUrl'=> '',
+                                'deleteButtonUrl'=>'',
                                 ),
                             ),
                         )); ?>

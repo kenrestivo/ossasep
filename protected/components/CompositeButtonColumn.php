@@ -11,9 +11,14 @@
 
 class CompositeButtonColumn extends CButtonColumn
 {
+    public $modelClassName = "";
 	protected function initDefaultButtons()
 	{	
-		$modelClass=$this->grid->dataProvider->modelClass;
+        if($this->modelClassName != ""){
+            $modelClass= $this->modelClassName;
+        } else {
+            $modelClass=$this->grid->dataProvider->modelClass;
+        }
 		$controller=strtolower($modelClass);
 
 		if(is_array($modelClass::model()->primaryKey))
