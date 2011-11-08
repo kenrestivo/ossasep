@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	'Class Infos'=>array('index'),
 	$model->id,
-);
+    );
 
 $this->menu=array(
 	array('label'=>'List ClassInfo', 'url'=>array('index')),
@@ -10,7 +10,7 @@ $this->menu=array(
 	array('label'=>'Update ClassInfo', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete ClassInfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage ClassInfo', 'url'=>array('admin')),
-);
+    );
 
 xdebug_break();
 ?>
@@ -19,44 +19,48 @@ xdebug_break();
 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'class_name',
-		'min_grade_allowed',
-		'max_grade_allowed',
-		'start_time',
-		'end_time',
-		'description',
-		'cost_per_class',
-		'max_students',
-		'day_of_week',
-		'location',
-		'status',
-		'session.description',
-	),
-)); ?>
+                        'data'=>$model,
+                        'attributes'=>array(
+                            'class_name',
+                            'min_grade_allowed',
+                            'max_grade_allowed',
+                            'start_time',
+                            'end_time',
+                            'description',
+                            'cost_per_class',
+                            'max_students',
+                            'day_of_week',
+                            'location',
+                            'status',
+                            'session.description',
+                            ),
+                        )); ?>
 
 
 <h3>Student signups </h3>
 <?php 
 $this->widget('zii.widgets.grid.CGridView', array(
-                        'id'=>'student-grid',
-                        'dataProvider'=>new KArrayDataProvider(
-                            $model->signups, 
-                            array('keyField' => 'student_id,class_id',
-                                )),
-                        'columns'=>array(
-                            //'student.full_name',
-                            //'class.class_name',
-                            'signup',
-                            'status',
-                            array(
-                                'class'=>'CompositeButtonColumn',
-                                'modelClassName' => 'Signup',
-                                'viewButtonUrl'=> 
-                                    'Yii::app()->createUrl("/Signup/view", array("student_id" => $data["student_id"], "class_id" =>$data["student_id"]))',
-                                'updateButtonUrl'=> '',
-                                'deleteButtonUrl'=>'',
-                                ),
-                            ),
-                        )); ?>
+                  'id'=>'student-grid',
+                  'dataProvider'=>new KArrayDataProvider(
+                      $model->signups, 
+                      array('keyField' => 'student_id,class_id',
+                          )),
+                  'columns'=>array(
+                      'student.full_name',
+                      'student.grade',
+                      'student.emergency_1',
+                      'student.emergency_2',
+                      'student.emergency_3',
+                      'student.parent_email',
+                      'signup',
+                      'status',
+                      array(
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'Signup',
+                          'viewButtonUrl'=> 
+                          'Yii::app()->createUrl("/Signup/view", array("student_id" => $data["student_id"], "class_id" =>$data["student_id"]))',
+                          'updateButtonUrl'=> '',
+                          'deleteButtonUrl'=>'',
+                          ),
+                      ),
+                  )); ?>
