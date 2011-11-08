@@ -57,10 +57,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
-                          'viewButtonUrl'=> 
-                          'Yii::app()->createUrl("/Signup/view", array("student_id" => $data["student_id"], "class_id" =>$data["student_id"]))',
-                          'updateButtonUrl'=> '',
-                          'deleteButtonUrl'=>'',
                           ),
                       ),
                   )); ?>
