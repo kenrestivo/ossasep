@@ -33,10 +33,7 @@ xdebug_break();
                             'location',
                             'status',
                             array('name' => "Session",
-                                  'value' =>  
-                                  sprintf('Session %s (%s)', 
-                                          $model->session->description,
-                                          $model->session->school_year->description),
+                                  'value' =>  $model->session->fmtName()
                             ),
                         ),
                         )

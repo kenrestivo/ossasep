@@ -60,6 +60,15 @@ class ClassSession extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
+
+    public function fmtName(){
+        return sprintf(
+            'Session %s (%s)', 
+            $this->description,
+            $this->school_year->description);
+ 
+    }
+
 	public function attributeLabels()
 	{
 		return array(
