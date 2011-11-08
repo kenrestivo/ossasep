@@ -71,6 +71,7 @@ class ClassInfo extends CActiveRecord
 			'incomes' => array(self::HAS_MANY, 'Income', 'class_id'),
 			'instructors' => array(self::MANY_MANY, 'Instructor', 'instructor_assignment(instructor_id, class_id)'),
 			'students' => array(self::MANY_MANY, 'Student', 'signup(student_id, class_id)'),
+			'signups' => array(self::HAS_MANY, 'Signup', 'class_id'),
 		);
 	}
 

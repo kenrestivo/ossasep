@@ -37,30 +37,31 @@ xdebug_break();
 )); ?>
 
 
-<h3>Students </h3>
+<h3>Student signups </h3>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'student-grid',
-	'dataProvider'=>new CArrayDataProvider($model->students, array()),
-	'columns'=>array(
-		'full_name',
-		'grade',
-		'emergency_1',
-		'emergency_2',
-		'emergency_3',
-		'parent_email',
-        array( 'class' => 'CDataColumn',
-               'name' => 'test',
-               'type' => 'text',
-               'value' => '"fubar"',
-            ),
-		array(
-			'class'=>'CButtonColumn',
-            'viewButtonUrl'=>
-            'Yii::app()->createUrl("/Student/view", array("id" => $data["id"]))',
-            'updateButtonUrl'=>
-            'Yii::app()->createUrl("/Signup/update", array("student_id" => $data["id"], "class_id" => ' . $model->id . '))',
-            'deleteButtonUrl'=>
-            'Yii::app()->createUrl("/Signup/delete", array("student_id" => $data["id"], "class_id" => ' . $model->id . '))',
-		),
-	),
-)); ?>
+                        'id'=>'student-grid',
+                        'dataProvider'=>new CArrayDataProvider(
+                            $model->signups, 
+                            array()),
+                        'columns'=>array(
+                            //'student.full_name',
+                            //'class.class_name',
+                            'signup',
+                            'status',
+                            array(
+                                'class'=>'CompositeButtonColumn',
+                                'viewButtonUrl'=> 
+                                Yii::app()->controller->createUrl(
+                                    "view",
+                                    array('student_id', 'class_id')),
+                                'updateButtonUrl'=>
+                                Yii::app()->controller->createUrl(
+                                    "update",
+                                    array('student_id', 'class_id')),
+                                'deleteButtonUrl'=>
+                                Yii::app()->controller->createUrl(
+                                    "delete",
+                                    array('student_id', 'class_id')),
+                                ),
+                            ),
+                        )); ?>

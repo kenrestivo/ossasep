@@ -84,7 +84,7 @@ class ClassInfoController extends Controller
 
 	/**
 	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * If updte is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionUpdate()
 	{
