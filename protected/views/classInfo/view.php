@@ -50,6 +50,10 @@ xdebug_break();
 		'parent_email',
 		array(
 			'class'=>'CButtonColumn',
+            'viewButtonUrl'=>
+            'Yii::app()->createUrl("/Student/view", array("id" => $data["id"]))',
+            'updateButtonUrl'=>
+            'Yii::app()->createUrl("/Student/update", array("id" => $data["id"]))',
 		),
 	),
 )); ?>
