@@ -38,11 +38,14 @@ xdebug_break();
 
 
 <h3>Student signups </h3>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+xdebug_break();
+$this->widget('zii.widgets.grid.CGridView', array(
                         'id'=>'student-grid',
-                        'dataProvider'=>new CArrayDataProvider(
+                        'dataProvider'=>new KArrayDataProvider(
                             $model->signups, 
-                            array()),
+                            array('keyField' => 'student_id,class_id',
+                                )),
                         'columns'=>array(
                             //'student.full_name',
                             //'class.class_name',
