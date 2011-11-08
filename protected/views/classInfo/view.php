@@ -54,6 +54,8 @@ xdebug_break();
             'Yii::app()->createUrl("/Student/view", array("id" => $data["id"]))',
             'updateButtonUrl'=>
             'Yii::app()->createUrl("/Student/update", array("id" => $data["id"]))',
+            'deleteButtonUrl'=>
+            'Yii::app()->createUrl("/Signup/delete", array("student_id" => $data["id"], "class_id" => ' . $model->id . '))',
 		),
 	),
 )); ?>
