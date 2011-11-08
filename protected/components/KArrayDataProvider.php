@@ -19,4 +19,7 @@ class KArrayDataProvider extends CArrayDataProvider
 
 } 
 
+
+/// TODO: override fetchdata and spew the key into something
+
 ?>

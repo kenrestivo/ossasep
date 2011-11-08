@@ -59,7 +59,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'day_of_week'); ?>
-		<?php echo $form->textField($model,'day_of_week'); ?>
+    <?php echo ZHtml::enumDropDownList( $model,'day_of_week'); ?>
 		<?php echo $form->error($model,'day_of_week'); ?>
 	</div>
 
