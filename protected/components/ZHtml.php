@@ -8,12 +8,10 @@ class ZHtml extends CHtml
         self::resolveName($model,$attr);
         preg_match('/\((.*)\)/',
                    $model->tableSchema->columns[$attr]->dbType,$matches);
-        $i = 1; // mysl indexes enums from 1
         foreach(explode(',', $matches[1]) as $value)
         {
             $value=str_replace("'",null,$value);
-            $values[$i]=Yii::t('enumItem',$value);
-            $i++;
+            $values[$value]=Yii::t('enumItem',$value);
         }
                 
         return $values;
