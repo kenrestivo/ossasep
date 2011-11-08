@@ -32,9 +32,16 @@ xdebug_break();
                             'day_of_week',
                             'location',
                             'status',
-                            'session.description',
+                            array('name' => "Session",
+                                  'value' =>  
+                                  sprintf('Session %s (%s)', 
+                                          $model->session->description,
+                                          $model->session->school_year->description),
                             ),
-                        )); ?>
+                        ),
+                        )
+    ); 
+?>
 
 
 <h3>Student signups </h3>
