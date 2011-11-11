@@ -29,13 +29,33 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'start_time'); ?>
-		<?php echo $form->textField($model,'start_time'); ?>
+<?php
+ $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+    'model'=>$model,
+     'attribute'=>'start_time',
+     // additional javascript options for the date picker plugin
+     'options'=>array(
+         'showPeriod'=>true,
+         ),
+     'htmlOptions'=>array('size'=>8,'maxlength'=>8 ),
+ ));
+?>
 		<?php echo $form->error($model,'start_time'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'end_time'); ?>
-		<?php echo $form->textField($model,'end_time'); ?>
+<?php
+ $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+    'model'=>$model,
+     'attribute'=>'end_time',
+     // additional javascript options for the date picker plugin
+     'options'=>array(
+         'showPeriod'=>true,
+         ),
+     'htmlOptions'=>array('size'=>8,'maxlength'=>8 ),
+ ));
+?>
 		<?php echo $form->error($model,'end_time'); ?>
 	</div>
 
