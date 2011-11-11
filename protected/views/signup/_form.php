@@ -30,7 +30,22 @@
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'signup'); ?>
-		<?php echo $form->textField($model,'signup',array('size'=>60,'maxlength'=>128)); ?>
+
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'signup',
+  'value'=>$model->signup,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->signup,
+   ),
+));
+?>
 		<?php echo $form->error($model,'signup'); ?>
 	</div>
 
