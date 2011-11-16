@@ -9,6 +9,12 @@
  */
 class InstructorType extends CActiveRecord
 {
+
+  public function behaviors(){
+          return array( 'CAdvancedArBehavior' => array(
+         	 'class' => 'application.extensions.CAdvancedArBehavior')); 
+  }                                  
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return InstructorType the static model class
@@ -51,7 +57,10 @@ class InstructorType extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'instructors' => array(self::HAS_MANY, 'Instructor', 'instructor_type_id'),
-			'requirements' => array(self::HAS_MANY, 'RequirementType', 'required_for(instructor_type_id, requirement_type_id)'),
+			'requirements' => array(
+                self::MANY_MANY, 
+                'RequirementType', 
+                'required_for(instructor_type_id, requirement_type_id)'),
 
 		);
 	}
