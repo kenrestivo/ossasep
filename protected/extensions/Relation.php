@@ -294,7 +294,6 @@ class Relation extends CWidget
 		return $dataArray;
 	}
 
-
 	/**
 	 * Retrieves the Assigned Objects of the MANY_MANY related Table
 	 */
@@ -558,9 +557,9 @@ public function renderCheckBoxListSelection()
 				$this->returnLink = $this->model->tableSchema->name . "/create";
 
 			echo CHtml::Link(
-					is_string($this->showAddButton) ?
-					$this->showAddButton : 'New' , array(
-						$this->_relatedModel->tableSchema->name . "/" . $this->createAction, 
+					is_string($this->showAddButton) ? $this->showAddButton : 'New' , 
+                    array(
+						get_class($this->_relatedModel) . "/" . $this->createAction, 
 						'returnTo' => $this->returnLink)); 
 		}
 	}
