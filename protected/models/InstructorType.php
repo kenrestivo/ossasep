@@ -51,7 +51,8 @@ class InstructorType extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'instructors' => array(self::HAS_MANY, 'Instructor', 'instructor_type_id'),
-			'required_fors' => array(self::HAS_MANY, 'RequiredFor', 'instructor_type_id'),
+			'requirements' => array(self::HAS_MANY, 'RequirementType', 'required_for(instructor_type_id, requirement_type_id)'),
+
 		);
 	}
 

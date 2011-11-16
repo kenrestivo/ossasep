@@ -73,6 +73,10 @@ class InstructorTypeController extends Controller
 		if(isset($_POST['InstructorType']))
 		{
 			$model->attributes=$_POST['InstructorType'];
+            // TODO: change the name so this is unnecessary
+            if(isset($_POST['InstructorType']['RequirementType'])){
+                $model->requirements = $_POST['InstructorType']['RequirementType'];
+            }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -96,6 +100,8 @@ class InstructorTypeController extends Controller
 		if(isset($_POST['InstructorType']))
 		{
 			$model->attributes=$_POST['InstructorType'];
+            // TODO: change the name so this line is unnecessary
+            $model->requirements = $_POST['InstructorType']['RequirementType'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
