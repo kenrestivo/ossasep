@@ -78,11 +78,6 @@ class InstructorTypeController extends Controller
                 $model->requirements = $_POST['InstructorType']['RequirementType'];
             }
 			if($model->save())
-                if(isset($_GET['returnTo'])) {
-                    // NOTE: do NOT use an array!!
-                    $this->redirect(
-                            urldecode($_GET['returnTo']));
-                }
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -108,11 +103,6 @@ class InstructorTypeController extends Controller
             // TODO: change the name so this line is unnecessary
             $model->requirements = $_POST['InstructorType']['RequirementType'];
 			if($model->save())
-                if(isset($_GET['returnTo'])) {
-                    // NOTE: do NOT use an array!!
-                    $this->redirect(
-                            urldecode($_GET['returnTo']));
-                }
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
