@@ -17,7 +17,7 @@
 
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'services'); ?>
+		<?php echo $form->labelEx($model,'Requirements'); ?>
 
 <?php
 $this->widget(
@@ -36,7 +36,7 @@ $this->widget(
         )
     );
 ?>
-		<?php echo $form->error($model,'services'); ?>
+		<?php echo $form->error($model,'requirements'); ?>
 	</div>
 
 

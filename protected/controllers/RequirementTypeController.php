@@ -73,7 +73,17 @@ class RequirementTypeController extends Controller
 		if(isset($_POST['RequirementType']))
 		{
 			$model->attributes=$_POST['RequirementType'];
+            // TODO: change the name so this is unnecessary
+            if(isset($_POST['RequirementType']['InstructorType'])){
+                $model->instructor_types = $_POST['RequirementType']['InstructorType'];
+            }
+
 			if($model->save())
+                if(isset($_GET['returnTo'])) {
+                    // NOTE: do NOT use an array!!
+                    $this->redirect(
+                            urldecode($_GET['returnTo']));
+                }
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -96,7 +106,13 @@ class RequirementTypeController extends Controller
 		if(isset($_POST['RequirementType']))
 		{
 			$model->attributes=$_POST['RequirementType'];
+            $model->instructor_types = $_POST['RequirementType']['InstructorType'];
 			if($model->save())
+                if(isset($_GET['returnTo'])) {
+                    // NOTE: do NOT use an array!!
+                    $this->redirect(
+                            urldecode($_GET['returnTo']));
+                }
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
