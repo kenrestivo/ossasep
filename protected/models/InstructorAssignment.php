@@ -38,8 +38,10 @@ class InstructorAssignment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('instructor_id, class_id, percentage', 'required'),
-			array('instructor_id, class_id', 'percentage', 'numerical', 'integerOnly'=>true),
+			array('instructor_id, class_id, percentage', 
+                  'required'),
+			array('instructor_id, class_id, percentage', 
+                  'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('instructor_id, class_id, percentage', 'safe', 'on'=>'search'),
