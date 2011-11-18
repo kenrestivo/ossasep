@@ -68,3 +68,24 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           ),
                       ),
                   )); ?>
+
+
+
+<h3>Instructors</h3>
+<?php 
+$this->widget('zii.widgets.grid.CGridView', array(
+                  'id'=>'instructor-grid',
+                  'dataProvider'=>new KArrayDataProvider(
+                      $model->instructor_assignments, 
+                      array('keyField' => 'class_id,instructor_id',
+                          )),
+                  'columns'=>array(
+                      array('name' => "Name",
+                            'value' => '$data->instructor->full_name'),
+                      'percentage',
+                      array(
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'InstructorAssignment',
+                          ),
+                      ),
+                  )); ?>
