@@ -12,6 +12,7 @@
 class CompositeButtonColumn extends CButtonColumn
 {
     public $modelClassName = "";
+    public $returnTo = "";
 	protected function initDefaultButtons()
 	{	
         if($this->modelClassName != ""){
@@ -21,16 +22,30 @@ class CompositeButtonColumn extends CButtonColumn
         }
 		$controller=$modelClass; // do not lowercase the names, it breaks
 
-		if(is_array($modelClass::model()->primaryKey))
-			$paramExpression='",$data->primaryKey';
-		else
+		if(is_array($modelClass::model()->primaryKey)){
+            if($this->returnTo != ""){
+                $paramExpression='",array_merge($data->primaryKey, array("returnTo" => "' . urlencode($this->returnTo) . '"))';
+            } else {
+                $paramExpression='",$data->primaryKey';
+            }
+		} else {
 			$paramExpression='",array("id"=>$data->primaryKey)';
+        }
+
+/*
+        if(isset($this->returnTo)){
+            $paramExpression .= ",'returnTo' => ". "'$this->returnTo'";
+        }
+*/
 
         $paramExpression .= ")";
-		foreach(array('view','update','delete') as $id)
+        xdebug_break();
+
+		foreach(array('view','update','delete') as $id){
 			$this->{$id.'ButtonUrl'}= 
 			    'Yii::app()->urlManager->createUrl("'.
                     "$controller/$id$paramExpression";
+        }
 		parent::initDefaultButtons();
 	}
 }

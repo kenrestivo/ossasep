@@ -64,6 +64,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
+                          'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
                   )); ?>
@@ -85,6 +86,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'InstructorAssignment',
+                          'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
                   )); ?>
