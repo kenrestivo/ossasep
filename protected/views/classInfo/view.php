@@ -43,6 +43,9 @@ $this->menu=array(
 
 <h3>Student signups </h3>
 <?php 
+echo CHTML::link("Add Student to Class", 
+                 array("Signup/create",
+                       'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'student-grid',
                   'dataProvider'=>new KArrayDataProvider(
