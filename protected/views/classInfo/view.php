@@ -76,6 +76,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 <h3>Instructors</h3>
 <?php 
+echo CHTML::link("Add Instructor to Class", 
+                 array("InstructorAssignment/create",
+                       'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructorassignment-grid',
                   'dataProvider'=>new KArrayDataProvider(
