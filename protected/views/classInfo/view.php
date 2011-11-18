@@ -12,7 +12,6 @@ $this->menu=array(
 	array('label'=>'Manage ClassInfo', 'url'=>array('admin')),
     );
 
-xdebug_break();
 ?>
 
 <h1>Class Details <?php echo $model->class_name; ?></h1>
@@ -74,7 +73,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <h3>Instructors</h3>
 <?php 
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'instructor-grid',
+                  'id'=>'instructorassignment-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->instructor_assignments, 
                       array('keyField' => 'class_id,instructor_id',
