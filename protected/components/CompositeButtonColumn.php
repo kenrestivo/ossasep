@@ -22,10 +22,11 @@ class CompositeButtonColumn extends CButtonColumn
 		$controller=$modelClass; // do not lowercase the names, it breaks
 
 		if(is_array($modelClass::model()->primaryKey))
-			$paramExpression='",$data->primaryKey)';
+			$paramExpression='",$data->primaryKey';
 		else
-			$paramExpression='",array("id"=>$data->primaryKey))';
+			$paramExpression='",array("id"=>$data->primaryKey)';
 
+        $paramExpression .= ")";
 		foreach(array('view','update','delete') as $id)
 			$this->{$id.'ButtonUrl'}= 
 			    'Yii::app()->urlManager->createUrl("'.
