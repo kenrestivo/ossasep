@@ -19,7 +19,7 @@ class CompositeButtonColumn extends CButtonColumn
         } else {
             $modelClass=$this->grid->dataProvider->modelClass;
         }
-		$controller=strtolower($modelClass);
+		$controller=$modelClass;
 
 		if(is_array($modelClass::model()->primaryKey))
 			$paramExpression='",$data->primaryKey)';
