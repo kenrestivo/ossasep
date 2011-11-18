@@ -29,7 +29,8 @@ class CompositeButtonColumn extends CButtonColumn
                 $paramExpression='",$data->primaryKey';
             }
 		} else {
-			$paramExpression='",array("id"=>$data->primaryKey)';
+            throw new Exception("This class should not be used with non-composite keys. Use  CButtonColumn instead");
+            $paramExpression='",array("id"=>$data->primaryKey)';
         }
 
 /*
