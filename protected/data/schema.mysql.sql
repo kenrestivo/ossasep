@@ -233,7 +233,7 @@ DROP TABLE IF EXISTS `instructor_assignment`;
 CREATE TABLE `instructor_assignment` (
   `instructor_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `percentage` decimal(3,2) NOT NULL,
+  `percentage` smallint default 100 NOT NULL,
   PRIMARY KEY (`instructor_id`,`class_id`),
   KEY `class_id` (`class_id`),
   CONSTRAINT `instructor_assignment_ibfk_1` FOREIGN KEY (`instructor_id`) REFERENCES `instructor` (`id`),
