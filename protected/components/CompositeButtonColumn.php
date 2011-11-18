@@ -19,7 +19,7 @@ class CompositeButtonColumn extends CButtonColumn
         } else {
             $modelClass=$this->grid->dataProvider->modelClass;
         }
-		$controller=$modelClass;
+		$controller=$modelClass; // do not lowercase the names, it breaks
 
 		if(is_array($modelClass::model()->primaryKey))
 			$paramExpression='",$data->primaryKey)';
@@ -28,7 +28,8 @@ class CompositeButtonColumn extends CButtonColumn
 
 		foreach(array('view','update','delete') as $id)
 			$this->{$id.'ButtonUrl'}= 
-			    'Yii::app()->urlManager->createUrl("'."$controller/$id$paramExpression";
+			    'Yii::app()->urlManager->createUrl("'.
+                    "$controller/$id$paramExpression";
 		parent::initDefaultButtons();
 	}
 }
