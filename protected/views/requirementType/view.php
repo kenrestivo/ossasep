@@ -13,17 +13,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>View RequirementType #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->description; ?> Requirement</h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'description',
 	),
 )); ?>
 
-<h3>Instructor Types</h3>
+<h3>Required For</h3>
 <?php 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructortype-grid',

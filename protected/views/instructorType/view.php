@@ -13,12 +13,27 @@ $this->menu=array(
 );
 ?>
 
-<h1>View InstructorType #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->description; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'description',
 	),
 )); ?>
+
+
+<h3>Requirement Types</h3>
+<?php 
+$this->widget('zii.widgets.grid.CGridView', array(
+                  'id'=>'requirementtype-grid',
+                  'dataProvider'=>new KArrayDataProvider(
+                      $model->requirements,
+                      array('keyField' => 
+                            'instructor_type_id,requirement_type_id',
+                          )),
+                  'columns'=>array(
+                      array('name' => "Required Items",
+                            'value' => '$data->description'),
+                      ),
+                  )); ?>
