@@ -39,8 +39,7 @@ class InstructorAssignment extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('instructor_id, class_id, percentage', 'required'),
-			array('instructor_id, class_id', 'numerical', 'integerOnly'=>true),
-			array('percentage', 'length', 'max'=>3),
+			array('instructor_id, class_id', 'percentage', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('instructor_id, class_id, percentage', 'safe', 'on'=>'search'),
@@ -55,6 +54,12 @@ class InstructorAssignment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'instructor' => array(self::BELONGS_TO, 
+                                  'Instructor', 
+                                  'instructor_id'),
+			'class' => array(self::BELONGS_TO, 
+                             'ClassInfo', 
+                             'class_id'),
 		);
 	}
 
