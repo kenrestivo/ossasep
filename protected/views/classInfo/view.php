@@ -26,6 +26,11 @@ $this->widget('CTabView',array(
             'view' =>'_instructors',
             'data' => array('model' => $model),
         ),
+        'tab3'=>array(
+            'title'=>'Instructors',
+            'view' =>'_instructors',
+            'data' => array('model' => $model),
+        ),
     ),
 ));
 
