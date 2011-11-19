@@ -8,22 +8,26 @@ class BreadCrumb extends CWidget {
     public $firstCrumbName = false;
     public $firstCrumb = array('Home' => array('name' => 'Home', 'url' => array()));
     public $excludeCrumbs = array('Login');
-    public $crumbs2Show = 4;
+    public $crumbs2Show = 8;
     public $truncatedCrumb = array('Truncated' => array('name' => '&#8230;'));
 
     public function run() {
 
-	// if home url is not supplied, use application base url
-	if (count($this->firstCrumb['Home']['url'])==0)
-	    $this->firstCrumb['Home']['url'] = Yii::app()->UrlManager->baseUrl."/";
+        // if home url is not supplied, use application base url
+        if (count($this->firstCrumb['Home']['url'])==0)
+            $this->firstCrumb['Home']['url'] = Yii::app()->baseUrl;
 
-	if ($this->firstCrumbName) $this->firstCrumb['Home']['name']=$this->firstCrumbName;
+        if ($this->firstCrumbName) $this->firstCrumb['Home']['name']=$this->firstCrumbName;
 
         // Breadcrumbs are a way back to to the homepage so dump
         // the crumbs if we find ourselves back on the homepage
-        $homepageRoutes = array('/index.php', '/'.Yii::app()->defaultController.'/list', '/');
-	
-        if ( in_array($this->newCrumb['url'][0], $homepageRoutes)) {
+        $homepageRoutes = array(
+            Yii::app()->baseUrl,
+            Yii::app()->baseUrl . '/',
+            Yii::app()->defaultController.'/list', 
+            '/');
+        
+        if ( in_array($this->newCrumb['url']   , $homepageRoutes)) {
             unset ($_SESSION['crumbs']);
 
             // If desired, don't show the lone Home crumb on
@@ -40,9 +44,13 @@ class BreadCrumb extends CWidget {
         // let's exclude them
         if ( !in_array($this->newCrumb['name'], $this->excludeCrumbs)) {
 
+            $this->newCrumb['name'] = str_replace(
+                Yii::app()->name . ' -', "",
+                $this->newCrumb['name']);
+
             $newCrumbKey = $this->newCrumb['name'];
 
-	    if (!key_exists('crumbs', $_SESSION)) $_SESSION['crumbs'] = array();
+            if (!key_exists('crumbs', $_SESSION)) $_SESSION['crumbs'] = array();
 
             // If we have an existing crumb list, check to see whether
             // the new crumb is already in the list. If so, dump all the
@@ -57,8 +65,8 @@ class BreadCrumb extends CWidget {
                 }
             }
 
-	    // Handle UrlManager->urlSuffix case
-	    $this->newCrumb['url'][0] = rtrim($this->newCrumb['url'][0], Yii::app()->UrlManager->urlSuffix);
+            // Handle UrlManager->urlSuffix case
+//            $this->newCrumb['url'] = rtrim($this->newCrumb['url'][0], Yii::app()->UrlManager->urlSuffix);
             // Finally add the new crumb to the end of the list
             $_SESSION['crumbs'][$newCrumbKey]=$this->newCrumb;
 
@@ -79,8 +87,6 @@ class BreadCrumb extends CWidget {
 
         // display!
         $this->render('BreadCrumb');
-
-
     }
 
     /**
@@ -98,5 +104,5 @@ class BreadCrumb extends CWidget {
         }
         return -1;
     }
-}
+  }
 ?>

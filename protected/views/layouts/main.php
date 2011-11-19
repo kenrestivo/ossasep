@@ -41,7 +41,11 @@
 <div id="breadcrumbs">
 <?php $this->widget('application.extensions.breadcrumbs.BreadCrumb', array(
   'newCrumb' =>
-    array('name' => isset($this->crumbTitle)?$this->crumbTitle:$this->getPageTitle(), 'url' => array($_SERVER['REQUEST_URI']))
+    array(
+        'name' => 
+        isset($this->crumbTitle) ? $this->crumbTitle : $this->getPageTitle(), 
+        'url' => Yii::app()->request->requestUri),
+  'delimiter' => " >> "
 )); ?>
 </div>
 
