@@ -14,6 +14,30 @@ $this->menu=array(
 
 ?>
 
+<?php
+$this->widget('CTabView',array(
+    'activeTab'=>'tab2',
+    'tabs'=>array(
+        'tab1'=>array(
+            'title'=>'Static tab',
+            'content'=>'Content for tab 1'
+        ),
+        'tab2'=>array(
+            'title'=>'Render tab',
+            'view' =>'_students'
+        ),
+        'tab3'=>array(
+            'title'=>'Url tab',
+            'url'=>Yii::app()->createUrl("site/index"),
+        )
+    ),
+    'htmlOptions'=>array(
+        'style'=>'width:500px;'
+    )
+));
+
+?>
+
 <h1>Class Details <?php echo $model->class_name; ?></h1>
 
 
@@ -39,7 +63,6 @@ $this->menu=array(
                         )
     ); 
 ?>
-
 
 <h3>Student signups </h3>
 <?php 
@@ -71,6 +94,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           ),
                       ),
                   )); ?>
+
 
 
 
