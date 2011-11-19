@@ -4,26 +4,20 @@ $this->breadcrumbs=array(
 	$model->id,
     );
 
-$this->menu=array(
-	array('label'=>'List ClassInfo', 'url'=>array('index')),
-	array('label'=>'Create ClassInfo', 'url'=>array('create')),
-	array('label'=>'Update ClassInfo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ClassInfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ClassInfo', 'url'=>array('admin')),
-    );
-
 ?>
+<h1>Class Details <?php echo $model->class_name; ?></h1>
 
 <?php
 $this->widget('CTabView',array(
     'activeTab'=>'tab2',
     'tabs'=>array(
         'tab1'=>array(
-            'title'=>'Static tab',
-            'content'=>'Content for tab 1'
+            'title'=>'Overview',
+            'view' =>'_overview',
+            'data' => array('model' => $model)
         ),
         'tab2'=>array(
-            'title'=>'Render tab',
+            'title'=>'Students',
             'view' =>'_students',
             'data' => array('model' => $model)
         ),
@@ -36,31 +30,6 @@ $this->widget('CTabView',array(
 
 ?>
 
-<h1>Class Details <?php echo $model->class_name; ?></h1>
-
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-                        'data'=>$model,
-                        'attributes'=>array(
-                            'class_name',
-                            'min_grade_allowed',
-                            'max_grade_allowed',
-                            'start_time',
-                            'end_time',
-                            'description',
-                            'cost_per_class',
-                            'max_students',
-                            'day_of_week',
-                            'location',
-                            'status',
-                            array('name' => "Session",
-                                  'value' =>  $model->session->fmtName()
-                            ),
-                            'note',
-                        ),
-                        )
-    ); 
-?>
 
 
 
