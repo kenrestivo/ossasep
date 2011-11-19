@@ -5,11 +5,11 @@ $this->breadcrumbs=array(
     );
 
 ?>
-<h1>Class Details <?php echo $model->class_name; ?></h1>
+<h1><?php echo $model->class_name; ?></h1>
 
 <?php
 $this->widget('CTabView',array(
-    'activeTab'=>'tab2',
+    'activeTab'=>'tab1',
     'tabs'=>array(
         'tab1'=>array(
             'title'=>'Overview',
@@ -19,12 +19,8 @@ $this->widget('CTabView',array(
         'tab2'=>array(
             'title'=>'Students',
             'view' =>'_students',
-            'data' => array('model' => $model)
+            'data' => array('model' => $model),
         ),
-        'tab3'=>array(
-            'title'=>'Url tab',
-            'url'=>Yii::app()->createUrl("site/index"),
-        )
     ),
 ));
 

@@ -1,4 +1,5 @@
 <?php $this->menu=array(
+    // XXX this right now goes nowhere, i need to put it in
 	array('label'=>'List ClassInfo', 'url'=>array('index')),
 	array('label'=>'Create ClassInfo', 'url'=>array('create')),
 	array('label'=>'Update ClassInfo', 'url'=>array('update', 'id'=>$model->id)),
