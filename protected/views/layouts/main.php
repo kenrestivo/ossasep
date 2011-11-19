@@ -36,11 +36,19 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+
+
+<div id="breadcrumbs">
+<?php $this->widget('application.extensions.breadcrumbs.BreadCrumb', array(
+  'newCrumb' =>
+    array(
+        'name' => 
+        isset($this->crumbTitle) ? $this->crumbTitle : $this->getPageTitle(), 
+        'url' => Yii::app()->request->requestUri),
+  'delimiter' => " >> "
+)); ?>
+</div>
+
 
 	<?php echo $content; ?>
 
