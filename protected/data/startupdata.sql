@@ -50,3 +50,9 @@ INSERT INTO `school_year` VALUES (1,'2011-2012');
 /*!40000 ALTER TABLE `school_year` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+LOCK TABLES `required_for` WRITE;
+/*!40000 ALTER TABLE `required_for` DISABLE KEYS */;
+INSERT INTO `required_for` VALUES (1,3),(1,4),(1,5),(1,6),(1,7),(2,3),(2,4),(2,5),(2,6),(3,1),(3,2),(3,3),(3,4),(3,5),(4,1),(4,2),(4,3),(4,4),(4,5),(4,6);
+/*!40000 ALTER TABLE `required_for` ENABLE KEYS */;
+UNLOCK TABLES;
