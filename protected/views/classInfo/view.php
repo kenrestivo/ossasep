@@ -7,32 +7,28 @@ $this->breadcrumbs=array(
 ?>
 <h1><?php echo $model->class_name; ?></h1>
 
+
+
+
 <?php
-$this->widget('CTabView',array(
-    'activeTab'=>'tab1',
-    'tabs'=>array(
-        'tab1'=>array(
-            'title'=>'Overview',
-            'view' =>'_overview',
-            'data' => array('model' => $model)
-        ),
-        'tab2'=>array(
-            'title'=>'Students',
-            'view' =>'_students',
-            'data' => array('model' => $model),
-        ),
-        'tab3'=>array(
-            'title'=>'Instructors',
-            'view' =>'_instructors',
-            'data' => array('model' => $model),
-        ),
-        'tab3'=>array(
-            'title'=>'Instructors',
-            'view' =>'_instructors',
-            'data' => array('model' => $model),
-        ),
-    ),
-));
+
+
+$this->widget('zii.widgets.jui.CJuiTabs', 
+              array(
+                  'cookies' => true,
+                  'tabs'=>array(
+                      'Class' =>
+                      $this->renderPartial("_overview", 
+                                           array('model' => $model), true),
+                      'Students' =>
+                      $this->renderPartial("_students", 
+                                           array('model' => $model), true),
+                      'Instructors'=>
+                      $this->renderPartial("_instructors", 
+                                           array('model' => $model), true),
+                      )));
+
+
 
 ?>
 
