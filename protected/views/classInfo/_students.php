@@ -1,5 +1,5 @@
 <?php 
-echo CHTML::link("Add Student to Class", 
+echo CHTML::link("Add Student to ". $model->class_name, 
                  array("Signup/create",
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(

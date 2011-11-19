@@ -21,6 +21,11 @@ $this->widget('CTabView',array(
             'view' =>'_students',
             'data' => array('model' => $model),
         ),
+        'tab3'=>array(
+            'title'=>'Instructors',
+            'view' =>'_instructors',
+            'data' => array('model' => $model),
+        ),
     ),
 ));
 
@@ -30,47 +35,5 @@ $this->widget('CTabView',array(
 
 
 
-<h3>Instructors</h3>
-<?php 
-echo CHTML::link("Add Instructor to Class", 
-                 array("InstructorAssignment/create",
-                       'returnTo' => Yii::app()->request->requestUri));
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'instructorassignment-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $model->instructor_assignments, 
-                      array('keyField' => 'class_id,instructor_id',
-                          )),
-                  'columns'=>array(
-                      array('name' => "Name",
-                            'value' => '$data->instructor->full_name'),
-                      'percentage',
-                      array(
-                          'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'InstructorAssignment',
-                          'returnTo' => Yii::app()->request->requestUri
-                          ),
-                      ),
-                  )); ?>
-
-
-
-<h3>Extra Fees</h3>
-<?php 
-echo CHTML::link("Add Extra Fee to Class", 
-                 array("ExtraFee/create",
-                       'returnTo' => Yii::app()->request->requestUri));
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'extrafees-grid',
-                  'dataProvider'=>new CArrayDataProvider(
-                      $model->extra_fees),
-                  'columns'=>array(
-                      'description',
-                      'amount',
-                      array(
-                          'class'=>'CButtonColumn'
-                          ),
-                      ),
-                  )); ?>
 
 
