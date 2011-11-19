@@ -15,7 +15,10 @@ $this->breadcrumbs=array(
 
 $this->widget('zii.widgets.jui.CJuiTabs', 
               array(
-                  'cookies' => true,
+                  'options'=>array(
+                      'cookie'=>array(
+                          'expires'=>30)),
+
                   'tabs'=>array(
                       'Class' =>
                       $this->renderPartial("_overview", 
