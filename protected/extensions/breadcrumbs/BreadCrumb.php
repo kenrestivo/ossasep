@@ -14,10 +14,13 @@ class BreadCrumb extends CWidget {
     public function run() {
 
         // if home url is not supplied, use application base url
-        if (count($this->firstCrumb['Home']['url'])==0)
+        if (count($this->firstCrumb['Home']['url'])==0){
             $this->firstCrumb['Home']['url'] = Yii::app()->baseUrl;
+        }
 
-        if ($this->firstCrumbName) $this->firstCrumb['Home']['name']=$this->firstCrumbName;
+        if ($this->firstCrumbName){
+            $this->firstCrumb['Home']['name']=$this->firstCrumbName;
+        }
 
         // Breadcrumbs are a way back to to the homepage so dump
         // the crumbs if we find ourselves back on the homepage
