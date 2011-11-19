@@ -47,7 +47,7 @@ echo CHTML::link("Add Student to Class",
                  array("Signup/create",
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'student-grid',
+                  'id'=>'signup-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->signups, 
                       array('keyField' => 'student_id,class_id',

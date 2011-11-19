@@ -60,6 +60,7 @@ class Student extends CActiveRecord
 		return array(
 			'incomes' => array(self::HAS_MANY, 'Income', 'student_id'),
 			'class_infos' => array(self::MANY_MANY, 'ClassInfo', 'signup(student_id, class_id)'),
+			'signups' => array(self::HAS_MANY, 'Signup', 'student_id'),
 		);
 	}
 

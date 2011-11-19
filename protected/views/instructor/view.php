@@ -13,12 +13,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Instructor #<?php echo $model->id; ?></h1>
+<h1>View Instructor <?php echo $model->full_name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'full_name',
 		'email',
 		'cell_phone',
@@ -27,3 +26,29 @@ $this->menu=array(
 		'instructor_type.description',
 	),
 )); ?>
+
+
+<h3>Classes</h3>
+<?php 
+echo CHTML::link("Add Class for Instructor", 
+                 array("InstructorAssignment/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+$this->widget('zii.widgets.grid.CGridView', array(
+                  'id'=>'instructorassignment-grid',
+                  'dataProvider'=>new KArrayDataProvider(
+                      $model->instructor_assignments, 
+                      array('keyField' => 'class_id,instructor_id',
+                          )),
+                  'columns'=>array(
+                      array('name' => "Name",
+                            'value' => '$data->instructor->full_name'),
+                      'percentage',
+                      array(
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'InstructorAssignment',
+                          'returnTo' => Yii::app()->request->requestUri
+                          ),
+                      ),
+                  )); ?>
+
+

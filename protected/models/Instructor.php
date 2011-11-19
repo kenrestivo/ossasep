@@ -61,6 +61,7 @@ class Instructor extends CActiveRecord
 			'instructor_type' => array(self::BELONGS_TO, 'InstructorType', 'instructor_type_id'),
 			'class_infos' => array(self::MANY_MANY, 'ClassInfo', 'instructor_assignment(instructor_id, class_id)'),
 			'requirement_types' => array(self::MANY_MANY, 'RequirementType', 'requirement_status(instructor_id, requirement_type_id)'),
+			'instructor_assignments' => array(self::HAS_MANY, 'InstructorAssignment', 'instructor_id'),
 		);
 	}
 
