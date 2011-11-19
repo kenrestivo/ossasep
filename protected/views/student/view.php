@@ -13,12 +13,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Student #<?php echo $model->id; ?></h1>
+<h1>View Student <?php echo $model->full_name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'full_name',
 		'grade',
 		'emergency_1',
@@ -43,14 +42,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       array('name' => "Name",
-                            'value' => '$data->student->full_name'),
-                      array('name' => "Grade",
-                            'value' => '$data->student->grade'),
-                      /// TODO fix the rest of these
-                      'student.emergency_1',
-                      'student.emergency_2',
-                      'student.emergency_3',
-                      'student.parent_email',
+                            'value' => '$data->class->description'),
                       'signup',
                       'status',
                       array(
