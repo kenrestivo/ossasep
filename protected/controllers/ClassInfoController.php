@@ -180,3 +180,5 @@ class ClassInfoController extends Controller
 		}
 	}
 }
+
+?>

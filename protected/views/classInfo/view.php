@@ -18,7 +18,7 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                   'options'=>array(
                       'cookie'=>array(
                           'expires'=>30)),
-
+                  
                   'tabs'=>array(
                       'Class' =>
                       $this->renderPartial("_overview", 
