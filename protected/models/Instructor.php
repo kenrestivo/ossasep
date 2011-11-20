@@ -57,11 +57,30 @@ class Instructor extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'check_expenses' => array(self::MANY_MANY, 'CheckExpense', 'expense(check_id, instructor_id)'),
-			'instructor_type' => array(self::BELONGS_TO, 'InstructorType', 'instructor_type_id'),
-			'class_infos' => array(self::MANY_MANY, 'ClassInfo', 'instructor_assignment(instructor_id, class_id)'),
-			'requirement_types' => array(self::MANY_MANY, 'RequirementType', 'requirement_status(instructor_id, requirement_type_id)'),
-			'instructor_assignments' => array(self::HAS_MANY, 'InstructorAssignment', 'instructor_id'),
+			'check_expenses' => array(
+                self::MANY_MANY, 
+                'CheckExpense', 
+                'expense(check_id, instructor_id)'),
+			'instructor_type' => array(
+                self::BELONGS_TO, 
+                'InstructorType', 
+                'instructor_type_id'),
+			'class_infos' => array(
+                self::MANY_MANY, 
+                'ClassInfo', 
+                'instructor_assignment(instructor_id, class_id)'),
+			'requirement_types' => array(
+                self::MANY_MANY, 
+                'RequirementType', 
+                'requirement_status(instructor_id, requirement_type_id)'),
+			'instructor_assignments' => array(
+                self::HAS_MANY, 
+                'InstructorAssignment', 
+                'instructor_id'),
+			'requirement_status' => array(
+                self::HAS_MANY, 
+                'RequirementStatus', 
+                'instructor_id'),
 		);
 	}
 
