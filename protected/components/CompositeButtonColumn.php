@@ -6,7 +6,7 @@
  * * data has composite primary keys;
  * * data model does not belong to current controller.
  *
- * @author Jeff Soo
+ * @author Jeff Soo, modified by ken restivo
  */
 
 class CompositeButtonColumn extends CButtonColumn
@@ -29,8 +29,11 @@ class CompositeButtonColumn extends CButtonColumn
                 $paramExpression='",$data->primaryKey';
             }
 		} else {
-            throw new Exception("This class should not be used with non-composite keys. Use  CButtonColumn instead");
-            $paramExpression='",array("id"=>$data->primaryKey)';
+            if($this->returnTo != ""){
+                $paramExpression='",array("id"=>$data->primaryKey, "returnTo" => "' . urlencode($this->returnTo) . '")';
+            } else {
+                $paramExpression='",array("id"=>$data->primaryKey)';
+            }
         }
 
 /*
@@ -40,7 +43,6 @@ class CompositeButtonColumn extends CButtonColumn
 */
 
         $paramExpression .= ")";
-        xdebug_break();
 
 		foreach(array('view','update','delete') as $id){
 			$this->{$id.'ButtonUrl'}= 
