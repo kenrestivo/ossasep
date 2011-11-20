@@ -129,10 +129,16 @@ class InstructorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Instructor');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+		$model=new Instructor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Instructor']))
+			$model->attributes=$_GET['Instructor'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+
+
 	}
 
 	/**
