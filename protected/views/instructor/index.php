@@ -1,14 +1,3 @@
-<?php
-$this->breadcrumbs=array(
-	'Instructors',
-);
-
-$this->menu=array(
-	array('label'=>'Create Instructor', 'url'=>array('create')),
-	array('label'=>'Manage Instructor', 'url'=>array('admin')),
-);
-?>
-
 <h1>Instructors</h1>
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -33,4 +22,12 @@ $this->menu=array(
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+)); 
+
+
+echo CHTML::link("Add New Instructor",
+                 array("Instructor/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+?>

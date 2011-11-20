@@ -1,15 +1,3 @@
-<?php $this->menu=array(
-    // XXX this right now goes nowhere, i need to put it in
-	array('label'=>'List ClassInfo', 'url'=>array('index')),
-	array('label'=>'Create ClassInfo', 'url'=>array('create')),
-	array('label'=>'Update ClassInfo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ClassInfo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ClassInfo', 'url'=>array('admin')),
-    );
-
-
-
-?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
                         'data'=>$model,

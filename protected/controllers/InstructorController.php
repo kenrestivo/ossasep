@@ -134,7 +134,7 @@ class InstructorController extends Controller
 		if(isset($_GET['Instructor']))
 			$model->attributes=$_GET['Instructor'];
 
-		$this->render('admin',array(
+		$this->render('index',array(
 			'model'=>$model,
 		));
 

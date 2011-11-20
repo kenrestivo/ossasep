@@ -1,14 +1,3 @@
-<?php
-$this->menu=array(
-	array('label'=>'List Instructor', 'url'=>array('index')),
-	array('label'=>'Create Instructor', 'url'=>array('create')),
-	array('label'=>'Update Instructor', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Instructor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Instructor', 'url'=>array('admin')),
-);
-
-?>
-
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -20,5 +9,22 @@ $this->menu=array(
 		'note',
 		'instructor_type.description',
 	),
-)); ?>
+)); 
+
+echo CHTML::link("Edit  ". $model->full_name, 
+                 array('update', 'id'=>$model->id,
+                       'returnTo' => Yii::app()->request->requestUri));
+
+?> &nbsp;<?php
+echo CHTML::link("Delete  ". $model->full_name, 
+                 array('#', 
+                       'linkOptions'=>array(
+                           'submit'=>array(
+                               'delete',
+                               'id'=>$model->id),
+                           'confirm'=>'Are you sure you want to delete this item?')));
+
+?>
+
+
 
