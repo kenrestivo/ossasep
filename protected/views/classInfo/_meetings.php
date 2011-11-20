@@ -12,8 +12,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'note',
                       array(
                           'class'=>'CButtonColumn'
-                          'modelClassName' => 'ClassMeeting',
-                          'returnTo' => Yii::app()->request->requestUri
 
                           ),
                       ),
