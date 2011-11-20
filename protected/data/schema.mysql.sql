@@ -93,7 +93,7 @@ DROP TABLE IF EXISTS `class_meeting`;
 CREATE TABLE `class_meeting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `meeting_date` date NOT NULL,
-  `note` varchar(256) NOT NULL,
+  `note` varchar(256),
   `class_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `class_id` (`class_id`),
