@@ -5,8 +5,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Student', 'url'=>array('index')),
-	array('label'=>'Manage Student', 'url'=>array('admin')),
+	array('label'=>'Manage Students', 
+          'url'=>array('admin')),
+	array('label'=>'Import From Roster', 
+          'url'=>array(
+              'import')),
+
 );
 ?>
 
