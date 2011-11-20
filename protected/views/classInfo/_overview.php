@@ -48,7 +48,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'description',
                       'amount',
                       array(
-                          'class'=>'CButtonColumn'
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'ExtraFee',
+                          'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
                   )); ?>
