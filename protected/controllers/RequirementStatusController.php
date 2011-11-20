@@ -1,6 +1,6 @@
 <?php
 
-class InstructorAssignmentController extends Controller
+class RequirementStatusController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -65,18 +65,18 @@ class InstructorAssignmentController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new InstructorAssignment;
+		$model=new RequirementStatus;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['InstructorAssignment']))
+		if(isset($_POST['RequirementStatus']))
 		{
-			$model->attributes=$_POST['InstructorAssignment'];
+			$model->attributes=$_POST['RequirementStatus'];
 			if($model->save())
 				$this->redirect(array('view',
                                       'instructor_id'=>$model->instructor_id,
-                                      'class_id'=>$model->class_id));
+                                      'requirement_type_id'=>$model->requirement_type_id));
 		}
 
 		$this->render('create',array(
@@ -95,13 +95,13 @@ class InstructorAssignmentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['InstructorAssignment']))
+		if(isset($_POST['RequirementStatus']))
 		{
-			$model->attributes=$_POST['InstructorAssignment'];
+			$model->attributes=$_POST['RequirementStatus'];
 			if($model->save())
 				$this->redirect(array('view',
                                       'instructor_id'=>$model->instructor_id,
-                                      'class_id'=>$model->class_id));
+                                      'requirement_type_id'=>$model->requirement_type_id));
 		}
 
 		$this->render('update',array(
@@ -133,7 +133,7 @@ class InstructorAssignmentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('InstructorAssignment');
+		$dataProvider=new CActiveDataProvider('RequirementStatus');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +144,10 @@ class InstructorAssignmentController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new InstructorAssignment('search');
+		$model=new RequirementStatus('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['InstructorAssignment']))
-			$model->attributes=$_GET['InstructorAssignment'];
+		if(isset($_GET['RequirementStatus']))
+			$model->attributes=$_GET['RequirementStatus'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -162,12 +162,12 @@ class InstructorAssignmentController extends Controller
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['instructor_id']) && isset($_GET['class_id']))
+			if(isset($_GET['instructor_id']) && isset($_GET['requirement_type_id']))
                 // XXX this is stupid and tedious. fix.
-				$this->_model=InstructorAssignment::model()->findbyPk(
+				$this->_model=RequirementStatus::model()->findbyPk(
                     array(
                     'instructor_id' => $_GET['instructor_id'],
-                    'class_id' =>$_GET['class_id'])
+                    'requirement_type_id' =>$_GET['requirement_type_id'])
                     );
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');

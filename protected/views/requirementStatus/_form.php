@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'instructorassignment-form',
+	'id'=>'requirermentstatus-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -19,22 +19,56 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'class_id'); ?>
+		<?php echo $form->labelEx($model,'requirement_type_id'); ?>
 
 
     <?php echo $form->dropDownList(
-        $model,'class_id',
-        CHtml::listData(ClassInfo::model()->findAll(), 'id', 'description')); ?>
-
-		<?php echo $form->error($model,'class_id'); ?>
+        $model,'requirement_type_id',
+        CHtml::listData(RequirementType::model()->findAll(), 'id', 'description')); ?>
+		<?php echo $form->error($model,'requirement_type_id'); ?>
 	</div>
 
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'percentage'); ?>
-		<?php echo $form->textField($model,'percentage',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'percentage'); ?>
+		<?php echo $form->labelEx($model,'received'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'received',
+  'value'=>$model->received,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->received,
+   ),
+));
+?>
+		<?php echo $form->error($model,'received'); ?>
 	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'expired'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'expired',
+  'value'=>$model->expired,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->expired,
+   ),
+));
+?>
+		<?php echo $form->error($model,'expired'); ?>
+	</div>
+
 
 
 	<div class="row buttons">

@@ -1,18 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'InstructorAssignments'=>array('index'),
+	'RequirementStatuss'=>array('index'),
 	'Edit',
     );
 
 
 $this->menu=array(
-	array('label'=>'List InstructorAssignment', 'url'=>array('index')),
-	array('label'=>'Create InstructorAssignment', 'url'=>array('create')),
-	array('label'=>'View InstructorAssignment', 'url'=>array('view', 'instructor_id'=>$model->instructor_id, 'class_id' => $model->class_id)),
-	array('label'=>'Manage InstructorAssignment', 'url'=>array('admin')),
+	array('label'=>'List RequirementStatus', 'url'=>array('index')),
+	array('label'=>'Create RequirementStatus', 'url'=>array('create')),
+	array('label'=>'View RequirementStatus', 'url'=>array('view', 'instructor_id'=>$model->instructor_id, 'requirement_type_id' => $model->requirement_type_id)),
+	array('label'=>'Manage RequirementStatus', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update InstructorAssignment <?php echo $model->instructor->full_name. " " . $model->class->class_name  ?></h1>
+<h1>Update RequirementStatus <?php echo $model->instructor->full_name. " " . $model->requirement_type->description  ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,14 +1,14 @@
 <?php
 
-/**
- * This is the model class for table "requirement_status".
- *
- * The followings are the available columns in table 'requirement_status':
- * @property integer $instructor_id
- * @property integer $requirement_type_id
- * @property string $received
- * @property string $expired
- */
+  /**
+   * This is the model class for table "requirement_status".
+   *
+   * The followings are the available columns in table 'requirement_status':
+   * @property integer $instructor_id
+   * @property integer $requirement_type_id
+   * @property string $received
+   * @property string $expired
+   */
 class RequirementStatus extends CActiveRecord
 {
 	/**
@@ -45,7 +45,7 @@ class RequirementStatus extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('instructor_id, requirement_type_id, received, expired', 'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -53,10 +53,16 @@ class RequirementStatus extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
+        return array('instructor' => array(
+                         self::BELONGS_TO, 
+                         'Instructor', 
+                         'instructor_id'),
+                     'requirement_type' => array(
+                         self::BELONGS_TO, 
+                         'RequirementType', 
+                         'requirement_type_id'),
+            );
+
 	}
 
 	/**
@@ -69,7 +75,7 @@ class RequirementStatus extends CActiveRecord
 			'requirement_type_id' => 'Requirement Type',
 			'received' => 'Received',
 			'expired' => 'Expired',
-		);
+            );
 	}
 
 	/**
@@ -92,7 +98,7 @@ class RequirementStatus extends CActiveRecord
 		$criteria->compare('expired',$this->expired,true);
 
 		return new CActiveDataProvider('RequirementStatus', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 }
