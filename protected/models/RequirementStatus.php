@@ -73,8 +73,8 @@ class RequirementStatus extends CActiveRecord
 		return array(
 			'instructor_id' => 'Instructor',
 			'requirement_type_id' => 'Requirement Type',
-			'received' => 'Received',
-			'expired' => 'Expired',
+			'received' => 'Received On',
+			'expired' => 'Expires On',
             );
 	}
 

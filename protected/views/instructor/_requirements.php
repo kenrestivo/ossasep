@@ -1,5 +1,5 @@
 <?php 
-echo CHTML::link("Add Status to ". $model->full_name, 
+echo CHTML::link("Receive New Paperwork for ". $model->full_name, 
                  array("RequirementStatus/create",
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
