@@ -36,7 +36,7 @@ class ClassMeeting extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('meeting_date, note, class_id', 'required'),
+			array('meeting_date, class_id', 'required'),
 			array('class_id', 'numerical', 'integerOnly'=>true),
 			array('note', 'length', 'max'=>256),
 			// The following rule is used by search().
