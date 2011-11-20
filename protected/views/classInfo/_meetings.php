@@ -1,7 +1,7 @@
 <?php 
 echo CHTML::link("Add Meeting Date for ". $model->class_name, 
-      array("ClassMeeting/create",
-            'returnTo' => Yii::app()->request->requestUri));
+				 array("ClassMeeting/create",
+					   'returnTo' => Yii::app()->request->requestUri));
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'meetingdate-grid',
@@ -11,10 +11,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'meeting_date',
                       'note',
                       array(
-                          'class'=>'CButtonColumn'
-
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'ClassMeeting',
+                          'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
-)); ?>
+				  )); ?>
 
 
