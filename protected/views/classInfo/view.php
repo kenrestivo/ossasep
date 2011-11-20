@@ -29,6 +29,9 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Instructors'=>
                       $this->renderPartial("_instructors", 
                                            array('model' => $model), true),
+                      'Meetings'=>
+                      $this->renderPartial("_meetings", 
+                                           array('model' => $model), true),
                       )));
 
 
