@@ -46,10 +46,10 @@ class ClassInfo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('class_name, session_id', 'required'),
-			array('min_grade_allowed, max_grade_allowed, max_students, session_id', 'numerical', 'integerOnly'=>true),
+			array('min_grade_allowed, max_grade_allowed, day_of_week, max_students, session_id', 'numerical', 'integerOnly'=>true),
 			array('class_name', 'length', 'max'=>128),
 			array('cost_per_class', 'length', 'max'=>19),
-			array('day_of_week, status', 'length', 'max'=>100),
+			array(' status', 'length', 'max'=>100),
             //TODO: check that the value is valid for the enum
 			array('location, note', 'length', 'max'=>256),
 			array('start_time, end_time, description, note', 'safe'),

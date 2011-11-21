@@ -26,6 +26,24 @@ class ZHtml extends CHtml
             $htmlOptions);
     }
 
+    public static function weekdayDropDownList($model, $attribute, 
+                                               $htmlOptions = array())
+    {
+        return CHtml::activeDropDownList( 
+            $model,
+            $attribute,
+            array(1 => 'Sunday',
+                  2 => 'Monday',
+                  3 => 'Tuesday',
+                  4 => 'Wednesday',
+                  5 => 'Thursday',
+                  6  => 'Friday', 
+                  7 => 'Saturday'
+                ));
+
+    }
+
+
 }
 
 ?>
