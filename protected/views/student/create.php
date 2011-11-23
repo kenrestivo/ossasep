@@ -55,6 +55,10 @@ $this->endWidget();
                         }
                     });
             }
+            $('#importer').click(function(){
+                    window.get_rasta($("#rasta option:selected").val()); 
+                    return false
+                        })
         });
 </script>
 
