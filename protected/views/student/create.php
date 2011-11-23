@@ -9,7 +9,7 @@
                               dataType: "text", 
                               cache: false, 
                               success: function(data){
-                              $("#test").html(data)
+                              $("#importbox").html(data)
                                   }}); 
                   return(false);
               }
@@ -34,4 +34,4 @@
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 
 
-<div id="test">test</div>
+<div id="importbox">test</div>
