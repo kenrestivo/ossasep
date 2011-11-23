@@ -2,6 +2,8 @@
 
 class ZHtml extends CHtml
 {
+
+ 
     public static function enumItem($model,$attribute)
     {
         $attr=$attribute;
@@ -26,20 +28,32 @@ class ZHtml extends CHtml
             $htmlOptions);
     }
 
+
+    public static function get_weekdays(){
+            return  array(
+            1 => 'Sunday',
+            2 => 'Monday',
+            3 => 'Tuesday',
+            4 => 'Wednesday',
+            5 => 'Thursday',
+            6  => 'Friday', 
+            7 => 'Saturday'
+            );
+    }
+
+    public static function weekdayTranslation($weekday_num){
+        $weekdays = ZHtml::get_weekdays();
+        return $weekdays[$weekday_num];
+    }
+
+
     public static function weekdayDropDownList($model, $attribute, 
                                                $htmlOptions = array())
     {
         return CHtml::activeDropDownList( 
             $model,
             $attribute,
-            array(1 => 'Sunday',
-                  2 => 'Monday',
-                  3 => 'Tuesday',
-                  4 => 'Wednesday',
-                  5 => 'Thursday',
-                  6  => 'Friday', 
-                  7 => 'Saturday'
-                ));
+            ZHtml::get_weekdays());
 
     }
 
