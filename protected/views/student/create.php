@@ -45,7 +45,7 @@ $this->endWidget();
 <script type="text/javascript">
 	jQuery(function($) {
 
-            window.get_rasta = function (num){
+            get_rasta = function (num){
                 $.ajax({
                     url: "<?php echo $this->createUrl('roster/json')?>/" + num,
                             dataType: 'json',
@@ -56,7 +56,7 @@ $this->endWidget();
                     });
             }
             $('#importer').click(function(){
-                    window.get_rasta($("#rasta option:selected").val()); 
+                    get_rasta($("#rasta option:selected").val()); 
                     return false
                         })
         });
