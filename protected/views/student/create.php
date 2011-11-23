@@ -45,6 +45,25 @@ $this->endWidget();
 <script type="text/javascript">
 	jQuery(function($) {
 
+            fieldmap = { 
+                'last_name' : 'last_name',
+                'first_name' : 'first_name',
+                'grade' : 'grade',
+                'phone' : 'emergency_1',
+                'cell_parent_1' : 'emergency_2',
+                'cell_parent_2' : 'emergency_3',
+                'email_parent_1' : 'parent_email',
+            };
+
+
+            function populate(data){
+                for(rfield in fieldmap){
+                    $('#test').append(data[rfield] + '<br />');
+                }
+                
+            }
+
+
             get_rasta = function (num){
                 $.ajax({
                     url: "<?php echo $this->createUrl('roster/json')?>/" + num,
@@ -52,7 +71,8 @@ $this->endWidget();
                             cache: false,
                             success: function(data) {
                             $('#test').html(data.first_name + " " + data.last_name);
-                        }
+                            populate(data);
+}
                     });
             }
             $('#importer').click(function(){
