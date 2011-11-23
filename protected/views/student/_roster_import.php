@@ -16,6 +16,14 @@ CHtml::listBox('rasta', null,
                array('size' => 20)
     );
 
+?>
+
+<br />
+<br />
+
+<?php
+echo CHtml::button("Import",  array('id' => 'importer'));
+
 $this->endWidget();
 
 ?>
@@ -63,5 +71,4 @@ $this->endWidget();
 
 
 <?php
-echo CHtml::link("Import", '#', array('id' => 'importer'));
 ?>
