@@ -58,8 +58,7 @@ $this->endWidget();
 
             function populate(data){
                 for(rfield in fieldmap){
-                    $('#test').append(data[rfield] + '<br />');
-                    $('input#Student_' + fieldmap[rfield]).val("aha")
+                    $('input#Student_' + fieldmap[rfield]).val(data[rfield]);
                 }
                 
             }
@@ -71,7 +70,6 @@ $this->endWidget();
                             dataType: 'json',
                             cache: false,
                             success: function(data) {
-                            $('#test').html(data.first_name + " " + data.last_name);
                             populate(data);
 }
                     });
