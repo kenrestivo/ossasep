@@ -2,16 +2,16 @@
 $this->breadcrumbs=array(
 	'Students'=>array('index'),
 	'Create',
-);
+    );
 
 $this->menu=array(
 	array('label'=>'Manage Students', 
-                'url'=>array('admin')),
+          'url'=>array('admin')),
 	array('label'=>'Import From Roster', 
           'url'=>array(
               'import')),
 
-);
+    );
 ?>
 
 <h1>Create Student</h1>
@@ -23,13 +23,16 @@ $this->menu=array(
 <?php 
 
 $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'rasta-import',
-	'enableAjaxValidation'=>false,
-)); 
+                             'id'=>'rasta-import',
+                             'enableAjaxValidation'=>false,
+                             )); 
 
 echo 
 CHtml::listBox('rasta', null,
-        CHtml::listData(Roster::model()->findAll(), 'id', 'full_name'));
+               CHtml::listData(Roster::model()->findAll(), 
+                               'id', 'full_name'),
+               array('size' => 20)
+    );
 
 $this->endWidget();
 
