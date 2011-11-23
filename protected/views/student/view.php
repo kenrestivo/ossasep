@@ -13,12 +13,13 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Student <?php echo $model->full_name; ?></h1>
+<h1>View Student <?php echo $model->first_name; ?> <?php echo $model->last_name; ?> </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'full_name',
+		'first_name',
+		'last_name',
 		'grade',
 		'emergency_1',
 		'emergency_2',

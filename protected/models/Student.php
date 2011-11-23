@@ -5,7 +5,8 @@
  *
  * The followings are the available columns in table 'student':
  * @property integer $id
- * @property string $full_name
+ * @property string $first_name
+ * @property string $last_name
  * @property integer $grade
  * @property string $emergency_1
  * @property string $emergency_2
@@ -14,6 +15,13 @@
  */
 class Student extends CActiveRecord
 {
+
+
+    public function getFull_name()
+        {
+                return $this->first_name.' '.$this->last_name;
+        }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Student the static model class
@@ -39,14 +47,14 @@ class Student extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('full_name, grade, emergency_1', 'required'),
+			array('first_name, last_name, grade, emergency_1', 'required'),
 			array('grade', 'numerical', 'integerOnly'=>true),
-			array('full_name', 'length', 'max'=>128),
+			array('first_name, last_name', 'length', 'max'=>128),
 			array('emergency_1, emergency_2, emergency_3, parent_email, note', 'length', 'max'=>256),
             array('note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, full_name, grade, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, grade, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,7 +79,8 @@ class Student extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'full_name' => 'Full Name',
+			'first_name' => 'First Name',
+			'last_name' => 'Last Name',
 			'grade' => 'Grade',
 			'emergency_1' => 'Emergency 1',
 			'emergency_2' => 'Emergency 2',
@@ -94,7 +103,8 @@ class Student extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 
-		$criteria->compare('full_name',$this->full_name,true);
+		$criteria->compare('first_name',$this->first_name,true);
+		$criteria->compare('last_name',$this->first_name,true);
 
 		$criteria->compare('grade',$this->grade);
 

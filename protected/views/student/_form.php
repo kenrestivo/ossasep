@@ -10,9 +10,14 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'full_name'); ?>
-		<?php echo $form->textField($model,'full_name',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'full_name'); ?>
+		<?php echo $form->labelEx($model,'last_name'); ?>
+		<?php echo $form->textField($model,'last_name',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'last_name'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'first_name'); ?>
+		<?php echo $form->textField($model,'first_name',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'first_name'); ?>
 	</div>
 
 	<div class="row">

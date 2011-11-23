@@ -19,7 +19,8 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-        'student.full_name',
+        'student.first_name',
+        'student.last_name',
         'class.class_name',
         'signup',
         'status',

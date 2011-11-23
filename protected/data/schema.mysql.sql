@@ -399,7 +399,8 @@ DROP TABLE IF EXISTS `student`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(128) NOT NULL,
+  `last_name` varchar(128) NOT NULL,
+  `first_name` varchar(128) NOT NULL,
   `grade` int(11) NOT NULL,
   `emergency_1` varchar(256) NOT NULL,
   `emergency_2` varchar(256) DEFAULT NULL,
