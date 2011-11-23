@@ -51,7 +51,7 @@ $this->endWidget();
 			   dataType: 'json',
 			   cache: false,
 			   success: function(data) {
-                        $('#test').html(data.last_name);
+                        $('#test').html(data.first_name + " " + data.last_name);
 			   }
 			});
 		}
