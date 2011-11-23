@@ -20,6 +20,8 @@ $this->menu=array(
 
 <p> and now the import</p>
 
+<div id="test"></div>
+
 <?php 
 
 $form=$this->beginWidget('CActiveForm', array(
@@ -36,5 +38,28 @@ CHtml::listBox('rasta', null,
 
 $this->endWidget();
 
-
 ?>
+
+<?php Yii::app()->clientScript->registerCoreScript("jquery")?>
+
+<script type="text/javascript">
+	jQuery(function($) {
+            var test_div = $('test');
+
+            window.get_rasta = function (num){
+			$.ajax({
+			   url: "<?php echo $this->createUrl('roster/json')?>/" + num,
+			   dataType: 'json',
+			   cache: false,
+			   success: function(data) {
+				  var out = "<ol>";
+				  $(data).each(function(){
+					 out+="<li>"+this.last_name+"</li>";
+				  });
+				  out += "</ol>";
+				  test_div.html(out);
+			   }
+			});
+		}
+	});
+</script>
