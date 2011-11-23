@@ -407,7 +407,8 @@ CREATE TABLE `student` (
   `emergency_3` varchar(256) DEFAULT NULL,
   `parent_email` varchar(256) DEFAULT NULL,
     note VARCHAR(256),
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+ UNIQUE idx_name_phone (first_name,last_name,emergency_1)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
