@@ -32,7 +32,7 @@ class RosterController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+                  'actions'=>array('index','view', 'json'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -58,6 +58,16 @@ class RosterController extends Controller
 			'model'=>$this->loadModel(),
 		));
 	}
+
+
+	/**
+	 * Displays a particular model.
+	 */
+	public function actionJson()
+	{
+        echo CJSON::encode($this->loadModel());
+	}
+
 
 	/**
 	 * Creates a new model.
