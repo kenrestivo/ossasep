@@ -20,7 +20,7 @@ $this->menu=array(
 
 <p> and now the import</p>
 
-<div id="test"></div>
+<div id="test">test</div>
 
 <?php 
 
@@ -44,7 +44,6 @@ $this->endWidget();
 
 <script type="text/javascript">
 	jQuery(function($) {
-            var test_div = $('test');
 
             window.get_rasta = function (num){
 			$.ajax({
@@ -52,12 +51,7 @@ $this->endWidget();
 			   dataType: 'json',
 			   cache: false,
 			   success: function(data) {
-				  var out = "<ol>";
-				  $(data).each(function(){
-					 out+="<li>"+this.last_name+"</li>";
-				  });
-				  out += "</ol>";
-				  test_div.html(out);
+                        $('#test').html(data.last_name);
 			   }
 			});
 		}
