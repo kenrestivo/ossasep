@@ -22,12 +22,12 @@ $this->menu=array(
 
 <div id="test">test</div>
 
-<?php 
+    <?php 
 
-$form=$this->beginWidget('CActiveForm', array(
-                             'id'=>'rasta-import',
-                             'enableAjaxValidation'=>false,
-                             )); 
+    $form=$this->beginWidget('CActiveForm', array(
+                                 'id'=>'rasta-import',
+                                 'enableAjaxValidation'=>false,
+                                 )); 
 
 echo 
 CHtml::listBox('rasta', null,
@@ -46,14 +46,19 @@ $this->endWidget();
 	jQuery(function($) {
 
             window.get_rasta = function (num){
-			$.ajax({
-			   url: "<?php echo $this->createUrl('roster/json')?>/" + num,
-			   dataType: 'json',
-			   cache: false,
-			   success: function(data) {
-                        $('#test').html(data.first_name + " " + data.last_name);
-			   }
-			});
-		}
-	});
+                $.ajax({
+                    url: "<?php echo $this->createUrl('roster/json')?>/" + num,
+                            dataType: 'json',
+                            cache: false,
+                            success: function(data) {
+                            $('#test').html(data.first_name + " " + data.last_name);
+                        }
+                    });
+            }
+        });
 </script>
+
+
+<?php
+echo CHtml::link("Import", '#', array('id' => 'importer'));
+?>
