@@ -61,7 +61,7 @@ class RosterController extends Controller
 
 
 	/**
-	 * Displays a particular model.
+	 * Gives the roster as json
 	 */
 	public function actionJson()
 	{
@@ -193,4 +193,6 @@ class RosterController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
 }
