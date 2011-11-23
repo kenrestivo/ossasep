@@ -28,6 +28,10 @@
  */
 class Roster extends CActiveRecord
 {
+    public function getFull_name()
+        {
+                return $this->first_name.' '.$this->last_name;
+        }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Roster the static model class
