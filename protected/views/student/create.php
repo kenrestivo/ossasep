@@ -59,6 +59,7 @@ $this->endWidget();
             function populate(data){
                 for(rfield in fieldmap){
                     $('#test').append(data[rfield] + '<br />');
+                    $('input#Student_' + fieldmap[rfield]).val("aha")
                 }
                 
             }
