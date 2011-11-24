@@ -1,7 +1,7 @@
-
+ 
 <p> Choose from roster, and click Import to fill in their info</p>
 
-
+     
      <?php 
 
      $form=$this->beginWidget('CActiveForm', array(
@@ -72,7 +72,7 @@ $this->endWidget();
                             return;
                         }
                         get_rasta($("#rasta option:selected").val()); 
-                        }
+                    }
                     );
 
         });
