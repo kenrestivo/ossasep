@@ -32,4 +32,12 @@ $this->menu=array(
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+)); 
+
+echo CHTML::link("Add New Class",
+                 array("ClassInfo/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+
+?>
