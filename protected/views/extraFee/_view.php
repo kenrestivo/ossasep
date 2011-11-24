@@ -13,11 +13,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('class_id')); ?>:</b>
-    <?php echo $form->dropDownList(
-    $model,'class_id',
-    CHtml::listData(ClassInfo::model()->findAll(), 
-                    'id', 'description')); ?>
-
+	<?php echo CHtml::encode($data->class->class_name); ?>
 	<br />
 
 
