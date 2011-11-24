@@ -20,6 +20,23 @@
                         ),
                         )
     ); 
+
+
+echo CHTML::link("Edit  ". $model->class_name, 
+                 array('update', 'id'=>$model->id,
+                       'returnTo' => Yii::app()->request->requestUri));
+
+?> &nbsp;<?php
+echo CHTML::link("Delete  ". $model->class_name, 
+                 array('#', 
+                       'linkOptions'=>array(
+                           'submit'=>array(
+                               'delete',
+                               'id'=>$model->id),
+                           'confirm'=>'Are you sure you want to delete this item?')));
+
+
+
 ?>
 
 
