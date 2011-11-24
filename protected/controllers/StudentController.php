@@ -76,6 +76,7 @@ class StudentController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		$this->layout = 'column2-wide';
 
 		$this->render('create',array(
 			'model'=>$model,

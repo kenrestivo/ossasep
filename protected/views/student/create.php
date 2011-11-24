@@ -9,7 +9,8 @@
                               dataType: "text", 
                               cache: false, 
                               success: function(data){
-                              $("#importbox").html(data)
+                              $("#importbox").html(data);
+                              $('#importmenu').hide();
                                   }}); 
                   return(false);
               }
@@ -34,4 +35,3 @@
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 
 
-<div id="importbox">test</div>

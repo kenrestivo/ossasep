@@ -2,12 +2,12 @@
 <p> Choose from roster, and click Import to fill in their info</p>
 
 
-    <?php 
+     <?php 
 
-    $form=$this->beginWidget('CActiveForm', array(
-                                 'id'=>'rasta-import',
-                                 'enableAjaxValidation'=>false,
-                                 )); 
+     $form=$this->beginWidget('CActiveForm', array(
+                                  'id'=>'rasta-import',
+                                  'enableAjaxValidation'=>false,
+                                  )); 
 
 echo 
 CHtml::listBox('rasta', null,
@@ -59,13 +59,22 @@ $this->endWidget();
                             cache: false,
                             success: function(data) {
                             populate(data);
-}
+                        }
                     });
             }
             $('#importer').click(function(){
                     get_rasta($("#rasta option:selected").val()); 
                     return false
                         })
+                
+                $('#rasta').keyup(function(e){
+                        if(e.keyCode != 13){
+                            return;
+                        }
+                        get_rasta($("#rasta option:selected").val()); 
+                        }
+                    );
+
         });
 </script>
 
