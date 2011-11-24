@@ -54,6 +54,8 @@ class StudentController extends Controller
 	 */
 	public function actionView()
 	{
+
+        $this->layout='//layouts/column1';
 		$this->render('view',array(
 			'model'=>$this->loadModel(),
 		));
