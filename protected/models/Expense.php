@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * This is the model class for table "expense".
+ *
+ * The followings are the available columns in table 'expense':
+ * @property integer $check_id
+ * @property integer $instructor_id
+ * @property string $delivered
+ */
+class Expense extends CActiveRecord
+{
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @return Expense the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'expense';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('check_id, instructor_id', 'required'),
+			array('check_id, instructor_id', 'numerical', 'integerOnly'=>true),
+			array('delivered', 'safe'),
+			// The following rule is used by search().
+			// Please remove those attributes that should not be searched.
+			array('check_id, instructor_id, delivered', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'check_id' => 'Check',
+			'instructor_id' => 'Instructor',
+			'delivered' => 'Delivered',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('check_id',$this->check_id);
+
+		$criteria->compare('instructor_id',$this->instructor_id);
+
+		$criteria->compare('delivered',$this->delivered,true);
+
+		return new CActiveDataProvider('Expense', array(
+			'criteria'=>$criteria,
+		));
+	}
+}
