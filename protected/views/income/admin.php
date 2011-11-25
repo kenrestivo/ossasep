@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Expenses'=>array('index'),
+	'incomes'=>array('index'),
 	'Manage',
     );
 
 $this->menu=array(
-	array('label'=>'List Expense', 'url'=>array('index')),
-	array('label'=>'Create Expense', 'url'=>array('create')),
+	array('label'=>'List income', 'url'=>array('index')),
+	array('label'=>'Create income', 'url'=>array('create')),
     );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('expense-grid', {
+	$.fn.yiiGridView.update('income-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Expenses</h1>
+<h1>Manage incomes</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -38,11 +38,11 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-                        'id'=>'expense-grid',
+                        'id'=>'income-grid',
                         'dataProvider'=>$model->search(),
                         'filter'=>$model,
                         'columns'=>array(
-                            'instructor.full_name',
+                            'student.full_name',
                             'check.amount',
                             'check.payer',
                             'check.payee',

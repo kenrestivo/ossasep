@@ -1,6 +1,6 @@
 <?php
 
-class ExpenseController extends Controller
+class IncomeController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -65,17 +65,18 @@ class ExpenseController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Expense;
+		$model=new Income;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Expense']))
+		if(isset($_POST['Income']))
 		{
-			$model->attributes=$_POST['Expense'];
+			$model->attributes=$_POST['Income'];
 			if($model->save())
 				$this->redirect(array('view',
-                                      'instructor_id'=>$model->instructor_id,
+                                      'student_id'=>$model->student_id,
+                                      'class_id'=>$model->class_id,
                                       'check_id'=>$model->check_id));
 		}
 
@@ -95,12 +96,12 @@ class ExpenseController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Expense']))
+		if(isset($_POST['Income']))
 		{
-			$model->attributes=$_POST['Expense'];
+			$model->attributes=$_POST['Income'];
 			if($model->save())
 				$this->redirect(array('view',
-                                      'instructor_id'=>$model->instructor_id,
+                                      'student_id'=>$model->student_id,
                                       'check_id'=>$model->check_id));
 		}
 
@@ -133,7 +134,7 @@ class ExpenseController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Expense');
+		$dataProvider=new CActiveDataProvider('Income');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +145,10 @@ class ExpenseController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Expense('search');
+		$model=new Income('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Expense']))
-			$model->attributes=$_GET['Expense'];
+		if(isset($_GET['Income']))
+			$model->attributes=$_GET['Income'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -162,13 +163,15 @@ class ExpenseController extends Controller
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['instructor_id']) && isset($_GET['check_id']))
+			if(isset($_GET['student_id']) && isset($_GET['check_id'])
+                && isset($_GET['class_id']))
                 // XXX this is stupid and tedious. fix.
-				$this->_model=Expense::model()->findbyPk(
+				$this->_model=Income::model()->findbyPk(
                     array(
-                    'instructor_id' => $_GET['instructor_id'],
-                    'check_id' =>$_GET['check_id'])
-                    );
+                    'student_id' => $_GET['student_id'],
+                    'check_id' =>$_GET['check_id'],
+                    'class_id' =>$_GET['class_id']
+                        ))7;
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -181,7 +184,7 @@ class ExpenseController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='expense-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='income-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

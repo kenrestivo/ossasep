@@ -31,10 +31,6 @@ class Income extends CActiveRecord
         return array('check_id','student_id', 'class_id');
     }
 
-    public function primaryKey(){
-        return array('','');
-    }
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */

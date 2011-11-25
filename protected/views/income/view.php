@@ -1,35 +1,37 @@
 <?php
 $this->breadcrumbs=array(
-	'Expenses'=>array('index'));
+	'Incomes'=>array('index'));
 
 $this->menu=array(
-	array('label'=>'List Expense', 'url'=>array('index')),
-	array('label'=>'Create Expense', 'url'=>array('create')),
-	array('label'=>'Update Expense', 
+	array('label'=>'List Income', 'url'=>array('index')),
+	array('label'=>'Create Income', 'url'=>array('create')),
+	array('label'=>'Update Income', 
           'url'=>array('update', 
-                       'instructor_id'=>$model->instructor_id,
+                       'student_id'=>$model->student_id,
+                       'class_id'=>$model->class_id,
                        'check_id' => $model->check_id)),
-	array('label'=>'Delete Expense', 'url'=>'#', 
+	array('label'=>'Delete Income', 'url'=>'#', 
           'linkOptions'=>array(
               'submit'=>array('delete', 
-                              'instructor_id'=>$model->instructor_id,
-              'check_id' => $model->check_id),
+                              'student_id'=>$model->student_id,
+                              'class_id'=>$model->class_id,
+                              'check_id' => $model->check_id),
               'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Expense', 'url'=>array('admin')),
-);
+	array('label'=>'Manage Income', 'url'=>array('admin')),
+    );
 ?>
 
-<h1>View Expense </h1>
+<h1>View Income </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-                            'instructor.full_name',
+                        'data'=>$model,
+                        'attributes'=>array(
+                            'student.full_name',
                             'check.amount',
                             'check.payer',
                             'check.payee',
                             'check.check_num',
                             'check.check_date',
                             'delivered',
-	),
-)); ?>
+                            ),
+                        )); ?>

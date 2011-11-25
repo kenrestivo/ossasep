@@ -3,16 +3,20 @@
 
      <?php echo CHtml::link('more',
                             array('view', 
-                                  'instructor_id'=>$data->instructor_id, 
+                                  'student_id'=>$data->student_id, 
                                   'check_id' => $data->check_id)); ?><br/>
 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('instructor_id')); ?>:</b>
-	<?php echo CHtml::encode($data->instructor_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('student_id')); ?>:</b>
+	<?php echo CHtml::encode($data->student->full_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('check_id')); ?>:</b>
-	<?php echo CHtml::encode($data->check_id); ?>
+	<?php echo CHtml::encode($data->check->amount); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('class_id')); ?>:</b>
+	<?php echo CHtml::encode($data->class->class_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>

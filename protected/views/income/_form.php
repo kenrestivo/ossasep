@@ -1,33 +1,46 @@
-<div instructor="form">
+<div student="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'expense-form',
+	'id'=>'income-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p instructor="note">Fields with <span instructor="required">*</span> are required.</p>
+	<p student="note">Fields with <span student="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div instructor="row">
+	<div student="row">
 		<?php echo $form->labelEx($model,'check_id'); ?>
 
     <?php echo $form->dropDownList(
         $model,'check_id',
-        CHtml::listData(CheckExpense::model()->findAll(), 'id', 'amount')); ?>
+        CHtml::listData(CheckIncome::model()->findAll(), 'id', 'amount')); ?>
 		<?php echo $form->error($model,'check_id'); ?>
 	</div>
 
-	<div instructor="row">
-		<?php echo $form->labelEx($model,'instructor_id'); ?>
+	<div student="row">
+		<?php echo $form->labelEx($model,'student_id'); ?>
 
     <?php echo $form->dropDownList(
-        $model,'instructor_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')); ?>
+        $model,'student_id',
+        CHtml::listData(Student::model()->findAll(), 'id', 'full_name')); ?>
 
-		<?php echo $form->error($model,'instructor_id'); ?>
+		<?php echo $form->error($model,'student_id'); ?>
 	</div>
-	<div instructor="row">
+
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'class_id'); ?>
+
+    <?php echo $form->dropDownList(
+        $model,'class_id',
+        CHtml::listData(ClassInfo::model()->findAll(), 'id', 'class_name')); ?>
+
+		<?php echo $form->error($model,'class_id'); ?>
+	</div>
+
+
+	<div student="row">
 		<?php echo $form->labelEx($model,'delivered'); ?>
 
 <?php 
@@ -50,7 +63,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 
-	<div instructor="row buttons">
+	<div student="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
