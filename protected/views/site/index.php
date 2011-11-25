@@ -9,6 +9,7 @@
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">DepositDetails</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ExtraFee">ExtraFee</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Income">Income</a><br />
+ <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Expense">Expense</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructor</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a><br />
  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorAssignment">InstructorAssignment</a><br />

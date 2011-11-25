@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Signups',
+	'Expenses',
 );
 
 $this->menu=array(
-	array('label'=>'Create Signup', 'url'=>array('create')),
-	array('label'=>'Manage Signup', 'url'=>array('admin')),
+	array('label'=>'Create Expense', 'url'=>array('create')),
+	array('label'=>'Manage Expense', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Signups</h1>
+<h1>Expenses</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

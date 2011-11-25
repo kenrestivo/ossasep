@@ -19,6 +19,12 @@ class Expense extends CActiveRecord
 		return parent::model($className);
 	}
 
+
+    public function primaryKey(){
+        return array('check_id', 'instructor_id');
+    }
+
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -49,10 +55,14 @@ class Expense extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
+        return array(
+			'instructor' => array(self::BELONGS_TO, 
+                                  'instructor', 
+                                  'instructor_id'),
+			'check' => array(self::BELONGS_TO, 
+                             'CheckExpense', 
+                             'check_id'),
+            );
 	}
 
 	/**

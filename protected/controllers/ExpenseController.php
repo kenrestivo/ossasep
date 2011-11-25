@@ -1,6 +1,6 @@
 <?php
 
-class SignupController extends Controller
+class ExpenseController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -65,18 +65,18 @@ class SignupController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Signup;
+		$model=new Expense;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Signup']))
+		if(isset($_POST['Expense']))
 		{
-			$model->attributes=$_POST['Signup'];
+			$model->attributes=$_POST['Expense'];
 			if($model->save())
 				$this->redirect(array('view',
-                                      'student_id'=>$model->student_id,
-                                      'class_id'=>$model->class_id));
+                                      'instructor_id'=>$model->instructor_id,
+                                      'check_id'=>$model->check_id));
 		}
 
 		$this->render('create',array(
@@ -95,13 +95,13 @@ class SignupController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Signup']))
+		if(isset($_POST['Expense']))
 		{
-			$model->attributes=$_POST['Signup'];
+			$model->attributes=$_POST['Expense'];
 			if($model->save())
 				$this->redirect(array('view',
-                                      'student_id'=>$model->student_id,
-                                      'class_id'=>$model->class_id));
+                                      'instructor_id'=>$model->instructor_id,
+                                      'check_id'=>$model->check_id));
 		}
 
 		$this->render('update',array(
@@ -133,7 +133,7 @@ class SignupController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Signup');
+		$dataProvider=new CActiveDataProvider('Expense');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +144,10 @@ class SignupController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Signup('search');
+		$model=new Expense('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Signup']))
-			$model->attributes=$_GET['Signup'];
+		if(isset($_GET['Expense']))
+			$model->attributes=$_GET['Expense'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -162,12 +162,12 @@ class SignupController extends Controller
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['student_id']) && isset($_GET['class_id']))
+			if(isset($_GET['instructor_id']) && isset($_GET['check_id']))
                 // XXX this is stupid and tedious. fix.
-				$this->_model=Signup::model()->findbyPk(
+				$this->_model=Expense::model()->findbyPk(
                     array(
-                    'student_id' => $_GET['student_id'],
-                    'class_id' =>$_GET['class_id'])
+                    'instructor_id' => $_GET['instructor_id'],
+                    'check_id' =>$_GET['check_id'])
                     );
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
@@ -181,7 +181,7 @@ class SignupController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='expense-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

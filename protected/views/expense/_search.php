@@ -7,8 +7,8 @@
 
 
 	<div class="row">
-		<?php echo $form->label($model,'student_id'); ?>
-		<?php echo $form->textField($model,'student_id',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->label($model,'instructor_id'); ?>
+		<?php echo $form->textField($model,'instructor_id',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 

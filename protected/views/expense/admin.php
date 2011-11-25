@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Signups'=>array('index'),
+	'Expenses'=>array('index'),
 	'Manage',
     );
 
 $this->menu=array(
-	array('label'=>'List Signup', 'url'=>array('index')),
-	array('label'=>'Create Signup', 'url'=>array('create')),
+	array('label'=>'List Expense', 'url'=>array('index')),
+	array('label'=>'Create Expense', 'url'=>array('create')),
     );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('student-grid', {
+	$.fn.yiiGridView.update('expense-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Signups</h1>
+<h1>Manage Expenses</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -38,14 +38,17 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-                        'id'=>'student-grid',
+                        'id'=>'expense-grid',
                         'dataProvider'=>$model->search(),
                         'filter'=>$model,
                         'columns'=>array(
-                            'student.full_name',
-                            'class.class_name',
-                            'signup',
-                            'status',
+//                            'instructor.full_name',
+                            'check.amount',
+                            'check.payer',
+                            'check.payee',
+                            'check.check_num',
+                            'check.check_date',
+                            'delivered',
                             array(
                                 'class'=>'CompositeButtonColumn',
                                 'viewButtonUrl'=>Yii::app()->controller->createUrl("view",$model->primaryKey),
