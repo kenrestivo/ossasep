@@ -42,7 +42,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'dataProvider'=>$model->search(),
                         'filter'=>$model,
                         'columns'=>array(
-//                            'instructor.full_name',
+                            'instructor.full_name',
                             'check.amount',
                             'check.payer',
                             'check.payee',

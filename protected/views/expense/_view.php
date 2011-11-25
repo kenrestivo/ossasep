@@ -1,30 +1,22 @@
-<div class="view">
+<div check="view">
 
 
      <?php echo CHtml::link('more',
                             array('view', 
-                                  'student_id'=>$data->student_id, 
-                                  'class_id' => $data->class_id)); ?><br/>
+                                  'instructor_id'=>$data->instructor_id, 
+                                  'check_id' => $data->check_id)); ?><br/>
 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('student_id')); ?>:</b>
-	<?php echo CHtml::encode($data->student_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('instructor_id')); ?>:</b>
+	<?php echo CHtml::encode($data->instructor_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('class_id')); ?>:</b>
-	<?php echo CHtml::encode($data->class_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('check_id')); ?>:</b>
+	<?php echo CHtml::encode($data->check_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('signup')); ?>:</b>
-	<?php echo CHtml::encode($data->signup); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php echo CHtml::encode($data->status); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
-	<?php echo CHtml::encode($data->note); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>
+	<?php echo CHtml::encode($data->delivered); ?>
 	<br />
 
 

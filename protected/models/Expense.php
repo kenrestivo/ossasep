@@ -57,7 +57,7 @@ class Expense extends CActiveRecord
 	{
         return array(
 			'instructor' => array(self::BELONGS_TO, 
-                                  'instructor', 
+                                  'Instructor', 
                                   'instructor_id'),
 			'check' => array(self::BELONGS_TO, 
                              'CheckExpense', 

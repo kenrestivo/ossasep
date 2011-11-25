@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Expense', 'url'=>array('index')),
 	array('label'=>'Create Expense', 'url'=>array('create')),
-	array('label'=>'View Expense', 'url'=>array('view', 'student_id'=>$model->student_id, 'class_id' => $model->class_id)),
+	array('label'=>'View Expense', 'url'=>array('view', 'instructor_id'=>$model->check_id, 'check_id' => $model->check_id)),
 	array('label'=>'Manage Expense', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Expense <?php echo $model->instructoor->full_name. " " . $model->check->check_date  ?></h1>
+<h1>Update Expense <?php echo $model->instructor->full_name. " " . $model->check->check_date  ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
