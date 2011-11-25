@@ -39,7 +39,7 @@ class CheckIncome extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('amount, check_date, deposit_id', 'required'),
+			array('amount, check_date', 'required'),
 			array('check_num, deposit_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('payer, payee', 'length', 'max'=>128),

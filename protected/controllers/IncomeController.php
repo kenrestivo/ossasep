@@ -171,7 +171,7 @@ class IncomeController extends Controller
                     'student_id' => $_GET['student_id'],
                     'check_id' =>$_GET['check_id'],
                     'class_id' =>$_GET['class_id']
-                        ))7;
+                        ));
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
 		}
