@@ -111,6 +111,8 @@ CREATE TABLE `class_session` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `school_year_id` int(11) NOT NULL,
   `description` varchar(128) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `school_year_id` (`school_year_id`),
   CONSTRAINT `class_session_ibfk_1` FOREIGN KEY (`school_year_id`) REFERENCES `school_year` (`id`)
@@ -366,6 +368,8 @@ DROP TABLE IF EXISTS `school_year`;
 CREATE TABLE `school_year` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(128) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
