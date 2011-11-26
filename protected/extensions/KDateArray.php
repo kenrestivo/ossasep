@@ -3,6 +3,7 @@
 class KDateArray {
 
 // via http://boonedocks.net/mike/archives/137-Creating-a-Date-Range-Array-with-PHP.html
+// modified kr 11/26/11
 
     public static function createWeekdayRangeArray($strDateFrom,$strDateTo) {
 
