@@ -1,6 +1,6 @@
 <?php
 
-class CAdvancedArbehavior {
+class KDateArray {
 
 // via http://boonedocks.net/mike/archives/137-Creating-a-Date-Range-Array-with-PHP.html
 
