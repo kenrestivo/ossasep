@@ -35,7 +35,21 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'check_date'); ?>
-		<?php echo $form->textField($model,'check_date'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'check_date',
+  'value'=>$model->check_date,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->check_date,
+   ),
+));
+?>
 		<?php echo $form->error($model,'check_date'); ?>
 	</div>
 

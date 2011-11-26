@@ -11,7 +11,21 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'school_day'); ?>
-		<?php echo $form->textField($model,'school_day'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'school_day',
+  'value'=>$model->school_day,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->school_day,
+   ),
+));
+?>
 		<?php echo $form->error($model,'school_day'); ?>
 	</div>
 
