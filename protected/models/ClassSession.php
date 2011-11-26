@@ -6,6 +6,8 @@
  * The followings are the available columns in table 'class_session':
  * @property integer $id
  * @property integer $school_year_id
+ * @property string $start_date
+ * @property string $end_date
  * @property string $description
  */
 class ClassSession extends CActiveRecord
@@ -35,12 +37,14 @@ class ClassSession extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('school_year_id, description', 'required'),
+			array('school_year_id, description, start_date, end_date', 
+                  'required'),
 			array('school_year_id', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, school_year_id, description', 'safe', 'on'=>'search'),
+			array('id, school_year_id, description, start_date, end_date', 
+                  'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +77,8 @@ class ClassSession extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
+            'start_date' => 'Start Date',
+            'end_date' => 'End Date',
 			'school_year_id' => 'School Year',
 			'description' => 'Description',
 		);
@@ -92,6 +98,10 @@ class ClassSession extends CActiveRecord
 		$criteria->compare('id',$this->id);
 
 		$criteria->compare('school_year_id',$this->school_year_id);
+
+		$criteria->compare('start_date',$this->start_date,true);
+
+        $criteria->compare('end_date',$this->end_date,true);
 
 		$criteria->compare('description',$this->description,true);
 

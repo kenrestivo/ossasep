@@ -5,6 +5,8 @@
  *
  * The followings are the available columns in table 'school_year':
  * @property integer $id
+ * @property string $start_date
+ * @property string $end_date
  * @property string $description
  */
 class SchoolYear extends CActiveRecord
@@ -34,11 +36,12 @@ class SchoolYear extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('description', 'required'),
+			array('description, start_date, end_date', 'required'),
 			array('description', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, description', 'safe', 'on'=>'search'),
+			array('id, description, start_date, end_date', 
+                  'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +66,8 @@ class SchoolYear extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'description' => 'Description',
+            'start_date' => 'Start Date',
+            'end_date' => 'End Date',
 		);
 	}
 
@@ -80,6 +85,11 @@ class SchoolYear extends CActiveRecord
 		$criteria->compare('id',$this->id);
 
 		$criteria->compare('description',$this->description,true);
+
+		$criteria->compare('start_date',$this->start_date,true);
+
+        $criteria->compare('end_date',$this->end_date,true);
+
 
 		return new CActiveDataProvider('SchoolYear', array(
 			'criteria'=>$criteria,

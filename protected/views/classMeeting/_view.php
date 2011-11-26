@@ -4,7 +4,7 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('meeting_date')); ?>:</b>
+ 	<b><?php echo CHtml::encode($data->getAttributeLabel('meeting_date')); ?>:</b>
 	<?php echo CHtml::encode($data->meeting_date); ?>
 	<br />
 

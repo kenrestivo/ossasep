@@ -20,5 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'description',
+		'start_date',
+		'end_date',
 	),
 )); ?>

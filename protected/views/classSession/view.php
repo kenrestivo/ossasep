@@ -20,5 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'school_year.description',
 		'description',
+		'start_date',
+		'end_date',
 	),
 )); ?>
