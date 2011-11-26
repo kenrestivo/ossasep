@@ -4,14 +4,12 @@ class KDateArray {
 
 // via http://boonedocks.net/mike/archives/137-Creating-a-Date-Range-Array-with-PHP.html
 
-    public static function createDateRangeArray($strDateFrom,$strDateTo) {
+    public static function createWeekdayRangeArray($strDateFrom,$strDateTo) {
 
 
         // takes two dates formatted as YYYY-MM-DD and creates an
         // inclusive array of the dates between the from and to dates.
 
-        // could test validity of dates here but I'm already doing
-        // that in the main script
 
         $aryRange=array();
 
