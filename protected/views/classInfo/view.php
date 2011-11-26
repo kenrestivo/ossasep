@@ -32,6 +32,9 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Meetings'=>
                       $this->renderPartial("_meetings", 
                                            array('model' => $model), true),
+                      'Income'=>
+                      $this->renderPartial("_income", 
+                                           array('model' => $model), true),
                       )));
 
 
