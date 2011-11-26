@@ -31,6 +31,9 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Requirements'=>
                       $this->renderPartial("_requirements", 
                                            array('model' => $model), true),
+                      'Payment'=>
+                      $this->renderPartial("_expenses", 
+                                           array('model' => $model), true),
                       )));
 
 
