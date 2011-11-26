@@ -26,6 +26,10 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'School Year' =>
                       $this->renderPartial("_overview", 
                                            array('model' => $model), true),
+                      'School Days' =>
+                      $this->renderPartial("_days", 
+                                           array('model' => $model), true),
+
                       )));
 
 
