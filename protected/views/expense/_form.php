@@ -1,15 +1,15 @@
-<div instructor="form">
+<div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'expense-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p instructor="note">Fields with <span instructor="required">*</span> are required.</p>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div instructor="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'check_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -18,7 +18,7 @@
 		<?php echo $form->error($model,'check_id'); ?>
 	</div>
 
-	<div instructor="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'instructor_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -27,7 +27,18 @@
 
 		<?php echo $form->error($model,'instructor_id'); ?>
 	</div>
-	<div instructor="row">
+
+
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'amount'); ?>
+		<?php echo $form->textField($model,'amount',array('size'=>19,'maxlength'=>19)); ?>
+		<?php echo $form->error($model,'amount'); ?>
+	</div>
+
+
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'delivered'); ?>
 
 <?php 
@@ -50,7 +61,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 
-	<div instructor="row buttons">
+	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 

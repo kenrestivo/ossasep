@@ -24,4 +24,15 @@
 	<br />
 
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('amount')); ?>:</b>
+	<?php echo CHtml::encode($data->amount); ?>
+	<br />
+
+    <?php if(isset($data->deposit)){ ?>
+	<b><?php echo CHtml::encode('deposit'); ?>:</b>
+	<?php echo CHtml::encode($data->deposit->deposited_date); ?>
+	<br />
+     <?php } ?>
+
+
 </div>

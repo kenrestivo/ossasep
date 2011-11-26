@@ -7,6 +7,7 @@
  * @property integer $check_id
  * @property integer $student_id
  * @property integer $class_id
+ * @property string $amount
  * @property string $delivered
  */
 class Income extends CActiveRecord
@@ -39,12 +40,15 @@ class Income extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('check_id, student_id, class_id', 'required'),
-			array('check_id, student_id, class_id', 'numerical', 'integerOnly'=>true),
+			array('check_id, student_id, class_id, amount', 'required'),
+			array('check_id, student_id, class_id', 'numerical', 
+                  'integerOnly'=>true),
+			array('amount', 'length', 'max'=>19),
 			array('delivered', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('check_id, student_id, class_id, delivered', 'safe', 'on'=>'search'),
+			array('check_id, student_id, class_id, delivered, amount', 
+                  'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,6 +73,7 @@ class Income extends CActiveRecord
 	{
 		return array(
 			'check_id' => 'Check',
+			'amount' => 'Amount',
 			'student_id' => 'Student',
 			'class_id' => 'Class',
 			'delivered' => 'Delivered',
@@ -91,6 +96,8 @@ class Income extends CActiveRecord
 		$criteria->compare('student_id',$this->student_id);
 
 		$criteria->compare('class_id',$this->class_id);
+
+		$criteria->compare('amount',$this->amount,true);
 
 		$criteria->compare('delivered',$this->delivered,true);
 

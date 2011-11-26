@@ -31,5 +31,6 @@ $this->menu=array(
                             'check.check_num',
                             'check.check_date',
                             'delivered',
+                            'amount',
 	),
 )); ?>

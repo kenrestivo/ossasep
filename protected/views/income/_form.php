@@ -40,6 +40,13 @@
 	</div>
 
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'amount'); ?>
+		<?php echo $form->textField($model,'amount',array('size'=>19,'maxlength'=>19)); ?>
+		<?php echo $form->error($model,'amount'); ?>
+	</div>
+
+
 	<div student="row">
 		<?php echo $form->labelEx($model,'delivered'); ?>
 

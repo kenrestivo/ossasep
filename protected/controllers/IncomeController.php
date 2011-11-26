@@ -102,6 +102,7 @@ class IncomeController extends Controller
 			if($model->save())
 				$this->redirect(array('view',
                                       'student_id'=>$model->student_id,
+                                      'class_id'=>$model->class_id,
                                       'check_id'=>$model->check_id));
 		}
 

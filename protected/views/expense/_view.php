@@ -20,4 +20,9 @@
 	<br />
 
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('amount')); ?>:</b>
+	<?php echo CHtml::encode($data->amount); ?>
+	<br />
+
+
 </div>
