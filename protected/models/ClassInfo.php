@@ -1,23 +1,23 @@
 <?php
 
-/**
- * This is the model class for table "class_info".
- *
- * The followings are the available columns in table 'class_info':
- * @property integer $id
- * @property string $class_name
- * @property integer $min_grade_allowed
- * @property integer $max_grade_allowed
- * @property string $start_time
- * @property string $end_time
- * @property string $description
- * @property string $cost_per_class
- * @property integer $max_students
- * @property integer $day_of_week
- * @property string $location
- * @property integer $status
- * @property integer $session_id
- */
+  /**
+   * This is the model class for table "class_info".
+   *
+   * The followings are the available columns in table 'class_info':
+   * @property integer $id
+   * @property string $class_name
+   * @property integer $min_grade_allowed
+   * @property integer $max_grade_allowed
+   * @property string $start_time
+   * @property string $end_time
+   * @property string $description
+   * @property string $cost_per_class
+   * @property integer $max_students
+   * @property integer $day_of_week
+   * @property string $location
+   * @property integer $status
+   * @property integer $session_id
+   */
 class ClassInfo extends CActiveRecord
 {
 	/**
@@ -56,7 +56,7 @@ class ClassInfo extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -71,7 +71,9 @@ class ClassInfo extends CActiveRecord
 			'class_meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(self::HAS_MANY, 'Income', 'class_id'),
-			'instructors' => array(
+            'checks' => array(self::MANY_MANY, 'CheckIncome', 
+                              'income(class_id, check_id)'),
+            'instructors' => array(
                 self::MANY_MANY, 
                 'Instructor', 
                 'instructor_assignment(class_id, instructor_id)'),
@@ -79,7 +81,7 @@ class ClassInfo extends CActiveRecord
 			'signups' => array(self::HAS_MANY, 'Signup', 'class_id'),
 			'instructor_assignments' => array(
                 self::HAS_MANY, 'InstructorAssignment', 'class_id'),
-		);
+            );
 	}
 
 	/**
@@ -102,7 +104,7 @@ class ClassInfo extends CActiveRecord
 			'status' => 'Status',
             'note' => 'Admin Private Note',
 			'session_id' => 'Session',
-		);
+            );
 	}
 
 	/**
@@ -143,7 +145,7 @@ class ClassInfo extends CActiveRecord
 		$criteria->compare('session_id',$this->session_id);
 
 		return new CActiveDataProvider('ClassInfo', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 }

@@ -77,6 +77,10 @@ class Instructor extends CActiveRecord
                 self::HAS_MANY, 
                 'InstructorAssignment', 
                 'instructor_id'),
+			'expenses' => array(
+                self::HAS_MANY, 
+                'Expense', 
+                'instructor_id'),
 			'requirement_status' => array(
                 self::HAS_MANY, 
                 'RequirementStatus', 
