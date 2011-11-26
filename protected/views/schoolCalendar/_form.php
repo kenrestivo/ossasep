@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'school_in_session'); ?>
-		<?php echo $form->textField($model,'school_in_session'); ?>
+		<?php echo $form->checkbox($model,'school_in_session'); ?>
 		<?php echo $form->error($model,'school_in_session'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'minimum'); ?>
-		<?php echo $form->textField($model,'minimum'); ?>
+		<?php echo $form->checkbox($model,'minimum'); ?>
 		<?php echo $form->error($model,'minimum'); ?>
 	</div>
 
