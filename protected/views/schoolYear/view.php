@@ -1,8 +1,15 @@
 <?php
 $this->menu=array(
+	array('label'=>'Auto-Populate School Days', 
+          'url'=>array('populate','id' => $model->id)),
 	array('label'=>'List SchoolYear', 'url'=>array('index')),
 	array('label'=>'Create SchoolYear', 'url'=>array('create')),
-	array('label'=>'Delete SchoolYear', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete SchoolYear', 
+          'url'=>'#', 
+          'linkOptions'=>array(
+              'submit'=>array(
+                  'delete','id'=>$model->id),
+              'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage SchoolYear', 'url'=>array('admin')),
 );
 ?>

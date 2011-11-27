@@ -349,7 +349,7 @@ DROP TABLE IF EXISTS `school_calendar`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `school_calendar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `school_day` date NOT NULL,
+  `school_day` date NOT NULL unique,
   `school_in_session` tinyint(1) default true NOT NULL,
   `minimum` tinyint(1) DEFAULT false not null,
   `school_year_id` int(11) NOT NULL,
