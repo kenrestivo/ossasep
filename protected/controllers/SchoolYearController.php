@@ -159,6 +159,7 @@ class SchoolYearController extends Controller
         {
             $sc = new SchoolCalendar();
             $sc->school_day = $d;
+            $sc->school_year_id = $model->id;
             $sc->save();
         }
         $this->redirect(array('view','id'=>$model->id));

@@ -1,6 +1,6 @@
 <?php
 
-class KDateArray {
+class KDateArray extends CComponent {
 
 // via http://boonedocks.net/mike/archives/137-Creating-a-Date-Range-Array-with-PHP.html
 // modified kr 11/26/11
