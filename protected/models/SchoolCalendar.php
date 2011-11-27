@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'school_calendar':
  * @property integer $id
  * @property string $school_day
- * @property integer $school_in_session
+ * @property integer $day_off
  * @property integer $minimum
  * @property integer $school_year_id
  * @property string $note
@@ -38,12 +38,12 @@ class SchoolCalendar extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('school_day, school_in_session, school_year_id', 'required'),
-			array('school_in_session, minimum, school_year_id', 'numerical', 'integerOnly'=>true),
+			array('school_day, day_off, school_year_id', 'required'),
+			array('day_off, minimum, school_year_id', 'numerical', 'integerOnly'=>true),
 			array('note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, school_day, school_in_session, minimum, school_year_id, note', 'safe', 'on'=>'search'),
+			array('id, school_day, day_off, minimum, school_year_id, note', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,7 +67,7 @@ class SchoolCalendar extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'school_day' => 'School Day',
-			'school_in_session' => 'School In Session',
+			'day_off' => 'School In Session',
 			'minimum' => 'Minimum',
 			'school_year_id' => 'School Year',
 			'note' => 'Note',
@@ -89,7 +89,7 @@ class SchoolCalendar extends CActiveRecord
 
 		$criteria->compare('school_day',$this->school_day,true);
 
-		$criteria->compare('school_in_session',$this->school_in_session);
+		$criteria->compare('day_off',$this->day_off);
 
 		$criteria->compare('minimum',$this->minimum);
 

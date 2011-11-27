@@ -8,8 +8,8 @@
 	<?php echo CHtml::encode($data->school_day); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('school_in_session')); ?>:</b>
-	<?php echo CHtml::encode($data->school_in_session); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('day_off')); ?>:</b>
+	<?php echo CHtml::encode($data->day_off); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('minimum')); ?>:</b>

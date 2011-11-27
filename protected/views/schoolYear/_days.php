@@ -23,7 +23,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns' => array(
                       'school_day',
                       'minimum',
-                      'school_in_session',
+                      'day_off',
                       'note',
                       array(
                           'class'=>'CompositeButtonColumn',

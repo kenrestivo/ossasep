@@ -20,7 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'school_day',
-		'school_in_session',
+		'day_off',
 		'minimum',
 		'school_year.description',
 		'note',

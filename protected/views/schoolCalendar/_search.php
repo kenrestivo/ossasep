@@ -16,8 +16,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'school_in_session'); ?>
-		<?php echo $form->textField($model,'school_in_session'); ?>
+		<?php echo $form->label($model,'day_off'); ?>
+		<?php echo $form->textField($model,'day_off'); ?>
 	</div>
 
 	<div class="row">

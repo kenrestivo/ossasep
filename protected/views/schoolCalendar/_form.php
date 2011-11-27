@@ -30,9 +30,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'school_in_session'); ?>
-		<?php echo $form->checkbox($model,'school_in_session'); ?>
-		<?php echo $form->error($model,'school_in_session'); ?>
+		<?php echo $form->labelEx($model,'day_off'); ?>
+		<?php echo $form->checkbox($model,'day_off'); ?>
+		<?php echo $form->error($model,'day_off'); ?>
 	</div>
 
 	<div class="row">
