@@ -167,6 +167,29 @@ class ClassInfoController extends Controller
 		return $this->_model;
 	}
 
+	public function actionPopulate()
+	{
+        $model = $this->loadModel();
+        $c = Yii::app()->db->createCommand(
+            "select school_day from school_calendar where day_off = false and minimum = false and dayofweek(school_day) = :dayofweek and school_day > :startdate  and school_day < :enddate");
+        $r=$c->queryAll(true, array(
+                            'dayofweek' => $model->day_of_week,
+                            'startdate' => $model->session->start_date,
+                            'enddate' => $model->session->end_date,
+                            ));
+        foreach ($r as $i => $d)
+        {
+            $sc = new ClassMeeting();
+            $sc->meeting_date = $d['school_day'];
+            $sc->class_id = $model->id;
+            // TODO: trap errors here somehow
+            $sc->save();
+        }
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+
+
 	/**
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
