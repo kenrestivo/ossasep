@@ -58,17 +58,19 @@ class Instructor extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'check_expenses' => array(
-                self::MANY_MANY, 
+                self::HAS_MANY, 
                 'CheckExpense', 
-                'expense(check_id, instructor_id)'),
+                'instructor_id',
+                'through' => 'expenses'),
 			'instructor_type' => array(
                 self::BELONGS_TO, 
                 'InstructorType', 
                 'instructor_type_id'),
 			'class_infos' => array(
-                self::MANY_MANY, 
+                self::HAS_MANY, 
                 'ClassInfo', 
-                'instructor_assignment(instructor_id, class_id)'),
+                'class_id',
+                'through' => 'instructor_assignments'),
 			'requirement_types' => array(
                 self::MANY_MANY, 
                 'RequirementType', 

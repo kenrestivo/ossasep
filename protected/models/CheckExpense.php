@@ -56,10 +56,12 @@ class CheckExpense extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'expenses' => array(self::HAS_MANY, 'Expense', 'check_id'),
 			'instructors' => array(
-                self::MANY_MANY, 
+                self::HAS_MANY, 
                 'Instructor', 
-                'expense(check_id, instructor_id)'),
+                'instructor_id',
+                'through' => 'expenses'),
 		);
 	}
 
