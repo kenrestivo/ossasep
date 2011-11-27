@@ -1,7 +1,11 @@
 <?php
 $this->menu=array(
 	array('label'=>'Auto-Populate School Days', 
-          'url'=>array('populate','id' => $model->id)),
+          'url'=>'#', 
+          'linkOptions'=>array(
+              'submit'=>array(
+                  'populate','id' => $model->id),
+              'confirm'=>'Automatically add hundreds of days for this school year?')),
 	array('label'=>'List SchoolYear', 'url'=>array('index')),
 	array('label'=>'Create SchoolYear', 'url'=>array('create')),
 	array('label'=>'Delete SchoolYear', 
@@ -11,7 +15,7 @@ $this->menu=array(
                   'delete','id'=>$model->id),
               'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage SchoolYear', 'url'=>array('admin')),
-);
+    );
 ?>
 
 <h1>View SchoolYear <?php echo $model->description; ?></h1>
