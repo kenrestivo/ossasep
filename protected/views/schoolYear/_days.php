@@ -1,10 +1,15 @@
 <?php 
 
 $c = Yii::app()->db->createCommand();
-$c->text = "select count(school_day) as count from school_calendar where school_year_id = 1;";
-$r=$c->queryRow();
+$c->text = "select count(school_day) as count from school_calendar where school_year_id = :schoolyearid;";
+$r=$c->queryRow(true, array('schoolyearid' => $model->id));
 
 
+if($r['count'] < 1 ){
+    echo CHTML::link("Auto-Populate School Days for ". $model->description, 
+                     array('populate','id' => $model->id));
+    echo "<br />";
+}
 
 
 echo CHTML::link("Add Date to ". $model->description, 
