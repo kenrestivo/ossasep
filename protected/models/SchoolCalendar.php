@@ -67,7 +67,7 @@ class SchoolCalendar extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'school_day' => 'School Day',
-			'day_off' => 'School In Session',
+			'day_off' => 'Day Off',
 			'minimum' => 'Minimum',
 			'school_year_id' => 'School Year',
 			'note' => 'Note',
