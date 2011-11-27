@@ -96,6 +96,7 @@ CREATE TABLE `class_meeting` (
   `class_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `class_id` (`class_id`),
+  UNIQUE `idx_date` (`class_id`,`meeting_date`),
   CONSTRAINT `class_meeting_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
