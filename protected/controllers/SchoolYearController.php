@@ -40,7 +40,7 @@ class SchoolYearController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+                  'actions'=>array('admin','delete', 'populate'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -149,6 +149,22 @@ class SchoolYearController extends Controller
 			'model'=>$model,
 		));
 	}
+
+
+	public function actionPopulate()
+	{
+        $model = $this->loadModel();
+        foreach(KDateArray::createWeekdayRangeArray(
+                $model->start_date, $model->end_date) as $d)
+        {
+            $sc = new SchoolCalendar();
+            $sc->school_day = $d;
+            $sc->save();
+        }
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
