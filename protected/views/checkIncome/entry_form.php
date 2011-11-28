@@ -4,13 +4,19 @@ return array(
     'title'=>'Enter a check',
  
     'elements'=>array(
-        'amount'=>array(
-            'type'=>'text',
-            'maxlength'=>20,
-            ),
-        'check_num'=>array(
-            'type'=>'text',
-            'maxlength'=>10,
+        'check'=> array(
+            'type'=>'form',
+            'title'=>'Check',
+            'elements'=>array(
+                'amount'=>array(
+                    'type'=>'text',
+                    'maxlength'=>20,
+                    ),
+                'check_num'=>array(
+                    'type'=>'text',
+                    'maxlength'=>10,
+                    ),
+                ),
             ),
         'income'=>array(
             'type'=>'form',

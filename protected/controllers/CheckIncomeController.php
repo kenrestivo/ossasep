@@ -168,11 +168,13 @@ class CheckIncomeController extends Controller
 
     public function actionEntry()
     {
-        $model = new CheckIncome;
-        $form = new CForm('application.views.checkIncome.entry_form', $model);
+
+        $form = new CForm('application.views.checkIncome.entry_form');
+        $form['check']->model = new CheckIncome;
+        $form['income']->model = new Income;
         if($form->submitted('entry_form') && $form->validate()){
             // TODO: save it!
-            $this->redirect(array('view','id'=>$model->id));
+            $this->redirect(array('view','id'=> $form['check']->model->id));
         } else {
             $this->render('entry', array('form'=>$form));
         }
