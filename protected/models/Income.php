@@ -44,6 +44,7 @@ class Income extends CActiveRecord
 			array('check_id, student_id, class_id', 'numerical', 
                   'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
+			array('amount', 'numerical'),
 			array('delivered', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

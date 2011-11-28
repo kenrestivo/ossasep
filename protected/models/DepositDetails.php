@@ -48,6 +48,7 @@ class DepositDetails extends CActiveRecord
 		return array(
 			array('pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'numerical', 'integerOnly'=>true),
 			array('total_amount', 'length', 'max'=>19),
+			array('total_amount', 'numerical'),
 			array('deposited_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
