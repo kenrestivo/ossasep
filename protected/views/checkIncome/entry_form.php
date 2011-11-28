@@ -17,8 +17,16 @@ return array(
                     'maxlength'=>10,
                     ),
                 'check_date'=>array(
-                    'type'=>'text',
-                    'maxlength'=>14,
+                    'type'=>'zii.widgets.jui.CJuiDatePicker',
+                    'attribute'=>'check_date',
+                    'model' => 'check' ,
+                    // additional javascript options for the date picker plugin
+                    'options'=>array(
+                        'showAnim'=>'fold',
+                        'showButtonPanel'=>true,
+                        'autoSize'=>true,
+                        'dateFormat'=>'yy-mm-dd',
+                        ),
                     ),
                 'payee'=>array(
                     'type'=>'text',
