@@ -77,6 +77,10 @@ class SchoolCalendarController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+        if(isset($_GET['school_year_id'])){
+            $model->school_year_id = $_GET['school_year_id'];
+        }
+
 		$this->render('create',array(
 			'model'=>$model,
 		));

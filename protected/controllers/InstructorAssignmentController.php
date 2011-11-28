@@ -79,6 +79,15 @@ class InstructorAssignmentController extends Controller
                                       'class_id'=>$model->class_id));
 		}
 
+        if(isset($_GET['instructor_id'])){
+            $model->instructor_id = $_GET['instructor_id'];
+        }
+
+        if(isset($_GET['class_id'])){
+            $model->class_id = $_GET['class_id'];
+        }
+
+
 		$this->render('create',array(
 			'model'=>$model,
 		));

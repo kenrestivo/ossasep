@@ -1,6 +1,7 @@
 <?php 
 echo CHTML::link("Add Check for " . $model->full_name, 
                  array("Income/create",
+                       'student_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 
 $this->widget('zii.widgets.grid.CGridView', array(

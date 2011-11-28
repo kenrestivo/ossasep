@@ -78,6 +78,14 @@ class ExpenseController extends Controller
                                       'instructor_id'=>$model->instructor_id,
                                       'check_id'=>$model->check_id));
 		}
+        if(isset($_GET['instructor_id'])){
+            $model->instructor_id = $_GET['instructor_id'];
+        }
+        if(isset($_GET['check_id'])){
+            $model->check_id = $_GET['check_id'];
+        }
+
+
 
 		$this->render('create',array(
 			'model'=>$model,

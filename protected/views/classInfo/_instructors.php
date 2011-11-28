@@ -1,6 +1,7 @@
 <?php 
 echo CHTML::link("Add Instructor to " . $model->class_name, 
                  array("InstructorAssignment/create",
+                       'class_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructorassignment-grid',

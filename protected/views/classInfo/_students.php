@@ -2,6 +2,7 @@
 
 echo CHTML::link("Add Student to ". $model->class_name, 
                  array("Signup/create",
+                       'class_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',

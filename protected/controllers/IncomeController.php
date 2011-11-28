@@ -80,6 +80,18 @@ class IncomeController extends Controller
                                       'check_id'=>$model->check_id));
 		}
 
+        if(isset($_GET['class_id'])){
+            $model->class_id = $_GET['class_id'];
+        }
+
+        if(isset($_GET['student_id'])){
+            $model->student_id = $_GET['student_id'];
+        }
+
+        if(isset($_GET['check_id'])){
+            $model->check_id = $_GET['check_id'];
+        }
+
 		$this->render('create',array(
 			'model'=>$model,
 		));

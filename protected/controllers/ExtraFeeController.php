@@ -76,6 +76,9 @@ class ExtraFeeController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+        if(isset($_GET['class_id'])){
+            $model->class_id = $_GET['class_id'];
+        }
 
 		$this->render('create',array(
 			'model'=>$model,

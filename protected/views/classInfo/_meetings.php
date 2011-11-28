@@ -15,6 +15,7 @@ if($r['count'] < 1 ){
 
 echo CHTML::link("Add Meeting Date for ". $model->class_name, 
 				 array("ClassMeeting/create",
+                       'class_id' => $model->id,
 					   'returnTo' => Yii::app()->request->requestUri));
 
 $this->widget('zii.widgets.grid.CGridView', array(

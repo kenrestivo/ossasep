@@ -77,6 +77,10 @@ class ClassInfoController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+        if(isset($_GET['session_id'])){
+            $model->session_id = $_GET['session_id'];
+        }
+
 		$this->render('create',array(
 			'model'=>$model,
 		));

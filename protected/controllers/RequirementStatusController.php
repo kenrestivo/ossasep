@@ -77,7 +77,17 @@ class RequirementStatusController extends Controller
 				$this->redirect(array('view',
                                       'instructor_id'=>$model->instructor_id,
                                       'requirement_type_id'=>$model->requirement_type_id));
-		}
+		} else {
+            if(isset($_GET['requirement_type_id'])){
+                $model->student_id = $_GET['requirement_type_id'];
+            }
+            if(isset($_GET['instructor_id'])){
+                $model->class_id = $_GET['instructor_id'];
+            }
+
+
+        }
+
 
 		$this->render('create',array(
 			'model'=>$model,
