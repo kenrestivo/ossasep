@@ -12,7 +12,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       array('name' => "Name",
                             'value' => '$data->class->description'),
-                      'signup',
+                      'signup_date',
                       'status',
                       array(
                           'class'=>'CompositeButtonColumn',

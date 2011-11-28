@@ -19,7 +19,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.emergency_2',
                       'student.emergency_3',
                       'student.parent_email',
-                      'signup',
+                      'signup_date',
                       'status',
                       array(
                           'class'=>'CompositeButtonColumn',

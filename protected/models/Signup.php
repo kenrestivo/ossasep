@@ -70,7 +70,7 @@ class Signup extends CActiveRecord
         return array(
             'student_id' => 'Student',
             'class_id' => 'Class',
-            'signup' => 'Signup',
+            'signup_date' => 'Signup',
             'status' => 'Status',
             'note' => 'Admin private note'
         );
@@ -89,7 +89,7 @@ class Signup extends CActiveRecord
 
         $criteria->compare('student_id',$this->student_id);
         $criteria->compare('class_id',$this->class_id);
-        $criteria->compare('signup',$this->signup,true);
+        $criteria->compare('signup_date',$this->signup,true);
         $criteria->compare('status',$this->status);
 
         return new CActiveDataProvider($this, array(

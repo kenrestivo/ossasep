@@ -44,7 +44,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'columns'=>array(
                             'student.full_name',
                             'class.class_name',
-                            'signup',
+                            'signup_date',
                             'status',
                             array(
                                 'class'=>'CompositeButtonColumn',
