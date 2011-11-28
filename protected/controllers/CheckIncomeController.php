@@ -175,9 +175,9 @@ class CheckIncomeController extends Controller
         if($form->submitted('entry_form') && $form->validate()){
             // TODO: save it!
             $this->redirect(array('view','id'=> $form['check']->model->id));
-        } else {
-            $this->render('entry', array('form'=>$form));
         }
+
+        $this->render('entry', array('form'=>$form));
 
     }
 
