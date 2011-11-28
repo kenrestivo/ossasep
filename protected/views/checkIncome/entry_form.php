@@ -24,11 +24,15 @@ return array(
             'elements'=>array(
                 'student_id' => array(
                     'maxlength'=>10,
-                    'type'=> 'text',
+                    'items' => CHtml::listData(Student::model()->findAll(),
+                                               'id', 'full_name'),
+                    'type'=> 'dropdownlist',
                     ),
                 'class_id' => array(
                     'maxlength'=>10,
-                    'type'=> 'text',
+                    'items' => CHtml::listData(ClassInfo::model()->findAll(), 
+                                               'id', 'class_name'),
+                    'type'=> 'dropdownlist',
                     ),
                 'amount' => array(
                     'type'=> 'text',
