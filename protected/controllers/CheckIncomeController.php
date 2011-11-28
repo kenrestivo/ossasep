@@ -36,7 +36,7 @@ class CheckIncomeController extends Controller
                   'users'=>array('*'),
                 ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                  'actions'=>array('create','update'),
+                  'actions'=>array('create','update', 'entry'),
                   'users'=>array('@'),
                 ),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -168,15 +168,15 @@ class CheckIncomeController extends Controller
 
     public function actionEntry()
     {
-        $model = new EntryForm;
-        $form = new CForm('application.views.checkIncome.entry', $model);
-        if($form->submitted('entry') && $form->validate()){
+        $model = new CheckIncome;
+        $form = new CForm('application.views.checkIncome.entry_form', $model);
+        if($form->submitted('entry_form') && $form->validate()){
             // TODO: save it!
             $this->redirect(array('view','id'=>$model->id));
-        } 
-		$this->render('entry',array(
-                          'model'=>$model,
-                          ));
+        } else {
+            $this->render('entry', array('form'=>$form));
+        }
+
     }
 
 	/**
