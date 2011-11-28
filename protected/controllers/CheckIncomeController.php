@@ -172,6 +172,7 @@ class CheckIncomeController extends Controller
         $form = new CForm('application.views.checkIncome.entry_form');
         $form['check']->model = new CheckIncome;
         $form['income']->model = new Income;
+        $form['income']->model->check_id = 0; ///XXX MISERABLE HACK!
         if($form->submitted('entry_form') && $form->validate()){
             // now the saving!
             $check = $form['check']->model;
