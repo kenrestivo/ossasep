@@ -82,7 +82,7 @@ class RequirementStatusController extends Controller
                 $model->student_id = $_GET['requirement_type_id'];
             }
             if(isset($_GET['instructor_id'])){
-                $model->class_id = $_GET['instructor_id'];
+                $model->instructor_id = $_GET['instructor_id'];
             }
 
 

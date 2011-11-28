@@ -1,6 +1,7 @@
 <?php 
 echo CHTML::link("Receive New Paperwork for ". $model->full_name, 
                  array("RequirementStatus/create",
+                       'instructor_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requiermentstatus-grid',
