@@ -77,7 +77,7 @@ class Student extends CActiveRecord
                 self::HAS_MANY, 
                 'CheckIncome', 
                 'check_id',
-                'incomes'),
+                'through' => 'incomes'),
 		);
 	}
 
