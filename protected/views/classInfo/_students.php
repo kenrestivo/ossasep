@@ -1,4 +1,5 @@
 <?php 
+
 echo CHTML::link("Add Student to ". $model->class_name, 
                  array("Signup/create",
                        'returnTo' => Yii::app()->request->requestUri));

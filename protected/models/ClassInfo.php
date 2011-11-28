@@ -70,7 +70,10 @@ class ClassInfo extends CActiveRecord
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id'),
 			'class_meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
-			'incomes' => array(self::HAS_MANY, 'Income', 'class_id'),
+			'incomes' => array(
+                self::HAS_MANY, 
+                'Income', 
+                'class_id'),
             'checks' => array(
                 self::HAS_MANY, 
                 'CheckIncome', 
@@ -81,12 +84,15 @@ class ClassInfo extends CActiveRecord
                 'Instructor', 
                 'instructor_id',
                 'through' => 'instructor_assignments'),
+			'signups' => array(
+                self::HAS_MANY, 
+                'Signup', 
+                'class_id'),
 			'students' => array(
                 self::HAS_MANY, 
                 'Student', 
                 'student_id',
                 'through' => 'signups'),
-			'signups' => array(self::HAS_MANY, 'Signup', 'class_id'),
 			'instructor_assignments' => array(
                 self::HAS_MANY, 'InstructorAssignment', 'class_id'),
             );
