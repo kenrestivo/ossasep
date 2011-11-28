@@ -52,6 +52,7 @@ class Student extends CActiveRecord
 			array('first_name, last_name', 'length', 'max'=>128),
 			array('emergency_1, emergency_2, emergency_3, parent_email, note', 'length', 'max'=>256),
             array('note', 'safe'),
+            array('parent_email', 'email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, grade, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
