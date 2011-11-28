@@ -20,7 +20,7 @@ class CheckIncomeController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,21 +32,21 @@ class CheckIncomeController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
+                  'actions'=>array('index','view'),
+                  'users'=>array('*'),
+                ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
+                  'actions'=>array('create','update'),
+                  'users'=>array('@'),
+                ),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
+                  'actions'=>array('admin','delete'),
+                  'users'=>array('admin'),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	/**
@@ -55,8 +55,8 @@ class CheckIncomeController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 	/**
@@ -78,8 +78,8 @@ class CheckIncomeController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -101,8 +101,8 @@ class CheckIncomeController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -131,8 +131,8 @@ class CheckIncomeController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('CheckIncome');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+                          'dataProvider'=>$dataProvider,
+                          ));
 	}
 
 	/**
@@ -146,8 +146,8 @@ class CheckIncomeController extends Controller
 			$model->attributes=$_GET['CheckIncome'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -165,6 +165,19 @@ class CheckIncomeController extends Controller
 		}
 		return $this->_model;
 	}
+
+    public function actionEntry()
+    {
+        $model = new EntryForm;
+        $form = new CForm('application.views.checkIncome.entry', $model);
+        if($form->submitted('entry') && $form->validate()){
+            // TODO: save it!
+            $this->redirect(array('view','id'=>$model->id));
+        } 
+		$this->render('entry',array(
+                          'model'=>$model,
+                          ));
+    }
 
 	/**
 	 * Performs the AJAX validation.
