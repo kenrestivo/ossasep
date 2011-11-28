@@ -2,11 +2,12 @@
 
 return array(
     'title'=>'Enter a check',
- 
+    'showErrorSummary' => true,
     'elements'=>array(
         'check'=> array(
             'type'=>'form',
             'title'=>'Check Details',
+            'showErrorSummary' => true,
             'elements'=>array(
                 'amount'=>array(
                     'type'=>'text',
@@ -48,6 +49,7 @@ return array(
         'income'=>array(
             'type'=>'form',
             'title'=>'Apply Payment',
+            'showErrorSummary' => true,
             'elements'=>array(
                 'student_id' => array(
                     'maxlength'=>10,
