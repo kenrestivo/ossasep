@@ -15,8 +15,8 @@
 	<?php echo CHtml::encode($data->class_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('signup')); ?>:</b>
-	<?php echo CHtml::encode($data->signup); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('signup_date')); ?>:</b>
+	<?php echo CHtml::encode($data->signup_date); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>

@@ -29,24 +29,24 @@
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->labelEx($model,'signup'); ?>
+		<?php echo $form->labelEx($model,'signup_date'); ?>
 
 <?php 
 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
   'model'=>$model,
-  'attribute'=>'signup',
-  'value'=>$model->signup,
+  'attribute'=>'signup_date',
+  'value'=>$model->signup_date,
   // additional javascript options for the date picker plugin
   'options'=>array(
     'showAnim'=>'fold',
     'showButtonPanel'=>true,
     'autoSize'=>true,
     'dateFormat'=>'yy-mm-dd',
-    'defaultDate'=>$model->signup,
+    'defaultDate'=>$model->signup_date,
    ),
 ));
 ?>
-		<?php echo $form->error($model,'signup'); ?>
+		<?php echo $form->error($model,'signup_date'); ?>
 	</div>
 
 
