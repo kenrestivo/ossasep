@@ -1,4 +1,4 @@
-<div check="view">
+<div class="view">
 
 
      <?php echo CHtml::link('more',
