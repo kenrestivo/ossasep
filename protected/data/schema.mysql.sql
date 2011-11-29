@@ -67,6 +67,7 @@ CREATE TABLE `check_income` (
   `check_num` varchar(128) DEFAULT NULL,
   `check_date` date NOT NULL,
   `deposit_id` int(11),
+  `delivered` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
   CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`),
@@ -178,7 +179,6 @@ DROP TABLE IF EXISTS `expense`;
 CREATE TABLE `expense` (
   `check_id` int(11) NOT NULL,
   `instructor_id` int(11) NOT NULL,
-  `delivered` date DEFAULT NULL,
   `amount` decimal(19,2) NOT NULL,
   PRIMARY KEY (`check_id`,`instructor_id`),
   KEY `instructor_id` (`instructor_id`),
