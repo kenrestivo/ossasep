@@ -21,6 +21,17 @@ class Income extends CActiveRecord
 		return parent::model($className);
 	}
 
+
+public function behaviors()
+{
+	return array(
+		'withRelated'=>array(
+			'class'=>'ext.wr.WithRelatedBehavior',
+		),
+	);
+}
+
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -40,7 +51,10 @@ class Income extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('check_id, student_id, class_id, amount', 'required'),
+			array('amount', 'required'),
+			array('student_id, class_id, amount', 'required'),
+            // on the check validation, do NOT check, um, check.
+			array('check_id', 'required', 'on' => array('insert', 'update')),
 			array('check_id, student_id, class_id', 'numerical', 
                   'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
