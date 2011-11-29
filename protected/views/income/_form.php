@@ -1,15 +1,15 @@
-<div student="form">
+<div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'income-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p student="note">Fields with <span student="required">*</span> are required.</p>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div student="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'check_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -18,7 +18,7 @@
 		<?php echo $form->error($model,'check_id'); ?>
 	</div>
 
-	<div student="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'student_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -47,7 +47,7 @@
 	</div>
 
 
-	<div student="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'delivered'); ?>
 
 <?php 
@@ -70,7 +70,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 
-	<div student="row buttons">
+	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
