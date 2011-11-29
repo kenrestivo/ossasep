@@ -59,10 +59,10 @@ class CheckIncome extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('amount, check_date, payee_id', 'required'),
-			array('check_num, deposit_id', 'numerical', 'integerOnly'=>true),
+			array('deposit_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('amount', 'numerical'),
-			array('payer', 'length', 'max'=>128),
+			array('payer,check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, amount, payer, payee_id, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
