@@ -27,3 +27,32 @@ $this->menu=array(
 		'deposit.deposited_date',
 	),
 )); ?>
+
+<p></p>
+<h2>Assignments</h2>
+<?php 
+  // could be a tab, but probably not necessary at the moment
+echo CHTML::link("Add Split for " . $model->amount, 
+                 array("Income/create",
+                       'check_id' => $model->id,
+                       'returnTo' => Yii::app()->request->requestUri));
+
+$this->widget('zii.widgets.grid.CGridView', array(
+                  'id'=>'income-grid',
+                  'dataProvider'=>new KArrayDataProvider(
+                      $model->incomes, 
+                      array('keyField' => 'check_id,student_id,class_id',
+                          )),
+                  'columns'=>array(
+                      'student.full_name',
+                      'class.class_name',
+                      'amount',
+                      'delivered',
+                      array(
+                          'class'=>'CompositeButtonColumn',
+                          'modelClassName' => 'Income',
+                          'returnTo' => Yii::app()->request->requestUri
+                          ),
+                      ),
+                  )); 
+?>
