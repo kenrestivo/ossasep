@@ -15,6 +15,23 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+--
+-- Table structure for table `company`
+--
+
+DROP TABLE IF EXISTS `company`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+
 --
 -- Table structure for table `check_expense`
 --
@@ -26,7 +43,6 @@ CREATE TABLE `check_expense` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` decimal(19,2) NOT NULL,
   `payer` varchar(128) DEFAULT NULL,
-  `payee` varchar(128) DEFAULT NULL,
   `check_num` int(11) DEFAULT NULL,
   `check_date` date NOT NULL,
   PRIMARY KEY (`id`)
@@ -221,9 +237,11 @@ CREATE TABLE `instructor` (
   `other_phone` varchar(256) DEFAULT NULL,
   `note` varchar(256) DEFAULT NULL,
   `instructor_type_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `instructor_type_id` (`instructor_type_id`),
-  CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`instructor_type_id`) REFERENCES `instructor_type` (`id`)
+  CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`instructor_type_id`) REFERENCES `instructor_type` (`id`),
+  CONSTRAINT `instructor_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
