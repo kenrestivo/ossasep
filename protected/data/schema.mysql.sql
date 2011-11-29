@@ -46,6 +46,7 @@ CREATE TABLE `check_expense` (
   `check_num` varchar(128) DEFAULT NULL,
   `check_date` date NOT NULL,
   `payee_id` int(11) not null,
+  `delivered` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `payee_id` (`payee_id`),
   CONSTRAINT `check_expense_ibfk_1` FOREIGN KEY (`payee_id`) REFERENCES `instructor` (`id`)
@@ -216,7 +217,6 @@ CREATE TABLE `income` (
   `check_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `delivered` date DEFAULT NULL,
   `amount` decimal(19,2) NOT NULL,
   PRIMARY KEY (`check_id`,`student_id`,`class_id`),
   KEY `student_id` (`student_id`),
