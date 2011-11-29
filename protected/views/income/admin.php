@@ -49,7 +49,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                             'check.check_num',
                             'check.check_date',
                             'amount',
-                            'delivered',
+                            'check.delivered',
                             array(
                                 'class'=>'CompositeButtonColumn',
                                 'viewButtonUrl'=>Yii::app()->controller->createUrl("view",$model->primaryKey),

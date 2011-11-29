@@ -38,27 +38,6 @@
 
 
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'delivered'); ?>
-
-<?php 
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-  'model'=>$model,
-  'attribute'=>'delivered',
-  'value'=>$model->delivered,
-  // additional javascript options for the date picker plugin
-  'options'=>array(
-    'showAnim'=>'fold',
-    'showButtonPanel'=>true,
-    'autoSize'=>true,
-    'dateFormat'=>'yy-mm-dd',
-    'defaultDate'=>$model->delivered,
-   ),
-));
-?>
-		<?php echo $form->error($model,'delivered'); ?>
-	</div>
-
 
 
 	<div class="row buttons">

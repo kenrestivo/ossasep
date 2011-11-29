@@ -10,6 +10,7 @@
  * @property string $payee_id
  * @property integer $check_num
  * @property string $check_date
+ * @property string $delivered
  */
 class CheckExpense extends CActiveRecord
 {
@@ -41,10 +42,11 @@ class CheckExpense extends CActiveRecord
 			array('amount, check_date, payee_id', 'required'),
 			array('payee_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
+			array('delivered', 'safe'),
 			array('payer, check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, amount, payer, payee_id, check_num, check_date', 'safe', 'on'=>'search'),
+			array('id, amount, payer, payee_id, delivered, check_num, check_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +80,7 @@ class CheckExpense extends CActiveRecord
 			'payee_id' => 'Payee',
 			'check_num' => 'Check Num',
 			'check_date' => 'Check Date',
+			'delivered' => 'Delivered',
 		);
 	}
 
@@ -99,6 +102,8 @@ class CheckExpense extends CActiveRecord
 		$criteria->compare('payer',$this->payer,true);
 
 		$criteria->compare('payee_id',$this->payee,true);
+
+		$criteria->compare('delivered',$this->delivered,true);
 
 		$criteria->compare('check_num',$this->check_num);
 

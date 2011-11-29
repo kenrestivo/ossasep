@@ -8,7 +8,6 @@
    * @property integer $student_id
    * @property integer $class_id
    * @property string $amount
-   * @property string $delivered
    */
 class Income extends CActiveRecord
 {
@@ -59,10 +58,9 @@ class Income extends CActiveRecord
                   'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('amount', 'numerical'),
-			array('delivered', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('check_id, student_id, class_id, delivered, amount', 
+			array('check_id, student_id, class_id, amount', 
                   'safe', 'on'=>'search'),
             );
 	}
@@ -91,7 +89,6 @@ class Income extends CActiveRecord
 			'amount' => 'Amount',
 			'student_id' => 'Student',
 			'class_id' => 'Class',
-			'delivered' => 'Delivered',
             );
 	}
 
@@ -114,7 +111,6 @@ class Income extends CActiveRecord
 
 		$criteria->compare('amount',$this->amount,true);
 
-		$criteria->compare('delivered',$this->delivered,true);
 
 		return new CActiveDataProvider('Income', array(
                                            'criteria'=>$criteria,

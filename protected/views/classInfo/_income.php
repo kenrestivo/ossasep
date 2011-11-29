@@ -15,7 +15,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'check.payer',
                       'amount',
                       'check.amount',
-                      'delivered',
+                      'check.delivered',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',

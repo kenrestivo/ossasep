@@ -6,7 +6,6 @@
  * The followings are the available columns in table 'expense':
  * @property integer $check_id
  * @property integer $instructor_id
- * @property string $delivered
  * @property string $amount
  */
 class Expense extends CActiveRecord
@@ -44,11 +43,10 @@ class Expense extends CActiveRecord
 		return array(
 			array('check_id, instructor_id, amount', 'required'),
 			array('check_id, instructor_id', 'numerical', 'integerOnly'=>true),
-			array('delivered', 'safe'),
 			array('amount', 'length', 'max'=>19),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('check_id, instructor_id, delivered, amount', 'safe', 'on'=>'search'),
+			array('check_id, instructor_id, amount', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,7 +74,6 @@ class Expense extends CActiveRecord
 			'check_id' => 'Check',
 			'amount' => 'Amount',
 			'instructor_id' => 'Instructor',
-			'delivered' => 'Delivered',
 		);
 	}
 
@@ -96,8 +93,6 @@ class Expense extends CActiveRecord
 		$criteria->compare('instructor_id',$this->instructor_id);
         
         $criteria->compare('amount',$this->amount,true);
-
-		$criteria->compare('delivered',$this->delivered,true);
 
 		return new CActiveDataProvider('Expense', array(
 			'criteria'=>$criteria,

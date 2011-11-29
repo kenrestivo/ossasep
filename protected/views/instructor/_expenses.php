@@ -13,7 +13,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('name' => "Amount",
                             'value' => '$data->check->amount'),
                       'check.check_date',
-                      'delivered',
+                      'check.delivered',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Expense',
