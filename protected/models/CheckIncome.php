@@ -1,17 +1,17 @@
 <?php
 
-/**
- * This is the model class for table "check_income".
- *
- * The followings are the available columns in table 'check_income':
- * @property integer $id
- * @property string $amount
- * @property string $payer
- * @property string $payee
- * @property integer $check_num
- * @property string $check_date
- * @property integer $deposit_id
- */
+  /**
+   * This is the model class for table "check_income".
+   *
+   * The followings are the available columns in table 'check_income':
+   * @property integer $id
+   * @property string $amount
+   * @property string $payer
+   * @property string $payee
+   * @property integer $check_num
+   * @property string $check_date
+   * @property integer $deposit_id
+   */
 class CheckIncome extends CActiveRecord
 {
 	/**
@@ -24,6 +24,14 @@ class CheckIncome extends CActiveRecord
 	}
 
 
+    public function behaviors()
+    {
+        return array(
+            'withRelated'=>array(
+                'class'=>'ext.wr.WithRelatedBehavior',
+                ),
+            );
+    }
 
 	/**
 	 * @return string the associated database table name
@@ -49,7 +57,7 @@ class CheckIncome extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, amount, payer, payee, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -62,7 +70,7 @@ class CheckIncome extends CActiveRecord
 		return array(
 			'deposit' => array(self::BELONGS_TO, 'DepositDetails', 'deposit_id'),
 			'incomes' => array(self::HAS_MANY, 'Income', 'check_id'),
-		);
+            );
 	}
 
 	/**
@@ -78,7 +86,7 @@ class CheckIncome extends CActiveRecord
 			'check_num' => 'Check Num',
 			'check_date' => 'Check Date',
 			'deposit_id' => 'Deposit',
-		);
+            );
 	}
 
 	/**
@@ -107,7 +115,7 @@ class CheckIncome extends CActiveRecord
 		$criteria->compare('deposit_id',$this->deposit_id);
 
 		return new CActiveDataProvider('CheckIncome', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 }

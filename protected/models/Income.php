@@ -1,15 +1,15 @@
 <?php
 
-/**
- * This is the model class for table "income".
- *
- * The followings are the available columns in table 'income':
- * @property integer $check_id
- * @property integer $student_id
- * @property integer $class_id
- * @property string $amount
- * @property string $delivered
- */
+  /**
+   * This is the model class for table "income".
+   *
+   * The followings are the available columns in table 'income':
+   * @property integer $check_id
+   * @property integer $student_id
+   * @property integer $class_id
+   * @property string $amount
+   * @property string $delivered
+   */
 class Income extends CActiveRecord
 {
 	/**
@@ -22,14 +22,14 @@ class Income extends CActiveRecord
 	}
 
 
-public function behaviors()
-{
-	return array(
-		'withRelated'=>array(
-			'class'=>'ext.wr.WithRelatedBehavior',
-		),
-	);
-}
+    public function behaviors()
+    {
+        return array(
+            'withRelated'=>array(
+                'class'=>'ext.wr.WithRelatedBehavior',
+                ),
+            );
+    }
 
 
 	/**
@@ -64,7 +64,7 @@ public function behaviors()
 			// Please remove those attributes that should not be searched.
 			array('check_id, student_id, class_id, delivered, amount', 
                   'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -78,7 +78,7 @@ public function behaviors()
 			'check' => array(self::BELONGS_TO, 'CheckIncome', 'check_id'),
 			'student' => array(self::BELONGS_TO, 'Student', 'student_id'),
 			'class' => array(self::BELONGS_TO, 'ClassInfo', 'class_id'),
-		);
+            );
 	}
 
 	/**
@@ -92,7 +92,7 @@ public function behaviors()
 			'student_id' => 'Student',
 			'class_id' => 'Class',
 			'delivered' => 'Delivered',
-		);
+            );
 	}
 
 	/**
@@ -117,7 +117,7 @@ public function behaviors()
 		$criteria->compare('delivered',$this->delivered,true);
 
 		return new CActiveDataProvider('Income', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 }

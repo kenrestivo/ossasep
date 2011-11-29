@@ -174,10 +174,10 @@ class CheckIncomeController extends Controller
         $form['income']->model = new Income('check');
         if($form->submitted('entry_form')){
             // now the saving!
-            $income = $form['income']->model;
-            $income->check = $form['check']->model;
-
-            if($income->withRelated->save(true, array('check')))
+            $check = $form['check']->model;
+            $check->incomes = array($form['income']->model);
+ 
+            if($check->withRelated->save(true, array('incomes')))
             {
                 $this->redirect(array('view','id'=> $form['check']->model->id));
             } 
