@@ -26,6 +26,12 @@
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Roster">Roster</a>
   <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Company">Company</a>
+  <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a>
+  <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a>
+  <br />
 </div>
 
 
@@ -44,13 +50,9 @@
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Expense">Expense</a>
   <br />
 
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a>
-  <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorAssignment">InstructorAssignment</a>
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequiredFor">RequiredFor</a>
-  <br />
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a>
   <br />
 
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolCalendar">SchoolCalendar</a>
