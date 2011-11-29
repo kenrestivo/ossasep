@@ -7,7 +7,7 @@
  * @property integer $id
  * @property string $amount
  * @property string $payer
- * @property string $payee
+ * @property string $payee_id
  * @property integer $check_num
  * @property string $check_date
  */
@@ -38,13 +38,13 @@ class CheckExpense extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('amount, check_date', 'required'),
-			array('check_num', 'numerical', 'integerOnly'=>true),
+			array('amount, check_date, payee_id', 'required'),
+			array('check_num, payee_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
-			array('payer, payee', 'length', 'max'=>128),
+			array('payer', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, amount, payer, payee, check_num, check_date', 'safe', 'on'=>'search'),
+			array('id, amount, payer, payee_id, check_num, check_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,10 +53,11 @@ class CheckExpense extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
             'expenses' => array(self::HAS_MANY, 'Expense', 'check_id'),
+            // this is kind of ugly, but instructors might change,
+            // and checks are forever once written
+			'payee' => array(self::BELONGS_TO, 'Instructor', 'payee_id'),
 			'instructors' => array(
                 self::HAS_MANY, 
                 'Instructor', 
@@ -74,7 +75,7 @@ class CheckExpense extends CActiveRecord
 			'id' => 'Id',
 			'amount' => 'Amount',
 			'payer' => 'Payer',
-			'payee' => 'Payee',
+			'payee_id' => 'Payee',
 			'check_num' => 'Check Num',
 			'check_date' => 'Check Date',
 		);
@@ -97,7 +98,7 @@ class CheckExpense extends CActiveRecord
 
 		$criteria->compare('payer',$this->payer,true);
 
-		$criteria->compare('payee',$this->payee,true);
+		$criteria->compare('payee_id',$this->payee,true);
 
 		$criteria->compare('check_num',$this->check_num);
 

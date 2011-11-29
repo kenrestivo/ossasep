@@ -13,7 +13,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('payee')); ?>:</b>
-	<?php echo CHtml::encode($data->payee); ?>
+	<?php echo CHtml::encode($data->payee->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('check_num')); ?>:</b>

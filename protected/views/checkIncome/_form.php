@@ -21,11 +21,17 @@
 		<?php echo $form->error($model,'payer'); ?>
 	</div>
 
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'payee'); ?>
-		<?php echo $form->textField($model,'payee',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'payee'); ?>
+		<?php echo $form->labelEx($model,'payee_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
+		<?php echo $form->error($model,'payee_id'); ?>
+
+		<?php echo $form->error($model,'payee_id'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'check_num'); ?>

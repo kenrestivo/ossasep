@@ -20,10 +20,6 @@
 		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'payee'); ?>
-		<?php echo $form->textField($model,'payee',array('size'=>60,'maxlength'=>128)); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'check_num'); ?>

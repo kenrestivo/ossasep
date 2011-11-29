@@ -29,7 +29,7 @@ $this->menu=array(
                             'student.full_name',
                             'check.amount',
                             'check.payer',
-                            'check.payee',
+                            'check.payee.name',
                             'check.check_num',
                             'check.check_date',
                             'amount',

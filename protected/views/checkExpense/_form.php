@@ -22,9 +22,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'payee'); ?>
-		<?php echo $form->textField($model,'payee',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'payee'); ?>
+		<?php echo $form->labelEx($model,'payee_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Instructor::model()->findAll(), 'id', 'name')); ?>
+		<?php echo $form->error($model,'payee_id'); ?>
+
+		<?php echo $form->error($model,'payee_id'); ?>
 	</div>
 
 	<div class="row">

@@ -29,16 +29,17 @@ return array(
                         'dateFormat'=>'yy-mm-dd',
                         ),
                     ),
-                'payee'=>array(
-                    'type'=>'text',
-                    'maxlength'=>128,
+                'payee_id'=>array(
+                    'items' => CHtml::listData(
+                        Company::model()->findAll(), 
+                        'id', 'name'),
+                    'type'=> 'dropdownlist',
                     ),
                 'payer'=>array(
                     'type'=>'text',
                     'maxlength'=>128,
                     ),
                 'deposit_id' => array(
-                    'maxlength'=>10,
                     'items' => CHtml::listData(
                         DepositDetails::model()->findAll(), 
                         'id', 'deposited_date'),

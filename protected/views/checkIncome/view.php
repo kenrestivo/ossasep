@@ -20,7 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'amount',
 		'payer',
-		'payee',
+		'payee.name',
 		'check_num',
 		'check_date',
 		'deposit.deposited_date',
