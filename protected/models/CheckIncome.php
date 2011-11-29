@@ -23,6 +23,16 @@ class CheckIncome extends CActiveRecord
 		return parent::model($className);
 	}
 
+public function behaviors()
+{
+	return array(
+		'withRelated'=>array(
+			'class'=>'ext.wr.WithRelatedBehavior',
+		),
+	);
+}
+
+
 	/**
 	 * @return string the associated database table name
 	 */
