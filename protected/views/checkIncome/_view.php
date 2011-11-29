@@ -25,7 +25,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('deposit_id')); ?>:</b>
-	<?php echo CHtml::encode($data->deposit_id); ?>
+	<?php echo CHtml::encode($data->deposit->deposited_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>
+	<?php echo CHtml::encode($data->delivered); ?>
 	<br />
 
 

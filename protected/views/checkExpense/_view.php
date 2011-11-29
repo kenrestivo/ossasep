@@ -24,5 +24,8 @@
 	<?php echo CHtml::encode($data->check_date); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>
+	<?php echo CHtml::encode($data->delivered); ?>
+	<br />
 
 </div>

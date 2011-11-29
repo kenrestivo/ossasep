@@ -24,5 +24,6 @@ $this->menu=array(
 		'payee.full_name',
 		'check_num',
 		'check_date',
+        'delivered',
 	),
 )); ?>
