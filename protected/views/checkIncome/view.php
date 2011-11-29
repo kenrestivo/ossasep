@@ -13,12 +13,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>View CheckIncome #<?php echo $model->id; ?></h1>
+<h1>View Check <?php echo $model->short_name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'amount',
 		'payer',
 		'payee',

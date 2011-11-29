@@ -22,6 +22,15 @@ class CheckIncome extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    public function getShort_name()
+        {
+            return implode(' ', 
+                           array($this->payer,
+                                 $this->check_date,
+                                 $this->check_num,
+                                 $this->amount
+                               ));
+        }
 
 
     public function behaviors()
