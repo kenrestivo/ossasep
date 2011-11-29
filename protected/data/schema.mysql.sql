@@ -45,7 +45,10 @@ CREATE TABLE `check_expense` (
   `payer` varchar(128) DEFAULT NULL,
   `check_num` int(11) DEFAULT NULL,
   `check_date` date NOT NULL,
-  PRIMARY KEY (`id`)
+  `payee_id` int(11) not null,
+  PRIMARY KEY (`id`),
+  KEY `payee_id` (`payee_id`),
+  CONSTRAINT `check_expense_ibfk_1` FOREIGN KEY (`payee_id`) REFERENCES `instructor` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -60,13 +63,15 @@ CREATE TABLE `check_income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` decimal(19,2) NOT NULL,
   `payer` varchar(128) DEFAULT NULL,
-  `payee` varchar(128) DEFAULT NULL,
+  `payee_id` int(11) not null,
   `check_num` int(11) DEFAULT NULL,
   `check_date` date NOT NULL,
   `deposit_id` int(11),
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
-  CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`)
+  CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`),
+  KEY `payee_id` (`payee_id`),
+  CONSTRAINT `check_income_ibfk_2` FOREIGN KEY (`payee_id`) REFERENCES `company` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
