@@ -25,7 +25,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('deposit_id')); ?>:</b>
-	<?php echo CHtml::encode($data->deposit->deposited_date); ?>
+	<?php echo isset($data->deposit) ? CHtml::encode($data->deposit->deposited_date) : "Not deposited yet" ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>

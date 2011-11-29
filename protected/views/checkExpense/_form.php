@@ -25,7 +25,7 @@
 		<?php echo $form->labelEx($model,'payee_id'); ?>
     <?php echo $form->dropDownList(
         $model,'payee_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'name')); ?>
+        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')); ?>
 		<?php echo $form->error($model,'payee_id'); ?>
 
 		<?php echo $form->error($model,'payee_id'); ?>
