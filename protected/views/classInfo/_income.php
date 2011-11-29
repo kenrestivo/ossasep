@@ -11,10 +11,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,check_id,class_id',
                           )),
                   'columns'=>array(
-                      array('name' => "Name",
-                            'value' => '$data->class->description'),
-                      'check.amount',
                       'check.check_date',
+                      'check.payer',
+                      'amount',
+                      'check.amount',
                       'delivered',
                       array(
                           'class'=>'CompositeButtonColumn',
