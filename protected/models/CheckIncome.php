@@ -24,12 +24,12 @@ class CheckIncome extends CActiveRecord
 	}
     public function getShort_name()
         {
-            return implode(' ', 
-                           array($this->payer,
-                                 $this->check_date,
-                                 $this->check_num,
-                                 $this->amount
-                               ));
+            return sprintf('$%0.2f %s %s (#%s)',
+                           $this->amount,
+                           $this->payer,
+                           $this->check_date,
+                           $this->check_num
+                );
         }
 
 
