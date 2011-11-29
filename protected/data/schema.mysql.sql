@@ -237,7 +237,7 @@ CREATE TABLE `instructor` (
   `other_phone` varchar(256) DEFAULT NULL,
   `note` varchar(256) DEFAULT NULL,
   `instructor_type_id` int(11) NOT NULL,
-  `company_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL default 1,
   PRIMARY KEY (`id`),
   KEY `instructor_type_id` (`instructor_type_id`),
   CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`instructor_type_id`) REFERENCES `instructor_type` (`id`),
