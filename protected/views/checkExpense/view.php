@@ -21,7 +21,7 @@ $this->menu=array(
 		'id',
 		'amount',
 		'payer',
-		'payee.name',
+		'payee.full_name',
 		'check_num',
 		'check_date',
 	),

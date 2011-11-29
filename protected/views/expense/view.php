@@ -27,7 +27,7 @@ $this->menu=array(
                             'instructor.full_name',
                             'check.amount',
                             'check.payer',
-                            'check.payee.name',
+                            'check.payee.full_name',
                             'check.check_num',
                             'check.check_date',
                             'delivered',

@@ -45,7 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'amount',
 		'payer',
-		'payee.name',
+		'payee.full_name',
 		'check_num',
 		'check_date',
 		array(

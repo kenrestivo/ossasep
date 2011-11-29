@@ -45,7 +45,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                             'instructor.full_name',
                             'check.amount',
                             'check.payer',
-                            'check.payee.name',
+                            'check.payee.full_name',
                             'check.check_num',
                             'check.check_date',
                             'amount',
