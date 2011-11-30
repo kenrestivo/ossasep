@@ -72,7 +72,7 @@ class Signup extends CActiveRecord
             'class_id' => 'Class',
             'signup_date' => 'Signup',
             'status' => 'Status',
-            'note' => 'Admin private note'
+            'note' => 'Note'
         );
     }
 

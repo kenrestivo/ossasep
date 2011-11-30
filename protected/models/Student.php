@@ -96,7 +96,7 @@ class Student extends CActiveRecord
 			'emergency_2' => 'Emergency 2',
 			'emergency_3' => 'Emergency 3',
             'parent_email' => 'Parent Email',
-	        'note' => 'Admin Private Note',
+	        'note' => 'Note',
 		);
 	}
 
