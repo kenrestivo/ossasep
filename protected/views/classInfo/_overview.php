@@ -10,7 +10,9 @@
                             'description',
                             'cost_per_class',
                             'max_students',
-                            'day_of_week',
+                            array(
+                                'name' => 'day_of_week',
+                                'value' => ZHtml::weekdayTranslation($model->day_of_week)),
                             'location',
                             'status',
                             array('name' => "Session",
