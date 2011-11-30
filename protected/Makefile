@@ -1,3 +1,5 @@
+default:
+	@echo NOTE schema target is very ugly, wipes out ALL DATA
 
 
 schema::
