@@ -120,7 +120,8 @@ CREATE TABLE `class_meeting` (
   PRIMARY KEY (`id`),
   KEY `class_id` (`class_id`),
   UNIQUE `idx_date` (`class_id`,`meeting_date`),
-  CONSTRAINT `class_meeting_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class_info` (`id`)
+  CONSTRAINT `class_meeting_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class_info` (`id`),
+ CONSTRAINT `class_meeting_ibfk_2` FOREIGN KEY (`meeting_date`) REFERENCES `school_calendar` (`school_day`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
