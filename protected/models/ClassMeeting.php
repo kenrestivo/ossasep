@@ -53,7 +53,12 @@ class ClassMeeting extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'class' => array(self::BELONGS_TO, 'ClassInfo', 'class_id'),
+			'class' => array(self::BELONGS_TO, 
+                             'ClassInfo', 
+                             'class_id'),
+			'school_day' => array(self::BELONGS_TO, 
+                                  'SchoolCalendar', 
+                                  'meeting_date'),
 		);
 	}
 

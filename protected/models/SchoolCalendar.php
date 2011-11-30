@@ -56,6 +56,7 @@ class SchoolCalendar extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'school_year' => array(self::BELONGS_TO, 'SchoolYear', 'school_year_id'),
+			'meetings' => array(self::HAS_MANY, 'ClassMeeting', 'meeting_date'),
 		);
 	}
 
