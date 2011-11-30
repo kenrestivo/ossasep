@@ -72,6 +72,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'min_students'); ?>
+		<?php echo $form->textField($model,'min_students'); ?>
+		<?php echo $form->error($model,'min_students'); ?>
+	</div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'max_students'); ?>
 		<?php echo $form->textField($model,'max_students'); ?>
 		<?php echo $form->error($model,'max_students'); ?>

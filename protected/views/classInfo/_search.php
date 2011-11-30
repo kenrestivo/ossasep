@@ -46,6 +46,10 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'min_students'); ?>
+		<?php echo $form->textField($model,'min_students'); ?>
+	</div>
+	<div class="row">
 		<?php echo $form->label($model,'max_students'); ?>
 		<?php echo $form->textField($model,'max_students'); ?>
 	</div>

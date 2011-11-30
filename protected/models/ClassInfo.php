@@ -13,6 +13,7 @@
    * @property string $description
    * @property string $cost_per_class
    * @property integer $max_students
+   * @property integer $min_students
    * @property integer $day_of_week
    * @property string $location
    * @property integer $status
@@ -46,7 +47,7 @@ class ClassInfo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('class_name, session_id', 'required'),
-			array('min_grade_allowed, max_grade_allowed, day_of_week, max_students, session_id', 'numerical', 'integerOnly'=>true),
+			array('min_grade_allowed, max_grade_allowed, day_of_week, min_students, max_students, session_id', 'numerical', 'integerOnly'=>true),
 			array('class_name', 'length', 'max'=>128),
 			array('cost_per_class', 'length', 'max'=>19),
 			array('cost_per_class', 'numerical'),
@@ -56,7 +57,7 @@ class ClassInfo extends CActiveRecord
 			array('start_time, end_time, description, note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
+			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, min_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
             );
 	}
 
@@ -113,6 +114,7 @@ class ClassInfo extends CActiveRecord
 			'end_time' => 'End Time',
 			'description' => 'Description',
 			'cost_per_class' => 'Cost Per Class',
+			'min_students' => 'Min Students',
 			'max_students' => 'Max Students',
 			'day_of_week' => 'Day Of Week',
 			'location' => 'Location',
@@ -150,6 +152,7 @@ class ClassInfo extends CActiveRecord
 		$criteria->compare('cost_per_class',$this->cost_per_class,true);
 
 		$criteria->compare('max_students',$this->max_students);
+		$criteria->compare('min_students',$this->max_students);
 
 		$criteria->compare('day_of_week',$this->day_of_week);
 

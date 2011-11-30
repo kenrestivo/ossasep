@@ -9,6 +9,7 @@
                             'end_time',
                             'description',
                             'cost_per_class',
+                            'min_students',
                             'max_students',
                             array(
                                 'name' => 'day_of_week',
@@ -41,6 +42,7 @@ echo CHTML::link("Delete  ". $model->class_name,
 
 ?>
 
+<p></p>
 
 <h3>Extra Fees</h3>
 <?php 

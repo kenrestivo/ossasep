@@ -93,6 +93,7 @@ CREATE TABLE `class_info` (
   `end_time` time DEFAULT NULL,
   `description` longtext,
   `cost_per_class` decimal(19,2) DEFAULT NULL,
+  `min_students` int(11) DEFAULT NULL,
   `max_students` int(11) DEFAULT NULL,
   `day_of_week` int(4),
   `location` varchar(256) DEFAULT NULL,

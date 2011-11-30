@@ -23,6 +23,7 @@ $this->menu=array(
 		'end_time',
 		'description',
 		'cost_per_class',
+		'min_students',
 		'max_students',
         array('name' => 'day_of_week', 
               'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
