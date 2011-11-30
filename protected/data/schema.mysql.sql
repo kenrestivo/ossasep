@@ -295,6 +295,8 @@ CREATE TABLE `required_for` (
   PRIMARY KEY (`requirement_type_id`,`instructor_type_id`),
   KEY `instructor_type_id` (`instructor_type_id`),
   CONSTRAINT `required_for_ibfk_1` FOREIGN KEY (`instructor_type_id`) REFERENCES `instructor_type` (`id`)
+  KEY `requirement_type_id` (`requirement_type_id`),
+  CONSTRAINT `requiremed_for_ibfk_2` FOREIGN KEY (`requirement_type_id`) REFERENCES `requirement_type` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
