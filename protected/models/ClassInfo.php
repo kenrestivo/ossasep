@@ -30,6 +30,16 @@ class ClassInfo extends CActiveRecord
 		return parent::model($className);
 	}
 
+
+    public function total_cost(){
+
+        $total = (float)$this->cost_per_class * count($this->class_meetings);
+        foreach($this->extra_fees as $e){
+            $total += $e->amount;
+        }
+        return($total);
+    }
+
 	/**
 	 * @return string the associated database table name
 	 */
