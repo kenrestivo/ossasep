@@ -14,7 +14,7 @@
 
     <?php echo $form->dropDownList(
         $model,'check_id',
-        CHtml::listData(CheckIncome::model()->findAll(), 'id', 'short_name')); ?>
+        CHtml::listData(CheckIncome::model()->findAll(), 'id', 'summary')); ?>
 		<?php echo $form->error($model,'check_id'); ?>
 	</div>
 

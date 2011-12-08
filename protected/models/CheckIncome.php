@@ -23,7 +23,7 @@ class CheckIncome extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-    public function getShort_name()
+    public function getSummary()
         {
             return sprintf('$%0.2f %s %s (#%s)',
                            $this->amount,
