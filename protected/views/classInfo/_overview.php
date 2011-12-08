@@ -1,30 +1,7 @@
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-                        'data'=>$model,
-                        'attributes'=>array(
-                            'class_name',
-                            'min_grade_allowed',
-                            'max_grade_allowed',
-                            'start_time',
-                            'end_time',
-                            'description',
-                            'cost_per_class',
-                            'min_students',
-                            'max_students',
-                            array(
-                                'name' => 'day_of_week',
-                                'value' => ZHtml::weekdayTranslation($model->day_of_week)),
-                            'location',
-                            'status',
-                            array('name' => "Session",
-                                  'value' =>  $model->session->summary
-                            ),
-                            'note',
-                        ),
-                        )
-    ); 
+<?php echo $this->renderPartial('_view', array('data'=>$model)); ?>
 
-
+<?php
 echo CHTML::link("Edit  ". $model->class_name, 
                  array('update', 'id'=>$model->id,
                        'returnTo' => Yii::app()->request->requestUri));
