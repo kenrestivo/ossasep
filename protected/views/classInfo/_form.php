@@ -70,11 +70,6 @@ through
 		<?php echo $form->error($model,'end_time'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>20, 'cols'=>120)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cost_per_class'); ?>
@@ -116,7 +111,12 @@ through
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
-
+	<div class="row">
+		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>20, 'cols'=>120)); ?>
+		<?php echo $form->error($model,'description'); ?>
+	</div>
+32
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
