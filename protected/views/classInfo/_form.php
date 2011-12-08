@@ -105,7 +105,7 @@ through
 		<?php echo $form->labelEx($model,'session_id'); ?>
     <?php echo $form->dropDownList(
         $model,'session_id',
-        CHtml::listData(ClassSession::model()->findAll(), 'id', 'description')); ?>
+        CHtml::listData(ClassSession::model()->findAll(), 'id', 'formatted_name')); ?>
 		<?php echo $form->error($model,'session_id'); ?>
 	</div>
 

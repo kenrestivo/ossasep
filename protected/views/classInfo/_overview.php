@@ -17,7 +17,7 @@
                             'location',
                             'status',
                             array('name' => "Session",
-                                  'value' =>  $model->session->fmtName()
+                                  'value' =>  $model->session->formatted_name
                             ),
                             'note',
                         ),

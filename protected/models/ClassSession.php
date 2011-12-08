@@ -65,7 +65,7 @@ class ClassSession extends CActiveRecord
 	 * @return array customized attribute labels (name=>label)
 	 */
 
-    public function fmtName(){
+    public function getFormatted_name(){
         return sprintf(
             'Session %s (%s)', 
             $this->description,

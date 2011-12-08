@@ -66,6 +66,7 @@ class ClassInfo extends CActiveRecord
 			array('cost_per_class', 'length', 'max'=>19),
 			array('cost_per_class', 'numerical'),
 			array(' status', 'length', 'max'=>100),
+			array(' min_grade_allowed,max_grade_allowed,min_students,max_students', 'length', 'max'=>3),
             //TODO: check that the value is valid for the enum
 			array('location, note', 'length', 'max'=>256),
 			array('start_time, end_time, description, note', 'safe'),

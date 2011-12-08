@@ -52,7 +52,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'day_of_week',
 		'location',
 		'status',
-		'session.description',
+		'session.formatted_name',
 		array(
 			'class'=>'CButtonColumn',
 		),

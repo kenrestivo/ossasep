@@ -118,6 +118,7 @@ CREATE TABLE `class_meeting` (
   `meeting_date` date NOT NULL,
   `note` varchar(256),
   `class_id` int(11) NOT NULL,
+  `makeup` tinyint(1) default false NOT NULL,
   PRIMARY KEY (`id`),
   KEY `class_id` (`class_id`),
   UNIQUE `idx_date` (`class_id`,`meeting_date`),
