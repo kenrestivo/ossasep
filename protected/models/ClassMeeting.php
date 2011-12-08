@@ -94,6 +94,8 @@ class ClassMeeting extends CActiveRecord
 		$criteria->compare('meeting_date',$this->meeting_date,true);
 
 		$criteria->compare('note',$this->note,true);
+		$criteria->compare('makeup',$this->makeup,true);
+
 
 		$criteria->compare('class_id',$this->class_id);
 

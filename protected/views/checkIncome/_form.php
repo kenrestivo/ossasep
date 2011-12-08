@@ -92,6 +92,32 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'delivered'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'returned'); ?>
+
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'returned',
+  'value'=>$model->returned,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->returned,
+   ),
+));
+?>
+		<?php echo $form->error($model,'returned'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'joint'); ?>
+		<?php echo $form->checkbox($model,'joint'); ?>
+		<?php echo $form->error($model,'joint'); ?>
+	</div>
 
 
 	<div class="row buttons">

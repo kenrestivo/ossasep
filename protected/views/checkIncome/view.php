@@ -23,6 +23,9 @@ $this->menu=array(
 		'payee.name',
 		'check_num',
 		'check_date',
+		'delivered',
+		'returned',
+		'joint',
 		'deposit.deposited_date',
 	),
 )); ?>

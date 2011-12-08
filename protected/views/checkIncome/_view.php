@@ -24,6 +24,13 @@
 	<?php echo CHtml::encode($data->check_date); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('returned')); ?>:</b>
+	<?php echo CHtml::encode($data->returned); ?>
+	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('joint')); ?>:</b>
+	<?php echo CHtml::encode($data->joint); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('deposit_id')); ?>:</b>
 	<?php echo isset($data->deposit) ? CHtml::encode($data->deposit->deposited_date) : "Not deposited yet" ?>
 	<br />

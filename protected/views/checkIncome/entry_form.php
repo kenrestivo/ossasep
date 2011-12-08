@@ -35,6 +35,7 @@ return array(
                         'id', 'name'),
                     'type'=> 'dropdownlist',
                     ),
+                //TODO: FIX THIS AND UPDATE IT!
                 'payer'=>array(
                     'type'=>'text',
                     'maxlength'=>128,
