@@ -56,7 +56,17 @@ class ZHtml extends CHtml
             ZHtml::get_weekdays());
 
     }
+    //TODO make this use DateTime, and all that cruft
+    public static function militaryToCivilian($mil)
+    {
+        return (date("g:i a", strtotime($mil)));
+    }
 
+   //TODO make this use DateTime, and all that cruft
+    public static function civilianToMilitary($civ)
+    {
+        return(date("H:i:s", strtotime($civ)));
+    }
 
 }
 
