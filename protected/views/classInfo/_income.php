@@ -11,6 +11,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,check_id,class_id',
                           )),
                   'columns'=>array(
+                      'student.full_name',
                       'check.check_date',
                       'check.payer',
                       'amount',
@@ -24,3 +25,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 ?>
+3

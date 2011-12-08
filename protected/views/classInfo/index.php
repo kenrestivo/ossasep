@@ -21,7 +21,6 @@ $this->menu=array(
 		'max_grade_allowed',
 		'start_time',
 		'end_time',
-		'description',
 		'cost_per_class',
 		'min_students',
 		'max_students',

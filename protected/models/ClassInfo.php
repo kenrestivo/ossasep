@@ -31,6 +31,10 @@ class ClassInfo extends CActiveRecord
 	}
 
 
+    /*
+      includes fees AND the cost per class times class meetings
+     */
+
     public function total_cost(){
 
         $total = (float)$this->cost_per_class * count($this->class_meetings);
