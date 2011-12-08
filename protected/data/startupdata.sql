@@ -63,3 +63,10 @@ LOCK TABLES `required_for` WRITE;
 INSERT INTO `required_for` VALUES (1,3),(1,4),(1,5),(1,6),(1,7),(2,3),(2,4),(2,5),(2,6),(3,1),(3,2),(3,3),(3,4),(3,5),(4,1),(4,2),(4,3),(4,4),(4,5),(4,6);
 /*!40000 ALTER TABLE `required_for` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+LOCK TABLES `class_session` WRITE;
+/*!40000 ALTER TABLE `class_session` DISABLE KEYS */;
+INSERT INTO `class_session` VALUES (1,1, '1','2011-10-01', '2011-12-15');
+/*!40000 ALTER TABLE `class_session` ENABLE KEYS */;
+UNLOCK TABLES;
