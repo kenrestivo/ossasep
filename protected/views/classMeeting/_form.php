@@ -41,9 +41,14 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <?php echo $form->dropDownList(
     $model,'class_id',
     CHtml::listData(ClassInfo::model()->findAll(), 
-                    'id', 'description')); ?>
+                    'id', 'summary')); ?>
 
 		<?php echo $form->error($model,'class_id'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'makeup'); ?>
+		<?php echo $form->checkbox($model,'makeup'); ?>
+		<?php echo $form->error($model,'makeup'); ?>
 	</div>
 
 	<div class="row buttons">

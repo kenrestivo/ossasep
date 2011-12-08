@@ -69,6 +69,8 @@ CREATE TABLE `check_income` (
   `check_date` date NOT NULL,
   `deposit_id` int(11),
   `delivered` date DEFAULT NULL,
+  `returned` date DEFAULT NULL,
+  `joint` tinyint(1) default false NOT NULL,
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
   CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`),

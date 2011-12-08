@@ -25,6 +25,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       'meeting_date',
                       'note',
+                      'makeup',
         'school_day.minimum',
         'school_day.day_off',
                       array(

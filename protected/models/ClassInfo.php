@@ -35,7 +35,7 @@ class ClassInfo extends CActiveRecord
       includes fees AND the cost per class times class meetings
      */
 
-    public function total_cost(){
+    public function getTotalCost(){
 
         $total = (float)$this->cost_per_class * count($this->class_meetings);
         foreach($this->extra_fees as $e){
@@ -43,6 +43,12 @@ class ClassInfo extends CActiveRecord
         }
         return($total);
     }
+
+    public function getSummary()
+    {
+        return $this->class_name;
+    }
+
 
 	/**
 	 * @return string the associated database table name

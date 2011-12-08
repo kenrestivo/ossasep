@@ -16,6 +16,11 @@
 	<?php echo CHtml::encode($data->class->class_name); ?>
 	<br />
 
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('makeup')); ?>:</b>
+	<?php echo CHtml::encode($data->makeup); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('school_day.minimum')); ?>:</b>
 	<?php echo CHtml::encode($data->school_day->minimum); ?>
 	<br />

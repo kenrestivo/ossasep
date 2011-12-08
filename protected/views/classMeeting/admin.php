@@ -45,6 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'meeting_date',
 		'note',
+        'makeup',
 		'class.class_name',
         'school_day.minimum',
         'school_day.note',

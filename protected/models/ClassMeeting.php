@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $meeting_date
  * @property string $note
+ * @property integer $makeup
  * @property integer $class_id
  */
 class ClassMeeting extends CActiveRecord
@@ -37,11 +38,12 @@ class ClassMeeting extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('meeting_date, class_id', 'required'),
-			array('class_id', 'numerical', 'integerOnly'=>true),
+			array('class_id, makeup', 'numerical', 'integerOnly'=>true),
 			array('note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, meeting_date, note, class_id', 'safe', 'on'=>'search'),
+			array('id, meeting_date, makeup, note, class_id', 
+                  'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +73,7 @@ class ClassMeeting extends CActiveRecord
 			'id' => 'Id',
 			'meeting_date' => 'Meeting Date',
 			'note' => 'Note',
+			'makeup' => 'Make-Up Day?',
 			'class_id' => 'Class',
 		);
 	}
@@ -98,4 +101,5 @@ class ClassMeeting extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
 }

@@ -21,6 +21,7 @@ $this->menu=array(
 		'id',
 		'meeting_date',
 		'note',
+		'makeup',
 		'class.class_name',
 	),
 )); ?>
