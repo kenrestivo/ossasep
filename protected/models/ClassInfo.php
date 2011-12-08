@@ -84,7 +84,8 @@ class ClassInfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id'),
+			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
+                'order' => 'start_date'),
 			'class_meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(

@@ -28,7 +28,7 @@ $this->menu=array(
               'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
 		'location',
 		'status',
-		'session.formatted_name',
+		'session.summary',
 		array(
 			'class'=>'CButtonColumn',
 		),

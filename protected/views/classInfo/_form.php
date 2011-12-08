@@ -49,7 +49,6 @@
      'attribute'=>'start_time',
      // additional javascript options for the date picker plugin
      'options'=>array(
-         'showPeriod'=>true,
          ),
      'htmlOptions'=>array('size'=>8,'maxlength'=>8 ),
  ));
@@ -62,7 +61,6 @@ through
      'attribute'=>'end_time',
      // additional javascript options for the date picker plugin
      'options'=>array(
-         'showPeriod'=>true,
          ),
      'htmlOptions'=>array('size'=>8,'maxlength'=>8 ),
  ));
@@ -100,23 +98,23 @@ through
 		<?php echo $form->labelEx($model,'session_id'); ?>
     <?php echo $form->dropDownList(
         $model,'session_id',
-        CHtml::listData(ClassSession::model()->findAll(), 'id', 'formatted_name')); ?>
+        CHtml::listData(ClassSession::model()->findAll(), 'id', 'summary')); ?>
 		<?php echo $form->error($model,'session_id'); ?>
 	</div>
 
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'note'); ?>
-		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'note'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
 		<?php echo $form->textArea($model,'description',array('rows'=>20, 'cols'=>120)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
-32
+	<div class="row">
+		<?php echo $form->labelEx($model,'note'); ?>
+		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'note'); ?>
+	</div>
+
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
