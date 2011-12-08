@@ -1,4 +1,4 @@
-<div class="form">
+<div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'class-inf-oform',
@@ -14,21 +14,35 @@
 		<?php echo $form->textField($model,'class_name',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'class_name'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'min_grade_allowed'); ?>
-		<?php echo $form->textField($model,'min_grade_allowed'); ?>
-		<?php echo $form->error($model,'min_grade_allowed'); ?>
+     <?php echo $form->labelEx($model,'min_students',
+                               array('label' => '# students')); ?>
+    Min:
+<?php echo $form->textField($model,'min_students',
+                            array('size' => 3)); ?>
+		<?php echo $form->error($model,'min_students'); ?>
+        Max: 
+<?php echo $form->textField($model,'max_students',
+     array('size' => 3)); ?>
+		<?php echo $form->error($model,'max_students'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'max_grade_allowed'); ?>
-		<?php echo $form->textField($model,'max_grade_allowed'); ?>
+     <?php echo $form->labelEx($model,'min_grade_allowed',
+                               array('label' => "Grades")); ?>
+    <?php echo $form->textField($model,'min_grade_allowed',
+         array('size' => 3)); ?>
+        through 
+		<?php echo $form->error($model,'min_grade_allowed'); ?>
+
+		<?php echo $form->textField($model,'max_grade_allowed',
+             array('size' => 3)); ?>
 		<?php echo $form->error($model,'max_grade_allowed'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'start_time'); ?>
+     <?php echo $form->labelEx($model,'start_time', 
+                               array('label' => 'Times' )); ?>
 <?php
  $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
     'model'=>$model,
@@ -41,10 +55,7 @@
  ));
 ?>
 		<?php echo $form->error($model,'start_time'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'end_time'); ?>
+through
 <?php
  $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
     'model'=>$model,
@@ -61,7 +72,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>20, 'cols'=>120)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
@@ -71,16 +82,6 @@
 		<?php echo $form->error($model,'cost_per_class'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'min_students'); ?>
-		<?php echo $form->textField($model,'min_students'); ?>
-		<?php echo $form->error($model,'min_students'); ?>
-	</div>
-	<div class="row">
-		<?php echo $form->labelEx($model,'max_students'); ?>
-		<?php echo $form->textField($model,'max_students'); ?>
-		<?php echo $form->error($model,'max_students'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'day_of_week'); ?>
