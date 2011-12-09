@@ -19,13 +19,14 @@ return array(
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
+        /*
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'thetest',
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('*'),
 		),
+        */
 	),
 
 	// application components
@@ -78,6 +79,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'krestivo@restivo.org',
 	),
 );
