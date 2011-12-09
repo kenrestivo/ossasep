@@ -26,7 +26,7 @@
     <?php echo $form->dropDownList(
         $model,'class_id',
         CHtml::listData(ClassInfo::model()->findAll(), 
-                    'id', 'description')); ?>
+                    'id', 'summary')); ?>
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
 
