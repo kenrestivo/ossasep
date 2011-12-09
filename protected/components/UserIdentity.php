@@ -18,7 +18,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$users=array(
-			'heidi'=>'***REMOVED***',
+			'admin'=>'***REMOVED***',
 		);
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
