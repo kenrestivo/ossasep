@@ -25,7 +25,6 @@ $this->menu=array(
 		'check_date',
 		'delivered',
 		'returned',
-		'joint',
 		'deposit.deposited_date',
 	),
 )); ?>

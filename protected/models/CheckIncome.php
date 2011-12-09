@@ -11,7 +11,6 @@
    * @property integer $check_num
    * @property string $check_date
    * @property string $returned
-   * @property integer $joint
  * @property string $delivered
    * @property integer $deposit_id
    */
@@ -63,14 +62,14 @@ class CheckIncome extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('amount, check_date, payee_id', 'required'),
-			array('deposit_id,joint', 'numerical', 'integerOnly'=>true),
+			array('deposit_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('amount', 'numerical'),
 			array('delivered,returned', 'safe'),
 			array('payer,check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, amount, payer, returned,joint, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
+			// Please remove those attributes tghat should not be searched.
+			array('id, amount, payer, returned, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
             );
 	}
 
@@ -105,7 +104,6 @@ class CheckIncome extends CActiveRecord
 			'deposit_id' => 'Deposit',
 			'delivered' => 'Delivered to Company',
 			'returned' => 'Returned to Student',
-			'joint' => 'Joint Check?',
             );
 	}
 
@@ -130,7 +128,6 @@ class CheckIncome extends CActiveRecord
 
 		$criteria->compare('delivered',$this->delivered,true);
 		$criteria->compare('returned',$this->returned,true);
-		$criteria->compare('joint',$this->joint,true);
 
 		$criteria->compare('check_num',$this->check_num);
 

@@ -113,12 +113,6 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'returned'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'joint'); ?>
-		<?php echo $form->checkbox($model,'joint'); ?>
-		<?php echo $form->error($model,'joint'); ?>
-	</div>
-
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
