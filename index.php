@@ -2,14 +2,15 @@
 
   // change the following paths if necessary
 $yii='/usr/local/yii-framework/yii.php';
-$prod=dirname(__FILE__).'/protected/production.php';
-                       
-if(is_readable($prod)){
-    require_once($prod);
-}
-
 $glob=dirname(__FILE__).'/protected/globals.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
+
+// important to override for production
+$prod=dirname(__FILE__).'/protected/production.php';
+if(is_readable($prod)){
+    // override yii loc for production
+    require_once($prod);
+}
 
 // remove the following lines when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);
