@@ -1,9 +1,9 @@
 <?php
 
   // change the following paths if necessary
-$yii='/usr/local/yii-framework/yii.php';
+$yii=$_SERVER['NFSN_SITE_ROOT'].'/protected/yii-framework/yii.php';
 $glob=dirname(__FILE__).'/protected/globals.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
+$config=dirname(__FILE__).'/protected/config/production.php';
 
 // remove the following lines when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);
