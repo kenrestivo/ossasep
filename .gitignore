@@ -1,4 +1,5 @@
 *~
 assets/
 runtime/
-production.php
+index.php
+protected/config/main.php
