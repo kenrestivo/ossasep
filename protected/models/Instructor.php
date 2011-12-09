@@ -11,6 +11,7 @@
  * @property string $other_phone
  * @property string $note
  * @property integer $instructor_type_id
+ * @property integer $company_id
  */
 class Instructor extends CActiveRecord
 {
@@ -39,13 +40,13 @@ class Instructor extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('full_name, instructor_type_id', 'required'),
-			array('instructor_type_id', 'numerical', 'integerOnly'=>true),
+			array('full_name, company_id, instructor_type_id', 'required'),
+			array('instructor_type_id,company_id', 'numerical', 'integerOnly'=>true),
 			array('full_name', 'length', 'max'=>128),
 			array('email, cell_phone, other_phone, note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, full_name, email, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
+			array('id, full_name, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +67,10 @@ class Instructor extends CActiveRecord
                 self::BELONGS_TO, 
                 'InstructorType', 
                 'instructor_type_id'),
+			'company' => array(
+                self::BELONGS_TO, 
+                'Company', 
+                'company_id'),
 			'class_infos' => array(
                 self::HAS_MANY, 
                 'ClassInfo', 
@@ -102,6 +107,7 @@ class Instructor extends CActiveRecord
 			'cell_phone' => 'Cell Phone',
 			'other_phone' => 'Other Phone',
 			'note' => 'Note',
+			'company_id' => 'Company',
 			'instructor_type_id' => 'Instructor Type',
 		);
 	}
@@ -130,6 +136,7 @@ class Instructor extends CActiveRecord
 		$criteria->compare('note',$this->note,true);
 
 		$criteria->compare('instructor_type_id',$this->instructor_type_id);
+		$criteria->compare('company_id',$this->company_id);
 
 		return new CActiveDataProvider('Instructor', array(
 			'criteria'=>$criteria,

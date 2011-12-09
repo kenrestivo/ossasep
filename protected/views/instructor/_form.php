@@ -50,6 +50,18 @@
 		<?php echo $form->error($model,'instructor_type_id'); ?>
 	</div>
 
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'company_id'); ?>
+
+<?php echo $form->dropDownList(
+    $model,'company_id',
+    CHtml::listData(Company::model()->findAll(), 
+                    'id', 'name')); ?>
+
+		<?php echo $form->error($model,'company_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

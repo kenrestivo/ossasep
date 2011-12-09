@@ -11,12 +11,12 @@
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'full_name',
 		'email',
 		'cell_phone',
 		'other_phone',
 		'note',
+        'company.name',
 		'instructor_type.description',
 		array(
 			'class'=>'CButtonColumn',

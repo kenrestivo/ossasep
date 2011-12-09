@@ -25,7 +25,10 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('instructor_type_id')); ?>:</b>
-	<?php echo CHtml::encode($data->instructor_type_id); ?>
+	<?php echo CHtml::encode($data->instructor->full_name); ?>
+	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('company_id')); ?>:</b>
+	<?php echo CHtml::encode($data->company->name); ?>
 	<br />
 
 

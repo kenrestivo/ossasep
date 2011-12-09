@@ -8,6 +8,7 @@
 		'other_phone',
 		'note',
 		'instructor_type.description',
+        'company.name'
 	),
 )); 
 

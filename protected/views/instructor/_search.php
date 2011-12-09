@@ -39,6 +39,10 @@
 		<?php echo $form->label($model,'instructor_type_id'); ?>
 		<?php echo $form->textField($model,'instructor_type_id'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'company_id'); ?>
+		<?php echo $form->textField($model,'company_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
