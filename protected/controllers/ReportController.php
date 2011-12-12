@@ -42,11 +42,10 @@ class ReportController extends Controller
 	{
         $classes = array();
         // only weekdays, no sat/sun
-        $max  = 0;
         foreach(array(2,3,4,5,6) as $n){
             // XXX the current session is hardcoded in here!
             // needs to be defaulted programatically and saved in cookie!
-            $classes[$n] = ClassInfo::model()->findAllBySql(
+            foreach(ClassInfo::model()->findAllBySql(
                 "select class_info.* 
 from class_info
 where class_info.status = 'Active'
@@ -55,16 +54,17 @@ where class_info.status = 'Active'
 order by class_info.start_time, class_info.class_name
 ; ",
                 array('wkd' => $n,
-                    'sess' => Yii::app()->params['currentSession']));
+                    'sess' => Yii::app()->params['currentSession']))
+                    as $c)
+            {
+                $classes[$n][] = $c;
+            }
 
-            $max = max($max, count($classes[$n]));
         }
         
-        // TODO: reslice the classes array
-
 
 		$this->render('weekday',array(
-			'classes'=>$classes_formatted,
+                          'classes'=>$cf,
 		));
 	}
 
