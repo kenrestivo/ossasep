@@ -80,5 +80,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'krestivo@restivo.org',
+        'currentSession'=> 1,
 	),
 );
