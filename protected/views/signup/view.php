@@ -24,6 +24,7 @@ $this->menu=array(
         'class.class_name',
         'signup_date',
         'status',
+        'scholarship',
         'note'
 	),
 )); ?>

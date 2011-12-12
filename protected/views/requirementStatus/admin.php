@@ -47,8 +47,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'received',
         'expired',
         'note',
-		array(
-			'class'=>'CButtonColumn',
-		),
+        array(
+            'class'=>'CompositeButtonColumn',
+            'viewButtonUrl'=>Yii::app()->controller->createUrl("view",$model->primaryKey),
+            'updateButtonUrl'=>Yii::app()->controller->createUrl("update",$model->primaryKey),
+            'deleteButtonUrl'=>Yii::app()->controller->createUrl("delete",$model->primaryKey),
+            ),
+
 	),
 )); ?>

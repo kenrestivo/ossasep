@@ -49,6 +49,11 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'signup_date'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'scholarship'); ?>
+		<?php echo $form->checkbox($model,'scholarship'); ?>
+		<?php echo $form->error($model,'scholarship'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>

@@ -22,6 +22,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
 	<?php echo CHtml::encode($data->status); ?>
 	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('scholarship')); ?>:</b>
+	<?php echo CHtml::encode($data->scholarship); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
 	<?php echo CHtml::encode($data->note); ?>

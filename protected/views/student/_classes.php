@@ -15,6 +15,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'value' => '$data->class->description'),
                       'signup_date',
                       'status',
+                      'scholarship',
                       'note',
                       array(
                           'class'=>'CompositeButtonColumn',

@@ -418,6 +418,7 @@ CREATE TABLE `signup` (
   `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
   `signup_date` date DEFAULT NULL,
+  `scholarship` tinyint(1) default false NOT NULL,
   `status` ENUM('Enrolled', 'Waitlist' ,'Cancelled') default 'Enrolled',
     note VARCHAR(256),
   PRIMARY KEY (`student_id`,`class_id`),

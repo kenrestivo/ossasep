@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'signup':
  * @property integer $student_id
  * @property integer $class_id
+ * @property integer $scholarship
  * @property string $signup
  * @property integer $status
  */
@@ -41,11 +42,11 @@ class Signup extends CActiveRecord
         // will receive user inputs.
         return array(
             array('student_id, class_id', 'required'),
-            array('student_id, class_id', 'numerical', 'integerOnly'=>true),
+            array('student_id, class_id,scholarship', 'numerical', 'integerOnly'=>true),
             array('signup, status,note', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('student_id, class_id, signup, status', 'safe', 'on'=>'search'),
+            array('student_id, class_id, signup, scholarship, status', 'safe', 'on'=>'search'),
         );
     }
 
@@ -72,6 +73,7 @@ class Signup extends CActiveRecord
             'class_id' => 'Class',
             'signup_date' => 'Signup',
             'status' => 'Status',
+            'scholarship' => 'Scholarship',
             'note' => 'Note'
         );
     }
@@ -90,6 +92,7 @@ class Signup extends CActiveRecord
         $criteria->compare('student_id',$this->student_id);
         $criteria->compare('class_id',$this->class_id);
         $criteria->compare('signup_date',$this->signup,true);
+        $criteria->compare('scholarship',$this->signup,true);
         $criteria->compare('status',$this->status);
 
         return new CActiveDataProvider($this, array(

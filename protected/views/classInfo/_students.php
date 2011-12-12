@@ -22,6 +22,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.parent_email',
                       'signup_date',
                       'status',
+                      // NOTE i am deliberately NOT showing scholarships here
                       'note',
                       array(
                           'class'=>'CompositeButtonColumn',
