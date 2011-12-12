@@ -7,6 +7,7 @@
    * @property integer $instructor_id
    * @property integer $requirement_type_id
    * @property string $received
+   * @property string $note
    * @property string $expired
    */
 class RequirementStatus extends CActiveRecord
@@ -41,10 +42,11 @@ class RequirementStatus extends CActiveRecord
 		return array(
 			array('instructor_id, requirement_type_id', 'required'),
 			array('instructor_id, requirement_type_id', 'numerical', 'integerOnly'=>true),
-			array('received, expired', 'safe'),
+			array('received, expired, note', 'safe'),
+			array('note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('instructor_id, requirement_type_id, received, expired', 'safe', 'on'=>'search'),
+			array('instructor_id, requirement_type_id, received, expired, note', 'safe', 'on'=>'search'),
             );
 	}
 
@@ -75,6 +77,7 @@ class RequirementStatus extends CActiveRecord
 			'requirement_type_id' => 'Requirement Type',
 			'received' => 'Received On',
 			'expired' => 'Expires On',
+			'note' => 'Note',
             );
 	}
 
@@ -96,6 +99,7 @@ class RequirementStatus extends CActiveRecord
 		$criteria->compare('received',$this->received,true);
 
 		$criteria->compare('expired',$this->expired,true);
+        $criteria->compare('note' ,$this->expired,true);
 
 		return new CActiveDataProvider('RequirementStatus', array(
                                            'criteria'=>$criteria,

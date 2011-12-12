@@ -22,6 +22,7 @@ $this->menu=array(
         'instructor.full_name',
         'requirement_type.description',
         'received',
-        'expired'
+        'expired',
+        'note',
 	),
 )); ?>

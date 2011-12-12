@@ -71,6 +71,11 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'expired'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'note'); ?>
+		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'note'); ?>
+	</div>
 
 
 	<div class="row buttons">

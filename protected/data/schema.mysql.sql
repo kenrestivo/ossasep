@@ -316,6 +316,7 @@ CREATE TABLE `requirement_status` (
   `requirement_type_id` int(11) NOT NULL,
   `received` date DEFAULT NULL,
   `expired` date DEFAULT NULL,
+  `note` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`instructor_id`,`requirement_type_id`),
   KEY `requirement_type_id` (`requirement_type_id`),
   CONSTRAINT `requirement_status_ibfk_1` FOREIGN KEY (`instructor_id`) REFERENCES `instructor` (`id`),

@@ -15,8 +15,16 @@
 	<?php echo CHtml::encode($data->requirement_type_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('percentage')); ?>:</b>
-	<?php echo CHtml::encode($data->percentage); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('received')); ?>:</b>
+	<?php echo CHtml::encode($data->received); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('expired')); ?>:</b>
+	<?php echo CHtml::encode($data->expired); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
+	<?php echo CHtml::encode($data->note); ?>
 	<br />
 
 
