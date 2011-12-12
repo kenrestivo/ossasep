@@ -1,0 +1,809 @@
+iasep notes
+
+yii has no accounting shit built in
+
+
+php accounting sw
+	http://www.weberp.org/
+	http://www.ledgersmb.org/
+		no payroll?
+	http://www.bambooinvoice.org/
+		no payroll
+	http://phpbms.org/
+		mostly an order system
+
+
+what does she need really?
+	- products are simple, just classes with limited # of spots
+		- scheduling?
+	- A/R
+	- payroll (possibly A/P?)
+	- some simple reporting
+	- yeah, online ordering would be nice
+
+
+
+	http://hostname/path/to/index.php?r=tTeacher
+
+dependent ajax dropdowns
+	http://www.yiiframework.com/wiki/24/
+	this is a MUCH better version
+		chttml dropdown already has an ajax update function built in!
+	nice! with ajaxhtml, you can output html, and it'll  get pooted into the page!
+		like, a NEW form!
+
+----------------------
+heidi notes 10/19/11
+
+agreements are per class per teacher per YEAR (not per session)
+
+businesses have to have licenses, insurance, tb, contract, and agreement, fingerpr (soon)
+
+teachers, just contrract, w9 and agreement
+
+parents, need fingerprint, tb, contract, w9, and agreement
+
+fingerprint
+	process (in process)
+	pass
+
+
+nice to have links to
+	w9
+	fielduseapp  (facilities use permit)
+
+
+deposit form, for the osspto treasurer
+	in excel format
+
+
+for each class, some list of dates
+	calendar popup
+	auto populate from SCHOOL calendar
+
+maybe dump it into google calendar
+	then we don't need this at all
+
+there are ALWAYS exceptions to the number of students
+
+waitlist
+	turn in check
+	check gets held
+	check gets returned
+
+
+note payee that it is correct on check
+
+there's a formula for teachers by class
+
+
+there's a date they get paid
+	she requests the check, the check gets written, she receives it,
+		note the date, check# and amount
+	if they add people later in session
+	there are checks in and checks out then
+
+when people add later
+	they can pay for some less than maximum # of sessions
+
+auto enter stuff
+
+enrollment form is sometiems incorrect
+	she needs to prepopulate
+	roster is now in xl yay
+
+
+
+
+----------------
+great general notes on mysql
+	http://www.anchor.com.au/hosting/support/CreatingAQuickMySQLRelationalDatabase
+
+
+google calendar api
+	http://code.google.com/apis/calendar/data/2.0/developers_guide_protocol.html
+	oauth to get in
+	http://code.google.com/apis/calendar/data/2.0/developers_guide_protocol.html#Auth
+
+
+caldav (android)
+	http://wiki.davical.org/w/CalDAV_Clients/Android
+
+yii calendar
+	http://www.yiiframework.com/extension/calendar/
+	somewhat more crude: http://www.yiiframework.com/extension/simple-calendar/
+
+	
+note: models in sql are fk is PARENT. so parents don't have awareness of children, children only have awareness of parents.
+
+--------------------
+
+for things like picking requirements
+	it'll be a choose from choose from
+	
+there will be a fair amount of fillingin via code/model 
+
+
+import csv
+	http://www.yiiframework.com/extension/importcsv/
+	no, it doesn't work, and fails in a stupid way. fuck that.
+
+
+on windoze, this:
+LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n';
+
+
+on linux, this:
+LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	parent_4, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3, 	email_parent_4, 	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
+
+omit "local" if the file is on the server
+
+the order IS IMPORTANT, if it's wrong, everythign breaks
+
+
+nested forms are sub forms
+http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
+
+tabular forms, grids
+	http://www.yiiframework.com/doc/guide/1.1/en/form.table
+	http://www.yiiframework.com/extension/htmltable/
+		it is just sortable, not pagable. good for small data sets?
+	http://www.yiiframework.com/extension/multimodelform
+		very cool, looks like this could be good
+	http://www.yiiplayground.cubedwater.com/index.php?r=UiModule/dataview/gridStyle
+			well looks styley but does nothing. useless
+	http://www.yiiframework.com/extension/bcoregrid/
+		mark grid, do multiple operatinos like delete, checkbox on each
+	http://www.yiiframework.com/extension/ztabularinputmanager/
+		engllish terrible. maybe code good?
+	http://www.yiiframework.com/wiki/141/javascript-tabular-input/
+		javascript style, ztabular uses it
+
+drag/drop, trees, combo boxes and stuff
+	http://www.yiiframework.com/extension/emultiselect/
+		very nice multiselect drag and drop, jquery-ish, orderable
+	http://www.yiiframework.com/extension/combobox/
+	http://www.yiiframework.com/extension/nestedsetadmingui/
+	this is really more of a tree view with drag and drop actualy
+	http://radakovicstevan.wordpress.com/2011/10/04/45/
+	CTree widget really, works jsut fine
+	
+form add this
+http://www.yiiframework.com/extension/activecolumn/
+
+ajax tabs?
+	http://www.yiiframework.com/extension/sl-ajax-tabs/
+
+grid columns with running totals
+http://www.yiiframework.com/extension/gridcolumns/
+	http://www.yiiframework.com/extension/gridcolumns
+
+
+multilevel dropdown
+http://www.yiiframework.com/extension/mcdropdown/
+
+ajax menu?
+	http://www.yiiframework.com/extension/ajaxmenu/
+
+	ajax submit is here:
+		http://code.google.com/p/yii/issues/detail?id=2008
+
+
+
+date widgets
+http://www.yiiframework.com/extension/cal/
+	WOW, this is a full calendar, google cal like!
+		http://arshaw.com/fullcalendar/
+	and it integrates with google cal too
+		http://arshaw.com/fullcalendar/docs/google_calendar/
+http://www.yiiframework.com/extension/activedatelist/
+http://www.yiiframework.com/extension/ehtmldataselect/
+http://www.yiiframework.com/extension/simple-calendar/
+http://www.yiiframework.com/extension/jtimepicker/
+	time picker, for start time?
+	it looks pretty good, has am/pm, and constraints too (end time)
+	http://fgelinas.com/code/timepicker/
+http://www.yiiframework.com/extension/fullcalendar/
+	full google-like calendar, looks like
+	apparently doesn't have working ajazy stuff
+http://www.yiiframework.com/extension/clockpick/
+http://www.yiiframework.com/extension/jui/
+	various jquery isms!
+http://www.yiiframework.com/extension/availability/
+	nice, for showing availability, like heidi's calendar
+http://www.yiiframework.com/extension/activedateselect/
+add a jtimepicker to jdatepicker:
+	http://trentrichardson.com/examples/timepicker/
+	
+unknown widgets
+http://www.yiiframework.com/extension/updatedaddthis/
+	naw, that's some kind of facebook/reddit thing
+
+popup dayofweek
+	http://www.yiiframework.com/forum/index.php?/topic/4180-snippet-dropdown-date-picker/
+
+
+shit tonnes of datepickers
+http://www.bitrepository.com/a-collection-of-free-javascript-date-pickers.html
+including full calendars
+
+	
+formatting and dates
+http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
+
+	other
+	exprot to eexcel
+		http://www.yiiframework.com/extension/eexcelview/
+
+	signals
+		http://www.yiiframework.com/extension/signals-module/
+		
+---------
+todo
+
+
+---------------------
+
+god damn, dealing with deleting foreign keys, it's a nightmare come back to me
+	http://www.yiiframework.com/forum/index.php?/topic/12740-foreign-key-constraints/page__st__20
+
+
+i really should use innodb then.
+
+note: the innodb_models version is very very good.
+
+
+and now cbuttoncolumn is fucked up
+
+this supposedely fixes it
+
+
+columns'=>array(
+    array(
+        'class'=>'CButtonColumn',
+        'viewButtonUrl'=>'Yii::app()->controller->createUrl("view",$data->primaryKey)',
+        'updateButtonUrl'=>'Yii::app()->controller->createUrl("update",$data->primaryKey)',
+        'deleteButtonUrl'=>'Yii::app()->controller->createUrl("delete",$data->primaryKey)',
+    ),
+// etc.
+
+no, that's stupid, here's another solution
+http://www.yiiframework.com/forum/index.php?/topic/7865-composite-primary-key/
+
+
+next steps
+
+activedropdownlist???!!!
+	there already is one?? and itworks
+
+ok seriously wtf
+	here's one approach
+		http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/
+			GODD DAMN HOW TO VALIDATE!!!
+	here's another:
+		http://www.yiiframework.com/doc/api/1.1/CHtml#activeDropDownList-detail
+
+	detail view
+		http://www.yiiframework.com/forum/index.php?/topic/11892-display-data-from-other-model-by-some-key/
+
+		detailviews suck though. i hate them. they want gridview, not detailview
+		<?php $this->widget('zii.widgets.CDetailView', array(
+        'data'=>$model,
+        'attributes'=>array(
+                'id',
+                'name',
+                'nameOfRelationWithModelB.fieldOfB', // Hope you understand this!!
+
+
+
+i swear to fuck
+
+	public static string activeDropDownList(CModel $model, string $attribute, array $data, array $htmlOptions=array ( ))
+	public static string dropDownList(string $name, string $select, array $data, array $htmlOptions=array ( ))
+
+	ok i get it
+	Tis method is a wrapper of CHtml::activeDropDownList. Please check 
+               CHtml::activeDropDownList for detailed information about the 
+               parameters for this method."
+	so $form->dropDownList is the right thing to use
+
+
+java -jar /usr/local/share/schemaspy/SchemaSpy.jar -dp /usr/local/share/schemaspy/mysql-connector-java-5.1.6-bin.jar -t mysql -o schemas -host 127.0.0.1 -db asep -u root -p testing
+
+
+
+-----
+hairy ass multi joins and saves
+
+i will need composite primary keys,
+	http://yiiframework.ru/doc/guide/en/database.ar
+	http://www.yiiframework.com/doc/api/1.1/CActiveRecord#primaryKey%28%29-detail
+	crud won't work, but oh well.
+
+	it doens't support it!! this is NASTY
+	possible solutionx
+		http://www.yiiframework.com/forum/index.php?/topic/7865-composite-primary-key/
+
+	http://www.yiiframework.com/forum/index.php?/topic/23272-problem-saving-models-with-composite-primary-key/
+		ah, better, cleaner
+		have to do it AT SAVE TIME
+			$arTypeCategory->primaryKey = array('type_id' => $typeId,
+										'category_id' => $arCategory->id);
+			$arTypeCategory->save();
+		i will have to index the keys in innodb, dunno about isam tho
+	well what the fuck, someone wrote an extension to do this basic task:
+		http://www.yiiframework.com/extension/cadvancedarbehavior/
+		
+	even better and from core devs!
+		 https://github.com/yiiext/with-related-behavior
+		 	that does only the back-end AR stuff. doesn't do gui's
+		well, this is just saving i think.
+			it is, however, very cool!!
+			no it very sucks! it's one massive case statemnt, unreadable
+			and, it fucking doesn't work with arrays
+
+	tab view thenn
+		http://www.yiiframework.com/extension/jui/
+			this may conflict with other stuff though.
+
+
+aha! to save a multi-model form, subform, etc
+	http://www.yiiframework.com/doc/guide/1.1/en/form.builder
+			
+	worth noting
+		http://tipstank.com/2010/06/18/yii-uses-database-primary-key-when-findbypk-using-composite-key/
+
+
+I guess this is expected behavior. Issue was that 'id' was not a required attribute for this model. Hence massive assignment prohibited by CFormInputElement::evaluateVisible(). :rolleyes: 
+
+$models=Company::model()->with('companyTrainings','trainings')->findAll();
+	via http://www.yiiframework.com/forum/index.php?/topic/18275-relation-many-many-with-info-column-in-relation-table
+
+	this old skool
+		http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/
+		doing it manually, creating models, stuffing the id's in there, blah
+			but, could use withrelatedbehavior and have it work
+		
+ajax gridview
+http://www.yiiframework.com/forum/index.php?/topic/10861-renderpartial-ajax-cgridview/
+	this is for having an ajaxview being its own thing
+	i don't know how it would degrade though. advanced technique
+	and clientscripts breakd
+
+ajaxlinks
+http://www.yiiframework.com/forum/index.php?/topic/10254-ajaxlinks-with-renderpartial/page__p__50394__fromsearch__1&#entry50394
+	hmm, there is a bug in the ajax view. and debugging ajax ia a pita.
+		don't do it.
+	"The problem is with ClientScript, when your try to do too complicated stuffs it don't works fine."
+
+
+ajax gridviews
+http://www.yiiframework.com/wiki/163/avoiding-rendering-entire-page-when-using-cgridview-via-ajax/
+
+sorting in cgridview, MUST HAVE NAME
+http://www.yiiframework.com/forum/index.php?/topic/25511-cgridview-sorting-strangefully-disappeared/
+
+ajax buttonos for sumbit
+http://www.yiiframework.com/wiki/164/updating-fields-on-a-form-with-ajax-and-json/	this really isn't an ajaxsumbit, it's an ajax update dropdown list.
+	but very cool jus the same!
+
+
+this is what i want!! for adding without going to a new page!
+	http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
+		it openns a dialog box to do the entry. i like i like
+		there are hacks required to make it work right though
+	
+	http://www.hollowdevelopers.com/2011/01/09/cjuidatepicker-cactiveform-yii-framework/
+		this is very easy, just a simple datepicker jquery dropdown
+
+		
+	ajax validation
+	http://learnyii.blogspot.com/2010/12/yii.html
+
+
+wait, you can't select on join tables?
+http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/
+
+this owrks:
+$si = Signup::model()->with('student','class')->findAll();
+
+huh, this works too:
+	$criteria=new CDbCriteria;
+	$criteria=new CDbCriteria(array('condition'=>'t.status=4'));
+	$si = Signup::model()->with('student','class')->findAll($criteria);
+	
+	
+
+coudl use query builder for more flexible queries
+	http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder
+	but it's ->object()->bullshit()->
+	$command = Yii::app()->db->createCommand();
+
+ooh cool, i can force regular sql in there!
+
+	
+or dao
+	http://www.yiiframework.com/doc/guide/1.1/en/database.dao
+	   $connection=Yii::app()->db; 
+ 	  $command=$connection->createCommand('select * from student where id=1');
+	  
+	that didn't work. but this does:
+	  
+ $c = Yii::app()->db->createCommand();
+  $c->text = "select foo from bar where quux = :quux";
+  $r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
+
+
+hmm, ok this works too:
+$c = Yii::app()->db->createCommand("select foo from bar where quux = :quux");
+$r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
+
+
+HEY THIS IS AWESOME!
+
+i can do sql queries on models!
+$data = Entries::model()->findBySql43("SELECT * FROM entries WHERE id = $id");
+
+
+
+almost helpful:
+    Something::model()->findAllByAttributes(
+						array('attr'=>'value'), 
+			            array('order'=>'columnName'));
+
+
+-----------------
+  
+let's try from class
+$cl = ClassInfo::model()->with('signups')->findAll();
+
+	  
+---------------
+loading intermediate models
+
+	explicitly relate it: (eager loading)
+		'viewerWatchedMovies' => array(self::HAS_MANY,
+									'ViewerWatchedMovie', 'viewer_id'),
+	and explicitly call it:
+		$vs =  Viewer::model()->with('viewerWatchedMovies.movie')->findAll();
+
+	this'll work too
+		ViewerWatchedMovie->movie->find($viewer)
+
+
+THIS ACTUALLY WORKS!!
+	http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/page__st__40__gopid__123634#entry123634
+
+	$moviesJoin = $viewer->moviesJoin[0];
+	
+	For max effective you can do that:
+	$viewer = Viewer::model()->with(array('movies','moviesJoin'))->findByPk($id);
+	 $viewer->jointable[3] 
+     relates to to $viewer->movies[3]
+
+
+		
+----------
+thrashing on subviews
+		http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
+ http://www.yiiframework.com/forum/index.php?/topic/6844-arrays-as-dataprovider/
+
+hmm, this
+hp $this->widget('zii.widgets.grid.CGridView', array(
+'dataProvider'=>new CArrayDataProvider($list, array()),
+ )); 
+?>
+
+ 
+
+ curl -D - -c /home/localkens/oceanshore/asep/testcookies -o /home/localkens/oceanshore/asep/logs/errordealer.php --trace-ascii /tmp/dump -d "XDEBUG_SESSION_START=emacs" http://localhost/asepgui/index.php/classInfo/index
+
+ 
+works.
+	now, cbuttoncolumn is my beeyatch
+	http://www.yiiframework.com/wiki/106/using-cbuttoncolumn-to-customize-buttons-in-cgridview/
+
+
+
+cjui widget?
+
+
+oh y9ou GOTTA Be kidding!!!??
+
+http://learnyii.blogspot.com/2010/12/yii-how-to-display-related-hasmany-grid.html
+
+http://learnyii.blogspot.com/2010/12/yii-how-to-display-related-hasmany-grid.html
+	doesn't work
+------------
+enum for dropdown for status
+
+	http://www.yiiframework.com/forum/index.php?/topic/10079-enum-db-type-in-yii/
+	http://www.yiiframework.com/wiki/48/by-example-chtml
+
+
+these are AWESOME
+http://www.yiiframework.com/wiki/48/by-example-chtml/
+
+cgridview
+array(            // display 'create_time' using an expression
+            'name'=>'create_time',
+            'value'=>'date("M j, Y", $data->create_time)',
+        ),
+
+
+	
+gridview will be key for stuff like checks, classlists, everything really
+
+
+alter table class_info change day_of_week day_of_week ENUM('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') ;
+
+
+portlets are interesting! they're like dialog boxes, or can be used as them
+	you just echo a bunch of html, it puts it in that little dialog
+	could be a GREAT way to do popups
+		i'd still need ajax submit though. portlets are just css presentation
+	more on portlets
+		http://www.yiiframework.com/doc/blog/1.1/en/portlet.menu
+
+
+--------------------
+more on save related
+
+$user = User::Model()->findByBk($id);
+
+$thing = new Thing();
+$thing->prop = 'value';
+
+$user->things[] = $thing;
+
+$user->withRelated->save(true, array('things'));
+
+
+
+WOW, relation listbox!!
+	http://www.yiiframework.com/extension/relation/
+	automatically populates, most of what i need?
+	used it for checkboxes, it works. the 2-pane does not tho
+
+
+RequirementType[description]=Fingerprint
+RequirementType[InstructorType][]=1
+RequirementType[InstructorType][]=2
+RequirementType[InstructorType][]=3
+RequirementType[InstructorType][]=4
+yt0=Save
+
+
+hmm, why wrong?
+was: insert into required_for (instructor_type_id, requirement_type_id) values ('5', '1') 
+Tg
+y
+
+
+auugh
+  viewButtonUrl
+  Yii::app()->urlManager->createUrl("Signup/view",$data->primaryKey)
+
+this is what started the madness
+ http://www.yiiframework.com/forum/index.php?/topic/3741-auto-breadcrumbs/
+ 
+--------------
+ tabs, going to need them, this shit is getting hairy
+  	cjuitabview if i want ajax/jquuery, in core
+	or ctabview too, already  in there corredt oo
+	ctab is nicce, i can give it content, or view/partials
+		http://www.eha.ee/labs/yiiplay/index.php/en/site/widget?view=tabs_simple
+
+
+auughgh!!!! getting/setting the state when coming back!!
+
+    public function setTabState() {
+        $state = Yii::app()->user->setState(
+            'tabstate',
+            array(Yii::app()->request->requestUri => '');
+        
+    }
+
+    public function getTabState() {
+        $state = Yii::app()->user->setState('tabstate');
+        Yii::app()->request->requestUri
+    }
+won't work though. because tabs are chosen in js, the server does not know
+
+
+my god, i need to do this hack
+http://codinginparadise.org/weblog/2005/08/ajax-tutorial-saving-session-across.html
+
+or use cjuitabs
+
+
+--------------
+filtering the datepicker
+
+$('.selector').datepicker({
+   beforeShowDay: function(date) { ... }
+});
+
+must return array
+	[0] equal to true/false indicating whether or not this date is selectable,
+	[1] equal to a CSS class name(s) or '' for the default presentation, and
+	[2] an optional popup tooltip for this date
+
+
+jQuery(function($) {
+	jQuery('#ClassMeeting_meeting_date').datepicker(
+		{'showAnim':'fold',
+		'showButtonPanel':true,
+		'autoSize':true,
+		'dateFormat':'yy-mm-dd',
+		'defaultDate':null});
+});
+
+
+that's generated by
+
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'meeting_date',
+  'value'=>$model->meeting_date,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->meeting_date,
+   ),
+
+
+ this is ridiculous. it's really easy for a human being to sit there with a physical school calendar, and go "ok, 8 wednesdays, let's do this"
+
+
+ interseting. modules and controllers amnd componetns can have thir own layouts
+ 	separate from the main site layout.
+2
+
+hmm, ajax time
+	$('rasta')[3].value
+
+
+-------------
+company for checks is a link
+	but it MUST MUST match up with the company for the instructors!
+	but here's the deal. checks are ALWAYS AND FOREVER done
+	once they're written, you can't change who they were written to
+	but you CAN change who is assigned to teach a class
+	the history of checks already written MUST NOT CHANGE
+	so it makes good accounting sense to keep the company_id in checks
+		so you can search for it later on
+	it does however need to get auto-filled in i think.
+		maybe a validatino constraint at enter or save time
+	also, make check_num NOT INT, could be "cash"
+
+	
+ahaa! so it is just operations.li that needs to be inline to make horiz menu work
+
+
+
+aha, batch update
+	http://www.yiiframework.com/doc/guide/1.1/en/form.table
+	this might work for checks, or students, or all kinds of stuff
+
+
+select school_day from school_calendar where day_off = false and minimum = false and dayofweek(school_day) = 4 and school_day > '2011-10-01'  and school_day < '2011-12-14';
+
+
+god DAMMIT! to have a single-sided create, i have to override some ar bullshi
+	http://www.yiiframework.com/forum/index.php?/topic/11960-preferred-way-to-set-dynamic-default-values-in-a-cactiverecord-model/
+	HATE HATE HATE ACTIVERECORD!!
+
+
+
+custom validatino rules
+http://www.yiiframework.com/forum/index.php?/topic/9205-difrent-validation-rules-depending-on-selected-options/
+just sstick it in the model!
+public function address1Required()
+{
+    if ($this->address1)
+    {
+         CRequiredValidator::validate($this, array('country1', 'city1', 'zip1', 'address1'))
+    }
+}
+
+
+
+scenarios
+http://php-thoughts.cubedwater.com/2009/validation-scenarios/
+
+
+that's it! i needed to have a scenario in place to not check validation for it!
+let's see if i can do that again
+
+------------
+some multiselect stuff
+	jamselct is very nice for select multiple
+	in yii http://www.yiiframework.com/extension/jamselect/
+	http://code.google.com/p/jquery-asmselect/
+	http://www.ryancramer.com/projects/asmselect/examples/example1.html
+
+	an even mroe bandcampy way:
+		http://www.suumit.com/projects/bsmSelect/examples/index.html
+
+
+	
+-----
+tabular
+http://www.yiiframework.com/forum/index.php?/topic/6218-cform-and-tabular-input/
+http://www.yiiframework.com/wiki/141/javascript-tabular-input/
+
+
+editable!! jquery!
+	then stuff can be edited in place. excel-style. they'll love it.
+	not so much for adding though, but i could use wizards for that.
+	http://datatables.net/
+
+	this is the ajax + editable best example:
+		http://datatables.net/release-datatables/examples/server_side/editable.html
+		though it is complex because it ajaxes the display
+	AHA! this is how to add id's for the rows, for clickbacks/tracking!
+		http://datatables.net/release-datatables/examples/server_side/ids.html
+		
+	
+	http://www.appelsiini.net/projects/jeditable
+		submitdata would be the way to get the id's (esp for composite) in	
+
+import follies!
+0	Name
+(1 	nothing)
+2	Grade
+3	Contact Name
+4	Email
+5	Emergency Contact
+6	2nd Emergency Contact
+7	3rd Emergency Contact
+(8	Check amt)
+(9	check num)
+10	Notes	
+
+
+
+LOAD DATA local INFILE '/tmp/out.csv' INTO TABLE student FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (first_name, 	last_name, 	grade, 	emergency_1, emergency_2, emergency_3, parent_email, note);
+
+
+
+
+0	shortname
+1  teacher
+2  min stu
+3  max stu
+4  min grade
+5  max grade
+6  weekday
+7  start
+8  end
+9  location
+10  price
+11  extra
+12  payto
+13:  description
+
+
+better, summarixed
+
+0 class
+1 minstu
+2 maxstu
+3 mingrade
+4 maxgrade
+5 dayofweek
+6 start
+7 end
+8 location
+9 fee
+10 descriopto
+
+
+------
+
+nice date-grouped gridview
+http://www.yiiframework.com/extension/xdateview/

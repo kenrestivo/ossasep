@@ -1,0 +1,241 @@
+TODO for asep
+
+reports first! THEN DO THE UI AGAIN based on the reports. try that.
+	M schedule by day of week
+	A class summaries, financial
+	C calculating payments for teachers
+	D payments for companies
+	E the sign up sheet
+	N description (the big ms word thing?)
+		JUST the generated parts: schedule, descrpitions, checkboxthing
+
+
+wait wait what.
+	the checks should be applied to a SIGNUP!
+		student and class. that's a signup.
+		BIG change, make it.
+		that'd mean having an invoice number. it scares me.
+	i could just apply the check to a signup
+		but would have to make sure a signup exists.
+		
+
+validation/integrity checks needed
+	http://www.yiiframework.com/extension/composite-unique-key-validatable/es
+	splits add up! for checks, and for instructor percentages
+		checks being the REALLY IMPORTANT ONE
+	the student must be signed up for that class before it gets paid
+	in other words, the two keys have to be dependent on each other
+		an onchange validation, need to populate the other box
+		and on validation, need to make sure they are signed up for the class
+			before allowing them to pay for it
+
+		
+general gui questions MUST get dealt with
+	sorting!
+	searching!
+
+
+small ui things
+	finish putting datepickers in
+		check expense
+		check income
+		deposit
+		schoolcalendar
+		expensse
+		income
+
+
+gui conundrums wrapped in enigmas
+	dealing with income/expense splits (and teacher splits too)
+	payments -> deposits
+		i'll really need a pick list here!
+		will need to pick the checks AT THE SAME TIME as entering
+		of all payments not yet assigned to a deposit.
+		how to move them to and fro?
+		deposits MUST calculate out too
+			there's a whole lot of reconciling that needs to go on here.
+		will need a picklist of checks-not-yet-deposited
+			this could be VERY easy.
+			by default, a new deposit should have all of them.
+	how to handle teachers who are students?
+		reflextitve relation. dammit. they're not teachers of THIS
+	checks get returned, she said, if they're waitlisted
+		
+---------------
+CLEANUP
+
+vital
+	trap exceptions on save,  if there's an integrity constraint!
+	add an EMPTY as a default for deposit on checks!	
+	i need a wide layout with menu at top, major css/layout stuff
+		it needs to be integrated into class for sure, and student
+		i have it in a branch menuthrash. works with clips, nice!
+	use either breadcrumbs or returnto, but be consistent!
+		breadcrumbs is cleaner than returnto, but will it work?
+
+	
+useful
+	default sort for everytbing
+	new student wizard really. ajaxy: class->student->import->signup
+	new on pulldowns!! so new instructor at end of pulldown for instructor
+	now make the save() actions check breadcrumbs, not returnto
+	make the signup and received papework dates default to today on create
+		js? or controller? i think it is easy, in controller prolly
+	trap exception on populate for school days
+	cjuiautocomplete for some things
+	to avoid confusion, special case the company stuff
+		if company is not PTO, show delivered, not deposited
+			else  show deposited, not delivered
+		if instructor type is company, show the company popup
+			else hide company popup
+		javascript in forms, something else in view
+
+cosmetic
+	use the roster as the template for any index views, i have the css nice
+	modify karraydataprovider to have an attributeLabels function?
+		or otherwise provide the correct labels for these columns!
+		column names for student and other links in cgridviews
+		probably add a function to karrayprovider to grab them from model!
+			it's unclear where this stuff comes from
+	hide the view Cbutton for linktables, there's nothing to see anyway
+		at least in cgridviews, sometimes
+		or make it link to the dependent table, makes more sense
+	year bump buttons on the expired and received datepickers
+		didn't i do that already?
+	write a dataprovider to show the requirements as an array, for view
+		do the SQL, pull it all out of the db, show OK, not OK, etc
+	dependent date/timepickers, i.e. start/end intelligently
+	the goddamned times are wrong, they're not in am/pm time! they don't convert
+		this is the timepicker brokenness, fix it
+
+	
+take out the key columns from linktable forms-- one-sided not 2-sided
+	if i stick with those, if i don't replace them with something else
+
+
+
+----------------
+STUCK
+
+open questions
+	how do you know who to write the check to (from that report)?
+	deleting/cancelling a class
+	returning a check! do you just delete it?
+	cost PER class? extra costs? total cost? how?
+	will you have a case where the materials fee is NOT PER CLASS
+		i.e. per year?
+
+
+student payment status, i.e. enrollment with payment status
+
+
+ok, forms starting to make sense
+	for adding a check from student or class, DO NOT NEED TO SPLIT IT
+		hell, i alredy know the student, class, AND amount! 
+		just a single line, try cform builder!
+		and, i can not bother with a popup for check
+		hell, i can have an ajax popup for splits.
+			make that form optional for create, but NOT optional for editing
+	for adding payment through class or instructor, do NOT probably need it.
+		ask heidi about that one tho. maybe redirect for now.
+	for adding check through checks, put a tabular input!
+		keep it simple. js to add/remove rows.
+	for adding a payment through checks, will need tabular input
+	for adding a STUDENT to a class, just do one form with both models!
+		what if the students are already in there? it's just a signup.
+			most will be.
+			if not, then an entry?
+
+			
+finish the relational mappings
+	a way to create/edit/save a dependent model with ONE field in relation
+		or a FEW maybe
+		use tom__'s stuff i think
+		a common pattern, for a few important things
+			income
+			expense
+			signup
+			instructorassignmeent
+			requirementstatus
+	gui splits for income/expense
+		for now handle it like instructors
+			but the data entry would be way too complicated that way
+		
+
+
+----------------
+FUTURE REQUIRD
+
+must have for NEXT SESSION!
+	a way to track current session, and sort by it!
+		a menu at the top, i think: year, session. dependent dropdown
+		how to default to the current session?
+			i will PROBABLY need start/end dates for it in the session
+			then i can check today's date.
+			but, people will need to add classes for the NEXT session, no?
+		default session/sy. same as coop.
+			save in session.
+			check at every page load, choose now as default if nkt set.
+		save use default session unless set in get/post
+		in future, warn or disallow when saving to past sy/session
+	how to import/add new class from previous session
+	again, an ajaxything or something, a popup
+		but it's more than one model!
+		relational deep copy!
+		 	instructors, it'll need to create new joins for them. just them!
+			and extra fees too  probably
+			not students though. until parents sign them up! or income.
+
+
+must have for NEXT YEAR:
+	need some way to track the current school year. 
+		yes, i remember now!!!! it took today's date, calculated month!
+		so based on where you were in the calendar, you were this year or next
+		aha, i think it will be a named scope
+	picklist of STUDENTS could get huge, and need to be pared down
+		how to determine when kids are no longer in ocean shore??
+		current flag?
+		also, grade needs to be updated every year somehow
+	i will DEFINITELY need some kind of de-duping system
+		like i had to do for the coop. it'll have to happen.
+
+
+
+----------------
+BELOW THE LINE
+try editable datatable!
+	go back and replace many_many and advanced with has_many and with-related
+		requirementtype
+		instructortype
+
+joins from one side shouldn't have popups for that side!
+	i.e. signups from class shouldn't have  class as a popup
+	
+make a validation rule to make sure that the instructors aren't getting > 100 % !!
+	i.e. check to see if a class has > 100% total
+
+
+visual show/add meeting dates
+	a very quick datepicker adder!
+	just a date, not hidden, and boom, it adds, maybe even ajaxy.
+	in the meetingdates, join to school calendar and show that stuff!
+		
+
+----------------
+NOWHERE
+
+
+
+----------------
+DONE
+
+	get the button columns working
+		http://ipsedixit.net/2devnull/121/cbuttoncolumn-extension-yii-framework
+	maybe make day of week a proper dropdown with constants, enum
+		hmm, days of week in mysql are 1-7 starting sunday. no 0. enum's ok.
+		the dropdown is not properly showing the selected value
+			look at docs
+	new table for dropdown status,
+		enrolled, waitlist, cancelled
+			might get lazy and make this an enum too?
+	time of day, am/pm, jtimepicker thing for start/endtime

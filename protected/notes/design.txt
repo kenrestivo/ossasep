@@ -1,0 +1,120 @@
+	
+reports
+------------
+	A
+		class
+		= sum amt
+
+	B
+		osspto deposit, date
+		
+	C  (payment for teachers)
+		teacher
+		= sum amount due
+		classes
+			= percent it's paid for
+
+	D  (payment for companies)
+		company name
+		amount
+
+	E (sign up sheet?)
+		class
+			student (all info)
+			(waitlists)
+			checks??
+				amount paid
+				payment type? payee? (to osspto?)
+			
+	F ("emailable")
+		class
+			student
+				name
+				grade
+			(waitlists)
+			
+	G "sign up list with contacts"
+		class
+			student (all info)
+			(waitlists)
+
+	H "receipt"
+		Student.name
+		CLASS
+		Contact Name
+		Cost
+		payments.Check#
+
+	I	instructor report
+		class name
+		instructor
+			type (individual/company)
+			email
+			cell
+			otherphone
+			note
+
+	J "instructor paperwork"
+		teacher
+			type
+		class name
+		licence
+		insurace
+		fingerprint info
+		tb
+		contract
+		w9
+		agreement
+		notes (specific to this)
+
+	K deposit form
+		deposit details
+			all of em
+		checks
+			name
+			check
+			amount
+		= totals
+		
+	L "tentative schedule"
+		for the whole year 3 sessions
+		session m-f, notes
+		(also separate report-let: list of dates, not really needed)
+
+	M "schedule"
+		by day of week (l-r)
+			classname
+			teacher(s)
+			grade
+			time
+			room
+
+	N "description"
+		(the big ms word thing?)
+		number of weeks should count the weeks
+		this can be done manually/wordy
+
+	O (checks byy companies)
+		class
+		check
+			payer
+			check #
+			amount
+		total
+
+	P (maybe a duplicate)
+
+(wow, 18 reports/entry screens)
+	
+unclear how to handle
+-----------------------
+	waitlist
+		
+	splits/teachers
+			
+
+????
+----------
+	non-deposit?
+
+9
