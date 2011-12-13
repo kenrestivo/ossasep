@@ -17,6 +17,7 @@ if($model->instructors[0]->instructor_type_id == InstructorType::COMPANY_TYPE){
 ?>
 <br />
 
-<?php echo ZHtml::gradeFormat($model->min_grade_allowed); ?> - <?php echo ZHtml::gradeFormat($model->max_grade_allowed); ?> <br />
+<?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?>
+ <br />
 <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?> <br />
 <?php echo CHtml::encode($model->location); ?>

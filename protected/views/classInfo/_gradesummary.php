@@ -1,0 +1,1 @@
+<?php echo ZHtml::gradeFormat($model->min_grade_allowed); ?> - <?php echo ZHtml::gradeFormat($model->max_grade_allowed); ?>
