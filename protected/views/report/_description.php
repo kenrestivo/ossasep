@@ -52,6 +52,14 @@ echo     implode(', ',
                 $meetings
                 ));
 
+// the notes
+foreach($meetings as $mtg){
+    if($mtg->note != ''){
+        echo '&nbsp;' .  CHtml::encode('--' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
+    }
+}
+             
+
 ?>
 <br />
 <br />
