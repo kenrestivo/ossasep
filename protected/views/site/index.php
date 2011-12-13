@@ -1,6 +1,6 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<table>
+<table class="schedule">
 <tr>
   <th><h1>Main views</h1></th>
   <th><h1>Setup</h1></th>
@@ -43,9 +43,9 @@
 
 <td>
 
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a><br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a> <br />
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Weekday Schedule</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a><br />
 </td>
 
 
