@@ -7,8 +7,14 @@ $am=$model->active_meetings;
 
 <?
 if(count($am) < 1 ){
-    echo CHTML::link("Auto-Populate Meeting Days for ". $model->class_name, 
-                     array('populate','id' => $model->id));
+
+    echo CHtml::beginForm(array('populate', 'id' => $model->id));
+    echo "Auto-add dates: ";
+    echo CHtml::textField('num', 8, array('size' => 2));
+    echo CHtml::submitButton('Add');
+    echo CHtml::endForm();
+
+
     echo "<br />";
 }
 
