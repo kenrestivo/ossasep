@@ -60,4 +60,15 @@ class ReportController extends Controller
                     Yii::app()->params['currentSession'])));
     }
 
+
+    public function actionDescriptions()
+    {
+		$this->render(
+            'descriptions', 
+            array(
+                'classes' => ClassInfo::activeClasses(
+                    Yii::app()->params['currentSession'])));
+    }
+
+
 }
