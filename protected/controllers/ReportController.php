@@ -53,9 +53,10 @@ class ReportController extends Controller
 
     public function actionSignupBoxes()
     {
-        $classes = ClassInfo::activeClasses(Yii::app()->params['currentSession']);
-		$this->render('signupboxes', array('classes' => $classes));
-        
+		$this->render('signupboxes', 
+                      array(
+                          'classes' => ClassInfo::activeClasses(
+                              Yii::app()->params['currentSession'])));
     }
 
 }
