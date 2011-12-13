@@ -65,7 +65,7 @@ foreach($meetings as $mtg){
         echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
     }
 }
-             
+            
 
 ?>
 <br />

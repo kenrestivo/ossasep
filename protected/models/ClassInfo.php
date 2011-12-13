@@ -276,6 +276,24 @@ order by class_info.class_name",
     }
 
 
-
+    public function getDaysOff()
+    {
+        return SchoolCalendar::model()->findAllBySql(
+            "select school_calendar.school_day
+from school_calendar
+left join class_meeting 
+     on school_calendar.school_day = class_meeting.meeting_date
+        and class_meeting.class_id = :cid
+where school_calendar.school_day > :start
+      and school_calendar.school_day < :end
+      and dayofweek(school_calendar.school_day) = :wkday
+      and class_meeting.meeting_date is null",
+            array('start' => $this->session->start_date,
+                  'end' => $this->session->end_date,
+                  'wkday' => $this->day_of_week,
+                  'cid' => $this->id,
+                )
+            );
+    }
 
 }
