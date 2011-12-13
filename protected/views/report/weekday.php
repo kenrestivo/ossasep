@@ -1,14 +1,6 @@
 <table>
 
 <?php
-  /*
-    foreach($weekdays as $day => $classes){
-    print $day . '<br />';
-    foreach($classes as $class){
-    print $class->class_name . '<br />';
-    }
-    }
-  */
 
 print '<tr>';
 foreach($days as $day){
