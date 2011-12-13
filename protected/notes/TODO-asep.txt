@@ -3,6 +3,7 @@ TODO for asep
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	N description (the big ms word thing?)
 		JUST the generated parts: schedule, descrpitions, checkboxthing
+		the meeting dates, is where i left off
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies

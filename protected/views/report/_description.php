@@ -1,4 +1,4 @@
-<div>
+<div class="catalog" >
 
 <strong><u><?= $model->class_name ?></u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> <br />
 
@@ -25,6 +25,7 @@ Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $m
 </span>
 <br />
 
+<br />
 
 $<?= $model->cost_per_class ?> per week for an
 <?= $model->meetingCount ?>-week session
@@ -39,13 +40,17 @@ $<?= $model->cost_per_class ?> per week for an
 <u>please make $<?= $model->costSummary ?> check payable to   <?= $model->company->name;?>
 </u>
 <br />
+<br />
 <strong>Scheduled Meetings:</strong>
 <?php
 foreach($model->meetings as $mtg){
     // filter out makeup dates
-    if($mtd->makeup < 1){ 
+    if($mtg->makeup < 1){ 
         echo $mtg->meeting_date;
     }
 }
 ?>
+<br />
+<br />
+<?= CHtml::encode($model->description) ?>
 </div>
