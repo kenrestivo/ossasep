@@ -1,6 +1,9 @@
 <div class="catalog" >
 
-<strong><u><?= $model->class_name ?></u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> <br />
+<strong><u>
+     <?= CHtml::link($model->class_name, 
+                     array("/ClassInfo/view", 'id' => $model->id)) ?>
+</u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> <br />
 
 <span>Number of students: 
 
@@ -43,12 +46,11 @@ $<?= $model->cost_per_class ?> per week for an
 <br />
 <strong>Scheduled Meetings:</strong>
 <?php
-echo CHtml::encode(
-    implode(', ',
+echo     implode(', ',
             array_map(
                 function($i) { return $i->notated_date ; },
                 $meetings
-                )));
+                ));
 
 ?>
 <br />
