@@ -28,7 +28,7 @@ Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $m
 <br />
 
 $<?= $model->cost_per_class ?> per week for an
-<?= $model->meetingCount ?>-week session
+     <?= count($meetings) ?>-week session
 
 <?php 
      foreach($model->extra_fees as $fee){
@@ -43,7 +43,7 @@ $<?= $model->cost_per_class ?> per week for an
 <br />
 <strong>Scheduled Meetings:</strong>
 <?php
-foreach($model->meetings as $mtg){
+foreach($meetings as $mtg){
     // filter out makeup dates
     if($mtg->makeup < 1){ 
         echo $mtg->meeting_date;

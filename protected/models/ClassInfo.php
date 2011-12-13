@@ -81,6 +81,10 @@ class ClassInfo extends CActiveRecord
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
                                'order' => 'start_date'),
 			'meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
+			'active_meetings' => array(self::HAS_MANY, 
+                                       'ClassMeeting', 
+                                       'class_id',
+                                       'condition' => 'makeup < 1'), 
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(
                 self::HAS_MANY, 
@@ -227,21 +231,11 @@ order by class_info.start_time, class_info.class_name
     }
 
 
-    public function getMeetingCount()
-    {
-        $c = Yii::app()->db->createCommand(
-            "select count(class_meeting.id) as meetings
-from class_meeting
-where class_id = :cid
-      and class_meeting.makeup< 1");
-        $r=$c->queryRow(true, array('cid' => $this->id));
-        return $r['meetings'];
-    }
 
     public function getCostSummary()
     {
 
-        $total =  $this->meetingCount * $this->cost_per_class;
+        $total =  count($this->active_meetings)  * $this->cost_per_class;
 
         foreach($this->extra_fees as $f){
             $total += $f->amount;
