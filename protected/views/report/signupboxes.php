@@ -24,8 +24,8 @@
                               echo "<strong>" . CHtml::encode($coname) . "</strong>";
                           } else {
                               echo CHtml::encode($coname);
-                          }7
-                          ?>
+                          }
+                         ?>
                           </td>
      </tr>
 <?php } ?>

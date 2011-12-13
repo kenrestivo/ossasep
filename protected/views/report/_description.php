@@ -28,6 +28,16 @@ Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $m
 
 $<?= $model->cost_per_class ?> per week for an
 <?= $model->meetingCount ?>-week session
+
+<?php 
+     foreach($model->extra_fees as $fee){
+         echo "plus $" . $fee->amount . " for " . $fee->description;
+     }
+?>
+;
+
+<u>please make  <?= $model->costSummary ?> check payable to   <?= $model->company->name;?>
+</u>
 <br />
 
 </div>
