@@ -23,6 +23,9 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Overview' =>
                       $this->renderPartial("_overview", 
                                            array('model' => $model), true),
+                      'Extra Fees' =>
+                      $this->renderPartial("_extrafees", 
+                                           array('model' => $model), true),
                       'Students' =>
                       $this->renderPartial("_students", 
                                            array('model' => $model), true),
