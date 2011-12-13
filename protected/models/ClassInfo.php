@@ -238,6 +238,21 @@ order by class_info.start_time, class_info.class_name
         return $classes;
     }
 
+    public function getCostSummary()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select count(class_meeting.id) as meetings
+from class_meeting
+where class_id = :cid
+      and class_meeting.makeup< 1");
+        $r=$c->queryRow(true, array('cid' => $this->id));
 
+        $total = $r['meetings'] * $this->cost_per_class;
+
+        foreach($this->extra_fees as $f){
+            $total += $f->amount;
+        }
+        return $total;
+    }
 
 }
