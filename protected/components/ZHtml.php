@@ -68,6 +68,10 @@ class ZHtml extends CHtml
         return(date("H:i:s", strtotime($civ)));
     }
 
+    public static function shortDate($sqldate)
+    {
+        return date('n/j', strtotime($sqldate));
+    }
 
 
     /* 

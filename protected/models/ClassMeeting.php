@@ -104,4 +104,9 @@ class ClassMeeting extends CActiveRecord
 		));
 	}
 
+    public function getNotated_date()
+    {
+        return ZHtml::shortDate($this->meeting_date);
+    }
+
 }

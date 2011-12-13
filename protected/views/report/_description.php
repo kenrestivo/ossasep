@@ -43,12 +43,13 @@ $<?= $model->cost_per_class ?> per week for an
 <br />
 <strong>Scheduled Meetings:</strong>
 <?php
-foreach($meetings as $mtg){
-    // filter out makeup dates
-    if($mtg->makeup < 1){ 
-        echo $mtg->meeting_date;
-    }
-}
+echo CHtml::encode(
+    implode(', ',
+            array_map(
+                function($i) { return $i->notated_date ; },
+                $meetings
+                )));
+
 ?>
 <br />
 <br />
