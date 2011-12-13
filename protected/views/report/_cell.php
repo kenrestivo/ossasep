@@ -5,8 +5,8 @@
 <strong><?php echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); ?></strong><br />
 
 <?php
-if($model->instructors[0]->instructor_type_id == InstructorType::COMPANY_TYPE){
-    echo CHtml::encode($model->instructors[0]->company->name);
+if($model->isCompany()){
+    echo CHtml::encode($model->company->name);
 } else {
     echo implode(CHtml::encode(' & '), 
                  array_map(

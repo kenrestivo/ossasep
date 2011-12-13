@@ -255,4 +255,14 @@ where class_id = :cid
         return $total;
     }
 
+    public function isCompany()
+    {
+        return $this->instructors[0]->instructor_type_id == InstructorType::COMPANY_TYPE;
+    }
+
+    public function getCompany()
+    {
+        return $this->instructors[0]->company;
+    }
+
 }
