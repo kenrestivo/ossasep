@@ -8,11 +8,11 @@
 if($model->isCompany()){
     echo CHtml::encode($model->company->name);
 } else {
-    echo implode(CHtml::encode(' & '), 
+    echo CHtml::encode(implode(' & ', 
                  array_map(
                      function($i) { return $i->full_name ; },
                      $model->instructors
-                     ));
+                     )));
 }
 ?>
 <br />
