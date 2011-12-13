@@ -10,6 +10,13 @@
 class InstructorType extends CActiveRecord
 {
 
+    // NOTE! these must be set in the db too
+    const PARENT_TYPE = 1;
+    const TEACHER_TYPE = 2;
+    const COMPANY_TYPE = 3;
+    const INDIVIDUAL_TYPE = 4;
+
+
   public function behaviors(){
           return array( 'CAdvancedArBehavior' => array(
          	 'class' => 'application.extensions.CAdvancedArBehavior')); 
