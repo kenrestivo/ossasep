@@ -12,7 +12,7 @@
      <tr>
           <td>&nbsp;</td>
           <td>
-          <?= CHtml::encode($class->class_name) ?>
+                          <?= CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)) ?>
                           <?= $this->renderPartial(
                               '/classInfo/_gradesummary', 
                               array('model' => $class)) ?>
@@ -24,7 +24,7 @@
                               echo "<strong>" . CHtml::encode($coname) . "</strong>";
                           } else {
                               echo CHtml::encode($coname);
-                          }
+                          }7
                           ?>
                           </td>
      </tr>
