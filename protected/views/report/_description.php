@@ -65,7 +65,17 @@ foreach($meetings as $mtg){
         echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
     }
 }
-            
+?>
+
+No classes on        
+
+<?php
+echo     implode(', ',
+            array_map(
+                function($i) { return $i->school_day ; },
+                $model->daysOff
+                ));
+
 
 ?>
 <br />
