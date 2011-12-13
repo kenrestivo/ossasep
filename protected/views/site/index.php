@@ -1,8 +1,15 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<div class="span-7">
-  <h1>Main views</h1>
+<table>
+<tr>
+  <th><h1>Main views</h1></th>
+  <th><h1>Setup</h1></th>
+  <th><h1>Reports</h1></th>
+  <th><h1>Utility Views</h1></th>
+</tr>
 
+<tr>
+<td>
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">ClassInfo</a>
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Student</a>
@@ -15,11 +22,11 @@
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">DepositDetails</a>
   <br />
-</div>
+</td>
 
 
-<div class="span-7">
-  <h1>Setup</h1>
+<td>
+
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolYear">SchoolYear</a>
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">ClassSession</a>
@@ -32,13 +39,17 @@
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a>
   <br />
-</div>
+      </td>
+
+<td>
+
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a>
+  <br />
+</td>
 
 
+<td>
 
-
-<div class="span-7">
-  <h1>Utility Views</h1>
   <p>(These may go away)</p>
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassMeeting">ClassMeeting</a>
   <br />
@@ -62,4 +73,6 @@
   <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementStatus">RequirementStatus</a>
   <br />
-</div>
+</td>
+</tr>
+</table>
