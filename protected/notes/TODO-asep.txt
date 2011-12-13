@@ -1,7 +1,6 @@
 TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
-	M schedule by day of week
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies

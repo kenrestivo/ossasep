@@ -1,3 +1,7 @@
+<?php if ($model->status == 'New'){ ?>
+<em><strong>NEW!</strong></em><br />
+          <?php } ?>
+
 <strong><?php echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); ?></strong><br />
 
 <?php
