@@ -68,6 +68,16 @@ class ZHtml extends CHtml
         return(date("H:i:s", strtotime($civ)));
     }
 
+
+
+    /* 
+       Changes 0 to K, adds subscripts
+     */
+    static public function gradeFormat($grade)
+    {
+        return CHtml::encode($grade > 0 ? $grade : 'K');
+    }
+
 }
 
 ?>

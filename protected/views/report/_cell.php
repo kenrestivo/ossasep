@@ -11,6 +11,6 @@ echo implode(CHtml::encode(' & '),
 ?>
 <br />
 
-<?php echo CHtml::encode($model->min_grade_allowed); ?> - <?php echo CHtml::encode($model->max_grade_allowed); ?> <br />
-<?php echo CHtml::encode($model->start_time); ?> - <?php echo CHtml::encode($model->end_time); ?> <br />
+<?php echo ZHtml::gradeFormat($model->min_grade_allowed); ?> - <?php echo ZHtml::gradeFormat($model->max_grade_allowed); ?> <br />
+<?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?> <br />
 <?php echo CHtml::encode($model->location); ?>
