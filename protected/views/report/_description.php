@@ -84,5 +84,5 @@ if(count($daysoff) > 0){
 </span>
 <br />
 <br />
-<?= CHtml::encode($model->description) ?>
+<?= nl2br(CHtml::encode($model->description)) ?>
 </div>
