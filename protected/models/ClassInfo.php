@@ -33,7 +33,7 @@ class ClassInfo extends CActiveRecord
 
     /*
       includes fees AND the cost per class times class meetings
-     */
+    */
 
     public function getTotalCost(){
 
@@ -91,7 +91,7 @@ class ClassInfo extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
-                'order' => 'start_date'),
+                               'order' => 'start_date'),
 			'class_meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(
@@ -211,5 +211,32 @@ class ClassInfo extends CActiveRecord
         }
 
     }
+
+    static public function findAllWeekdays($weekdays, $session)
+    {
+
+        $classes = array();
+        // only weekdays, no sat/sun
+        foreach($weekdays as $n){
+            // XXX the current session is hardcoded in here!
+            // needs to be defaulted programatically and saved in cookie!
+            foreach(ClassInfo::model()->findAllBySql(
+                        "select class_info.* 
+from class_info
+where class_info.status = 'Active'
+      and class_info.day_of_week = :wkd
+      and class_info.session_id = :sess
+order by class_info.start_time, class_info.class_name
+; ",
+                        array('wkd' => $n,
+                              'sess' => Yii::app()->params['currentSession']))
+                    as $c)
+            {
+                $classes[$n][] = $c;
+            }
+        }
+        return $classes;
+    }
+
 
 }
