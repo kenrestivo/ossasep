@@ -277,4 +277,14 @@ order by class_info.class_name",
             array('session' => $session));
     }
 
+
+    public function instructorNames($delim)
+    {
+        return implode($delim, 
+                 array_map(
+                     function($i) { return $i->full_name ; },
+                     $this->instructors
+                     ));
+    }
+
 }
