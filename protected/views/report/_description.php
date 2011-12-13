@@ -9,7 +9,7 @@
                      array("/ClassInfo/view", 'id' => $model->id)) ?>
 </u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> <br />
 
-<span>Number of students: 
+<span class="span-6">Number of students: 
 
 <?php if($model->min_students > 0){  ?>
 <?= $model->min_students ?> -  <?= $model->max_students  ?>
@@ -19,15 +19,15 @@ up to <?= $model->max_students  ?>
      <? } ?>
 
 </span>
-<span>
+<span class="span-5">
 Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?>
 </span>
 
-<span>
+<span class="span-6">
      <?= ZHtml::weekdayTranslation($model->day_of_week) ?>s, 
 <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?> 
 </span>
-<span>
+<span class="span-4 last">
 <?= CHtml::encode($model->location) ?>
 </span>
 <br />
@@ -57,9 +57,12 @@ echo     implode(', ',
                 ));
 
 // the notes
+if(count($meetings) > 0){
+    echo '&nbsp;' . CHtml::encode('--');
+}
 foreach($meetings as $mtg){
     if($mtg->note != ''){
-        echo '&nbsp;' .  CHtml::encode('--' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
+        echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
     }
 }
              

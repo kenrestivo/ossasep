@@ -3,11 +3,11 @@ TODO for asep
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	N description (the big ms word thing?)
 		JUST the generated parts: schedule, descrpitions, checkboxthing
-		finish up the days off calculation
+		display the days off calculation
+	E the sign up sheet
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies
-	E the sign up sheet
 
 
 wait wait what.
@@ -46,7 +46,10 @@ small ui things
 
 
 gui conundrums wrapped in enigmas
-	dealing with income/expense splits (and teacher splits too)
+	dealing with income/expense splits
+		treat signup as an INVOICE, to apply a payment to!
+			so, when entering a check, let the user apply it
+		treat income as a PAYMENT SPLIT
 	payments -> deposits
 		i'll really need a pick list here!
 		will need to pick the checks AT THE SAME TIME as entering
@@ -72,7 +75,7 @@ vital
 		i have it in a branch menuthrash. works with clips, nice!
 	use either breadcrumbs or returnto, but be consistent!
 		breadcrumbs is cleaner than returnto, but will it work?
-
+	make edit button on reports an optional item, only if logged in
 	
 useful
 	default sort for everytbing
