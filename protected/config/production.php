@@ -81,5 +81,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'krestivo@restivo.org',
         'currentSession'=> 1,
+        'defaultNumMeetings'=> 8,
 	),
 );

@@ -1,20 +1,18 @@
 <?php 
-
 $am=$model->active_meetings;
+?>
 
+<p><?= count($am) ?> meetings, <?= count($model->meetings) - count($am) ?> makeup day </p>
+
+
+<?
 if(count($am) < 1 ){
     echo CHTML::link("Auto-Populate Meeting Days for ". $model->class_name, 
                      array('populate','id' => $model->id));
     echo "<br />";
 }
-?>
 
-    
-<p><?= count($am) ?> meetings, <?= count($model->meetings) - count($am) ?> makeup day </p>
-
-
-<?php
-echo CHTML::link("Add Meeting Date for ". $model->class_name, 
+echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
 				 array("ClassMeeting/create",
                        'class_id' => $model->id,
 					   'returnTo' => Yii::app()->request->requestUri));

@@ -174,7 +174,8 @@ class ClassInfoController extends Controller
 	public function actionPopulate()
 	{
         $model = $this->loadModel();
-        $model->populate_meetings();
+        $model->populate_meetings(
+            isset($_POST['num']) ? $_POST['num'] : Yii::app()->params['defaultNumMeetings']);
         $this->redirect(array('view','id'=>$model->id));
 	}
 
