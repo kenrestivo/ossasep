@@ -30,7 +30,7 @@ class ZHtml extends CHtml
 
 
     public static function get_weekdays(){
-            return  array(
+        return  array(
             1 => 'Sunday',
             2 => 'Monday',
             3 => 'Tuesday',
@@ -62,7 +62,7 @@ class ZHtml extends CHtml
         return (date("g:i a", strtotime($mil)));
     }
 
-   //TODO make this use DateTime, and all that cruft
+    //TODO make this use DateTime, and all that cruft
     public static function civilianToMilitary($civ)
     {
         return(date("H:i:s", strtotime($civ)));
@@ -72,10 +72,18 @@ class ZHtml extends CHtml
 
     /* 
        Changes 0 to K, adds subscripts
-     */
+    */
     static public function gradeFormat($grade)
     {
-        return CHtml::encode($grade > 0 ? $grade : 'K');
+
+        // This from wikipedia:
+        $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+        if (($grade %100) >= 11 && ($grade%100) <= 13)
+            $abbreviation = $grade. 'th';
+        else
+            $abbreviation = $grade. $ends[$grade % 10];
+
+        return CHtml::encode($grade > 0 ? $abbreviation : 'K');
     }
 
 }
