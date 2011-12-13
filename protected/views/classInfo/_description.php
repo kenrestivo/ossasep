@@ -1,3 +1,8 @@
+<?php 
+$meetings = $model->active_meetings;
+$daysoff = $model->days_off;
+?>
+
 <div class="catalog" >
 
 <?php if($model->status == 'New'){ ?>

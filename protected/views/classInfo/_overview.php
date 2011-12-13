@@ -1,5 +1,5 @@
 
-<?php echo $this->renderPartial('_view', array('data'=>$model)); ?>
+<?php echo $this->renderPartial('_description', array('model'=>$model)); ?>
 
 <?php
 echo CHTML::link("Edit  ". $model->class_name, 

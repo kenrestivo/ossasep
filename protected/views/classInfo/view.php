@@ -20,7 +20,7 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                           'expires'=>30)),
                   
                   'tabs'=>array(
-                      'Class' =>
+                      'Overview' =>
                       $this->renderPartial("_overview", 
                                            array('model' => $model), true),
                       'Students' =>
