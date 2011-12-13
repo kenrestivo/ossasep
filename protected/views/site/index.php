@@ -45,6 +45,7 @@
 
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a><br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Weekday Schedule</a> <br />
 </td>
 
 

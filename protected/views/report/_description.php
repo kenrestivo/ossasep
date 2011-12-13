@@ -36,8 +36,13 @@ $<?= $model->cost_per_class ?> per week for an
 ?>
 ;
 
-<u>please make  <?= $model->costSummary ?> check payable to   <?= $model->company->name;?>
+<u>please make $<?= $model->costSummary ?> check payable to   <?= $model->company->name;?>
 </u>
 <br />
-
+<strong>Scheduled Meetings:</strong>
+<?php
+foreach($model->meetings as $mtg){
+    echo $mtg->meeting_date;
+}
+?>
 </div>

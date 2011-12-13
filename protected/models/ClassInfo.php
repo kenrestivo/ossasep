@@ -31,18 +31,6 @@ class ClassInfo extends CActiveRecord
 	}
 
 
-    /*
-      includes fees AND the cost per class times class meetings
-    */
-
-    public function getTotalCost(){
-
-        $total = (float)$this->cost_per_class * count($this->class_meetings);
-        foreach($this->extra_fees as $e){
-            $total += $e->amount;
-        }
-        return($total);
-    }
 
     public function getSummary()
     {
@@ -92,7 +80,7 @@ class ClassInfo extends CActiveRecord
 		return array(
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
                                'order' => 'start_date'),
-			'class_meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
+			'meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(
                 self::HAS_MANY, 

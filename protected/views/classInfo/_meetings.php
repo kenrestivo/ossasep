@@ -21,7 +21,7 @@ echo CHTML::link("Add Meeting Date for ". $model->class_name,
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'meetingdate-grid',
                   'dataProvider'=>new CArrayDataProvider(
-                      $model->class_meetings),
+                      $model->meetings),
                   'columns'=>array(
                       'meeting_date',
                       'note',
