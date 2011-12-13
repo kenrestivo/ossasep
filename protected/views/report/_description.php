@@ -1,5 +1,9 @@
 <div class="catalog" >
 
+<?php if($model->status == 'New'){ ?>
+<strong><em>NEW CLASS</em></strong><br />
+                                   <?php } ?>
+
 <strong><u>
      <?= CHtml::link($model->class_name, 
                      array("/ClassInfo/view", 'id' => $model->id)) ?>
