@@ -229,7 +229,7 @@ where class_info.status = 'Active'
 order by class_info.start_time, class_info.class_name
 ; ",
                         array('wkd' => $n,
-                              'sess' => Yii::app()->params['currentSession']))
+                              'sess' => $session))
                     as $c)
             {
                 $classes[$n][] = $c;
