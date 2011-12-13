@@ -40,12 +40,14 @@ class ReportController extends Controller
 
 	public function actionWeekday()
 	{
-        
-        $c=ClassInfo::findAllWeekdays(range(2,6),
+        $days= range(2,6);
+
+        $c=ClassInfo::findAllWeekdays($days,
                                       Yii::app()->params['currentSession']);
 		$this->render('weekday',
                       array(
                           'classes'=>$c,
+                          'days'=> $days,
                           ));
 	}
 
