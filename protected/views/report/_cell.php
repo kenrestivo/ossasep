@@ -1,5 +1,4 @@
-<strong><?php echo CHtml::encode($model->class_name); ?></strong><br />
-
+<strong><?php echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); ?></strong><br />
 
 <?php
 echo implode(CHtml::encode(' & '), 
