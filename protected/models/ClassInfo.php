@@ -265,4 +265,16 @@ where class_id = :cid
         return $this->instructors[0]->company;
     }
 
+
+
+    public static function activeClasses($session)
+    {
+        return ClassInfo::model()->findAllBySql(
+            "select class_info.*  from class_info
+ where class_info.session_id = :session
+and (class_info.status = 'Active' or class_info.status = 'New')
+order by class_info.class_name",
+            array('session' => $session));
+    }
+
 }
