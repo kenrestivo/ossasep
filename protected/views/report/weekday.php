@@ -15,7 +15,11 @@ for($i=0; $lines > 0; $i++){
     $got = 0;
     foreach($days as $day){
         if(isset($classes[$day][$i])){
-            print '<td>' . CHtml::encode($classes[$day][$i]->class_name) . '</td>';
+            echo '<td>';
+            echo  $this->renderPartial(
+                '_cell', 
+                array('model'=>$classes[$day][$i]));
+            echo'</td>';
             $got++;
         }
     }
@@ -28,3 +32,4 @@ for($i=0; $lines > 0; $i++){
 ?>
 
 </table>
+
