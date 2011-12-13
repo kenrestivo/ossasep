@@ -48,6 +48,7 @@ $<?= $model->cost_per_class ?> per week for an
 </u>
 <br />
 <br />
+<span class="span-14">
 <strong>Scheduled Meetings:</strong>
 <?php
 echo     implode(', ',
@@ -55,10 +56,13 @@ echo     implode(', ',
                 function($i) { return $i->notated_date ; },
                 $meetings
                 ));
-
+?>
+</span>
+<span class="span-5 last">
+<?php 
 // the notes
 if(count($meetings) > 0){
-    echo '&nbsp;' . CHtml::encode('--');
+    echo  CHtml::encode('--');
 }
 foreach($meetings as $mtg){
     if($mtg->note != ''){
@@ -66,7 +70,9 @@ foreach($meetings as $mtg){
     }
 }
 
+
 if(count($daysoff) > 0){
+    echo CHtml::encode('--');
     echo  'No classes on ' .   implode(', ',
             array_map(
                 function($i) { return ZHtml::shortDate($i->school_day) ; },
@@ -75,6 +81,7 @@ if(count($daysoff) > 0){
 
 }
 ?>
+</span>
 <br />
 <br />
 <?= CHtml::encode($model->description) ?>
