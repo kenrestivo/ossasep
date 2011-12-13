@@ -227,3 +227,16 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+
+.schedule td,th
+{
+    border-color: #600;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
+
+.schedule a
+{
+  text-decoration: none;
+ }

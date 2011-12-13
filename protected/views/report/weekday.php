@@ -1,4 +1,4 @@
-<table>
+<table class="schedule" >
 
 <?php
 
