@@ -278,6 +278,7 @@ order by class_info.class_name",
 
     public function getDaysOff()
     {
+        $last = end($this->active_meetings);
         return SchoolCalendar::model()->findAllBySql(
             "select school_calendar.school_day
 from school_calendar
@@ -289,7 +290,7 @@ where school_calendar.school_day > :start
       and dayofweek(school_calendar.school_day) = :wkday
       and class_meeting.meeting_date is null",
             array('start' => $this->session->start_date,
-                  'end' => $this->session->end_date,
+                  'end' => $last->meeting_date,
                   'wkday' => $this->day_of_week,
                   'cid' => $this->id,
                 )
