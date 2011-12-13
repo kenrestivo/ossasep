@@ -72,8 +72,8 @@ No classes on
 <?php
 echo     implode(', ',
             array_map(
-                function($i) { return $i->school_day ; },
-                $model->daysOff
+                function($i) { return ZHtml::shortDate($i->school_day) ; },
+                $daysoff
                 ));
 
 

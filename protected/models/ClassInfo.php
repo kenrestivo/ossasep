@@ -276,7 +276,7 @@ order by class_info.class_name",
     }
 
 
-    public function getDaysOff()
+    public function getDays_off()
     {
         return SchoolCalendar::model()->findAllBySql(
             "select school_calendar.school_day
