@@ -42,6 +42,15 @@ small ui things
 
 
 gui conundrums wrapped in enigmas
+	clean up date and weekday formatting, using formatter in yii
+		not my zhtml hack
+		but beware the afterfind/beforevalidate crap!
+			it could break my model start/end stuff VERY IMPORTANT!
+			do it by overloading load_model and beforevalidate, instead
+			BE CAREFUL!
+		i could create a separate get/set that wraps it
+			for every model that has dates in it. gah.
+			or a wrapper that transforms them before/after manually
 	payments -> deposits
 		i'll really need a pick list here!
 		will need to pick the checks AT THE SAME TIME as entering
@@ -87,8 +96,6 @@ useful
 
 cosmetic
 	use the roster as the template for any index views, i have the css nice
-	clean up date formatting, use this:
-		http://www.yiiplayground.cubedwater.com/index.php?r=InternationalizationModule/datetime/basic
 	modify karraydataprovider to have an attributeLabels function?
 		or otherwise provide the correct labels for these columns!
 		column names for student and other links in cgridviews

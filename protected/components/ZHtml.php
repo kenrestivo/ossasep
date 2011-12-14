@@ -74,6 +74,12 @@ class ZHtml extends CHtml
     }
 
 
+    public static function mediumDate($sqldate)
+    {
+        return date('m/d/y', strtotime($sqldate));
+    }
+
+
     /* 
        Changes 0 to K, adds subscripts
     */
