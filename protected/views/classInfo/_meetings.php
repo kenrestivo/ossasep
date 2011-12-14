@@ -25,17 +25,13 @@ if(count($am) < 1 ){
 					   'returnTo' => Yii::app()->request->requestUri));
 
     echo "</span>";
-    echo "</div><div><br />";
+    echo "</div><br />";
 }
 ?>
 
 
-<?php
-echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
-				 array("ClassMeeting/create",
-                       'class_id' => $model->id,
-					   'returnTo' => Yii::app()->request->requestUri));
 
+<?php
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'meetingdate-grid',
                   'dataProvider'=>new CArrayDataProvider(
@@ -54,5 +50,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
 				  )); ?>
 
-
-</div>
+<?php
+echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
+				 array("ClassMeeting/create",
+                       'class_id' => $model->id,
+					   'returnTo' => Yii::app()->request->requestUri));
+?>
