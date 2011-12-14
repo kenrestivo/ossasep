@@ -43,10 +43,10 @@ class Signup extends CActiveRecord
         return array(
             array('student_id, class_id', 'required'),
             array('student_id, class_id,scholarship', 'numerical', 'integerOnly'=>true),
-            array('signup, status,note', 'safe'),
+            array('signup_date, status,note', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('student_id, class_id, signup, scholarship, status', 'safe', 'on'=>'search'),
+            array('student_id, class_id, signup_date, scholarship, status', 'safe', 'on'=>'search'),
         );
     }
 
