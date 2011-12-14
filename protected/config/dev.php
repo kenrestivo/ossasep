@@ -85,5 +85,6 @@ return array(
 		'adminEmail'=>'krestivo@restivo.org',
         'currentSession'=> 1, /// XXX hack! make this programmatic!
         'defaultNumMeetings'=> 8,
+        'timezone' => 'America/Los_Angeles',
 	),
 );

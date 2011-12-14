@@ -29,7 +29,7 @@ class Controller extends CController
     {
         parent::init();
 
-        Yii::app()->setTimeZone('America/Los_Angeles');
+        Yii::app()->setTimeZone(Yii::app()->params['timezone']);
 
     }
 
