@@ -14,7 +14,7 @@ if(count($am) < 1 ){
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
 
-    echo "</span><span class=\"span-10 last\">Your session settings are start: " 
+    echo "</span><span class=\"span-10 last\">Your session settings are: start " 
     . ZHtml::mediumDate($model->session->start_date). 
     ", end "
     . ZHtml::mediumDate($model->session->end_date)
