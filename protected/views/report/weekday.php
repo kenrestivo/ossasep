@@ -1,3 +1,4 @@
+<h1>Schdule by weekday</h1>
 <table class="schedule" >
 
 <?php

@@ -71,4 +71,15 @@ class ReportController extends Controller
     }
 
 
+    public function actionSignupsheet()
+    {
+		$this->render(
+            'signupsheet', 
+            array(
+                'classes' => ClassInfo::activeClasses(
+                    Yii::app()->params['currentSession'])));
+    }
+
+
+
 }

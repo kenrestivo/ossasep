@@ -1,9 +1,8 @@
-<h1>Class Descriptions</h1>
-
+<h1>Signup Sheet</h1>
 <?php
 foreach($classes as $class){
     $this->renderPartial(
-        '/classInfo/_description',
+        '_signup',
         array('model' => $class));
 }
 
