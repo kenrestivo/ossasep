@@ -43,10 +43,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->meetings),
                   'columns'=>array(
                       'meeting_date:date:Date',
-                      'note',
-                      'makeup',
-                      'school_day.minimum',
-                      'school_day.day_off',
+                      'note:ntext:Note',
+                      'makeup:boolean:Make-Up',
+                      'school_day.minimum:boolean:Minimum',
+                      'school_day.day_off:boolean:Day Off',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'ClassMeeting',
