@@ -17,8 +17,8 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
 		'class_name',
-		'min_grade_allowed',
-		'max_grade_allowed',
+		'min_grade_allowed:grade',
+		'max_grade_allowed:grade',
 		'start_time:time',
 		'end_time:time',
 		'cost_per_class',

@@ -26,4 +26,20 @@ class KFormatter extends CFormatter
     }
 
 
+    /* 
+       Changes 0 to K, adds subscripts
+    */
+    static public function formatGrade($grade)
+    {
+        // This from wikipedia:
+        $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+        if (($grade % 100) >= 11 && ($grade % 100) <= 13)
+            $abbreviation = $grade. 'th';
+        else
+            $abbreviation = $grade. $ends[$grade % 10];
+
+        return $grade > 0 ? $abbreviation : 'K';
+    }
+
+
 }

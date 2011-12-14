@@ -44,11 +44,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'first_name',
 		'last_name',
-		'grade',
+		'grade:grade',
 		'emergency_1',
 		'emergency_2',
 		'emergency_3',
-		'parent_email',
+		'parent_email:email',
 		array(
 			'class'=>'CButtonColumn',
 		),

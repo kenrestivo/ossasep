@@ -1,1 +1,1 @@
-<?php echo ZHtml::gradeFormat($model->min_grade_allowed); ?> - <?php echo ZHtml::gradeFormat($model->max_grade_allowed); ?>
+<?= Yii::app()->format->grade($model->min_grade_allowed); ?> - <?= Yii::app()->format->grade($model->max_grade_allowed); ?>

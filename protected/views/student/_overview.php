@@ -3,12 +3,12 @@
 	'attributes'=>array(
 		'first_name',
 		'last_name',
-		'grade',
+		'grade:grade',
 		'emergency_1',
 		'emergency_2',
 		'emergency_3',
-		'parent_email',
-        'note'
+		'parent_email:email',
+        'note:ntext'
 	),
 
 )); 

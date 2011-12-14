@@ -9,9 +9,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'student.full_name:text:Name',
-                      array('name' => "Grade",
-                            'value' => 'ZHtml::gradeFormat($data->student->grade)'),
-
+                      'student.grade:grade:Grade',
                       'student.emergency_1:text:Emergency',
                       'student.emergency_2:text:Emergency 2',
                       'student.emergency_3:text:Emergency 3',
