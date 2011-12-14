@@ -7,14 +7,18 @@ $am=$model->active_meetings;
 
       <?
 if(count($am) < 1 ){
-    echo '<div><span class="span-8">';
+    echo '<div><span class="span-10">';
     echo CHtml::beginForm(array('populate', 'id' => $model->id));
     echo "Auto-populate meeting dates: ";
     echo CHtml::textField('num', 8, array('size' => 2));
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
 
-    echo "</span><span class=\"span-8 last\">Your session settings are start: " . $model->session->start_date. ", end " . $model->session->end_date . "</span>";
+    echo "</span><span class=\"span-10 last\">Your session settings are start: " 
+    . ZHtml::mediumDate($model->session->start_date). 
+    ", end " . 
+    ZHtml::mediumDate($model->session->end_date) . 
+    "</span>";
     echo "</div><div><br />";
 }
 ?>
