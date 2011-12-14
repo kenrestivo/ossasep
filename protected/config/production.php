@@ -31,6 +31,9 @@ return array(
 
 	// application components
 	'components'=>array(
+         'format'=>array(
+            'class'=>'KFormatter',
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

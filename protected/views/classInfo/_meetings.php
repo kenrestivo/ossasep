@@ -42,7 +42,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=>new CArrayDataProvider(
                       $model->meetings),
                   'columns'=>array(
-                      'meeting_date',
+                      'meeting_date:date:Date',
                       'note',
                       'makeup',
                       'school_day.minimum',
