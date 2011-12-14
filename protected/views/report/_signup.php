@@ -9,9 +9,21 @@ $count= count($raw) > $model->max_students ? count($raw) : $model->max_students;
 $all=array();
 for($i=0; $i < $count; $i++){
     if(isset($raw[$i])){
-        $all[$i] = $raw[$i];
+        $c=array();
+        $c['order'] = $i + 1;
+        $c['signup_date'] = $raw[$i]->signup_date;
+        $c['full_name'] = $raw[$i]->student->full_name;
+        $c['grade'] = $raw[$i]->student->grade;
+        $c['contact'] = $raw[$i]->student->contact;
+        $c['emergency_1'] = $raw[$i]->student->emergency_1;
+        $c['emergency_2'] = $raw[$i]->student->emergency_2;
+        $c['emergency_3'] = $raw[$i]->student->emergency_3;
+        $c['parent_email'] = $raw[$i]->student->parent_email;
+        $c['status'] = $raw[$i]->status;
+        $c['note'] = $raw[$i]->note;
+        $all[$i] = $c;
     } else {
-        $all[$i]= array();
+        $all[$i]= array('order' => $i + 1);
     }
 }
 
@@ -25,17 +37,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=> $kad,
                   'enablePagination' => false,
                   'columns'=>array(
-                      array('name' => '#',
-                            'value' => '',
-                          ),
+                      'order:number:#',
                       'signup_date:date:Signed Up On', 
-                      'student.full_name:text:Name',
-                      'student.grade:grade:Grade',
-                      'student.contact:text:Contact',
-                      'student.emergency_1:text:Emergency',
-                      'student.emergency_2:text:Emergency 2',
-                      'student.emergency_3:text:Emergency 3',
-                      'student.parent_email:text:Email',
+                      'full_name:text:Name',
+                      'grade:grade:Grade',
+                      'contact:text:Contact',
+                      'emergency_1:text:Emergency',
+                      'emergency_2:text:Emergency 2',
+                      'emergency_3:text:Emergency 3',
+                      'parent_email:text:Email',
                       'status:text:Status',
                       'note:ntext:Note',
                       ),
