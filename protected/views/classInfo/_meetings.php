@@ -16,9 +16,15 @@ if(count($am) < 1 ){
 
     echo "</span><span class=\"span-10 last\">Your session settings are start: " 
     . ZHtml::mediumDate($model->session->start_date). 
-    ", end " . 
-    ZHtml::mediumDate($model->session->end_date) . 
-    "</span>";
+    ", end "
+    . ZHtml::mediumDate($model->session->end_date)
+    . "  ";
+    echo CHTML::link("(edit)",
+				 array("ClassSession/update",
+                       'id' => $model->session_id,
+					   'returnTo' => Yii::app()->request->requestUri));
+
+    echo "</span>";
     echo "</div><div><br />";
 }
 ?>
