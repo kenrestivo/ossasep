@@ -1,12 +1,8 @@
 TODO for asep
 
-signupdate must be a datetime! not just a date!
-	auto-timestamp the signup date at create time!
-		maybe even pre-populate it
-
-
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	E the sign up sheet
+		selectionChanged, selectablerows!
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies
@@ -103,6 +99,8 @@ useful
 		if instructor type is company, show the company popup
 			else hide company popup
 		javascript in forms, something else in view
+	probably should have sign-up order be settable by the admin
+		but that's require some reorder code. which i did for the coop!!
 
 cosmetic
 	use the roster as the template for any index views, i have the css nice
