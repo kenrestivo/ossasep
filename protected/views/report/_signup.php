@@ -11,8 +11,7 @@ for($i=0; $i < $count; $i++){
     if(isset($raw[$i])){
         $all[$i] = $raw[$i];
     } else {
-        $all[$i]= new Signup;
-        $all[$i]->status = 'Waitlist';
+        $all[$i]= array();
     }
 }
 
@@ -27,7 +26,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'enablePagination' => false,
                   'columns'=>array(
                       array('name' => '#',
-                            'value' => '$data->student_id',
+                            'value' => '',
                           ),
                       'signup_date:date:Signed Up On', 
                       'student.full_name:text:Name',
@@ -39,11 +38,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.parent_email:text:Email',
                       'status:text:Status',
                       'note:ntext:Note',
-                      array(
-                          'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'Signup',
-                          'returnTo' => Yii::app()->request->requestUri
-                          ),
                       ),
                   )); 
 ?>
