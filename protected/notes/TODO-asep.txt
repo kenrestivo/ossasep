@@ -32,6 +32,10 @@ general gui questions MUST get dealt with
 
 
 small ui things
+	date/time conversions
+		do it in the load_model method!
+		and before save in update/create.
+		that is all. no problems, no muss, no fuss.
 	finish putting datepickers in
 		check expense
 		check income
