@@ -108,7 +108,7 @@ class ClassInfo extends CActiveRecord
                 self::HAS_MANY, 
                 'Signup', 
                 'class_id',
-                'order' => 'signup_date ASC'),
+                'order' => 'signup_date ASC, status ASC'),
 			'students' => array(
                 self::HAS_MANY, 
                 'Student', 

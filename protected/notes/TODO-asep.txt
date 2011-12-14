@@ -62,6 +62,7 @@ gui conundrums wrapped in enigmas
 		i could create a separate get/set that wraps it
 			for every model that has dates in it. gah.
 			or a wrapper that transforms them before/after manually
+	waitlist is an interesting conundrum
 	payments -> deposits
 		i'll really need a pick list here!
 		will need to pick the checks AT THE SAME TIME as entering

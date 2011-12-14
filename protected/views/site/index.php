@@ -42,6 +42,7 @@
       </td>
 
 <td>
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsheet">Sign-Up Sheet</a> <br />
 
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a> <br />
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a> <br />

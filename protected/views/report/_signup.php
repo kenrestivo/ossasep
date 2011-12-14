@@ -7,10 +7,15 @@
      $raw = $model->latest_signups;
 $count= count($raw) > $model->max_students ? count($raw) : $model->max_students;
 $all=array();
+$wo = 1;
 for($i=0; $i < $count; $i++){
     if(isset($raw[$i])){
         $c=array();
-        $c['order'] = $i + 1;
+        if($raw[$i]->status == 'Waitlist'){
+            $c['order'] = $wo++;
+        } else{
+            $c['order'] = $i + 1;
+        }
         $c['signup_date'] = $raw[$i]->signup_date;
         $c['full_name'] = $raw[$i]->student->full_name;
         $c['grade'] = $raw[$i]->student->grade;
