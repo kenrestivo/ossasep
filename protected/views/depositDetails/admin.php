@@ -43,7 +43,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'deposited_date',
+		'deposited_date:date',
 		'total_amount',
 		'pennies',
 		'nickels',

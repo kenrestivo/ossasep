@@ -22,10 +22,10 @@ $this->menu=array(
 		'payer',
 		'payee.name',
 		'check_num',
-		'check_date',
-		'delivered',
-		'returned',
-		'deposit.deposited_date',
+		'check_date:date',
+		'delivered:date',
+		'returned:date',
+		'deposit.deposited_date:date:Deposited',
 	),
 )); ?>
 
@@ -45,10 +45,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'check_id,student_id,class_id',
                           )),
                   'columns'=>array(
-                      'student.full_name',
-                      'class.class_name',
-                      'amount',
-                      'check.delivered',
+                      'student.full_name:text:Student',
+                      'class.class_name:text:Class',
+                      'amount:number:Assigned Split',
+                      'check.delivered:date:Delievered to Company',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',
