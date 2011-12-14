@@ -11,12 +11,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,class_id',
                           )),
                   'columns'=>array(
-                      array('name' => "Name",
-                            'value' => '$data->class->description'),
-                      'signup_date',
-                      'status',
-                      'scholarship',
-                      'note',
+                      'class.class_name:text:Class',
+                      'signup_date', //TODO fix
+                      'status:text:Status',
+                      'scholarship:boolean:Scholarship',
+                      'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
