@@ -23,11 +23,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'requirement_type_id,instructor_id',
                           )),
                   'columns'=>array(
-                      array('name' => "Name",
-                            'value' => '$data->requirement_type->description'),
-                      'received',
-                      'expired',
-                      'note',
+                      'requirement_type.description:text:Requirement',
+                      'received:date:Received On',
+                      'expired:date:Expires On',
+                      'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'RequirementStatus',

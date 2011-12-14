@@ -10,10 +10,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'instructor_id,check_id',
                           )),
                   'columns'=>array(
-                      array('name' => "Amount",
-                            'value' => '$data->check->amount'),
-                      'check.check_date',
-                      'check.delivered',
+                      'check.amount:number:Check Total Amount',
+                      'check.check_date:date:Check Date',
+                      'check.delivered:date:Delivered To Instructor',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Expense',
