@@ -3,12 +3,16 @@
  <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
 
 <?php
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'signup-grid',
-                  'dataProvider'=>new KArrayDataProvider(
+
+$kad = new KArrayDataProvider(
                       $model->signups, 
                       array('keyField' => 'student_id,class_id',
-                          )),
+                          ));
+
+
+$this->widget('zii.widgets.grid.CGridView', array(
+                  'id'=>'signup-grid',
+                  'dataProvider'=> $kad,
                   'columns'=>array(
                       'signup_date:date:Signed Up On', 
                       'student.full_name:text:Name',
