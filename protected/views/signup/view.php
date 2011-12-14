@@ -19,12 +19,12 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-        'student.first_name',
-        'student.last_name',
-        'class.class_name',
-        'signup_date',
+        'student.first_name:text:First',
+        'student.last_name:text:Last',
+        'class.class_name:text:Class',
+        'signup_date:date',
         'status',
-        'scholarship',
-        'note'
+        'scholarship:boolean',
+        'note:ntext'
 	),
 )); ?>
