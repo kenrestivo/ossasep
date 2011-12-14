@@ -4,7 +4,7 @@
 
 <?php
 
-$raw = $model->signups;
+     $raw = $model->latest_signups;
 $count= count($raw) > $model->max_students ? count($raw) : $model->max_students;
 $all=array();
 for($i=0; $i < $count; $i++){
@@ -38,7 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'enablePagination' => false,
                   'columns'=>array(
                       'order:number:#',
-                      'signup_date:date:Signed Up On', 
+                      'signup_date:datetime:Signed Up On', 
                       'full_name:text:Name',
                       'grade:grade:Grade',
                       'contact:text:Contact',
