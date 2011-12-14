@@ -4,11 +4,22 @@
 
 <?php
 
-$kad = new KArrayDataProvider(
-                      $model->signups, 
-                      array('keyField' => 'student_id,class_id',
-                          ));
+$raw = $model->signups;
+$count= count($raw) > $model->max_students ? count($raw) : $model->max_students;
+$all=array();
+for($i=0; $i < $count; $i++){
+    if(isset($raw[$i])){
+        $all[$i] = $raw[$i];
+    } else {
+        $all[$i]= new Signup;
+        $all[$i]->status = 'Waitlist';
+    }
+}
 
+$kad = new KArrayDataProvider(
+    $all,
+    array('keyField' => 'student_id,class_id',
+        ));
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
