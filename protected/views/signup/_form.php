@@ -30,10 +30,7 @@
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'signup_date'); ?>
-
-<?php 
-<?php echo $form->textField($model,'signup_date',array('size'=>20))); ?>
-?>
+    <?php echo $form->textField($model,'signup_date',array('size'=>20)) ?>
 		<?php echo $form->error($model,'signup_date'); ?>
 	</div>
 
