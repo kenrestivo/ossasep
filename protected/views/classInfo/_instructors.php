@@ -10,9 +10,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'class_id,instructor_id',
                           )),
                   'columns'=>array(
-                      array('name' => "Name",
-                            'value' => '$data->instructor->full_name'),
-                      'percentage',
+                      'instructor.full_name:text:Instructor',
+                      'percentage:number:Percentage',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'InstructorAssignment',

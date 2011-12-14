@@ -21,10 +21,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'schoolcalendar-grid',
                   'dataProvider'=> new KArrayDataProvider($model->school_calendars),
                   'columns' => array(
-                      'school_day',
-                      'minimum',
-                      'day_off',
-                      'note',
+                      'school_day:date:Date',
+                      'minimum:boolean:Minimum',
+                      'day_off:boolean:Day Off',
+                      'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'SchoolCalendar',
