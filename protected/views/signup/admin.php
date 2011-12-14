@@ -42,10 +42,10 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'dataProvider'=>$model->search(),
                         'filter'=>$model,
                         'columns'=>array(
-                            'student.full_name',
-                            'class.class_name',
-                            'signup_date',
-                            'scholarship',
+                            'student.full_name:text:Name',
+                            'class.class_name:text:Class',
+                            'signup_date:datetime',
+                            'scholarship:boolean',
                             'status',
                             array(
                                 'class'=>'CompositeButtonColumn',

@@ -19,7 +19,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.emergency_2:text:Emergency 2',
                       'student.emergency_3:text:Emergency 3',
                       'student.parent_email:text:Email',
-                      'signup_date',
+                      'signup_date:datetime',
                       'status',
                       // NOTE i am deliberately NOT showing scholarships here
                       'note',

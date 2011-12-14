@@ -8,7 +8,6 @@ signupdate must be a datetime! not just a date!
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	E the sign up sheet
-		sign up order
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies

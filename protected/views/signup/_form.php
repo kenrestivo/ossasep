@@ -32,19 +32,7 @@
 		<?php echo $form->labelEx($model,'signup_date'); ?>
 
 <?php 
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-  'model'=>$model,
-  'attribute'=>'signup_date',
-  'value'=>$model->signup_date,
-  // additional javascript options for the date picker plugin
-  'options'=>array(
-    'showAnim'=>'fold',
-    'showButtonPanel'=>true,
-    'autoSize'=>true,
-    'dateFormat'=>'yy-mm-dd',
-    'defaultDate'=>$model->signup_date,
-   ),
-));
+<?php echo $form->textField($model,'signup_date',array('size'=>20))); ?>
 ?>
 		<?php echo $form->error($model,'signup_date'); ?>
 	</div>

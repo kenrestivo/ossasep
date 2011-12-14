@@ -22,7 +22,7 @@ $this->menu=array(
         'student.first_name:text:First',
         'student.last_name:text:Last',
         'class.class_name:text:Class',
-        'signup_date:date',
+        'signup_date:datetime',
         'status',
         'scholarship:boolean',
         'note:ntext'
