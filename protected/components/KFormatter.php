@@ -5,6 +5,7 @@ class KFormatter extends CFormatter
 
 	public $dateFormat='m/d/y';
 	public $booleanFormat=array('','Yes');
+	public $timeFormat='g:i A';
 
     public function formatDate($value)
     {
