@@ -417,7 +417,7 @@ DROP TABLE IF EXISTS `signup`;
 CREATE TABLE `signup` (
   `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `signup_date` date DEFAULT NULL,
+  `signup_date` datetime DEFAULT NULL,
   `scholarship` tinyint(1) default false NOT NULL,
   `status` ENUM('Enrolled', 'Waitlist' ,'Cancelled') default 'Enrolled',
     note VARCHAR(256),
