@@ -16,6 +16,10 @@
 	<?php echo CHtml::encode($data->grade); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('contact')); ?>:</b>
+	<?php echo CHtml::encode($data->contact); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('emergency_1')); ?>:</b>
 	<?php echo CHtml::encode($data->emergency_1); ?>
 	<br />

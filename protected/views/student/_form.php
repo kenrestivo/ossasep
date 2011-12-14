@@ -27,6 +27,13 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'contact'); ?>
+		<?php echo $form->textField($model,'contact',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'contact'); ?>
+	</div>
+
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'emergency_1'); ?>
 		<?php echo $form->textField($model,'emergency_1',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'emergency_1'); ?>

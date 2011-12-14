@@ -4,6 +4,7 @@
 		'first_name',
 		'last_name',
 		'grade:grade',
+        'contact',
 		'emergency_1',
 		'emergency_2',
 		'emergency_3',

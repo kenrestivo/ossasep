@@ -23,6 +23,10 @@
 		<?php echo $form->label($model,'grade'); ?>
 		<?php echo $form->textField($model,'grade'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'contact'); ?>
+		<?php echo $form->textField($model,'contact'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'emergency_1'); ?>

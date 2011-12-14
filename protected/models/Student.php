@@ -8,6 +8,7 @@
  * @property string $first_name
  * @property string $last_name
  * @property integer $grade
+ * @property string $contact
  * @property string $emergency_1
  * @property string $emergency_2
  * @property string $emergency_3
@@ -47,15 +48,15 @@ class Student extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, grade, emergency_1', 'required'),
+			array('first_name, last_name, grade, contact,emergency_1', 'required'),
 			array('grade', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name', 'length', 'max'=>128),
-			array('emergency_1, emergency_2, emergency_3, parent_email, note', 'length', 'max'=>256),
+			array('emergency_1, emergency_2, emergency_3, contact, parent_email, note', 'length', 'max'=>256),
             array('note', 'safe'),
             array('parent_email', 'email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, first_name, last_name, grade, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, grade, contact, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -92,6 +93,7 @@ class Student extends CActiveRecord
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
 			'grade' => 'Grade',
+			'contact' => 'Parent Contact',
 			'emergency_1' => 'Emergency 1',
 			'emergency_2' => 'Emergency 2',
 			'emergency_3' => 'Emergency 3',
@@ -117,7 +119,8 @@ class Student extends CActiveRecord
 		$criteria->compare('last_name',$this->first_name,true);
 
 		$criteria->compare('grade',$this->grade);
-
+        $criteria->compare('contact',$this->contact);
+ 
 		$criteria->compare('emergency_1',$this->emergency_1,true);
 
 		$criteria->compare('emergency_2',$this->emergency_2,true);

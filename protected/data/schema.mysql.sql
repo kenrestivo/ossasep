@@ -440,6 +440,7 @@ CREATE TABLE `student` (
   `last_name` varchar(128) NOT NULL,
   `first_name` varchar(128) NOT NULL,
   `grade` int(11) NOT NULL,
+  `contact` varchar(256) NOT NULL,
   `emergency_1` varchar(256) NOT NULL,
   `emergency_2` varchar(256) DEFAULT NULL,
   `emergency_3` varchar(256) DEFAULT NULL,
