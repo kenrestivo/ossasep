@@ -2,6 +2,7 @@ TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	E the sign up sheet
+		sign up order
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies
@@ -100,18 +101,11 @@ useful
 
 cosmetic
 	use the roster as the template for any index views, i have the css nice
-	modify karraydataprovider to have an attributeLabels function?
-		or otherwise provide the correct labels for these columns!
-		column names for student and other links in cgridviews
-		probably add a function to karrayprovider to grab them from model!
-			it's unclear where this stuff comes from
 	hide the view Cbutton for linktables, there's nothing to see anyway
 		at least in cgridviews, sometimes
 		or make it link to the dependent table, makes more sense
 	year bump buttons on the expired and received datepickers
 		didn't i do that already?
-	write a dataprovider to show the requirements as an array, for view
-		do the SQL, pull it all out of the db, show OK, not OK, etc
 	dependent date/timepickers, i.e. start/end intelligently
 	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it

@@ -1,4 +1,6 @@
-<h3><?= $model->class_name ?> <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
+<h3><?= CHtml::link($model->class_name, 
+                     array("/ClassInfo/view", 'id' => $model->id)) ?>
+ <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
 
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
@@ -8,6 +10,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,class_id',
                           )),
                   'columns'=>array(
+                      'signup_date:date:Signed Up On', 
                       'student.full_name:text:Name',
                       'student.grade:grade:Grade',
                       'student.contact:text:Contact',
@@ -15,9 +18,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.emergency_2:text:Emergency 2',
                       'student.emergency_3:text:Emergency 3',
                       'student.parent_email:text:Email',
-                      'signup_date:date:Signed Up On', 
                       'status:text:Status',
-                      // NOTE i am deliberately NOT showing scholarships here
                       'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
