@@ -12,12 +12,12 @@
 	'filter'=>$model,
 	'columns'=>array(
 		'full_name',
+		'instructor_type.description:text:Type',
+        'company.name:text:Company',
 		'email',
 		'cell_phone',
 		'other_phone',
 		'note',
-        'company.name',
-		'instructor_type.description',
 		array(
 			'class'=>'CButtonColumn',
 		),
