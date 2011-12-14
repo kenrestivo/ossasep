@@ -24,6 +24,7 @@ $kad = new KArrayDataProvider(
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'dataProvider'=> $kad,
+                  'enablePagination' => false,
                   'columns'=>array(
                       'signup_date:date:Signed Up On', 
                       'student.full_name:text:Name',
