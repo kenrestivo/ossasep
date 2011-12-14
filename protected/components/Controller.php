@@ -1,8 +1,8 @@
 <?php
-/**
- * Controller is the customized base controller class.
- * All controller classes for this application should extend from this base class.
- */
+  /**
+   * Controller is the customized base controller class.
+   * All controller classes for this application should extend from this base class.
+   */
 class Controller extends CController
 {
 
@@ -24,10 +24,20 @@ class Controller extends CController
 	public $breadcrumbs=array();
 
 
+
+    function init()
+    {
+        parent::init();
+
+        Yii::app()->setTimeZone('America/Los_Angeles');
+
+    }
+
+
     /**
        If there's a returnTo, then use it.
        XXX this may break with ajax, watch out
-     **/
+    **/
     public function redirect($url,$terminate=true,$statusCode=302){
         if(isset($_GET['returnTo'])) {
             // NOTE: do NOT use an array!!

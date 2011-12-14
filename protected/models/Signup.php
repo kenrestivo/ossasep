@@ -45,7 +45,7 @@ class Signup extends CActiveRecord
             array('student_id, class_id,scholarship', 'numerical', 'integerOnly'=>true),
             array('signup_date, status,note', 'safe'),
             array('signup_date','default',
-                  'value'=>new CDbExpression('NOW()'),
+                  'value'=> date ("Y-m-d H:i:s"),
                   'setOnEmpty'=>false,
                   'on'=>'insert'),
             // The following rule is used by search().
