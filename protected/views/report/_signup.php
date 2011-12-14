@@ -26,6 +26,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=> $kad,
                   'enablePagination' => false,
                   'columns'=>array(
+                      array('name' => '#',
+                            'value' => '$data->student_id',
+                          ),
                       'signup_date:date:Signed Up On', 
                       'student.full_name:text:Name',
                       'student.grade:grade:Grade',
