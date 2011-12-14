@@ -38,6 +38,7 @@ $this->endWidget();
                 'first_name' : 'first_name',
                 'grade' : 'grade',
                 'phone' : 'emergency_1',
+                'parent_1' : 'contact',
                 'cell_parent_1' : 'emergency_2',
                 'cell_parent_2' : 'emergency_3',
                 'email_parent_1' : 'parent_email',
