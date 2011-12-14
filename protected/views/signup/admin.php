@@ -44,9 +44,9 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'columns'=>array(
                             'student.full_name:text:Name',
                             'class.class_name:text:Class',
-                            'signup_date:datetime',
-                            'scholarship:boolean',
-                            'status',
+                            'signup_date:datetime:Signed Up On',
+                            'scholarship:boolean:Scholarship',
+                            'status:text:Status',
                             array(
                                 'class'=>'CompositeButtonColumn',
                                 'viewButtonUrl'=>Yii::app()->controller->createUrl("view",$model->primaryKey),

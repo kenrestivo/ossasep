@@ -12,7 +12,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'class.class_name:text:Class',
-                      'signup_date:datetime',
+                      'signup_date:datetime:Signed Up On',
                       'status:text:Status',
                       'scholarship:boolean:Scholarship',
                       'note:ntext:Note',

@@ -1,7 +1,6 @@
 TODO for asep
 
 signupdate must be a datetime! not just a date!
-	fix the gui stuff to deal with that, everywhere
 	auto-timestamp the signup date at create time!
 		maybe even pre-populate it
 

@@ -18,11 +18,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.emergency_1:text:Emergency',
                       'student.emergency_2:text:Emergency 2',
                       'student.emergency_3:text:Emergency 3',
-                      'student.parent_email:text:Email',
-                      'signup_date:datetime',
-                      'status',
+                      'student.parent_email:email:Email',
+                      'signup_date:datetime:Signed Up On',
+                      'status:text:Status',
                       // NOTE i am deliberately NOT showing scholarships here
-                      'note',
+                      'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
