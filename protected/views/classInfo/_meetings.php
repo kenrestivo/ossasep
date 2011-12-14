@@ -29,7 +29,6 @@ if(count($am) < 1 ){
 }
 ?>
 
-<div style="clear:both;">
 
 <?php
 echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
