@@ -82,8 +82,32 @@ class ReportController extends Controller
 
     public function actionClassDashboard()
     {
-        
+        $cl = array();
+        foreach(ClassInfo::activeClasses(
+                    Yii::app()->params['currentSession']) as $c){
+            $cn = $c->attributes;
+            $cn['totalcost'] = $c->costSummary;
+            $cn['signups'] = count(array_filter(
+                $c->signups, 
+                function($s){ return $s->status == 'Enrolled'; }));
+            $cn['waitlist'] = count(array_filter(
+                $c->signups, 
+                function ($v) { return $v->status == 'Waitlist'; }));
+            $cn['meetings'] = count($c->active_meetings);
+            if($cn['signups'] < $c->min_students){
+                $cn['status'] = 'Under limit by '. $c->min_students - $cn['signups'];
+            }
+            if($cn['signups'] >= $c->max_students){
+                $cn['status']  = 'Class Full';
+            }
+            if($cn['meetings'] < 1){
+                $cn['status']  = 'No meeting dates entered!';
+            }
+            $cl[] = $cn;
+        }
+
+        $this->render(
+            'class_dashboard',
+            array('classes' => $cl));
     }
-
-
 }
