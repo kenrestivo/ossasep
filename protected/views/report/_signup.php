@@ -3,6 +3,7 @@
  <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
 
 <?php
+// TODO: move this to the controller, this is a bad place for this!
 
      $raw = $model->latest_signups;
 $count= count($raw) > $model->max_students ? count($raw) : $model->max_students;

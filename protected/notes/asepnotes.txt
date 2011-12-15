@@ -842,3 +842,7 @@ http://www.yiiframework.com/wiki/197/local-time-zones-and-locales/d
 
 in cgridview, i can do awesome stuff
 		selectionChanged, selectablerows!
+
+
+clickable rows
+http://thephuse.com/design-and-usability/clickable-table-rows-with-jquery/

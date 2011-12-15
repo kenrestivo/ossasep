@@ -80,6 +80,10 @@ class ReportController extends Controller
                     Yii::app()->params['currentSession'])));
     }
 
+    public function actionClassDashboard()
+    {
+        
+    }
 
 
 }
