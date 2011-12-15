@@ -2,7 +2,7 @@
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-grid',
-                  'dataProvider'=> new KArrayDataProvider($classes),
+                  'dataProvider'=> $classes,
                   'columns'=>array(
                       'class_name:text:Class',
                       'signup_status:text:Status',

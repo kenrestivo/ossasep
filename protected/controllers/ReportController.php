@@ -95,7 +95,7 @@ class ReportController extends Controller
                 function ($v) { return $v->status == 'Waitlist'; }));
             $cn['meetings'] = count($c->active_meetings);
             if($cn['meetings'] < 1){
-                $cn['signup_status']  = 'No meeting dates entered!';
+                $cn['signup_status']  = 'No meeting dates!';
             } elseif($cn['signups'] < $c->min_students){
                 $cn['signup_status'] = 'Min '. $c->min_students . ' students';
             } elseif($cn['signups'] >= $c->max_students){
@@ -103,9 +103,10 @@ class ReportController extends Controller
             }
             $cl[] = $cn;
         }
-
+        $dp = new KArrayDataProvider($cl);
+        $dp->pagination = array('pageSize'=>100); //XXX stupid hack, TURN IT OFF!
         $this->render(
             'class_dashboard',
-            array('classes' => $cl));
+            array('classes' => $dp));
     }
 }
