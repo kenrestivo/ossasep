@@ -50,4 +50,11 @@ class KFormatter extends CFormatter
     }
 
 
+    public function formatCurrency($value)
+    {
+        //TODO: usse CNumberFormatter to put in stuff.
+        return  $value < 1 ? '' : sprintf("$%s",$this->formatNumber($value));
+    }
+
+
 }
