@@ -192,7 +192,7 @@ class ClassInfo extends CActiveRecord
         $model = $this;
         ///XXX hack! have to inject the count directly since it won't substitute!
         $c = Yii::app()->db->createCommand(
-            "select school_day from school_calendar where day_off < 1 and minimum < 1 and dayofweek(school_day) = :dayofweek and school_day > :startdate  and school_day < :enddate limit $count");
+            "select school_day from school_calendar where day_off < 1 and minimum < 1 and dayofweek(school_day) = :dayofweek and school_day >= :startdate  and school_day <= :enddate limit $count");
         $r=$c->queryAll(true, array(
                             'dayofweek' => $model->day_of_week,
                             'startdate' => $model->session->start_date,
