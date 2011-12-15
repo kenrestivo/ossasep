@@ -1,7 +1,8 @@
 TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
-	E the sign up sheet
+	Q dashboard-class
+	E the sign up sheet -- add financial summary now
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies
@@ -103,6 +104,7 @@ useful
 
 cosmetic
 	use the roster as the template for any index views, i have the css nice
+	a nice jui popup when hovering over a cell, showing description!
 	hide the view Cbutton for linktables, there's nothing to see anyway
 		at least in cgridviews, sometimes
 		or make it link to the dependent table, makes more sense
