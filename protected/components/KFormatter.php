@@ -44,4 +44,10 @@ class KFormatter extends CFormatter
     }
 
 
+    public function formatNoZero($value)
+    {
+        return $value < 1 ? '' : $this->formatNumber($value);
+    }
+
+
 }
