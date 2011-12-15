@@ -15,7 +15,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'signups:nozero:Signed up',
                       'waitlist:nozero:Waitlisted',
                       'meetings:nozero:Meetings',
-                      'totalcost:number:Cost Per Student',
+                      'totalcost:nozero:Cost Per Student',
                       ),
                   )); 
 ?>
