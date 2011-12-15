@@ -1,6 +1,7 @@
 TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
+	move the reports to a different controller, admin only permissions!
 	E the sign up sheet
 		add financial summary now
 		uniquely name all the gridviews (css id)
