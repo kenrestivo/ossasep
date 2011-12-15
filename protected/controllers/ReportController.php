@@ -94,6 +94,7 @@ class ReportController extends Controller
                 $c->signups, 
                 function ($v) { return $v->status == 'Waitlist'; }));
             $cn['meetings'] = count($c->active_meetings);
+            $cn['signup_status']  = 'OK';
             if($cn['meetings'] < 1){
                 $cn['signup_status']  = 'No meeting dates!';
             } elseif($cn['signups'] < $c->min_students){
