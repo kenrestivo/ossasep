@@ -81,7 +81,7 @@ reports
 		session m-f, notes
 		(also separate report-let: list of dates, not really needed)
 
-	M "schedule"
+-	M "schedule"
 		by day of week (l-r)
 			classname
 			teacher(s)
@@ -89,7 +89,7 @@ reports
 			time
 			room
 
-	N "description"
+-	N "description"
 		(the big ms word thing?)
 		number of weeks should count the weeks
 		this can be done manually/wordy
@@ -104,6 +104,22 @@ reports
 
 	P (maybe a duplicate)
 
+	Q dashboard-class
+		classname
+		date
+		time
+		signuup status (full, or not enough, or count of total signed up)
+		wait list count
+		session count
+		payments total
+
+	R  dashboard-instructors
+		name
+		missing paperwork
+		payments received
+		payments owed
+
+		
 (wow, 18 reports/entry screens)
 	
 unclear how to handle

@@ -2,7 +2,6 @@ TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	E the sign up sheet
-		selectionChanged, selectablerows!
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies

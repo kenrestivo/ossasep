@@ -838,3 +838,7 @@ ok, this works too
 date/tiem formatting is  hARD
 
 http://www.yiiframework.com/wiki/197/local-time-zones-and-locales/d
+
+
+in cgridview, i can do awesome stuff
+		selectionChanged, selectablerows!
