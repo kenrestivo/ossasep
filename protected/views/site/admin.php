@@ -3,9 +3,9 @@
 <table class="schedule">
 <tr>
   <th><h1>Dashboards</h1></th>
+  <th><h1>Reports</h1></th>
   <th><h1>Main views</h1></th>
   <th><h1>Setup</h1></th>
-  <th><h1>Reports</h1></th>
   <th><h1>Utility Views</h1></th>
 </tr>
 
@@ -15,6 +15,13 @@
 <td>
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/classDashboard">Class Dashboard</a> <br />
 
+</td>
+
+<td>
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsheet">Sign-Up Sheet</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a> <br />
+  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a><br />
 </td>
 
 
@@ -49,13 +56,6 @@
   <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a>
   <br />
       </td>
-
-<td>
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsheet">Sign-Up Sheet</a> <br />
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a> <br />
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a> <br />
-  <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a><br />
-</td>
 
 
 <td>

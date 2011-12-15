@@ -7,6 +7,13 @@ $this->breadcrumbs = array() ;
 <?= CHtml::link("Check our Schedule", 
                  array("/report/weekday")); ?>
 </p>
+
+<p>
+<?= CHtml::link("Check our Descriptions", 
+                 array("/report/descriptions")); ?>
+</p>
+
+
 <p>
 (Note: you will have to log in to see all the admin stuff)
 </p>
