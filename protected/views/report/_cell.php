@@ -2,7 +2,14 @@
       <em><strong>NEW:</strong></em>
           <?php } ?>
 
-<strong><?php echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); ?></strong><br />
+<strong><?php 
+if(Yii::app()->user->isGuest){
+    echo CHtml::encode($model->class_name);
+} else {
+    echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 
+}
+?>
+</strong><br />
 
 <?php
 if($model->isCompany()){
