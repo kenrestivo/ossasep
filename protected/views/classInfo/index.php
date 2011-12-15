@@ -24,7 +24,7 @@ $this->menu=array(
 		'cost_per_class',
 		'min_students',
 		'max_students',
-        array('name' => 'day_of_week', 
+        array('name' => 'day_of_week',  // TODO use kformatter
               'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
 		'location',
 		'status',

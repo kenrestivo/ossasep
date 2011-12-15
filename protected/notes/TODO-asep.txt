@@ -2,7 +2,9 @@ TODO for asep
 
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	Q dashboard-class
-	E the sign up sheet -- add financial summary now
+	E the sign up sheet
+		add financial summary now
+		uniquely name all the gridviews (css id)
 	A class summaries, financial
 	C calculating payments for teachers
 	D payments for companies
