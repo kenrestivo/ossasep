@@ -1,5 +1,9 @@
 <?php 
 
+echo CHtml::link("Auto-populate all meeting dates",
+				 array("Tools/autoPopulate"));
+
+
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-grid',
                   'dataProvider'=> $classes,
