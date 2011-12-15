@@ -57,6 +57,6 @@ class ToolsController extends Controller
         }
 
         //TODO: flash it!
-        $this->redirect(Yii::app()->request->requestUri);
+        $this->redirect($this->redirect(Yii::app()->user->returnUrl));
     }
 }
