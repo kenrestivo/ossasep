@@ -20,7 +20,7 @@ class ReportController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,10 +32,10 @@ class ReportController extends Controller
 	{
 		return array(
 			array('allow',  // just, go away and let me work, please
-				'actions'=>array('*'),
-				'users'=>array('*'),
-			),
-		);
+                  'actions'=>array('*'),
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	public function actionWeekday()
@@ -80,6 +80,26 @@ class ReportController extends Controller
                     Yii::app()->params['currentSession'])));
     }
 
+
+    public function signupStatus($c, $count)
+    {
+
+        if(count($c->active_meetings) < 1){
+            return 'No meeting dates!';
+        } elseif($count < 1){
+            return 'No signups yet.';
+        } elseif($count < $c->min_students){
+            return 'Needs min '. $c->min_students . ' students';
+        } elseif($count >= $c->max_students){
+            return 'Class Full';
+        } else {
+            return'OK';
+        }
+
+    }
+
+
+
     public function actionClassDashboard()
     {
         $cl = array();
@@ -87,23 +107,16 @@ class ReportController extends Controller
                     Yii::app()->params['currentSession']) as $c){
             $cn = $c->attributes;
             $cn['totalcost'] = $c->costSummary;
-            $cn['signups'] = count(array_filter(
-                $c->signups, 
-                function($s){ return $s->status == 'Enrolled'; }));
-            $cn['waitlist'] = count(array_filter(
-                $c->signups, 
-                function ($v) { return $v->status == 'Waitlist'; }));
+            $cn['signups'] = count(
+                array_filter(
+                    $c->signups, 
+                    function($s){ return $s->status == 'Enrolled'; }));
+            $cn['waitlist'] = count(
+                array_filter(
+                    $c->signups, 
+                    function ($v) { return $v->status == 'Waitlist'; }));
             $cn['meetings'] = count($c->active_meetings);
-            $cn['signup_status']  = 'OK';
-            if($cn['meetings'] < 1){
-                $cn['signup_status']  = 'No meeting dates!';
-            } elseif($cn['signups'] < 1){
-                $cn['signup_status']  = 'No signups yet.';
-            } elseif($cn['signups'] < $c->min_students){
-                $cn['signup_status'] = 'Min '. $c->min_students . ' students';
-            } elseif($cn['signups'] >= $c->max_students){
-                $cn['signup_status']  = 'Class Full';
-            }
+            $cn['signup_status']  = $this->signupStatus($c, $cn['signups']);
             $cl[] = $cn;
         }
         $dp = new KArrayDataProvider($cl);
