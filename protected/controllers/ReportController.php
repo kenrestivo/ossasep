@@ -102,9 +102,10 @@ class ReportController extends Controller
 
     public function actionClassDashboard()
     {
+        $s = ClassSession::model()->findByPk(
+            Yii::app()->params['currentSession']);
         $cl = array();
-        foreach(ClassInfo::activeClasses(
-                    Yii::app()->params['currentSession']) as $c){
+        foreach($s->active_classes as $c){
             $cn = $c->attributes;
             $cn['totalcost'] = $c->costSummary;
             $cn['signups'] = $c->enrolled_count;
