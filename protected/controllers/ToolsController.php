@@ -50,7 +50,7 @@ class ToolsController extends Controller
                 array('sess' => Yii::app()->params['currentSession']))
                 as $model)
         {
-            if(count($model->active_meetings) < 1){
+            if($model->active_mtg_count < 1){
                 $model->populate_meetings(
                     Yii::app()->params['defaultNumMeetings']);
             }
