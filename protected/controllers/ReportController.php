@@ -116,8 +116,12 @@ class ReportController extends Controller
         }
         $dp = new KArrayDataProvider($cl);
         $dp->pagination = array('pageSize'=>100); //XXX stupid hack, TURN IT OFF!
+
+
         $this->render(
             'class_dashboard',
-            array('classes' => $dp));
+            array(
+                'classes' => $dp,
+                'cancelled' => new KArrayDataProvider($s->cancelled_classes)));
     }
 }
