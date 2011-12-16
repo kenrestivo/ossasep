@@ -120,6 +120,14 @@ class ClassInfo extends CActiveRecord
                 self::STAT, 
                 'ClassMeeting', 'class_id',
                 'condition' => 'makeup < 1'), 
+            'enrolled_count' => array(
+                self::STAT, 
+                'Signup', 'class_id',
+                'condition' => 'status = "Enrolled"'), 
+            'waitlist_count' => array(
+                self::STAT, 
+                'Signup', 'class_id',
+                'condition' => 'status = "Waitlist"'), 
             );
 	}
 

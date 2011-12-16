@@ -107,14 +107,8 @@ class ReportController extends Controller
                     Yii::app()->params['currentSession']) as $c){
             $cn = $c->attributes;
             $cn['totalcost'] = $c->costSummary;
-            $cn['signups'] = count(
-                array_filter(
-                    $c->signups, 
-                    function($s){ return $s->status == 'Enrolled'; }));
-            $cn['waitlist'] = count(
-                array_filter(
-                    $c->signups, 
-                    function ($v) { return $v->status == 'Waitlist'; }));
+            $cn['signups'] = $c->enrolled_count;
+            $cn['waitlist'] = $c->waitlist_count;
             $cn['meetings'] = $c->active_mtg_count;
             $cn['signup_status']  = $this->signupStatus($c, $cn['signups']);
             $cl[] = $cn;
