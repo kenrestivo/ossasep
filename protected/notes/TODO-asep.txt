@@ -1,5 +1,9 @@
 TODO for asep
-	
+
+implement the signup form!
+	per student, it's a check, and several classes
+
+
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	move the reports to a different controller, admin only permissions!
 	Q the dashboard
