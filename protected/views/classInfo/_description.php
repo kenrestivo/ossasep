@@ -1,4 +1,8 @@
 <?php 
+
+  // TODO: this needs to be refactored in a huge way, to be more MVC-ish.
+  // move most of this code to the controller, just do the formatting here instead.
+
 $meetings = $model->active_meetings;
 $daysoff = $model->days_off;
 ?>

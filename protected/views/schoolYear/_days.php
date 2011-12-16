@@ -1,5 +1,6 @@
 <?php 
 
+  // TODO: replace this with a stat query
 $c = Yii::app()->db->createCommand();
 $c->text = "select count(school_day) as count from school_calendar where school_year_id = :schoolyearid;";
 $r=$c->queryRow(true, array('schoolyearid' => $model->id));

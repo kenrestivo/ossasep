@@ -84,7 +84,7 @@ class ReportController extends Controller
     public function signupStatus($c, $count)
     {
 
-        if(count($c->active_meetings) < 1){
+        if($c->active_mtg_count < 1){
             return 'No meeting dates!';
         } elseif($count < 1){
             return 'No signups yet.';
