@@ -97,6 +97,8 @@ class ReportController extends Controller
             $cn['signup_status']  = 'OK';
             if($cn['meetings'] < 1){
                 $cn['signup_status']  = 'No meeting dates!';
+            } elseif($cn['signups'] < 1){
+                $cn['signup_status']  = 'No signups yet.';
             } elseif($cn['signups'] < $c->min_students){
                 $cn['signup_status'] = 'Min '. $c->min_students . ' students';
             } elseif($cn['signups'] >= $c->max_students){

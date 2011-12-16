@@ -1,5 +1,6 @@
 <?php 
 
+  // TODO: put this in a tools menu! above or on the right side
 echo CHtml::link("Auto-populate all meeting dates",
 				 array("Tools/autoPopulate"));
 
