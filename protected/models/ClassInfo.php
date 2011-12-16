@@ -116,6 +116,10 @@ class ClassInfo extends CActiveRecord
                 'through' => 'signups'),
 			'instructor_assignments' => array(
                 self::HAS_MANY, 'InstructorAssignment', 'class_id'),
+            'active_mtg_count' => array(
+                self::STAT, 
+                'ClassMeeting', 'class_id',
+                'condition' => 'makeup < 1'), 
             );
 	}
 

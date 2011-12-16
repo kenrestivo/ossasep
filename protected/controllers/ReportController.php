@@ -115,7 +115,7 @@ class ReportController extends Controller
                 array_filter(
                     $c->signups, 
                     function ($v) { return $v->status == 'Waitlist'; }));
-            $cn['meetings'] = count($c->active_meetings);
+            $cn['meetings'] = $c->active_mtg_count;
             $cn['signup_status']  = $this->signupStatus($c, $cn['signups']);
             $cl[] = $cn;
         }
