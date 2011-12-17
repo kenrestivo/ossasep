@@ -53,31 +53,36 @@ class ReportController extends Controller
 
     public function actionSignupBoxes()
     {
+        $cs = ClassSession::model()->findByPk(
+            Yii::app()->params['currentSession']);
 		$this->render(
             'signupboxes', 
             array(
-                'classes' => ClassInfo::activeClasses(
-                    Yii::app()->params['currentSession'])));
+                'classes' => $cs->active_classes));
+                    
     }
 
 
     public function actionDescriptions()
     {
+        $cs = ClassSession::model()->findByPk(
+            Yii::app()->params['currentSession']);
 		$this->render(
             'descriptions', 
             array(
-                'classes' => ClassInfo::activeClasses(
-                    Yii::app()->params['currentSession'])));
+                'classes' => $cs->active_classes));
+                    
     }
 
 
     public function actionSignupsheet()
     {
+        $cs = ClassSession::model()->findByPk(
+            Yii::app()->params['currentSession']);
 		$this->render(
             'signupsheet', 
             array(
-                'classes' => ClassInfo::activeClasses(
-                    Yii::app()->params['currentSession'])));
+                'classes' => $cs->active_classes));
     }
 
 
