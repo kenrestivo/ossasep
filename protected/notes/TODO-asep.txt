@@ -1,9 +1,25 @@
 TODO for asep
 
 implement the signup form!
-	per student, it's a check, and several classes
+	student
+		student name
+		grade
+		email
+		parent name
+		phone 1 2 3
+	classes
+		checkbox of classes!
+	checks/payments
+		can pre-populate based on checkboxes
+			with JS, based on which companies (osspto, etc)
+			the totals OWED to each!
+		then apply checks to those
+			applied to several classes, as needed
+			the income splits thus generated in js ahead of time
+		or several checks, split
+			this part could get ugly
 
-
+	
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	move the reports to a different controller, admin only permissions!
 	Q the dashboard
