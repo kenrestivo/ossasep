@@ -8,7 +8,6 @@ formatting
 	dashboard
 		total amount income for class
 	signupsheet
-		move signup signuedup on at end
 		put names in alpha order
 		sort waitlist and cancelled properly, at end
 	in class/_owed, should include waitlisted!

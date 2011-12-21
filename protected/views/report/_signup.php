@@ -44,7 +44,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'enablePagination' => false,
                   'columns'=>array(
                       'order:number:#',
-                      'signup_date:datetime:Signed Up On', 
                       'full_name:text:Name',
                       'grade:grade:Grade',
                       'contact:text:Contact',
@@ -54,6 +53,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'parent_email:text:Email',
                       'status:text:Status',
                       'note:ntext:Note',
+                      'signup_date:datetime:Signed Up On', 
                       ),
                   )); 
 ?>
