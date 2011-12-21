@@ -2,7 +2,6 @@ TODO for asep
 
 formatting
 	weekday
-		order by alpha not times
 		make days all same column width
 	for class summary, show grades
 	take view buttons out of linktables

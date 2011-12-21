@@ -235,7 +235,7 @@ from class_info
 where (class_info.status = 'Active' or class_info.status = 'New')
       and class_info.day_of_week = :wkd
       and class_info.session_id = :sess
-order by class_info.start_time, class_info.class_name
+order by class_info.class_name
 ; ",
                         array('wkd' => $n,
                               'sess' => $session))
