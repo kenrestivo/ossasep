@@ -13,6 +13,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'check.check_date:date:Check Date',
                       'check.payer:text:Payer',
                       'check.delivered:date:Delivered to Company',
+                      'check.deposited:date:Deposited',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',
@@ -33,7 +34,9 @@ echo CHTML::link("Add Check for " . $model->full_name,
 <tr><th>Class</th><th>Amount</th></tr>
 <?php 
 foreach($model->owed as $owed){
-    echo '<tr><td>' . $owed['class']->class_name . "</td><td>" . $owed['amount'] . "</td></tr>";
+    echo '<tr><td>' . $owed['class']->class_name . " (". $owed['class']->company->name . ")</td><td>" . $owed['amount'] . "</td></tr>";
 }
 ?>
 </table>
+
+
