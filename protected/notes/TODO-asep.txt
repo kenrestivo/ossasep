@@ -1,10 +1,8 @@
 TODO for asep
 
 very basic need:
-	add a check
-	have rows ALREADY THERE for the classes already signed up
+	have rows ALREADY THERE for the classes owed
 		with prepopulated class, studentid, and amount
-		find all unpaid non-scholarship classes
 	correctly save (with-related?) all the rows AND the check
 	ideally be able to delete them via jquery
 		

@@ -1,9 +1,7 @@
-<?php 
-foreach($model->owed as $owed){
-    echo $owed['class']->class_name . " " . $owed['amount'] . "<br />";
-}
+<h3>Paid</h3>
+<?php
 echo CHTML::link("Add Check for " . $model->full_name, 
-                 array("CheckIncome/create",
+                 array("CheckIncome/multiEntry",
                        'student_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 
@@ -15,8 +13,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'class.class_name:text:Class',
-                      'check.amount:number:Total Check Amount',
-                      'amount:number:Split Check Amount Assigned',
+                      'check.amount:currency:Total Check Amount',
+                      'amount:currency:Split Check Amount Assigned',
                       'check.check_date:date:Check Date',
                       'check.payer:text:Payer',
                       'check.delivered:date:Delivered to Company',
@@ -28,3 +26,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 ?>
+<h3>Unpaid/owed</h3>
+<table style="items">
+<tr><th>Class</th><th>Amount</th></tr>
+<?php 
+foreach($model->owed as $owed){
+    echo '<tr><td>' . $owed['class']->class_name . "</td><td>" . $owed['amount'] . "</td></tr>";
+}
+?>
+</table>
