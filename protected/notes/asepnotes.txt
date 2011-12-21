@@ -956,7 +956,7 @@ she would start student, then add to class
 
 for class summary, show grades
 
-show waitlist as the only option if they are over capacity
+show waitlist as the deafult option if they are over capacity
 
 don't delete for assignments in unpaid
 	use "unassign" or "none"
@@ -971,3 +971,62 @@ check status/dashboard, show that they add
 
 also autoppopulate the check
 
+check number for cash? no, put a checkbox in there
+
+list of scholarships report
+	student
+	class
+	amount
+
+scholasrhip REQUEST will have to happen once we're online
+
+
+scholarships are weird, but she can manually hack around
+
+show as UNPAID if a returned check is there
+
+they sign up and the check is wrong or somethign is wrong
+	return check if waitlist
+
+
+refund if it rarely doesn't meet minimum
+
+
+signupsheet
+	move signup signuedup on at end
+	in signup sheet put names in alpha order
+
+only show email if checked email allowed
+
+
+sort waitlist properly in signupsheet
+
+
+on student/_income, if cancelled, show the paids, so search for enrolled OR cancelled or just not waitlisted
+
+actually, owed should show up for waitlisted!
+	gets put in another envelope
+
+
+in paid too, why are cancelleds not showing up?
+
+treat returned checks as not actually paid, so don't include in totals
+
+
+first pass put them aside
+	pile for deposited, class is good OR joint check
+	or waitlist pile
+	or return pile
+
+joint checks ALWAYS get deposited first
+	also all cash
+
+put in check number, autocomplete
+	populate the info on the check
+
+
+higher amounts first in deposit display (i did this kinda)
+
+
+limit of how many checks to enter on a deposit?
+	heidi will ask debbie if that's required
