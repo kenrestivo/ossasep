@@ -910,7 +910,6 @@ heidi 12/21/11
 	she would start student, then add to class
 
 
-also autoppopulate the check when adding
 
 
 scholasrhip REQUEST will have to happen once we're online
@@ -927,17 +926,6 @@ they sign up and the check is wrong or somethign is wrong
 refund if it rarely doesn't meet minimum
 
 
-only show email if checked email allowed
-
-
-
-on student/_income, if cancelled, show the paids, so search for enrolled OR cancelled or just not waitlisted
-
-actually, owed should show up for waitlisted!
-	gets put in another envelope
-
-
-in paid too, why are cancelleds not showing up?
 
 treat returned checks as not actually paid, so don't include in totals
 
@@ -949,7 +937,6 @@ first pass put them aside
 
 joint checks ALWAYS get deposited first
 	also all cash
-
 
 
 higher amounts first in deposit display (i did this kinda)

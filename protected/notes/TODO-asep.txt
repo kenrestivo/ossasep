@@ -13,6 +13,8 @@ formatting
 		move signup signuedup on at end
 		put names in alpha order
 		sort waitlist and cancelled properly, at end
+	in class/_owed, should include waitlisted!
+		checks do get entered, gets put in another envelope
 	show company in description, "so and so of so-and-so company"
 		fix description, put instructor and company OF companyname
 		but there's a problem, if there's shannon randolph
@@ -20,7 +22,7 @@ formatting
 	take the edit boxes out of admin cgridviews
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
-
+	add a line in checks, for any un-assigned check stuff!!
 	
 ui
 	instructor search workss, but not student. why/fix
@@ -41,6 +43,7 @@ ui
 		an autocomplete with lists of checks
 	in _meetings, ajax update the classes when they are added
 		or just remove the count, or put it in a cgridview header
+	autoppopulate the check when adding
 	deposits
 		put in check number, autocomplete
 			populate the info on the check
@@ -50,14 +53,24 @@ add to db/model/ui
 	alias for per instructor, use alias for information
 	checkbox for releasing email address, must add
 		per STUDENT
+		only show email if checked email allowed
 	checkbox for cash
 		and autopopulate check # with 'cash' perhaps
 	autocompletes not dropdowns
 		classes
 		students
 		roster import
+
+
+bug
+	in paid, why are cancelleds payments not showing up at all?
+	on student/_income, if cancelled, show the paids,
+		so find enrolled OR cancelled or just not waitlisted
+	they WERE paid. only returned checks shouldn't show up.
+		or maybe they should, just not in totals?
 		
-functionality
+
+new functionality/utility
 	delete class
 		only delete class is no students signed up
 		do not let them delete otherwise
@@ -73,7 +86,7 @@ future/with user login security
 
 
 big gui stuff
-	add a line in checks, for any un-assigned check stuff!!
+
 		and report it somewhere too!
 
 
