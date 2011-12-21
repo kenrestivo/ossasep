@@ -36,11 +36,11 @@ class CheckIncomeController extends Controller
                   'users'=>array('*'),
                 ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                  'actions'=>array('create','update', 'entry'),
+                  'actions'=>array('create','update'),
                   'users'=>array('@'),
                 ),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                  'actions'=>array('admin','delete'),
+                  'actions'=>array('admin','delete', 'entry', 'multientry'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -184,6 +184,26 @@ class CheckIncomeController extends Controller
         }
 
         $this->render('entry', array('form'=>$form));
+
+    }
+
+
+    public function actionMultiEntry()
+    {
+		$model=new CheckIncome;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['CheckIncome']))
+		{
+            //TODO: save this stuff
+		}
+
+		$this->render('multientry',array(
+                          'model'=>$model,
+                          ));
+
 
     }
 

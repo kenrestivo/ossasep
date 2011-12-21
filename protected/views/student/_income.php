@@ -1,6 +1,6 @@
 <?php 
 echo CHTML::link("Add Check for " . $model->full_name, 
-                 array("Income/create",
+                 array("CheckIncome/create",
                        'student_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 

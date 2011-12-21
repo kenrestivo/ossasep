@@ -1,4 +1,11 @@
 TODO for asep
+
+very basic need:
+	add a check
+	have rows ALREADY THERE for the classes already signed up
+		with prepopulated class, studentid, and amount
+	correctly save (with-related?) all the rows AND the check
+	ideally be able to delete them via jquery
 	
 
 big gui stuff
@@ -6,7 +13,6 @@ big gui stuff
 		treat signup as an INVOICE, to apply a payment to
 			so, when entering a check, let the user apply it
 		treat income as a PAYMENT SPLIT
-
 
 
 oh crap. how does she deal with partial refunds???
