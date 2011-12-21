@@ -18,7 +18,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'amount',
+		'amount:currency',
 		'payer',
 		'payee.name',
 		'check_num',
@@ -47,7 +47,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       'student.full_name:text:Student',
                       'class.summary:text:Class',
-                      'amount:number:Assigned Split',
+                      'amount:currency:Assigned Split',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',
