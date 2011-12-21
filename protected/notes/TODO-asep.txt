@@ -1,8 +1,8 @@
 TODO for asep
 
+get search working for student, etc
+
 big gui stuff
-	or, just have a checkbox on income page to select which classes to pay
-		or delete via jquery, for one-check-per-class people.
 	add a line in checks, for any un-assigned check stuff!!
 		and report it somewhere too!
 
@@ -232,6 +232,8 @@ joins from one side shouldn't have popups for that side!
 make a validation rule to make sure that the instructors aren't getting > 100 % !!
 	i.e. check to see if a class has > 100% total
 
+
+have a checkbox on income page to select which classes to pay
 
 visual show/add meeting dates
 	a very quick datepicker adder!

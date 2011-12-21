@@ -62,13 +62,22 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 <table>
-<tr><th>Class</th><th>Amount</th></tr>
+<tr><th>Class</th><th>Amount</th><th></th></tr>
 <?php foreach($income as $i=>$inc): ?>
 <tr>
     <td><?php echo $inc->class->class_name . " (". $inc->class->company->name . ")"; 
           echo CHtml::activeHiddenField($inc,"[$i]class_id"); 
          echo CHtml::activeHiddenField($inc,"[$i]student_id"); ?></td>
 <td><?php echo CHtml::activeTextField($inc,"[$i]amount");?></td>
+<td>
+<?php echo CHtml::link(
+    'delete', 
+    '', 
+    array(
+        'class'=>'delete',
+        'onClick'=>'deleteRow($(this))', 
+   ));?>
+</td>
 </tr>
 <?php endforeach; ?>
 </table>
@@ -83,3 +92,15 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+
+<script type="text/javascript">
+
+
+function deleteRow(button)
+{
+    button.parents('tr').detach();
+}
+ 
+</script>
