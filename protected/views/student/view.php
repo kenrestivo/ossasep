@@ -29,7 +29,10 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Classes' =>
                       $this->renderPartial("_classes", 
                                            array('model' => $model), true),
-                      'Payments' =>
+                      'Unpaid' =>
+                      $this->renderPartial("_owed", 
+                                           array('model' => $model), true),
+                      'Paid' =>
                       $this->renderPartial("_income", 
                                            array('model' => $model), true),
                       )));
