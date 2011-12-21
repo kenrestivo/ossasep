@@ -1,18 +1,18 @@
 <?php
 
-/**
- * This is the model class for table "instructor".
- *
- * The followings are the available columns in table 'instructor':
- * @property integer $id
- * @property string $full_name
- * @property string $email
- * @property string $cell_phone
- * @property string $other_phone
- * @property string $note
- * @property integer $instructor_type_id
- * @property integer $company_id
- */
+  /**
+   * This is the model class for table "instructor".
+   *
+   * The followings are the available columns in table 'instructor':
+   * @property integer $id
+   * @property string $full_name
+   * @property string $email
+   * @property string $cell_phone
+   * @property string $other_phone
+   * @property string $note
+   * @property integer $instructor_type_id
+   * @property integer $company_id
+   */
 class Instructor extends CActiveRecord
 {
 	/**
@@ -47,8 +47,12 @@ class Instructor extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, full_name, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
-		);
+            );
 	}
+
+    public function defaultScope() {
+        return array('order' => 'full_name ASC');
+    }
 
 	/**
 	 * @return array relational rules.
@@ -92,7 +96,7 @@ class Instructor extends CActiveRecord
                 self::HAS_MANY, 
                 'RequirementStatus', 
                 'instructor_id'),
-		);
+            );
 	}
 
 	/**
@@ -109,7 +113,7 @@ class Instructor extends CActiveRecord
 			'note' => 'Note',
 			'company_id' => 'Company',
 			'instructor_type_id' => 'Instructor Type',
-		);
+            );
 	}
 
 	/**
@@ -139,7 +143,7 @@ class Instructor extends CActiveRecord
 		$criteria->compare('company_id',$this->company_id);
 
 		return new CActiveDataProvider('Instructor', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 }

@@ -907,7 +907,7 @@ a really simple autocompmlete, supposedly
 heidi 12/21/11
 	make company id 1  not editable
 	requirements and instructor types, make cleaner
-	instrucors in alpha order
+	instructors in alpha order in dropdown
 	take the edit boxes out of admin cgridviews
 	take view buttons out of linktables
 	today button
@@ -922,10 +922,6 @@ heidi 12/21/11
 	formatting bug for tables, show wednesday classes as wednesday
 
 	she likes the schedule as a dashboard
-
-	add admin private note to dashboard for class
-
-	tennis delete
 
 	instructor search workss, but not student. why/fix
 
