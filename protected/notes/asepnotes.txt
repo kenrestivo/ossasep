@@ -902,3 +902,23 @@ updating tabular input
 
 a really simple autocompmlete, supposedly
 	http://www.yiiframework.com/wiki/162/a-simple-action-for-cjuiautocomplete/
+
+----------
+heidi 12/21/11
+	make company id 1  not editable
+	requirements and instructor types, make cleaner
+	instrucors in alpha order
+	take the edit boxes out of admin cgridviews
+	take view buttons out of linktables
+	today button
+
+	she sends info to debbie, she generates checks
+		drops them off, some get picked up
+
+	fix description, put instructor and company OF companyname
+
+	alias for per instructor, use alias
+
+	formatting bug for tables, show wednesday classes as wednesday
+
+	
