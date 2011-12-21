@@ -943,3 +943,31 @@ for adding date, auto-populate with next available weekday afterwards
 manually edit dates, in m/d/y format
 
 
+show company in description, "so and so of so-and-so company"
+	but there's a problem, if there's shannon randolph
+	if the company has more than one instructor, show it
+
+on weekday make days all even
+
+checkbox for releasing email address, must add
+	per STUDENT
+
+she would start student, then add to class
+
+for class summary, show grades
+
+show waitlist as the only option if they are over capacity
+
+don't delete for assignments in unpaid
+	use "unassign" or "none"
+	and/or if the number is 0, don't even add it
+
+add edit/view link to names in student
+	or click on row
+
+choose existing check
+
+check status/dashboard, show that they add
+
+also autoppopulate the check
+
