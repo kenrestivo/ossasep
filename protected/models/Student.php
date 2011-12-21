@@ -148,6 +148,7 @@ class Student extends CActiveRecord
             $owed  =  $cs - $paid;
             if($s->scholarship < 1 && $owed > 0){
                 $res[]= array('class' => $s->class,
+                              'payee' => $s->class->company,
                               'amount' => $owed);
             }
         }
