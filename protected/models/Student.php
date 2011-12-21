@@ -1,27 +1,27 @@
 <?php
 
-/**
- * This is the model class for table "student".
- *
- * The followings are the available columns in table 'student':
- * @property integer $id
- * @property string $first_name
- * @property string $last_name
- * @property integer $grade
- * @property string $contact
- * @property string $emergency_1
- * @property string $emergency_2
- * @property string $emergency_3
- * @property string $parent_email
- */
+  /**
+   * This is the model class for table "student".
+   *
+   * The followings are the available columns in table 'student':
+   * @property integer $id
+   * @property string $first_name
+   * @property string $last_name
+   * @property integer $grade
+   * @property string $contact
+   * @property string $emergency_1
+   * @property string $emergency_2
+   * @property string $emergency_3
+   * @property string $parent_email
+   */
 class Student extends CActiveRecord
 {
 
 
     public function getFull_name()
-        {
-                return $this->first_name.' '.$this->last_name;
-        }
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -57,7 +57,7 @@ class Student extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, grade, contact, emergency_1, emergency_2, emergency_3, parent_email', 'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Student extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'incomes' => array(self::HAS_MANY, 'Income', 'student_id'),
-			'class_infos' => array(
+			'classes' => array(
                 self::HAS_MANY, 
                 'ClassInfo', 
                 'class_id', 
@@ -80,7 +80,7 @@ class Student extends CActiveRecord
                 'CheckIncome', 
                 'check_id',
                 'through' => 'incomes'),
-		);
+            );
 	}
 
 	/**
@@ -99,7 +99,7 @@ class Student extends CActiveRecord
 			'emergency_3' => 'Emergency 3',
             'parent_email' => 'Parent Email',
 	        'note' => 'Note',
-		);
+            );
 	}
 
 	/**
@@ -130,7 +130,32 @@ class Student extends CActiveRecord
 		$criteria->compare('parent_email',$this->parent_email,true);
 
 		return new CActiveDataProvider('Student', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
+
+    public function getOwed()
+    {
+        $res = array();
+        foreach($this->signups as $s){
+            $paid = 0;
+            $cs = $s->class->costSummary;
+            $inc=$this->incomes;
+            foreach($inc as $i){
+                if($i->class_id == $s->class_id){
+                    $paid += $i->amount;
+                }
+            }
+            $owed  =  $cs - $paid;
+            if($s->scholarship < 1 && $owed > 0){
+                $res[]= array('class' => $s->class,
+                              'payee' => $s->class->company,
+                              'amount' => $owed);
+            }
+        }
+        return $res;
+    }
+
+
+
 }

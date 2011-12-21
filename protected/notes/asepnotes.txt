@@ -442,7 +442,7 @@ $r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
 HEY THIS IS AWESOME!
 
 i can do sql queries on models!
-$data = Entries::model()->findBySql43("SELECT * FROM entries WHERE id = $id");
+$data = Entries::model()->findBySql("SELECT * FROM entries WHERE id = $id");
 
 
 
@@ -853,7 +853,7 @@ autocomplete is the way to go!
 		http://af-design.com/blog/2010/05/12/using-jquery-uis-autocomplete-to-populate-a-form/
 	html version:
 	https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js
-
+	yii version: http://www.yiiframework.com/doc/api/1.1/CJuiAutoComplete
 
 
 implement the signup form!
@@ -889,3 +889,16 @@ implement the signup form!
 		checks
 	then save it, and this will be a with-related nightmare
 	the editing will be the really interesting bit too
+
+
+wow, jquery appendo, for cloning rows of forms for dependent stuff!
+	http://www.yiiframework.com/extension/jappendo/
+	but, it sucks. it doesn't name them right. they're column(row1, row2, row3)
+
+
+updating tabular input
+	http://www.yiiframework.com/forum/index.php?/topic/23886-how-to-update-tabular-input/
+
+
+a really simple autocompmlete, supposedly
+	http://www.yiiframework.com/wiki/162/a-simple-action-for-cjuiautocomplete/

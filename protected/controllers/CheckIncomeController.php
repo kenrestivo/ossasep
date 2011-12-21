@@ -36,11 +36,11 @@ class CheckIncomeController extends Controller
                   'users'=>array('*'),
                 ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                  'actions'=>array('create','update', 'entry'),
+                  'actions'=>array('create','update'),
                   'users'=>array('@'),
                 ),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                  'actions'=>array('admin','delete'),
+                  'actions'=>array('admin','delete', 'entry', 'multientry'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -184,6 +184,64 @@ class CheckIncomeController extends Controller
         }
 
         $this->render('entry', array('form'=>$form));
+
+    }
+
+
+    public function actionMultiEntry()
+    {
+		$model=new CheckIncome;
+        $income = array();
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['CheckIncome'])){
+			$model->attributes=$_POST['CheckIncome'];
+            //saving, so populate from the form now
+            if(isset($_POST['Income'])){
+                foreach($_POST['Income'] as $i){
+                    $inc=new Income('check');
+                    $inc->attributes =  $i;
+                    $income[] = $inc;
+                }
+                $model->incomes = $income;
+            }            
+
+            if($model->withRelated->save(true, array('incomes')))
+            {
+                $this->redirect(array('view','id'=> $model->id));
+            } 
+
+		} else {
+            if(isset($_GET['company_id'])){
+                $model->payee_id = $_GET['company_id'];
+            }
+            if(isset($_GET['student_id'])){
+                $total = 0;
+                $stu = Student::model()->findByPk($_GET['student_id']);
+                foreach($stu->owed as $owed){
+                    if($owed['payee']->id == $model->payee_id){
+                        $inc=new Income();
+                        $inc->student_id = $stu->id;
+                        $inc->class_id = $owed['class']->id;
+                        $inc->amount = $owed['amount'];
+                        $income[] =  $inc;
+                        $total += $owed['amount'];
+                    }
+                }
+                $model->amount = $total;
+            }
+
+
+        }
+
+
+		$this->render('multientry',array(
+                          'model'=>$model,
+                          'income' => $income
+                          ));
+
 
     }
 
