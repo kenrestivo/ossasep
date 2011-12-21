@@ -25,7 +25,7 @@ if(Yii::app()->user->isGuest){
 
 <span class="span-6">Number of students: 
 
-<?php if($model->min_students > 0){  ?>
+<?php if($model->min_students > 1){  ?>
 <?= $model->min_students ?> -  <?= $model->max_students  ?>
 
                                      <?php }  else  { ?>
