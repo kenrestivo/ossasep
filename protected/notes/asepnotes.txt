@@ -442,7 +442,7 @@ $r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
 HEY THIS IS AWESOME!
 
 i can do sql queries on models!
-$data = Entries::model()->findBySql43("SELECT * FROM entries WHERE id = $id");
+$data = Entries::model()->findBySql("SELECT * FROM entries WHERE id = $id");
 
 
 

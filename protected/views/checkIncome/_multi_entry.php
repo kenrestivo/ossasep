@@ -114,6 +114,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	</div>
 
 
+
+
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
