@@ -71,7 +71,7 @@ class Instructor extends CActiveRecord
                 self::BELONGS_TO, 
                 'Company', 
                 'company_id'),
-			'class_infos' => array(
+			'classes' => array(
                 self::HAS_MANY, 
                 'ClassInfo', 
                 'class_id',
