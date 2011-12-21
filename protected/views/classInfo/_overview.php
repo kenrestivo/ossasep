@@ -1,6 +1,10 @@
 
 <?php echo $this->renderPartial('_description', array('model'=>$model)); ?>
 
+  <?php echo CHtml::encode($model->note); ?>
+  <br />
+
+
 <?php
 echo CHTML::link("Edit  ". $model->class_name, 
                  array('update', 'id'=>$model->id,
