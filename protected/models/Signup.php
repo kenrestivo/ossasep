@@ -44,9 +44,14 @@ class Signup extends CActiveRecord
             array('student_id, class_id', 'required'),
             array('student_id, class_id,scholarship', 'numerical', 'integerOnly'=>true),
             array('signup_date, status,note', 'safe'),
+            /* the set on empty is just a belt-and-suspenders
+             the controller sets a default anyway.
+             but if the user deletes the default, 
+             this will make sure something goes in there
+            */
             array('signup_date','default',
                   'value'=> date ("Y-m-d H:i:s"),
-                  'setOnEmpty'=>false,
+                  'setOnEmpty'=>true,
                   'on'=>'insert'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
@@ -75,7 +80,7 @@ class Signup extends CActiveRecord
         return array(
             'student_id' => 'Student',
             'class_id' => 'Class',
-            'signup_date' => 'Signup',
+            'signup_date' => 'Signed up on',
             'status' => 'Status',
             'scholarship' => 'Scholarship',
             'note' => 'Note'

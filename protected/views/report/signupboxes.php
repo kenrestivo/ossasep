@@ -25,6 +25,7 @@
                               echo "<strong>" . CHtml::encode($coname) . "</strong>";
                           } else {
                               echo CHtml::encode($coname);
+
                           }
                          ?>
                           </td>

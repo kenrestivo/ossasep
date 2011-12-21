@@ -846,3 +846,46 @@ in cgridview, i can do awesome stuff
 
 clickable rows
 http://thephuse.com/design-and-usability/clickable-table-rows-with-jquery/
+
+autocomplete is the way to go!
+	a jqueryui autocomplete pulldown like facebook
+	multiple populates:
+		http://af-design.com/blog/2010/05/12/using-jquery-uis-autocomplete-to-populate-a-form/
+	html version:
+	https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js
+
+
+
+implement the signup form!
+	student 
+		fields (easy)
+			student name
+			grade
+			email
+			parent name
+			phone 1 2 3
+		autocomplete or pulldown for existing student
+			and autocomplete/pulldown from roster too
+		so: existing student, or from roster
+			wizard?
+	classes
+		checkbox of classes!
+		or a autocomplete add
+		or a dropdown add?
+		the hard part is, what about waitlists?
+			maybe auto-waitlist if there are already more than those signed up
+	checks/payments
+		can pre-populate based on checkboxes
+			with JS, based on which companies (osspto, etc)
+			the totals OWED to each!
+		then apply checks to those
+			applied to several classes, as needed
+			the income splits thus generated in js ahead of time
+		or several checks, split
+			this part could get ugly
+	could do it as a wizard with several saves too
+		student
+		classes/signups
+		checks
+	then save it, and this will be a with-related nightmare
+	the editing will be the really interesting bit too

@@ -67,6 +67,7 @@ class SignupController extends Controller
 	{
 		$model=new Signup;
 
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -77,7 +78,10 @@ class SignupController extends Controller
 				$this->redirect(array('view',
                                       'student_id'=>$model->student_id,
                                       'class_id'=>$model->class_id));
-		}
+		} else {
+            // only if this is NOT yet entered
+            $model->signup_date = date ("Y-m-d H:i:s");
+        }
 
         if(isset($_GET['student_id'])){
             $model->student_id = $_GET['student_id'];
