@@ -196,8 +196,6 @@ class CheckIncomeController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-
-
 		if(isset($_POST['CheckIncome'])){
 			$model->attributes=$_POST['CheckIncome'];
             //saving, so populate from the form now
@@ -216,16 +214,21 @@ class CheckIncomeController extends Controller
             } 
 
 		} else {
+            if(isset($_GET['company_id'])){
+                $model->payee_id = $_GET['company_id'];
+            }
             if(isset($_GET['student_id'])){
                 $total = 0;
                 $stu = Student::model()->findByPk($_GET['student_id']);
                 foreach($stu->owed as $owed){
-                    $inc=new Income();
-                    $inc->student_id = $stu->id;
-                    $inc->class_id = $owed['class']->id;
-                    $inc->amount = $owed['amount'];
-                    $income[] =  $inc;
-                    $total += $owed['amount'];
+                    if($owed['payee']->id == $model->payee_id){
+                        $inc=new Income();
+                        $inc->student_id = $stu->id;
+                        $inc->class_id = $owed['class']->id;
+                        $inc->amount = $owed['amount'];
+                        $income[] =  $inc;
+                        $total += $owed['amount'];
+                    }
                 }
                 $model->amount = $total;
             }
