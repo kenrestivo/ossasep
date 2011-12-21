@@ -119,6 +119,14 @@ reports
 		payments received
 		payments owed
 
+	S list of scholarships report
+		student
+		class
+		amount
+
+	T
+		check status/dashboard, show that they add up!
+			report errors if not
 		
 (wow, 18 reports/entry screens)
 	

@@ -905,78 +905,76 @@ a really simple autocompmlete, supposedly
 
 ----------
 heidi 12/21/11
-	make company id 1  not editable
-	requirements and instructor types, make cleaner
-	take the edit boxes out of admin cgridviews
-	take view buttons out of linktables
-	today button
-
-	she sends info to debbie, she generates checks
-		drops them off, some get picked up
-
-	fix description, put instructor and company OF companyname
-
-	alias for per instructor, use alias
-
-	formatting bug for tables, show wednesday classes as wednesday
 
 	she likes the schedule as a dashboard
+	she would start student, then add to class
 
+
+formatting
+	weekday
+		order by alpha not times
+		show wednesday classes as wednesday
+		make days all same column width
+	for class summary, show grades
+	take view buttons out of linktables
+	signupsheet
+		move signup signuedup on at end
+		put names in alpha order
+	show company in description, "so and so of so-and-so company"
+		fix description, put instructor and company OF companyname
+		but there's a problem, if there's shannon randolph
+		if the company has more than one instructor, show it
+	take the edit boxes out of admin cgridviews
+	requirements and instructor types, make view display cleaner
+		i did this, in instructor didn't i?
+
+	
+ui
 	instructor search workss, but not student. why/fix
+	for adding date, auto-populate with next available weekday afterwards
+	show waitlist as the default option if they are over capacity
+	add edit/view link to names in student
+		or click on row
+	don't delete for assignments in unpaid
+		use "unassign" or "none"
+		and/or if the number is 0, don't even add it
+	make company id 1  not editable or removable (company form/view)
+	today button, fix
+	manually edit dates, in m/d/y format
+	choose existing check as option in unpaid
+		an autocomplete with lists of checks
 
-	only delete class is no students signed up
+add to db/model/ui
+	alias for per instructor, use alias for information
+	checkbox for releasing email address, must add
+		per STUDENT
+	checkbox for cash
+		and autopopulate check # with 'cash' perhaps
+	autocompletes not dropdowns
+		classes
+		students
+		roster import
+		
+functionality
+	delete class
+		only delete class is no students signed up
 		do not let them delete otherwise
 		DO automatically delete all the dates and instructors
-
-delete from instructor_assignment where class_id=:cid
-delete from class_meeting where class_id=:cid
-delete from class_info where id=:cid
-
-
-let instructors edit descriptions
+		delete from instructor_assignment where class_id=:cid
+		delete from class_meeting where class_id=:cid
+		delete from class_info where id=:cid
 
 
-order weekday schedule by alpha not times
-
-for adding date, auto-populate with next available weekday afterwards
-
-manually edit dates, in m/d/y format
+future/with user login security
+	let instructors edit descriptions
 
 
-show company in description, "so and so of so-and-so company"
-	but there's a problem, if there's shannon randolph
-	if the company has more than one instructor, show it
 
-on weekday make days all even
 
-checkbox for releasing email address, must add
-	per STUDENT
-
-she would start student, then add to class
-
-for class summary, show grades
-
-show waitlist as the deafult option if they are over capacity
-
-don't delete for assignments in unpaid
-	use "unassign" or "none"
-	and/or if the number is 0, don't even add it
-
-add edit/view link to names in student
-	or click on row
-
-choose existing check
-
-check status/dashboard, show that they add
-
-also autoppopulate the check
+also autoppopulate the check when adding
 
 check number for cash? no, put a checkbox in there
 
-list of scholarships report
-	student
-	class
-	amount
 
 scholasrhip REQUEST will have to happen once we're online
 
@@ -991,10 +989,6 @@ they sign up and the check is wrong or somethign is wrong
 
 refund if it rarely doesn't meet minimum
 
-
-signupsheet
-	move signup signuedup on at end
-	in signup sheet put names in alpha order
 
 only show email if checked email allowed
 
@@ -1030,3 +1024,13 @@ higher amounts first in deposit display (i did this kinda)
 
 limit of how many checks to enter on a deposit?
 	heidi will ask debbie if that's required
+
+anyone can choose anyone, people can sign up kids
+	but, it's a possible security problem
+
+total amount income for class
+
+
+	she sends info to debbie, she generates checks
+		drops them off, some get picked up by the instructors!
+		so this is really just a tracking thing, doublechecking
