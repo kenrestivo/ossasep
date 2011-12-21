@@ -218,6 +218,7 @@ class CheckIncomeController extends Controller
 
 		} else {
             if(isset($_GET['student_id'])){
+                $total = 0;
                 $stu = Student::model()->findByPk($_GET['student_id']);
                 foreach($stu->owed as $owed){
                     $inc=new Income();
@@ -225,7 +226,9 @@ class CheckIncomeController extends Controller
                     $inc->class_id = $owed['class']->id;
                     $inc->amount = $owed['amount'];
                     $income[] =  $inc;
+                    $total += $owed['amount'];
                 }
+                $model->amount = $total;
             }
 
 

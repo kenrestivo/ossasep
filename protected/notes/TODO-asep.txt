@@ -1,9 +1,7 @@
 TODO for asep
 
 very basic need:
-	have rows ALREADY THERE for the classes owed
-		with prepopulated class, studentid, and amount
-	correctly save (with-related?) all the rows AND the check
+	try to calculate the total amount too
 	ideally be able to delete them via jquery
 		
 
