@@ -21,6 +21,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'waitlist:nozero:Waitlisted',
                       'meetings:nozero:Meetings',
                       'totalcost:currency:Cost Per Student',
+                      'note:text:Admin Note'
                       ),
                   )); 
 ?>
@@ -43,6 +44,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'waitlist:nozero:Waitlisted',
                       'meetings:nozero:Meetings',
                       'totalcost:currency:Cost Per Student',
+                      'note:text:Admin Note'
                       ),
                   )); 
 ?>

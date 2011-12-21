@@ -933,10 +933,18 @@ heidi 12/21/11
 		do not let them delete otherwise
 		DO automatically delete all the dates and instructors
 
-delete from instructor_assignment where class_id=20;
-delete from class_meeting where class_id=20;
-delete from class_info where id=20 ;
+delete from instructor_assignment where class_id=:cid
+delete from class_meeting where class_id=:cid
+delete from class_info where id=:cid
 
 
 let instructors edit descriptions
+
+
+order weekday schedule by alpha not times
+
+for adding date, auto-populate with next available weekday afterwards
+
+manually edit dates, in m/d/y format
+
 
