@@ -15,6 +15,9 @@ big gui stuff
 	add a line for any un-assigned check stuff!!
 		and report it somewhere too!
 
+
+autocomplete for payer would be nice
+		
 oh crap. how does she deal with partial refunds???
 	i.e. waitlist? DO I NEED TO TRACK REFUND CHECKS?
 	
