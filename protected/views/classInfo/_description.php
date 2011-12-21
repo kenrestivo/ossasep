@@ -37,11 +37,11 @@ up to <?= $model->max_students  ?>
 Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?>
 </span>
 
-<span class="span-6">
+<span class="span-8">
      <?= ZHtml::weekdayTranslation($model->day_of_week) ?>s, 
 <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?> 
 </span>
-<span class="span-4 last">
+<span class="span-3 last">
 <?= CHtml::encode($model->location) ?>
 </span>
 <br />

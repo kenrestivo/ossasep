@@ -921,4 +921,14 @@ heidi 12/21/11
 
 	formatting bug for tables, show wednesday classes as wednesday
 
-	
+	she likes the schedule as a dashboard
+
+	add admin private note to dashboard for class
+
+	tennis delete
+
+	instructor search workss, but not student. why/fix
+
+	only delete class is no students signed up
+		do not let them delete otherwise
+		DO automatically delete all the dates and instructors
