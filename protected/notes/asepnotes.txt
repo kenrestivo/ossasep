@@ -910,12 +910,7 @@ heidi 12/21/11
 	she would start student, then add to class
 
 
-
-
-
 also autoppopulate the check when adding
-
-check number for cash? no, put a checkbox in there
 
 
 scholasrhip REQUEST will have to happen once we're online
@@ -934,8 +929,6 @@ refund if it rarely doesn't meet minimum
 
 only show email if checked email allowed
 
-
-sort waitlist properly in signupsheet
 
 
 on student/_income, if cancelled, show the paids, so search for enrolled OR cancelled or just not waitlisted
@@ -957,8 +950,6 @@ first pass put them aside
 joint checks ALWAYS get deposited first
 	also all cash
 
-put in check number, autocomplete
-	populate the info on the check
 
 
 higher amounts first in deposit display (i did this kinda)
@@ -969,8 +960,6 @@ limit of how many checks to enter on a deposit?
 
 anyone can choose anyone, people can sign up kids
 	but, it's a possible security problem
-
-total amount income for class
 
 
 	she sends info to debbie, she generates checks

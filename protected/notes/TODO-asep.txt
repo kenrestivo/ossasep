@@ -7,9 +7,12 @@ formatting
 		make days all same column width
 	for class summary, show grades
 	take view buttons out of linktables
+	dashboard
+		total amount income for class
 	signupsheet
 		move signup signuedup on at end
 		put names in alpha order
+		sort waitlist and cancelled properly, at end
 	show company in description, "so and so of so-and-so company"
 		fix description, put instructor and company OF companyname
 		but there's a problem, if there's shannon randolph
@@ -32,8 +35,16 @@ ui
 	make company id 1  not editable or removable (company form/view)
 	today button, fix
 	manually edit dates, in m/d/y format
+	calculate that checks add up to their summaries
+		this doesn't have to be js.
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
+	in _meetings, ajax update the classes when they are added
+		or just remove the count, or put it in a cgridview header
+	deposits
+		put in check number, autocomplete
+			populate the info on the check
+		will need some kind of undepposited status, total amount
 
 add to db/model/ui
 	alias for per instructor, use alias for information
