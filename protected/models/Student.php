@@ -140,8 +140,9 @@ class Student extends CActiveRecord
         foreach($this->signups as $s){
             $paid = 0;
             $cs = $s->class->costSummary;
-            foreach($this->incomes as $i){
-                if($i->class_id = $s->class_id){
+            $inc=$this->incomes;
+            foreach($inc as $i){
+                if($i->class_id == $s->class_id){
                     $paid += $i->amount;
                 }
             }

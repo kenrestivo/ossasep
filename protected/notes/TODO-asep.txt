@@ -2,6 +2,7 @@ TODO for asep
 
 very basic need:
 	delete via jquery, for one-check-per-class people.
+	or, just have a checkbox on income page to select which classes to pay
 		
 
 big gui stuff
