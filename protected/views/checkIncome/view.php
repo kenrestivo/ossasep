@@ -46,9 +46,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'student.full_name:text:Student',
-                      'class.class_name:text:Class',
+                      'class.summary:text:Class',
                       'amount:number:Assigned Split',
-                      'check.delivered:date:Delievered to Company',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',

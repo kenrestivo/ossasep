@@ -14,7 +14,9 @@ big gui stuff
 autocomplete for payer would be nice
 		
 oh crap. how does she deal with partial refunds???
-	i.e. waitlist? DO I NEED TO TRACK REFUND CHECKS?
+	i.e. waitlist? or a cancellation of only ONE class, not all?
+	or late refunds
+	DO I NEED TO TRACK REFUND CHECKS?
 	
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	move the reports to a different controller, admin only permissions!
