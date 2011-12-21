@@ -1,8 +1,9 @@
 TODO for asep
 
 very basic need:
-	try to calculate the total amount too
-	ideally be able to delete them via jquery
+	must be able to delete them via jquery
+	MUST be able to calculate the damn PAYEE!
+		i.e. you'll need a separate check for each payee
 		
 
 big gui stuff

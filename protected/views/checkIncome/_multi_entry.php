@@ -65,7 +65,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <tr><th>Class</th><th>Amount</th></tr>
 <?php foreach($income as $i=>$inc): ?>
 <tr>
-    <td><?php echo $inc->class->class_name; 
+    <td><?php echo $inc->class->class_name . " (". $inc->class->company->name . ")"; 
           echo CHtml::activeHiddenField($inc,"[$i]class_id"); 
          echo CHtml::activeHiddenField($inc,"[$i]student_id"); ?></td>
 <td><?php echo CHtml::activeTextField($inc,"[$i]amount");?></td>
