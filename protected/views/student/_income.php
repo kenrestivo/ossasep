@@ -31,10 +31,10 @@ echo CHTML::link("Add Check for " . $model->full_name,
 <p></p>
 <h3>Unpaid/owed</h3>
 <table style="items">
-<tr><th>Class</th><th>Amount</th></tr>
+<tr><th>Class</th><th>Owed To</th><th>Amount</th></tr>
 <?php 
 foreach($model->owed as $owed){
-    echo '<tr><td>' . $owed['class']->class_name . " (". $owed['class']->company->name . ")</td><td>" . $owed['amount'] . "</td></tr>";
+    echo '<tr><td>' . $owed['class']->class_name . "</td><td>". $owed['class']->company->name . "</td><td>" . $owed['amount'] . "</td></tr>";
 }
 ?>
 </table>

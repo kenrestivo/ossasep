@@ -210,7 +210,6 @@ class CheckIncomeController extends Controller
                 $model->incomes = $income;
             }            
 
-            //TODO: save this stuff
             if($model->withRelated->save(true, array('incomes')))
             {
                 $this->redirect(array('view','id'=> $model->id));
