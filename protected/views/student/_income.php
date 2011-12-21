@@ -1,22 +1,7 @@
 <?php 
-
-foreach($model->signups as $s){
-    $cs = $s->class->costSummary;
-    $c = Yii::app()->db->createCommand(
-        "select sum(amount) as paid from income where student_id = :sid and class_id = :cid");
-    $r=$c->queryRow(true, 
-                    array(
-                        'sid' => $s->student_id,
-                        'cid' => $s->class_id,
-                        )); 
-    $paid = $r['paid'];
-    $owed  =  $cs - $paid;
-    if($s->scholarship < 1 && $owed > 0){
-        echo $s->class->class_name . " " . $owed . "<br />";
-    }
+foreach($model->owed as $owed){
+    echo $owed['class']->class_name . " " . $owed['amount'] . "<br />";
 }
-
-
 echo CHTML::link("Add Check for " . $model->full_name, 
                  array("CheckIncome/create",
                        'student_id' => $model->id,
