@@ -200,8 +200,21 @@ class CheckIncomeController extends Controller
             //TODO: save this stuff
 		}
 
+        $income = array();
+		if(isset($_GET['student_id'])){
+            $stu = Student::model()->findByPk($_GET['student_id']);
+            foreach($stu->owed as $owed){
+                $inc=new Income();
+                $inc->student_id = $stu->id;
+                $inc->class_id = $owed['class']->id;
+                $inc->amount = $owed['amount'];
+                $income[] =  $inc;
+            }
+        }
+
 		$this->render('multientry',array(
                           'model'=>$model,
+                          'income' => $income
                           ));
 
 

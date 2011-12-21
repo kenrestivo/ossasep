@@ -12,4 +12,5 @@ $this->menu=array(
 
 <h1>Create CheckIncome</h1>
 
-<?php echo $this->renderPartial('_multi_entry', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_multi_entry', array('model'=>$model,
+                                    'income' => $income)); ?>

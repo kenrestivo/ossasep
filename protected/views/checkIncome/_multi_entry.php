@@ -60,59 +60,17 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	</div>
 
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'deposit_id'); ?>
-<?php echo $form->dropDownList(
-    $model,'deposit_id',
-    CHtml::listData(DepositDetails::model()->findAll(), 
-                    'id', 'deposited_date')); ?>
-		<?php echo $form->error($model,'deposit_id'); ?>
-	</div>
 
-    <p>TODO: add javascript to only show deposit if company is PTO, and only show delviered if company is NOT pto </p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'delivered'); ?>
-
-<?php 
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-  'model'=>$model,
-  'attribute'=>'delivered',
-  'value'=>$model->delivered,
-  // additional javascript options for the date picker plugin
-  'options'=>array(
-    'showAnim'=>'fold',
-    'showButtonPanel'=>true,
-    'autoSize'=>true,
-    'dateFormat'=>'yy-mm-dd',
-    'defaultDate'=>$model->delivered,
-   ),
-));
-?>
-		<?php echo $form->error($model,'delivered'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'returned'); ?>
-
-<?php 
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-  'model'=>$model,
-  'attribute'=>'returned',
-  'value'=>$model->returned,
-  // additional javascript options for the date picker plugin
-  'options'=>array(
-    'showAnim'=>'fold',
-    'showButtonPanel'=>true,
-    'autoSize'=>true,
-    'dateFormat'=>'yy-mm-dd',
-    'defaultDate'=>$model->returned,
-   ),
-));
-?>
-		<?php echo $form->error($model,'returned'); ?>
-	</div>
-
+<table>
+<tr><th>Class</th><th>Amount</th></tr>
+<?php foreach($income as $i=>$inc): ?>
+<tr>
+    <td><?php echo $inc->class->class_name; 
+          echo CHtml::activeHiddenField($inc,"[$i]class_id"); ?></td>
+<td><?php echo CHtml::activeTextField($inc,"[$i]amount"); ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
 
 
 
