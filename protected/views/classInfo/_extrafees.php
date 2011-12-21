@@ -3,7 +3,9 @@
 <?php 
 echo CHTML::link("Add Extra Fee to Class", 
                  array("ExtraFee/create",
+                       'class_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
+
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'extrafees-grid',
                   'dataProvider'=>new CArrayDataProvider(

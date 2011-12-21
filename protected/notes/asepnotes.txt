@@ -937,7 +937,6 @@ delete from instructor_assignment where class_id=20;
 delete from class_meeting where class_id=20;
 delete from class_info where id=20 ;
 
-auto populate the class_id in  extra fees
 
 let instructors edit descriptions
 
