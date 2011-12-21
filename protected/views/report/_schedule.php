@@ -13,14 +13,14 @@ for($i=0; $lines > 0; $i++){
     print '<tr>';
     $got = 0;
     foreach($days as $day){
+        echo '<td>';
         if(isset($classes[$day][$i])){
-            echo '<td>';
             echo  $this->renderPartial(
-                '_cell', 
-                array('model'=>$classes[$day][$i]));
-            echo'</td>';
+                         '_cell', 
+                         array('model'=>$classes[$day][$i]));
             $got++;
         }
+        echo'</td>';
     }
     print '</tr>';
     if($got < 1){
