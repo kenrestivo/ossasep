@@ -234,7 +234,18 @@ div.search-form
     border-color: #600;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
+    table-layout: fixed;
+    width: 182px;
 }
+
+
+.schedule table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 910px;
+}
+
+
 
 .schedule a
 {

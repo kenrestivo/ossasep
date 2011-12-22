@@ -952,3 +952,7 @@ anyone can choose anyone, people can sign up kids
 	she sends info to debbie, she generates checks
 		drops them off, some get picked up by the instructors!
 		so this is really just a tracking thing, doublechecking
+
+
+tablle widths
+	http://stackoverflow.com/questions/4457506/css-how-to-set-the-table-column-width-constant-regardless-of-the-amount-of-text

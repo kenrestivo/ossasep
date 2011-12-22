@@ -1,8 +1,10 @@
 TODO for asep
 
 formatting
-	weekday
-		make days all same column width
+	show company in description, "so and so of so-and-so company"
+		fix description, put instructor and company OF companyname
+		but there's a problem, if there's shannon randolph
+		if the company has more than one instructor, show it
 	for class summary, show grades
 	take view buttons out of linktables
 	dashboard
@@ -12,10 +14,6 @@ formatting
 		sort waitlist and cancelled properly, at end
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
-	show company in description, "so and so of so-and-so company"
-		fix description, put instructor and company OF companyname
-		but there's a problem, if there's shannon randolph
-		if the company has more than one instructor, show it
 	take the edit boxes out of admin cgridviews
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
