@@ -9,6 +9,7 @@
    * @property string $payer
    * @property string $payee_id
    * @property integer $check_num
+   * @property integer $cash
    * @property string $check_date
    * @property string $returned
  * @property string $delivered
@@ -62,14 +63,14 @@ class CheckIncome extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('amount, check_date, payee_id', 'required'),
-			array('deposit_id', 'numerical', 'integerOnly'=>true),
+			array('deposit_id,cash', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('amount', 'numerical'),
 			array('delivered,returned', 'safe'),
 			array('payer,check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes tghat should not be searched.
-			array('id, amount, payer, returned, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
+			array('id, amount, cash,payer, returned, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
             );
 	}
 
@@ -104,6 +105,7 @@ class CheckIncome extends CActiveRecord
 			'deposit_id' => 'Deposit',
 			'delivered' => 'Delivered to Company',
 			'returned' => 'Returned to Student',
+			'cash' => 'Cash (not check)',
             );
 	}
 
@@ -132,6 +134,8 @@ class CheckIncome extends CActiveRecord
 		$criteria->compare('check_num',$this->check_num);
 
 		$criteria->compare('check_date',$this->check_date,true);
+
+		$criteria->compare('cash',$this->cash,true);
 
 		$criteria->compare('deposit_id',$this->deposit_id);
 
