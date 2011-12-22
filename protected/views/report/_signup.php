@@ -5,7 +5,7 @@
 <?php
 
 $kad = new KArrayDataProvider(
-    $model->signups,
+    $model->sortedSignups,
     array('keyField' => 'student_id,class_id',
         ));
 

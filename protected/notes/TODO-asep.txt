@@ -10,9 +10,6 @@ formatting
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	take view buttons out of linktables
-	signupsheet
-		put names in alpha order
-		sort waitlist and cancelled properly, at end
 	take the edit boxes out of admin cgridviews
 	for class summary, show grades, not times (or both)
 	requirements and instructor types, make view display cleaner
@@ -198,6 +195,9 @@ cosmetic
 		or make it link to the dependent table, makes more sense
 	year bump buttons on the expired and received datepickers
 		didn't i do that already?
+	signupsheet
+		strikethrough for cancelled
+		color/gray for waitlist?
 	dependent date/timepickers, i.e. start/end intelligently
 	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it

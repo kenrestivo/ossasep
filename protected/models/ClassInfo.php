@@ -103,12 +103,8 @@ class ClassInfo extends CActiveRecord
 			'signups' => array(
                 self::HAS_MANY, 
                 'Signup', 
-                'class_id'),
-			'latest_signups' => array(
-                self::HAS_MANY, 
-                'Signup', 
-                'class_id',
-                'order' => 'signup_date ASC, status ASC'),
+                'class_id'
+                ),
 			'students' => array(
                 self::HAS_MANY, 
                 'Student', 
@@ -280,6 +276,19 @@ order by class_info.class_name
                      function($i) { return $i->full_name ; },
                      $this->instructors
                      ));
+    }
+
+
+    public function getSortedSignups()
+    {
+        return  Signup::model()->findAllBySql(
+            "select signup.*
+       from signup
+       left join student on student.id = signup.student_id
+      where signup.class_id = :cid
+      order by status ASC, student.last_name ASC, student.first_name ASC
+      ",
+            array('cid' => $this->id));
     }
 
 
