@@ -173,7 +173,7 @@ vital
 	make edit button on reports an optional item, only if logged in
 	
 useful
-	default sort for everytbing
+	default sort/scope for everytbing
 	new student wizard really. ajaxy: class->student->import->signup
 	new on pulldowns!! so new instructor at end of pulldown for instructor
 	now make the save() actions check breadcrumbs, not returnto

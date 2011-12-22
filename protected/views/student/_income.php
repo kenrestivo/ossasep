@@ -7,8 +7,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'class.class_name:text:Class',
-                      'check.amount:currency:Total Check Amount',
                       'amount:currency:Split Check Amount Assigned',
+                      'check.amount:currency:Total Check Amount',
+                      'check.check_num:text:Check #',
                       'check.check_date:date:Check Date',
                       'check.payer:text:Payer',
                       'check.delivered:date:Delivered to Company',
