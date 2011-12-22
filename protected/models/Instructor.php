@@ -10,6 +10,7 @@
    * @property string $cell_phone
    * @property string $other_phone
    * @property string $note
+   * @property string $alias
    * @property integer $instructor_type_id
    * @property integer $company_id
    */
@@ -42,11 +43,11 @@ class Instructor extends CActiveRecord
 		return array(
 			array('full_name, company_id, instructor_type_id', 'required'),
 			array('instructor_type_id,company_id', 'numerical', 'integerOnly'=>true),
-			array('full_name', 'length', 'max'=>128),
+			array('full_name, alias', 'length', 'max'=>128),
 			array('email, cell_phone, other_phone, note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, full_name, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
+			array('id, full_name, alias, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
             );
 	}
 
@@ -112,6 +113,7 @@ class Instructor extends CActiveRecord
 			'other_phone' => 'Other Phone',
 			'note' => 'Note',
 			'company_id' => 'Company',
+			'alias' => 'Alias',
 			'instructor_type_id' => 'Instructor Type',
             );
 	}
@@ -138,6 +140,7 @@ class Instructor extends CActiveRecord
 		$criteria->compare('other_phone',$this->other_phone,true);
 
 		$criteria->compare('note',$this->note,true);
+		$criteria->compare('alias',$this->alias,true);
 
 		$criteria->compare('instructor_type_id',$this->instructor_type_id);
 		$criteria->compare('company_id',$this->company_id);

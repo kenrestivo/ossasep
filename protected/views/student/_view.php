@@ -35,6 +35,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_email')); ?>:</b>
 	<?php echo CHtml::encode($data->parent_email); ?>
 	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('public_email_ok')); ?>:</b>
+	<?php echo CHtml::encode($data->public_email_ok); ?>
+	<br />
 
 
 </div>

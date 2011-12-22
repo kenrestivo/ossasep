@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'company':
  * @property integer $id
  * @property string $name
+ * @property string $use_publicly
  */
 class Company extends CActiveRecord
 {
@@ -35,10 +36,11 @@ class Company extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
+            array('use_publicly', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, use_publicly', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +65,7 @@ class Company extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'name' => 'Name',
+            'use_publicly' => "Show Company Name In Descriptions",
 		);
 	}
 
@@ -80,6 +83,7 @@ class Company extends CActiveRecord
 		$criteria->compare('id',$this->id);
 
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('use_publicly',$this->use_publicly,true);
 
 		return new CActiveDataProvider('Company', array(
 			'criteria'=>$criteria,

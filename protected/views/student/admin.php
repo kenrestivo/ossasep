@@ -50,6 +50,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'emergency_2',
 		'emergency_3',
 		'parent_email:email',
+        'public_email_ok:boolean',
 		array(
 			'class'=>'CButtonColumn',
 		),
