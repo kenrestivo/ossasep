@@ -124,6 +124,10 @@ class ClassInfo extends CActiveRecord
                 self::STAT, 
                 'Signup', 'class_id',
                 'condition' => 'status = "Waitlist"'), 
+            'cancelled_count' => array(
+                self::STAT, 
+                'Signup', 'class_id',
+                'condition' => 'status = "Cancelled"'), 
             );
 	}
 
