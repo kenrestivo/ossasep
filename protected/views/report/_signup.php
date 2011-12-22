@@ -4,21 +4,6 @@
 
 <?php
      
-$sum = "";
-$c = $model->enrolled_count;
-if($c > 0){
-    $sum .= "$c  enrolled";
-}
-$c = $model->waitlist_count;
-if($c > 0){
-    $sum .= ", $c  waitlisted";
-}
-$c = $model->cancelled_count;
-if($c > 0){
-    $sum .= ", $c  cancelled";
-}
-
-
 $kad = new KArrayDataProvider(
     $model->sortedSignups,
     array('keyField' => 'student_id,class_id',
@@ -29,7 +14,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'dataProvider'=> $kad,
                   'enablePagination' => false,
-                  'summaryText' => $sum,
+                  'summaryText' => $model->summaryCounts,
                   'columns'=>array(
                       'student.full_name:text:Name',
                       'student.grade:grade:Grade',

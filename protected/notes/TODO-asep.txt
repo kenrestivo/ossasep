@@ -1,10 +1,6 @@
 TODO for asep
 
 formatting
-	show company in description, "so and so of so-and-so company"
-		fix description, put instructor and company OF companyname
-		but there's a problem, if there's shannon randolph
-		if the company has more than one instructor, show it
 	dashboard
 		total amount income for class
 	in class/_owed, should include waitlisted!
@@ -52,6 +48,11 @@ add to db/model/ui
 		classes
 		students
 		roster import
+	checkbox for show company
+		show company in description, "so and so of so-and-so company"
+		fix description, put instructor and company OF companyname
+		but there's a problem, if there's shannon randolph
+		if the company has more than one instructor, show it
 
 
 bug

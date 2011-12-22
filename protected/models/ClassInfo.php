@@ -276,10 +276,10 @@ order by class_info.class_name
     public function instructorNames($delim)
     {
         return implode($delim, 
-                 array_map(
-                     function($i) { return $i->full_name ; },
-                     $this->instructors
-                     ));
+                       array_map(
+                           function($i) { return $i->full_name ; },
+                           $this->instructors
+                           ));
     }
 
 
@@ -293,6 +293,24 @@ order by class_info.class_name
       order by status ASC, student.last_name ASC, student.first_name ASC
       ",
             array('cid' => $this->id));
+    }
+
+    public function getSummaryCounts()
+    {
+        $sum = "";
+        $c = $this->enrolled_count;
+        if($c > 0){
+            $sum .= "$c  enrolled";
+        }
+        $c = $this->waitlist_count;
+        if($c > 0){
+            $sum .= ", $c  waitlisted";
+        }
+        $c = $this->cancelled_count;
+        if($c > 0){
+            $sum .= ", $c  cancelled";
+        }
+        return $sum;
     }
 
 
