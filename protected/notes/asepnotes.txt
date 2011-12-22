@@ -962,3 +962,10 @@ tablle widths
 well that is VERY odd, the student search works great AS LONG AS IT ISN'T BY NAME!	seriously?
 	phone works. grade works. parent works. email works
 	AHA! i had first_name = last_name in the search in the model. that's it!
+
+
+if i'm going  to autocomplete instead of dropdown box, i'll need the id:
+	http://lukieb.blogspot.com/2011/02/cjuiautomcomplete-example.html
+	or
+	http://www.yiiframework.com/wiki/217/custom-autocomplete-display-and-value-submission/
+		this includees several ways in the comments too

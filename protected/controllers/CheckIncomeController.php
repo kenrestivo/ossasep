@@ -32,7 +32,7 @@ class CheckIncomeController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-                  'actions'=>array('index','view'),
+                  'actions'=>array('index','view', 'autocomplete'),
                   'users'=>array('*'),
                 ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -240,6 +240,25 @@ class CheckIncomeController extends Controller
                           ));
 
 
+    }
+
+
+    public function actionAutocomplete()
+    {
+        if(isset($_GET['term'])){
+            $c = Yii::app()->db->createCommand(
+                "select payer from check_income where payer like :text 
+                    group by payer");
+            
+            echo CJSON::encode(
+                array_map(
+                    function($r) { return $r[0]; },
+                    $c->queryAll(
+                    false, 
+                    array('text' => $_GET['term'] . '%'))));
+            Yii::app()->end();
+        }
+        //TODO error out, 404?
     }
 
 	/**

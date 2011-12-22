@@ -21,7 +21,6 @@ formatting
 ui
 	for adding date, auto-populate with next available weekday afterwards
 	show waitlist as the default option if they are over capacity
-	autocomplete for payer
 	add edit/view link to names in student
 		or click on row
 	don't delete for assignments in unpaid
