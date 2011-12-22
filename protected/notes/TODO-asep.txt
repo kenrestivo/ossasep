@@ -4,7 +4,7 @@ formatting
 	dashboard
 		total amount income for class
 	student signups (regular)
-		turn the paging off
+		turn the paging off enablePaging
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	take view buttons out of linktables
@@ -22,7 +22,8 @@ ui
 		or click on row
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
-		and/or if the number is 0, don't even add it
+		and/or, better,  if the number is 0, don't even add it
+			can cast (int)'' even, so it's ok.
 	make company id 1  not editable or removable (company form/view)
 	today button, fix
 	manually edit dates, in m/d/y format
@@ -37,19 +38,19 @@ ui
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
-
-add to db/model/ui
-	alias for per instructor, use alias for information
-	checkbox for releasing email address, must add
-		per STUDENT
-		only show email if checked email allowed
-	checkbox for cash
-		and autopopulate check # with 'cash' perhaps
 	autocompletes not dropdowns
 		classes
 		students
 		roster import
-	checkbox for show company
+
+add to db/model/ui
+	instructor: alias for per instructor, use alias for information
+	student: checkbox for releasing email address, must add
+		per STUDENT
+		only show email if checked email allowed
+	check_income: checkbox for cash
+		and autopopulate check # with 'cash' perhaps
+	company: checkbox for show company
 		show company in description, "so and so of so-and-so company"
 		fix description, put instructor and company OF companyname
 		but there's a problem, if there's shannon randolph
@@ -65,7 +66,8 @@ bug
 		
 
 new functionality/utility
-	delete class
+	delete a class
+		first fix the link, it's not a-werken (missing js?)
 		only delete class is no students signed up
 		do not let them delete otherwise
 		DO automatically delete all the dates and instructors
