@@ -15,7 +15,6 @@ formatting
 	add a line in checks, for any un-assigned check stuff!!
 	
 ui
-	instructor search workss, but not student. why/fix
 	for adding date, auto-populate with next available weekday afterwards
 	show waitlist as the default option if they are over capacity
 	autocomplete for payer

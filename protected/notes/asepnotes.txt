@@ -954,5 +954,11 @@ anyone can choose anyone, people can sign up kids
 		so this is really just a tracking thing, doublechecking
 
 
+----------------
 tablle widths
 	http://stackoverflow.com/questions/4457506/css-how-to-set-the-table-column-width-constant-regardless-of-the-amount-of-text
+
+
+well that is VERY odd, the student search works great AS LONG AS IT ISN'T BY NAME!	seriously?
+	phone works. grade works. parent works. email works
+	AHA! i had first_name = last_name in the search in the model. that's it!

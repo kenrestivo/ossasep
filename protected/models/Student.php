@@ -122,7 +122,7 @@ class Student extends CActiveRecord
 		$criteria->compare('id',$this->id);
 
 		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('last_name',$this->first_name,true);
+		$criteria->compare('last_name',$this->last_name,true);
 
 		$criteria->compare('grade',$this->grade);
         $criteria->compare('contact',$this->contact);
