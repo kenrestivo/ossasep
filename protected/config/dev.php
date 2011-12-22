@@ -55,6 +55,7 @@ return array(
 			'username' => 'asep',
 			'password' => 'students',
 			'charset' => 'utf8',
+            'enableParamLogging' => true,
 		),
 	
 		'errorHandler'=>array(
