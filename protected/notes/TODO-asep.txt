@@ -1,9 +1,12 @@
 TODO for asep
 
+
 formatting
+	show company in description, "so and so of so-and-so company"
 	dashboard
 		total amount income for class
 	student signups (regular)
+		show email if checked email allowed
 		turn the paging off enablePaging
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
@@ -13,6 +16,7 @@ formatting
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
 	add a line in checks, for any un-assigned check stuff!!
+	make company and checks into default admin (like i did with student)
 	
 ui
 	for adding date, auto-populate with next available weekday afterwards
@@ -27,8 +31,10 @@ ui
 	make company id 1  not editable or removable (company form/view)
 	today button, fix
 	manually edit dates, in m/d/y format
-	calculate that checks add up to their summaries
-		this doesn't have to be js.
+	check_income:
+		calculate that checks add up to their summaries
+			this doesn't have to be js.
+		autopopulate check # with 'cash' perhaps
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
 	in _meetings, ajax update the classes when they are added
@@ -43,18 +49,7 @@ ui
 		students
 		roster import
 
-add to db/model/ui
-	instructor: alias for per instructor, use alias for information
-	student: checkbox for releasing email address, must add
-		per STUDENT
-		only show email if checked email allowed
-	check_income: checkbox for cash
-		and autopopulate check # with 'cash' perhaps
-	company: checkbox for show company
-		show company in description, "so and so of so-and-so company"
-		fix description, put instructor and company OF companyname
-		but there's a problem, if there's shannon randolph
-		if the company has more than one instructor, show it
+
 
 
 bug
