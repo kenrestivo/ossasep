@@ -34,6 +34,13 @@
 
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'cash'); ?>
+		<?php echo $form->checkbox($model,'cash'); ?>
+		<?php echo $form->error($model,'cash'); ?>
+	</div>
+
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'check_num'); ?>
 		<?php echo $form->textField($model,'check_num'); ?>
 		<?php echo $form->error($model,'check_num'); ?>

@@ -9,6 +9,7 @@
 		'emergency_2',
 		'emergency_3',
 		'parent_email:email',
+        'public_email_ok:boolean',
         'note:ntext'
 	),
 

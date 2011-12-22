@@ -19,6 +19,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('check_num')); ?>:</b>
 	<?php echo CHtml::encode($data->check_num); ?>
 	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cash')); ?>:</b>
+	<?php echo CHtml::encode($data->cash); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('check_date')); ?>:</b>
 	<?php echo CHtml::encode($data->check_date); ?>

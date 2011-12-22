@@ -22,6 +22,7 @@ $this->menu=array(
 		'payer',
 		'payee.name',
 		'check_num',
+        'cash:boolean',
 		'check_date:date',
 		'delivered:date',
 		'returned:date',

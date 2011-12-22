@@ -65,7 +65,7 @@ class Company extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'name' => 'Name',
-            'use_publicly' => "Use Company Name In Descriptions",
+            'use_publicly' => "Show Company Name In Descriptions",
 		);
 	}
 

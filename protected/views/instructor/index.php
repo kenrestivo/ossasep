@@ -12,6 +12,7 @@
 	'filter'=>$model,
 	'columns'=>array(
 		'full_name',
+        'alias',
 		'instructor_type.description:text:Type',
         'company.name:text:Company',
 		'email',

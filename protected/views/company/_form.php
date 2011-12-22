@@ -15,6 +15,12 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'use_publicly'); ?>
+		<?php echo $form->checkbox($model,'use_publicly'); ?>
+		<?php echo $form->error($model,'use_publicly'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

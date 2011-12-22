@@ -3,6 +3,7 @@
 	'data'=>$model,
 	'attributes'=>array(
 		'full_name',
+        'alias',
 		'email',
 		'cell_phone',
 		'other_phone',

@@ -16,6 +16,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'alias'); ?>
+		<?php echo $form->textField($model,'alias',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'alias'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'email'); ?>
