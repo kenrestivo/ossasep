@@ -2,7 +2,6 @@ TODO for asep
 
 
 formatting
-	show aliases
 	dashboard
 		total amount income for class
 	student signups (regular)

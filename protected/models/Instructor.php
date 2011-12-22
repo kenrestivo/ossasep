@@ -33,6 +33,11 @@ class Instructor extends CActiveRecord
 		return 'instructor';
 	}
 
+    public function getPublic_name()
+    {
+        return $this->alias != '' ? $this->alias : $this->full_name;
+    }
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

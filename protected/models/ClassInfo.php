@@ -277,7 +277,7 @@ order by class_info.class_name
     {
         return implode($delim, 
                        array_map(
-                           function($i) { return $i->full_name ; },
+                           function($i) { return $i->public_name ; },
                            $this->instructors
                            ));
     }
