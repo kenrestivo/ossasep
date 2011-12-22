@@ -3,6 +3,8 @@ TODO for asep
 formatting
 	dashboard
 		total amount income for class
+	student signups (regular)
+		turn the paging off
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	take view buttons out of linktables
