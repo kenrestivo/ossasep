@@ -2,7 +2,7 @@ TODO for asep
 
 
 formatting
-	show company in description, "so and so of so-and-so company"
+	show aliases
 	dashboard
 		total amount income for class
 	student signups (regular)
@@ -17,6 +17,8 @@ formatting
 		i did this, in instructor didn't i?
 	add a line in checks, for any un-assigned check stuff!!
 	make company and checks into default admin (like i did with student)
+
+
 	
 ui
 	for adding date, auto-populate with next available weekday afterwards
@@ -48,8 +50,6 @@ ui
 		classes
 		students
 		roster import
-
-
 
 
 bug

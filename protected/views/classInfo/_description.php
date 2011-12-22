@@ -21,7 +21,13 @@ if(Yii::app()->user->isGuest){
     echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 
 }
 ?>
-</u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> <br />
+</u></strong> with <?= CHtml::encode($model->instructorNames(' and ')) ?> 
+<?php
+    if($model->company->use_publicly > 0){
+        echo " of " . $model->company->name;
+    }
+?>
+<br />
 
 <span class="span-6">Number of students: 
 
