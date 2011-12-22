@@ -15,3 +15,5 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+
+<p>NOTE: this is NOT USED FOR ANYTHING. it is cruft. we are using admin.php for this</p>
