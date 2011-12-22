@@ -236,6 +236,7 @@ div.search-form
     border-style: solid;
     table-layout: fixed;
     width: 182px;
+  vertical-align: top;
 }
 
 

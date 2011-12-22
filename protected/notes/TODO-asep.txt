@@ -5,16 +5,16 @@ formatting
 		fix description, put instructor and company OF companyname
 		but there's a problem, if there's shannon randolph
 		if the company has more than one instructor, show it
-	for class summary, show grades
-	take view buttons out of linktables
 	dashboard
 		total amount income for class
+	in class/_owed, should include waitlisted!
+		checks do get entered, gets put in another envelope
+	take view buttons out of linktables
 	signupsheet
 		put names in alpha order
 		sort waitlist and cancelled properly, at end
-	in class/_owed, should include waitlisted!
-		checks do get entered, gets put in another envelope
 	take the edit boxes out of admin cgridviews
+	for class summary, show grades, not times (or both)
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
 	add a line in checks, for any un-assigned check stuff!!
