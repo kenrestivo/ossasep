@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(256) NOT NULL,
+  `use_publicly` tinyint(1) default false,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -70,6 +71,7 @@ CREATE TABLE `check_income` (
   `deposit_id` int(11),
   `delivered` date DEFAULT NULL,
   `returned` date DEFAULT NULL,
+`cash` tinyint(1) default false,
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
   CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`),
@@ -245,6 +247,7 @@ CREATE TABLE `instructor` (
   `cell_phone` varchar(256) DEFAULT NULL,
   `other_phone` varchar(256) DEFAULT NULL,
   `note` varchar(256) DEFAULT NULL,
+  `alias` varchar(128) default NULL,
   `instructor_type_id` int(11) NOT NULL,
   `company_id` int(11) NOT NULL default 1,
   PRIMARY KEY (`id`),
@@ -445,6 +448,7 @@ CREATE TABLE `student` (
   `emergency_2` varchar(256) DEFAULT NULL,
   `emergency_3` varchar(256) DEFAULT NULL,
   `parent_email` varchar(256) DEFAULT NULL,
+  `public_email_ok` tinyint(1) default false,
     note VARCHAR(256),
   PRIMARY KEY (`id`),
  UNIQUE idx_name_phone (first_name,last_name,emergency_1)
