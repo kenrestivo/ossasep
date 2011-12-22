@@ -15,7 +15,6 @@ formatting
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
 	add a line in checks, for any un-assigned check stuff!!
-	make company and checks into default admin (like i did with student)
 
 
 	
@@ -75,15 +74,12 @@ future/with user login security
 
 
 
-big gui stuff
-
-		and report it somewhere too!
-
-
 oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
 	or late refunds
 	DO I NEED TO TRACK REFUND CHECKS?
+
+
 	
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	move the reports to a different controller, admin only permissions!
@@ -95,7 +91,6 @@ reports first! THEN DO THE UI AGAIN based on the reports. try that.
 		uniquely name all the gridviews (css id)
 	C calculating payments for teachers
 	D payments for companies
-
 
 
 

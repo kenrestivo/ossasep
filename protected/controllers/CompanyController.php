@@ -129,10 +129,7 @@ class CompanyController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Company');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $this->actionAdmin(); // brute force
 	}
 
 	/**

@@ -129,10 +129,7 @@ class CheckIncomeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CheckIncome');
-		$this->render('index',array(
-                          'dataProvider'=>$dataProvider,
-                          ));
+        $this->actionAdmin(); // brute force
 	}
 
 	/**
