@@ -299,9 +299,13 @@ order by class_info.class_name
     {
         $sum = "";
         $c = $this->enrolled_count;
+        if($c >= $this->max_students){
+            $sum .= "CLASS FULL: ";
+        }
         if($c > 0){
             $sum .= "$c  enrolled";
         }
+
         $c = $this->waitlist_count;
         if($c > 0){
             $sum .= ", $c  waitlisted";
