@@ -1,9 +1,6 @@
 <h3>Active classes</h3>
 <?php 
 
-  // TODO: put this in a tools menu! above or on the right side
-echo CHtml::link("Auto-populate all meeting dates",
-				 array("Tools/autoPopulate"));
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
@@ -19,8 +16,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'signup_status:text:Status',
                       'signups:nozero:Signed up',
                       'waitlist:nozero:Waitlisted',
-                      'meetings:nozero:Meetings',
-                      'totalcost:currency:Cost Per Student',
                       'note:text:Admin Note'
                       ),
                   )); 
