@@ -1,11 +1,5 @@
-<?php 
+<?
 $am=$model->active_meetings;
-?>
-
-<p><?= count($am) ?> meetings, <?= count($model->meetings) - count($am) ?> makeup day </p>
-
-
-      <?
 if(count($am) < 1 ){
     echo '<div><span class="span-10">';
     echo CHtml::beginForm(array('populate', 'id' => $model->id));
@@ -36,6 +30,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'meetingdate-grid',
                   'dataProvider'=>new CArrayDataProvider(
                       $model->meetings),
+                  'summaryText' => "" . count($am) . " meetings, ". (count($model->meetings) - count($am) ). " makeup day(s)",
                   'columns'=>array(
                       'meeting_date:date:Date',
                       'note:ntext:Note',

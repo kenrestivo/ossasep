@@ -19,30 +19,28 @@ formatting
 ui
 	show waitlist as the default option if they are over capacity
 	for adding date, auto-populate with next available weekday afterwards
-	add edit link for check view, or make "update" menu more clear
+	add edit link for checkincome/view, or make "update" menu more clear
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
 			can cast (int)'' even, so it's ok.
-	make company id 1  not editable or removable (company form/view)
-	today button, fix
-	manually edit dates, in m/d/y format
 	check_income:
 		calculate that checks add up to their summaries
 			this doesn't have to be js.
 		autopopulate check # with 'cash' perhaps
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
-	in _meetings, ajax update the classes when they are added
-		or just remove the count, or put it in a cgridview header
 	autoppopulate the check when adding
 	deposits
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
+	manually edit dates, in m/d/y format
+	today button, fix
+	make company id 1  not editable or removable (company form/view)
 	autocompletes not dropdowns
-		classes
 		students
+		classes
 		roster import
 
 
