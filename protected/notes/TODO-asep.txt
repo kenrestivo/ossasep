@@ -13,6 +13,7 @@ formatting
 	student signups (regular)
 		show email if checked email allowed
 		turn the paging off enablePaging
+		use the summary from the signup report
 	show "full" for classes which are full, in descr and schedule
 
 	
