@@ -31,18 +31,15 @@ ui
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
 	autoppopulate the check when adding
+		when adding WHAT?
 	deposits
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
-	manually edit dates, in m/d/y format
-	today button, fix
-	make company id 1  not editable or removable (company form/view)
-	autocompletes not dropdowns
-		students
-		classes
-		roster import
-
+		either auto-enter or a button to auto enter automatically
+			any checks to OSSPTO
+			which are joint checks
+			or which are for classes which are 50% capacity		
 
 bug
 	in paid, why are cancelleds payments not showing up at all?
@@ -52,19 +49,6 @@ bug
 		or maybe they should, just not in totals?
 		
 
-new functionality/utility
-	delete a class
-		first fix the link, it's not a-werken (missing js?)
-		only delete class is no students signed up
-		do not let them delete otherwise
-		DO automatically delete all the dates and instructors
-		delete from instructor_assignment where class_id=:cid
-		delete from class_meeting where class_id=:cid
-		delete from class_info where id=:cid
-
-
-future/with user login security
-	let instructors edit descriptions
 
 
 
@@ -158,27 +142,34 @@ vital
 	
 useful
 	default sort/scope for everytbing
-	new student wizard really. ajaxy: class->student->import->signup
-	new on pulldowns!! so new instructor at end of pulldown for instructor
-	now make the save() actions check breadcrumbs, not returnto
+	manually edit dates, in m/d/y format
+	today button, fix
+	make company id 1  not editable or removable (company form/view)
+	autocompletes not dropdowns
+		students
+		classes
+		roster import
 	make the signup and received papework dates default to today on create
 		js? or controller? i think it is easy, in controller prolly
 	trap exception on populate for school days
 	to avoid confusion, special case the company stuff
-		if company is not PTO, show delivered, not deposited
+		if company is not PTO, or is type company, show delivered, not deposited
 			else  show deposited, not delivered
 		if instructor type is company, show the company popup
 			else hide company popup
+		if is not company, don't show company popup at all
 		javascript in forms, something else in view
-	probably should have sign-up order be settable by the admin
-		but that's require some reorder code. which i did for the coop!!
+	new student wizard really. ajaxy: class->student->import->signup
+	new on pulldowns!! so new instructor at end of pulldown for instructor
+	now make the save() actions check breadcrumbs, not returnto
+	take out the key columns from linktable forms-- one-sided not 2-sided
+		if i stick with those, if i don't replace them with something else
+		have to know which way i came in, that's the critical part.
+			by GET maybe?
 
 cosmetic
 	use the roster as the template for any index views, i have the css nice
 	a nice jui popup when hovering over a cell, showing description!
-	hide the view Cbutton for linktables, there's nothing to see anyway
-		at least in cgridviews, sometimes
-		or make it link to the dependent table, makes more sense
 	year bump buttons on the expired and received datepickers
 		didn't i do that already?
 	signupsheet
@@ -187,10 +178,7 @@ cosmetic
 	dependent date/timepickers, i.e. start/end intelligently
 	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it
-
-	
-take out the key columns from linktable forms-- one-sided not 2-sided
-	if i stick with those, if i don't replace them with something else
+	generate the signup form via PDF library, on the fly	
 
 
 
@@ -265,6 +253,15 @@ must have for NEXT SESSION!
 		 	instructors, it'll need to create new joins for them. just them!
 			and extra fees too  probably
 			not students though. until parents sign them up! or income.
+	delete a class
+		first fix the link, it's not a-werken (missing js?)
+		only delete class is no students signed up
+		do not let them delete otherwise
+		DO automatically delete all the dates and instructors
+		delete from instructor_assignment where class_id=:cid
+		delete from class_meeting where class_id=:cid
+		delete from class_info where id=:cid
+
 
 
 must have for NEXT YEAR:
@@ -280,6 +277,12 @@ must have for NEXT YEAR:
 		like i had to do for the coop. it'll have to happen.
 
 
+------------------
+FOR NON-ADMIN USER LOGIN
+
+future/with user login security
+	let instructors edit descriptions
+		
 
 ----------------
 BELOW THE LINE

@@ -27,6 +27,7 @@ reports
 				payment type? payee? (to osspto?)
 			
 	F ("emailable")
+		this is the square thing, no contact info
 		class
 			student
 				name
