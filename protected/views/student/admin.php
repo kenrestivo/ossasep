@@ -41,6 +41,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'student-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('Student/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'columns'=>array(
 		'first_name',
 		'last_name',

@@ -19,10 +19,8 @@ formatting
 
 	
 ui
-	for adding date, auto-populate with next available weekday afterwards
 	show waitlist as the default option if they are over capacity
-	add edit/view link to names in student
-		or click on row
+	for adding date, auto-populate with next available weekday afterwards
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -169,7 +167,6 @@ useful
 	make the signup and received papework dates default to today on create
 		js? or controller? i think it is easy, in controller prolly
 	trap exception on populate for school days
-	cjuiautocomplete for some things
 	to avoid confusion, special case the company stuff
 		if company is not PTO, show delivered, not deposited
 			else  show deposited, not delivered
