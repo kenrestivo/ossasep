@@ -22,7 +22,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.emergency_1:text:Emergency',
                       'student.emergency_2:text:Emergency 2',
                       'student.emergency_3:text:Emergency 3',
-                      'student.parent_email:text:Email',
+                      'student.parent_email:email:Email',
                       'status:text:Status',
                       'note:ntext:Note',
                       'signup_date:datetime:Signed Up On', 
