@@ -15,6 +15,8 @@ $this->menu=array(
 	'id'=>'class-info-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'columns'=>array(
 		'class_name',
 		'min_grade_allowed:grade',

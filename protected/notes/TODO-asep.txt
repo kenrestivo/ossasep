@@ -21,6 +21,7 @@ formatting
 ui
 	show waitlist as the default option if they are over capacity
 	for adding date, auto-populate with next available weekday afterwards
+	add edit link for check view, or make "update" menu more clear
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it

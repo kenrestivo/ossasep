@@ -10,6 +10,8 @@
 	'id'=>'instructor-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('Instructor/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'columns'=>array(
 		'full_name',
         'alias',

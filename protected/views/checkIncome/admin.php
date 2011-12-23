@@ -41,6 +41,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'check-income-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('CheckIncome/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'columns'=>array(
 		'check_num',
         'cash:boolean',
