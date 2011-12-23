@@ -2,8 +2,6 @@ TODO for asep
 
 
 formatting
-	dashboard
-		total amount income for class
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	for class summary, show grades, not times (or both)
@@ -15,11 +13,13 @@ formatting
 		turn the paging off enablePaging
 		use the summary from the signup report
 	show "full" for classes which are full, in descr and schedule
-
+	dashboard
+		total amount income for class
+	the rest of the reports!
+	make waitlist a different color, make cancelled a strikethrough	
 	
 ui
 	show waitlist as the default option if they are over capacity
-	for adding date, auto-populate with next available weekday afterwards
 	add edit link for checkincome/view, or make "update" menu more clear
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
@@ -31,8 +31,6 @@ ui
 		autopopulate check # with 'cash' perhaps
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
-	autoppopulate the check when adding
-		when adding WHAT?
 	deposits
 		put in check number, autocomplete
 			populate the info on the check
@@ -41,6 +39,12 @@ ui
 			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are 50% capacity		
+	autoppopulate the check when adding
+		when adding WHAT?
+	for adding date, auto-populate with next available weekday afterwards
+	catch errors when trying to delete linked tables
+		in check, for sure, but also everywhere really
+		maybe just override the controller
 
 			
 bug
@@ -51,10 +55,10 @@ bug
 		or maybe they should, just not in totals?
 		
 
-
 new reports needed
-	unpaid classes (useful for checking)
-		
+	integrity check dashboard
+		unpaid classes (useful for checking)
+		unassigned check amounts		
 
 
 oh crap. how to deal with partial refunds???

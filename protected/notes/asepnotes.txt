@@ -980,3 +980,10 @@ http://www.yiiframework.com/forum/index.php?/topic/11281-make-row-of-cgridview-b
     'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('controller/action', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
     ...
 )); ?>
+
+------------
+wrapping delete for foreign key constraints
+	http://www.yiiframework.com/forum/index.php?/topic/9042-solved-mysql-integrity-check/
+
+	better
+	http://www.yiiframework.com/wiki/205/how-to-show-ajax-delete-status-in-cgridview-like-flash-messages/
