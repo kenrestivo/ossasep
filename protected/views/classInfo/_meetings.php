@@ -45,6 +45,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'ClassMeeting',
+                          'template'=>'{update}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),

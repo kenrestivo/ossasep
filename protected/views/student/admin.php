@@ -55,6 +55,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'public_email_ok:boolean',
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{view}{delete}',
 		),
 	),
 )); 

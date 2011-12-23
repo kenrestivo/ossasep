@@ -33,6 +33,7 @@ $this->menu=array(
 		'session.summary:text:Session',
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{view}{delete}',
 		),
 	),
 )); 

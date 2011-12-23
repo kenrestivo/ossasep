@@ -26,6 +26,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
+                          'template'=>'{update}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
