@@ -13,7 +13,7 @@ formatting
 	student signups (regular)
 		show email if checked email allowed
 		turn the paging off enablePaging
-
+	show "full" for classes which are full, in descr and schedule
 
 	
 ui
@@ -41,6 +41,7 @@ ui
 			which are joint checks
 			or which are for classes which are 50% capacity		
 
+			
 bug
 	in paid, why are cancelleds payments not showing up at all?
 	on student/_income, if cancelled, show the paids,
@@ -50,6 +51,9 @@ bug
 		
 
 
+new reports needed
+	unpaid classes (useful for checking)
+		
 
 
 oh crap. how to deal with partial refunds???

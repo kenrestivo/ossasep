@@ -86,6 +86,9 @@ class ReportController extends Controller
     }
 
 
+    //TODO: move this to the model, i'll use it elsewhere
+    // i.e. classinfo::summarycounts
+
     public function signupStatus($c, $count)
     {
 
