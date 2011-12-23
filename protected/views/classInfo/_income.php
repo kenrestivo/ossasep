@@ -16,10 +16,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'check.payer:text:Payer',
                       'amount:number:Amount Assigned',
                       'check.amount:number:Total Check Amount',
+                      'check.check_num:ntext:Check #',
                       'check.delivered:date:Delivered to Company',
+                      'check.deposit.deposited_date:date:Deposited',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Income',
+                          'template'=>'{update}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
