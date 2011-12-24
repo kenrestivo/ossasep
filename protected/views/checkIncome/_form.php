@@ -143,11 +143,13 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <?php Yii::app()->clientScript->registerCoreScript("jquery") ?>
 
 <script type="text/javascript">
+          jQuery(function($) {
+
     $(window).bind('beforeunload', function() {
 	    return 'Check for Unsaved Changes first!';
     });
 	$("#check-income-form").submit(function(){
             $(window).unbind("beforeunload");
 });
-
+              })
 </script>

@@ -1035,3 +1035,7 @@ http://stackoverflow.com/questions/1889404/jquery-ui-dialog-onbeforeunload
 or this method to bind it to change event
 http://jonstjohn.com/node/23
 	__tom says it is nasty because if there are many inputs, it executes a lot
+
+use choosen for my dropdowns and autocompletes!
+		http://harvesthq.github.com/chosen/
+	this is the bandcamp thingus!
