@@ -31,11 +31,14 @@ class AdminController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // just, go away and let me work, please
-                  'actions'=>array('*'),
+			array('allow',  
+                  'actions'=>array('signupsheet', 'classdashboard', 
+                                   'signupstatus'),
                   'users'=>array('admin'),
                 ),
-            // don't need deny since the wildcard is admin
+			array('deny',  // deny all users
+                  'users'=>array('*'),
+                ),
             );
 	}
 
