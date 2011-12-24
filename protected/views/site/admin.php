@@ -21,13 +21,13 @@
 
   <tr>
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/classDashboard">Class Dashboard</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
       <br />
 
     </td>
 
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsheet">Sign-Up Sheet</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a>
       <br />
