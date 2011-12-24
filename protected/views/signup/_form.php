@@ -31,9 +31,12 @@ if(!isset($_GET['student_id'])){
                } ?>
 
 
+<?php
+if(!isset($_GET['class_id'])){
+?>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'class_id'); ?>
-
 
     <?php echo $form->dropDownList(
         $model,'class_id',
@@ -42,6 +45,16 @@ if(!isset($_GET['student_id'])){
 
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
+
+
+    <?php } else { ?>
+    Add student for: 
+	<?php echo CHtml::encode($model->class->summary);
+          echo $form->hiddenField($model,"class_id"); 
+               } ?>
+
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'signup_date'); ?>
     <?php echo $form->textField($model,'signup_date',array('size'=>20)) ?>
