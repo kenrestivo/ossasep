@@ -1039,3 +1039,6 @@ http://jonstjohn.com/node/23
 use choosen for my dropdowns and autocompletes!
 		http://harvesthq.github.com/chosen/
 	this is the bandcamp thingus!
+
+here it is
+http://www.yiiframework.com/extension/echosen/
