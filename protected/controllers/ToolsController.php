@@ -31,11 +31,14 @@ class ToolsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // only admins shoudl be doing this
-				'actions'=>array('*'),
-				'users'=>array('admin'),
-			),
-		);
+			array('allow',  
+                  'actions'=>array('autopopulate'),
+                  'users'=>array('admin'),
+                ),
+			array('deny',  // deny all users
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 

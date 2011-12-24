@@ -47,7 +47,7 @@ ui
 	for adding date, auto-populate with next available weekday afterwards
 	catch errors when trying to delete linked tables
 		in check, for sure, but also everywhere really
-		maybe just override t4he controller
+		maybe just override t'index', 'view', 'create', 'update', 'index', 'view', 'create', 'update', fubarint NOT NULL,4he controller
 
 			
 bug
