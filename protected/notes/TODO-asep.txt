@@ -34,6 +34,8 @@ ui
 		autopopulate check # with 'cash' perhaps
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
+	show the autoadd dates even if there are dates
+		and show the DAY OF WEEK it'll be added for!
 	deposits
 		put in check number, autocomplete
 			populate the info on the check
@@ -144,6 +146,8 @@ CLEANUP
 
 vital
 	trap exceptions on save,  if there's an integrity constraint!
+	also trap exceptions on double-delete, it happens in ajax-land
+		if the refresh isn't complete yet
 	go through and make sure all my queries and searches are session-enabled
 		so i can change them later easily
 	add an EMPTY as a default for deposit on checks!	
