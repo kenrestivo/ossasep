@@ -1010,6 +1010,8 @@ signup
 	for instructor sees only their class! and only email-safe emails
 	for the whole school: emailable just as is
 
+classes by room
+	
 owed to instructor is actually paid in cash
 summaries by class
 total for class total actually paid

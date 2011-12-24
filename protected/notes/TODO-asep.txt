@@ -1,5 +1,6 @@
 TODO for asep
 
+organize the notes from heidi
 
 formatting
 	in class/_owed, should include waitlisted!
@@ -21,6 +22,8 @@ formatting
 ui
 	show waitlist as the default option if they are over capacity
 	add edit link for checkincome/view, or make "update" menu more clear
+	show in checks, an optional list of unpaid things to pay
+		make it an autocomplete
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -44,7 +47,7 @@ ui
 	for adding date, auto-populate with next available weekday afterwards
 	catch errors when trying to delete linked tables
 		in check, for sure, but also everywhere really
-		maybe just override the controller
+		maybe just override t4he controller
 
 			
 bug
@@ -141,6 +144,8 @@ CLEANUP
 
 vital
 	trap exceptions on save,  if there's an integrity constraint!
+	go through and make sure all my queries and searches are session-enabled
+		so i can change them later easily
 	add an EMPTY as a default for deposit on checks!	
 	i need a wide layout with menu at top, major css/layout stuff
 		it needs to be integrated into class for sure, and student
