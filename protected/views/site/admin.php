@@ -1,6 +1,6 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<table class="catalog">
+<table class="bordertable">
   <tr>
     <th>
       <h1>Dashboards</h1>
