@@ -1011,3 +1011,27 @@ instructor owed is for debbie
 entered, date notes are deposit #, date, name entered by, differt date at bottom filled
 report of instrotors, each class, total paid, scholarships, paid records but no names, then total
 
+
+
+--------------
+warning for unsaved changes
+http://stackoverflow.com/questions/1889404/jquery-ui-dialog-onbeforeunload
+
+<script type="text/javascript">
+    $(window).bind('beforeunload', function() {
+	    return 'you are an idiot!';
+    });
+
+	$("#form_id").submit(function(){
+    $(window).unbind("beforeunload");
+});
+
+</script>
+
+
+
+
+
+or this method to bind it to change event
+http://jonstjohn.com/node/23
+	__tom says it is nasty because if there are many inputs, it executes a lot
