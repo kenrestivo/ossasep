@@ -152,6 +152,7 @@ vital
 useful
 	default sort/scope for everytbing
 	manually edit dates, in m/d/y format
+	try to get rid of the echosen version of jquery! NO DUPES!
 	today button, fix
 	make company id 1  not editable or removable (company form/view)
 	autocompletes not dropdowns
