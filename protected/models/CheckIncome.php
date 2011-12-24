@@ -27,11 +27,11 @@ class CheckIncome extends CActiveRecord
 	}
     public function getSummary()
         {
-            return sprintf('$%0.2f %s %s (#%s)',
+            return sprintf('#%s $%0.2f %s %s ',
+                           $this->check_num,
                            $this->amount,
-                           $this->payer,
-                           $this->check_date,
-                           $this->check_num
+                           Yii::app()->format->date($this->check_date),
+                           $this->payer
                 );
         }
 

@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Income</h1>
+<h1>Assign Check Split</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

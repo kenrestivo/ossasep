@@ -992,26 +992,53 @@ wrapping delete for foreign key constraints
 ---------------
 heidi 12-23-11
 	
-when no dates, auto add, leave
+when no dates, auto add classes, leave it there
+
+
 navigate away from edit wo saving
 maybe make location a link column, not let them be in same place
 totals owed and totals  owing to instructor
-signup, instructor is only their class! 
+
+
+
 all emails there are ok
-signup for patricia
-signup for heidi paid/unpaid
-emailable just class and names and grades
-total for class total actually paid
-owed is actually paid
+	update student set public_email_ok = 1 where parent_email != '';
+	
+signup
+	for patricia, as it is more or less
+	for heidi with paid/unpaid to instructor (see jpg)
+	for instructor sees only their class! and only email-safe emails
+	for the whole school: emailable just as is
+
+owed to instructor is actually paid in cash
 summaries by class
-show popup of the next one
-payer before  date
-show deposit number
-instructor owed is for debbie
-entered, date notes are deposit #, date, name entered by, differt date at bottom filled
-report of instrotors, each class, total paid, scholarships, paid records but no names, then total
+total for class total actually paid
 
 
+
+instructor owed report
+	is for debbie
+
+report for instrotors, each class, total paid, scholarships, paid records but no names, then total
+
+deposit form
+	show deposit number at top
+	entered, date notes
+	deposit #, date, name entered by, differt date at bottom filled
+	show popup of the next one when entering
+		or my summary might be OK, using echosen
+		popup would be fun though.
+	payer before  date in check list and _incomes
+
+in cross-checks, make sure instructors don't add up to > 100
+
+
+when adding check/income split, maybe just present a list of unpaid classes?
+	rather then allowing it to be freeform?
+
+can have overpays too! i.e. a class paid twice with 2 checks
+
+fix signup checkboxes css
 
 --------------
 warning for unsaved changes
