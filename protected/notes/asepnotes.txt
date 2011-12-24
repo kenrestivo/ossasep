@@ -1010,7 +1010,7 @@ show deposit number
 instructor owed is for debbie
 entered, date notes are deposit #, date, name entered by, differt date at bottom filled
 report of instrotors, each class, total paid, scholarships, paid records but no names, then total
-
+in cross-checks, make sure instructors don't add up to > 100%3
 
 
 --------------
