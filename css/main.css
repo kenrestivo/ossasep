@@ -247,6 +247,7 @@ table.bordertable th,td.short{
 
 .schedule table{
   width: 910px;
+  border-collapse: collapse;
 }
 
 
@@ -255,6 +256,7 @@ table.bordertable th,td.short{
   border-color: #600;
   border-width: 1px 1px 1px 1px;
   border-style: solid;
+  border-collapse: collapse;
   table-layout: fixed;
   width: 182px;
   vertical-align: top;
