@@ -5,11 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CheckIncome', 'url'=>array('index')),
-	array('label'=>'Create CheckIncome', 'url'=>array('create')),
-	array('label'=>'Update CheckIncome', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete CheckIncome', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CheckIncome', 'url'=>array('admin')),
+	array('label'=>'Edit', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 
