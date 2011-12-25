@@ -32,7 +32,8 @@
              $cname = "";
          }
          $showi = $s->status == "Cancelled" ? "X" : $i;
-         echo "<tr class=\"$cname\"><td>$showi</td><td>{$s->student->full_name}</td><td>". Yii::app()->format->gradeShort($s->student->grade) . '</td></tr>';
+         echo "<tr class=\"$cname\"><td class=\"row\">$showi</td><td>{$s->student->full_name}</td>";
+         echo '<td class="grade">'. Yii::app()->format->gradeShort($s->student->grade) . '</td></tr>';
          $i++; 
      }
 

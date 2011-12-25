@@ -308,7 +308,6 @@ table.emailable .waitlist{
  }
 
 table.emailable .title {
-  border-style: none;
   background: #009ACD;
   color: #ffffff;
  }
@@ -316,4 +315,14 @@ table.emailable .title {
 table.emailable a{ 
   color:#ffffff;
   text-decoration: none;
+  border-collapse: collapse;
  }
+
+table.emailable .grade{ 
+  text-align: center;
+ }
+
+table.emailable .row{ 
+  text-align: right;
+ }
+
