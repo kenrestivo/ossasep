@@ -229,7 +229,7 @@ div.search-form
 }
 
 table.bordertable {
-   width: auto;
+  width: auto;
 }
 
 table.bordertable  td,th
@@ -242,7 +242,7 @@ table.bordertable  td,th
 }
 
 table.bordertable th,td.short{
-width:auto;
+  width:auto;
 }
 
 .schedule table{
@@ -275,3 +275,4 @@ width:auto;
   line-height: 18px;
   
 }
+

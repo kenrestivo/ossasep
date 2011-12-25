@@ -1,4 +1,4 @@
-<h1>Signup Checkboxes</h1>
+<h1>Signup Form (checkboxes)</h1>
 <table class="bordertable" >
 <tr>
 <th class="short">

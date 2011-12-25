@@ -74,6 +74,17 @@ class ReportController extends Controller
                     
     }
 
+    public function actionSignupsPublic()
+    {
+        $cs = ClassSession::model()->findByPk(
+            Yii::app()->params['currentSession']);
+		$this->render(
+            'signups_public', 
+            array(
+                'classes' => $cs->active_classes));
+    }
+
+
 
 
 }
