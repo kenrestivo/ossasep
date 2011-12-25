@@ -1007,35 +1007,15 @@ all emails there are ok
 
 classes by room
 	
-owed to instructor is actually paid in cash
-summaries by class
-total for class total actually paid
 
-
-
-instructor owed report
-	is for debbie
 
 report for instrotors, each class, total paid, scholarships, paid records but no names, then total
 
-deposit form
-	show deposit number at top
-	entered, date notes
-	deposit #, date, name entered by, differt date at bottom filled
-	show popup of the next one when entering
-		or my summary might be OK, using echosen
-		popup would be fun though.
-	payer before  date in check list and _incomes
-
-in cross-checks, make sure instructors don't add up to > 100
 
 
 when adding check/income split, maybe just present a list of unpaid classes?
 	rather then allowing it to be freeform?
 
-can have overpays too! i.e. a class paid twice with 2 checks
-
-fix signup checkboxes css
 
 --------------
 warning for unsaved changes

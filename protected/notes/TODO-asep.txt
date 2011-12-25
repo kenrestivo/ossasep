@@ -17,6 +17,9 @@ formatting
 		i did this, in instructor didn't i?
 	
 ui
+	when adding meeting date, add most recent or last
+		if studentid is set, if it's a one way
+		also, auto-set the single-ended too
 	in general, prevent entry errors, and warn if they exist
 		like:
 			class over capacity
@@ -42,9 +45,15 @@ ui
 		autopopulate check # with 'cash' perhaps
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
-	show the autoadd dates even if there are dates
-		and show the DAY OF WEEK it'll be added for!
-	deposits
+	
+	deposit form
+		show deposit number at top
+		entered, date notes
+		deposit #, date, name entered by, differt date at bottom filled
+		show popup of the next one when entering
+			or my summary might be OK, using echosen
+			popup would be fun though.
+		payer before  date in check list and _incomes
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
@@ -72,7 +81,8 @@ new reports needed
 	integrity check dashboard
 		unpaid classes (useful for checking)
 		unassigned check amounts		
-
+		instructors don't add up to > 100
+		classes overpaid, i.e. 2 or more checks for same class
 
 oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
@@ -89,6 +99,11 @@ reports first! THEN DO THE UI AGAIN based on the reports. try that.
 		add financial summary now
 		uniquely name all the gridviews (css id)
 	C calculating payments for teachers
+		instructor owed report
+			is for debbie
+		owed to instructor is actually paid in cash
+		summaries by class
+		total for class total actually paid
 	D payments for companies
 
 

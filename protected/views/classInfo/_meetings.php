@@ -1,16 +1,20 @@
 <?
 $am=$model->active_meetings;
-if(count($am) < 1 ){
-    echo '<div><span class="span-10">';
+    echo '<div><span class="span-11">';
     echo CHtml::beginForm(array('populate', 'id' => $model->id));
-    echo "Auto-populate meeting dates: ";
+echo "Auto-populate " . ZHtml::weekdayTranslation($model->day_of_week). " meeting dates: ";
     echo CHtml::textField('num', 8, array('size' => 2));
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
+echo '<br /> or ';
+echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
+				 array("ClassMeeting/create",
+                       'class_id' => $model->id,
+					   'returnTo' => Yii::app()->request->requestUri));
 
-    echo "</span><span class=\"span-10 last\">Your session settings are: start " 
+    echo "</span><span class=\"span-9 last\">Your session settings are: " 
     . ZHtml::mediumDate($model->session->start_date). 
-    ", end "
+    " - "
     . ZHtml::mediumDate($model->session->end_date)
     . "  ";
     echo CHTML::link("(edit)",
@@ -19,10 +23,11 @@ if(count($am) < 1 ){
 					   'returnTo' => Yii::app()->request->requestUri));
 
     echo "</span>";
-    echo "</div><br />";
-}
+    echo "</div><p></p>";
 ?>
 
+<?php
+?>
 
 
 <?php
@@ -46,9 +51,3 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
 				  )); ?>
 
-<?php
-echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
-				 array("ClassMeeting/create",
-                       'class_id' => $model->id,
-					   'returnTo' => Yii::app()->request->requestUri));
-?>
