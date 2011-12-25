@@ -6,15 +6,16 @@ echo CHTML::link("Add Class for " . $model->full_name,
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
+                  'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->signups, 
                       array('keyField' => 'student_id,class_id',
                           )),
                   'columns'=>array(
                       'class.class_name:text:Class',
-                      'signup_date:datetime:Signed Up On',
                       'status:text:Status',
                       'scholarship:boolean:Scholarship',
+                      'signup_date:datetime:Signed Up On',
                       'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
