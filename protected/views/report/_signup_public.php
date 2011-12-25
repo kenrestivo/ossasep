@@ -16,7 +16,7 @@
 <?php
 
      $ps = "";
-     foreach($model->sortedSignups as $s){
+     foreach($model->sortedCancelled as $s){
          if($ps != $s->status){
              $i = 1;
              $ps = $s->status;
