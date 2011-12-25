@@ -276,3 +276,6 @@ table.bordertable th,td.short{
   
 }
 
+.strikethrough{ 
+  text-decoration: line-through;
+}
