@@ -20,6 +20,10 @@ formatting
 	make waitlist a different color, make cancelled a strikethrough	
 	
 ui
+	in general, warnings for entry mistakes that are not errors
+		enter a grade that is out of range
+		change the date but there are active meetings
+		a check or split where totals don't add up
 	show waitlist as the default option if they are over capacity
 	add edit link for checkincome/view, or make "update" menu more clear
 	show in checks, an optional list of unpaid things to pay

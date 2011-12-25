@@ -288,7 +288,7 @@ table.bordertable th,td.short{
 
 
 table.emailable {
-  width: auto;
+  width: 250px;
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
