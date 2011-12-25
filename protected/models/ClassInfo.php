@@ -34,7 +34,7 @@ class ClassInfo extends CActiveRecord
 
     public function getSummary()
     {
-        return $this->class_name . " " . $this->start_time . " " . $this->session->summary;
+        return $this->class_name . " " . $this->gradeSummary('short');
     }
 
 
