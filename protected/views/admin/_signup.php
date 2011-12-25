@@ -13,7 +13,7 @@ $kad = new KArrayDataProvider(
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'dataProvider'=> $kad,
-                  'rowCssClassExpression' => '$data->status == "Cancelled" ? "strikethrough" : $this->rowCssClass[$row % 2]',
+                  'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'enablePagination' => false,
                   'summaryText' => $model->summaryCounts,
                   'columns'=>array(

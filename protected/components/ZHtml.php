@@ -80,6 +80,19 @@ class ZHtml extends CHtml
     }
 
 
+    public static function rowHack($grid, $data, $row)
+    {
+        $std = $grid->rowCssClass[$row % count($grid->rowCssClass)];
+        if($data->status == "Cancelled"){
+            $std .= " strikethrough";
+        }
+        if($data->status == "Waitlist"){
+            $std .= " waitlist";
+        }
+        return $std;
+
+    }
+
 
 }
 
