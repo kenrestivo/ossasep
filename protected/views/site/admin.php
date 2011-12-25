@@ -3,10 +3,10 @@
 <table class="bordertable">
   <tr>
     <th>
-      <h1>Dashboards</h1>
+      <h1>Public Screens</h1>
     </th>
     <th>
-      <h1>Reports</h1>
+      <h1>Admin-only Reports</h1>
     </th>
     <th>
       <h1>Main views</h1>
@@ -21,21 +21,22 @@
 
   <tr>
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a>
       <br />
-
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a>
+      <br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form (checkboxes)</a>
+      <br />
     </td>
 
     <td>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a>
-      <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Checkboxes</a>
-      <br />
+
     </td>
+
 
 
     <td>
