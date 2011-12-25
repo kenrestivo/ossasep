@@ -1,8 +1,15 @@
 <table class="emailable">
   <tr>
     <th colspan="3" class="title" >
-      <?= CHtml::link($model->class_name, 
-                      array("/ClassInfo/view", 'id' => $model->id)) ?>&nbsp;
+     <?php if(Yii::app()->user->isGuest){
+     echo CHtml::encode($model->class_name);
+ } else {
+     echo CHtml::link(CHtml::encode($model->class_name), 
+                 array("/ClassInfo/view", 'id' => $model->id));
+ }
+     ?>
+
+&nbsp;
       <span style="float:right"><?= $model->gradeSummary('short') ?></span>
     </th>
   </tr>

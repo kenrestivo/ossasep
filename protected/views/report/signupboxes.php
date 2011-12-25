@@ -13,7 +13,13 @@
      <tr>
           <td class="short"></td>
           <td>
-                          <?= CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)) ?>
+<?php
+if(Yii::app()->user->isGuest){
+    echo CHtml::encode($class->class_name);
+} else {
+    echo CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)); 
+}      
+     ?>&nbsp;
           <?=$class->gradeSummary('long')?>
           </td>
           <td>$<?= $class->costSummary ?> to 

@@ -292,6 +292,7 @@ table.emailable {
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
 table.emailable  td,th
@@ -300,6 +301,7 @@ table.emailable  td,th
   border-width: 1px 1px 1px 1px;
   border-style: solid;
   vertical-align: top;
+  border-collapse: collapse;
   width: auto;
 }
 
@@ -315,7 +317,7 @@ table.emailable .title {
 table.emailable a{ 
   color:#ffffff;
   text-decoration: none;
-  border-collapse: collapse;
+
  }
 
 table.emailable .grade{ 
