@@ -17,9 +17,6 @@ formatting
 		i did this, in instructor didn't i?
 	
 ui
-	when adding meeting date, add most recent or last
-		if studentid is set, if it's a one way
-		also, auto-set the single-ended too
 	in general, prevent entry errors, and warn if they exist
 		like:
 			class over capacity
