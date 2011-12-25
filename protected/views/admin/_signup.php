@@ -11,7 +11,7 @@ $kad = new KArrayDataProvider(
 
 
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'signup-grid',
+                  'id'=>'signup-grid-'. $model->id,
                   'dataProvider'=> $kad,
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'enablePagination' => false,

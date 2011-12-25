@@ -95,17 +95,9 @@ oh crap. how to deal with partial refunds???
 	
 reports first! THEN DO THE UI AGAIN based on the reports. try that.
 	Q the dashboard
-		add financial summary for class
 	A class summaries, financial -- same as above!
 	E the sign up sheet
-		add financial summary now
-		uniquely name all the gridviews (css id)
 	C calculating payments for teachers
-		instructor owed report
-			is for debbie
-		owed to instructor is actually paid in cash
-		summaries by class
-		total for class total actually paid
 	D payments for companies
 
 

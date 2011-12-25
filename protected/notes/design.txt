@@ -13,6 +13,11 @@ reports
 		= sum amount due
 		classes
 			= percent it's paid for
+		instructor owed report
+			is for debbie
+			owed to instructor is actually paid in cash
+			summaries by class
+			total for class total actually paid
 
 	D  (payment for companies)
 		company name
@@ -25,7 +30,9 @@ reports
 			checks??
 				amount paid
 				payment type? payee? (to osspto?)
-			
+		add financial summary now
+		uniquely name all the gridviews (css id, may be important)
+		
 			
 	G "sign up list with contacts"
 		class
@@ -94,6 +101,7 @@ reports
 		wait list count
 		session count
 		payments total
+		add financial summary for class
 
 	R  dashboard-instructors
 		name
