@@ -1,13 +1,13 @@
-<table class="bordertable">
+<table class="emailable">
   <tr>
-    <th colspan="3" >
+    <th colspan="3" class="title" >
       <?= CHtml::link($model->class_name, 
                       array("/ClassInfo/view", 'id' => $model->id)) ?>&nbsp;
       <span style="float:right"><?= $model->gradeSummary('short') ?></span>
     </th>
   </tr>
   <tr>
-    <td colspan="3">
+    <td colspan="3" class="title">
       <?= CHtml::encode($model->instructorNames(' and ')) ?>
     </td>
   </tr>
