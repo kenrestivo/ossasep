@@ -5,14 +5,16 @@ organize the notes from heidi
 formatting
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
-	requirements and instructor types, make view display cleaner
-		i did this, in instructor didn't i?
 	add a line in checks, for any un-assigned check stuff!!
-	student signups (regular)
-		show email if checked email allowed
+	signup
+		for patricia, as it is more or less
+		for heidi with paid/unpaid to instructor (see jpg)
+		for instructor sees only their class! and only email-safe emails
 	dashboard
 		total amount income for class
 	the rest of the reports!
+	requirements and instructor types, make view display cleaner
+		i did this, in instructor didn't i?
 	
 ui
 	in general, warnings for entry mistakes that are not errors

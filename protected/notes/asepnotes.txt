@@ -1004,11 +1004,6 @@ totals owed and totals  owing to instructor
 all emails there are ok
 	update student set public_email_ok = 1 where parent_email != '';
 	
-signup
-	for patricia, as it is more or less
-	for heidi with paid/unpaid to instructor (see jpg)
-	for instructor sees only their class! and only email-safe emails
-	for the whole school: emailable just as is
 
 classes by room
 	
