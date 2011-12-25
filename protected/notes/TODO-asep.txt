@@ -1,18 +1,15 @@
 TODO for asep
 
 formatting
-	in class/_owed, should include waitlisted!
-		checks do get entered, gets put in another envelope
-	add a line in checks, for any un-assigned check stuff!!
 	signup
 		for patricia, as it is more or less
 		for heidi with paid/unpaid to instructor (see jpg)
 		for instructor sees only their class! and only email-safe emails
 	dashboard
 		total amount income for class
-	the rest of the reports!
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
+	the rest of the reports!
 	
 ui
 	in general, prevent entry errors, and warn if they exist
@@ -28,10 +25,6 @@ ui
 			in the case of classes, i can arrange them in the heir chosen
 				group the classes in and out of range
 	finish adding the navigate-away-without-saving warnings
-	add edit link for checkincome/view, or make "update" menu more clear
-	show in checks, an optional list of unpaid things to pay
-		make it an autocomplete
-	will need security protection for signups-public
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -43,7 +36,13 @@ ui
 		when adding check/income split,
 			maybe just present a list of unpaid classes?
 			because that's all they'll really need anyway
+		an optional list of unpaid things to pay
+			make it an autocomplete
+		show amount - total value of current assignments
+		these will ultimately need to be ajaxy
 	rather then allowing it to be freeform?
+	will need security protection for signups-public
+		rbac? oh gawd...
 
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
@@ -65,13 +64,15 @@ ui
 			or which are for classes which are 50% capacity		
 	autoppopulate the check when adding
 		when adding WHAT?
-	for adding date, auto-populate with next available weekday afterwards
 	catch errors when trying to delete linked tables
 		in check, for sure, but also everywhere really
 		maybe just override t'index', 'view', 'create', 'update', 'index', 'view', 'create', 'update', fubarint NOT NULL,4he controller
-
+	in general, make menu on views like checkincome (just edit and delete)
+		and maybe add ones for the others, the tab ones
 			
 bug
+	in class/_owed, should include waitlisted!
+		checks do get entered, gets put in another envelope
 	in paid, why are cancelleds payments not showing up at all?
 	on student/_income, if cancelled, show the paids,
 		so find enrolled OR cancelled or just not waitlisted
