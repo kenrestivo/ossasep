@@ -992,29 +992,11 @@ wrapping delete for foreign key constraints
 ---------------
 heidi 12-23-11
 	
-when no dates, auto add classes, leave it there
-
-
-navigate away from edit wo saving
-maybe make location a link column, not let them be in same place
-totals owed and totals  owing to instructor
-
 
 
 all emails there are ok
 	update student set public_email_ok = 1 where parent_email != '';
 	
-
-classes by room
-	
-
-
-report for instrotors, each class, total paid, scholarships, paid records but no names, then total
-
-
-
-when adding check/income split, maybe just present a list of unpaid classes?
-	rather then allowing it to be freeform?
 
 
 --------------

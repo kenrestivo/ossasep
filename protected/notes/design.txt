@@ -26,13 +26,6 @@ reports
 				amount paid
 				payment type? payee? (to osspto?)
 			
-	F ("emailable")
-		this is the square thing, no contact info
-		class
-			student
-				name
-				grade
-			(waitlists)
 			
 	G "sign up list with contacts"
 		class
@@ -82,18 +75,6 @@ reports
 		session m-f, notes
 		(also separate report-let: list of dates, not really needed)
 
--	M "schedule"
-		by day of week (l-r)
-			classname
-			teacher(s)
-			grade
-			time
-			room
-
--	N "description"
-		(the big ms word thing?)
-		number of weeks should count the weeks
-		this can be done manually/wordy
 
 	O (checks byy companies)
 		class
@@ -119,6 +100,7 @@ reports
 		missing paperwork
 		payments received
 		payments owed
+		totals owed and totals  owing to instructor (see V though)
 
 	S list of scholarships report
 		student
@@ -128,6 +110,19 @@ reports
 	T
 		check status/dashboard, show that they add up!
 			report errors if not
+
+	U
+		classes by room and date summary
+
+
+	V	instructor email report
+		each class,
+		total paid to us,
+		scholarships,
+		paid records but no names,
+		then total paid to them
+
+		
 		
 (wow, 18 reports/entry screens)
 	
