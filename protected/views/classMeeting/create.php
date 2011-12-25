@@ -10,6 +10,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create ClassMeeting</h1>
+<h1>Create ClassMeeting 
+<?php
+if(isset($_GET['class_id'])){
+    echo " for " . CHtml::encode($model->class->summary);
+}
+?>
+</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

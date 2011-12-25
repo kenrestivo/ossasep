@@ -41,7 +41,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
 <?php 
-if(!isset($_GET['class_id'])){
+if(!isset($_GET['class_id']) && !isset($model->class_id)){
     echo $form->dropDownList(
         $model,'class_id',
         CHtml::listData(ClassInfo::model()->findAll(), 
