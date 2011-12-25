@@ -11,6 +11,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->sortedSignups, 
                       array('keyField' => 'student_id,class_id',
                           )),
+                  'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'columns'=>array(
                       'student.full_name:text:Name',
                       'student.grade:grade:Grade',
