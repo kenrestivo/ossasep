@@ -17,7 +17,6 @@ formatting
 	dashboard
 		total amount income for class
 	the rest of the reports!
-	make waitlist a different color, make cancelled a strikethrough	
 	
 ui
 	in general, warnings for entry mistakes that are not errors
@@ -28,6 +27,7 @@ ui
 	add edit link for checkincome/view, or make "update" menu more clear
 	show in checks, an optional list of unpaid things to pay
 		make it an autocomplete
+	will need security protection for signups-public
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it

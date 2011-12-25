@@ -1,6 +1,8 @@
-<?php if ($model->status == 'New'){ ?>
-      <em><strong>NEW:</strong></em>
-          <?php } ?>
+<?php 
+if ($model->status == 'New'){ 
+      echo '<em><strong>NEW:</strong></em>';
+  } 
+?>
 
 <strong><?php 
 if(Yii::app()->user->isGuest){
@@ -9,7 +11,13 @@ if(Yii::app()->user->isGuest){
     echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 
 }
 ?>
-</strong><br />
+</strong>
+<?php
+if($model->enrolled_count >= $model->max_students){
+      echo '<span class="full"><strong>FULL</strong></span>';
+}
+?>
+<br />
 
 <?php
 if($model->isCompany()){
