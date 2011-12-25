@@ -2,7 +2,7 @@
   <tr>
     <th colspan="3" >
       <?= CHtml::link($model->class_name, 
-        array("/ClassInfo/view", 'id' => $model->id)) ?>
+                      array("/ClassInfo/view", 'id' => $model->id)) ?>&nbsp;
       <span style="float:right"><?= $model->gradeSummary('short') ?></span>
     </th>
   </tr>
@@ -24,7 +24,7 @@
                  echo '<tr><th colspan="3">Waitlist</th></tr>';
              }
          }
-         echo "<tr><td>$i</td><td>{$s->student->full_name}</td><td>{$s->student->grade}</td></tr>";
+         echo "<tr><td>$i</td><td>{$s->student->full_name}</td><td>". Yii::app()->format->gradeShort($s->student->grade) . '</td></tr>';
          $i++; 
      }
 
