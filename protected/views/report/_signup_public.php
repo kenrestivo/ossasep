@@ -21,10 +21,16 @@
              $i = 1;
              $ps = $s->status;
              if($ps == "Waitlist"){
-                 echo '<tr><th colspan="3">Waitlist</th></tr>';
+                 echo '<tr class="waitlist"><th colspan="3">Waitlist</th></tr>';
              }
          }
-         $cname = $s->status == "Cancelled" ? "strikethrough" : "";
+         if($s->status == "Cancelled"){
+             $cname = "strikethrough";
+         } elseif ($s->status == "Waitlist"){
+             $cname = "waitlist";
+         } else {
+             $cname = "";
+         }
          $showi = $s->status == "Cancelled" ? "X" : $i;
          echo "<tr class=\"$cname\"><td>$showi</td><td>{$s->student->full_name}</td><td>". Yii::app()->format->gradeShort($s->student->grade) . '</td></tr>';
          $i++; 
