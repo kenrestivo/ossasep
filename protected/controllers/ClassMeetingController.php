@@ -72,6 +72,7 @@ class ClassMeetingController extends Controller
 
         if(isset($_GET['class_id'])){
             $model->class_id = $_GET['class_id'];
+            $model->setNextMeeting();
         }
 
 		$this->render('create',array(
