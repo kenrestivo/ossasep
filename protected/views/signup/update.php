@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Signup <?php echo $model->student->first_name. " " . $model->class->class_name  ?></h1>
+<h1>Update Signup <?php echo CHtml::encode($model->student->full_name). " " . CHtml::encode($model->class->summary)  ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
