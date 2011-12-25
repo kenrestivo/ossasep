@@ -26,7 +26,7 @@ if(!isset($_GET['student_id'])){
 	</div>
     <?php } else { ?>
     Add class for: 
-	<?php echo CHtml::encode($model->student->full_name);
+        <?php echo CHtml::encode($model->student->full_name. " (" . Yii::app()->format->grade($model->student->grade) . ")");
           echo $form->hiddenField($model,"student_id"); 
                } ?>
 

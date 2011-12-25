@@ -34,7 +34,7 @@ class ClassInfo extends CActiveRecord
 
     public function getSummary()
     {
-        return $this->class_name . " " . $this->gradeSummary('short');
+        return $this->class_name . " (" . $this->gradeSummary('short'). ")";
     }
 
 
