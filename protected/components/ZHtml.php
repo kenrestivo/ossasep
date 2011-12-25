@@ -84,10 +84,10 @@ class ZHtml extends CHtml
     {
         $std = $grid->rowCssClass[$row % count($grid->rowCssClass)];
         if($data->status == "Cancelled"){
-            $std .= " strikethrough";
+            $std = " strikethrough";
         }
         if($data->status == "Waitlist"){
-            $std .= " waitlist";
+            $std = " waitlist";
         }
         return $std;
 
