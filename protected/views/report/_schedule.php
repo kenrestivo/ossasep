@@ -31,3 +31,14 @@ for($i=0; $lines > 0; $i++){
 ?>
 
 </table>
+
+
+<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+
+<script type="text/javascript">
+
+$(function(){
+        $(".full").each(function(i){$(this).parent().addClass('waitlist')});
+    });
+
+</script>

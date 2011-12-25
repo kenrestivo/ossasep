@@ -329,5 +329,6 @@ table.emailable .row{
  }
 
 .full{ 
-float:right;
+  float:right;
+  font-weight: bold;
  }
