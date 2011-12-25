@@ -307,7 +307,8 @@ table.emailable .waitlist{
   background: #ccffff;
  }
 
-table.emailable .title { 
+table.emailable .title {
+  border-style: none;
   background: #009ACD;
   color: #ffffff;
  }
