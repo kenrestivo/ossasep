@@ -17,13 +17,8 @@ echo CHTML::link("Add 1 Meeting Date for ". $model->class_name,
     " - "
     . ZHtml::mediumDate($model->session->end_date)
     . "  ";
-    echo CHTML::link("(edit)",
-				 array("ClassSession/update",
-                       'id' => $model->session_id,
-					   'returnTo' => Yii::app()->request->requestUri));
-
     echo "</span>";
-    echo "</div><p></p>";
+    echo '</div><div class="clear"></div>';
 ?>
 
 <?php
