@@ -11,21 +11,25 @@
       <?= CHtml::encode($model->instructorNames(' and ')) ?>
     </td>
   </tr>
-  <tr>
-    <td>num</td>
-    <td>student</td>
-    <td>grade</td>
-  </tr>
-</table>
+
 
 <?php
-  
 
+     $ps = "";
+     foreach($model->sortedSignups as $s){
+         if($ps != $s->status){
+             $i = 1;
+             $ps = $s->status;
+             if($ps == "Waitlist"){
+                 echo '<tr><th colspan="3">Waitlist</th></tr>';
+             }
+         }
+         echo "<tr><td>$i</td><td>{$s->student->full_name}</td><td>{$s->student->grade}</td></tr>";
+         $i++; 
+     }
 
-$kad = new KArrayDataProvider(
-$model->sortedSignups,
-array('keyField' => 'student_id,class_id',
-));
 
 ?>
 
+ 
+</table>
