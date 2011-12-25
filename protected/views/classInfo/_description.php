@@ -5,9 +5,10 @@
 
 $meetings = $model->active_meetings;
 $daysoff = $model->days_off;
+$full = $model->enrolled_count >= $model->max_students;
 ?>
 
-<div class="catalog" >
+<div class="<?= $full ? 'waitlist catalog' : 'catalog' ?>" >
 
 <?php if($model->status == 'New'){ ?>
 <strong><em>NEW CLASS</em></strong><br />
@@ -26,6 +27,10 @@ if(Yii::app()->user->isGuest){
     if($model->company->use_publicly > 0){
         echo " of " . $model->company->name;
     }
+if($full){
+      echo '<span class="full">FULL</span>';
+} 
+
 ?>
 <br />
 
