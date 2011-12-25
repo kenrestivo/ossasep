@@ -1,7 +1,7 @@
 <h1>Signup Checkboxes</h1>
 <table class="bordertable" >
 <tr>
-<th>
+<th class="short">
 <?php echo CHtml::encode('√'); ?>
 </th>
 <th>Class</th>
@@ -11,7 +11,7 @@
 
 <?php foreach($classes as $class){ ?>
      <tr>
-          <td></td>
+          <td class="short"></td>
           <td>
                           <?= CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)) ?>
                           <?= $this->renderPartial(

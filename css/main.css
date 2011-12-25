@@ -228,15 +228,21 @@ div.search-form
   background: #80CFFF;
 }
 
+table.bordertable {
+   width: auto;
+}
 
-.bordertable  td,th
+table.bordertable  td,th
 {
   border-color: #600;
   border-width: 1px 1px 1px 1px;
   border-style: solid;
   vertical-align: top;
-  table-layout: auto;
+  width: auto;
+}
 
+table.bordertable th,td.short{
+width:auto;
 }
 
 .schedule table{
@@ -253,9 +259,6 @@ div.search-form
   width: 182px;
   vertical-align: top;
 }
-
-
-
 
 
 .schedule a
