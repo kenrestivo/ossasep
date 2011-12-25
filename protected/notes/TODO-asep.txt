@@ -1,6 +1,5 @@
 TODO for asep
 
-
 formatting
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
@@ -23,6 +22,7 @@ ui
 			enter a grade that is out of range
 			change the date but there are active meetings
 			a check or split where totals don't add up
+			entering to a session not the current default
 		how?
 			populate a js array with the data, and check it with jquery?
 			in the case of classes, i can arrange them in the heir chosen
@@ -276,6 +276,7 @@ must have for NEXT SESSION!
 			i should start constraining those by session!
 			where though? in the model? in the view?
 		a menu at the top, i think: year, session. dependent dropdown
+			better: just show it, and an ajax to swap it with a dropdown.
 		how to default to the current session?
 			i will PROBABLY need start/end dates for it in the session
 			then i can check today's date.
@@ -285,12 +286,12 @@ must have for NEXT SESSION!
 			check at every page load, choose now as default if nkt set.
 		save use default session unless set in get/post
 		in future, warn or disallow when saving to past sy/session
+	session-ify the checks and deposits please
 	how to import/add new class from previous session
-	again, an ajaxything or something, a popup
-		but it's more than one model!
-		relational deep copy!
+		an ajaxything or something, a popup
+		relational deep copy! only a few tables though:
 		 	instructors, it'll need to create new joins for them. just them!
-			and extra fees too  probably
+			and extra fees
 			not students though. until parents sign them up! or income.
 	delete a class
 		first fix the link, it's not a-werken (missing js?)
@@ -310,6 +311,7 @@ must have for NEXT YEAR:
 		aha, i think it will be a named scope
 	picklist of STUDENTS could get huge, and need to be pared down
 		how to determine when kids are no longer in ocean shore??
+		um, graduate them? when updating grades, if grade > 8, remove
 		current flag?
 		also, grade needs to be updated every year somehow
 	i will DEFINITELY need some kind of de-duping system
