@@ -284,3 +284,45 @@ table.bordertable th,td.short{
 .waitlist { 
   background: #C1C1C1;
  }
+
+
+
+table.emailable {
+  width: auto;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+table.emailable  td,th
+{
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  vertical-align: top;
+  width: auto;
+}
+
+table.emailable .waitlist{ 
+  background: #ccffff;
+ }
+
+table.emailable .title {
+  background: #009ACD;
+  color: #ffffff;
+ }
+
+table.emailable a{ 
+  color:#ffffff;
+  text-decoration: none;
+  border-collapse: collapse;
+ }
+
+table.emailable .grade{ 
+  text-align: center;
+ }
+
+table.emailable .row{ 
+  text-align: right;
+ }
+

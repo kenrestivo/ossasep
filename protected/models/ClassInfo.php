@@ -283,6 +283,10 @@ order by class_info.class_name
     }
 
 
+/*
+  In magic order based on the enum: enrolled, waitlist, then cancelled
+ */
+
     public function getSortedSignups()
     {
         return  Signup::model()->findAllBySql(
@@ -294,6 +298,23 @@ order by class_info.class_name
       ",
             array('cid' => $this->id));
     }
+
+    /*
+      Shows the cancelled first, then waitlist
+     */
+    public function getSortedCancelled()
+    {
+        return  Signup::model()->findAllBySql(
+            "select signup.*
+       from signup
+       left join student on student.id = signup.student_id
+      where signup.class_id = :cid
+      order by FIND_IN_SET(status, 'Enrolled,Cancelled,Waitlist'), 
+        student.last_name ASC, student.first_name ASC
+      ",
+            array('cid' => $this->id));
+    }
+
 
     public function getSummaryCounts()
     {
