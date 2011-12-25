@@ -113,4 +113,22 @@ class ClassMeeting extends CActiveRecord
         }
     }
 
+    public function setNextMeeting()
+    {
+        // this only makes sense if there's a class specified
+        if(!isset($this->class_id)){
+            return null;
+        }
+
+         // XXX this is ALMOST the same as in ClassInfo->populate_meetings
+        // it worries me that it's not exactly the same
+        $c = Yii::app()->db->createCommand(
+            "select school_day from school_calendar where day_off < 1 and minimum < 1 and dayofweek(school_day) = :dayofweek and school_day > (select max(meeting_date) from class_meeting where class_meeting.class_id = :cid)  limit 1");
+        $r=$c->queryRow(true, array(
+                            'dayofweek' => $this->class->day_of_week,
+                            'cid' => $this->class_id
+                            ));
+        $this->meeting_date = $r['school_day'];
+    }
+
 }
