@@ -274,6 +274,10 @@ FUTURE REQUIRD
 
 must have for NEXT SESSION!
 	a way to track current session, and sort by it!
+		the things that already use the defaultsession from yii main.php, OK
+		the big issue will be all the dropdowns, which use findAll()
+			i should start constraining those by session!
+			where though? in the model? in the view?
 		a menu at the top, i think: year, session. dependent dropdown
 		how to default to the current session?
 			i will PROBABLY need start/end dates for it in the session
