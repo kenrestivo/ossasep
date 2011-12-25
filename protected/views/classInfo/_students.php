@@ -12,6 +12,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,class_id',
                           )),
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
+                  'summaryText' => $model->summaryCounts,
                   'columns'=>array(
                       'student.full_name:text:Name',
                       'student.grade:grade:Grade',
