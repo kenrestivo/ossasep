@@ -25,9 +25,12 @@
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a>
       <br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsPublic">Current Signups (emailable)</a>
+      <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form (checkboxes)</a>
       <br />
     </td>
+
 
     <td>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet</a>

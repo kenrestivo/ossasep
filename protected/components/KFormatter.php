@@ -44,6 +44,12 @@ class KFormatter extends CFormatter
     }
 
 
+   static public function formatGradeShort($grade)
+    {
+        return $grade > 0 ? $grade : 'K';
+    }
+
+
     public function formatNoZero($value)
     {
         return $value < 1 ? '' : $this->formatNumber($value);

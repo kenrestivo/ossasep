@@ -341,4 +341,13 @@ where school_calendar.school_day > :start
             );
     }
 
+    public function gradeSummary($style="long")
+    {
+        if($style == "long"){
+            return Yii::app()->format->grade($this->min_grade_allowed) .'  - '. Yii::app()->format->grade($this->max_grade_allowed);
+        } else {
+            return Yii::app()->format->gradeShort($this->min_grade_allowed) .'-'. Yii::app()->format->gradeShort($this->max_grade_allowed);
+        }
+    }
+
 }

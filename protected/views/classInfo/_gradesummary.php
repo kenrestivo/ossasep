@@ -1,1 +1,0 @@
-<?= Yii::app()->format->grade($model->min_grade_allowed); ?> - <?= Yii::app()->format->grade($model->max_grade_allowed); ?>

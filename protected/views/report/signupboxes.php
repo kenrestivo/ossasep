@@ -14,9 +14,7 @@
           <td class="short"></td>
           <td>
                           <?= CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)) ?>
-                          <?= $this->renderPartial(
-                              '/classInfo/_gradesummary', 
-                              array('model' => $class)) ?>
+          <?=$class->gradeSummary('long')?>
           </td>
           <td>$<?= $class->costSummary ?> to 
           <?php 

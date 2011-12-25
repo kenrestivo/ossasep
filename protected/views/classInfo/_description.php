@@ -40,7 +40,7 @@ up to <?= $model->max_students  ?>
 
 </span>
 <span class="span-5">
-Grades: <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?>
+    Grades: <?= $model->gradeSummary('long') ?>
 </span>
 
 <span class="span-7">

@@ -1,6 +1,6 @@
 <h3><?= CHtml::link($model->class_name, 
                      array("/ClassInfo/view", 'id' => $model->id)) ?>
- <?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
+     <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
 
 <?php
      

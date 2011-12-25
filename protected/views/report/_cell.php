@@ -20,7 +20,7 @@ if($model->isCompany()){
 ?>
 <br />
 
-<?= $this->renderPartial('/classInfo/_gradesummary', array('model' => $model)) ?>
+<?= $model->gradeSummary('long') ?>
  <br />
 <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?> <br />
 <?php echo CHtml::encode($model->location); ?>
