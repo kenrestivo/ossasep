@@ -83,7 +83,7 @@ class ClassSession extends CActiveRecord
 
     public function getSummary(){
         return sprintf(
-            'Session %s (%s)', 
+            'Session %s %s', 
             $this->description,
             $this->school_year->description);
  

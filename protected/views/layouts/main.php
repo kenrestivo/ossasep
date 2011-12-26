@@ -33,6 +33,7 @@
 				array('label'=>'Descriptions', 'url'=>array('/Report/descriptions')),
 				array('label'=>'Signups', 'url'=>array('/Report/signupsPublic')),
 
+                //TODO: make this clickable/changable
 				array('label'=>$this->savedSessionSummary()),
 
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

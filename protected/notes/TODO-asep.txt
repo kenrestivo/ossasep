@@ -1,10 +1,10 @@
 TODO for asep
 
 baby steps towards sessionifying
-	show current sessino somewhere, menu bar?
+	then also add session fields for checks and deposits
+	set defaults for everywhere it is entered!
 	for setting it, for now, just a simple non-ajax screen, nothing fancy
 	then i have to start using it in queries. named scope, seems right.
-	then also add session fields for checks and deposits
 
 formatting
 	signup
