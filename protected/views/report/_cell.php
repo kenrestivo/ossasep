@@ -13,7 +13,7 @@ if(Yii::app()->user->isGuest){
 ?>
 </strong>
 <?php
-if($model->enrolled_count >= $model->max_students){
+if($model->full){
       echo '<span class="full">FULL</span>';
 } 
 ?>

@@ -5,7 +5,7 @@
 
 $meetings = $model->active_meetings;
 $daysoff = $model->days_off;
-$full = $model->enrolled_count >= $model->max_students;
+$full = $model->full;
 ?>
 
 <div class="<?= $full ? 'waitlist catalog' : 'catalog' ?>" >
