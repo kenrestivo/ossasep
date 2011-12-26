@@ -103,14 +103,21 @@ if(count($daysoff) > 0){
 <span class="span-6 last">
 <?php
 // the notes
-if(count($meetings) > 0){
-    echo  CHtml::encode('--');
-}
+$notes = array();
 foreach($meetings as $mtg){
     if($mtg->note != ''){
-        echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
+        $notes[] = $mtg;
     }
 }
+if(count($notes) > 0){
+    echo  CHtml::encode('--');
+    foreach($notes as $m){
+        echo  CHtml::encode('*' . $m->note) . " on " . CHtml::encode(ZHtml::shortDate($m->meeting_date)). '<br />';
+    }
+
+}
+
+
 ?>
 </span>
 <div class="clear"></div>
