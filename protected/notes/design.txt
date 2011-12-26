@@ -129,10 +129,17 @@ reports
 		scholarships,
 		paid records but no names,
 		then total paid to them
+		
+	W
+		integrity check dashboard
+			unpaid classes (useful for checking)
+			unassigned check amounts		
+			instructors don't add up to > 100
+			classes overpaid, i.e. 2 or more checks for same class
 
 		
 		
-(wow, 18 reports/entry screens)
+(wow, 23 reports/entry screens!!)
 	
 unclear how to handle
 -----------------------

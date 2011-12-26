@@ -1,5 +1,15 @@
 TODO for asep
 
+baby steps towards sessionifying
+	session var for school year instead of system-wide
+	when to check it and set default?
+		init in controller?
+		or a getter that checks to see if it is set, and sets it if not
+			where? static function of something?
+	for setting it, for now, just a simple non-ajax screen, nothing fancy
+	then i have to start using it in queries. named scope, seems right.
+	then also add session fields for checks and deposits
+
 formatting
 	signup
 		for patricia, as it is more or less
@@ -9,21 +19,9 @@ formatting
 		total amount income for class
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
-	the rest of the reports!
+	the rest of the reports (like, 20 of them)!
 	
 ui
-	in general, prevent entry errors, and warn if they exist
-		like:
-			class over capacity
-				show waitlist as the default option
-			enter a grade that is out of range
-			change the date but there are active meetings
-			a check or split where totals don't add up
-			entering to a session not the current default
-		how?
-			populate a js array with the data, and check it with jquery?
-			in the case of classes, i can arrange them in the heir chosen
-				group the classes in and out of range
 	finish adding the navigate-away-without-saving warnings
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
@@ -40,13 +38,11 @@ ui
 			make it an autocomplete
 		show amount - total value of current assignments
 		these will ultimately need to be ajaxy
-	rather then allowing it to be freeform?
+		rather then allowing it to be freeform?
 	will need security protection for signups-public
 		rbac? oh gawd...
-
 	choose existing check as option in unpaid
 		an autocomplete with lists of checks
-	
 	deposit form
 		show deposit number at top
 		entered, date notes
@@ -65,10 +61,23 @@ ui
 	autoppopulate the check when adding
 		when adding WHAT?
 	catch errors when trying to delete linked tables
-		in check, for sure, but also everywhere really
-		maybe just override t'index', 'view', 'create', 'update', 'index', 'view', 'create', 'update', fubarint NOT NULL,4he controller
 	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
+	in general, prevent entry errors, and warn if they exist
+		like:
+			class over capacity
+				show waitlist as the default option
+			enter a grade that is out of range
+			change the date but there are active meetings
+			a check or split where totals don't add up
+			entering to a session not the current default
+			trying to delete linked tables!
+				in check, for sure, but also everywhere really
+		how?
+			populate a js array with the data, and check it with jquery?
+			in the case of classes, i can arrange them in the heir chosen
+				group the classes in and out of range
+			maybe just override the controller
 			
 bug
 	in class/_owed, should include waitlisted!
@@ -78,14 +87,8 @@ bug
 		so find enrolled OR cancelled or just not waitlisted
 	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
-		
+	in crumbs, consider index-production in index-dev to be index, doh		
 
-new reports needed
-	integrity check dashboard
-		unpaid classes (useful for checking)
-		unassigned check amounts		
-		instructors don't add up to > 100
-		classes overpaid, i.e. 2 or more checks for same class
 
 oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?

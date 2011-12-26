@@ -1028,3 +1028,7 @@ use choosen for my dropdowns and autocompletes!
 
 here it is
 http://www.yiiframework.com/extension/echosen/
+
+
+to export to ical/caldav format, use this:
+	http://www.kigkonsult.se/iCalcreator/docs/using.html
