@@ -22,7 +22,6 @@ formatting
 	the rest of the reports (like, 20 of them)!
 	
 ui
-	finish adding the navigate-away-without-saving warnings
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -30,8 +29,6 @@ ui
 	check_income:
 		calculate that checks add up to their summaries
 			this doesn't have to be js.
-		autopopulate check # with 'cash' perhaps
-		when adding check/income split,
 			maybe just present a list of unpaid classes?
 			because that's all they'll really need anyway
 		an optional list of unpaid things to pay
@@ -39,6 +36,7 @@ ui
 		show amount - total value of current assignments
 		these will ultimately need to be ajaxy
 		rather then allowing it to be freeform?
+		when adding check/income split,
 	will need security protection for signups-public
 		rbac? oh gawd...
 	choose existing check as option in unpaid
@@ -87,7 +85,6 @@ bug
 		so find enrolled OR cancelled or just not waitlisted
 	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
-	in crumbs, consider index-production in index-dev to be index, doh		
 
 
 oh crap. how to deal with partial refunds???
