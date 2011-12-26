@@ -1065,3 +1065,12 @@ that's probably fine for now. i don't need this thing hitting the db or storing 
 alpha pager?
 	http://www.yiiframework.com/extension/alphapager/
 	maybe try on roster, just for grins
+
+
+
+
+auugh, but wait!! the checks that are for cancelled classses or students!!!
+	it's assigned, but the class is cancelled, so techically it's not
+	this is a BIG FUCKING DEAL
+	i need to show it as underpaid somewhere
+	
