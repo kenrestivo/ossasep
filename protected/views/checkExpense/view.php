@@ -25,5 +25,6 @@ $this->menu=array(
 		'check_num',
 		'check_date',
         'delivered',
+        'session.summary:text:Session',
 	),
 )); ?>

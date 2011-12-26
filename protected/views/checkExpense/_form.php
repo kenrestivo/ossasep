@@ -64,6 +64,13 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'delivered'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'session_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'session_id',
+        CHtml::listData(ClassSession::model()->findAll(), 'id', 'summary')); ?>
+		<?php echo $form->error($model,'session_id'); ?>
+	</div>
 
 
 	<div class="row buttons">

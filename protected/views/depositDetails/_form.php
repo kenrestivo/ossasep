@@ -100,6 +100,14 @@
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'session_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'session_id',
+        CHtml::listData(ClassSession::model()->findAll(), 'id', 'summary')); ?>
+		<?php echo $form->error($model,'session_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
