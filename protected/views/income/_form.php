@@ -22,7 +22,7 @@ if(!isset($_GET['check_id'])){
 
     <?php echo $form->dropDownList(
         $model,'check_id',
-        CHtml::listData(CheckIncome::model()->unFullyAssignedChecks(), 
+        CHtml::listData(CheckIncome::model()->underAssignedChecks(), 
                         'id', 'summary'))
           ?>
 		<?php echo $form->error($model,'check_id'); ?>

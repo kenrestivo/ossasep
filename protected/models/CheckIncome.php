@@ -153,13 +153,22 @@ class CheckIncome extends CActiveRecord
                                            ));
 	}
 
-    public static function unFullyAssignedChecks($session = null)
+    public static function underAssignedChecks($session = null)
     {
         if(!isset($session)){
             $session = ClassSession::savedSessionId();
         }
         return CheckIncome::model()->findAllBySql(
-            "",
+            "select check_income.*
+             from check_income
+              left join
+               (select income.check_id as check_id,
+                    sum(income.amount) as assigned
+                from income 
+                group by income.check_id) as assignments
+               on  (assignments.check_id = check_income.id)
+         where assignments.assigned < check_income.amount
+               and check_income.session_id = :session",
             array('session' => $session));
 
     }
