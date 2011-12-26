@@ -28,17 +28,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'payer'); ?>
+     <?php echo $form->labelEx($model,'payer'); ?>
 
-<?php
-$this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+    <?php
+    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
     'name'=>'payer',
     'source'=>Yii::app()->controller->createUrl("autocomplete"),
     // additional javascript options for the autocomplete plugin
     'options'=>array(
         'minLength'=>'2',
-    ),
-));
+        ),
+                      ));
 ?>
 		<?php echo $form->error($model,'payer'); ?>
 	</div>
