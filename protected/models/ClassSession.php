@@ -129,7 +129,7 @@ class ClassSession extends CActiveRecord
     public static function savedSession()
     {
         if(!isset(Yii::app()->session['saved_session'])){
-            Yii::app()->session['saved_session'] = ClassSession::sessionByDate();
+            Yii::app()->session['saved_session'] = ClassSession::sessionByDate()->id;
         }
         return Yii::app()->session['saved_session'];
     }
