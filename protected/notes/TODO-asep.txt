@@ -10,6 +10,7 @@ formatting
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
 	the rest of the reports (like, 20 of them)!
+	move the no classes on to a new line in description
 	
 ui
 	don't delete for assignments in unpaid

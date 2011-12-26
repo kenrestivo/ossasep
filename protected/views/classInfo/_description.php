@@ -85,17 +85,6 @@ echo     implode(', ',
 </span>
 <span class="span-5 last">
 <?php 
-// the notes
-if(count($meetings) > 0){
-    echo  CHtml::encode('--');
-}
-foreach($meetings as $mtg){
-    if($mtg->note != ''){
-        echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
-    }
-}
-
-
 if(count($daysoff) > 0){
     echo CHtml::encode('--');
     echo  'No classes on ' .   implode(', ',
@@ -108,6 +97,24 @@ if(count($daysoff) > 0){
 ?>
 </span>
 <br />
-<br />
+<span class="span-12">
+    &nbsp;
+</span>
+<span class="span-6 last">
+<?php
+// the notes
+if(count($meetings) > 0){
+    echo  CHtml::encode('--');
+}
+foreach($meetings as $mtg){
+    if($mtg->note != ''){
+        echo  CHtml::encode('*' . $mtg->note) . " on " . CHtml::encode(ZHtml::shortDate($mtg->meeting_date)). '<br />';
+    }
+}
+?>
+</span>
+<div class="clear"></div>
+<div>
 <?= nl2br(CHtml::encode($model->description)) ?>
+</div>
 </div>
