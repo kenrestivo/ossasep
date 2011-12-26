@@ -53,7 +53,8 @@ class Controller extends CController
 
     public function savedSessionSummary()
     {
-        return ClassSession::model()->findByPk(ClassSession::savedSessionId())->summary;
+        return ClassSession::model()->findByPk(
+            ClassSession::savedSessionId())->summary;
     }
 
 
