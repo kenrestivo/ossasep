@@ -82,7 +82,7 @@ class DepositDetails extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
+			'id' => 'Deposit #',
 			'deposited_date' => 'Deposited Date',
 			'total_amount' => 'Total Amount',
 			'pennies' => 'Pennies',

@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Deposit Details</h1>
+<h1>Deposits for <?= $this->savedSessionSummary() ?></h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -45,17 +45,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'deposited_date:date',
 		'total_amount',
-		'pennies',
-		'nickels',
-		'dimes',
-		'quarters',
-		'dollar_coins',
-		'ones',
-		'fives',
-		'tens',
-		'twenties',
-		'fifties',
-		'hundreds',
         'note',
         'session.summary:text:Session',
 		array(

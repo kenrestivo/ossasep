@@ -9,7 +9,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Class Infos</h1>
+<h1>Classes for <?= $this->savedSessionSummary() ?></h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'class-info-grid',
