@@ -23,6 +23,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'delivered:date',
 		'returned:date',
 		'deposit.deposited_date:date:Deposited',
+        'session.summary:text:Session',
 	),
 )); 
 

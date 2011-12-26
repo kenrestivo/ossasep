@@ -53,6 +53,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'deposit.deposited_date:date:Deposited On',
         'delivered:date',
         'returned:date',
+		'session.summary:text:Session',
 		array(
 			'class'=>'CButtonColumn',
 		),

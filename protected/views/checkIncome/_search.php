@@ -39,6 +39,10 @@
 		<?php echo $form->label($model,'deposit_id'); ?>
 		<?php echo $form->textField($model,'deposit_id'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'session_id'); ?>
+		<?php echo $form->textField($model,'session_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
