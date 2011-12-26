@@ -125,4 +125,25 @@ class ClassSession extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public static function savedSession()
+    {
+        if(!isset(Yii::app()->session['saved_session'])){
+            Yii::app()->session['saved_session'] = ClassSession::sessionByDate();
+        }
+        return Yii::app()->session['saved_session'];
+    }
+
+    public static function sessionByDate($date = null)
+    {
+        if(!isset($date)){
+            $date = date('Y-m-d');
+        }
+        $r=ClassSession::model()->findBySql(
+            "select * from class_session 
+            where start_date <= :date and end_date >= :date",
+            array('date' => $date));
+        return $r;
+    }
+
 }
