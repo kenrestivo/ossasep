@@ -12,6 +12,7 @@
    * @property integer $cash
    * @property string $check_date
    * @property string $returned
+ * @property integer $session_id
  * @property string $delivered
    * @property integer $deposit_id
    */
@@ -62,15 +63,19 @@ class CheckIncome extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('amount, check_date, payee_id', 'required'),
-			array('deposit_id,cash', 'numerical', 'integerOnly'=>true),
+			array('amount, check_date, session_id, payee_id', 'required'),
+			array('deposit_id, cash, session_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('amount', 'numerical'),
 			array('delivered,returned', 'safe'),
 			array('payer,check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes tghat should not be searched.
-			array('id, amount, cash,payer, returned, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
+			array('id, amount, cash, session_id, payer, returned, payee_id, delivered, check_num, check_date, deposit_id', 'safe', 'on'=>'search'),
+            array('session_id','default',
+                  'value'=> ClassSession::savedSessionId(),
+                  'setOnEmpty'=>true,
+                  'on'=>'insert'),
             );
 	}
 
@@ -83,6 +88,8 @@ class CheckIncome extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'deposit' => array(self::BELONGS_TO, 'DepositDetails', 'deposit_id'),
+			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
+                               'order' => 'start_date'),
 			'incomes' => array(self::HAS_MANY, 'Income', 'check_id'),
             // this is kind of ugly, but instructors might change,
             // and checks are forever once written
@@ -106,6 +113,7 @@ class CheckIncome extends CActiveRecord
 			'delivered' => 'Delivered to Company',
 			'returned' => 'Returned to Student',
 			'cash' => 'Cash (not check)',
+			'session_id' => 'Session',
             );
 	}
 
@@ -139,6 +147,7 @@ class CheckIncome extends CActiveRecord
 
 		$criteria->compare('deposit_id',$this->deposit_id);
 
+		$criteria->compare('session_id',$this->session_id);
 		return new CActiveDataProvider('CheckIncome', array(
                                            'criteria'=>$criteria,
                                            ));

@@ -18,6 +18,7 @@
  * @property integer $twenties
  * @property integer $fifties
  * @property integer $hundreds
+ * @property integer $session_id
  */
 class DepositDetails extends CActiveRecord
 {
@@ -46,13 +47,18 @@ class DepositDetails extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'numerical', 'integerOnly'=>true),
+			array('session_id', 'required'),
+			array('session_id, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'numerical', 'integerOnly'=>true),
 			array('total_amount', 'length', 'max'=>19),
 			array('total_amount', 'numerical'),
 			array('deposited_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
+			array('id, session_id, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
+            array('session_id','default',
+                  'value'=> ClassSession::savedSessionId(),
+                  'setOnEmpty'=>true,
+                  'on'=>'insert'),
 		);
 	}
 
@@ -65,6 +71,8 @@ class DepositDetails extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'check_incomes' => array(self::HAS_MANY, 'CheckIncome', 'deposit_id'),
+			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
+                               'order' => 'start_date'),
 		);
 	}
 
@@ -88,6 +96,7 @@ class DepositDetails extends CActiveRecord
 			'twenties' => 'Twenties',
 			'fifties' => 'Fifties',
 			'hundreds' => 'Hundreds',
+			'session_id' => 'Session',
 		);
 	}
 
@@ -130,8 +139,10 @@ class DepositDetails extends CActiveRecord
 
 		$criteria->compare('hundreds',$this->hundreds);
 
-		return new CActiveDataProvider('DepositDetails', array(
-			'criteria'=>$criteria,
+        $criteria->compare('session_id',$this->session_id);
+
+        return new CActiveDataProvider('DepositDetails', array(
+                                           'criteria'=>$criteria,
 		));
 	}
 }
