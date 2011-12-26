@@ -85,3 +85,6 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<?php echo $this->renderPartial('/site/_unsaved_changes_warning',
+                                array('form_id'=>"#requirementstatus-form")); ?>

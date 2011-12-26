@@ -1,7 +1,7 @@
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'class-inf-oform',
+	'id'=>'class-info-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -122,3 +122,5 @@ through
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php echo $this->renderPartial('/site/_unsaved_changes_warning',
+                                array('form_id'=>"#class-info-form")); ?>
