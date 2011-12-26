@@ -92,3 +92,5 @@ if(!isset($_GET['class_id'])){
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php echo $this->renderPartial('/site/_unsaved_changes_warning',
+                                array('form_id'=>"#income-form")); ?>

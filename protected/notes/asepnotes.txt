@@ -1032,3 +1032,9 @@ http://www.yiiframework.com/extension/echosen/
 
 to export to ical/caldav format, use this:
 	http://www.kigkonsult.se/iCalcreator/docs/using.html
+
+
+chosen doing autocomplete via ajax, a plugin to make it do that!
+http://blog.meltingice.net/programming/bootstrapping-chosen-ajax-autocomplete/
+actually here: http://github.com/meltingice/ajax-chosen
+	except, the demo doesn't work, so i think this probably doesn't work either
