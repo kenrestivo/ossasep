@@ -8,9 +8,9 @@
 <td></td>
 
 <td><b><?php echo CHtml::encode($data->getAttributeLabel('check_num')); ?></b>:
-	<?php echo CHtml::encode($data->check_num); ?>
-	(<?php echo CHtml::encode($data->getAttributeLabel('cash')); ?>:
-     <?php echo CHtml::encode($data->cash); ?> )
+	<?php echo CHtml::encode($data->check_num); ?><br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cash')); ?></b>:
+     <?php echo CHtml::encode($data->cash); ?> 
 </td>
 </tr>
 
@@ -31,20 +31,6 @@
 	<?php echo CHtml::encode($data->amount); ?>
 </td>
 
-</tr>
-<tr>
-<td><b>
-<?php echo CHtml::encode($data->getAttributeLabel('returned')); ?></b>:
-	<?php echo CHtml::encode($data->returned); ?>
-</td><td>
-	<?php echo CHtml::encode($data->getAttributeLabel('deposit_id')); ?>:
-	<?php echo isset($data->deposit) ? CHtml::encode($data->deposit->deposited_date) : "Not deposited yet" ?>
-</td>
-<td>
-<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?></b>:
-	<?php echo CHtml::encode($data->delivered); ?>
-
-</td>
 </tr>
 </table>
 
