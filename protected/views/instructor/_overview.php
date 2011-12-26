@@ -1,7 +1,6 @@
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
+<?php 
+$attributes =array(
 		'full_name',
         'alias',
 		'email:email',
@@ -9,8 +8,14 @@
 		'other_phone',
 		'note:ntext',
 		'instructor_type.description:ntext:Instructor Type',
-        'company.name:ntext:Company'
-	),
+	);
+if($model->isCompany){
+    $attributes[]='company.name:ntext:Company';
+}
+
+$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>$attributes,
 )); 
 
 echo CHTML::link("Edit  ". $model->full_name, 
