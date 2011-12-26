@@ -134,6 +134,16 @@ class ClassSession extends CActiveRecord
         return Yii::app()->session['saved_session'];
     }
 
+
+
+    /*
+      Picks the earilest class session that has not ended yet.
+      That'll be the current one, until that one ends, then it'll be the next.
+      TODO: this'll need to check privileges, there will need to be
+      a public flag in session, and it'll need to return the LATEST (DESC)
+      class session that is public.
+      Or maybe a different function for the public one, I dunno.
+     */
     public static function sessionByDate($date = null)
     {
         if(!isset($date)){
@@ -141,7 +151,7 @@ class ClassSession extends CActiveRecord
         }
         $r=ClassSession::model()->findBySql(
             "select * from class_session 
-            where start_date <= :date and end_date >= :date",
+            where end_date >= :date order by start_date asc limit 1",
             array('date' => $date));
         return $r;
     }
