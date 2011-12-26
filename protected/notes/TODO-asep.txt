@@ -6,6 +6,10 @@ formatting
 		i did this, in instructor didn't i?
 	
 ui
+	company checks paid/unpaid
+	make search work
+		with checkboxes
+		with linked tables
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it

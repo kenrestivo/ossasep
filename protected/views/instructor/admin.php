@@ -52,6 +52,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'company.name:text:Company',
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{view}{delete}',
 		),
 	),
 )); ?>

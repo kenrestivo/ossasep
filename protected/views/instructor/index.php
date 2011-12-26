@@ -23,6 +23,7 @@
 		'note',
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{view}{delete}',
 		),
 	),
 )); 
