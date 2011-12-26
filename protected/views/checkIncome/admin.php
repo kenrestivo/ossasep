@@ -46,9 +46,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'check_num',
         'cash:boolean',
+		'payer',
 		'amount',
 		'check_date:date',
-		'payer',
 		'payee.name:text:Payee',
 		'deposit.deposited_date:date:Deposited On',
         'delivered:date',

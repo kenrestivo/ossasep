@@ -11,12 +11,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('keyField' => 'student_id,check_id,class_id',
                           )),
                   'columns'=>array(
-                      'student.full_name:text:Student',
-                      'check.check_date:date:Check Date',
-                      'check.payer:text:Payer',
-                      'amount:number:Amount Assigned',
-                      'check.amount:number:Total Check Amount',
+                      'student.full_name:text:Student', 
+                      'amount:currency:Amount Assigned',
                       'check.check_num:ntext:Check #',
+                      'check.payer:text:Payer',
+                      'check.amount:currency:Total Check Amount',
+                      'check.check_date:date:Check Date',
                       'check.delivered:date:Delivered to Company',
                       'check.deposit.deposited_date:date:Deposited',
                       array(
