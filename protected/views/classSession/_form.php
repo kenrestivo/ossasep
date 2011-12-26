@@ -69,6 +69,11 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	</div>
 
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'public'); ?>
+		<?php echo $form->checkbox($model,'public'); ?>
+		<?php echo $form->error($model,'public'); ?>
+	</div>
 
 
 
