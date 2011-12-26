@@ -28,5 +28,6 @@ $this->menu=array(
 		'description',
 		'start_date',
 		'end_date',
+        'public:boolean',
 	),
 )); ?>

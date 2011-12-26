@@ -17,6 +17,9 @@
  	<b><?php echo CHtml::encode($data->getAttributeLabel('end_date')); ?>:</b>
 	<?php echo CHtml::encode($data->end_date); ?>
 	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('public')); ?>:</b>
+	<?php echo CHtml::encode($data->public); ?>
+	<br />
 
 
 </div>

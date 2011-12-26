@@ -14,6 +14,10 @@
 		<?php echo $form->label($model,'description'); ?>
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'public'); ?>
+		<?php echo $form->textField($model,'public'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

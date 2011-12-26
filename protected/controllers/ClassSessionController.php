@@ -122,10 +122,8 @@ class ClassSessionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ClassSession');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $this->actionAdmin(); // brute force
+
 	}
 
 	/**

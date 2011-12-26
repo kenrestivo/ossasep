@@ -9,6 +9,7 @@
  * @property string $start_date
  * @property string $end_date
  * @property string $description
+ * @property integer $public
  */
 class ClassSession extends CActiveRecord
 {
@@ -37,13 +38,13 @@ class ClassSession extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('school_year_id, description, start_date, end_date', 
+			array('school_year_id, public,description, start_date, end_date', 
                   'required'),
-			array('school_year_id', 'numerical', 'integerOnly'=>true),
+			array('school_year_id, public', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, school_year_id, description, start_date, end_date', 
+			array('id, school_year_id, public, description, start_date, end_date', 
                   'safe', 'on'=>'search'),
 		);
 	}
@@ -97,6 +98,7 @@ class ClassSession extends CActiveRecord
             'end_date' => 'End Date',
 			'school_year_id' => 'School Year',
 			'description' => 'Description',
+            'public' => "Show this session publicly",
 		);
 	}
 
@@ -118,6 +120,8 @@ class ClassSession extends CActiveRecord
 		$criteria->compare('start_date',$this->start_date,true);
 
         $criteria->compare('end_date',$this->end_date,true);
+
+        $criteria->compare('public',$this->public,true);
 
 		$criteria->compare('description',$this->description,true);
 
