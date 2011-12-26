@@ -152,4 +152,16 @@ class CheckIncome extends CActiveRecord
                                            'criteria'=>$criteria,
                                            ));
 	}
+
+    public static function unFullyAssignedChecks($session = null)
+    {
+        if(!isset($session)){
+            $session = ClassSession::savedSessionId();
+        }
+        return CheckIncome::model()->findAllBySql(
+            "",
+            array('session' => $session));
+
+    }
+
 }

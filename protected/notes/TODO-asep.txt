@@ -9,9 +9,6 @@ ui
 	company checks paid/unpaid
 		have a delivered checks screen for those guys
 		actually, do it in company, which is where it belongs
-	make search work
-		with checkboxes
-		with linked tables
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -65,6 +62,11 @@ ui
 			in the case of classes, i can arrange them in the heir chosen
 				group the classes in and out of range
 			maybe just override the controller
+	make search work
+		with checkboxes
+		with linked tables
+	make sort work with linked subviews
+		not so easy
 			
 bug
 	in the check popup (chosen?), the # is breaking stuff
