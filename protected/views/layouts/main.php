@@ -32,6 +32,9 @@
 				array('label'=>'Schedule', 'url'=>array('/Report/weekday')),
 				array('label'=>'Descriptions', 'url'=>array('/Report/descriptions')),
 				array('label'=>'Signups', 'url'=>array('/Report/signupsPublic')),
+
+				array('label'=>$this->savedSessionSummary()),
+
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

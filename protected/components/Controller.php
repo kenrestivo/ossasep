@@ -29,7 +29,7 @@ class Controller extends CController
     {
         parent::init();
 
-        ClassSession::savedSessionId(); // just to set it at startup.
+        ClassSession::savedSessionId();  /// just to be SURE it is set
 
         Yii::app()->setTimeZone(Yii::app()->params['timezone']);
 
@@ -49,6 +49,11 @@ class Controller extends CController
             parent::redirect($url,$terminate,$statusCode);
         }
 
+    }
+
+    public function savedSessionSummary()
+    {
+        return ClassSession::model()->findByPk(ClassSession::savedSessionId())->summary;
     }
 
 
