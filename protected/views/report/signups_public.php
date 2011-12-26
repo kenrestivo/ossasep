@@ -1,4 +1,4 @@
-<h1>Signup Sheet</h1>
+<h1>Signup Sheet for <?= $this->savedSessionSummary() ?></h1>
 
 <?php 
 Yii::app()->clientScript->registerCoreScript('jquery');
