@@ -1,6 +1,6 @@
 <h1>Check Entry</h1>
  
-<div class="form">
+<div class="wide form">
      <?php echo $form; ?>
 </div>
 
