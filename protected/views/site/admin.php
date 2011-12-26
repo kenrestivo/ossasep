@@ -9,7 +9,7 @@
       <h1>Admin-only Reports</h1>
     </th>
     <th>
-      <h1>Main views</h1>
+      <h1>Admin views</h1>
     </th>
     <th>
       <h1>Setup</h1>
@@ -43,34 +43,34 @@
 
 
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">ClassInfo</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">Classes</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Student</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Students</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructor</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructors</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckIncome">CheckIncome</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckIncome">Income (Receivable)</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckExpense">CheckExpense</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckExpense">Expenses(Payable)</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">DepositDetails</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">Deposits</a>
+      <br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Company">Companies</a>
       <br />
     </td>
 
 
     <td>
 
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolYear">SchoolYear</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">Class Sessions</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">ClassSession</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/SchoolYear">School Years</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Roster">Roster</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Company">Company</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">Instructor Types</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/InstructorType">InstructorType</a>
-      <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">RequirementType</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">Requirement Types</a>
       <br />
     </td>
 

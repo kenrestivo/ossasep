@@ -8,6 +8,7 @@ formatting
 ui
 	company checks paid/unpaid
 		have a delivered checks screen for those guys
+		actually, do it in company, which is where it belongs
 	make search work
 		with checkboxes
 		with linked tables
