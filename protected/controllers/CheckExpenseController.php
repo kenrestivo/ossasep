@@ -122,10 +122,7 @@ class CheckExpenseController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CheckExpense');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $this->actionAdmin(); // brute force
 	}
 
 	/**

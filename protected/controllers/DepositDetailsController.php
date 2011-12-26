@@ -122,10 +122,7 @@ class DepositDetailsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DepositDetails');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $this->actionAdmin(); // brute force
 	}
 
 	/**
