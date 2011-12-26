@@ -50,7 +50,7 @@ class ToolsController extends Controller
         foreach(
             ClassInfo::model()->findAllBySQL(
                 "select * from class_info where session_id = :sess", 
-                array('sess' => Yii::app()->params['currentSession']))
+                array('sess' => ClassSession::savedSessionId()))
                 as $model)
         {
             if($model->active_mtg_count < 1){

@@ -67,6 +67,10 @@ class ClassInfo extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, min_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
+            array('session_id','default',
+                  'value'=> ClassSession::savedSessionId(),
+                  'setOnEmpty'=>true,
+                  'on'=>'insert'),
             );
 	}
 

@@ -1038,3 +1038,12 @@ chosen doing autocomplete via ajax, a plugin to make it do that!
 http://blog.meltingice.net/programming/bootstrapping-chosen-ajax-autocomplete/
 actually here: http://github.com/meltingice/ajax-chosen
 	except, the demo doesn't work, so i think this probably doesn't work either
+
+
+so, picking session
+	if i'm between sessions (like right now) i want the NEXT one
+	so i want all sessions which havent ended yet, and pick the FIRST of those
+
+	and, i need a "public" flag in sessions!
+		because there will be data entry before the session goes public
+		and the default will differ depending on privileges!

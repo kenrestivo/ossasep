@@ -28,10 +28,14 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Home', 'url'=>array('/')),
 				array('label'=>'Schedule', 'url'=>array('/Report/weekday')),
 				array('label'=>'Descriptions', 'url'=>array('/Report/descriptions')),
 				array('label'=>'Signups', 'url'=>array('/Report/signupsPublic')),
+
+                //TODO: make this clickable/changable
+				array('label'=>$this->savedSessionSummary()),
+
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

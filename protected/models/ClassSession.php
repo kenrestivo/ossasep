@@ -83,7 +83,7 @@ class ClassSession extends CActiveRecord
 
     public function getSummary(){
         return sprintf(
-            'Session %s (%s)', 
+            'Session %s %s', 
             $this->description,
             $this->school_year->description);
  
@@ -125,4 +125,36 @@ class ClassSession extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public static function savedSessionId()
+    {
+        if(!isset(Yii::app()->session['saved_session_id'])){
+            Yii::app()->session['saved_session_id'] = ClassSession::sessionByDate()->id;
+        }
+        return Yii::app()->session['saved_session_id'];
+    }
+
+
+
+    /*
+      Picks the earilest class session that has not ended yet.
+      That'll be the current one, until that one ends, then it'll be the next.
+      TODO: this'll need to check privileges, there will need to be
+      a public flag in session, and it'll need to return the LATEST (DESC)
+      class session that is public.
+      Or maybe a different function for the public one, I dunno.
+      This returns a session object.
+     */
+    public static function sessionByDate($date = null)
+    {
+        if(!isset($date)){
+            $date = date('Y-m-d');
+        }
+        $r=ClassSession::model()->findBySql(
+            "select * from class_session 
+            where end_date >= :date order by start_date asc limit 1",
+            array('date' => $date));
+        return $r;
+    }
+
 }

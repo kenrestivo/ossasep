@@ -26,6 +26,7 @@ class BreadCrumb extends CWidget {
         // the crumbs if we find ourselves back on the homepage
         $homepageRoutes = array(
             Yii::app()->baseUrl,
+            Yii::app()->baseUrl . '/index.php',
             '/index-dev.php',
             '/index.php',
             '/index-production.php',
