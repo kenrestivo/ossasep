@@ -126,12 +126,12 @@ class ClassSession extends CActiveRecord
 		));
 	}
 
-    public static function savedSession()
+    public static function savedSessionId()
     {
-        if(!isset(Yii::app()->session['saved_session'])){
-            Yii::app()->session['saved_session'] = ClassSession::sessionByDate()->id;
+        if(!isset(Yii::app()->session['saved_session_id'])){
+            Yii::app()->session['saved_session_id'] = ClassSession::sessionByDate()->id;
         }
-        return Yii::app()->session['saved_session'];
+        return Yii::app()->session['saved_session_id'];
     }
 
 
@@ -143,6 +143,7 @@ class ClassSession extends CActiveRecord
       a public flag in session, and it'll need to return the LATEST (DESC)
       class session that is public.
       Or maybe a different function for the public one, I dunno.
+      This returns a session object.
      */
     public static function sessionByDate($date = null)
     {
