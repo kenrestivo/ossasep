@@ -126,11 +126,7 @@ class ClassInfoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new ClassInfo('search');
-		$model->unsetAttributes();  // clear any default values
-		$this->render('index',array(
-                          'model' => $model
-		));
+        $this->actionAdmin(); // brute force
 	}
 
 	/**

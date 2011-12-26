@@ -37,6 +37,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'class-info-grid',
 	'dataProvider'=>$model->search(),
@@ -45,13 +46,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
     'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'columns'=>array(
 		'class_name',
-		'min_grade_allowed',
-		'max_grade_allowed',
+		'min_grade_allowed:grade',
+		'max_grade_allowed:grade',
 		'start_time:time',
 		'end_time:time',
 		'cost_per_class',
+		'min_students',
 		'max_students',
-		'day_of_week',
+        array('name' => 'day_of_week',  // TODO use kformatter
+              'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
 		'location',
 		'status',
 		'session.summary:text:Session',
@@ -60,4 +63,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'template'=>'{view}{delete}',
 		),
 	),
-)); ?>
+)); 
+
+echo CHTML::link("Add New Class",
+                 array("ClassInfo/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+
+?>

@@ -267,6 +267,7 @@ must have for NEXT SESSION!
 		the big issue will be all the dropdowns, which use findAll()
 			i should start constraining those by session!
 			use named scope, it's easy
+		searches also, need to use the named scope or something
 	how to import/add new class from previous session
 		an ajaxything or something, a popup
 		relational deep copy! only a few tables though:
