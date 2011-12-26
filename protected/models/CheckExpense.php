@@ -53,7 +53,6 @@ class CheckExpense extends CActiveRecord
                   'setOnEmpty'=>true,
                   'on'=>'insert'),
             );
-		);
 	}
 
 	/**
