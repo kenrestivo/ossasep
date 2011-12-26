@@ -1,4 +1,4 @@
-<div class="form">
+<div class="wide form">
 
 <?php $this->widget( 'ext.EChosen.EChosen'); ?>
 
