@@ -43,7 +43,7 @@ class ReportController extends Controller
         $days= range(2,6);
 
         $c=ClassInfo::findAllWeekdays($days,
-                                      Yii::app()->params['currentSession']);
+                                      ClassSession::savedSessionId());
 		$this->render('weekday',
                       array(
                           'classes'=>$c,
@@ -54,7 +54,7 @@ class ReportController extends Controller
     public function actionSignupBoxes()
     {
         $cs = ClassSession::model()->findByPk(
-            Yii::app()->params['currentSession']);
+            ClassSession::savedSessionId());
 		$this->render(
             'signupboxes', 
             array(
@@ -66,7 +66,7 @@ class ReportController extends Controller
     public function actionDescriptions()
     {
         $cs = ClassSession::model()->findByPk(
-            Yii::app()->params['currentSession']);
+            ClassSession::savedSessionId());
 		$this->render(
             'descriptions', 
             array(
@@ -77,7 +77,7 @@ class ReportController extends Controller
     public function actionSignupsPublic()
     {
         $cs = ClassSession::model()->findByPk(
-            Yii::app()->params['currentSession']);
+            ClassSession::savedSessionId());
 		$this->render(
             'signups_public', 
             array(

@@ -83,8 +83,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'krestivo@restivo.org',
-        'currentSession'=> 1,
-        'defaultNumMeetings'=> 8,
+          'defaultNumMeetings'=> 8,
         'timezone' => 'America/Los_Angeles',
 	),
 );

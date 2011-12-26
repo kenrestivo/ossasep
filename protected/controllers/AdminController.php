@@ -45,7 +45,7 @@ class AdminController extends Controller
     public function actionSignupsheet()
     {
         $cs = ClassSession::model()->findByPk(
-            Yii::app()->params['currentSession']);
+            ClassSession::savedSessionId());
 		$this->render(
             'signupsheet', 
             array(
@@ -78,7 +78,7 @@ class AdminController extends Controller
     public function actionClassDashboard()
     {
         $s = ClassSession::model()->findByPk(
-            Yii::app()->params['currentSession']);
+            ClassSession::savedSessionId());
         $cl = array();
         foreach($s->active_classes as $c){
             $cn = $c->attributes;

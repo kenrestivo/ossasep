@@ -28,6 +28,7 @@ class BreadCrumb extends CWidget {
             Yii::app()->baseUrl,
             '/index-dev.php',
             '/index.php',
+            Yii::app()->baseUrl. '/site/index', //XXX this one does not work
             '/index-production.php',
             Yii::app()->baseUrl . '/',
             Yii::app()->defaultController.'/list', 

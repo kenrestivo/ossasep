@@ -1,11 +1,7 @@
 TODO for asep
 
 baby steps towards sessionifying
-	session var for school year instead of system-wide
-	when to check it and set default?
-		init in controller?
-		or a getter that checks to see if it is set, and sets it if not
-			where? static function of something?
+	show current sessino somewhere, menu bar?
 	for setting it, for now, just a simple non-ajax screen, nothing fancy
 	then i have to start using it in queries. named scope, seems right.
 	then also add session fields for checks and deposits

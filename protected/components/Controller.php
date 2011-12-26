@@ -29,6 +29,8 @@ class Controller extends CController
     {
         parent::init();
 
+        ClassSession::savedSessionId(); // just to set it at startup.
+
         Yii::app()->setTimeZone(Yii::app()->params['timezone']);
 
     }
