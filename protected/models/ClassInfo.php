@@ -298,7 +298,7 @@ order by class_info.class_name
        from signup
        left join student on student.id = signup.student_id
       where signup.class_id = :cid
-      order by status ASC, student.last_name ASC, student.first_name ASC
+      order by status ASC, student.first_name ASC, student.last_name ASC
       ",
             array('cid' => $this->id));
     }
