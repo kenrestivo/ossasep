@@ -48,9 +48,12 @@ CREATE TABLE `check_expense` (
   `check_date` date NOT NULL,
   `payee_id` int(11) not null,
   `delivered` date DEFAULT NULL,
+  `session_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `payee_id` (`payee_id`),
-  CONSTRAINT `check_expense_ibfk_1` FOREIGN KEY (`payee_id`) REFERENCES `instructor` (`id`)
+  CONSTRAINT `check_expense_ibfk_1` FOREIGN KEY (`payee_id`) REFERENCES `instructor` (`id`),
+  KEY `session_id` (`session_id`),
+  CONSTRAINT `check_expense_ibfk_2` FOREIGN KEY (`session_id`) REFERENCES `class_session` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -72,11 +75,14 @@ CREATE TABLE `check_income` (
   `delivered` date DEFAULT NULL,
   `returned` date DEFAULT NULL,
 `cash` tinyint(1) default false,
+  `session_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `deposit_id` (`deposit_id`),
   CONSTRAINT `check_income_ibfk_1` FOREIGN KEY (`deposit_id`) REFERENCES `deposit_details` (`id`),
   KEY `payee_id` (`payee_id`),
-  CONSTRAINT `check_income_ibfk_2` FOREIGN KEY (`payee_id`) REFERENCES `company` (`id`)
+  CONSTRAINT `check_income_ibfk_2` FOREIGN KEY (`payee_id`) REFERENCES `company` (`id`),
+KEY `session_id` (`session_id`),
+  CONSTRAINT `check_income_ibfk_3` FOREIGN KEY (`session_id`) REFERENCES `class_session` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
