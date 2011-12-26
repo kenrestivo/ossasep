@@ -178,7 +178,10 @@ CREATE TABLE `deposit_details` (
   `fifties` int(11) DEFAULT NULL,
   `hundreds` int(11) DEFAULT NULL,
   note VARCHAR(256),
-  PRIMARY KEY (`id`)
+  `session_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `session_id` (`session_id`),
+  CONSTRAINT `deposit_details_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `class_session` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
