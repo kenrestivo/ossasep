@@ -1061,3 +1061,7 @@ note: if i don't put session stuff in the db, nfsn puts it in /home/tmp
 that's probably fine for now. i don't need this thing hitting the db or storing all that crap, not anymore anyway.
 
 
+
+alpha pager?
+	http://www.yiiframework.com/extension/alphapager/
+	maybe try on roster, just for grins

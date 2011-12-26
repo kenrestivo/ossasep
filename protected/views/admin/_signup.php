@@ -9,12 +9,12 @@ $kad = new KArrayDataProvider(
     array('keyField' => 'student_id,class_id',
         ));
 
+$kad->setPagination(false);
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid-'. $model->id,
                   'dataProvider'=> $kad,
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
-                  'enablePagination' => false,
                   'summaryText' => $model->summaryCounts,
                   'columns'=>array(
                       'student.full_name:text:Name',
