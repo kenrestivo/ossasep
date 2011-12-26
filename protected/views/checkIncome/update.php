@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update CheckIncome <?php echo $model->id; ?></h1>
+<h1>Update Check <?php echo $model->summary; ?> (received)</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
