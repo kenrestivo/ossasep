@@ -75,6 +75,11 @@ class IncomeController extends Controller
 
         if(isset($_GET['class_id'])){
             $model->class_id = $_GET['class_id'];
+            
+            // doing this here instead of rules
+            if(!isset($this->amount)){
+                $model->amount = $model->class->costSummary;
+            }
         }
 
         if(isset($_GET['student_id'])){

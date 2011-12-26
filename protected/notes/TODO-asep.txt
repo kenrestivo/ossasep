@@ -9,17 +9,12 @@ ui
 	company checks paid/unpaid
 		have a delivered checks screen for those guys
 		actually, do it in company, which is where it belongs
-	make search work
-		with checkboxes
-		with linked tables
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
 			can cast (int)'' even, so it's ok.
-	will need security protection for signups-public
-		rbac? oh gawd...
 	choose existing check as option in unpaid
-		an autocomplete with lists of checks
+		an autocomplete with lists of checks with amounts still avail on them
 	deposit form
 		show deposit number at top
 		entered, date notes
@@ -55,7 +50,7 @@ ui
 			class over capacity
 				show waitlist as the default option
 			enter a grade that is out of range
-			change the date but there are active meetings
+4			change the date but there are active meetings
 			a check or split where totals don't add up
 			entering to a session not the current default
 			trying to delete linked tables!
@@ -65,6 +60,13 @@ ui
 			in the case of classes, i can arrange them in the heir chosen
 				group the classes in and out of range
 			maybe just override the controller
+	make search work
+		with checkboxes
+		with linked tables
+	make sort work with linked subviews
+		not so easy
+	will need security protection for signups-public
+		rbac? oh gawd...
 			
 bug
 	in the check popup (chosen?), the # is breaking stuff
