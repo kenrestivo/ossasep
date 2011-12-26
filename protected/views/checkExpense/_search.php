@@ -30,6 +30,10 @@
 		<?php echo $form->label($model,'check_date'); ?>
 		<?php echo $form->textField($model,'check_date'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'session_id'); ?>
+		<?php echo $form->textField($model,'session_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

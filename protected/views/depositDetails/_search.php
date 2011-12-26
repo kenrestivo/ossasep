@@ -74,6 +74,10 @@
 		<?php echo $form->label($model,'hundreds'); ?>
 		<?php echo $form->textField($model,'hundreds'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'session_id'); ?>
+		<?php echo $form->textField($model,'session_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

@@ -1047,3 +1047,17 @@ so, picking session
 	and, i need a "public" flag in sessions!
 		because there will be data entry before the session goes public
 		and the default will differ depending on privileges!
+
+
+
+note: if i don't put session stuff in the db, nfsn puts it in /home/tmp
+[ossasep /home/tmp]$ ls -la
+-rw-------  1 web     web     171 Dec 23 22:51 sess_194e31acf050697520df9141d413ab26
+-rw-------  1 web     web     211 Dec 25 05:49 sess_9ae4259087d73d6b0e92faa28fc25bb9
+-rw-------  1 web     web     144 Dec 26 05:21 sess_9f68ffd951bcac87e43ceb5cf230ef10
+-rw-------  1 web     web       0 Dec 25 18:04 sess_c3281dea564724c739e6cf38eb672216
+-rw-------  1 web     web     694 Dec 23 21:28 sess_c739742e114f03f70cd9309241580b91
+
+that's probably fine for now. i don't need this thing hitting the db or storing all that crap, not anymore anyway.
+
+

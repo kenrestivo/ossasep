@@ -32,6 +32,7 @@ $this->menu=array(
 		'twenties',
 		'fifties',
 		'hundreds',
-        'note'
+        'note',
+        'session.summary:text:Session',
 	),
 )); ?>

@@ -9,6 +9,7 @@
  * @property string $payer
  * @property string $payee_id
  * @property integer $check_num
+ * @property integer $session_id
  * @property string $check_date
  * @property string $delivered
  */
@@ -39,14 +40,19 @@ class CheckExpense extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('amount, check_date, payee_id', 'required'),
-			array('payee_id', 'numerical', 'integerOnly'=>true),
+			array('amount, check_date, payee_id, session_id', 'required'),
+			array('payee_id, session_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('delivered', 'safe'),
 			array('payer, check_num', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, amount, payer, payee_id, delivered, check_num, check_date', 'safe', 'on'=>'search'),
+			array('id, amount, payer, session_id, payee_id, delivered, check_num, check_date', 'safe', 'on'=>'search'),
+            array('session_id','default',
+                  'value'=> ClassSession::savedSessionId(),
+                  'setOnEmpty'=>true,
+                  'on'=>'insert'),
+            );
 		);
 	}
 
@@ -57,6 +63,8 @@ class CheckExpense extends CActiveRecord
 	{
 		return array(
             'expenses' => array(self::HAS_MANY, 'Expense', 'check_id'),
+			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
+                               'order' => 'start_date'),
             // this is kind of ugly, but instructors might change,
             // and checks are forever once written
 			'payee' => array(self::BELONGS_TO, 'Instructor', 'payee_id'),
@@ -81,6 +89,7 @@ class CheckExpense extends CActiveRecord
 			'check_num' => 'Check Num',
 			'check_date' => 'Check Date',
 			'delivered' => 'Delivered',
+			'session_id' => 'Session',
 		);
 	}
 
@@ -108,6 +117,7 @@ class CheckExpense extends CActiveRecord
 		$criteria->compare('check_num',$this->check_num);
 
 		$criteria->compare('check_date',$this->check_date,true);
+		$criteria->compare('session_id',$this->session_id);
 
 		return new CActiveDataProvider('CheckExpense', array(
 			'criteria'=>$criteria,

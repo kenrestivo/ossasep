@@ -1,11 +1,5 @@
 TODO for asep
 
-baby steps towards sessionifying
-	then also add session fields for checks and deposits
-	set defaults for everywhere it is entered!
-	for setting it, for now, just a simple non-ajax screen, nothing fancy
-	then i have to start using it in queries. named scope, seems right.
-
 formatting
 	signup
 		for patricia, as it is more or less
@@ -74,6 +68,7 @@ ui
 			maybe just override the controller
 			
 bug
+	in the check popup (chosen?), the # is breaking stuff
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	in paid, why are cancelleds payments not showing up at all?
@@ -267,23 +262,11 @@ finish the relational mappings
 FUTURE REQUIRD
 
 must have for NEXT SESSION!
-	a way to track current session, and sort by it!
-		the things that already use the defaultsession from yii main.php, OK
+	for setting session, for now, just a simple non-ajax screen, nothing fancy
+		then i have to start using it in queries. named scope, seems right.
 		the big issue will be all the dropdowns, which use findAll()
 			i should start constraining those by session!
-			where though? in the model? in the view?
-		a menu at the top, i think: year, session. dependent dropdown
-			better: just show it, and an ajax to swap it with a dropdown.
-		how to default to the current session?
-			i will PROBABLY need start/end dates for it in the session
-			then i can check today's date.
-			but, people will need to add classes for the NEXT session, no?
-		default session/sy. same as coop.
-			save in session.
-			check at every page load, choose now as default if nkt set.
-		save use default session unless set in get/post
-		in future, warn or disallow when saving to past sy/session
-	session-ify the checks and deposits please
+			use named scope, it's easy
 	how to import/add new class from previous session
 		an ajaxything or something, a popup
 		relational deep copy! only a few tables though:
