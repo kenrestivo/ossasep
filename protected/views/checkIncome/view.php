@@ -12,20 +12,22 @@ $this->menu=array(
 
 <h1>View Check <?php echo $model->summary; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+
+ echo $this->renderPartial('_view', array('data'=>$model));
+
+
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'amount:currency',
-		'payer',
-		'payee.name',
-		'check_num',
-        'cash:boolean',
-		'check_date:date',
 		'delivered:date',
 		'returned:date',
 		'deposit.deposited_date:date:Deposited',
 	),
-)); ?>
+)); 
+
+
+?>
 
 <p></p>
 <h2>Assignments</h2>

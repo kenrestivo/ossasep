@@ -1,43 +1,35 @@
-<div class="view">
+<div class="view checkbackground">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+
+<table>
+<tr><td><b><?php echo CHtml::encode($data->getAttributeLabel('payer')); ?></b>:
+	<?php echo CHtml::encode($data->payer); ?></td>
+
+<td><b><?php echo CHtml::encode($data->getAttributeLabel('check_date')); ?>:</b>
+<?php echo CHtml::encode(Yii::app()->format->date($data->check_date)); ?></td>
+
+<td><b><?php echo CHtml::encode($data->getAttributeLabel('check_num')); ?></b>:
+	<?php echo CHtml::encode($data->check_num); ?><br />
+    <?php echo $data->cash ? '<strong>CASH (not check)</strong>' : "" ?>
+</td>
+</tr>
+
+
+
+<tr>
+<td>
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('payee')); ?></b>:
+	<?php echo CHtml::encode($data->payee->name); ?>
+</td>
+<td></td>
+<td>
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('amount')); ?>:</b>
-	<?php echo CHtml::encode($data->amount); ?>
-	<br />
+	<?php echo CHtml::encode(Yii::app()->format->currency($data->amount)); ?>
+</td>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('payer')); ?>:</b>
-	<?php echo CHtml::encode($data->payer); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('payee')); ?>:</b>
-	<?php echo CHtml::encode($data->payee->name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('check_num')); ?>:</b>
-	<?php echo CHtml::encode($data->check_num); ?>
-	<br />
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cash')); ?>:</b>
-	<?php echo CHtml::encode($data->cash); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('check_date')); ?>:</b>
-	<?php echo CHtml::encode($data->check_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('returned')); ?>:</b>
-	<?php echo CHtml::encode($data->returned); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('deposit_id')); ?>:</b>
-	<?php echo isset($data->deposit) ? CHtml::encode($data->deposit->deposited_date) : "Not deposited yet" ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('delivered')); ?>:</b>
-	<?php echo CHtml::encode($data->delivered); ?>
-	<br />
-
+</tr>
+</table>
 
 </div>
