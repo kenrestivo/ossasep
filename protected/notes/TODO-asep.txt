@@ -1,11 +1,28 @@
 TODO for asep
 
+serious clusterfuck. must fix.
+	not having companies assigned to classes is a CODE SMELL
+	it makes for stupid queries. it makes shit impossible. fix.
+	add a company_id for a class
+	choose instructors based on company.
+	this is a little dangerous, but i have to do it.
+	isCompany and getCompany are evil
+
+
 formatting
 	the rest of the reports (like, 20 of them)!
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
 	
 ui
+	redo the unpaid thing, this is ridiculous
+		do this stupidity in sql
+				class
+				cost - income.amount for this student and class
+			where this student,
+				and the cost - paid is > 0!
+			sort by payee
+		link for new check, or assign existing check (unassigned)
 	company checks paid/unpaid
 		have a delivered checks screen for those guys
 		actually, do it in company, which is where it belongs
