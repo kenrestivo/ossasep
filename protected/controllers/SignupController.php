@@ -81,6 +81,10 @@ class SignupController extends Controller
         }
         if(isset($_GET['class_id'])){
             $model->class_id = $_GET['class_id'];
+            // check for waitlist
+            if($model->class->full){
+                $model->status = "Waitlist";
+            }
         }
 
 		$this->render('create',array(

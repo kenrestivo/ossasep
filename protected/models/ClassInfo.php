@@ -320,6 +320,12 @@ order by class_info.class_name
     }
 
 
+    public function getFull()
+    {
+        return $this->enrolled_count >= $this->max_students;
+    }
+
+
     public function getSummaryCounts()
     {
         $sum = "";

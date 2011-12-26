@@ -64,12 +64,11 @@ ui
 		and maybe add ones for the others, the tab ones
 	in general, prevent entry errors, and warn if they exist
 		like:
-			class over capacity
-				show waitlist as the default option
 			enter a grade that is out of range
-4			change the date but there are active meetings
+			change the date but there are active meetings
 			a check or split where totals don't add up
 			entering to a session not the current default
+			class over capacity but student set to enrolled
 			trying to delete linked tables!
 				in check, for sure, but also everywhere really
 		how?
