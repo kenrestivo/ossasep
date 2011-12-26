@@ -25,6 +25,11 @@ class Instructor extends CActiveRecord
 		return parent::model($className);
 	}
 
+    public function getIsCompany()
+    {
+        return $this->instructor_type_id == InstructorType::COMPANY_TYPE;
+    }
+
 	/**
 	 * @return string the associated database table name
 	 */

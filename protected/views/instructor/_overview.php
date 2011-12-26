@@ -4,12 +4,12 @@
 	'attributes'=>array(
 		'full_name',
         'alias',
-		'email',
+		'email:email',
 		'cell_phone',
 		'other_phone',
-		'note',
-		'instructor_type.description',
-        'company.name'
+		'note:ntext',
+		'instructor_type.description:ntext:Instructor Type',
+        'company.name:ntext:Company'
 	),
 )); 
 
