@@ -7,9 +7,9 @@
 $kad = new KArrayDataProvider(
     $model->sortedSignups,
     array('keyField' => 'student_id,class_id',
+          'pagination' => false,
         ));
 
-$kad->setPagination(false);
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid-'. $model->id,
