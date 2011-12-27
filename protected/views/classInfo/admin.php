@@ -56,6 +56,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array('name' => 'day_of_week',  // TODO use kformatter
               'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
 		'location',
+		'company.name:ntext:Company',
 		'status',
 		'session.summary:text:Session',
 		array(

@@ -1,10 +1,17 @@
 
 <?php echo $this->renderPartial('_description', array('model'=>$model)); ?>
 
-  <?php echo CHtml::encode($model->note); ?>
-  <br />
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+        'status',
+		'company.name:ntext:Company',
+        'session.summary:text:Session',
+        'note',
+	),
+)); ?>
 
-
+<p class="clear"></p>
 <?php
 echo CHTML::link("Edit  ". $model->class_name, 
                  array('update', 'id'=>$model->id,
@@ -23,4 +30,4 @@ echo CHTML::link("Delete  ". $model->class_name,
 
 ?>
 
-<p></p>
+
