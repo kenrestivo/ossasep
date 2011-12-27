@@ -21,10 +21,12 @@ if(!isset($_GET['instructor_id'])){
 
     <?php 
           $instparams=array();
+    $constraint = "";
           if(isset($model->class_id)){
               $instparams = array(
                   'condition'=>'company_id = :coid',
                   'params'=>array(':coid' => $model->class->company_id));
+              $constraint = " (for ". $model->class->company->name . ")";
           }
 
           echo $form->dropDownList(
@@ -32,6 +34,7 @@ if(!isset($_GET['instructor_id'])){
               CHtml::listData(Instructor::model()->findAll($instparams), 
                               'id', 'full_name'),
               array('class' => 'chzn-select')); 
+          echo $constraint;
           ?>
 		<?php echo $form->error($model,'instructor_id'); ?>
 	</div>
@@ -57,10 +60,13 @@ if(!isset($_GET['class_id'])){
 
 
           $classparams=array();
+    $constraint = "";
           if(isset($model->instructor_id)){
               $classparams = array(
                   'condition'=>'company_id = :coid',
                   'params'=>array(':coid' => $model->instructor->company_id));
+              $constraint = " (for ". $model->instructor->company->name. ')';
+
           }
 
           
@@ -70,7 +76,7 @@ if(!isset($_GET['class_id'])){
                               'id', 'summary'),
               array('class' => 'chzn-select')); 
 
-
+          echo $constraint;
 
 ?>
 
