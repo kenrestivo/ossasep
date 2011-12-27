@@ -110,7 +110,7 @@ G		for instructor sees only their class! and only email-safe emails
 			note
 
 
-			** 	B deposit summary -- already done?
+** 	B deposit summary -- already done?
 		osspto deposit, date
         this is pretty much already in the deposit cgridview
 		
