@@ -2,6 +2,8 @@ TODO for asep
 
 
 formatting
+	for companies
+		show classes, instructors, payments
 	the rest of the reports (like, 20 of them)!
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
