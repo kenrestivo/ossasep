@@ -32,8 +32,6 @@ TODO tasks for ASEP
 		these will ultimately need to be ajaxy
 		rather then allowing it to be freeform?
 		when adding check/income split,
-**	autoppopulate the check when adding
-		when adding well, i guess, when adding subthings
 **	redo the unpaid thing, this is ridiculous
 		do this stupidity in sql
 				class
@@ -126,7 +124,6 @@ TODO tasks for ASEP
 		i could create a separate get/set that wraps it
 			for every model that has dates in it. gah.
 			or a wrapper that transforms them before/after manually
-**	waitlist is an interesting conundrum
 **	payments -> deposits
 		i'll really need a pick list here!
 		will need to pick the checks AT THE SAME TIME as entering
@@ -304,3 +301,5 @@ TODO tasks for ASEP
 			but the data entry would be way too complicated that way
 		
 
+**	autoppopulate the check when adding
+		when adding well, i guess, when adding subthings
