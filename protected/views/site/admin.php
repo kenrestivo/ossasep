@@ -9,7 +9,7 @@
       <h1>Admin-only Reports</h1>
     </th>
     <th>
-      <h1>Admin views</h1>
+      <h1>Data Entry/Admin</h1>
     </th>
     <th>
       <h1>Setup</h1>
