@@ -1,33 +1,32 @@
-TODO for asep
+TODO tasks
 
-
-formatting
-	the rest of the reports (like, 20 of them)!
-	requirements and instructor types, make view display cleaner
-		i did this, in instructor didn't i?
-	for companies
-		show classes, instructors, payments
-		company checks paid/unpaid
+* formatting
+** the rest of the reports (like, 20 of them)!
+** requirements and instructor types, make view display cleaner
+     i did this, in instructor didn't i?
+**	subviews for companies
+       show classes, instructors, payments
+          company checks paid/unpaid
 		have a delivered checks screen for those guys
 			pick which checks are delivered!
 		actually, do it in company, which is where it belongs
 	
-ui
-	redo the unpaid thing, this is ridiculous
+* ui
+**	redo the unpaid thing, this is ridiculous
 		do this stupidity in sql
 				class
 				cost - income.amount for this student and class
 			where this student,
 				and the cost - paid is > 0!
 			sort by payee
-		link for new check, or assign existing check (unassigned)
-	don't delete for assignments in unpaid
+        link for new check, or assign existing check (unassigned)
+**	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
 			can cast (int)'' even, so it's ok.
-	choose existing check as option in unpaid
+**	choose existing check as option in unpaid
 		an autocomplete with lists of checks with amounts still avail on them
-	deposit form
+**	deposit form
 		show deposit number at top
 		entered, date notes
 		deposit #, date, name entered by, differt date at bottom filled
@@ -42,7 +41,7 @@ ui
 			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are 50% capacity		
-	check_income:
+**	check_income:
 		an optional list of unpaid things to pay
 			make it an autocomplete
 		calculate that checks add up to their summaries
@@ -53,11 +52,11 @@ ui
 		these will ultimately need to be ajaxy
 		rather then allowing it to be freeform?
 		when adding check/income split,
-	autoppopulate the check when adding
+**	autoppopulate the check when adding
 		when adding WHAT?
-	in general, make menu on views like checkincome (just edit and delete)
+**	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
-	in general, prevent entry errors, and warn if they exist
+**	in general, prevent entry errors, and warn if they exist
 		like:
 			enter a grade that is out of range
 			change the date but there are active meetings
@@ -71,41 +70,36 @@ ui
 			in the case of classes, i can arrange them in the heir chosen
 				group the classes in and out of range
 			maybe just override the controller
-	make search work
+**	make search work
 		with checkboxes
 		with linked tables
-	make sort work with linked subviews
+**	make sort work with linked subviews
 		not so easy
-	will need security protection for signups-public
+**	will need security protection for signups-public
 		rbac? oh gawd...
 			
-bug
-	in class/_owed, should include waitlisted!
+* bugfixen
+**	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
-	in paid, why are cancelleds payments not showing up at all?
-	on student/_income, if cancelled, show the paids,
+**	in paid, why are cancelleds payments not showing up at all?
+**	on student/_income, if cancelled, show the paids,
 		so find enrolled OR cancelled or just not waitlisted
-	they WERE paid. only returned checks shouldn't show up.
+**	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
 
 
-oh crap. how to deal with partial refunds???
+* oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
 	or late refunds
 	DO I NEED TO TRACK REFUND CHECKS?
 
 
 	
-reports first! THEN DO THE UI AGAIN based on the reports. try that.
-	Q the dashboard
-	A class summaries, financial -- same as above!
-	E the sign up sheet
-	C calculating payments for teachers
-	D payments for companies
+* reports first! THEN DO THE UI AGAIN based on the reports. try that.
 
 
 
-validation/integrity checks needed
+* validation/integrity checks needed
 	http://www.yiiframework.com/extension/composite-unique-key-validatable/es
 	splits add up! for checks, and for instructor percentages
 		checks being the REALLY IMPORTANT ONE
@@ -116,17 +110,17 @@ validation/integrity checks needed
 			before allowing them to pay for it
 
 		
-general gui questions MUST get dealt with
-	sorting!
+* general gui questions MUST get dealt with
+	sorxting!
 	searching!
 
 
-small ui things
-	date/time conversions
+* small ui things
+** date/time conversions
 		do it in the load_model method!
 		and before save in update/create.
 		that is all. no problems, no muss, no fuss.
-	finish putting datepickers in
+**	finish putting datepickers in
 		check expense
 		check income
 		deposit
@@ -135,8 +129,8 @@ small ui things
 		income
 
 
-gui conundrums wrapped in enigmas
-	clean up date and weekday formatting, using formatter in yii
+* gui conundrums wrapped in enigmas
+**	clean up date and weekday formatting, using formatter in yii
 		not my zhtml hack
 		but beware the afterfind/beforevalidate crap!
 			it could break my model start/end stuff VERY IMPORTANT!
@@ -145,8 +139,8 @@ gui conundrums wrapped in enigmas
 		i could create a separate get/set that wraps it
 			for every model that has dates in it. gah.
 			or a wrapper that transforms them before/after manually
-	waitlist is an interesting conundrum
-	payments -> deposits
+**	waitlist is an interesting conundrum
+**	payments -> deposits
 		i'll really need a pick list here!
 		will need to pick the checks AT THE SAME TIME as entering
 		of all payments not yet assigned to a deposit.
@@ -160,83 +154,77 @@ gui conundrums wrapped in enigmas
 		reflextitve relation. dammit. they're not teachers of THIS
 	checks get returned, she said, if they're waitlisted
 		
----------------
-CLEANUP
-
-vital
-	trap exceptions on save,  if there's an integrity constraint!
+* CLEANUP
+** vital
+***	trap exceptions on save,  if there's an integrity constraint!
 		trap/catch errors when trying to delete linked tables
-	also trap exceptions on double-delete, it happens in ajax-land
+***	also trap exceptions on double-delete, it happens in ajax-land
 		if the refresh isn't complete yet
-	go through and make sure all my queries and searches are session-enabled
+***	go through and make sure all my queries and searches are session-enabled
 		so i can change them later easily
-	add an EMPTY as a default for deposit on checks!	
-	i need a wide layout with menu at top, major css/layout stuff
+        this means the popups too.
+***	add an EMPTY as a default for deposit on checks!	
+***	i need a wide layout with menu at top, major css/layout stuff
 		it needs to be integrated into class for sure, and student
 		i have it in a branch menuthrash. works with clips, nice!
-	use either breadcrumbs or returnto, but be consistent!
+***	use either breadcrumbs or returnto, but be consistent!
 		breadcrumbs is cleaner than returnto, but will it work?
-	make edit button on reports an optional item, only if logged in
+***	make edit button on reports an optional item, only if logged in
 	
-useful
-	default sort/scope for everytbing
-	manually edit dates, in m/d/y format
-	try to get rid of the echosen version of jquery! NO DUPES!
-	today button, fix
-	make company id 1  not editable or removable (company form/view)
-	autocompletes not dropdowns
+** useful
+***	default sort/scope for everytbing
+    search and such
+***	manually edit dates, in m/d/y format
+***	try to get rid of the echosen version of jquery! NO DUPES!
+***	today button, fix
+***	make company id 1  not editable or removable (company form/view)
+***	autocompletes not dropdowns
 		students
 		classes
 		roster import
-	make the signup and received papework dates default to today on create
+***	make the signup and received papework dates default to today on create
 		js? or controller? i think it is easy, in controller prolly
-	trap exception on populate for school days
-	to avoid confusion, special case the company stuff
+***	trap exception on populate for school days
+***	to avoid confusion, special case the company stuff
 		if company is not PTO, or is type company, show delivered, not deposited
 			else  show deposited, not delivered
 		if instructor type is company, show the company popup
 			else hide company popup
 		if is not company, don't show company popup at all
 		javascript in forms, something else in view
-	new student wizard really. ajaxy: class->student->import->signup
-	new on pulldowns!! so new instructor at end of pulldown for instructor
-	now make the save() actions check breadcrumbs, not returnto
-	take out the key columns from linktable forms-- one-sided not 2-sided
+***	new student wizard really. ajaxy: class->student->import->signup
+***	new on pulldowns!! so new instructor at end of pulldown for instructor
+***	now make the save() actions check breadcrumbs, not returnto
+***	take out the key columns from linktable forms-- one-sided not 2-sided
 		if i stick with those, if i don't replace them with something else
 		have to know which way i came in, that's the critical part.
 			by GET maybe?
 
-cosmetic
-	use the roster as the template for any index views, i have the css nice
-	a nice jui popup when hovering over a cell, showing description!
-	year bump buttons on the expired and received datepickers
+** cosmetic
+***	use the roster as the template for any index views, i have the css nice
+***	a nice jui popup when hovering over a cell, showing description!
+***	year bump buttons on the expired and received datepickers
 		didn't i do that already?
-	signupsheet
+***	signupsheet
 		strikethrough for cancelled
 		color/gray for waitlist?
-	dependent date/timepickers, i.e. start/end intelligently
-	the goddamned times are wrong, they're not in am/pm time! they don't convert
+***	dependent date/timepickers, i.e. start/end intelligently
+***	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it
-	generate the signup form via PDF library, on the fly	
+***	generate the signup form via PDF library, on the fly	
 
-
-
-----------------
-STUCK
-
-open questions
-	how do you know who to write the check to (from that report)?
-	deleting/cancelling a class
-	returning a check! do you just delete it?
-	cost PER class? extra costs? total cost? how?
-	will you have a case where the materials fee is NOT PER CLASS
+* STUCK
+** open questions
+***	how do you know who to write the check to (from that report)?
+***	deleting/cancelling a class
+***	returning a check! do you just delete it?
+***	cost PER class? extra costs? total cost? how?
+***	will you have a case where the materials fee is NOT PER CLASS
 		i.e. per year?
 
 
-student payment status, i.e. enrollment with payment status
-
-
-ok, forms starting to make sense
+** student payment status, i.e. enrollment with payment status
+** ok, forms starting to make sense
 	for adding a check from student or class, DO NOT NEED TO SPLIT IT
 		hell, i alredy know the student, class, AND amount! 
 		just a single line, try cform builder!
@@ -252,10 +240,8 @@ ok, forms starting to make sense
 		what if the students are already in there? it's just a signup.
 			most will be.
 			if not, then an entry?
-
-			
-finish the relational mappings
-	a way to create/edit/save a dependent model with ONE field in relation
+** finish the relational mappings
+***	a way to create/edit/save a dependent model with ONE field in relation
 		or a FEW maybe
 		use tom__'s stuff i think
 		a common pattern, for a few important things
@@ -264,29 +250,26 @@ finish the relational mappings
 			signup
 			instructorassignmeent
 			requirementstatus
-	gui splits for income/expense
+***	gui splits for income/expense
 		for now handle it like instructors
 			but the data entry would be way too complicated that way
 		
 
-
-----------------
-FUTURE REQUIRD
-
-must have for NEXT SESSION!
-	for setting session, for now, just a simple non-ajax screen, nothing fancy
+* FUTURE REQUIRD
+** must have for NEXT SESSION!
+***	for setting session, for now, just a simple non-ajax screen, nothing fancy
 		then i have to start using it in queries. named scope, seems right.
 		the big issue will be all the dropdowns, which use findAll()
 			i should start constraining those by session!
-			use named scope, it's easy
+			use named scope, it's easy, default scope is session now!
 		searches also, need to use the named scope or something
-	how to import/add new class from previous session
+***	how to import/add new class from previous session
 		an ajaxything or something, a popup
 		relational deep copy! only a few tables though:
 		 	instructors, it'll need to create new joins for them. just them!
 			and extra fees
 			not students though. until parents sign them up! or income.
-	delete a class
+***	delete a class
 		first fix the link, it's not a-werken (missing js?)
 		only delete class is no students signed up
 		do not let them delete otherwise
@@ -297,69 +280,45 @@ must have for NEXT SESSION!
 
 
 
-must have for NEXT YEAR:
-	need some way to track the current school year. 
+** must have for NEXT YEAR:
+***	need some way to track the current school year. 
 		yes, i remember now!!!! it took today's date, calculated month!
 		so based on where you were in the calendar, you were this year or next
 		aha, i think it will be a named scope
-	picklist of STUDENTS could get huge, and need to be pared down
+***	picklist of STUDENTS could get huge, and need to be pared down
 		how to determine when kids are no longer in ocean shore??
 		um, graduate them? when updating grades, if grade > 8, remove
 		current flag?
 		also, grade needs to be updated every year somehow
-	i will DEFINITELY need some kind of de-duping system
+***	i will DEFINITELY need some kind of de-duping system
 		like i had to do for the coop. it'll have to happen.
 
 
-------------------
-FOR NON-ADMIN USER LOGIN
 
-future/with user login security
+* FOR NON-ADMIN USER LOGIN
+** future/with user login security
 	let instructors edit descriptions
 		
 
-----------------
-BELOW THE LINE
 
-maybe make location a link column, not let them be in same place
+* BELOW THE LINE
+** maybe make location a link column, not let them be in same place
 
-try editable datatable!
+** try editable datatable!
 	go back and replace many_many and advanced with has_many and with-related
 		requirementtype
 		instructortype
 
-joins from one side shouldn't have popups for that side!
-	i.e. signups from class shouldn't have  class as a popup
-	
-make a validation rule to make sure that the instructors aren't getting > 100 % !!
+** make a validation rule to make sure that the instructors aren't getting > 100 % !!
 	i.e. check to see if a class has > 100% total
 
 	in the some popup (chosen?), the # is breaking stuff
 		i decided not to use it, so this is below the line for now
 
-have a checkbox on income page to select which classes to pay
+** have a checkbox on income page to select which classes to pay
 
-visual show/add meeting dates
+** visual show/add meeting dates
 	a very quick datepicker adder!
 	just a date, not hidden, and boom, it adds, maybe even ajaxy.
 	in the meetingdates, join to school calendar and show that stuff!
 		
-
-----------------
-NOWHERE
-
-
-
-----------------
-DONE
-
-	get the button columns working
-		http://ipsedixit.net/2devnull/121/cbuttoncolumn-extension-yii-framework
-	maybe make day of week a proper dropdown with constants, enum
-		hmm, days of week in mysql are 1-7 starting sunday. no 0. enum's ok.
-		the dropdown is not properly showing the selected value
-			look at docs
-	new table for dropdown status,
-		enrolled, waitlist, cancelled
-			might get lazy and make this an enum too?
-	time of day, am/pm, jtimepicker thing for start/endtime
