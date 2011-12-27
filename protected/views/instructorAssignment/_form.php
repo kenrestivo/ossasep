@@ -1,6 +1,5 @@
 <div class="wide form">
 
-<?php $this->widget( 'ext.EChosen.EChosen'); ?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'instructorassignment-form',
@@ -32,8 +31,8 @@ if(!isset($_GET['instructor_id'])){
           echo $form->dropDownList(
               $model,'instructor_id',
               CHtml::listData(Instructor::model()->findAll($instparams), 
-                              'id', 'full_name'),
-              array('class' => 'chzn-select')); 
+                              'id', 'full_name')
+              ); 
           echo $constraint;
           ?>
 		<?php echo $form->error($model,'instructor_id'); ?>
@@ -73,8 +72,8 @@ if(!isset($_GET['class_id'])){
           echo $form->dropDownList(
               $model,'class_id',
               CHtml::listData(ClassInfo::model()->findAll($classparams), 
-                              'id', 'summary'),
-              array('class' => 'chzn-select')); 
+                              'id', 'summary')
+              ); 
 
           echo $constraint;
 
