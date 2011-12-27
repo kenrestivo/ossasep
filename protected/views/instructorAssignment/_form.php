@@ -19,10 +19,20 @@ if(!isset($_GET['instructor_id'])){
 	<div class="row">
 		<?php echo $form->labelEx($model,'instructor_id'); ?>
 
-    <?php echo $form->dropDownList(
-        $model,'instructor_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name'),
-        array('class' => 'chzn-select')); ?>
+    <?php 
+          $instparams=array();
+          if(isset($model->class_id)){
+              $instparams = array(
+                  'condition'=>'company_id = :coid',
+                  'params'=>array(':coid' => $model->class->company_id));
+          }
+
+          echo $form->dropDownList(
+              $model,'instructor_id',
+              CHtml::listData(Instructor::model()->findAll($instparams), 
+                              'id', 'full_name'),
+              array('class' => 'chzn-select')); 
+          ?>
 		<?php echo $form->error($model,'instructor_id'); ?>
 	</div>
 
@@ -30,8 +40,8 @@ if(!isset($_GET['instructor_id'])){
     Add class for: 
 	<?php echo CHtml::encode($model->instructor->full_name);
           echo $form->hiddenField($model,"instructor_id"); 
-               } ?>
-
+               } 
+?>
 
 
 
@@ -43,10 +53,26 @@ if(!isset($_GET['class_id'])){
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
 
-    <?php echo $form->dropDownList(
-        $model,'class_id',
-        CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary'),
-         array('class' => 'chzn-select')); ?>
+    <?php 
+
+
+          $classparams=array();
+          if(isset($model->instructor_id)){
+              $classparams = array(
+                  'condition'=>'company_id = :coid',
+                  'params'=>array(':coid' => $model->instructor->company_id));
+          }
+
+          
+          echo $form->dropDownList(
+              $model,'class_id',
+              CHtml::listData(ClassInfo::model()->findAll($classparams), 
+                              'id', 'summary'),
+              array('class' => 'chzn-select')); 
+
+
+
+?>
 
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>

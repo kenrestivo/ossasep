@@ -138,7 +138,7 @@ reports
 			unassigned check amounts		
 			instructors don't add up to > 100
 			classes overpaid, i.e. 2 or more checks for same class
-
+			instructors that don't add up to the company (class assignments)
 		
 		
 (wow, 23 reports/entry screens!!)

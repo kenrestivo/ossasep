@@ -47,6 +47,11 @@ class ClassInfo extends CActiveRecord
 		return 'class_info';
 	}
 
+    public function defaultScope() {
+        return array('order' => 'class_name ASC');
+    }
+
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
