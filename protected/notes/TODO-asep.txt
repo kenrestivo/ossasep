@@ -1,13 +1,5 @@
 TODO for asep
 
-serious clusterfuck. must fix.
-	not having companies assigned to classes is a CODE SMELL
-	it makes for stupid queries. it makes shit impossible. fix.
-	add a company_id for a class
-	choose instructors based on company.
-	this is a little dangerous, but i have to do it.
-	isCompany and getCompany are evil
-
 
 formatting
 	the rest of the reports (like, 20 of them)!
