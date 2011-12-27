@@ -10,9 +10,8 @@
 			checks??
 				amount paid
 				payment type? payee? (to osspto?)
-		for patricia, as it is more or less (contact, but no financial)
 		for heidi with paid/unpaid to instructor (see jpg)
-		for instructor sees only their class! and only email-safe emails
+G		for instructor sees only their class! and only email-safe emails
 			
 **	C  (payment for teachers)
 		teacher
@@ -28,10 +27,13 @@
 		company name
 		amount
 
-**	G "sign up list with contacts"
-		class
-			student (all info)
-			(waitlists)
+**	R  dashboard-instructors
+		name
+		missing paperwork (expired, or not received yet)
+		payments received
+		payments owed
+		totals owed and totals  owing to instructor (see V though)
+        notes
 
 **	H "receipt"
 		Student.name
@@ -40,20 +42,10 @@
 		Cost
 		payments.Check#
 
-**	J "instructor paperwork"
-		teacher
-			type
-		class name
-		licence
-		insurace
-		fingerprint info
-		tb
-		contract
-		w9
-		agreement
-		notes (specific to this)
-
-**	K deposit form
+**	K deposit form -- VIEW
+		show deposit number at top
+		entered, date notes
+		deposit #, date, name entered by, differt date at bottom filled
 		deposit details
 			all of em
 		checks
@@ -62,12 +54,6 @@
 			amount
 		= totals
 		
-**	L "tentative schedule"
-		for the whole year 3 sessions
-		session m-f, notes
-		(also separate report-let: list of dates, not really needed)
-
-
 **	O (checks byy companies)
 		class
 		check
@@ -75,8 +61,6 @@
 			check #
 			amount
 		total
-
-**	P (maybe a duplicate)
 
 **	Q dashboard-class
 		classname
@@ -89,14 +73,8 @@
 		add financial summary for class
 		total amount income for class
 
-**	R  dashboard-instructors
-		name
-		missing paperwork
-		payments received
-		payments owed
-		totals owed and totals  owing to instructor (see V though)
-
 **	S list of scholarships report
+       for karen
 		student
 		class
 		amount
@@ -132,8 +110,29 @@
 			note
 
 
-**	B deposit summary
+**	B deposit summary -- already done?
 		osspto deposit, date
         this is pretty much already in the deposit cgridview
 		
             
+
+**	L "tentative schedule"
+		for the whole year 3 sessions
+		session m-f, notes
+		(also separate report-let: list of dates, not really needed)
+
+
+        
+**	J "instructor paperwork"
+		teacher
+			type
+		class name
+		licence
+		insurace
+		fingerprint info
+		tb
+		contract
+		w9
+		agreement
+		notes (specific to this)
+
