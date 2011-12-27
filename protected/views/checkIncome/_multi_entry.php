@@ -71,7 +71,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <td><?php echo CHtml::activeTextField($inc,"[$i]amount");?></td>
 <td>
 <?php echo CHtml::link(
-    'delete', 
+    'Un-assign', 
     '', 
     array(
         'class'=>'delete',
@@ -104,3 +104,6 @@ function deleteRow(button)
 }
  
 </script>
+
+<?php echo $this->renderPartial('/site/_unsaved_changes_warning',
+                                array('form_id'=>"#check-income-form")); ?>

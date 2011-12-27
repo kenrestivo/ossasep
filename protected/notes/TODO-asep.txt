@@ -21,7 +21,6 @@ TODO tasks for ASEP
 			sort by payee
         link for new check, or assign existing check (unassigned)
 **	don't delete for assignments in unpaid
-		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
 			can cast (int)'' even, so it's ok.
 **	choose existing check as option in unpaid
