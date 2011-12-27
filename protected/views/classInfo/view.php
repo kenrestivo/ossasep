@@ -26,14 +26,14 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Extra Fees' =>
                       $this->renderPartial("_extrafees", 
                                            array('model' => $model), true),
-                      'Students' =>
-                      $this->renderPartial("_students", 
-                                           array('model' => $model), true),
                       'Instructors'=>
                       $this->renderPartial("_instructors", 
                                            array('model' => $model), true),
                       'Meetings'=>
                       $this->renderPartial("_meetings", 
+                                           array('model' => $model), true),
+                      'Students' =>
+                      $this->renderPartial("_students", 
                                            array('model' => $model), true),
                       'Income'=>
                       $this->renderPartial("_income", 
