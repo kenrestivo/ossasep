@@ -188,9 +188,6 @@ class CheckIncomeController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['CheckIncome'])){
-            // XXX i don't think this is teh right place to set this
-            $model->session_id = ClassSession::savedSessionId();
-
             // note it overrides session_id if it's in the post
 			$model->attributes=$_POST['CheckIncome'];
             //saving, so populate from the form now
