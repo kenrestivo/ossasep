@@ -2,11 +2,15 @@ TODO for asep
 
 
 formatting
-	for companies
-		show classes, instructors, payments
 	the rest of the reports (like, 20 of them)!
 	requirements and instructor types, make view display cleaner
 		i did this, in instructor didn't i?
+	for companies
+		show classes, instructors, payments
+		company checks paid/unpaid
+		have a delivered checks screen for those guys
+			pick which checks are delivered!
+		actually, do it in company, which is where it belongs
 	
 ui
 	redo the unpaid thing, this is ridiculous
@@ -17,9 +21,6 @@ ui
 				and the cost - paid is > 0!
 			sort by payee
 		link for new check, or assign existing check (unassigned)
-	company checks paid/unpaid
-		have a delivered checks screen for those guys
-		actually, do it in company, which is where it belongs
 	don't delete for assignments in unpaid
 		use "unassign" or "none"
 		and/or, better,  if the number is 0, don't even add it
@@ -79,7 +80,6 @@ ui
 		rbac? oh gawd...
 			
 bug
-	in the check popup (chosen?), the # is breaking stuff
 	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 	in paid, why are cancelleds payments not showing up at all?
@@ -334,6 +334,8 @@ joins from one side shouldn't have popups for that side!
 make a validation rule to make sure that the instructors aren't getting > 100 % !!
 	i.e. check to see if a class has > 100% total
 
+	in the some popup (chosen?), the # is breaking stuff
+		i decided not to use it, so this is below the line for now
 
 have a checkbox on income page to select which classes to pay
 
