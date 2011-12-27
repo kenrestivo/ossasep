@@ -13,7 +13,6 @@
 		for patricia, as it is more or less (contact, but no financial)
 		for heidi with paid/unpaid to instructor (see jpg)
 		for instructor sees only their class! and only email-safe emails
-        public one, no numbers, just names, frist and last, org by week
 			
 **	C  (payment for teachers)
 		teacher
@@ -102,11 +101,7 @@
 		class
 		amount
 
-**	T
-		check status/dashboard, show that they add up!
-			report errors if not
-
-**	U
+**	U classes by room and date
 		classes by room and date summary
 
 
@@ -117,8 +112,8 @@
 		paid records but no names,
 		then total paid to them
 		
-**	W
-		integrity check dashboard
+**	W integrity check dashboard
+            check status/dashboard, show that they add up!
 			unpaid classes (useful for checking)
 			unassigned check amounts		
 			instructors don't add up to > 100
@@ -139,5 +134,6 @@
 
 **	B deposit summary
 		osspto deposit, date
+        this is pretty much already in the deposit cgridview
 		
             

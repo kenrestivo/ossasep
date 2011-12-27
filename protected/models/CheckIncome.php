@@ -79,6 +79,14 @@ class CheckIncome extends CActiveRecord
             );
 	}
 
+    public function defaultScope() {
+        return array(
+            'condition' => 'session_id = ' . ClassSession::savedSessionId(),
+            'order' => 'check_num asc',
+            );
+    }
+
+
 	/**
 	 * @return array relational rules.
 	 */
