@@ -12,7 +12,7 @@ $(function(){
   $('#masonry').masonry({
     // options
     itemSelector : '.emailable',
-    columnWidth : 280
+    columnWidth : 150
   });
 });
 
