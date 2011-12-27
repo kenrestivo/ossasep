@@ -20,9 +20,6 @@ TODO tasks for ASEP
 				and the cost - paid is > 0!
 			sort by payee
         link for new check, or assign existing check (unassigned)
-**	don't delete for assignments in unpaid
-		and/or, better,  if the number is 0, don't even add it
-			can cast (int)'' even, so it's ok.
 **	choose existing check as option in unpaid
 		an autocomplete with lists of checks with amounts still avail on them
 **	deposit form
