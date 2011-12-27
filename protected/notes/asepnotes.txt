@@ -1086,6 +1086,7 @@ validation!
 	but validation rules only return ERRORS? can i have warnings/notice?
 		oh YAY!
 		 $this->addError($attribute, 'your password is not strong enough!');
-		http://www.yiiframework.com/wiki/168/create-your-own-validation-rule/
+	http://www.yiiframework.com/wiki/168/create-your-own-validation-rule/
 	i need to create a custom validator in order to have client side val
 		it needs to be its own class
+		http://www.yiiframework.com/extension/composite-unique-key-validatable/es
