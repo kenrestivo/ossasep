@@ -1,25 +1,7 @@
 * reports
-**	A
+**	A class summary (dashboard)?
 		class
 		= sum amt
-
-**	B
-		osspto deposit, date
-		
-**	C  (payment for teachers)
-		teacher
-		= sum amount due
-		classes
-			= percent it's paid for
-		instructor owed report
-			is for debbie
-			owed to instructor is actually paid in cash
-			summaries by class
-			total for class total actually paid
-
-**	D  (payment for companies)
-		company name
-		amount
 
 **	E (sign up sheet?)
 		class
@@ -31,8 +13,22 @@
 		for patricia, as it is more or less (contact, but no financial)
 		for heidi with paid/unpaid to instructor (see jpg)
 		for instructor sees only their class! and only email-safe emails
-		
+        public one, no numbers, just names, frist and last, org by week
 			
+**	C  (payment for teachers)
+		teacher
+		= sum amount due
+		classes
+			= percent it's paid for
+        instructor owed report
+		is for debbie
+		owed to instructor is actually paid in cash
+		summaries by class
+		total for class total actually paid
+**	D  (payment for companies)
+		company name
+		amount
+
 **	G "sign up list with contacts"
 		class
 			student (all info)
@@ -140,3 +136,8 @@
 			otherphone
 			note
 
+
+**	B deposit summary
+		osspto deposit, date
+		
+            

@@ -1,6 +1,6 @@
 <table class="emailable">
   <tr>
-    <th colspan="3" class="title" >
+    <th colspan="2" class="title" >
      <?php if(Yii::app()->user->isGuest){
      echo CHtml::encode($model->class_name);
  } else {
@@ -14,7 +14,7 @@
     </th>
   </tr>
   <tr>
-    <td colspan="3" class="title">
+    <td colspan="2" class="title">
       <?= CHtml::encode($model->instructorNames(' and ')) ?>
     </td>
   </tr>
@@ -28,7 +28,7 @@
              $i = 1;
              $ps = $s->status;
              if($ps == "Waitlist"){
-                 echo '<tr class="waitlist"><th colspan="3">Waitlist</th></tr>';
+                 echo '<tr class="waitlist"><th colspan="2">Waitlist</th></tr>';
              }
          }
          if($s->status == "Cancelled"){
@@ -39,7 +39,8 @@
              $cname = "";
          }
          $showi = $s->status == "Cancelled" ? "X" : $i;
-         echo "<tr class=\"$cname\"><td class=\"row\">$showi</td><td>{$s->student->full_name}</td>";
+         $ini = substr($s->student->last_name, 0,1);
+         echo "<tr class=\"$cname\"><td>{$s->student->first_name} $ini.</td>";
          echo '<td class="grade">'. Yii::app()->format->gradeShort($s->student->grade) . '</td></tr>';
          $i++; 
      }
