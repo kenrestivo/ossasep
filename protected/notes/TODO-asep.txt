@@ -12,16 +12,6 @@ TODO tasks for ASEP
 		actually, do it in company, which is where it belongs
 	
 * ui
-**	redo the unpaid thing, this is ridiculous
-		do this stupidity in sql
-				class
-				cost - income.amount for this student and class
-			where this student,
-				and the cost - paid is > 0!
-			sort by payee
-        link for new check, or assign existing check (unassigned)
-	    choose existing check as option in unpaid
-		an autocomplete with lists of checks with amounts still avail on them
 **	deposit form
 		show deposit number at top
 		entered, date notes
@@ -49,7 +39,17 @@ TODO tasks for ASEP
 		rather then allowing it to be freeform?
 		when adding check/income split,
 **	autoppopulate the check when adding
-		when adding WHAT?
+		when adding well, i guess, when adding subthings
+**	redo the unpaid thing, this is ridiculous
+		do this stupidity in sql
+				class
+				cost - income.amount for this student and class
+			where this student,
+				and the cost - paid is > 0!
+			sort by payee
+        link for new check, or assign existing check (unassigned)
+	    choose existing check as option in unpaid
+		an autocomplete with lists of checks with amounts still avail on them
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 **	in general, prevent entry errors, and warn if they exist
@@ -66,14 +66,14 @@ TODO tasks for ASEP
 			in the case of classes, i can arrange them in the heir chosen
 				group the classes in and out of range
 			maybe just override the controller
-**	make search work
-		with checkboxes
-		with linked tables
 **	make sort work with linked subviews
 		not so easy
 **	will need security protection for signups-public
 		rbac? oh gawd...
 			
+**	make search work
+		with checkboxes
+		with linked tables
 * bugfixen
 **	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope

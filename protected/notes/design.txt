@@ -1,14 +1,12 @@
-	
-reports
-------------
-	A
+* reports
+**	A
 		class
 		= sum amt
 
-	B
+**	B
 		osspto deposit, date
 		
-	C  (payment for teachers)
+**	C  (payment for teachers)
 		teacher
 		= sum amount due
 		classes
@@ -19,11 +17,11 @@ reports
 			summaries by class
 			total for class total actually paid
 
-	D  (payment for companies)
+**	D  (payment for companies)
 		company name
 		amount
 
-	E (sign up sheet?)
+**	E (sign up sheet?)
 		class
 			student (all info)
 			(waitlists)
@@ -35,28 +33,19 @@ reports
 		for instructor sees only their class! and only email-safe emails
 		
 			
-	G "sign up list with contacts"
+**	G "sign up list with contacts"
 		class
 			student (all info)
 			(waitlists)
 
-	H "receipt"
+**	H "receipt"
 		Student.name
 		CLASS
 		Contact Name
 		Cost
 		payments.Check#
 
-	I	instructor report
-		class name
-		instructor
-			type (individual/company)
-			email
-			cell
-			otherphone
-			note
-
-	J "instructor paperwork"
+**	J "instructor paperwork"
 		teacher
 			type
 		class name
@@ -69,7 +58,7 @@ reports
 		agreement
 		notes (specific to this)
 
-	K deposit form
+**	K deposit form
 		deposit details
 			all of em
 		checks
@@ -78,13 +67,13 @@ reports
 			amount
 		= totals
 		
-	L "tentative schedule"
+**	L "tentative schedule"
 		for the whole year 3 sessions
 		session m-f, notes
 		(also separate report-let: list of dates, not really needed)
 
 
-	O (checks byy companies)
+**	O (checks byy companies)
 		class
 		check
 			payer
@@ -92,9 +81,9 @@ reports
 			amount
 		total
 
-	P (maybe a duplicate)
+**	P (maybe a duplicate)
 
-	Q dashboard-class
+**	Q dashboard-class
 		classname
 		date
 		time
@@ -105,34 +94,34 @@ reports
 		add financial summary for class
 		total amount income for class
 
-	R  dashboard-instructors
+**	R  dashboard-instructors
 		name
 		missing paperwork
 		payments received
 		payments owed
 		totals owed and totals  owing to instructor (see V though)
 
-	S list of scholarships report
+**	S list of scholarships report
 		student
 		class
 		amount
 
-	T
+**	T
 		check status/dashboard, show that they add up!
 			report errors if not
 
-	U
+**	U
 		classes by room and date summary
 
 
-	V	instructor email report
+**	V	instructor email report
 		each class,
 		total paid to us,
 		scholarships,
 		paid records but no names,
 		then total paid to them
 		
-	W
+**	W
 		integrity check dashboard
 			unpaid classes (useful for checking)
 			unassigned check amounts		
@@ -141,17 +130,13 @@ reports
 			instructors that don't add up to the company (class assignments)
 		
 		
-(wow, 23 reports/entry screens!!)
-	
-unclear how to handle
------------------------
-	waitlist
-		
-	splits/teachers
-			
 
-????
-----------
-	non-deposit?
+**	I	instructor report
+		class name
+		instructor
+			type (individual/company)
+			email
+			cell
+			otherphone
+			note
 
-9
