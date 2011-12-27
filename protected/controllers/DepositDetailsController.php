@@ -68,7 +68,10 @@ class DepositDetailsController extends Controller
 			$model->attributes=$_POST['DepositDetails'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
+		} else {
+            // only if this is NOT yet entered
+            $model->deposited_date = date ("Y-m-d");
+        }
 
 		$this->render('create',array(
 			'model'=>$model,

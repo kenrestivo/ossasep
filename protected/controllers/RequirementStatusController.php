@@ -71,6 +71,9 @@ class RequirementStatusController extends Controller
                                       'instructor_id'=>$model->instructor_id,
                                       'requirement_type_id'=>$model->requirement_type_id));
 		} else {
+            // only if this is NOT yet entered
+            $model->received = date ("Y-m-d");
+
             if(isset($_GET['requirement_type_id'])){
                 $model->student_id = $_GET['requirement_type_id'];
             }

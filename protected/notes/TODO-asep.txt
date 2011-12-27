@@ -2,8 +2,6 @@ TODO tasks for ASEP
 
 * formatting
 ** the rest of the reports (like, 20 of them)!
-** requirements and instructor types, make view display cleaner
-     i did this, in instructor didn't i?
 **	subviews for companies
        show classes, instructors, payments
           company checks paid/unpaid
@@ -88,9 +86,6 @@ TODO tasks for ASEP
 
 	
 * reports first! THEN DO THE UI AGAIN based on the reports. try that.
-
-
-
 * validation/integrity checks needed
 	http://www.yiiframework.com/extension/composite-unique-key-validatable/es
 	splits add up! for checks, and for instructor percentages
@@ -155,43 +150,34 @@ TODO tasks for ASEP
 ***	go through and make sure all my queries and searches are session-enabled
 		so i can change them later easily
         this means the popups too.
+        default sort/scope for everytbing
+        search and such
 ***	add an EMPTY as a default for deposit on checks!	
-***	i need a wide layout with menu at top, major css/layout stuff
+***	use wide layout with menu at top from roster for ALL things
 		it needs to be integrated into class for sure, and student
-		i have it in a branch menuthrash. works with clips, nice!
+        this is in roster, in main branch
+		i also have it in a branch menuthrash. works with clips, nice!
 ***	use either breadcrumbs or returnto, but be consistent!
 		breadcrumbs is cleaner than returnto, but will it work?
-***	make edit button on reports an optional item, only if logged in
-	
 ** useful
-***	default sort/scope for everytbing
-    search and such
 ***	manually edit dates, in m/d/y format
-***	try to get rid of the echosen version of jquery! NO DUPES!
 ***	today button, fix
 ***	make company id 1  not editable or removable (company form/view)
 ***	autocompletes not dropdowns
 		students
 		classes
 		roster import
-***	make the signup and received papework dates default to today on create
-		js? or controller? i think it is easy, in controller prolly
+*** make date pickers have longer terms for some things (meetings, paperwork)
 ***	trap exception on populate for school days
-***	to avoid confusion, special case the company stuff
+***	to avoid confusion, special case the company stuff with js
 		if company is not PTO, or is type company, show delivered, not deposited
 			else  show deposited, not delivered
 		if instructor type is company, show the company popup
 			else hide company popup
 		if is not company, don't show company popup at all
 		javascript in forms, something else in view
-***	new student wizard really. ajaxy: class->student->import->signup
 ***	new on pulldowns!! so new instructor at end of pulldown for instructor
 ***	now make the save() actions check breadcrumbs, not returnto
-***	take out the key columns from linktable forms-- one-sided not 2-sided
-		if i stick with those, if i don't replace them with something else
-		have to know which way i came in, that's the critical part.
-			by GET maybe?
-
 ** cosmetic
 ***	use the roster as the template for any index views, i have the css nice
 ***	a nice jui popup when hovering over a cell, showing description!
@@ -205,6 +191,8 @@ TODO tasks for ASEP
 		this is the timepicker brokenness, fix it
 ***	generate the signup form via PDF library, on the fly	
 
+*** requirements and instructor types, make view display cleaner
+     i did this, in instructor didn't i?
 * STUCK
 ** open questions
 ***	how do you know who to write the check to (from that report)?
@@ -232,21 +220,6 @@ TODO tasks for ASEP
 		what if the students are already in there? it's just a signup.
 			most will be.
 			if not, then an entry?
-** finish the relational mappings
-***	a way to create/edit/save a dependent model with ONE field in relation
-		or a FEW maybe
-		use tom__'s stuff i think
-		a common pattern, for a few important things
-			income
-			expense
-			signup
-			instructorassignmeent
-			requirementstatus
-***	gui splits for income/expense
-		for now handle it like instructors
-			but the data entry would be way too complicated that way
-		
-
 * FUTURE REQUIRD
 ** must have for NEXT SESSION!
 ***	for setting session, for now, just a simple non-ajax screen, nothing fancy
@@ -314,3 +287,20 @@ TODO tasks for ASEP
 	just a date, not hidden, and boom, it adds, maybe even ajaxy.
 	in the meetingdates, join to school calendar and show that stuff!
 		
+**	new student wizard really. ajaxy: class->student->import->signup
+
+** finish the relational mappings
+***	a way to create/edit/save a dependent model with ONE field in relation
+		or a FEW maybe
+		use tom__'s stuff i think
+		a common pattern, for a few important things
+			income
+			expense
+			signup
+			instructorassignmeent
+			requirementstatus
+***	gui splits for income/expense
+		for now handle it like instructors
+			but the data entry would be way too complicated that way
+		
+
