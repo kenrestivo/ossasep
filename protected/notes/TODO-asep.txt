@@ -45,7 +45,8 @@ TODO tasks for ASEP
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 **	in general, prevent entry errors, and warn if they exist
-		like:
+***		like:
+            change company name with instructors who are not in that company
 			enter a grade that is out of range
 			change the date but there are active meetings
 			a check or split where totals don't add up
@@ -53,11 +54,10 @@ TODO tasks for ASEP
 			class over capacity but student set to enrolled
 			trying to delete linked tables!
 				in check, for sure, but also everywhere really
-		how?
-			populate a js array with the data, and check it with jquery?
-			in the case of classes, i can arrange them in the heir chosen
-				group the classes in and out of range
-			maybe just override the controller
+***		how?
+            ajax validation via yii built in
+            js validation via yii built in
+               populate a js array with the data, and check it that way?
 **	make sort work with linked subviews
 		not so easy
 **	will need security protection for signups-public

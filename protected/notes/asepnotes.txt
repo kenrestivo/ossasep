@@ -1074,3 +1074,18 @@ auugh, but wait!! the checks that are for cancelled classses or students!!!
 	this is a BIG FUCKING DEAL
 	i need to show it as underpaid somewhere
 	
+
+yay, flash messages!
+	http://www.yiiframework.com/wiki/21/how-to-work-with-flash-messages/
+	this is how i will do my warnings
+
+validation!
+	good tutorial
+		http://learnyii.blogspot.com/2010/12/yii.html
+	so it does it via ajax at tab time. perfect.
+	but validation rules only return ERRORS? can i have warnings/notice?
+		oh YAY!
+		 $this->addError($attribute, 'your password is not strong enough!');
+		http://www.yiiframework.com/wiki/168/create-your-own-validation-rule/
+	i need to create a custom validator in order to have client side val
+		it needs to be its own class
