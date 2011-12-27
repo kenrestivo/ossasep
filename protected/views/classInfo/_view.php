@@ -41,6 +41,9 @@
   <b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
   <?php echo CHtml::encode($data->status); ?>
   <br />
+  <b><?php echo CHtml::encode($data->getAttributeLabel('company')); ?>:</b>
+  <?php echo CHtml::encode($data->company->name); ?>
+  <br />
 
   <b><?php echo CHtml::encode($data->getAttributeLabel('session_id')); ?>:</b>
   <?php echo CHtml::encode($data->session->summary); ?>

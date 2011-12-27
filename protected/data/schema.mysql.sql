@@ -109,9 +109,12 @@ CREATE TABLE `class_info` (
   `status` ENUM('Active', 'New', 'Cancelled') default 'Active',
   `note` longtext,
   `session_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL default 1,
   PRIMARY KEY (`id`),
   KEY `session_id` (`session_id`),
-  CONSTRAINT `class_info_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `class_session` (`id`)
+  KEY `company_id` (`company_id`),
+  CONSTRAINT `class_info_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `class_session` (`id`),
+  CONSTRAINT `class_info_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

@@ -18,6 +18,7 @@
    * @property string $location
    * @property integer $status
    * @property integer $session_id
+   * @property integer $company_id
    */
 class ClassInfo extends CActiveRecord
 {
@@ -46,6 +47,11 @@ class ClassInfo extends CActiveRecord
 		return 'class_info';
 	}
 
+    public function defaultScope() {
+        return array('order' => 'class_name ASC');
+    }
+
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -54,8 +60,8 @@ class ClassInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('class_name, session_id', 'required'),
-			array('min_grade_allowed, max_grade_allowed, day_of_week, min_students, max_students, session_id', 'numerical', 'integerOnly'=>true),
+			array('class_name, session_id, company_id', 'required'),
+			array('min_grade_allowed, max_grade_allowed, day_of_week, min_students, max_students, session_id, company_id', 'numerical', 'integerOnly'=>true),
 			array('class_name', 'length', 'max'=>128),
 			array('cost_per_class', 'length', 'max'=>19),
 			array('cost_per_class', 'numerical'),
@@ -66,7 +72,7 @@ class ClassInfo extends CActiveRecord
 			array('start_time, end_time, description, note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, min_students, day_of_week, location, status, session_id', 'safe', 'on'=>'search'),
+			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, min_students, day_of_week, location, status, session_id, company_id', 'safe', 'on'=>'search'),
             array('session_id','default',
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
@@ -116,6 +122,11 @@ class ClassInfo extends CActiveRecord
                 'through' => 'signups'),
 			'instructor_assignments' => array(
                 self::HAS_MANY, 'InstructorAssignment', 'class_id'),
+			'company' => array(
+                self::BELONGS_TO, 
+                'Company', 
+                'company_id',
+                'order' => 'name'),
             'active_mtg_count' => array(
                 self::STAT, 
                 'ClassMeeting', 'class_id',
@@ -156,6 +167,7 @@ class ClassInfo extends CActiveRecord
 			'status' => 'Status',
             'note' => 'Admin Private Note',
 			'session_id' => 'Session',
+			'company_id' => 'Company',
             );
 	}
 
@@ -196,6 +208,7 @@ class ClassInfo extends CActiveRecord
 		$criteria->compare('status',$this->status);
 
 		$criteria->compare('session_id',$this->session_id);
+		$criteria->compare('company_id',$this->company_id);
 
 		return new CActiveDataProvider('ClassInfo', array(
                                            'criteria'=>$criteria,
@@ -266,15 +279,8 @@ order by class_info.class_name
 
     public function isCompany()
     {
-        return $this->instructors[0]->instructor_type_id == InstructorType::COMPANY_TYPE;
+        return $this->company_id == InstructorType::COMPANY_TYPE;
     }
-
-    public function getCompany()
-    {
-        return $this->instructors[0]->company;
-    }
-
-
 
 
     public function instructorNames($delim)
