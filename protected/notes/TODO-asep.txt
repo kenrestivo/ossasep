@@ -20,7 +20,7 @@ TODO tasks for ASEP
 				and the cost - paid is > 0!
 			sort by payee
         link for new check, or assign existing check (unassigned)
-**	choose existing check as option in unpaid
+	    choose existing check as option in unpaid
 		an autocomplete with lists of checks with amounts still avail on them
 **	deposit form
 		show deposit number at top
@@ -37,7 +37,7 @@ TODO tasks for ASEP
 			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are 50% capacity		
-**	check_income:
+**	check_income
 		an optional list of unpaid things to pay
 			make it an autocomplete
 		calculate that checks add up to their summaries
