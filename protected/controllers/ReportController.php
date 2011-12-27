@@ -76,12 +76,17 @@ class ReportController extends Controller
 
     public function actionSignupsPublic()
     {
-        $cs = ClassSession::model()->findByPk(
-            ClassSession::savedSessionId());
+        $days= range(2,6);
+
+        $c=ClassInfo::findAllWeekdays($days,
+                                      ClassSession::savedSessionId());
+
 		$this->render(
             'signups_public', 
             array(
-                'classes' => $cs->active_classes));
+                'classes' => $c,
+                          'days'=> $days,
+                ));
     }
 
 

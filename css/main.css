@@ -290,9 +290,8 @@ table.bordertable th,td.short{
 
 
 table.emailable {
-  width: 130px;
+  width: 160px;
   float: left;
-  margin-right: 20px;
   margin-bottom: 20px;
   border-collapse: collapse;
 }
@@ -337,4 +336,26 @@ table.emailable .row{
 
 .checkbackground{ 
 background: #FEF5CA;
+ }
+
+.signups {
+  width: 910px;
+  border-collapse: collapse;
+}
+
+
+.signups td,th
+{
+  border-style: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 182px;
+  vertical-align: top;
+}
+
+.signups th { 
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+
  }

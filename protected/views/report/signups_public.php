@@ -1,32 +1,27 @@
 <h1>Signup Sheet for <?= $this->savedSessionSummary() ?></h1>
 
-<?php 
-Yii::app()->clientScript->registerCoreScript('jquery');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.masonry.min.js');
-?>
 
-
-<script type="text/javascript">
-
-$(function(){
-  $('#masonry').masonry({
-    // options
-    itemSelector : '.emailable',
-    columnWidth : 150
-  });
-});
-
-</script>
-
-
-
-<div id="masonry">
+<table class="signups" >
 <?php
-foreach($classes as $class){
-    $this->renderPartial(
-        '_signup_public',
-        array('model' => $class));
+
+print '<tr>';
+foreach($days as $day){
+    print '<th>' .  CHtml::encode(ZHtml::weekdayTranslation($day)). '</th>';
 }
+print '</tr>';
+
+print '<tr>';
+    foreach($days as $day){
+        echo '<td>';
+        foreach($classes[$day] as $c){
+            echo  $this->renderPartial(
+                         '_signup_public', 
+                         array('model'=>$c));
+        }
+        echo'</td>';
+    }
+print '</tr>';
 
 ?>
-</div>
+
+</table>
