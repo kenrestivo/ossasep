@@ -20,6 +20,7 @@ TODO tasks for ASEP
 			populate the info on the check
 		will need some kind of undepposited status, total amount
 **	check_income
+*** multi-form: should auto-javascript calculate totals applied and check them
 ***     checks/_income: if user chooses student, constrain classes based on unpaid
 ** company checks
       pick which checks are delivered!
@@ -62,6 +63,7 @@ TODO tasks for ASEP
 	calculate, and show a picklist, with their associated remaining balance
 	let the user pick them to assign, instead of new check
 * bugfixen
+** why negative checks no showing in paid?
 **	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 **	in paid, why are cancelleds payments not showing up at all?
