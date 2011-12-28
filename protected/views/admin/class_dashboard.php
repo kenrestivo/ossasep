@@ -4,7 +4,7 @@
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
-                  'dataProvider'=> $classes,
+                  'dataProvider'=> new KArrayDataProvider($classes),
                   'columns'=>array(
                       array(
                           'class'=>'CLinkColumn',
@@ -13,9 +13,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           'Yii::app()->createUrl("/ClassInfo/view",array("id"=>$data["id"]))',
                           'header'=>'Class'
                           ),
-                      'signup_status:text:Status',
-                      'signups:nozero:Signed up',
-                      'waitlist:nozero:Waitlisted',
+                      // 'signup_status:text:Status',
+                      'enrolled_count:nozero:Signed up',
+                      'waitlist_count:nozero:Waitlisted',
+                      'paid:currency:Paid',
+                      'returned:currency:Refunded',
                       'note:text:Admin Note'
                       ),
                   )); 
@@ -26,7 +28,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboardcancelled-grid',
-                  'dataProvider'=> $cancelled,
+                  'dataProvider'=> new KArrayDataProvider($cancelled),
                   'columns'=>array(
                       array(
                           'class'=>'CLinkColumn',
@@ -35,10 +37,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           'Yii::app()->createUrl("/ClassInfo/view",array("id"=>$data["id"]))',
                           'header'=>'Class'
                           ),
-                      'signups:nozero:Signed up',
-                      'waitlist:nozero:Waitlisted',
-                      'meetings:nozero:Meetings',
-                      'totalcost:currency:Cost Per Student',
+                      'enrolled_count:nozero:Signed up',
+                      'waitlist_count:nozero:Waitlisted',
+                      'paid:currency:Paid',
+                      'returned:currency:Refunded',
                       'note:text:Admin Note'
                       ),
                   )); 

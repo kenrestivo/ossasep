@@ -79,24 +79,11 @@ class AdminController extends Controller
     {
         $s = ClassSession::model()->findByPk(
             ClassSession::savedSessionId());
-        $cl = array();
-        foreach($s->active_classes as $c){
-            $cn = $c->attributes;
-            $cn['totalcost'] = $c->costSummary;
-            $cn['signups'] = $c->enrolled_count;
-            $cn['waitlist'] = $c->waitlist_count;
-            $cn['meetings'] = $c->active_mtg_count;
-            $cn['signup_status']  = $this->signupStatus($c, $cn['signups']);
-            $cl[] = $cn;
-        }
-        $dp = new KArrayDataProvider($cl);
-        $dp->pagination = array('pageSize'=>100); //XXX stupid hack, TURN IT OFF!
-
-
+        
         $this->render(
             'class_dashboard',
             array(
-                'classes' => $dp,
-                'cancelled' => new KArrayDataProvider($s->cancelled_classes)));
+                'classes' => $s->active_classes,
+                'cancelled' => $s->cancelled_classes));
     }
 }
