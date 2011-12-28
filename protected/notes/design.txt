@@ -8,7 +8,7 @@ G		for instructor sees only their class! and only email-safe emails
 	   company name
 		amount
 
-**	R  dashboard-instructors
+**	R  instructor paperwork and summary
 		name
 		missing paperwork (expired, or not received yet)
 		payments received
@@ -35,7 +35,7 @@ G		for instructor sees only their class! and only email-safe emails
 			amount
 		= totals
 		
-**	O (checks byy companies)
+**	O (checks by companies)
 		class
 		check
 			payer

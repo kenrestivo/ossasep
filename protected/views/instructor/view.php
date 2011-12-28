@@ -26,7 +26,7 @@ $tabs=array(
                          array('model' => $model), true),
     );
 
-if(!$model->isCompany){
+if(!$model->is_company){
     $tabs['Payment']= $this->renderPartial("_expenses", 
                                            array('model' => $model), true);
 } else{

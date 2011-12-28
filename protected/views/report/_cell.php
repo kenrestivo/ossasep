@@ -20,7 +20,7 @@ if($model->full){
 <br />
 
 <?php
-if($model->isCompany()){
+if($model->is_company){
     echo CHtml::encode($model->company->name);
 } else {
     echo CHtml::encode($model->instructorNames(' & '));

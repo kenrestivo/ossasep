@@ -10,6 +10,12 @@
  */
 class Company extends CActiveRecord
 {
+    /* NOTE! this is very important for stuff like classes which 
+       link to company but do not really have an instructor type
+       the OSSPTO COMPANY 1, id 1, is magical and special.
+     */
+    const OSSPTO_COMPANY = 1;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Company the static model class

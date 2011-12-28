@@ -25,7 +25,7 @@ if(Yii::app()->user->isGuest){
           <td>$<?= $class->costSummary ?> to 
           <?php 
                           $coname = $class->company->name;
-                          if($class->isCompany()){
+                          if($class->is_company){
                               echo "<strong>" . CHtml::encode($coname) . "</strong>";
                           } else {
                               echo CHtml::encode($coname);

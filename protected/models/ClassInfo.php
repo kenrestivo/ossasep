@@ -31,6 +31,10 @@ class ClassInfo extends CActiveRecord
 		return parent::model($className);
 	}
 
+    public function getIs_company()
+    {
+        return $this->company_id != Company::OSSPTO_COMPANY;
+    }
 
 
     public function getSummary()
@@ -275,11 +279,6 @@ order by class_info.class_name
             $total += $f->amount;
         }
         return $total;
-    }
-
-    public function isCompany()
-    {
-        return $this->company_id == InstructorType::COMPANY_TYPE;
     }
 
 

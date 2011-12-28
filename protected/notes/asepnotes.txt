@@ -1102,3 +1102,20 @@ total summary row at bottom of cgridview!
 
 
 	overflow:auto to make a scrollbox,if needed
+
+
+for marking checks delivered to company
+	she piles them by class
+	so the entry place would be by class
+	for marrking them paid
+		maybe income, mark them all
+
+in the class/_income
+	make the deposited column optional, or delivered, based on company
+		i did this in view somewhere.
+
+heidi aol
+	iwubwubu aol
+	krystalleaf  yahoo
+
+

@@ -9,7 +9,7 @@ $attributes =array(
 		'note:ntext',
 		'instructor_type.description:ntext:Instructor Type',
 	);
-if($model->isCompany){
+if($model->is_company){
     $attributes[]='company.name:ntext:Company';
 }
 
