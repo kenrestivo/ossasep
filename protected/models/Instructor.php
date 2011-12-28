@@ -201,7 +201,7 @@ where paids.instructor_id = :inst");
         $r=$c->queryRow(true,             array(
                             'inst' => $this->id,
                             'sid' => ClassSession::savedSessionId()));
-        return $r['total'];
+        return $r['owed'];
  
     }
 
