@@ -10,12 +10,12 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	<div class="row">
 
 <?php
 if(!isset($_GET['instructor_id'])){
 ?>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'instructor_id'); ?>
 
     <?php 
@@ -36,7 +36,6 @@ if(!isset($_GET['instructor_id'])){
           echo $constraint;
           ?>
 		<?php echo $form->error($model,'instructor_id'); ?>
-	</div>
 
     <?php } else { ?>
     Add class for: 
@@ -44,14 +43,15 @@ if(!isset($_GET['instructor_id'])){
           echo $form->hiddenField($model,"instructor_id"); 
                } 
 ?>
+	</div>
 
 
+	<div class="row">
 
 <?php
 if(!isset($_GET['class_id'])){
 ?>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
 
@@ -80,17 +80,22 @@ if(!isset($_GET['class_id'])){
 ?>
 
 		<?php echo $form->error($model,'class_id'); ?>
-	</div>
     <?php } else { ?>
     Add instructor for: 
 	<?php echo CHtml::encode($model->class->summary);
           echo $form->hiddenField($model,"class_id"); 
                } ?>
 
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'percentage'); ?>
-		<?php echo $form->textField($model,'percentage',array('size'=>60,'maxlength'=>256)); ?>
+    <?php 
+    echo $form->textField($model,'percentage',
+                          array('size'=>3,
+                                'maxlength'=>3)); 
+echo CHtml::encode(' %'); 
+?>
 		<?php echo $form->error($model,'percentage'); ?>
 	</div>
 

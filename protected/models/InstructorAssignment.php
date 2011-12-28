@@ -40,6 +40,7 @@ class InstructorAssignment extends CActiveRecord
 		return array(
 			array('instructor_id, class_id, percentage', 
                   'required'),
+            array('percentage', 'length', 'max' => 3),
 			array('instructor_id, class_id, percentage', 
                   'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().

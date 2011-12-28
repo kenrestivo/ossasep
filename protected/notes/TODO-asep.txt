@@ -26,32 +26,31 @@ TODO tasks for ASEP
 ***		for each check, present an optional list of unpaid things to pay
 			maybe just present a list of unpaid classes?
 			because that's all they'll really need anyway
-***		show amount - total value of current assignments
-			 these will ultimately need to be ajaxy
-			 rather then allowing it to be freeform?
 ***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
-*** ajax validation via yii built in -- warnings
+*** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
-****    a check or split where totals don't add up
-		make sure the incomes are not more or less than the total check
+****     enter a grade that is out of range
+****     entering to a session not the current default
+*** ajax validation via yii built in -- errors
+****    instructor percentages add up
 ****   	the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		extend http://www.yiiframework.com/doc/api/CExistValidator ?
-****    class over capacity but student set to enrolled
-****    instructor percentages add up
+****    a check or split where totals don't add up
+		make sure the incomes are not more or less than the total check
+*** trapping sql/fk errors through ajax validation
 ****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
 ****    change company name with instructors who are not in that company
-****    change the day of week but there are active meetings
 ****    unique validators! for all records really
 		all the linktables! it'll have to check key combos
 		first/last in student
 		class meeting/class_id unique
 		school day in calendar
-*** js validation via yii built in
-****     enter a grade that is out of range
-****     entering to a session not the current default
+*** ajax validation via yii built in -- warnings/notice
+****    class over capacity but student set to enrolled
+****    change the day of week but there are active meetings
 *** not sure where
 ***		how?
                populate a js array with the data, and check it that way?

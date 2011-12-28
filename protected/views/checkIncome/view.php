@@ -47,6 +47,11 @@ if($un < 0){
 }
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
+                  /* NOTE! this can't be ajax because the view above
+                     won't update and will be out of sync.
+                     I guess I could trigger that one to update, but that'd
+                     be stupid, just update the whole page instead.
+                   */
                   'ajaxUpdate' => false,
                   'summaryText' => $this->splitSummary(),
                   'dataProvider'=>new KArrayDataProvider(

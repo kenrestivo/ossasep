@@ -85,6 +85,8 @@ class InstructorAssignmentController extends Controller
 
         if(isset($_GET['class_id'])){
             $model->class_id = $_GET['class_id'];
+            $model->percentage = $model->class->instructor_discrepancy;
+
         }
 
 
