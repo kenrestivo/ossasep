@@ -405,4 +405,20 @@ where class_id = :cid");
 
 
 
+    public function getPaid()
+    {
+       $c = Yii::app()->db->createCommand(
+ "select sum(income.amount) as total
+from income
+left join check_income
+     on check_income.id = income.check_id
+where (check_income.returned is null
+        or check_income.returned < '1999-01-01')
+      and income.class_id = :cid");
+       $r=$c->queryRow(true, array('cid' => $this->id));
+        return $r['total'];
+    }
+
+
+
 }
