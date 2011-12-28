@@ -53,6 +53,11 @@ class Company extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'check_incomes' => array(self::HAS_MANY, 'CheckIncome', 'payee_id'),
+            'incomes' => array(
+                self::HAS_MANY, 
+                'Income', 
+                'id',
+                'through' => 'check_incomes'),
 			'instructors' => array(self::HAS_MANY, 'Instructor', 'company_id'),
 		);
 	}
