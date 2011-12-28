@@ -6,8 +6,6 @@ TODO tasks for ASEP
    vaguely remember it from here:
    http://www.yiiframework.com/forum/index.php?/topic/9636-cgridview-totals-or-summary-row/
 ** the rest of the reports (like, 20 of them)!
-** have a delivered checks screen for companies
-      pick which checks are delivered!
 * ui
 **	deposit form
 		either auto-enter or a button to auto enter automatically
@@ -22,6 +20,8 @@ TODO tasks for ASEP
 		will need some kind of undepposited status, total amount
 **	check_income
 ***     checks/_income: if user chooses student, constrain classes based on unpaid
+** have a delivered checks screen for companies
+      pick which checks are delivered!
 **	validation and data entry error checking/warning
 *** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope

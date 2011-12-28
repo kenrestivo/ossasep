@@ -178,6 +178,11 @@ class Instructor extends CActiveRecord
 
     }
 
+    /*
+      NOTE: this is EXPENSE delivered, not check ddelivered i..e for companies
+      TODO: overload it maybe? pick the right one based on company?
+     */
+
     public function getDelivered()
     {
         $c = Yii::app()->db->createCommand(
