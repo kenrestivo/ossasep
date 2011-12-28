@@ -11,8 +11,15 @@ class KFormatter extends CFormatter
 
     public function formatDate($value)
     {
-        if (! is_numeric($value)) {$value = strtotime($value);}
-        return parent::formatDate($value);
+        if (! is_numeric($value)) {
+            $value = strtotime($value);
+        }
+        // don't show stupid dates
+        if($value < 1){
+            return '';
+        } else{
+            return parent::formatDate($value);
+        }
     }
 
     public function formatTime($value)
