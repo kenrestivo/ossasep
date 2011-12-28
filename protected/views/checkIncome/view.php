@@ -48,6 +48,7 @@ if($un < 0){
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'ajaxUpdate' => false,
+                  'summaryText' => $this->splitSummary(),
                   'dataProvider'=>new KArrayDataProvider(
                       $model->incomes, 
                       array('keyField' => 'check_id,student_id,class_id',

@@ -202,4 +202,5 @@ class IncomeController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
