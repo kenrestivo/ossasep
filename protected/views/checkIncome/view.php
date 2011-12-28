@@ -37,14 +37,15 @@ $this->widget('zii.widgets.CDetailView', array(
 
 $un=$model->unassigned;
 if($un < 0){
+    echo "<div>Check completely assigned, no amounts to assign.</div>";
+}
   // could be a tab, but probably not necessary at the moment
     echo CHTML::link("Add Split for " . CHtml::encode(Yii::app()->format->currency(-$un) . ' (of '. Yii::app()->format->currency($model->amount) .')'),
                  array("Income/create",
                        'check_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
-} else {
-    echo "<div>Check completely assigned, no amounts to assign.</div>";
-}
+
+
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   /* NOTE! this can't be ajax because the view above
