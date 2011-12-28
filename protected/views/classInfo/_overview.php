@@ -13,12 +13,12 @@
 
 <p class="clear"></p>
 <?php
-echo CHTML::link("Edit  ". $model->class_name, 
+      echo CHTML::link(CHtml::encode("Edit  ". $model->summary), 
                  array('update', 'id'=>$model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 
 ?> &nbsp;<?php
-echo CHTML::link("Delete  ". $model->class_name, 
+echo CHTML::link(CHtml::encode("Delete  ". $model->summary), 
                  array('#', 
                        'linkOptions'=>array(
                            'submit'=>array(

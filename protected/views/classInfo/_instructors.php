@@ -3,7 +3,7 @@
 
 <?php 
 
-    echo CHTML::link("Add Instructor to " . $model->class_name, 
+     echo CHTML::link(CHtml::encode("Add Instructor to " . $model->summary), 
                  array("InstructorAssignment/create",
                        'class_id' => $model->id,
                        'company_id' => $model->company_id,

@@ -7,7 +7,7 @@ echo "Auto-populate " . ZHtml::weekdayTranslation($model->day_of_week). " meetin
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
 echo '<br /> or ';
-echo CHTML::link("Add 1 Meeting Date for ". $model->class_name, 
+echo CHTML::link(CHtml::encode("Add 1 Meeting Date for ". $model->summary), 
 				 array("ClassMeeting/create",
                        'class_id' => $model->id,
 					   'returnTo' => Yii::app()->request->requestUri));

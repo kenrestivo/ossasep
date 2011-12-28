@@ -1,6 +1,6 @@
 <?php 
 
-echo CHTML::link("Add Student to ". $model->class_name, 
+echo CHTML::link(CHtml::encode("Add Student to ". $model->summary), 
                  array("Signup/create",
                        'class_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));

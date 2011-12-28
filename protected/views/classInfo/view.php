@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
     );
 
 ?>
-<h1><?php echo $model->class_name; ?></h1>
+<h1><?php echo CHtml::encode($model->summary); ?></h1>
 
 
 
