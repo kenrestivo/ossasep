@@ -32,8 +32,10 @@ class CheckExpenseController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-                  'actions'=>array('index', 'view', 'create', 'update', 
-                                   'admin','delete', 'autocompletepayer'),
+                  'actions'=>array(
+                      'index', 'view', 'create', 'update', 
+                      'admin','delete', 'autocompletepayer',
+                      'autocompleteamount'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -189,6 +191,17 @@ class CheckExpenseController extends Controller
         }
         //TODO error out, 404?
     }
+
+    public function actionAutocompleteAmount()
+    {
+        if(isset($_POST['CheckExpense'])){
+            echo CJSON::encode('foo');
+            Yii::app()->end();
+        }
+        //TODO error out, 404?
+
+    }
+
 
 
 

@@ -15,7 +15,14 @@
     <?php echo $form->dropDownList(
         $model,'payee_id',
         CHtml::listData(ClassSession::current()->osspto_instructors,
-                        'id', 'full_name'));
+                        'id', 'full_name'),
+        array(
+            'ajax' => array(
+                'type'=>'POST', //request type
+                'url'=>Yii::app()->controller->createUrl("autocompleteamount"), 
+                'success'=>'function(data){
+                $("input#CheckExpense_amount").val(data);}',
+                )));
 ?> (Only OSSPTO instructors are paid with expense checks)
 		<?php echo $form->error($model,'payee_id'); ?>
 
