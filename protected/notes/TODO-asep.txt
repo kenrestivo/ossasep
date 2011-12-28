@@ -1,10 +1,6 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* serious problems
-** how do you check the status of a signup in income?
-   i have to link to it, and break everything else
-   this is going to take me hours to fix
 * formatting
 ** the rest of the reports (like, 20 of them)!
 **	subviews for companies
@@ -26,39 +22,35 @@ TODO tasks for ASEP
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
-**  class/_income: show checks with unpaid balance
-	calculate, and show a picklist, with their associated remaining balance
-	let the user pick them to assign, instead of new check
-** checks/_income: if user chooses student, constrain classes based on unpaid
 **	check_income
-		for each check, present an optional list of unpaid things to pay
+***		for each check, present an optional list of unpaid things to pay
 			maybe just present a list of unpaid classes?
 			because that's all they'll really need anyway
-		show amount - total value of current assignments
-			 these will ultimately need to be ajaxy
-			 rather then allowing it to be freeform?
+***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
-*** ajax validation via yii built in -- warnings
+*** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
+****     enter a grade that is out of range
+****     entering to a session not the current default
+*** ajax validation via yii built in -- errors
 ****   	the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		extend http://www.yiiframework.com/doc/api/CExistValidator ?
-****    a check or split where totals don't add up
+****    instructor percentages don't exceed 100%
+****    a check or split where totals exceed check
 		make sure the incomes are not more or less than the total check
-****    class over capacity but student set to enrolled
-****    instructor percentages add up
+*** trapping sql/fk errors through ajax validation
 ****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
 ****    change company name with instructors who are not in that company
-****    change the day of week but there are active meetings
 ****    unique validators! for all records really
 		all the linktables! it'll have to check key combos
 		first/last in student
 		class meeting/class_id unique
 		school day in calendar
-*** js validation via yii built in
-****     enter a grade that is out of range
-****     entering to a session not the current default
+*** ajax validation via yii built in -- warnings/notice
+****    class over capacity but student set to enrolled
+****    change the day of week but there are active meetings
 *** not sure where
 ***		how?
                populate a js array with the data, and check it that way?
@@ -72,6 +64,9 @@ TODO tasks for ASEP
 **	make search work
 		with checkboxes
 		with linked tables
+**  class/_income: show checks with unpaid balance
+	calculate, and show a picklist, with their associated remaining balance
+	let the user pick them to assign, instead of new check
 * bugfixen
 **	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope

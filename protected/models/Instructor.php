@@ -159,4 +159,7 @@ class Instructor extends CActiveRecord
                                            'criteria'=>$criteria,
                                            ));
 	}
+
+
+
 }

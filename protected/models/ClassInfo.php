@@ -387,4 +387,22 @@ where school_calendar.school_day > :start
         }
     }
 
+
+   public function getInstructor_percent()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select sum(instructor_assignment.percentage) as total from instructor_assignment
+where class_id = :cid");
+        $r=$c->queryRow(true, array('cid' => $this->id));
+        return (int)$r['total'];
+    }
+
+
+    public function getInstructor_discrepancy()
+    {
+        return 100 - $this->instructor_percent;
+    }
+
+
+
 }

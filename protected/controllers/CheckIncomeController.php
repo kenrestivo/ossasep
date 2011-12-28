@@ -271,4 +271,16 @@ class CheckIncomeController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function splitSummary()
+    {
+        $un = $this->_model->unassigned;
+        $res = Yii::app()->format->currency($this->_model->assigned) . ' assigned of ' . Yii::app()->format->currency($this->_model->amount) . ' total';
+        if($un != 0){
+            $res .= ' (' .Yii::app()->format->currency($un). ' discrepancy)';
+        }
+        return $res;
+    }
+
+
 }

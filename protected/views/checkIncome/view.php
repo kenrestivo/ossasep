@@ -24,6 +24,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'returned:date',
 		'deposit.deposited_date:date:Deposited',
         'session.summary:text:Session',
+        'unassigned:currency:Un-Assigned',
 	),
 )); 
 
@@ -33,14 +34,26 @@ $this->widget('zii.widgets.CDetailView', array(
 <p></p>
 <h2>Assignments</h2>
 <?php 
+
+$un=$model->unassigned;
+if($un < 0){
   // could be a tab, but probably not necessary at the moment
-echo CHTML::link("Add Split for " . $model->amount, 
+    echo CHTML::link("Add Split for " . CHtml::encode(Yii::app()->format->currency(-$un) . ' (of '. Yii::app()->format->currency($model->amount) .')'),
                  array("Income/create",
                        'check_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
-
+} else {
+    echo "<div>Check completely assigned, no amounts to assign.</div>";
+}
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
+                  /* NOTE! this can't be ajax because the view above
+                     won't update and will be out of sync.
+                     I guess I could trigger that one to update, but that'd
+                     be stupid, just update the whole page instead.
+                   */
+                  'ajaxUpdate' => false,
+                  'summaryText' => $this->splitSummary(),
                   'dataProvider'=>new KArrayDataProvider(
                       $model->incomes, 
                       array('keyField' => 'check_id,student_id,class_id',

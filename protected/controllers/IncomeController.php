@@ -88,6 +88,7 @@ class IncomeController extends Controller
 
         if(isset($_GET['check_id'])){
             $model->check_id = $_GET['check_id'];
+            $model->amount = -$model->check->unassigned;
         }
 
 		$this->render('create',array(
@@ -201,4 +202,5 @@ class IncomeController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
