@@ -1,5 +1,7 @@
 <div class="wide form">
 
+<?php $this->widget( 'ext.EChosen.EChosen'); ?>
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'check-expense-form',
 	'enableAjaxValidation'=>false,
@@ -10,26 +12,21 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'payee_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name'),
+                array('class' => 'chzn-select')); ?>
+		<?php echo $form->error($model,'payee_id'); ?>
+
+		<?php echo $form->error($model,'payee_id'); ?>
+	</div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'amount'); ?>
 		<?php echo $form->textField($model,'amount',array('size'=>19,'maxlength'=>19)); ?>
 		<?php echo $form->error($model,'amount'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'payer'); ?>
-		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'payer'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')); ?>
-		<?php echo $form->error($model,'payee_id'); ?>
-
-		<?php echo $form->error($model,'payee_id'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'check_num'); ?>
@@ -63,6 +60,12 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 ?>
 		<?php echo $form->error($model,'delivered'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'payer'); ?>
+		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'payer'); ?>
+	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'session_id'); ?>

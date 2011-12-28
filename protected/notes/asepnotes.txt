@@ -1110,12 +1110,15 @@ for marking checks delivered to company
 	for marrking them paid
 		maybe income, mark them all
 
-in the class/_income
-	make the deposited column optional, or delivered, based on company
-		i did this in view somewhere.
+for  marking EXPENSE checks delivered to OSSPTO instructor
+	they're a pile, she has to enter them.
+		
 
 heidi aol
 	iwubwubu aol
 	krystalleaf  yahoo
 
 
+
+dependent dropdown is not that hard
+	http://www.yiiframework.com/wiki/24/

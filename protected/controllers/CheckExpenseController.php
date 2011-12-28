@@ -68,7 +68,10 @@ class CheckExpenseController extends Controller
 			$model->attributes=$_POST['CheckExpense'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
+		} else {
+            // XXX why do i have to set defaults here, and default in rules doesn't cut it?
+            $model->payer='OSS PTO';
+        }
 
 		$this->render('create',array(
 			'model'=>$model,

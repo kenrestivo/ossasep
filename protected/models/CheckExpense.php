@@ -48,6 +48,10 @@ class CheckExpense extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, amount, payer, session_id, payee_id, delivered, check_num, check_date', 'safe', 'on'=>'search'),
+            array('payer','default',
+                  'value'=> 'OSS PTO',
+                  'setOnEmpty'=>true,
+                  'on'=>'insert'),
             array('session_id','default',
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
