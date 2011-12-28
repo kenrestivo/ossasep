@@ -7,6 +7,11 @@ foreach($model->owed as $owed){
     $payees[$owed['payee']->id]= $owed['payee'];
 }
 
+echo '</table>';
+
+
+
+
 /// TODO: move this to a menu?
 foreach($payees as $p){
     echo CHTML::link("Add Check to ". $p->name . " for " . $model->full_name . '<br />', 
@@ -19,7 +24,7 @@ foreach($payees as $p){
 }
 
 ?>
-</table>
+
 
 
 <?php
