@@ -1090,3 +1090,7 @@ validation!
 	i need to create a custom validator in order to have client side val
 		it needs to be its own class
 		http://www.yiiframework.com/extension/composite-unique-key-validatable/es
+	this is awesome:
+		http://www.yiiframework.com/wiki/161/understanding-safe-validation-rules/
+	equally awesome, validation summary:
+		http://www.yiiframework.com/wiki/56/reference-model-rules-validation

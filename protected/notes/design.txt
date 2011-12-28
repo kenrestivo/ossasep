@@ -1,3 +1,4 @@
+#-*- org -*-
 * reports
 **	A class summary (dashboard)?
 		class

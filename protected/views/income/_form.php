@@ -13,11 +13,11 @@
 	<?php echo $form->errorSummary($model); ?>
 
 
+	<div class="row">
 <?php
 if(!isset($_GET['check_id'])){
 ?>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'check_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -26,19 +26,19 @@ if(!isset($_GET['check_id'])){
                         'id', 'summary'))
           ?>
 		<?php echo $form->error($model,'check_id'); ?>
-	</div>
    <?php } else { ?>
     Assign income for: 
 	<?php echo CHtml::encode($model->check->summary);
           echo $form->hiddenField($model,"check_id"); 
                } ?>
+	</div>
 
 
+	<div class="row">
 <?php
 if(!isset($_GET['student_id'])){
 ?>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'student_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -47,20 +47,20 @@ if(!isset($_GET['student_id'])){
         array('class' => 'chzn-select')); ?>
 
 		<?php echo $form->error($model,'student_id'); ?>
-	</div>
     <?php } else { ?>
     Assign income for: 
 	<?php echo CHtml::encode($model->student->full_name);
           echo $form->hiddenField($model,"student_id"); 
                } ?>
 
+	</div>
 
 
+	<div class="row">
 <?php
 if(!isset($_GET['class_id'])){
 ?>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
     <?php echo $form->dropDownList(
@@ -69,13 +69,13 @@ if(!isset($_GET['class_id'])){
         array('class' => 'chzn-select')); ?>
 
 		<?php echo $form->error($model,'class_id'); ?>
-	</div>
 
     <?php } else { ?>
     Assign income for: 
 	<?php echo CHtml::encode($model->class->summary);
           echo $form->hiddenField($model,"class_id"); 
                } ?>
+	</div>
 
 
 	<div class="row">
