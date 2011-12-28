@@ -14,6 +14,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           )),
                   'columns'=>array(
                       'student.full_name:text:Student', 
+                      'class.summary:ntext:Class',
                       'amount:currency:Amount Assigned',
                       'check.check_num:ntext:Check #',
                       'check.payer:text:Payer',
