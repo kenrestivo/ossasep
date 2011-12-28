@@ -22,38 +22,29 @@ TODO tasks for ASEP
 			populate the info on the check
 		will need some kind of undepposited status, total amount
 **	check_income
-		an optional list of unpaid things to pay
+		for each check, present an optional list of unpaid things to pay
 			make it an autocomplete
-		calculate that checks add up to their summaries
-			this doesn't have to be js.
 			maybe just present a list of unpaid classes?
 			because that's all they'll really need anyway
 		show amount - total value of current assignments
 		these will ultimately need to be ajaxy
 		rather then allowing it to be freeform?
 		when adding check/income split,
-**	redo the unpaid thing, this is ridiculous
-		do this stupidity in sql
-				class
-				cost - income.amount for this student and class
-			where this student,
-				and the cost - paid is > 0!
-			sort by payee
-        link for new check, or assign existing check (unassigned)
-	    choose existing check as option in unpaid
-		an autocomplete with lists of checks with amounts still avail on them
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 **	validation and data entry error checking/warning
-*** ajax validation via yii built in
-****     change company name with instructors who are not in that company
-****     change the day of week but there are active meetings
-****     instructor percentages add up
-****     a check or split where totals don't add up
-****     class over capacity but student set to enrolled
+*** ajax validation via yii built in -- warnings
+	first make sure that the notice works, addNotice, i hope
 ****   	the student must be signed up for that class before it gets paid
-****     trying to delete things that have foreign keys
+		look up the keys, see that there's something there
+****    a check or split where totals don't add up
+		make sure the incomes are not more or less than the total check
+****    class over capacity but student set to enrolled
+****    instructor percentages add up
+****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
+****    change company name with instructors who are not in that company
+****    change the day of week but there are active meetings
 *** js validation via yii built in
 ****     enter a grade that is out of range
 ****     entering to a session not the current default
@@ -148,6 +139,16 @@ TODO tasks for ASEP
 ***	use either breadcrumbs or returnto, but be consistent!
 		breadcrumbs is cleaner than returnto, but will it work?
 ** useful
+***	redo the unpaid thing, this is ridiculous
+		 do this stupidity in sql
+				 class
+				 cost - income.amount for this student and class
+			 where this student,
+				 and the cost - paid is > 0!
+			 sort by payee
+         link for new check, or assign existing check (unassigned)
+	     choose existing check as option in unpaid
+		 an autocomplete with lists of checks with amounts still avail on them
 ***	manually edit dates, in m/d/y format
 ***	today button, fix
 ***	make company id 1  not editable or removable (company form/view)
