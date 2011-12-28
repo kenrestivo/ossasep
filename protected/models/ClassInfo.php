@@ -402,7 +402,9 @@ where class_id = :cid");
         return 100 - $this->instructor_percent;
     }
 
-
+/*
+  This is everything paid by the parents, refunds excluded
+ */
 
     public function getPaid()
     {
@@ -417,7 +419,9 @@ where (check_income.returned is null
        $r=$c->queryRow(true, array('cid' => $this->id));
         return $r['total'];
     }
-
+/*
+  Returned check portions for this class.
+ */
 
     public function getReturned()
     {
@@ -432,7 +436,10 @@ where (check_income.returned > '1999-01-01')
         return $r['total'];
     }
 
+    /*
+      Not yet paid by parents.
 
+     */
     public function getOwed()
     {
         return ($this->costSummary * $this->enrolled_count) - $this->paid;

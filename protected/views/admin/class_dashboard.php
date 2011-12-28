@@ -1,6 +1,16 @@
 <h3>Active classes</h3>
 <?php 
 
+$attributes=array(
+                      'class_name:ntext',
+                      'signup_status:text:Status',
+                      'enrolled_count:nozero:Signed up',
+                      'waitlist_count:nozero:Waitlisted',
+                      'owed:currency:Owed From Students',
+                      'paid:currency:Paid By Students',
+                      'returned:currency:Returned Payments',
+                      'note:text:Admin Note'
+    );
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
@@ -9,16 +19,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=> new KArrayDataProvider(
                       $classes,
                       array('pagination' => false)),
-                  'columns'=>array(
-                      'class_name:ntext',
-                      'signup_status:text:Status',
-                      'enrolled_count:nozero:Signed up',
-                      'waitlist_count:nozero:Waitlisted',
-                      'paid:currency:Paid',
-                      'owed:currency:Owed',
-                      'returned:currency:Refunded',
-                      'note:text:Admin Note'
-                      ),
+                  'columns'=>$attributes,
                   )); 
 ?>
 
@@ -31,15 +32,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
                   'dataProvider'=> new KArrayDataProvider($cancelled,
                       array('pagination' => false)),
-                  'columns'=>array(
-                      'class_name:ntext',
-                      'signup_status:text:Status',
-                      'enrolled_count:nozero:Signed up',
-                      'waitlist_count:nozero:Waitlisted',
-                      'paid:currency:Paid',
-                      'owed:currency:Owed',
-                      'returned:currency:Refunded',
-                      'note:text:Admin Note'
-                      ),
+                  'columns'=> $attributes,
                   )); 
 ?>

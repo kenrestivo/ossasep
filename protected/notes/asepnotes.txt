@@ -1122,3 +1122,37 @@ heidi aol
 
 dependent dropdown is not that hard
 	http://www.yiiframework.com/wiki/24/
+
+
+
+	hmmm I see something that could end up interesting... when an instructor gets paid a partial amount due and has mulitple classes, the money gets randomly dispersed... could classes be selected for payment in that situation?  what if Art Studio isn't meeting it's minimum, yet I want to pay Elaine for all her other classes?  
+
+
+
+negative amount for refund  check
+
+refunds
+	kid signed up for class, the check has been deposited,
+		they decided to cancel,
+		refunded total or partial, happens all the time.
+	or if it was a multiple check, they cancel
+
+
+	never happens that an instructors get paid
+	it happens that they do that
+	
+if instructors get paid faster, a kid could drop after instructor paid
+	then the instructor would have to  refundd it
+
+
+paid not freak out on negative numbers
+
+if the instructor does the refund
+	if there were refund from anywhere
+
+
+checks multiple classes
+	
+probably ok to have some stuff not perfectly clean
+
+report of negative numbers
