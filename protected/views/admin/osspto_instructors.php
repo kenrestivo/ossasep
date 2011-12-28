@@ -8,5 +8,8 @@
         array(          'pagination' => false)),
 	'columns'=>array(
 		'full_name',
+        'owed',
+        'paid',
+        'delivered',
 	),
 )); ?>

@@ -107,6 +107,12 @@ class Instructor extends CActiveRecord
                 self::HAS_MANY, 
                 'RequirementStatus', 
                 'instructor_id'),
+			'active_classes' => array(
+                self::HAS_MANY, 
+                'ClassInfo', 
+                'class_id',
+                'through' => 'instructor_assignments',
+                'condition' => "status != 'Cancelled'"),
             );
 	}
 
@@ -160,5 +166,39 @@ class Instructor extends CActiveRecord
                                            ));
 	}
 
+
+    public function getOwed()
+    {
+        // i just can't bring myself to do this as sql
+        $r = 0.0;
+        foreach($this->instructor_assignments as $c){
+            $r += ($c->percentage /100) * $c->class->paid;
+        }
+        return $r;
+    }
+
+
+    public function getPaid()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select sum(expense.amount) as total from expense
+ where  expense.instructor_id = :id");
+        $r=$c->queryRow(true, array('id' => $this->id));
+        return $r['total'];
+
+    }
+
+    public function getDelivered()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select sum(expense.amount) as total from expense
+left join check_expense 
+    on check_expense.id = expense.check_id
+where check_expense.delivered > '1999-01-01'
+  and expense.instructor_id = :id");
+        $r=$c->queryRow(true, array('id' => $this->id));
+        return $r['total'];
+
+    }
 
 }
