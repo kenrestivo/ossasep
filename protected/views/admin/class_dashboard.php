@@ -11,7 +11,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('pagination' => false)),
                   'columns'=>array(
                       'class_name:ntext',
-                      // 'signup_status:text:Status',
+                      'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
                       'paid:currency:Paid',
@@ -33,6 +33,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('pagination' => false)),
                   'columns'=>array(
                       'class_name:ntext',
+                      'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
                       'paid:currency:Paid',

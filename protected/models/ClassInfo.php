@@ -439,4 +439,24 @@ where (check_income.returned > '1999-01-01')
         return ($this->costSummary * $this->enrolled_count) - $this->paid;
     }
 
+
+
+    public function getSignup_status()
+    {
+        $count = $this->enrolled_count;
+        if($this->active_mtg_count < 1){
+            return 'No meeting dates!';
+        } elseif($count < 1){
+            return 'No signups yet.';
+        } elseif($count < $this->min_students){
+            return 'Needs min '. $this->min_students . ' students';
+        } elseif($count >= $this->max_students){
+            return 'Class Full';
+        } else {
+            return'OK';
+        }
+
+    }
+
+
 }

@@ -53,25 +53,6 @@ class AdminController extends Controller
     }
 
 
-    //TODO: move this to the model, i'll use it elsewhere
-    // i.e. classinfo::summarycounts
-
-    public function signupStatus($c, $count)
-    {
-
-        if($c->active_mtg_count < 1){
-            return 'No meeting dates!';
-        } elseif($count < 1){
-            return 'No signups yet.';
-        } elseif($count < $c->min_students){
-            return 'Needs min '. $c->min_students . ' students';
-        } elseif($count >= $c->max_students){
-            return 'Class Full';
-        } else {
-            return'OK';
-        }
-
-    }
 
 
 
