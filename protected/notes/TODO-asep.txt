@@ -6,9 +6,8 @@ TODO tasks for ASEP
    vaguely remember it from here:
    http://www.yiiframework.com/forum/index.php?/topic/9636-cgridview-totals-or-summary-row/
 ** the rest of the reports (like, 20 of them)!
-**	subviews for companies
-		have a delivered checks screen for those guys
-			pick which checks are delivered!
+** have a delivered checks screen for companies
+      pick which checks are delivered!
 * ui
 **	deposit form
 		either auto-enter or a button to auto enter automatically
@@ -50,16 +49,11 @@ TODO tasks for ASEP
 *** not sure where
 ***		how?
                populate a js array with the data, and check it that way?
-**	make sort work with linked subviews
-		not so easy
 **	will need security protection for signups-public
 		rbac? oh gawd...
 			
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
-**	make search work
-		with checkboxes
-		with linked tables
 **  class/_income: show checks with unpaid balance
 	calculate, and show a picklist, with their associated remaining balance
 	let the user pick them to assign, instead of new check
@@ -157,6 +151,10 @@ TODO tasks for ASEP
 ***	manually edit dates, in m/d/y format
 ***	today button, fix
 *** add date validator
+***	make search work with booleans/checkboxes
+*** make search work with linktables!
+***	make sort work with linked subviews
+		 not so easy
 ***	make company id 1  not editable or removable (company form/view)
 ***	autocompletes not dropdowns
 		students
