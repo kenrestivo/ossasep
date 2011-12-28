@@ -22,9 +22,6 @@ TODO tasks for ASEP
 			populate the info on the check
 		will need some kind of undepposited status, total amount
 **	check_income
-***		for each check, present an optional list of unpaid things to pay
-			maybe just present a list of unpaid classes?
-			because that's all they'll really need anyway
 ***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
 *** js validation via yii built in

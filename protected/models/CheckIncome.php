@@ -165,13 +165,12 @@ class CheckIncome extends CActiveRecord
   This does NOT deal with cancellations!
  */
 
-    public static function underAssignedChecks($session = null)
+    public static function underAssignedChecks($session = null, $company = null)
     {
         if(!isset($session)){
             $session = ClassSession::savedSessionId();
         }
-        return CheckIncome::model()->findAllBySql(
-            "select check_income.*
+        $q= "select check_income.*
              from check_income
               left join
                (select income.check_id as check_id,
@@ -180,7 +179,14 @@ class CheckIncome extends CActiveRecord
                 group by income.check_id) as assignments
                on  (assignments.check_id = check_income.id)
          where assignments.assigned < check_income.amount
-               and check_income.session_id = :session",
+               and check_income.session_id = :session";
+
+        if(isset($company)){
+            ///XXX hACK!, just use querybuilder will ya?
+            $q .= " and check_income.payee_id = $company";
+        }
+
+        return CheckIncome::model()->findAllBySql($q,
             array('session' => $session));
 
     }
