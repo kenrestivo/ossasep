@@ -17,6 +17,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
                       'paid:currency:Paid',
+                      'owed:currency:Owed',
                       'returned:currency:Refunded',
                       'note:text:Admin Note'
                       ),
@@ -40,6 +41,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
                       'paid:currency:Paid',
+                      'owed:currency:Owed',
                       'returned:currency:Refunded',
                       'note:text:Admin Note'
                       ),
