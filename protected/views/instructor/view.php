@@ -29,7 +29,11 @@ $tabs=array(
 if(!$model->isCompany){
     $tabs['Payment']= $this->renderPartial("_expenses", 
                                            array('model' => $model), true);
-    
+} else{
+
+    $tabs['Payment']= $this->renderPartial("/company/_payments", 
+                                           array('model' => $model->company), true);
+
 }
 
 $this->widget('zii.widgets.jui.CJuiTabs', 

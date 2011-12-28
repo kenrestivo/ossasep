@@ -53,13 +53,13 @@
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Instructor">Instructors</a>
       <br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Company">Companies</a>
+      <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckIncome">Income (Receivable)</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/CheckExpense">Expenses(Payable)</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/DepositDetails">Deposits</a>
-      <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Company">Companies</a>
       <br />
     </td>
 
