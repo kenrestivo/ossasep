@@ -21,6 +21,9 @@ TODO tasks for ASEP
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
+**  class/_income show checks with unpaid balance
+	calculate, and show a picklist, with their associated remaining balance
+	let the user pick them to assign, instead of new check
 **	check_income
 		for each check, present an optional list of unpaid things to pay
 			make it an autocomplete
