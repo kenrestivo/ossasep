@@ -79,6 +79,19 @@ class Income extends CActiveRecord
             );
 	}
 
+
+    /*
+      Because activerecord sucks.
+     */
+    public function getSignup()
+    {
+        return Signup::model()->find(
+            array("condition" => "(class_id = :cid and student_id = :sid)",
+                  'params' => array(
+                      'cid' => $this->class_id,
+                      'sid' => $this->student_id)));
+    }
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
