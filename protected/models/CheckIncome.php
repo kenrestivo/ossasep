@@ -181,4 +181,14 @@ class CheckIncome extends CActiveRecord
 
     }
 
+
+    public function getUnassigned_total()
+    {
+        $c = Yii::app()->db->createCommand(
+"select sum(income.amount) as total from income where check_id = :cid
+");
+$r=$c->queryRow(true, array('schoolyearid' => $model->id));
+
+    }
+
 }
