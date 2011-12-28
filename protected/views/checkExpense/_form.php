@@ -16,7 +16,7 @@
         $model,'payee_id',
         CHtml::listData(ClassSession::current()->osspto_instructors,
                         'id', 'full_name'));
-?> (NOTE: Only OSSPTO instructors are paid with expense checks)
+?> (Only OSSPTO instructors are paid with expense checks)
 		<?php echo $form->error($model,'payee_id'); ?>
 
 		<?php echo $form->error($model,'payee_id'); ?>

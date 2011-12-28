@@ -26,6 +26,7 @@ TODO tasks for ASEP
 	  they are by class, which is how she files them
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
+** expense checks, 
 **	validation and data entry error checking/warning
 *** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
@@ -71,6 +72,9 @@ TODO tasks for ASEP
 		or maybe they should, just not in totals?
 
 
+** chozen does not like being provided with arrays from sql finds
+   it makes the width of the box only as wide as teh FIRST item.
+   i tried dataprovider but it did not help
 * oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
 	or late refunds
