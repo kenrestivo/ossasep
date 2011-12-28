@@ -78,7 +78,7 @@ class AdminController extends Controller
         $this->render(
             'osspto_instructors',
             array(
-                'model' => $cs->osspto_instructors));
+                'instructors' => $cs->osspto_instructors));
         
     }
 

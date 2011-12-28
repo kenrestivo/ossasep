@@ -1,15 +1,20 @@
 <h1>OSSPTO-paid Instructors</h1>
 
+<table class="bordertable">
+<?php
+foreach($instructors as $i){
+    echo "<tr>";
+    echo "<td>" . $i->full_name . '</td>';
+    echo "<td>";
+    foreach($i->instructor_assignments as $c){
+        echo $c->class->class_name . ' ' . $c->percentage;
+        echo '<br />';
+    }
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'instructor-grid',
-	'dataProvider'=>new KArrayDataProvider(
-        $model,
-        array(          'pagination' => false)),
-	'columns'=>array(
-		'full_name',
-        'owed',
-        'paid',
-        'delivered',
-	),
-)); ?>
+    echo '</td>';
+
+
+    echo "</tr>";
+}
+?>
+</table>
