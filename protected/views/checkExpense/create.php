@@ -5,7 +5,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CheckExpense', 'url'=>array('index')),
 	array('label'=>'Manage CheckExpense', 'url'=>array('admin')),
 );
 ?>

@@ -13,18 +13,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View CheckExpense #<?php echo $model->id; ?></h1>
+<h1>View CheckExpense <?php echo $model->summary; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'amount',
-		'payer',
-		'payee.full_name',
 		'check_num',
-		'check_date',
-        'delivered',
+		'amount:currency',
+		'payee.full_name:ntext:Instructor',
+		'check_date:date',
+        'delivered:date',
+		'payer:ntext',
         'session.summary:text:Session',
 	),
 )); ?>

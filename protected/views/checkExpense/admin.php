@@ -5,7 +5,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CheckExpense', 'url'=>array('index')),
 	array('label'=>'Create CheckExpense', 'url'=>array('create')),
 );
 
@@ -42,13 +41,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'amount',
+		'amount:currency',
 		'payer',
-		'payee.full_name',
+		'payee.full_name:ntext:Instructor',
 		'check_num',
-		'check_date',
-        'delivered',
+		'check_date:date',
+        'delivered:date',
         'session.summary:text:Session',
 		array(
 			'class'=>'CButtonColumn',

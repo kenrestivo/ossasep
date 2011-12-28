@@ -24,6 +24,18 @@ class CheckExpense extends CActiveRecord
 		return parent::model($className);
 	}
 
+
+    public function getSummary()
+    {
+        return sprintf('#%s $%0.2f %s %s ',
+                       $this->check_num,
+                       $this->amount,
+                       Yii::app()->format->date($this->check_date),
+                       $this->payee->full_name
+            );
+    }
+
+
 	/**
 	 * @return string the associated database table name
 	 */
