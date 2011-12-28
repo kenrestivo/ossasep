@@ -21,12 +21,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'check.amount:currency:Total Check Amount',
                       'check.check_date:date:Check Date',
                       'check.delivered:date:Delivered to Company',
-                      array(
-                          'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'Income',
-                          'template'=>'{update}{delete}',
-                          'returnTo' => Yii::app()->request->requestUri
-                          ),
                       ),
                   )); 
 ?>

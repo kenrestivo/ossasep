@@ -24,6 +24,9 @@ $tabs=array(
     'Instructors' =>
     $this->renderPartial("_instructors", 
                          array('model' => $model), true),
+    'Classes' =>
+    $this->renderPartial("_classes", 
+                         array('model' => $model), true),
     'Payments' =>
     $this->renderPartial("_payments", 
                          array('model' => $model), true),

@@ -53,11 +53,6 @@ class Company extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'check_incomes' => array(self::HAS_MANY, 'CheckIncome', 'payee_id'),
-            'incomes' => array(
-                self::HAS_MANY, 
-                'Income', 
-                'id',
-                'through' => 'check_incomes'),
 			'instructors' => array(self::HAS_MANY, 'Instructor', 'company_id'),
 		);
 	}
@@ -94,4 +89,32 @@ class Company extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    function getIncomes()
+    {
+        return Income::model()->findAllBySql(
+            "select income.*
+from income
+left join check_income 
+   on income.check_id = check_income.id
+where check_income.payee_id = :id
+order by check_income.check_num asc",
+            array('id' => $this->id));
+    }
+
+    function getClasses()
+    {
+        return ClassInfo::model()->findAllBySql(
+            "select class_info.*
+from class_info
+left join instructor_assignment
+   on instructor_assignment.class_id = class_info.id
+left join instructor
+   on instructor_assignment.instructor_id = instructor.id
+where instructor.company_id = :id
+order by instructor.full_name asc",
+            array('id' => $this->id));
+
+    }
+
 }
