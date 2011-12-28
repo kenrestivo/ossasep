@@ -8,9 +8,5 @@
         array(          'pagination' => false)),
 	'columns'=>array(
 		'full_name',
-		array(
-			'class'=>'CButtonColumn',
-            'template'=>'{view}{delete}',
-		),
 	),
 )); ?>

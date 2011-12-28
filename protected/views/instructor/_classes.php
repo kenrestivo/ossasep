@@ -13,7 +13,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       array('name' => "Name",
                             'value' => '$data->class->class_name'),
-                      'percentage',
+                      'percentage:percent',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'InstructorAssignment',
