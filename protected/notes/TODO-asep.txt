@@ -13,6 +13,7 @@ TODO tasks for ASEP
 			pick which checks are delivered!
 		actually, do it in company, which is where it belongs
 		then show the COMPANY paid/delivered in the instructor space
+**** this is BROKEN, the links to income are useless.
 * ui
 **	deposit form
 		either auto-enter or a button to auto enter automatically
