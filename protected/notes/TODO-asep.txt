@@ -1,10 +1,6 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* serious problems
-** how do you check the status of a signup in income?
-   i have to link to it, and break everything else
-   this is going to take me hours to fix
 * formatting
 ** the rest of the reports (like, 20 of them)!
 **	subviews for companies

@@ -161,6 +161,10 @@ class CheckIncome extends CActiveRecord
                                            ));
 	}
 
+/*
+  This does NOT deal with cancellations!
+ */
+
     public static function underAssignedChecks($session = null)
     {
         if(!isset($session)){
@@ -180,15 +184,26 @@ class CheckIncome extends CActiveRecord
             array('session' => $session));
 
     }
+/*
+  This does NOT deal with cancellations!
+ */
 
-
-    public function getUnassigned_total()
+    public function getSum_assigned()
     {
         $c = Yii::app()->db->createCommand(
-"select sum(income.amount) as total from income where check_id = :cid
-");
-$r=$c->queryRow(true, array('schoolyearid' => $model->id));
+            "select sum(income.amount) as total from income
+where check_id = :cid");
+        $r=$c->queryRow(true, array('cid' => $this->id));
+        return $r['total'];
 
+    }
+/*
+  This does NOT deal with cancellations!
+ */
+
+    public function getSum_unassigned()
+    {
+        return $this->sum_assigned - $this->amount;
     }
 
 }
