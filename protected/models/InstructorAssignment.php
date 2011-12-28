@@ -99,4 +99,13 @@ class InstructorAssignment extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    /*
+      Divides some amount supplied, by this percentage
+     */
+
+    public function split($amount)
+    {
+        return $amount * ($this->percentage / 100);  
+    }
 }

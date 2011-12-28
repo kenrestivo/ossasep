@@ -155,7 +155,7 @@ class ClassSession extends CActiveRecord
             $date = date('Y-m-d');
         }
         $r=ClassSession::model()->findBySql(
-            "select * from class_session 
+            "select class_session.* from class_session 
             where end_date >= :date order by start_date asc limit 1",
             array('date' => $date));
         return $r;

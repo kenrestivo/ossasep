@@ -49,7 +49,7 @@ class ToolsController extends Controller
     {
         foreach(
             ClassInfo::model()->findAllBySQL(
-                "select * from class_info where session_id = :sess", 
+                "select class_info.* from class_info where session_id = :sess", 
                 array('sess' => ClassSession::savedSessionId()))
                 as $model)
         {
