@@ -63,17 +63,6 @@ G		for instructor sees only their class! and only email-safe emails
 			amount
 		total
 
-**	Q dashboard-class
-		classname
-		date
-		time
-		signuup status (full, or not enough, or count of total signed up)
-		wait list count
-		session count
-		payments total
-		add financial summary for class
-		total amount income for class
-
 **	S list of scholarships report
        for karen
 		student

@@ -1,6 +1,10 @@
 <h3><?= CHtml::link($model->class_name, 
                      array("/ClassInfo/view", 'id' => $model->id)) ?>
-     <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?></h3>
+     <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?>, 
+     <?php echo CHtml::encode(ZHtml::weekdayTranslation($model->day_of_week)); ?>, 
+     <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?>, 
+<?= CHtml::encode($model->location) ?>
+</h3>
 
 <?php
      

@@ -33,7 +33,7 @@
 
 
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet (Front Office Use)</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
       <br />
