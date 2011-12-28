@@ -3,7 +3,7 @@
 <?php 
     $payees= array();
 foreach($model->owed as $owed){
-    echo '<tr><td>' . $owed['class']->class_name . "</td><td>". $owed['payee']->name . "</td><td>" . $owed['amount'] . "</td></tr>";
+    echo '<tr><td>' . CHtml::encode($owed['class']->class_name) . "</td><td>". CHtml::encode($owed['payee']->name) . "</td><td>" . CHtml::encode($owed['amount']) . "</td></tr>";
     $payees[$owed['payee']->id]= $owed['payee'];
 }
 
@@ -16,7 +16,7 @@ echo '</table>';
 foreach($payees as $p){
     echo '<span class="span-11">';
 
-    echo CHTML::link("Add New Check to ". $p->name . " for " . $model->full_name . '<br />', 
+    echo CHTML::link(CHtml::encode("Add New Check to ". $p->name . " for " . $model->full_name) . '<br />', 
                  array("CheckIncome/multiEntry",
                        'student_id' => $model->id,
                        'company_id' => $p->id,
@@ -32,7 +32,7 @@ foreach($payees as $p){
                        'student_id' => $model->id,
                        'company_id' => $p->id,
                        'returnTo' => Yii::app()->request->requestUri));
-        echo CHtml::encode(': '). Yii::app()->format->currency(-$check->unassigned) . ' available';
+        echo CHtml::encode(': '.Yii::app()->format->currency(-$check->unassigned) . ' available');
         echo '<br />';
 
 

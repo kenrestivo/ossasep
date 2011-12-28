@@ -20,7 +20,7 @@ echo CHTML::link("Edit  ". $model->full_name,
                        'returnTo' => Yii::app()->request->requestUri));
 
 ?> &nbsp;<?php
-echo CHTML::link("Delete  ". $model->full_name, 
+echo CHTML::link("Delete  ". CHtml::encode($model->full_name), 
                  array('#', 
                        'linkOptions'=>array(
                            'submit'=>array(

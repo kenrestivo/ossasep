@@ -9,7 +9,7 @@
 ?>
 
 
-<h1>View Student <?php echo $model->full_name; ?> </h1>
+<h1>View Student <?php echo CHtml::encode($model->full_name); ?> </h1>
 
 
 
