@@ -9,7 +9,7 @@ TODO tasks for ASEP
 		have a delivered checks screen for those guys
 			pick which checks are delivered!
 		actually, do it in company, which is where it belongs
-	
+		then show the COMPANY paid/delivered in the instructor space
 * ui
 **	deposit form
 		either auto-enter or a button to auto enter automatically

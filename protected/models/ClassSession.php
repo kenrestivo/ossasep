@@ -161,4 +161,28 @@ class ClassSession extends CActiveRecord
         return $r;
     }
 
+    /* 
+       Just a utility function, often getting this session! returns obj
+     */
+    public static function current()
+    {
+        return ClassSession::model()->findByPk(ClassSession::savedSessionId());
+    }
+
+
+    /* 
+       XXX couldn't this be done through AR with a through => classes??
+     */
+    public function getInstructors()
+    {
+        return Instructor::model()->findAllBySql(
+            "select * from instructor 
+left join instructor_assignment
+   on instructor.id = instructor_assignment.instructor_id 
+left join class_info on class_info.id = instructor_assignment.class_id
+where class_info.session_id = :sid
+group by instructor_id
+order by instructor.full_name asc",
+            array('sid' => $this->id));
+    }
 }

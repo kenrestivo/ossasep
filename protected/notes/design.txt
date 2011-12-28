@@ -5,13 +5,7 @@
 		= sum amt
 
 **	E (sign up sheet?)
-		class
-			student (all info)
-			(waitlists)
-			checks??
-				amount paid
-				payment type? payee? (to osspto?)
-		for heidi with paid/unpaid to instructor (see jpg)
+		for heidi with paid/unpaid to instructor
 G		for instructor sees only their class! and only email-safe emails
 			
 **	C  (payment for teachers)

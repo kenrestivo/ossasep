@@ -33,7 +33,7 @@ class AdminController extends Controller
 		return array(
 			array('allow',  
                   'actions'=>array('signupsheet', 'classdashboard', 
-                                   'signupstatus'),
+                                   'signupstatus', 'ossptoinstructorsdashboard'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -67,4 +67,19 @@ class AdminController extends Controller
                 'classes' => $s->active_classes,
                 'cancelled' => $s->cancelled_classes));
     }
+
+
+    public function actionOSSPTOInstructorsDashboard()
+    {
+
+        $cs=ClassSession::current();
+        
+        // TODO:: move this find to the model perhaps, may need it elsewhere?
+        $this->render(
+            'osspto_instructors',
+            array(
+                'instructors' => $cs->instructors));
+        
+    }
+
 }
