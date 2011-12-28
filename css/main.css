@@ -273,6 +273,7 @@ table.bordertable th,td.short{
   border-color: #0000ff;
   border-width: 1px 1px 1px 1px;
   border-style: solid;
+  border-collapse: collapse;
   margin-bottom: 18px;
   line-height: 18px;
   
