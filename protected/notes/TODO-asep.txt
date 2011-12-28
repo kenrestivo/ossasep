@@ -33,11 +33,11 @@ TODO tasks for ASEP
 ****     enter a grade that is out of range
 ****     entering to a session not the current default
 *** ajax validation via yii built in -- errors
-****    instructor percentages add up
 ****   	the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		extend http://www.yiiframework.com/doc/api/CExistValidator ?
-****    a check or split where totals don't add up
+****    instructor percentages don't exceed 100%
+****    a check or split where totals exceed check
 		make sure the incomes are not more or less than the total check
 *** trapping sql/fk errors through ajax validation
 ****    trying to delete things that have foreign keys
