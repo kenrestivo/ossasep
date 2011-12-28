@@ -188,7 +188,7 @@ class CheckIncome extends CActiveRecord
   This does NOT deal with cancellations!
  */
 
-    public function getSum_assigned()
+    public function getAssigned()
     {
         $c = Yii::app()->db->createCommand(
             "select sum(income.amount) as total from income
@@ -201,9 +201,9 @@ where check_id = :cid");
   This does NOT deal with cancellations!
  */
 
-    public function getSum_unassigned()
+    public function getUnassigned()
     {
-        return $this->sum_assigned - $this->amount;
+        return (int)$this->assigned - (int)$this->amount;
     }
 
 }
