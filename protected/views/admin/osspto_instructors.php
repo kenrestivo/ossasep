@@ -1,7 +1,7 @@
 <h1>OSSPTO-paid Instructors</h1>
 
 <table class="bordertable">
-<tr><th>Instructor</th><th>Classes</th><th>Received</th><th>Paid</th><th>Delivered</th></tr>
+<tr><th>Instructor</th><th>Classes</th><th>Owed</th><th>Paid</th><th>Delivered</th></tr>
 <?php
 foreach($instructors as $i){
     echo "<tr>";
