@@ -34,14 +34,20 @@ $this->widget('zii.widgets.CDetailView', array(
 <p></p>
 <h2>Assignments</h2>
 <?php 
+
+$un=$model->unassigned;
+if($un < 0){
   // could be a tab, but probably not necessary at the moment
-echo CHTML::link("Add Split for " . $model->amount, 
+    echo CHTML::link("Add Split for " . CHtml::encode(Yii::app()->format->currency(-$un) . ' (of '. Yii::app()->format->currency($model->amount) .')'),
                  array("Income/create",
                        'check_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
-
+} else {
+    echo "<div>Check completely assigned, no amounts to assign.</div>";
+}
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
+                  'ajaxUpdate' => false,
                   'dataProvider'=>new KArrayDataProvider(
                       $model->incomes, 
                       array('keyField' => 'check_id,student_id,class_id',

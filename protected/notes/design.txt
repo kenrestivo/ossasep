@@ -92,9 +92,9 @@ G		for instructor sees only their class! and only email-safe emails
 		then total paid to them
 		
 **	W integrity check dashboard
-            check status/dashboard, show that they add up!
-			unpaid classes (useful for checking)
 			unassigned check amounts		
+			   check status/dashboard, show that they add up!
+			unpaid classes (useful for checking)
 			instructors don't add up to > 100
 			classes overpaid, i.e. 2 or more checks for same class
 			instructors that don't add up to the company (class assignments)
