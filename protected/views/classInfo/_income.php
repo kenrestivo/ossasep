@@ -1,9 +1,4 @@
-<?php 
-echo CHTML::link(CHtml::encode("Add Check for " . $model->class_name), 
-                 array("Income/create",
-                       'class_id' => $model->id,
-                       'returnTo' => Yii::app()->request->requestUri));
-
+<?php
 
 $attributes = array(
     'student.full_name:text:Student', 
@@ -38,3 +33,34 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>$attributes,
                   )); 
 ?>
+
+
+<?php 
+
+    echo '<span class="span-11">';
+echo CHTML::link(CHtml::encode("Add Check for " . $model->class_name), 
+                 array("CheckIncome/create",
+                       'class_id' => $model->id,
+                       'returnTo' => Yii::app()->request->requestUri));
+
+    echo "</span><span class=\"span-9 last\">";
+    $un = CheckIncome::underAssignedChecks(null);
+    if(count($un) > 0){
+        echo "Or pick from one of these checks:<br />";
+    }
+    foreach($un as $check){
+        echo CHTML::link($check->summary,
+                 array("Income/create",
+                       'class_id' => $model->id,
+                       'company_id' => $model->company_id,
+                       'returnTo' => Yii::app()->request->requestUri));
+        echo CHtml::encode(': '.Yii::app()->format->currency(-$check->unassigned) . ' available');
+        echo '<br />';
+
+
+    }
+    echo "</span><br />";
+?>
+
+<div class="clear"></div>
+
