@@ -14,7 +14,7 @@ echo '</table>';
 
 /// TODO: move this to a menu?
 foreach($payees as $p){
-    echo '<div><span class="span-11">';
+    echo '<span class="span-11">';
 
     echo CHTML::link("Add New Check to ". $p->name . " for " . $model->full_name . '<br />', 
                  array("CheckIncome/multiEntry",
