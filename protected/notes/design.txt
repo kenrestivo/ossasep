@@ -1,15 +1,11 @@
 #-*- org -*-
 * reports
-**	A class summary (dashboard)?
-		class
-		= sum amt
-
 **	E (sign up sheet?)
 		for heidi with paid/unpaid to instructor
 G		for instructor sees only their class! and only email-safe emails
 			
 **	D  (payment for companies)
-		company name
+	   company name
 		amount
 
 **	R  dashboard-instructors
