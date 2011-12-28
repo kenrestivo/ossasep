@@ -253,7 +253,9 @@ class CheckIncomeController extends Controller
                     function($r) { return $r[0]; },
                     $c->queryAll(
                     false, 
-                    array('text' => $_GET['term'] . '%'))));
+                    // this is where i put the %'s in
+                    // because PDO quotes my :text
+                    array('text' => '%' .$_GET['term'] . '%'))));
             Yii::app()->end();
         }
         //TODO error out, 404?
