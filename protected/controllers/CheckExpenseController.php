@@ -195,7 +195,7 @@ class CheckExpenseController extends Controller
     public function actionAutocompleteAmount()
     {
         if(isset($_POST['CheckExpense'])){
-            echo CJSON::encode('foo');
+            echo CJSON::encode('99.99');
             Yii::app()->end();
         }
         //TODO error out, 404?

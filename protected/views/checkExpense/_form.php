@@ -21,7 +21,7 @@
                 'type'=>'POST', //request type
                 'url'=>Yii::app()->controller->createUrl("autocompleteamount"), 
                 'success'=>'function(data){
-                $("input#CheckExpense_amount").val(data);}',
+                $("input#CheckExpense_amount").val(jQuery.parseJSON(data));}',
                 )));
 ?> (Only OSSPTO instructors are paid with expense checks)
 		<?php echo $form->error($model,'payee_id'); ?>
