@@ -4,15 +4,13 @@
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
-                  'dataProvider'=> new KArrayDataProvider($classes),
+                  'htmlOptions'=>array('style'=>'cursor: pointer;'),
+                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+                  'dataProvider'=> new KArrayDataProvider(
+                      $classes,
+                      array('pagination' => false)),
                   'columns'=>array(
-                      array(
-                          'class'=>'CLinkColumn',
-                          'labelExpression'=>'$data["class_name"]',
-                          'urlExpression'=>
-                          'Yii::app()->createUrl("/ClassInfo/view",array("id"=>$data["id"]))',
-                          'header'=>'Class'
-                          ),
+                      'class_name:ntext',
                       // 'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
@@ -29,15 +27,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboardcancelled-grid',
-                  'dataProvider'=> new KArrayDataProvider($cancelled),
+                  'htmlOptions'=>array('style'=>'cursor: pointer;'),
+                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+                  'dataProvider'=> new KArrayDataProvider($cancelled,
+                      array('pagination' => false)),
                   'columns'=>array(
-                      array(
-                          'class'=>'CLinkColumn',
-                          'labelExpression'=>'$data["class_name"]',
-                          'urlExpression'=>
-                          'Yii::app()->createUrl("/ClassInfo/view",array("id"=>$data["id"]))',
-                          'header'=>'Class'
-                          ),
+                      'class_name:ntext',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
                       'paid:currency:Paid',
