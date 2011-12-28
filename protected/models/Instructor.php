@@ -167,16 +167,6 @@ class Instructor extends CActiveRecord
 	}
 
 
-    public function getOwed()
-    {
-        // i just can't bring myself to do this as sql
-        $r = 0.0;
-        foreach($this->instructor_assignments as $c){
-            $r += ($c->percentage /100) * $c->class->paid;
-        }
-        return $r;
-    }
-
 
     public function getPaid()
     {

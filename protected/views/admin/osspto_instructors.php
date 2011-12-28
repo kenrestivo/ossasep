@@ -6,15 +6,18 @@ foreach($instructors as $i){
     echo "<tr>";
     echo "<td>" . $i->full_name . '</td>';
     echo "<td>";
+    $owed = 0.0;
     foreach($i->instructor_assignments as $c){
-        echo $c->class->class_name . ' ' . $c->percentage . ' ';
-        echo $c->split($c->class->paid);
+        $s = $c->split($c->class->paid);
+        $owed += $s;
+        echo $c->class->class_name . ' ' . $c->percentage . ' ' . $s;
         echo '<br />';
     }
 
     echo '</td>';
-
-
+    echo "<td>$owed</td>";
+    echo '<td>' .  $i->paid .'</td>';
+    echo '<td>' .  $i->delivered .'</td>';
     echo "</tr>";
 }
 ?>
