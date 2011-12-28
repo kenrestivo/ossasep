@@ -176,7 +176,7 @@ class ClassSession extends CActiveRecord
     public function getOsspto_Instructors()
     {
         return Instructor::model()->findAllBySql(
-            "select * from instructor 
+            "select instructor.* from instructor 
 left join instructor_assignment
    on instructor.id = instructor_assignment.instructor_id 
 left join class_info on class_info.id = instructor_assignment.class_id
