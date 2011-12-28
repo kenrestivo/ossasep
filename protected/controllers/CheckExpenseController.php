@@ -33,7 +33,7 @@ class CheckExpenseController extends Controller
 		return array(
 			array('allow', // admin only
                   'actions'=>array('index', 'view', 'create', 'update', 
-                                   'admin','delete'),
+                                   'admin','delete', 'autocompletepayer'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -171,4 +171,25 @@ class CheckExpenseController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionAutocompletePayer()
+    {
+        if(isset($_GET['term'])){
+            $c = Yii::app()->db->createCommand(
+                "select payer from check_expense where payer like :text 
+                    group by payer");
+            
+            echo CJSON::encode(
+                array_map(
+                    function($r) { return $r[0]; },
+                    $c->queryAll(
+                    false, 
+                    array('text' => $_GET['term'] . '%'))));
+            Yii::app()->end();
+        }
+        //TODO error out, 404?
+    }
+
+
+
 }

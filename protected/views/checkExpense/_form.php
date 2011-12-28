@@ -1,6 +1,5 @@
 <div class="wide form">
 
-<?php $this->widget( 'ext.EChosen.EChosen'); ?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'check-expense-form',
@@ -15,8 +14,9 @@
 		<?php echo $form->labelEx($model,'payee_id'); ?>
     <?php echo $form->dropDownList(
         $model,'payee_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name'),
-                array('class' => 'chzn-select')); ?>
+        CHtml::listData(ClassSession::current()->osspto_instructors,
+                        'id', 'full_name'));
+?> (NOTE: Only OSSPTO instructors are paid with expense checks)
 		<?php echo $form->error($model,'payee_id'); ?>
 
 		<?php echo $form->error($model,'payee_id'); ?>
@@ -36,7 +36,21 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'check_date'); ?>
-		<?php echo $form->textField($model,'check_date'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'check_date',
+  'value'=>$model->delivered,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->delivered,
+   ),
+));
+?>
 		<?php echo $form->error($model,'check_date'); ?>
 	</div>
 
@@ -62,7 +76,17 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'payer'); ?>
-		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
+    <?php
+    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+    'name'=>'payer',
+    'source'=>Yii::app()->controller->createUrl("autocompletepayer"),
+    // additional javascript options for the autocomplete plugin
+    'options'=>array(
+        'minLength'=>'2',
+        ),
+                      ));
+?>
+
 		<?php echo $form->error($model,'payer'); ?>
 	</div>
 
