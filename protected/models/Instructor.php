@@ -167,6 +167,45 @@ class Instructor extends CActiveRecord
 	}
 
 
+/*
+  XXX This is NASTY but I don't know a cleaner way to do it.
+ */
+
+    public function getOwed()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select sum(paids.total_paid) as owed, 
+       paids.instructor_id
+from    
+    (select csum.total_paid, 
+            instructor_assignment.percentage, 
+           instructor_assignment.instructor_id, 
+           (csum.total_paid * instructor_assignment.percentage/100) as owed
+    from instructor_assignment
+    left join 
+       (select class_info.class_name, sum(income.amount) as total_paid,
+             income.class_id as class_id
+            from income
+            left join check_income
+                 on check_income.id = income.check_id
+            left join class_info 
+                 on class_info.id = income.class_id
+            where (check_income.returned is null
+                    or check_income.returned < '1999-01-01')
+                  and class_info.session_id = :sid
+            group by class_info.id
+            order by class_info.class_name asc) as csum
+        on csum.class_id = instructor_assignment.class_id
+    where total_paid is not null) as paids
+where paids.instructor_id = :inst");
+        $r=$c->queryRow(true,             array(
+                            'inst' => $this->id,
+                            'sid' => ClassSession::savedSessionId()));
+        return $r['total'];
+ 
+    }
+
+
 
     public function getPaid()
     {
