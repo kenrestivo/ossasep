@@ -12,8 +12,8 @@
    * @property integer $cash
    * @property string $check_date
    * @property string $returned
- * @property integer $session_id
- * @property string $delivered
+   * @property integer $session_id
+   * @property string $delivered
    * @property integer $deposit_id
    */
 class CheckIncome extends CActiveRecord
@@ -27,14 +27,14 @@ class CheckIncome extends CActiveRecord
 		return parent::model($className);
 	}
     public function getSummary()
-        {
-            return sprintf('#%s $%0.2f %s %s ',
-                           $this->check_num,
-                           $this->amount,
-                           Yii::app()->format->date($this->check_date),
-                           $this->payer
-                );
-        }
+    {
+        return sprintf('#%s $%0.2f %s %s ',
+                       $this->check_num,
+                       $this->amount,
+                       Yii::app()->format->date($this->check_date),
+                       $this->payer
+            );
+    }
 
 
     /// TODO: replace with with-related
@@ -163,7 +163,7 @@ class CheckIncome extends CActiveRecord
 
 /*
   This does NOT deal with cancellations!
- */
+*/
 
     public static function underAssignedChecks($session = null, $company = null)
     {
@@ -187,12 +187,12 @@ class CheckIncome extends CActiveRecord
         }
 
         return CheckIncome::model()->findAllBySql($q,
-            array('session' => $session));
+                                                  array('session' => $session));
 
     }
 /*
   This does NOT deal with cancellations!
- */
+*/
 
     public function getAssigned()
     {
@@ -205,7 +205,7 @@ where check_id = :cid");
     }
 /*
   This does NOT deal with cancellations!
- */
+*/
 
     public function getUnassigned()
     {
