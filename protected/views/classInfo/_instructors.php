@@ -3,13 +3,16 @@
 
 <?php 
 
-$un=$model->instructor_discrepancy;
-if($un  > 0){
     echo CHTML::link("Add Instructor to " . $model->class_name, 
                  array("InstructorAssignment/create",
                        'class_id' => $model->id,
                        'company_id' => $model->company_id,
                        'returnTo' => Yii::app()->request->requestUri));
+
+$un=$model->instructor_discrepancy;
+if($un  == 0){
+    echo "<div>Instructors completely assigned, no instructor percentage remaining.</div>";
+}
 ?>
 </span>
 <span class="span-9 last">
@@ -20,10 +23,6 @@ if($un  > 0){
 echo CHTML::link("(Change)",
                  array('update', 'id'=>$model->id,
                        'returnTo' => Yii::app()->request->requestUri));
-
-} else {
-    echo "<div>Instructors completely assigned, no instructor percentage remaining. Change or delete existing instructor percentages first.</div>";
-}
 
 ?>
 
@@ -41,6 +40,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                      be stupid, just update the whole page instead.
                    */
                   'ajaxUpdate' => false,
+                  'summaryText' => $this->instructorSplitSummary(),
                    'dataProvider'=>new KArrayDataProvider(
                       $model->instructor_assignments, 
                       array('keyField' => 'class_id,instructor_id',

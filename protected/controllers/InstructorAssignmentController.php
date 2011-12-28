@@ -198,4 +198,6 @@ class InstructorAssignmentController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
 }

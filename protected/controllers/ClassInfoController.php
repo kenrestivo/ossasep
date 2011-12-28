@@ -182,6 +182,19 @@ class ClassInfoController extends Controller
 			Yii::app()->end();
 		}
 	}
-}
 
+
+
+    public function instructorSplitSummary()
+    {
+        $un = $this->_model->instructor_discrepancy;
+        $res = Yii::app()->format->percent($this->_model->instructor_percent) . ' assigned';
+        if($un != 0){
+            $res .= ' (' .Yii::app()->format->percent($un). ' discrepancy)';
+        }
+        return $res;
+    }
+
+
+}
 ?>
