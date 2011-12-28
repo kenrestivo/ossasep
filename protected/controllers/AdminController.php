@@ -72,13 +72,11 @@ class AdminController extends Controller
     public function actionOSSPTOInstructorsDashboard()
     {
 
-        $cs=ClassSession::current();
-        
         // TODO:: move this find to the model perhaps, may need it elsewhere?
         $this->render(
             'osspto_instructors',
             array(
-                'instructors' => $cs->osspto_instructors));
+                'instructors' => ClassSession::current()->osspto_instructors));
         
     }
 
