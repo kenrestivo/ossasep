@@ -8,16 +8,6 @@
 		for heidi with paid/unpaid to instructor
 G		for instructor sees only their class! and only email-safe emails
 			
-**	C  (payment for teachers)
-		teacher
-		= sum amount due
-		classes
-			= percent it's paid for
-        instructor owed report
-		is for debbie
-		owed to instructor is actually paid in cash
-		summaries by class
-		total for class total actually paid
 **	D  (payment for companies)
 		company name
 		amount
