@@ -34,7 +34,7 @@ TODO tasks for ASEP
 	create, student id provided
 	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
-***     checks/_income: if user chooses student, constrain classes based on unpaid
+i***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
 *** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
@@ -169,6 +169,7 @@ TODO tasks for ASEP
 *** add  the returnto for zhtml::clickablerow
 	it's already in there for composite keys, but i need to add it for the other one
 ***	today button, fix
+*** user login, password admin, use the database, not useridentity.php!
 *** add date validator
 ***	make search work with booleans/checkboxes
 *** make search work with linktables!
