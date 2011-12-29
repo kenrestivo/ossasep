@@ -26,7 +26,9 @@ $attributes[] =   array(
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
-                  'dataProvider'=>new KArrayDataProvider(
+                  'selectionChanged'=>
+                  ZHtml::clickableRow('CheckIncome/view', 'join'),
+        'dataProvider'=>new KArrayDataProvider(
                       $model->incomes),
                   'columns'=>$attributes,
                   )); 

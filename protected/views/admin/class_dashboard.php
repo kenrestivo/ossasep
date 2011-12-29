@@ -15,7 +15,7 @@ $attributes=array(
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
                   'htmlOptions'=>array('style'=>'cursor: pointer;'),
-                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+                  'selectionChanged'=>ZHtml::clickableRow('ClassInfo/view'),
                   'dataProvider'=> new KArrayDataProvider(
                       $classes,
                       array('pagination' => false)),
@@ -29,7 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboardcancelled-grid',
                   'htmlOptions'=>array('style'=>'cursor: pointer;'),
-                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+                  'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
                   'dataProvider'=> new KArrayDataProvider($cancelled,
                       array('pagination' => false)),
                   'columns'=> $attributes,

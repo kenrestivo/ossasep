@@ -92,6 +92,39 @@ class ZHtml extends CHtml
         return $std;
 
     }
+    /*
+      generates the selection changed code for a clickable row in cgridview
+     */
+    
+    public static function clickableRow($route, $type='normal', $count = 0)
+    {
+        if($type ==='normal'){
+            return "function(id){window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}";
+        }else {
+            return "function(id){window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id)[0].split(',')[". $count . "];}";
+        }
+    }
+
+    /*
+      This is perhaps the ugliest, most incomprehensible pile of crap
+      that I've ever written. And yet, it works, and I need it.
+
+     */
+    public static function compositeClickableRow($route, $keys, $returnTo=null)
+    {
+        $js="function(id){keys=$.fn.yiiGridView.getSelection(id)[0].split(','); window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')). '?';
+        $ka=array();
+        foreach($keys as $i=>$k){
+            $ka[$i]=  $k . "=' + keys[$i]";
+        }
+        $js .= implode(" + '&", $ka);
+        if(isset($returnTo)){
+            $js .= "+ '&returnTo=$returnTo'";
+        }
+        $js .="  ;}";
+        return $js;
+
+    }
 
 
 }

@@ -10,12 +10,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'ajaxUpdate' => false,
                    'dataProvider'=>new KArrayDataProvider(
                        $model->instructors),
+                  'selectionChanged'=>ZHtml::clickableRow('Instructor/view'),
                   'columns'=>array(
                       'full_name:text:Instructor',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Instructor',
-                          'template'=>'{update}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
