@@ -7,9 +7,8 @@ echo CHTML::link("Add Class for Instructor",
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructorassignment-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->instructor_assignments, 
-                      array('keyField' => 'class_id,instructor_id',
-                          )),
+                      $model->instructor_assignments
+                      ),
                   'columns'=>array(
                       array('name' => "Name",
                             'value' => '$data->class->class_name'),

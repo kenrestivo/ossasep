@@ -2,9 +2,8 @@
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes, 
-                      array('keyField' => 'student_id,check_id,class_id',
-                          )),
+                      $model->incomes
+                      ),
                   'columns'=>array(
                       'class.class_name:text:Class',
                       'amount:currency:Split Check Amount Assigned',

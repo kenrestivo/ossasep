@@ -161,6 +161,8 @@ da** make sure to carefully chtml::encode in EVERY cjui view!
 	     choose existing check as option in unpaid
 		 an autocomplete with lists of checks with amounts still avail on them
 ***	manually edit dates, in m/d/y format
+*** the getSelection on linktables (commposite keys)!
+	i'll have to hack the javascript to selectionChanged, should be OK
 ***	today button, fix
 *** add date validator
 ***	make search work with booleans/checkboxes

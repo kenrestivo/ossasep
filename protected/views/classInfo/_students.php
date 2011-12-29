@@ -8,9 +8,7 @@ echo CHTML::link(CHtml::encode("Add Student to ". $model->summary),
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->sortedSignups, 
-                      array('keyField' => 'student_id,class_id',
-                          )),
+                      $model->sortedSignups),
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'summaryText' => $model->summaryCounts,
                   'columns'=>array(

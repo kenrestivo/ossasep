@@ -56,9 +56,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'ajaxUpdate' => false,
                   'summaryText' => $this->splitSummary(),
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes, 
-                      array('keyField' => 'check_id,student_id,class_id',
-                          )),
+                      $model->incomes
+                      ),
                   'columns'=>array(
                       'student.full_name:text:Student',
                       'class.summary:text:Class',
