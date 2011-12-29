@@ -10,6 +10,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=>new KArrayDataProvider(
                       $model->sortedSignups),
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
+                  'selectionChanged'=>
+                  "function(id){keys=$.fn.yiiGridView.getSelection(id)[0].split(','); window.location='" . Yii::app()->urlManager->createUrl('Signup/update', array('id'=>'')) . "?student_id=' + keys[0] + '&class_id=' + keys[1]  ;}",
                   'summaryText' => $model->summaryCounts,
                   'columns'=>array(
                       'student.full_name:text:Name',
