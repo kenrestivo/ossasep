@@ -42,7 +42,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
-    'selectionChanged'=>ZHtml::clickableRow('CheckInfo'),
+    'selectionChanged'=>ZHtml::clickableRow('CheckInfo/view'),
 	'columns'=>array(
 		'check_num:ntext',
         'cash:boolean',

@@ -11,7 +11,7 @@
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
-    'selectionChanged'=>ZHtml::clickableRow('Instructor'),
+    'selectionChanged'=>ZHtml::clickableRow('Instructor/view'),
 	'columns'=>array(
 		'full_name',
         'alias',
