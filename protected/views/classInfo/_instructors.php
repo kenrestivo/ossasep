@@ -42,9 +42,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'ajaxUpdate' => false,
                   'summaryText' => $this->instructorSplitSummary(),
                    'dataProvider'=>new KArrayDataProvider(
-                      $model->instructor_assignments, 
-                      array('keyField' => 'class_id,instructor_id',
-                          )),
+                       $model->instructor_assignments),
                   'columns'=>array(
                       'instructor.full_name:text:Instructor',
                       'percentage:percent:Percentage',
