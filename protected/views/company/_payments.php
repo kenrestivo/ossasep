@@ -9,8 +9,10 @@ echo CHTML::link("Add Check for " . $model->name,
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes
-                      ),
+                      $model->incomes),
+                  'selectionChanged'=>
+                  ZHtml::clickableRow('CheckIncome/view', 'join'),
+
                   'columns'=>array(
                       'student.full_name:text:Student', 
                       'class.summary:ntext:Class',
