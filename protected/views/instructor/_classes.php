@@ -8,8 +8,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructorassignment-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->instructor_assignments, 
-                      array('keyField' => 'class_id,instructor_id',
-                          )),
+                      ),
                   'columns'=>array(
                       array('name' => "Name",
                             'value' => '$data->class->class_name'),

@@ -7,8 +7,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requiermentstatus-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->expenses, 
-                      array('keyField' => 'instructor_id,check_id',
-                          )),
+                      ),
                   'columns'=>array(
                       'check.amount:number:Check Total Amount',
                       'check.check_date:date:Check Date',

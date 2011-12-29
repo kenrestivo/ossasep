@@ -10,8 +10,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->incomes, 
-                      array('keyField' => 'student_id,check_id,class_id',
-                          )),
+                      ),
                   'columns'=>array(
                       'student.full_name:text:Student', 
                       'class.summary:ntext:Class',

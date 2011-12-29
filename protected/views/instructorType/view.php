@@ -29,9 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requirementtype-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->requirements,
-                      array('keyField' => 
-                            'instructor_type_id,requirement_type_id',
-                          )),
+                      ),
                   'columns'=>array(
                       array('name' => "Required Items",
                             'value' => '$data->description'),

@@ -20,8 +20,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requiermentstatus-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->requirement_status, 
-                      array('keyField' => 'requirement_type_id,instructor_id',
-                          )),
+                      ),
                   'columns'=>array(
                       'requirement_type.description:text:Requirement',
                       'received:date:Received On',
