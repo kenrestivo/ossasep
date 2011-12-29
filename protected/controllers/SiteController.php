@@ -29,10 +29,10 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-        if(Yii::app()->user->isGuest){
-            $this->render('index');
-        } else {
+        if(Yii::app()->user->name == 'admin'){
             $this->render('admin');
+        } else {
+            $this->render('index');
         }
 	}
 

@@ -31,11 +31,22 @@ class ReportController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // just, go away and let me work, please
-                  'actions'=>array('*'),
+			array('allow', 
+                  // all
+				'users'=>array('admin'),
+			),
+			array('allow', 
+                  'actions'=> array('signupspublic'),
+				'users'=>array('parent'),
+			),
+			array('allow',  // public pages
+                  'actions'=> array('weekday', 'signupboxes', 'descriptions'),
                   'users'=>array('*'),
-                ),
-            );
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
 	}
 
 	public function actionWeekday()
