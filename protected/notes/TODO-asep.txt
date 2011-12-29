@@ -166,8 +166,8 @@ TODO tasks for ASEP
 		 an autocomplete with lists of checks with amounts still avail on them
 *** make session dropdown disabled css by default, checkbox to change
 ***	manually edit dates, in m/d/y format
-*** the getSelection on linktables (commposite keys)!
-	i'll have to hack the javascript to selectionChanged, should be OK
+*** add  the returnto for zhtml::clickablerow
+	it's already in there for composite keys, but i need to add it for the other one
 ***	today button, fix
 *** add date validator
 ***	make search work with booleans/checkboxes

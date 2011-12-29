@@ -2,8 +2,9 @@
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes
-                      ),
+                      $model->incomes),
+                  'selectionChanged'=>
+                  ZHtml::clickableRow('CheckIncome/view', 'join'),
                   'columns'=>array(
                       'class.class_name:text:Class',
                       'amount:currency:Split Check Amount Assigned',
