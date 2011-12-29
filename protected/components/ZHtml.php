@@ -105,6 +105,24 @@ class ZHtml extends CHtml
         }
     }
 
+    /*
+      This is perhaps the ugliest, most incomprehensible pile of crap
+      that I've ever written. And yet, it works, and I need it.
+
+     */
+    public static function compositeClickableRow($route, $keys)
+    {
+        $js="function(id){keys=$.fn.yiiGridView.getSelection(id)[0].split(','); window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')). '?';
+        $ka=array();
+        foreach($keys as $i=>$k){
+            $ka[$i]=  $k . "=' + keys[$i]";
+        }
+        $js .= implode(" + '&", $ka);
+        $js .="  ;}";
+        return $js;
+
+    }
+
 
 }
 
