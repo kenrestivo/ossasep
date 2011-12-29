@@ -42,7 +42,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
-    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('CheckIncome/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+    'selectionChanged'=>ZHtml::clickableRow('CheckInfo'),
 	'columns'=>array(
 		'check_num:ntext',
         'cash:boolean',

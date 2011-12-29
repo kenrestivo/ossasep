@@ -43,7 +43,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
-    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('ClassInfo/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+    'selectionChanged'=> ZHtml::clickableRow('ClassInfo'),
 	'columns'=>array(
 		'class_name',
 		'min_grade_allowed:grade',
