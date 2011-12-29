@@ -13,7 +13,7 @@
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructortype-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $data->instructor_types,
+                      $data->instructor_types
                       ),
                   'columns'=>array(
                       array('name' => "Required For",

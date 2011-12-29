@@ -8,7 +8,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->signups, 
+                      $model->signups
                       ),
                   'columns'=>array(
                       'class.class_name:text:Class',

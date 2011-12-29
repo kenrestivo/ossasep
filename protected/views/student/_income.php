@@ -2,7 +2,7 @@
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes, 
+                      $model->incomes
                       ),
                   'columns'=>array(
                       'class.class_name:text:Class',

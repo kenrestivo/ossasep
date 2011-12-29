@@ -9,7 +9,7 @@ echo CHTML::link("Add Check for " . $model->name,
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->incomes, 
+                      $model->incomes
                       ),
                   'columns'=>array(
                       'student.full_name:text:Student', 

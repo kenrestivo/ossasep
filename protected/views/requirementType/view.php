@@ -27,7 +27,7 @@ $this->menu=array(
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'instructortype-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->instructor_types,
+                      $model->instructor_types
                       ),
                   'columns'=>array(
                       array('name' => "Required For",

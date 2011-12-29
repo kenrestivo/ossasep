@@ -6,7 +6,7 @@ echo CHTML::link("Add Payment for ". $model->full_name,
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requiermentstatus-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->expenses, 
+                      $model->expenses
                       ),
                   'columns'=>array(
                       'check.amount:number:Check Total Amount',
