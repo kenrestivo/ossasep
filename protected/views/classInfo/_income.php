@@ -26,7 +26,8 @@ $attributes[] =   array(
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
-                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('CheckIncome/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id)[0].split(',')[0];}",
+                  'selectionChanged'=>
+                  ZHtml::clickableRow('CheckIncome', 'join', 0),
         'dataProvider'=>new KArrayDataProvider(
                       $model->incomes),
                   'columns'=>$attributes,

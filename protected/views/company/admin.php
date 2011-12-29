@@ -41,7 +41,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'company-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('Company/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+    'selectionChanged'=>
+    ZHtml::clickableRow('Company'),
 	'columns'=>array(
 		'name',
         'use_publicly:boolean',

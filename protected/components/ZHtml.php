@@ -92,6 +92,18 @@ class ZHtml extends CHtml
         return $std;
 
     }
+    /*
+      generates the selection changed code for a clickable row in cgridview
+     */
+    
+    public static function clickableRow($modelname, $type='normal', $count = 0)
+    {
+        if($type ==='normal'){
+            return "function(id){window.location='" . Yii::app()->urlManager->createUrl($modelname . '/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}";
+        }else {
+            return "function(id){window.location='" . Yii::app()->urlManager->createUrl($modelname . '/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id)[0].split(',')[". $count . "];}";
+        }
+    }
 
 
 }
