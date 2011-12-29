@@ -10,34 +10,18 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'check_num'); ?>
+		<?php echo $form->textField($model,'check_num'); ?>
+		<?php echo $form->error($model,'check_num'); ?>
+	</div>
+
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'amount'); ?>
 		<?php echo $form->textField($model,'amount',array('size'=>19,'maxlength'=>19)); ?>
 		<?php echo $form->error($model,'amount'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'payer'); ?>
-		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'payer'); ?>
-	</div>
-
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
-		<?php echo $form->error($model,'payee_id'); ?>
-
-		<?php echo $form->error($model,'payee_id'); ?>
-	</div>
-
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'check_num'); ?>
-		<?php echo $form->textField($model,'check_num'); ?>
-		<?php echo $form->error($model,'check_num'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'check_date'); ?>
@@ -58,6 +42,34 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 ?>
 		<?php echo $form->error($model,'check_date'); ?>
 	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'payer'); ?>
+    <?php
+    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+    'name'=>'payer',
+    'source'=>Yii::app()->controller->createUrl("autocomplete"),
+    // additional javascript options for the autocomplete plugin
+    'options'=>array(
+        'minLength'=>'2',
+        ),
+                      ));
+?>
+		<?php echo $form->error($model,'payer'); ?>
+	</div>
+
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'payee_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
+		<?php echo $form->error($model,'payee_id'); ?>
+
+		<?php echo $form->error($model,'payee_id'); ?>
+	</div>
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'session_id'); ?>
     <?php echo $form->dropDownList(

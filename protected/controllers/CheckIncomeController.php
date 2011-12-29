@@ -34,7 +34,7 @@ class CheckIncomeController extends Controller
 			array('allow', // admin only
                   'actions'=>array('index', 'view', 'create', 'update', 
                                    'admin','delete', 'entry', 'multientry',
-                                   'autocomplete'),
+                                   'autocomplete', 'multiupdate'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -212,6 +212,8 @@ class CheckIncomeController extends Controller
             if(isset($_GET['company_id'])){
                 $model->payee_id = $_GET['company_id'];
             }
+            // this is the special stuff that pre-populates the
+            // items owed, so they can be edited
             if(isset($_GET['student_id'])){
                 $total = 0;
                 $stu = Student::model()->findByPk($_GET['student_id']);
@@ -239,6 +241,55 @@ class CheckIncomeController extends Controller
 
 
     }
+
+
+    public function actionMultiUpdate()
+    {
+		$model=$this->loadModel();
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['CheckIncome'])){
+            // note it overrides session_id if it's in the post
+			$model->attributes=$_POST['CheckIncome'];
+            //saving, so populate from the form now
+            if(isset($_POST['Income'])){
+                foreach($_POST['Income'] as $i){
+                    // don't save 0 ones at all
+                    if((int)$i['amount'] > 0){
+                        $inc=new Income('check');
+                        $inc->attributes =  $i;
+                        $income[] = $inc;
+                    }
+                }
+                $model->incomes = $income;
+            }            
+
+            if($model->withRelated->save(true, array('incomes')))
+            {
+                $this->redirect(array('view','id'=> $model->id));
+            } 
+
+
+        }
+
+
+		$this->render('multientry',array(
+                          'model'=>$model,
+                          /* XXX hack, this shouldn' tbe necessary
+                             but the multientry treats them separately.
+                             i need to make mutientry use $model->income.
+                             meantime, this stays.
+                          */
+                          'income' => $model->incomes
+                          ));
+
+
+    }
+
+
+
 
 
     public function actionAutocomplete()
