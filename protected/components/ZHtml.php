@@ -110,7 +110,7 @@ class ZHtml extends CHtml
       that I've ever written. And yet, it works, and I need it.
 
      */
-    public static function compositeClickableRow($route, $keys)
+    public static function compositeClickableRow($route, $keys, $returnTo=null)
     {
         $js="function(id){keys=$.fn.yiiGridView.getSelection(id)[0].split(','); window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')). '?';
         $ka=array();
@@ -118,6 +118,9 @@ class ZHtml extends CHtml
             $ka[$i]=  $k . "=' + keys[$i]";
         }
         $js .= implode(" + '&", $ka);
+        if(isset($returnTo)){
+            $js .= "+ '&returnTo=$returnTo'";
+        }
         $js .="  ;}";
         return $js;
 

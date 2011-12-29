@@ -10,7 +10,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=>new KArrayDataProvider(
                       $model->sortedSignups),
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
-                  'selectionChanged'=> ZHtml::compositeClickableRow('Signup/update', array('student_id', 'class_id')),
+                  'selectionChanged'=> ZHtml::compositeClickableRow(
+                      'Signup/update', 
+                      array('student_id', 'class_id'), 
+                      Yii::app()->request->requestUri),
                   'summaryText' => $model->summaryCounts,
                   'columns'=>array(
                       'student.full_name:text:Name',
