@@ -45,7 +45,16 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payer'); ?>
-		<?php echo $form->textField($model,'payer',array('size'=>60,'maxlength'=>128)); ?>
+    <?php
+    $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+    'name'=>'payer',
+    'source'=>Yii::app()->controller->createUrl("autocomplete"),
+    // additional javascript options for the autocomplete plugin
+    'options'=>array(
+        'minLength'=>'2',
+        ),
+                      ));
+?>
 		<?php echo $form->error($model,'payer'); ?>
 	</div>
 

@@ -30,8 +30,9 @@ TODO tasks for ASEP
 		will need some kind of undepposited status, total amount
 **	check_income
 *** make multi-entry form work for EDITING too
-	this should not be hard, really.
-	just populate the arrays, at build time. try it!
+	now the saving
+	create, student id provided
+	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
 ***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
