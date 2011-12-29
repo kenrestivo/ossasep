@@ -1,9 +1,6 @@
 #-*- org -*-
 * reports
-**	E (sign up sheet?)
-		for heidi with paid/unpaid to instructor
-G		for instructor sees only their class! and only email-safe emails
-			
+** G  signup for instructor sees only their class! and only email-safe emails
 **	D  (payment for companies)
 	   company name
 		amount
@@ -106,3 +103,5 @@ G		for instructor sees only their class! and only email-safe emails
 		agreement
 		notes (specific to this)
 
+**	E (sign up sheet?)
+		for heidi with paid/unpaid to instructor

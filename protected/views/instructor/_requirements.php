@@ -29,6 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'RequirementStatus',
+                          'template'=>'{update}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
