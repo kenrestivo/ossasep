@@ -6,7 +6,7 @@
       <h1>Public Screens</h1>
     </th>
     <th>
-      <h1>Admin-only Reports</h1>
+      <h1>Admin Reports</h1>
     </th>
     <th>
       <h1>Data Entry/Admin</h1>
