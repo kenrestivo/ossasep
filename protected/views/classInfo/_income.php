@@ -26,7 +26,7 @@ $attributes[] =   array(
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
-                  'selectionChanged'=>"function(id){foo=$.fn.yiiGridView.getSelection(id); alert(foo); window.location='" . Yii::app()->urlManager->createUrl('CheckIncome/view', array('id'=>'')) . "' + foo[0].split(',')[0];}",
+                  'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('CheckIncome/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id)[0].split(',')[0];}",
         'dataProvider'=>new KArrayDataProvider(
                       $model->incomes),
                   'columns'=>$attributes,
