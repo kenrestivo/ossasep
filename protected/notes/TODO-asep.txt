@@ -1,12 +1,14 @@
 #-*- org -*-
 TODO tasks for ASEP
 
+* finance calculations
+** instructors owed should be only enrolled
 * formatting
 ** in gridview, there's a way to get $data out of it?
    vaguely remember it from here:
    http://www.yiiframework.com/forum/index.php?/topic/9636-cgridview-totals-or-summary-row/
 ** the rest of the reports (like, 20 of them)!
-** make sure to carefully chtml::encode in EVERY cjui view!
+da** make sure to carefully chtml::encode in EVERY cjui view!
 * ui
 ** make session dropdown disabled css by default, checkbox to change
 **	deposit form
@@ -65,7 +67,6 @@ TODO tasks for ASEP
 	calculate, and show a picklist, with their associated remaining balance
 	let the user pick them to assign, instead of new check
 * bugfixen
-** why negative checks no showing in paid?
 **	in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 **	in paid, why are cancelleds payments not showing up at all?
