@@ -131,9 +131,14 @@ class Signup extends CActiveRecord
         }
         $found = Signup::model()->findByPk($this->primaryKey);
         if($found){
-            $this->addError(
-                'summary', 
-                $found->student->full_name . " already signed up for " . $found->class->summary);
+            $err = $found->student->full_name . " already signed up for " . $found->class->summary;
+            if(is_array($this->primaryKey)){
+                foreach($this->primaryKey as $k => $v){
+                    $this->addError( $k, $err);
+                }
+            } else {
+                $this->addError( 'id', $err);
+            }
         }
     }
 
