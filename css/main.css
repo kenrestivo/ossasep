@@ -342,6 +342,12 @@ table.emailable .row{
   font-weight: bold;
  }
 
+.cancelled{ 
+  float:right;
+  font-weight: bold;
+  color: #FF3030;
+ }
+
 .checkbackground{ 
 background: #FEF5CA;
  }

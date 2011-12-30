@@ -39,6 +39,7 @@ for($i=0; $lines > 0; $i++){
 
 $(function(){
         $(".full").each(function(i){$(this).parent().addClass('waitlist')});
+        $(".cancelled").each(function(i){$(this).parent().addClass('strikethrough')});
     });
 
 </script>

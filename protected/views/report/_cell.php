@@ -13,7 +13,9 @@ if(Yii::app()->user->name != 'admin' ){
 ?>
 </strong>
 <?php
-if($model->full){
+if($model->status == 'Cancelled'){
+      echo '<span class="cancelled">CANCELLED</span>';
+} else if($model->full){
       echo '<span class="full">FULL</span>';
 } 
 ?>

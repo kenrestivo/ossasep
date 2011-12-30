@@ -62,7 +62,7 @@ TODO tasks for ASEP
 	calculate, and show a picklist, with their associated remaining balance
 	let the user pick them to assign, instead of new check
 * bugfixen
-**	in class/_owed, should include waitlisted!
+**	[#A] in class/_owed, should include waitlisted!
 		checks do get entered, gets put in another envelope
 **	in paid, why are cancelleds payments not showing up at all?
 **	on student/_income, if cancelled, show the paids,

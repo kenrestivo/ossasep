@@ -253,8 +253,7 @@ class ClassInfo extends CActiveRecord
             foreach(ClassInfo::model()->findAllBySql(
                         "select class_info.* 
 from class_info
-where (class_info.status = 'Active' or class_info.status = 'New')
-      and class_info.day_of_week = :wkd
+where class_info.day_of_week = :wkd
       and class_info.session_id = :sess
 order by class_info.class_name
 ; ",
