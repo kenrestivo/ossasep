@@ -1,13 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Instructors'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List Instructor', 'url'=>array('index')),
-	array('label'=>'Create Instructor', 'url'=>array('create')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -41,18 +32,29 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'instructor-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=>ZHtml::clickableRow('Instructor/view'),
 	'columns'=>array(
-		'full_name',
+		'first_name',
+		'last_name',
         'alias',
+		'instructor_type.description:text:Type',
+        'company.name:text:Company',
 		'email',
 		'cell_phone',
 		'other_phone',
 		'note',
-		'instructor_type.description:text:Type',
-        'company.name:text:Company',
 		array(
 			'class'=>'CButtonColumn',
             'template'=>'{view}{delete}',
 		),
 	),
-)); ?>
+)); 
+
+
+echo CHTML::link("Add New Instructor",
+                 array("Instructor/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+?>
