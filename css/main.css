@@ -232,6 +232,8 @@ table.bordertable {
   width: auto;
 }
 
+
+
 table.bordertable  td,th
 {
   border-color: #600;
@@ -370,4 +372,9 @@ background: #FEF5CA;
 
 .status-error{ 
   background-color:#ff99cc;
+ }
+
+table.spacey{ 
+  border-collapse:separate; 
+  border-spacing:7px;
  }

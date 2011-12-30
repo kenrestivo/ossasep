@@ -1,6 +1,6 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<table class="bordertable">
+<table class="bordertable spacey">
   
 
   <tr>
