@@ -32,7 +32,11 @@
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
     <?php 
-    if(!isset($_GET['class_id'])){
+      // I cannot use the multiendeddropdown here, because of the odd dropdown
+    if($model->isNewRecord && isset($model->class_id)){
+        echo CHtml::encode($model->class->summary);
+        echo $form->hiddenField($model,"class_id"); 
+    } else {
         echo $form->dropDownList(
             $model,'class_id',
             array(
@@ -50,9 +54,6 @@
                     'id', 'summary'),
                 ), 
             array('class' => 'chzn-select')); 
-    } else {
-        echo CHtml::encode($model->class->summary);
-        echo $form->hiddenField($model,"class_id"); 
     }
 ?>
 

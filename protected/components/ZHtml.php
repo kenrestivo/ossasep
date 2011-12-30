@@ -126,6 +126,9 @@ class ZHtml extends CHtml
 
     }
 
+    /*
+      This really wants to be a widget, but it'll do as it is
+     */
     public static function multiEndedDropDown($model, $form, $id, 
                                               $data, $static, $options = array())
     {
