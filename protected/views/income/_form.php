@@ -21,7 +21,7 @@
     ZHtml::multiEndedDropDown(
         $model, $form, 'check_id',
         "CHtml::listData(CheckIncome::model()->underAssignedChecks(), 
-                        'id', 'summary'))",
+                        'id', 'summary')",
         'CHtml::encode($model->check->summary)');
 echo $form->error($model,'check_id'); 
 ?>

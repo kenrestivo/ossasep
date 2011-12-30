@@ -2,7 +2,8 @@
 
 class CompositeUnique extends CValidator
 {
-    public $error_message = 'echo "Duplicate combination already exists"';
+    // NOTE THE DOUBLE QUOTES! this gets eval'ed!
+    public $error_message = '"Duplicate combination already exists"';
 
     protected function validateAttribute($object,$attribute)
     {
