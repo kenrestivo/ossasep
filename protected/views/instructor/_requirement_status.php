@@ -21,7 +21,9 @@ foreach($reqs as $r){
                             'requirement_type_id' => $r->id
                           ));
     if(isset($s)){
-        echo Yii::app()->format->date($s->expired);
+        $this->renderPartial("/requirementStatus/_cell", 
+                             array('model' => $s));
+
     }
     echo '</td>';
 }
