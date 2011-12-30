@@ -32,8 +32,6 @@ class AdminController extends Controller
 	{
 		return array(
 			array('allow',  
-                  'actions'=>array('signupsheet', 'classdashboard', 
-                                   'signupstatus', 'ossptoinstructorsdashboard'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -80,12 +78,12 @@ class AdminController extends Controller
         
     }
 
-    public function actionOSSPTOInstructorPaperwork()
+    public function actionInstructorRequirements()
     {
 
         // TODO:: move this find to the model perhaps, may need it elsewhere?
         $this->render(
-            'osspto_paperwork',
+            'instructor_paperwork',
             array(
                 'instructors' => ClassSession::current()->osspto_instructors));
         

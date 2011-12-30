@@ -1,7 +1,7 @@
 <?php
 $res="";
 $class="";
-if($model->is_missing){
+if(!isset($model) || $model->is_missing){
     $class = "error";
     $res = "Missing";
 } else if($model->is_expiring)  {
@@ -18,7 +18,9 @@ if($model->is_missing){
         $res = "OK";
     }
 }
-$res .= CHtml::encode($model->note);
+if($model->note != ''){
+    $res .= '<br />' . CHtml::encode($model->note);
+}
 ?>
 
 <td class="<?= $class ?>">
