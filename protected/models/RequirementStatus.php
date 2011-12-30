@@ -47,6 +47,8 @@ class RequirementStatus extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('instructor_id, requirement_type_id, received, expired, note', 'safe', 'on'=>'search'),
+            array('instructor_id', 'ext.CompositeUnique', 
+                  'on' => 'insert')
             );
 	}
 
