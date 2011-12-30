@@ -105,4 +105,35 @@ class RequirementStatus extends CActiveRecord
                                            'criteria'=>$criteria,
                                            ));
 	}
+
+    public function expired()
+    {
+        return strtotime($this->expired) >= strtotime();
+
+    }
+
+    /*
+      This is necessary. 
+      There may be missing paperwork that DOES have a note here,
+      so we have to check for that explicitly.
+     */
+    
+    public function missing()
+    {
+        //100 an arbitrary nothing number
+        return strtotime($this->received) < 100;
+
+    }
+
+    public function status()
+    {
+        if($this->missing){
+            return "Missing";
+        } else if($this->expired)  {
+            return "Expired";
+        } else {
+            return "OK";
+        }
+    }
+
 }
