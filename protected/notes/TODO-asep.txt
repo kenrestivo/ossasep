@@ -171,6 +171,9 @@ i***     checks/_income: if user chooses student, constrain classes based on unp
 ***	today button, fix
 *** user login, password admin, use the database, not useridentity.php!
 *** add date validator
+*** allow multiple requirements, i.e contracts for several years
+	remove unique key constraint
+	in status, i'll need MAX() queries instead of AR stuff
 ***	make search work with booleans/checkboxes
 *** make search work with linktables!
 ***	make sort work with linked subviews
