@@ -1,4 +1,4 @@
-class compositeUnique extends CValidator
+class CompositeUnique extends CValidator
 {
     
     protected function validateAttribute($object,$attribute)

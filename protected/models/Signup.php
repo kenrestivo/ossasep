@@ -49,8 +49,9 @@ class Signup extends CActiveRecord
                but if the user deletes the default, 
                this will make sure something goes in there
             */
-            array('student_id', 'ext.compositeUnique', 'on' => 'insert',
-                'error_message' => '$data->student->full_name . " already signed up for " . $data->class->summary'),
+            array('student_id', 'ext.validators.CompositeUnique', 
+                  'on' => 'insert',
+                  'error_message' => '$data->student->full_name . " already signed up for " . $data->class->summary'),
             array('signup_date','default',
                   'value'=> date ("Y-m-d H:i:s"),
                   'setOnEmpty'=>true,
