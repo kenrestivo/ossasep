@@ -1,14 +1,8 @@
+<?php
+    $this->renderPartial("_requirement_status", 
+                         array('model' => $model));
 
-<div>
-
-<p><em>Required:</em>
-<?php foreach($model->instructor_type->requirements as $r){ 
-      echo $r->description . ", ";
-}
 ?>
-</p>
-</div>
-
 
 <?php 
 echo CHTML::link("Receive New Paperwork for ". $model->full_name, 
