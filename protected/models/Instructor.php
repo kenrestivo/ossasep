@@ -38,6 +38,11 @@ class Instructor extends CActiveRecord
 		return 'instructor';
 	}
 
+    public function getFull_name()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
+
     public function getPublic_name()
     {
         return $this->alias != '' ? $this->alias : $this->full_name;
@@ -62,7 +67,7 @@ class Instructor extends CActiveRecord
 	}
 
     public function defaultScope() {
-        return array('order' => 'full_name ASC');
+        return array('order' => 'last_name ASC, first_name asc');
     }
 
 	/**
