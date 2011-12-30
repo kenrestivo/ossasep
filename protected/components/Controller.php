@@ -57,5 +57,21 @@ class Controller extends CController
             ClassSession::savedSessionId())->summary;
     }
 
+    /*
+      $vals is an array of keyname => value
+     */
+    public function subById($sub, $vals)
+    {
+        foreach($sub as $s){
+            $res = array();
+            foreach($vals as $k => $v){
+                $res[] = $s->{$k} == $v;
+            }
+            if(!in_array(false, $res)){
+                return $s;
+            }
+        }
+        return null;
+    }
 
 }

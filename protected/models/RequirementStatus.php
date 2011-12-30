@@ -138,7 +138,7 @@ class RequirementStatus extends CActiveRecord
     {
         if($this->missing){
             return "Missing";
-        } else if($this->expiring)  {
+        } else if($this->expiring)  {Co
             return "Expiring soon";
         } else if($this->expired)  {
             return "Expired";
