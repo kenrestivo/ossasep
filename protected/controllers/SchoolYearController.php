@@ -122,10 +122,7 @@ class SchoolYearController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SchoolYear');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $this->actionAdmin();
 	}
 
 	/**

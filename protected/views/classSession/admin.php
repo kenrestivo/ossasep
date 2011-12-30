@@ -42,9 +42,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'school_year.description',
-		'start_date',
-		'end_date',
+		'school_year.description:School Year',
+		'start_date:date',
+		'end_date:date',
 		'description',
         'public:boolean',
 		array(

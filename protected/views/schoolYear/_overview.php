@@ -3,8 +3,8 @@
 	'data'=>$model,
 	'attributes'=>array(
 		'description',
-		'start_date',
-		'end_date',
+		'start_date:date',
+		'end_date:date',
 	),
 )); 
 
