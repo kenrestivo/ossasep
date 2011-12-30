@@ -2,11 +2,14 @@
 <h2>CONFIDENTIAL</h2>
 <?php
 
+
+$dp = new KArrayDataProvider(
+                      $model,
+                      array('pagination' => false));
+
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $model,
-                      array('pagination' => false)),
+                  'dataProvider'=>$dp,
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
                   'selectionChanged'=> ZHtml::compositeClickableRow(
                       'Signup/update', 
@@ -15,7 +18,18 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       'student.full_name:text:Name',
                       'class.summary:text:Class',
-                      'class.costSummary:currency:Cost',
+                      array('name' => 'Cost',
+                            'value' => '$data->class->costSummary',
+                            'type' => 'currency',
+                            // how to make PHP look like javascript
+                            'footer' => 'TOTAL: ' .
+                            Yii::app()->format->currency(
+                                array_reduce(
+                                    $dp->data, 
+                                    function($i,$j){ 
+                                        $i += $j->class->costSummary; 
+                                        return $i;})),
+                          ),
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
