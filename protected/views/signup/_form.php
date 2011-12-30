@@ -39,7 +39,10 @@
     if(!isset($_GET['class_id'])){
         echo $form->dropDownList(
             $model,'class_id',
-            CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary'), 
+            array('In Grade Range' =>
+                  CHtml::listData(
+                      ClassInfo::model()->findAll(
+                          "min_grade_allowed >= " . $model->student->grade ), 'id', 'summary')), 
             array('class' => 'chzn-select')); 
     } else {
         echo CHtml::encode($model->class->summary);
