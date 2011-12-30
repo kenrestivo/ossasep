@@ -32,8 +32,6 @@ class RosterController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete', 'json'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
