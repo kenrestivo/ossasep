@@ -14,67 +14,52 @@
 
 
 	<div class="row">
-<?php
-if(!isset($_GET['check_id'])){
+
+		<?php 
+     echo $form->labelEx($model,'check_id');
+
+    ZHtml::multiEndedDropDown(
+        $model, $form, 'check_id',
+        "CHtml::listData(CheckIncome::model()->underAssignedChecks(), 
+                        'id', 'summary'))",
+        'CHtml::encode($model->check->summary)');
+echo $form->error($model,'check_id'); 
 ?>
-
-		<?php echo $form->labelEx($model,'check_id'); ?>
-
-    <?php echo $form->dropDownList(
-        $model,'check_id',
-        CHtml::listData(CheckIncome::model()->underAssignedChecks(), 
-                        'id', 'summary'))
-          ?>
-		<?php echo $form->error($model,'check_id'); ?>
-   <?php } else { ?>
-    Assign income for: 
-	<?php echo CHtml::encode($model->check->summary);
-          echo $form->hiddenField($model,"check_id"); 
-               } ?>
 	</div>
 
 
 	<div class="row">
 <?php
-if(!isset($_GET['student_id'])){
+
+    echo $form->labelEx($model,'student_id'); 
+
+ZHtml::multiEndedDropDown(
+    $model, $form, 'student_id',
+    "CHtml::listData(Student::model()->findAll(), 'id', 'full_name')",
+    'CHtml::encode($model->student->full_name)',
+    array('class' => 'chzn-select')); 
+
+echo $form->error($model,'student_id'); 
 ?>
-
-		<?php echo $form->labelEx($model,'student_id'); ?>
-
-    <?php echo $form->dropDownList(
-        $model,'student_id',
-        CHtml::listData(Student::model()->findAll(), 'id', 'full_name'),
-        array('class' => 'chzn-select')); ?>
-
-		<?php echo $form->error($model,'student_id'); ?>
-    <?php } else { ?>
-    Assign income for: 
-	<?php echo CHtml::encode($model->student->full_name);
-          echo $form->hiddenField($model,"student_id"); 
-               } ?>
 
 	</div>
 
 
 	<div class="row">
-<?php
-if(!isset($_GET['class_id'])){
-?>
 
-		<?php echo $form->labelEx($model,'class_id'); ?>
+		<?php 
+    echo $form->labelEx($model,'class_id');
 
-    <?php echo $form->dropDownList(
-        $model,'class_id',
-        CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary'),
-        array('class' => 'chzn-select')); ?>
+    ZHtml::multiEndedDropDown(
+        $model,$form, 'class_id',
+        "CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary')",
+        'CHtml::encode($model->class->summary)',
+        array('class' => 'chzn-select'));
 
-		<?php echo $form->error($model,'class_id'); ?>
+echo $form->error($model,'class_id'); 
 
-    <?php } else { ?>
-    Assign income for: 
-	<?php echo CHtml::encode($model->class->summary);
-          echo $form->hiddenField($model,"class_id"); 
-               } ?>
+
+ ?>
 	</div>
 
 
