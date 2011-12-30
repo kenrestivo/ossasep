@@ -85,7 +85,7 @@ class AdminController extends Controller
         $this->render(
             'instructor_paperwork',
             array(
-                'instructors' => ClassSession::current()->osspto_instructors));
+                'instructors' => ClassSession::current()->instructors));
         
     }
 

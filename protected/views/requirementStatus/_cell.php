@@ -18,7 +18,7 @@ if(!isset($model) || $model->is_missing){
         $res = "OK";
     }
 }
-if($model->note != ''){
+if(isset($model) && $model->note != ''){
     $res .= '<br />' . CHtml::encode($model->note);
 }
 ?>

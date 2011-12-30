@@ -172,6 +172,7 @@ class ClassSession extends CActiveRecord
 
     /* 
        XXX couldn't this be done through AR with a through => classes??
+       what about the sorts though. hmm.
      */
     public function getOsspto_Instructors()
     {
@@ -187,5 +188,23 @@ order by instructor.full_name asc",
             array('sid' => $this->id,
                   'type' => InstructorType::COMPANY_TYPE,
                 ));
+
     }
+
+    public function getInstructors()
+    {
+        return Instructor::model()->findAllBySql(
+            "select instructor.* from instructor 
+left join instructor_assignment
+   on instructor.id = instructor_assignment.instructor_id 
+left join class_info on class_info.id = instructor_assignment.class_id
+where class_info.session_id = :sid
+group by instructor_id
+order by instructor.full_name asc",
+            array('sid' => $this->id,
+                ));
+
+    }
+
+
 }

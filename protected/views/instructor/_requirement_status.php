@@ -14,11 +14,10 @@ foreach($reqs as $r){
                       array('instructor_id' => $model->id,
                             'requirement_type_id' => $r->id
                           ));
-    if(isset($s)){
-        $this->renderPartial("/requirementStatus/_cell", 
-                             array('model' => $s));
+    $this->renderPartial("/requirementStatus/_cell", 
+                         array('model' => $s));
 
-    }
+
 }
 ?>
 </tr>
