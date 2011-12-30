@@ -204,8 +204,6 @@ i***     checks/_income: if user chooses student, constrain classes based on unp
 		this is the timepicker brokenness, fix it
 ***	generate the signup form via PDF library, on the fly	
 
-*** requirements and instructor types, make view display cleaner
-     i did this, in instructor didn't i?
 * STUCK
 ** open questions
 ***	how do you know who to write the check to (from that report)?

@@ -18,7 +18,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Instructor Types'); ?>
-
+<br />
+<div>
 <?php
 $this->widget(
     'ext.Relation', array(
@@ -36,6 +37,7 @@ $this->widget(
         )
     );
 ?>
+</div>
 		<?php echo $form->error($model,'instructor_types'); ?>
 	</div>
 

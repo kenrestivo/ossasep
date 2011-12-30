@@ -19,19 +19,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'description',
+        'requirement_summary',
 	),
 )); ?>
 
-
-<h3>Requirement Types</h3>
-<?php 
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'requirementtype-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $model->requirements
-                      ),
-                  'columns'=>array(
-                      array('name' => "Required Items",
-                            'value' => '$data->description'),
-                      ),
-                  )); ?>

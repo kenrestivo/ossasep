@@ -102,4 +102,14 @@ class InstructorType extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getRequirement_summary()
+    {
+        return implode(', ', 
+                       array_map(
+                           function($i) { return $i->description ; },
+                           $this->requirements
+                           ));
+
+    }
 }
