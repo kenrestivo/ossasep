@@ -94,7 +94,7 @@ class ZHtml extends CHtml
     }
     /*
       generates the selection changed code for a clickable row in cgridview
-     */
+    */
     
     public static function clickableRow($route, $type='normal', $count = 0)
     {
@@ -109,7 +109,7 @@ class ZHtml extends CHtml
       This is perhaps the ugliest, most incomprehensible pile of crap
       that I've ever written. And yet, it works, and I need it.
 
-     */
+    */
     public static function compositeClickableRow($route, $keys, $returnTo=null)
     {
         $js="function(id){keys=$.fn.yiiGridView.getSelection(id)[0].split(','); window.location='" . Yii::app()->urlManager->createUrl($route, array('id'=>'')). '?';
@@ -123,6 +123,24 @@ class ZHtml extends CHtml
         }
         $js .="  ;}";
         return $js;
+
+    }
+
+    /*
+      This really wants to be a widget, but it'll do as it is for now
+     */
+    public static function multiEndedDropDown($model, $form, $id, 
+                                              $data, $static, $options = array())
+    {
+        if(isset($model->{$id})){
+            echo $form->evaluateExpression($static, array('model' => $model));
+            echo $form->hiddenField($model,$id); 
+        } else { 
+            echo $form->dropDownList(
+                $model,$id,
+                $form->evaluateExpression($data),
+                $options);
+        } 
 
     }
 

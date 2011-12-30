@@ -12,10 +12,10 @@ $this->menu=array(
 
 <h1>Create InstructorAssignment
 <?php
-if(isset($_GET['class_id'])){
+if(isset($model->class_id)){
     echo " for " . CHtml::encode($model->class->summary);
 }
-if(isset($_GET['instructor_id'])){
+if(isset($model->instructor_id)){
     echo " for " . CHtml::encode($model->instructor->full_name);
 }
 ?>

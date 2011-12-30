@@ -12,10 +12,10 @@ $this->menu=array(
 
 <h1>Create Signup
 <?php
-if(isset($_GET['class_id'])){
+if(isset($model->class_id)){
     echo " for " . CHtml::encode($model->class->summary);
 }
-if(isset($_GET['student_id'])){
+if(isset($model->student_id)){
     echo " for " . CHtml::encode($model->student->full_name);
 }
 ?>
