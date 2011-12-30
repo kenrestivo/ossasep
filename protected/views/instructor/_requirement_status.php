@@ -1,8 +1,3 @@
-
-<div>
-
-<p><em>Required:</em>
-
 <table class="bordertable">
      <tr>
      <?php 
@@ -28,5 +23,3 @@ foreach($reqs as $r){
 ?>
 </tr>
 </table>
-</p>
-</div>

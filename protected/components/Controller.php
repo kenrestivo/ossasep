@@ -58,7 +58,8 @@ class Controller extends CController
     }
 
     /*
-      $vals is an array of keyname => value
+      Finds the matching activerecord, if any, of the keys
+      $vals is an array of keyname => value, so it can handle composites
      */
     public function subById($sub, $vals)
     {
