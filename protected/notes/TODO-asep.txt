@@ -56,9 +56,6 @@ TODO tasks for ASEP
 *** not sure where
 ***		how?
                populate a js array with the data, and check it that way?
-**	will need security protection for signups-public
-		rbac? oh gawd...
-			
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 **  class/_income: show checks with unpaid balance
