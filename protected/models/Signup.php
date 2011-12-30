@@ -49,7 +49,7 @@ class Signup extends CActiveRecord
                but if the user deletes the default, 
                this will make sure something goes in there
             */
-            array('student_id', 'uniqueKey', 'on' => 'insert',
+            array('student_id', 'ext.compositeUnique', 'on' => 'insert',
                 'error_message' => '$data->student->full_name . " already signed up for " . $data->class->summary'),
             array('signup_date','default',
                   'value'=> date ("Y-m-d H:i:s"),
@@ -125,25 +125,5 @@ class Signup extends CActiveRecord
                                            ));
     }
 
-    public function uniqueKey($attribute,$params)
-    {
-        if($this->hasErrors()){
-            return;
-        }
-        $found = Signup::model()->findByPk($this->primaryKey);
-        if($found){
-            $err = isset($params['error_message']) ? 
-                $this->evaluateExpression($params['error_message'], 
-                                          array('data' => $found)): 
-                'Duplicate, Entry already exists';
-            if(is_array($this->primaryKey)){
-                foreach($this->primaryKey as $k => $v){
-                    $this->addError( $k, $err);
-                }
-            } else {
-                $this->addError( 'id', $err);
-            }
-        }
-    }
 
 }
