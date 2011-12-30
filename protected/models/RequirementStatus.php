@@ -106,8 +106,12 @@ class RequirementStatus extends CActiveRecord
                                            ));
 	}
 
-    public function getExpired()
+    public function getIs_expired()
     {
+        // no date or 0 date means doesn't expire
+        if($this->expired == '' || strtotime($this->expired) < 100){
+            return false;
+        }
         return strtotime($this->expired) <= strtotime(date('Y-m-d'));
     }
 
@@ -117,17 +121,21 @@ class RequirementStatus extends CActiveRecord
       so we have to check for that explicitly.
      */
     
-    public function getMissing()
+    public function getIs_missing()
     {
-        //100 an arbitrary nothing number
-        return strtotime($this->received) < 100;
+        // no date or 0 date means doesn't expire
+        return $this->received == ''  ||strtotime($this->received) < 100 ;
 
     }
     /*
       If it is expiring before the end of the currently-chosen session.
      */
-    public function getExpiring()
+    public function getIs_expiring()
     {
+        // no date or 0 date means doesn't expire
+        if($this->expired == '' ||  strtotime($this->expired) < 100){
+            return false;
+        }
         return strtotime($this->expired) < strtotime(
             ClassSession::current()->end_date);
     }
