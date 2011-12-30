@@ -130,12 +130,12 @@ class ZHtml extends CHtml
                                               $data, $static, $options = array())
     {
         if($model->isNewRecord && isset($model->{$id})){
-            echo $static;
+            echo $form->evaluateExpression($static);
             echo $form->hiddenField($model,$id); 
         } else { 
             echo $form->dropDownList(
                 $model,$id,
-                $data,
+                $form->evaluateExpression($data),
                 $options);
         } 
 
