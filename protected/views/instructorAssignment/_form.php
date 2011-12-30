@@ -13,19 +13,21 @@
 	<div class="row">
 
 <?php
-if(!isset($_GET['instructor_id'])){
-?>
+		echo $form->labelEx($model,'instructor_id'); 
 
-		<?php echo $form->labelEx($model,'instructor_id'); ?>
-
-    <?php 
+      // This is another odd one, so i'm not using ZHtml here either
+      // I have to constrain based on company here.
+    if(isset($model->instructor_id)){
+        echo CHtml::encode($model->instructor->full_name);
+        echo $form->hiddenField($model,"instructor_id"); 
+    } else {
           $instparams=array();
-    $constraint = "";
+          $constraint = "";
           if(isset($model->class_id)){
               $instparams = array(
                   'condition'=>'company_id = :coid',
                   'params'=>array(':coid' => $model->class->company_id));
-              $constraint = " (for ". $model->class->company->name . ")";
+              $constraint = " (this class is ". $model->class->company->name . ")";
           }
 
           echo $form->dropDownList(
@@ -34,15 +36,9 @@ if(!isset($_GET['instructor_id'])){
                               'id', 'full_name')
               ); 
           echo $constraint;
-          ?>
-		<?php echo $form->error($model,'instructor_id'); ?>
-
-    <?php } else { ?>
-    Add class for: 
-	<?php echo CHtml::encode($model->instructor->full_name);
-          echo $form->hiddenField($model,"instructor_id"); 
-               } 
+    } 
 ?>
+		<?php echo $form->error($model,'instructor_id'); ?>
 	</div>
 
 
