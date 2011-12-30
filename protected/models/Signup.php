@@ -45,10 +45,11 @@ class Signup extends CActiveRecord
             array('student_id, class_id,scholarship', 'numerical', 'integerOnly'=>true),
             array('signup_date, status,note', 'safe'),
             /* the set on empty is just a belt-and-suspenders
-             the controller sets a default anyway.
-             but if the user deletes the default, 
-             this will make sure something goes in there
+               the controller sets a default anyway.
+               but if the user deletes the default, 
+               this will make sure something goes in there
             */
+            array('student_id', 'uniqueKey', 'on' => 'insert'),
             array('signup_date','default',
                   'value'=> date ("Y-m-d H:i:s"),
                   'setOnEmpty'=>true,
@@ -75,7 +76,7 @@ class Signup extends CActiveRecord
 
     /*
       Because activerecord sucks.
-     */
+    */
     public function getIncome()
     {
         return Income::model()->find(
@@ -122,4 +123,18 @@ class Signup extends CActiveRecord
                                            'criteria'=>$criteria,
                                            ));
     }
+
+    public function uniqueKey($attribute,$params)
+    {
+        if($this->hasErrors()){
+            return;
+        }
+        $found = Signup::model()->findByPk($this->primaryKey);
+        if($found){
+            $this->addError(
+                'summary', 
+                $found->student->full_name . " already signed up for " . $found->class->summary);
+        }
+    }
+
 }

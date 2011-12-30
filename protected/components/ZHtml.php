@@ -132,7 +132,7 @@ class ZHtml extends CHtml
     public static function multiEndedDropDown($model, $form, $id, 
                                               $data, $static, $options = array())
     {
-        if(isset($model->{$id})){
+        if(isset($model->{$id}) && !$model->hasErrors()){
             echo $form->evaluateExpression($static, array('model' => $model));
             echo $form->hiddenField($model,$id); 
         } else { 
