@@ -40,7 +40,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'alias',
 		'instructor_type.description:text:Type',
         'company.name:text:Company',
-		'email',
+		'email:email',
 		'cell_phone',
 		'other_phone',
 		'note',
