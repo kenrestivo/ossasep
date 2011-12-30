@@ -31,12 +31,6 @@
 			amount
 		total
 
-**	S list of scholarships report
-       for karen
-		student
-		class
-		amount
-
 **	W integrity check dashboard
 			unassigned check amounts		
 			   check status/dashboard, show that they add up!
