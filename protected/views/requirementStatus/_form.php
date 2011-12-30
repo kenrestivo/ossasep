@@ -1,7 +1,7 @@
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'requirermentstatus-form',
+	'id'=>'requirement-status-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -94,4 +94,4 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 </div><!-- form -->
 
 <?php echo $this->renderPartial('/site/_unsaved_changes_warning',
-                                array('form_id'=>"#requirementstatus-form")); ?>
+                                array('form_id'=>"#requirement-status-form")); ?>
