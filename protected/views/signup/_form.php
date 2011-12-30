@@ -17,15 +17,11 @@
 		<?php echo $form->labelEx($model,'student_id'); ?>
 
     <?php 
-    if(!isset($_GET['student_id'])){
-        echo $form->dropDownList(
-            $model,'student_id',
-            CHtml::listData(Student::model()->findAll(), 'id', 'full_name'),
-            array('class' => 'chzn-select'));
-    } else { 
-        echo CHtml::encode($model->student->full_name. " (" . Yii::app()->format->grade($model->student->grade) . ")");
-        echo $form->hiddenField($model,"student_id"); 
-    } 
+    ZHtml::multiEndedDropDown(
+        $model, $form, 'student_id',
+        CHtml::listData(Student::model()->findAll(), 'id', 'full_name'),
+        CHtml::encode($model->student->full_name. " (" . Yii::app()->format->grade($model->student->grade) . ")"),
+                array('class' => 'chzn-select'));
  ?>
 		<?php echo $form->error($model,'student_id'); ?>
 	</div>
