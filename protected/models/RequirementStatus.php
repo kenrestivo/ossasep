@@ -106,10 +106,9 @@ class RequirementStatus extends CActiveRecord
                                            ));
 	}
 
-    public function expired()
+    public function getExpired()
     {
-        return strtotime($this->expired) >= strtotime();
-
+        return strtotime($this->expired) <= strtotime(date('Y-m-d'));
     }
 
     /*
@@ -118,7 +117,7 @@ class RequirementStatus extends CActiveRecord
       so we have to check for that explicitly.
      */
     
-    public function missing()
+    public function getMissing()
     {
         //100 an arbitrary nothing number
         return strtotime($this->received) < 100;
@@ -127,14 +126,14 @@ class RequirementStatus extends CActiveRecord
     /*
       If it is expiring before the end of the currently-chosen session.
      */
-    public function expiring()
+    public function getExpiring()
     {
-        return strtotime($this->expired) >= strtotime(
+        return strtotime($this->expired) < strtotime(
             ClassSession::current()->end_date);
     }
 
 
-    public function status()
+    public function getStatus()
     {
         if($this->missing){
             return "Missing";
