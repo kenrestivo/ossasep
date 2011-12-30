@@ -33,7 +33,8 @@ TODO tasks for ASEP
 *** ajax validation via yii built in -- errors
 ****   	[#A] the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
-		extend http://www.yiiframework.com/doc/api/CExistValidator ?
+		i can use my duplicate validator as a guide
+		but! better to constrain isn't it?
 ****    [#B] a check or split where totals exceed check
 		make sure the incomes are not more or less than the total check
 		it's probably ok if the incomes are LESS than total check tho
