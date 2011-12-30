@@ -53,6 +53,7 @@ class RequirementType extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
+        // ALSO KEEP THESE AS MANY-MANY WHILE USING THAT ADVANCEDBEHAVIOR!
 		return array(
 			'instructor_types' => array(
                 self::MANY_MANY, 
@@ -96,4 +97,14 @@ class RequirementType extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getInstructor_summary()
+    {
+        return implode(', ', 
+                       array_map(
+                           function($i) { return $i->description ; },
+                           $this->instructor_types
+                           ));
+
+    }
 }
