@@ -37,30 +37,28 @@
               ); 
           echo $constraint;
     } 
+echo $form->error($model,'instructor_id'); 
 ?>
-		<?php echo $form->error($model,'instructor_id'); ?>
 	</div>
 
 
 	<div class="row">
 
-<?php
-if(!isset($_GET['class_id'])){
-?>
+        <?php
+        
+        echo $form->labelEx($model,'class_id');
 
-		<?php echo $form->labelEx($model,'class_id'); ?>
-
-
-    <?php 
-
-
-          $classparams=array();
+if(isset($model->class_id)){
+    echo CHtml::encode($model->class->summary);
+    echo $form->hiddenField($model,"class_id"); 
+} else {
+    $classparams=array();
     $constraint = "";
-          if(isset($model->instructor_id)){
+    if(isset($model->instructor_id)){
               $classparams = array(
                   'condition'=>'company_id = :coid',
                   'params'=>array(':coid' => $model->instructor->company_id));
-              $constraint = " (for ". $model->instructor->company->name. ')';
+              $constraint = " (this instructor is ". $model->instructor->company->name. ')';
 
           }
 
@@ -72,15 +70,9 @@ if(!isset($_GET['class_id'])){
               ); 
 
           echo $constraint;
-
+}
+		 echo $form->error($model,'class_id'); 
 ?>
-
-		<?php echo $form->error($model,'class_id'); ?>
-    <?php } else { ?>
-    Add instructor for: 
-	<?php echo CHtml::encode($model->class->summary);
-          echo $form->hiddenField($model,"class_id"); 
-               } ?>
 
 	</div>
 
