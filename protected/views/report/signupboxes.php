@@ -14,7 +14,7 @@
           <td class="short"></td>
           <td>
 <?php
-if(Yii::app()->user->isGuest){
+if(Yii::app()->user->name != 'admin'){
     echo CHtml::encode($class->class_name);
 } else {
     echo CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)); 

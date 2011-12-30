@@ -1,7 +1,7 @@
 <table class="emailable">
   <tr>
     <th colspan="2" class="title" >
-     <?php if(Yii::app()->user->isGuest){
+     <?php if(Yii::app()->user->name != 'admin'){
      echo CHtml::encode($model->class_name);
  } else {
      echo CHtml::link(CHtml::encode($model->class_name), 
