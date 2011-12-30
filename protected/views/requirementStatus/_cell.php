@@ -11,7 +11,11 @@ if($model->is_missing){
     $class = "error";
     $res = "Expired " . Yii::app()->format->date($model->expired);;
 } else {
-    $res = "OK";
+    if(isset($model->expired)){
+        $res = "OK thru " . Yii::app()->format->date($model->expired);
+    } else {
+        $res = "OK";
+    }
 }
 $res .= CHtml::encode($model->note);
 ?>
