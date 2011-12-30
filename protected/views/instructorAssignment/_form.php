@@ -17,7 +17,7 @@
 
       // This is another odd one, so i'm not using ZHtml here either
       // I have to constrain based on company here.
-    if(isset($model->instructor_id)){
+if(isset($model->instructor_id) && !$model->hasErrors()){
         echo CHtml::encode($model->instructor->full_name);
         echo $form->hiddenField($model,"instructor_id"); 
     } else {
@@ -48,7 +48,7 @@ echo $form->error($model,'instructor_id');
         
         echo $form->labelEx($model,'class_id');
 
-if(isset($model->class_id)){
+if(isset($model->class_id) && !$model->hasErrors()){
     echo CHtml::encode($model->class->summary);
     echo $form->hiddenField($model,"class_id"); 
 } else {
