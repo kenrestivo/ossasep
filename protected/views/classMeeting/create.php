@@ -12,7 +12,7 @@ $this->menu=array(
 
 <h1>Create ClassMeeting 
 <?php
-if(isset($_GET['class_id'])){
+if(isset($model->class_id)){
     echo " for " . CHtml::encode($model->class->summary);
 }
 ?>

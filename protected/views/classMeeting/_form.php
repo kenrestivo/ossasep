@@ -41,15 +41,11 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->labelEx($model,'class_id'); ?>
 
 <?php 
-if(!isset($_GET['class_id']) && !isset($model->class_id)){
-    echo $form->dropDownList(
-        $model,'class_id',
-        CHtml::listData(ClassInfo::model()->findAll(), 
-                        'id', 'summary')); 
-} else {
-	echo CHtml::encode($model->class->summary);
-    echo $form->hiddenField($model,"class_id"); 
-} 
+    ZHtml::multiEndedDropDown(
+        $model, $form, 'class_id',
+        "CHtml::listData(ClassInfo::model()->findAll(), 
+                        'id', 'summary')",
+        'CHtml::encode($model->class->summary)');
 
 ?>
 
