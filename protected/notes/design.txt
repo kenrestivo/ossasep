@@ -13,6 +13,7 @@
 *** my notes
 	show received date, or note if none
 	color red for expired, yellow for expires before end of session, green for ok
+	show the note IN the right cell for it
 **	H "receipt"
 		Student.name
 		CLASS
