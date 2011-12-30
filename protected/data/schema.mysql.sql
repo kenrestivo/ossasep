@@ -255,7 +255,8 @@ DROP TABLE IF EXISTS `instructor`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `instructor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(128) NOT NULL,
+  `last_name` varchar(128) NOT NULL,
+  `first_name` varchar(128) NOT NULL,
   `email` varchar(256) DEFAULT NULL,
   `cell_phone` varchar(256) DEFAULT NULL,
   `other_phone` varchar(256) DEFAULT NULL,

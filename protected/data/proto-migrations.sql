@@ -1,6 +1,16 @@
 
--- fix for historical mistake
-update requirement_status 
-       set received = '2000-01-01' 
-where (received is null or received < '1999-01-01') 
-      and expired > '1000-01-01';
+alter table instructor add column `first_name` varchar(128) NOT NULL;
+alter table instructor add column `last_name` varchar(128) NOT NULL;
+
+
+update instructor,
+(SELECT
+`full_name` ,
+SUBSTRING_INDEX( `full_name` , ' ', 1 ) AS first,
+SUBSTRING(full_name,INSTR(full_name,' ')+1) AS last
+from instructor) as fixes
+set instructor.first_name = fixes.first, instructor.last_name = fixes.last
+where instructor.full_name = fixes.full_name
+; 
+
+alter table instructor drop column full_name;
