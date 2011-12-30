@@ -5,7 +5,8 @@
    *
    * The followings are the available columns in table 'instructor':
    * @property integer $id
-   * @property string $full_name
+   * @property string $first_name
+   * @property string $last_name
    * @property string $email
    * @property string $cell_phone
    * @property string $other_phone
@@ -38,6 +39,11 @@ class Instructor extends CActiveRecord
 		return 'instructor';
 	}
 
+    public function getFull_name()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
+
     public function getPublic_name()
     {
         return $this->alias != '' ? $this->alias : $this->full_name;
@@ -51,18 +57,18 @@ class Instructor extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('full_name, company_id, instructor_type_id', 'required'),
+			array('first_name, last_name,company_id, instructor_type_id', 'required'),
 			array('instructor_type_id,company_id', 'numerical', 'integerOnly'=>true),
-			array('full_name, alias', 'length', 'max'=>128),
+			array('first_name, last_name, alias', 'length', 'max'=>128),
 			array('email, cell_phone, other_phone, note', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, full_name, alias, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name,alias, email, company_id, cell_phone, other_phone, note, instructor_type_id', 'safe', 'on'=>'search'),
             );
 	}
 
     public function defaultScope() {
-        return array('order' => 'full_name ASC');
+        return array('order' => 'last_name ASC, first_name asc');
     }
 
 	/**
@@ -123,7 +129,8 @@ class Instructor extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'full_name' => 'Full Name',
+			'first_name' => 'First Name',
+			'last_name' => 'Last Name',
 			'email' => 'Email',
 			'cell_phone' => 'Cell Phone',
 			'other_phone' => 'Other Phone',
@@ -147,7 +154,9 @@ class Instructor extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 
-		$criteria->compare('full_name',$this->full_name,true);
+		$criteria->compare('first_name',$this->first_name,true);
+
+		$criteria->compare('last_name',$this->last_name,true);
 
 		$criteria->compare('email',$this->email,true);
 

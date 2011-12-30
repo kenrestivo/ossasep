@@ -1,7 +1,8 @@
 
 <?php 
 $attributes =array(
-		'full_name',
+		'first_name',
+		'last_name',
         'alias',
 		'email:email',
 		'cell_phone',

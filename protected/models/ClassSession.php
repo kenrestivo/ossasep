@@ -184,7 +184,7 @@ left join class_info on class_info.id = instructor_assignment.class_id
 where class_info.session_id = :sid
 and instructor.instructor_type_id != :type
 group by instructor_id
-order by instructor.full_name asc",
+order by instructor.last_name asc, instructor.first_name asc",
             array('sid' => $this->id,
                   'type' => InstructorType::COMPANY_TYPE,
                 ));
@@ -200,7 +200,7 @@ left join instructor_assignment
 left join class_info on class_info.id = instructor_assignment.class_id
 where class_info.session_id = :sid
 group by instructor_id
-order by instructor.full_name asc",
+order by instructor.last_name asc, instructor.first_name asc",
             array('sid' => $this->id,
                 ));
 

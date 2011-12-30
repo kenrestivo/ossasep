@@ -122,15 +122,8 @@ class InstructorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Instructor('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Instructor']))
-			$model->attributes=$_GET['Instructor'];
-
-		$this->render('index',array(
-			'model'=>$model,
-		));
-
+        // brute force
+        $this->actionAdmin();
 
 	}
 
