@@ -118,7 +118,7 @@ left join instructor_assignment
 left join instructor
    on instructor_assignment.instructor_id = instructor.id
 where instructor.company_id = :id
-order by instructor.full_name asc",
+order by class_info.class_name asc",
             array('id' => $this->id));
 
     }
