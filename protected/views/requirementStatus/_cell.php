@@ -4,12 +4,12 @@ $class="";
 if(!isset($model) || $model->is_missing){
     $class = "status-error";
     $res = "Missing";
-} else if($model->is_expiring)  {
-    $class = "status-warning";
-    $res = 'Expiring ' . Yii::app()->format->date($model->expired);
 } else if($model->is_expired)  {
     $class = "status-error";
     $res = "Expired " . Yii::app()->format->date($model->expired);;
+} else if($model->is_expiring)  {
+    $class = "status-warning";
+    $res = 'Expiring ' . Yii::app()->format->date($model->expired);
 } else {
     $class = "status-ok";
     if(isset($model->expired)){
