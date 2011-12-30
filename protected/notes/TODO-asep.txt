@@ -3,18 +3,11 @@ TODO tasks for ASEP
 
 * questions for heidi
 **  front office vs instructor signup sheet differences?
-* finance calculations
-**    hmm, how about a running, detail total per instructor?!
-	    show each class, status, amount owed, amount paid, etc?
 * formatting
 ** the rest of the reports (like, 20 of them)!
-** make sure to carefully chtml::encode in EVERY cjui view!
 * ui
-** company checks
-      pick which checks are delivered!
-	  they are by class, which is how she files them
-	  classinfo/_income
-	  a checkbox, mark all, save, would be fine
+** signup, modify chosen and dropdown to show tiered classes
+    those in age range, those outside it
 **	deposit form
 		either auto-enter or a button to auto enter automatically
 			any checks to OSSPTO
@@ -26,34 +19,40 @@ TODO tasks for ASEP
 		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
+** company checks
+      pick which checks are delivered!
+	  they are by class, which is how she files them
+	  classinfo/_income
+	  a checkbox, mark all, save, would be fine
 **	check_income
 *** make multi-entry form work for EDITING too
 	now the saving
 	create, student id provided
 	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
-i***     checks/_income: if user chooses student, constrain classes based on unpaid
+***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
-*** js validation via yii built in
-	first make sure that the notice works, addNotice, i hope
-****     enter a grade that is out of range
-****     entering to a session not the current default
 *** ajax validation via yii built in -- errors
-****   	the student must be signed up for that class before it gets paid
+****   	[#A] the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		extend http://www.yiiframework.com/doc/api/CExistValidator ?
-****    instructor percentages don't exceed 100%
-****    a check or split where totals exceed check
+****    [#B] a check or split where totals exceed check
 		make sure the incomes are not more or less than the total check
+		it's probably ok if the incomes are LESS than total check tho
+****    instructor percentages don't exceed 100%
 *** trapping sql/fk errors through ajax validation
 ****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
 ****    change company name with instructors who are not in that company
-****    unique validators! for all records really
+****    unique validators, dupe checking! for all records really
 		all the linktables! it'll have to check key combos
 		first/last in student
 		class meeting/class_id unique
 		school day in calendar
+*** js validation via yii built in
+	first make sure that the notice works, addNotice, i hope
+****     enter a grade that is out of range
+****     entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
 ****    class over capacity but student set to enrolled
 ****    change the day of week but there are active meetings
@@ -183,6 +182,8 @@ i***     checks/_income: if user chooses student, constrain classes based on unp
 		roster import
 *** make date pickers have longer terms for some things (meetings, paperwork)
 ***	trap exception on populate for school days
+*** clean up massive sql queries and translate them into cdbcriteria
+	so i can have searches and sorts, also sums and totals!
 ***	to avoid confusion, special case the company stuff with js
 		if company is not PTO, or is type company, show delivered, not deposited
 			else  show deposited, not delivered

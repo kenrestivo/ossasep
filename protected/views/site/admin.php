@@ -79,7 +79,7 @@
 <h1>Office/Principal</h1>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet (Front Office Use)</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/scholarships">Scholarships</a>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/scholarships">Scholarships Summary</a>
       <br />
 </td>
 
