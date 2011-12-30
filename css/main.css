@@ -360,3 +360,14 @@ background: #FEF5CA;
   border-style: solid;
 
  }
+.status-ok{ 
+  background-color:#ccffcc; 
+}
+
+.status-warning{ 
+  background-color:#ffff00;
+ }
+
+.status-error{ 
+  background-color:#ff99cc;
+ }
