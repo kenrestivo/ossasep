@@ -1,7 +1,7 @@
 
 <div>
 
-<p><em>Required:</em></p>
+<p><em>Requirement Summary:</em></p>
 
 <?php
     $this->renderPartial("_requirement_status", 
