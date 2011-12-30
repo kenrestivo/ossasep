@@ -33,7 +33,7 @@
 
     <?php 
       // I cannot use the multiendeddropdown here, because of the odd dropdown
-    if(isset($model->class_id)){
+    if(isset($model->class_id) && !$model->hasErrors()){
         echo CHtml::encode($model->class->summary);
         echo $form->hiddenField($model,"class_id"); 
     } else {
