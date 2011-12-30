@@ -16,8 +16,18 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Instructor',
+                          'template'=>'{view}{delete}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
                   )); ?>
 
+
+<?php
+
+     echo CHTML::link(CHtml::encode("Add New Instructor"), 
+                 array("Instructor/create",
+                       'company_id' => $model->id,
+                       'returnTo' => Yii::app()->request->requestUri));
+
+?>
