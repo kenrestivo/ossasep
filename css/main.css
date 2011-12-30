@@ -264,6 +264,11 @@ table.bordertable th,td.short{
   vertical-align: top;
 }
 
+.schedule th
+{
+background: 	#0000FF;
+color: #fff;
+}
 
 .schedule a
 {
