@@ -124,11 +124,22 @@ class RequirementStatus extends CActiveRecord
         return strtotime($this->received) < 100;
 
     }
+    /*
+      If it is expiring before the end of the currently-chosen session.
+     */
+    public function expiring()
+    {
+        return strtotime($this->expired) >= strtotime(
+            ClassSession::current()->end_date);
+    }
+
 
     public function status()
     {
         if($this->missing){
             return "Missing";
+        } else if($this->expiring)  {
+            return "Expiring soon";
         } else if($this->expired)  {
             return "Expired";
         } else {

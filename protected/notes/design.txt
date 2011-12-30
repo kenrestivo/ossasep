@@ -6,10 +6,13 @@
 		amount
 
 **	R  instructor paperwork and summary
+*** fields
 		name
 		missing paperwork (expired, or not received yet)
         notes
-
+*** my notes
+	show received date, or note if none
+	color red for expired, yellow for expires before end of session, green for ok
 **	H "receipt"
 		Student.name
 		CLASS
