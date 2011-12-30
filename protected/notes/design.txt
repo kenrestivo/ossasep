@@ -8,9 +8,6 @@
 **	R  instructor paperwork and summary
 		name
 		missing paperwork (expired, or not received yet)
-		payments received
-		payments owed
-		totals owed and totals  owing to instructor (see V though)
         notes
 
 **	H "receipt"
@@ -56,6 +53,9 @@
 		scholarships,
 		paid records but no names,
 		then total paid to them
+		payments received
+		payments owed
+		totals owed and totals  owing to instructor (see V though)
 		
 **	W integrity check dashboard
 			unassigned check amounts		
