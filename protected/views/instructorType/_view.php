@@ -8,18 +8,9 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-<h3>Requirements</h3>
-<?php 
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'requirementtype-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $data->requirements
-                      ),
-                  'columns'=>array(
-                      array('name' => "Required Items",
-                            'value' => '$data->description'),
-                      ),
-                  )); ?>
+	<b><?php echo CHtml::encode('Required'); ?>:</b>
+	<?php echo CHtml::encode($data->requirement_summary); ?>
+	<br />
 
 
 </div>
