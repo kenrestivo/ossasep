@@ -4,7 +4,6 @@ TODO tasks for ASEP
 * questions for heidi
 **  front office vs instructor signup sheet differences?
 * finance calculations
-**   instructors owed should be only enrolled
 **    hmm, how about a running, detail total per instructor?!
 	    show each class, status, amount owed, amount paid, etc?
 * formatting

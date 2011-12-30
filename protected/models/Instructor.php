@@ -183,7 +183,7 @@ class Instructor extends CActiveRecord
     public function getOwed()
     {
         $c = Yii::app()->db->createCommand(
-            "select sum(paids.total_paid) as owed, 
+"select sum(paids.total_paid) as owed, 
        paids.instructor_id
 from    
     (select csum.total_paid, 
@@ -199,14 +199,19 @@ from
                  on check_income.id = income.check_id
             left join class_info 
                  on class_info.id = income.class_id
+            left join signup
+                on signup.class_id = income.class_id
+                    and signup.student_id = income.student_id
             where (check_income.returned is null
                     or check_income.returned < '1999-01-01')
+                    and signup.status = 'Enrolled'
                   and class_info.session_id = :sid
             group by class_info.id
             order by class_info.class_name asc) as csum
         on csum.class_id = instructor_assignment.class_id
     where total_paid is not null) as paids
-where paids.instructor_id = :inst");
+where paids.instructor_id = :inst"
+);
         $r=$c->queryRow(true,             array(
                             'inst' => $this->id,
                             'sid' => ClassSession::savedSessionId()));
