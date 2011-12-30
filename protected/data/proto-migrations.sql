@@ -14,3 +14,6 @@ where instructor.full_name = fixes.full_name
 ; 
 
 alter table instructor drop column full_name;
+
+update instructor set first_name = "Maya (Nemiah)", last_name = "Guimbatan" where id = 22;
+update instructor set first_name = "Nick", last_name = "Kapp", `alias` = "Dr. Nick Kapp" where id = 4;
