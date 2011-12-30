@@ -39,10 +39,20 @@
     if(!isset($_GET['class_id'])){
         echo $form->dropDownList(
             $model,'class_id',
-            array('In Grade Range' =>
-                  CHtml::listData(
-                      ClassInfo::model()->findAll(
-                          "min_grade_allowed >= " . $model->student->grade ), 'id', 'summary')), 
+            array(
+                'In Grade Range' =>
+                CHtml::listData(
+                    ClassInfo::model()->findAll(
+                        $model->student->grade . '>= min_grade_allowed and '.
+                        $model->student->grade . '<= max_grade_allowed'), 
+                    'id', 'summary'),
+                'Outside Grade Range' =>
+                CHtml::listData(
+                    ClassInfo::model()->findAll(
+                        $model->student->grade . '< min_grade_allowed or '.
+                        $model->student->grade . '> max_grade_allowed'), 
+                    'id', 'summary'),
+                ), 
             array('class' => 'chzn-select')); 
     } else {
         echo CHtml::encode($model->class->summary);
