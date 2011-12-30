@@ -7,7 +7,7 @@ class CompositeUnique extends CValidator
     protected function validateAttribute($object,$attribute)
     {
 
-        $found = Signup::model()->findByPk($object->primaryKey);
+        $found = CActiveRecord::model(get_class($object))->findByPk($object->primaryKey);
         if($found){
             $err= $object->evaluateExpression(
                 $this->error_message, 
