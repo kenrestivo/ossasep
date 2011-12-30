@@ -1,6 +1,5 @@
 #-*- org -*-
 * reports
-** G  signup for instructor sees only their class! and only email-safe emails
 **	D  (payment for companies)
 	   company name
 		amount
@@ -38,20 +37,6 @@
 		class
 		amount
 
-**	U classes by room and date
-		classes by room and date summary
-
-
-**	V	instructor email report
-		each class,
-		total paid to us,
-		scholarships,
-		paid records but no names,
-		then total paid to them
-		payments received
-		payments owed
-		totals owed and totals  owing to instructor (see V though)
-		
 **	W integrity check dashboard
 			unassigned check amounts		
 			   check status/dashboard, show that they add up!
@@ -62,7 +47,19 @@
 		
 		
 
+**	V	instructor detailed financial report
+		each class,
+		total paid to us,
+		scholarships,
+		paid records but no names,
+		then total paid to them
+		payments received
+		payments owed
+		totals owed and totals  owing to instructor (see V though)
+		
+** G  signup for instructor sees only their class! and only email-safe emails
 **	I	instructor report
+*** fields
 		class name
 		instructor
 			type (individual/company)
@@ -70,7 +67,8 @@
 			cell
 			otherphone
 			note
-
+*** notes
+	this is basicallly just the cgridview, but unpaged, i guess
 
 ** 	B deposit summary -- already done?
 		osspto deposit, date
@@ -100,3 +98,8 @@
 
 **	E (sign up sheet?)
 		for heidi with paid/unpaid to instructor
+
+**	U classes by room and date
+		classes by room and date summary
+
+
