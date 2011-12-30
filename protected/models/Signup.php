@@ -132,9 +132,9 @@ class Signup extends CActiveRecord
                 array($this->student_id, $this->class_id));
 
             if($found){
-                $err = $found->student->full_name . " already signed up for " . $found->class->summary;
-                $this->addError('student_id', $err);
-                $this->addError('class_id', $err);
+                $this->addError(
+                    'summary', 
+                    $found->student->full_name . " already signed up for " . $found->class->summary);
             }
         }
     }
