@@ -1,31 +1,14 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
 <table class="bordertable">
-  <tr>
-    <th>
-      <h1>Public Screens</h1>
-    </th>
-    <th>
-      <h1>Admin Reports</h1>
-    </th>
-    <th>
-      <h1>Data Entry/Admin</h1>
-    </th>
-    <th>
-      <h1>Setup</h1>
-    </th>
-    
-  </tr>
-
-
+  
 
   <tr>
     <td>
+      <h1>Public Screens</h1>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/weekday">Weekday Schedule</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a>
-      <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsPublic">Current Signups (emailable)</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form (checkboxes)</a>
       <br />
@@ -33,8 +16,7 @@
 
 
     <td>
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet (Front Office Use)</a>
-      <br />
+      <h1>Admin Reports</h1>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
       <br />
 <a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/InstructorRequirements">Instructor Paperwork Status</a>
@@ -49,6 +31,7 @@
 
 
     <td>
+      <h1>Data Entry/Admin</h1>
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassInfo">Classes</a>
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Student">Students</a>
@@ -67,6 +50,7 @@
 
 
     <td>
+      <h1>Setup</h1>
 
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/ClassSession">Class Sessions</a>
       <br />
@@ -80,6 +64,25 @@
       <br />
     </td>
 
-
   </tr>
+
+<tr>
+      <td><h1>Parent-Accessible</h1><br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupsPublic">Current Signups (emailable)</a>
+      <br />
+</td>
+<td>
+<h1>Instructor Screens</h1>
+</td>
+
+<td>
+<h1>Office/Principal</h1>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/signupsheet">Sign-Up Sheet (Front Office Use)</a>
+      <br />
+</td>
+
+<td>
+</td>
+</tr>
+
 </table>
