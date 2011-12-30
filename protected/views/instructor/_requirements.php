@@ -1,8 +1,14 @@
+
+<div>
+
+<p><em>Required:</em></p>
+
 <?php
     $this->renderPartial("_requirement_status", 
                          array('model' => $model));
 
 ?>
+</div>
 
 <?php 
 echo CHTML::link("Receive New Paperwork for ". $model->full_name, 
@@ -11,7 +17,7 @@ echo CHTML::link("Receive New Paperwork for ". $model->full_name,
                        'returnTo' => Yii::app()->request->requestUri));
 
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'requiermentstatus-grid',
+                  'id'=>'requirement-status-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->requirement_status
                       ),
