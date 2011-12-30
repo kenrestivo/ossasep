@@ -6,8 +6,6 @@ TODO tasks for ASEP
 * formatting
 ** the rest of the reports (like, 20 of them)!
 * ui
-** signup, modify chosen and dropdown to show tiered classes
-    those in age range, those outside it
 **	deposit form
 		either auto-enter or a button to auto enter automatically
 			any checks to OSSPTO
@@ -51,7 +49,6 @@ TODO tasks for ASEP
 		school day in calendar
 *** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
-****     enter a grade that is out of range
 ****     entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
 ****    class over capacity but student set to enrolled
