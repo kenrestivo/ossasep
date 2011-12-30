@@ -9,7 +9,9 @@ foreach($instructors as $i){
     } else {
         echo CHtml::link(CHtml::encode($i->full_name), array('/Instructor/view', 'id'=>$i->id)); 
     }
-    echo '</b></span>';
+    echo '</b><br />(';
+    echo $i->instructor_type->description;
+    echo ')</span>';
     echo '<span class="span-16 last">';
     $this->renderPartial(
         '/instructor/_requirement_status',
