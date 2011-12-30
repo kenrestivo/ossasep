@@ -62,7 +62,7 @@ class SignupController extends Controller
 
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Signup']))
 		{
@@ -101,7 +101,7 @@ class SignupController extends Controller
 		$model=$this->loadModel();
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Signup']))
 		{

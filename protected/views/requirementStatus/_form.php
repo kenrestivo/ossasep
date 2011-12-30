@@ -14,7 +14,7 @@
     <?php
     ZHtml::multiEndedDropDown(
         $model, $form, 'instructor_id',
-        "CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name'))", 
+        "CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')", 
         'CHtml::encode($model->instructor->full_name)');
      ?>
 	<?php echo $form->error($model,'instructor_id'); ?>
