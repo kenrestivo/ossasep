@@ -57,5 +57,22 @@ class Controller extends CController
             ClassSession::savedSessionId())->summary;
     }
 
+    /*
+      Finds the matching activerecord, if any, of the keys
+      $vals is an array of keyname => value, so it can handle composites
+     */
+    public function subById($sub, $vals)
+    {
+        foreach($sub as $s){
+            $res = array();
+            foreach($vals as $k => $v){
+                $res[] = $s->{$k} == $v;
+            }
+            if(!in_array(false, $res)){
+                return $s;
+            }
+        }
+        return null;
+    }
 
 }

@@ -16,7 +16,7 @@ $full = $model->full;
 
 <strong><u>
 <?
-if(Yii::app()->user->isGuest){
+if(Yii::app()->user->name != 'admin'){
     echo CHtml::encode($model->class_name);
 } else {
     echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 

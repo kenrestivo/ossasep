@@ -11,11 +11,18 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'instructor_id'); ?>
+    <?php
+    if(!isset($_GET['instructor_id'])){
 
-    <?php echo $form->dropDownList(
-        $model,'instructor_id',
-        CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')); ?>
-		<?php echo $form->error($model,'instructor_id'); ?>
+        echo $form->dropDownList(
+            $model,'instructor_id',
+            CHtml::listData(Instructor::model()->findAll(), 'id', 'full_name')); 
+    } else {  
+        echo CHtml::encode($model->instructor->full_name);
+        echo $form->hiddenField($model,"instructor_id"); 
+    } ?>
+	<?php echo $form->error($model,'instructor_id'); ?>
+
 	</div>
 
 	<div class="row">

@@ -105,4 +105,53 @@ class RequirementStatus extends CActiveRecord
                                            'criteria'=>$criteria,
                                            ));
 	}
+
+    public function getIs_expired()
+    {
+        // no date or 0 date means doesn't expire
+        if($this->expired == '' || strtotime($this->expired) < 100){
+            return false;
+        }
+        return strtotime($this->expired) <= strtotime(date('Y-m-d'));
+    }
+
+    /*
+      This is necessary. 
+      There may be missing paperwork that DOES have a note here,
+      so we have to check for that explicitly.
+     */
+    
+    public function getIs_missing()
+    {
+        // no date or 0 date means doesn't expire
+        return $this->received == ''  ||strtotime($this->received) < 100 ;
+
+    }
+    /*
+      If it is expiring before the end of the currently-chosen session.
+     */
+    public function getIs_expiring()
+    {
+        // no date or 0 date means doesn't expire
+        if($this->expired == '' ||  strtotime($this->expired) < 100){
+            return false;
+        }
+        return strtotime($this->expired) < strtotime(
+            ClassSession::current()->end_date);
+    }
+
+
+    public function getStatus()
+    {
+        if($this->missing){
+            return "Missing";
+        } else if($this->expiring)  {
+            return "Expiring soon";
+        } else if($this->expired)  {
+            return "Expired";
+        } else {
+            return "OK";
+        }
+    }
+
 }

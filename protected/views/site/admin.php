@@ -37,7 +37,9 @@
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/classDashboard">Class Dashboard</a>
       <br />
-<a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/OSSPTOInstructorsDashboard">OSSPTO Instructor Financial Summary</a>
+<a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/InstructorRequirements">Instructor Paperwork Status</a>
+      <br />
+<a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/OSSPTOInstructorsPayments">OSSPTO Instructor Financial Summary</a>
 
 
       <br />
