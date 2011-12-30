@@ -165,6 +165,13 @@ class Student extends CActiveRecord
         return $res;
     }
 
+    public function getPublic_email_address()
+    {
+        if($this->parent_email == ""){
+            return "";
+        }
 
+        return $this->public_email_ok > 0 ? $this->parent_email : "(Private)";
+    }
 
 }
