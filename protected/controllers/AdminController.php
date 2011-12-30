@@ -89,4 +89,30 @@ class AdminController extends Controller
         
     }
 
+
+    public function actionScholarships()
+    {
+        $s = Signup::model()->findAllBySql(
+            "select signup.*
+from signup
+left join class_info
+   on class_info.id = signup.class_id
+left join student
+   on signup.student_id = student.id
+where class_info.status != 'Cancelled'
+    and signup.status != 'Cancelled'
+    and signup.scholarship > 0
+order by student.last_name asc, student.first_name asc
+",
+            array('sid' =>
+                  ClassSession::savedSessionId()));
+        
+        $this->render(
+            'scholarships',
+            array(
+                'model' => $s));
+    }
+
+
+
 }
