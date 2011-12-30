@@ -135,7 +135,7 @@ class Signup extends CActiveRecord
             $err = isset($params['error_message']) ? 
                 $this->evaluateExpression($params['error_message'], 
                                           array('data' => $found)): 
-                'Duplicate';
+                'Duplicate, Entry already exists';
             if(is_array($this->primaryKey)){
                 foreach($this->primaryKey as $k => $v){
                     $this->addError( $k, $err);
