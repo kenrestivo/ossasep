@@ -42,7 +42,7 @@ TODO tasks for ASEP
 ****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
 ****    change company name with instructors who are not in that company
-****    unique validators, dupe checking! for all records really
+****    duplicate key, unique validators, dupe checking! for all records really
 		all the linktables! it'll have to check key combos
 		first/last in student
 		class meeting/class_id unique
