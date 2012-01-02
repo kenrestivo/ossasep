@@ -1157,3 +1157,18 @@ probably ok to have some stuff not perfectly clean
 
 report of negative numbers
 m2
+
+
+------
+use a proper accounting engine! use gnucash!
+  java -jar ~tmp/incoming/jgnucash/build/lib/jpf-boot.jar
+	ooh cool!
+	but, it is flaky
+
+
+http://ledger-cli.org/
+
+http://www.openbravo.com/
+
+ooh, i can import invoices using gnucash and python (and probably guile too)
+http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/

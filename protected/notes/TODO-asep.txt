@@ -4,17 +4,18 @@ TODO tasks for ASEP
 * questions for heidi
 **  front office vs instructor signup sheet differences?
 * formatting
+** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
 * ui
 **	deposit form
-		either auto-enter or a button to auto enter automatically
+***		either auto-enter or a button to auto enter automatically
 			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are minimum
-		show popup of the next one when entering
+***		show popup of the next one when entering
 			or my summary might be OK, using echosen
 			popup would be fun though.
-		put in check number, autocomplete
+***		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
 ** company checks
@@ -23,6 +24,7 @@ TODO tasks for ASEP
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
 **	check_income
+***	add an EMPTY as a default for deposit on checks!	
 *** make multi-entry form work for EDITING too
 	now the saving
 	create, student id provided
@@ -137,7 +139,7 @@ TODO tasks for ASEP
         this means the popups too.
         default sort/scope for everytbing
         search and such
-***	add an EMPTY as a default for deposit on checks!	
+**** did i do this already?
 ***	use wide layout with menu at top from roster for ALL things
 		it needs to be integrated into class for sure, and student
         this is in roster, in main branch
@@ -204,9 +206,7 @@ TODO tasks for ASEP
 * STUCK
 ** open questions
 ***	how do you know who to write the check to (from that report)?
-***	deleting/cancelling a class
-***	returning a check! do you just delete it?
-***	cost PER class? extra costs? total cost? how?
+	wtf does that actually mean?
 ***	will you have a case where the materials fee is NOT PER CLASS
 		i.e. per year?
 
@@ -250,9 +250,6 @@ TODO tasks for ASEP
 		delete from instructor_assignment where class_id=:cid
 		delete from class_meeting where class_id=:cid
 		delete from class_info where id=:cid
-
-
-
 ** must have for NEXT YEAR:
 ***	need some way to track the current school year. 
 		yes, i remember now!!!! it took today's date, calculated month!
