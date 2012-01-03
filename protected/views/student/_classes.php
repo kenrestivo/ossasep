@@ -11,7 +11,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->signups
                       ),
                   'columns'=>array(
-                      'class.class_name:text:Class',
+                      'class.summary:text:Class',
                       'status:text:Status',
                       'scholarship:boolean:Scholarship',
                       'signup_date:datetime:Signed Up On',

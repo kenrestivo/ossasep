@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update InstructorAssignment <?php echo $model->instructor->full_name. " " . $model->class->class_name  ?></h1>
+<h1>Update InstructorAssignment <?php echo $model->instructor->full_name. " " . $model->class->summary  ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

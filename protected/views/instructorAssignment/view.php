@@ -20,7 +20,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
         'instructor.full_name',
-        'class.class_name',
+        'class.summary',
         'percentage'
 	),
 )); ?>

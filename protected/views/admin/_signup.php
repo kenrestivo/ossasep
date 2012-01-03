@@ -1,4 +1,4 @@
-<h3><?= CHtml::link($model->class_name, 
+<h3><?= CHtml::link($model->summary, 
                      array("/ClassInfo/view", 'id' => $model->id)) ?>
      <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?>, 
      <?php echo CHtml::encode(ZHtml::weekdayTranslation($model->day_of_week)); ?>, 

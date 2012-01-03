@@ -43,7 +43,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
                         'filter'=>$model,
                         'columns'=>array(
                             'instructor.full_name',
-                            'class.class_name',
+                            'class.summary',
                             'percentage',
                             array(
                                 'class'=>'CompositeButtonColumn',

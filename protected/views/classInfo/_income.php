@@ -38,7 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 <?php 
 
     echo '<span class="span-11">';
-echo CHTML::link(CHtml::encode("Add Check for " . $model->class_name), 
+echo CHTML::link(CHtml::encode("Add Check for " . $model->summary), 
                  array("CheckIncome/create",
                        'class_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
