@@ -11,6 +11,7 @@ TODO tasks for ASEP
 ***		either auto-enter AND a button to enter automatically
 			any checks to OSSPTO
 			which are joint checks
+			and are not returned
 			or which are for classes which are minimum
 ***		show popup of the next one when entering
 		or my summary might be OK, using echosen

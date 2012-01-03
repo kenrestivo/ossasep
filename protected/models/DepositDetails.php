@@ -276,7 +276,26 @@ where check_income.deposit_id = :id");
 
     public function populate_checks()
     {
-        
+        /* XXX TODO, the rest of the criteria here!
+           - enrolled count > minimum
+           - income count > 1
+         */
+        $c = Yii::app()->db->createCommand(
+"
+select check_income.*
+from check_income
+where check_income.payee_id = :osspto
+and check_income.session_id = :sid
+and (check_income.returned is null or check_income.returned < '1000-01-01')
+");
+        $r=$c->queryAll(
+            true, 
+            array( 'osspto' => Company::OSSPTO_COMPANY,
+                   'sid' => ClassSession::savedSessionId()));
+        foreach($r as $i){
+            $i->deposit_id = $this->id;
+            $i->save();
+        }
     }
 
 
