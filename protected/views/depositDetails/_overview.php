@@ -3,10 +3,10 @@
 	'attributes'=>array(
 		'id',
 		'deposited_date:date',
+		'total_calculated:currency:Total Deposit',
 		'subtotal_checks:currency:Checks Subtotal',
 		'subtotal_cash:currency:Cash Subtotal',
 		'subtotal_coin:currency:Coins Subtotal',
-		'total_calculated:currency:Total Deposit',
         'note',
         'session.summary:text:Session',
 	),
