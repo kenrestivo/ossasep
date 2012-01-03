@@ -175,6 +175,8 @@ $('#CheckIncome_payee_id').change(
             $('#delivered_row').show()
         }
     }
-)
+    );
+// now do it
+$('#CheckIncome_payee_id').change();
     })
  </script>

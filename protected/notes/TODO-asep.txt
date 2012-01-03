@@ -138,6 +138,7 @@ TODO tasks for ASEP
 * CLEANUP
 ** vital
 ** useful
+*** autocomplete the amount on income based on class
 *** go through all the multi-link _forms, put <div row> before the issset
 	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
