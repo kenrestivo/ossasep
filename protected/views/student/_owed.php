@@ -32,7 +32,7 @@ foreach($payees as $p){
                        'student_id' => $model->id,
                        'company_id' => $p->id,
                        'returnTo' => Yii::app()->request->requestUri));
-        echo CHtml::encode(': '.Yii::app()->format->currency(-$check->unassigned) . ' available');
+        echo CHtml::encode(': '.Yii::app()->format->currency($check->unassigned) . ' available');
         echo '<br />';
 
 

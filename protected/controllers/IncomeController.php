@@ -88,7 +88,7 @@ class IncomeController extends Controller
 
         if(isset($_GET['check_id'])){
             $model->check_id = $_GET['check_id'];
-            $model->amount = -$model->check->unassigned;
+            $model->amount = $model->check->unassigned;
         }
 
 		$this->render('create',array(

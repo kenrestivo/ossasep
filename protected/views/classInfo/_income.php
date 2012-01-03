@@ -54,7 +54,7 @@ echo CHTML::link(CHtml::encode("Add Check for " . $model->class_name),
                        'class_id' => $model->id,
                        'company_id' => $model->company_id,
                        'returnTo' => Yii::app()->request->requestUri));
-        echo CHtml::encode(': '.Yii::app()->format->currency(-$check->unassigned) . ' available');
+        echo CHtml::encode(': '.Yii::app()->format->currency($check->unassigned) . ' available');
         echo '<br />';
 
 
