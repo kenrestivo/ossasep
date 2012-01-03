@@ -258,19 +258,49 @@ class DepositDetails extends CActiveRecord
 
     }
 
-    public function getSubtotal_checks()
+    public function getDiscrepancy()
     {
+        return $this->subtotal_cash_payments - $this->subtotal_reconciliation;
+
+    }
+
+
+    public function subtotalPayments($type = 'check')
+    {
+        $cash_comparison = $type == 'check'  ? "check_income.cash < 1" : " check_income.cash > 0";
+
         $c = Yii::app()->db->createCommand(
             "select sum(amount) as total
 from check_income
-where check_income.deposit_id = :id");
+where check_income.deposit_id = :id
+and ($cash_comparison)
+");
         $r = $c->queryRow(true, array('id' => $this->id));
         return $r['total'];
     }
 
+
+    public function getSubtotal_checks()
+    {
+        return $this->subtotalPayments('check');
+    }
+
+
+    public function getSubtotal_cash_payments()
+    {
+        return $this->subtotalPayments('cash');
+    }
+
+
     public function getTotal_calculated()
     {
-        return $this->subtotal_coin + $this->subtotal_cash + $this->subtotal_checks;
+        return $this->subtotal_cash_payments + $this->subtotal_checks;
+    }
+
+
+    public function getSubtotal_reconciliation()
+    {
+        return $this->subtotal_cash + $this->subtotal_coin;
     }
 
 

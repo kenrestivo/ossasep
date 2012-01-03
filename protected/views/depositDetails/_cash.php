@@ -41,3 +41,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 </span>
 
 <div class="clear"> </div>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'subtotal_cash_payments:currency:Cash Total from Payments',
+		'subtotal_reconciliation:currency:Cash from Reconciliation',
+		'discrepancy:currency:Discrepancy',
+	),
+)); ?>
