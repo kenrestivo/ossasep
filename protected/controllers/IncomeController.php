@@ -20,7 +20,7 @@ class IncomeController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,14 +32,14 @@ class IncomeController extends Controller
 	{
 		return array(
 			array('allow', // adminonly
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
-				'users'=>array('admin'),
-			),
+                  'actions'=>array('index', 'view', 'create', 'update', 
+                                   'admin','delete'),
+                  'users'=>array('admin'),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	/**
@@ -48,8 +48,8 @@ class IncomeController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 	/**
@@ -58,6 +58,8 @@ class IncomeController extends Controller
 	 */
 	public function actionCreate()
 	{
+        $amount_remaining = null; // used later on
+
 		$model=new Income;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -75,10 +77,10 @@ class IncomeController extends Controller
 
         if(isset($_GET['class_id'])){
             $model->class_id = $_GET['class_id'];
-            
-            // doing this here instead of rules
+
+            // prepopulating amount doing this here instead of rules
             if(!isset($this->amount)){
-                $model->amount = $model->class->costSummary;
+                $model->amount =  $model->class->costSummary;
             }
         }
 
@@ -86,14 +88,20 @@ class IncomeController extends Controller
             $model->student_id = $_GET['student_id'];
         }
 
-        if(isset($_GET['check_id'])){
+        if(isset($_GET['check_id']) ){
             $model->check_id = $_GET['check_id'];
-            $model->amount = $model->check->unassigned;
+            // note magic, this fetches the moddel from the db
+            $amount_remaining =  $model->check->unassigned;
+            // note the magic  here, only if check id above doesn't set amount
+            if($model->amount < 0){
+                $model->amount = $amount_remaining;
+            }
         }
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          'remaining' => $amount_remaining,
+                          ));
 	}
 
 	/**
@@ -118,8 +126,8 @@ class IncomeController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -148,8 +156,8 @@ class IncomeController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Income');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+                          'dataProvider'=>$dataProvider,
+                          ));
 	}
 
 	/**
@@ -163,8 +171,8 @@ class IncomeController extends Controller
 			$model->attributes=$_GET['Income'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -176,13 +184,13 @@ class IncomeController extends Controller
 		if($this->_model===null)
 		{
 			if(isset($_GET['student_id']) && isset($_GET['check_id'])
-                && isset($_GET['class_id']))
+               && isset($_GET['class_id']))
                 // XXX this is stupid and tedious. fix.
 				$this->_model=Income::model()->findbyPk(
                     array(
-                    'student_id' => $_GET['student_id'],
-                    'check_id' =>$_GET['check_id'],
-                    'class_id' =>$_GET['class_id']
+                        'student_id' => $_GET['student_id'],
+                        'check_id' =>$_GET['check_id'],
+                        'class_id' =>$_GET['class_id']
                         ));
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');

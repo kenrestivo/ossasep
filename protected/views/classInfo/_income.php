@@ -52,6 +52,7 @@ echo CHTML::link(CHtml::encode("Add Check for " . $model->summary),
         echo CHTML::link($check->summary,
                  array("Income/create",
                        'class_id' => $model->id,
+                       'check_id' => $check->id,
                        'company_id' => $model->company_id,
                        'returnTo' => Yii::app()->request->requestUri));
         echo CHtml::encode(': '.Yii::app()->format->currency($check->unassigned) . ' available');
