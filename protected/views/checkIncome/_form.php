@@ -145,7 +145,11 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
+if($model->isNewRecord ){
+    echo " (You will assign the check to a class and student after creating the check first)";
+}
+?>
 	</div>
 
 <?php $this->endWidget(); ?>
