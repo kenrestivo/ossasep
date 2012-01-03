@@ -41,7 +41,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 echo CHTML::link(CHtml::encode("Add Check for " . $model->summary), 
                  array("CheckIncome/create",
                        'class_id' => $model->id,
-                       'returnTo' => Yii::app()->request->requestUri));
+                       ));
 
     echo "</span><span class=\"span-9 last\">";
     $un = CheckIncome::underAssignedChecks(null);
