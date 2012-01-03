@@ -3,7 +3,7 @@
 <?php 
     $payees= array();
 foreach($model->owed as $owed){
-    echo '<tr><td>' . CHtml::encode($owed['class']->class_name) . "</td><td>". CHtml::encode($owed['payee']->name) . "</td><td>" . CHtml::encode($owed['amount']) . "</td></tr>";
+    echo '<tr><td>' . CHtml::encode($owed['class']->summary) . "</td><td>". CHtml::encode($owed['payee']->name) . "</td><td>" . CHtml::encode($owed['amount']) . "</td></tr>";
     $payees[$owed['payee']->id]= $owed['payee'];
 }
 
