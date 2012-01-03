@@ -29,6 +29,7 @@ foreach($payees as $p){
     foreach($un as $check){
         echo CHTML::link($check->summary,
                  array("Income/create",
+                       'check_id' => $check->id,
                        'student_id' => $model->id,
                        'company_id' => $p->id,
                        'returnTo' => Yii::app()->request->requestUri));
