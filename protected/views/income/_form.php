@@ -49,10 +49,15 @@ echo $form->error($model,'student_id');
 
 		<?php 
     echo $form->labelEx($model,'class_id');
+if(isset($model->student_id)){
+    $cdrop= "CHtml::listData(Student::model()->findByPk(". $model->student_id. ")->classes, 'id', 'summary')";
+}else {
+    $cdrop="CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary')";
+}
 
     ZHtml::multiEndedDropDown(
         $model,$form, 'class_id',
-        "CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary')",
+        $cdrop,
         'CHtml::encode($model->class->summary)',
         array('class' => 'chzn-select'));
 
