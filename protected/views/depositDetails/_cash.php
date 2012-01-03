@@ -7,7 +7,7 @@ echo CHTML::link("Add Cash to deposit " . $model->summary,
                        'returnTo' => Yii::app()->request->requestUri));
 
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'check-income-grid',
+                  'id'=>'cash-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->cash),
                   'selectionChanged'=>
