@@ -1,25 +1,25 @@
 <?php
 
-/**
- * This is the model class for table "deposit_details".
- *
- * The followings are the available columns in table 'deposit_details':
- * @property integer $id
- * @property string $deposited_date
- * @property string $total_amount
- * @property integer $pennies
- * @property integer $nickels
- * @property integer $dimes
- * @property integer $quarters
- * @property integer $dollar_coins
- * @property integer $ones
- * @property integer $fives
- * @property integer $tens
- * @property integer $twenties
- * @property integer $fifties
- * @property integer $hundreds
- * @property integer $session_id
- */
+  /**
+   * This is the model class for table "deposit_details".
+   *
+   * The followings are the available columns in table 'deposit_details':
+   * @property integer $id
+   * @property string $deposited_date
+   * @property string $total_amount
+   * @property integer $pennies
+   * @property integer $nickels
+   * @property integer $dimes
+   * @property integer $quarters
+   * @property integer $dollar_coins
+   * @property integer $ones
+   * @property integer $fives
+   * @property integer $tens
+   * @property integer $twenties
+   * @property integer $fifties
+   * @property integer $hundreds
+   * @property integer $session_id
+   */
 class DepositDetails extends CActiveRecord
 {
 	/**
@@ -71,7 +71,7 @@ class DepositDetails extends CActiveRecord
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
                   'on'=>'insert'),
-		);
+            );
 	}
 
     public function defaultScope() {
@@ -101,7 +101,7 @@ class DepositDetails extends CActiveRecord
                             'condition' => 'cash > 0'),
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
                                'order' => 'start_date'),
-		);
+            );
 	}
 
 	/**
@@ -126,8 +126,13 @@ class DepositDetails extends CActiveRecord
 			'hundreds' => '$100.00',
 			'session_id' => 'Session',
             'note' => 'Entered By',
-		);
+            );
 	}
+
+
+
+
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -172,6 +177,86 @@ class DepositDetails extends CActiveRecord
 
         return new CActiveDataProvider('DepositDetails', array(
                                            'criteria'=>$criteria,
-		));
+                                           ));
 	}
+
+    public function getTwenties_total()
+    {
+        return $this->twenties * 20.00;
+    }
+    
+    public function getFives_total()
+    {
+        return $this->fives * 5.00;
+    }
+    
+    public function getPennies_total()
+    {
+        return $this->pennies * 0.01;
+    }
+    
+    public function getQuarters_total()
+    {
+        return $this->quarters * 0.25;
+    }
+    
+    public function getNickels_total()
+    {
+        return $this->nickels * 0.05;
+    }
+    
+    public function getOnes_total()
+    {
+        return $this->ones * 1.00;
+    }
+    
+    public function getFifties_total()
+    {
+        return $this->fifties * 50.00;
+    }
+    
+    public function getTens_total()
+    {
+        return $this->tens * 10.00;
+    }
+    
+    public function getDollar_coins_total()
+    {
+        return $this->dollar_coins * 1.00;
+    }
+    
+    public function getHundreds_total()
+    {
+        return $this->hundreds * 100.00;
+    }
+    
+    public function getDimes_total()
+    {
+        return $this->dimes * 0.10;
+    }
+    
+
+    public function subtotal_cash()
+    {
+        return
+            $this->ones * 1.00 + 
+            $this->fives * 5.00 + 
+            $this->hundreds * 100.00 + 
+            $this->twenties * 20.00 + 
+            $this->fifties * 50.00 + 
+            $this->tens * 10.00 ;
+    }
+
+    public function subtotal_coin()
+    {
+
+        return $this->pennies * 0.01 + 
+            $this->nickels * 0.05 + 
+            $this->quarters * 0.25 + 
+            $this->dollar_coins * 1.00 + 
+            $this->dimes * 0.10 ;
+
+    }
+
+
 }
