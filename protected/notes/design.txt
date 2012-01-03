@@ -3,14 +3,12 @@
 **	D  (payment for companies)
 	   company name
 		amount
-
 **	H "receipt"
 		Student.name
 		CLASS
 		Contact Name
 		Cost
 		payments.Check#
-
 **	K deposit form -- VIEW
 		show deposit number at top
 		entered, date notes

@@ -230,6 +230,8 @@ TODO tasks for ASEP
 			if not, then an entry?
 * FUTURE REQUIRD
 ** must have for NEXT SESSION!
+*** add db field for registration start date/time for session
+**** and dynamically show that on index/home page!
 ***	for setting session, for now, just a simple non-ajax screen, nothing fancy
 		then i have to start using it in queries. named scope, seems right.
 		the big issue will be all the dropdowns, which use findAll()
@@ -250,6 +252,7 @@ TODO tasks for ASEP
 		delete from instructor_assignment where class_id=:cid
 		delete from class_meeting where class_id=:cid
 		delete from class_info where id=:cid
+*** dynamically generate the PDF of the signup form and week/month schedule
 ** must have for NEXT YEAR:
 ***	need some way to track the current school year. 
 		yes, i remember now!!!! it took today's date, calculated month!
