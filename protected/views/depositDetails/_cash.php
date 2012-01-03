@@ -20,7 +20,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'payer:ntext:Payer',
                       'check_date:date:Cash Date',
                       'unassigned:currency:Un-Assigned',
-                      'returned:date:Returned Date',
                       ),
                   )); 
 
