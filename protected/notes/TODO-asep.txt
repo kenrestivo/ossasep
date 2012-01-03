@@ -8,16 +8,19 @@ TODO tasks for ASEP
 ** the rest of the reports (like, 20 of them)!
 * ui
 **	deposit form
-***		either auto-enter or a button to auto enter automatically
+***		either auto-enter AND a button to enter automatically
 			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are minimum
 ***		show popup of the next one when entering
-			or my summary might be OK, using echosen
+		or my summary might be OK, using echosen
 			popup would be fun though.
 ***		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
+***  the cash amounts WILL HAVE TO TOTAL UP to the cash deposited amount!
+	 so, for each cash, make sure it adds up.
+	 NOT FUN. lots of javascript here, to make a spreadsheet basically.
 ** company checks
       pick which checks are delivered!
 	  they are by class, which is how she files them
