@@ -18,7 +18,7 @@
 <tr><td><?= Yii::app()->format->noZero($model->hundreds) ?></td><td><?= CHtml::activeLabelEx($model,'hundreds'); ?></td><td><?= Yii::app()->format->currency($model->hundreds_total) ?></td></tr>
 
 <tr><th colspan="2">SUBTOTAL CASH</th>
-<th>$model->subtotal_cash</th>
+     <th><?= Yii::app()->format->currency($model->subtotal_cash) ?></th>
 </tr>
 
 </table>

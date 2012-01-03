@@ -236,7 +236,7 @@ class DepositDetails extends CActiveRecord
     }
     
 
-    public function subtotal_cash()
+    public function getSubtotal_cash()
     {
         return
             $this->ones * 1.00 + 
@@ -247,7 +247,7 @@ class DepositDetails extends CActiveRecord
             $this->tens * 10.00 ;
     }
 
-    public function subtotal_coin()
+    public function getSubtotal_coin()
     {
 
         return $this->pennies * 0.01 + 

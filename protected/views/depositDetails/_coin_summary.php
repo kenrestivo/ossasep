@@ -18,7 +18,7 @@
 <tr>
 </tr>
 <tr><th colspan="2">SUBTOTAL COIN</th>
-<th>$model->subtotal_coin</th>
+     <th><?= Yii::app()->format->currency($model->subtotal_coin) ?></th>
 </tr>
 
 </table>
