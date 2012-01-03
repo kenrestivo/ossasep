@@ -41,6 +41,11 @@ class Student extends CActiveRecord
 		return 'student';
 	}
 
+    public function getSummary()
+    {
+        return $this->full_name . " (". Yii::app()->format->gradeShort($this->grade) . ")";
+    }
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

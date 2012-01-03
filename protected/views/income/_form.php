@@ -33,9 +33,16 @@ echo $form->error($model,'check_id');
 
     echo $form->labelEx($model,'student_id'); 
 
+if(isset($model->class_id)){
+    $sdrop= "CHtml::listData(ClassInfo::model()->findByPk(". $model->class_id. ")->students, 'id', 'summary')";
+}else {
+    $sdrop="CHtml::listData(Student::model()->findAll(), 'id', 'full_name')";
+}
+
+
 ZHtml::multiEndedDropDown(
     $model, $form, 'student_id',
-    "CHtml::listData(Student::model()->findAll(), 'id', 'full_name')",
+    $sdrop,
     'CHtml::encode($model->student->full_name)',
     array('class' => 'chzn-select')); 
 

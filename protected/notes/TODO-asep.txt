@@ -148,6 +148,9 @@ TODO tasks for ASEP
          link for new check, or assign existing check (unassigned)
 	     choose existing check as option in unpaid
 		 an autocomplete with lists of checks with amounts still avail on them
+*** in _income, make amount autopopulate ajax based on class chosen
+*** in _income, make classes constrainn to company if id is provided
+	i.e. when called from the owed screen
 *** make session dropdown disabled css by default, checkbox to change
 	in almost every screen. session should always be default really
 ***	manually edit dates, in m/d/y format
