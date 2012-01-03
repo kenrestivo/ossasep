@@ -51,4 +51,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+)); 
+
+echo CHTML::link("Add New Deposit",
+                 array("DepositDetails/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+
+?>

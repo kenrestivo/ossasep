@@ -39,6 +39,17 @@ class DepositDetails extends CActiveRecord
 		return 'deposit_details';
 	}
 
+
+    public function getSummary()
+    {
+        $res = '#'.$this->id;
+        if($this->total_amount > 0){
+            $res .= Yii::app()->format->currency($this->total_amount);
+        }
+        $res .=' (' . Yii::app()->format->date($this->deposited_date) . ')';
+        return $res;
+    }
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
