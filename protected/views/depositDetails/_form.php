@@ -46,6 +46,12 @@
 	</div>
 
 
+    <?php $this->renderPartial("_cash_form", 
+                               array('model' => $model,
+                                   'form' => $form));
+     ?>
+
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
