@@ -24,6 +24,8 @@ TODO tasks for ASEP
 	 so, for each cash, make sure it adds up.
 	 NOT FUN. lots of javascript here, to make a spreadsheet basically.
 ** company checks
+   an undelivered checks screen, by class
+   just checkboxes, and a date, and mark delivered for all of them.
       pick which checks are delivered!
 	  they are by class, which is how she files them
 	  classinfo/_income

@@ -21,11 +21,8 @@ $this->breadcrumbs = array() ;
 </p>
 
 
-<!-- TODO: do not hard code this, put it in the database -->
 <p>
-<?= CHtml::link(CHtml::encode("Signup Form (PDF) ") . 
-                '<img src="images/pdficon_small.gif" alt="PDF" />' , 
-                Yii::app()->baseUrl . "/static/Winter2012Signupform.pdf"); ?>
+<?php echo $this->renderPartial('/report/_signup_form'); ?>
 </p>
 
 
