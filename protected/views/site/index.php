@@ -16,6 +16,12 @@ $this->breadcrumbs = array() ;
 
 
 <p>
+<?= CHtml::link(CHtml::encode("Signup Form (PDF)"), 
+                Yii::app()->baseUrl . "/static/Winter2012Signupform.pdf"); ?>
+</p>
+
+
+<p>
 <?= CHtml::link("Current Signup Status", 
                  array("/Report/signupsPublic")); ?>
  (Requires login)
