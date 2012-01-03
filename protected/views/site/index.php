@@ -16,5 +16,7 @@ $this->breadcrumbs = array() ;
 
 
 <p>
-(Note: you will have to log in to see all the admin stuff)
+<?= CHtml::link("Current Signup Status", 
+                 array("/Report/signupsPublic")); ?>
+ (Requires login)
 </p>
