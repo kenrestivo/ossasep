@@ -26,11 +26,11 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Overview' =>
                       $this->renderPartial("_overview", 
                                            array('model' => $model), true),
-                      'Cash' =>
-                      $this->renderPartial("_cash", 
-                                           array('model' => $model), true),
                       'Checks' =>
                       $this->renderPartial("_payments", 
+                                           array('model' => $model), true),
+                      'Cash' =>
+                      $this->renderPartial("_cash", 
                                            array('model' => $model), true),
                       )));
 

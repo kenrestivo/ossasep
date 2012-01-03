@@ -9,7 +9,7 @@ echo CHTML::link("Add Cash to deposit " . $model->summary,
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->checks),
+                      $model->cash),
                   'selectionChanged'=>
                   ZHtml::clickableRow('CheckIncome/view', 'join'),
 
@@ -22,21 +22,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'returned:date:Returned Date',
                       ),
                   )); 
-?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'pennies',
-		'nickels',
-		'dimes',
-		'quarters',
-		'dollar_coins',
-		'ones',
-		'fives',
-		'tens',
-		'twenties',
-		'fifties',
-		'hundreds',
-	),
-)); ?>
+
+$this->renderPartial("_cash_summary", 
+                     array('model' => $model));
+?>

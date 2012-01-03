@@ -90,7 +90,15 @@ class DepositDetails extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'checks' => array(self::HAS_MANY, 'CheckIncome', 'deposit_id'),
+			'payments' => array(self::HAS_MANY, 'CheckIncome', 'deposit_id'),
+			'checks' => array(self::HAS_MANY, 
+                              'CheckIncome', 
+                              'deposit_id',
+                              'condition' => '(cash < 1)'),
+			'cash' => array(self::HAS_MANY, 
+                            'CheckIncome', 
+                            'deposit_id',
+                            'condition' => 'cash > 0'),
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
                                'order' => 'start_date'),
 		);
