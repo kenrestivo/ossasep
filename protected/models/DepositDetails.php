@@ -260,7 +260,12 @@ class DepositDetails extends CActiveRecord
 
     public function getSubtotal_checks()
     {
-        return 0;
+        $c = Yii::app()->db->createCommand(
+            "select sum(amount) as total
+from check_income
+where check_income.deposit_id = :id");
+        $r = $c->queryRow(true, array('id' => $this->id));
+        return $r['total'];
     }
 
     public function getTotal_calculated()
