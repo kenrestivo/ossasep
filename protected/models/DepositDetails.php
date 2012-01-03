@@ -1,25 +1,25 @@
 <?php
 
-/**
- * This is the model class for table "deposit_details".
- *
- * The followings are the available columns in table 'deposit_details':
- * @property integer $id
- * @property string $deposited_date
- * @property string $total_amount
- * @property integer $pennies
- * @property integer $nickels
- * @property integer $dimes
- * @property integer $quarters
- * @property integer $dollar_coins
- * @property integer $ones
- * @property integer $fives
- * @property integer $tens
- * @property integer $twenties
- * @property integer $fifties
- * @property integer $hundreds
- * @property integer $session_id
- */
+  /**
+   * This is the model class for table "deposit_details".
+   *
+   * The followings are the available columns in table 'deposit_details':
+   * @property integer $id
+   * @property string $deposited_date
+   * @property string $total_amount
+   * @property integer $pennies
+   * @property integer $nickels
+   * @property integer $dimes
+   * @property integer $quarters
+   * @property integer $dollar_coins
+   * @property integer $ones
+   * @property integer $fives
+   * @property integer $tens
+   * @property integer $twenties
+   * @property integer $fifties
+   * @property integer $hundreds
+   * @property integer $session_id
+   */
 class DepositDetails extends CActiveRecord
 {
 	/**
@@ -61,16 +61,17 @@ class DepositDetails extends CActiveRecord
 			array('session_id', 'required'),
 			array('session_id, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'numerical', 'integerOnly'=>true),
 			array('total_amount', 'length', 'max'=>19),
+			array('note', 'length', 'max'=>255),
 			array('total_amount', 'numerical'),
 			array('deposited_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, session_id, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
+			array('id, session_id, note, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
             array('session_id','default',
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
                   'on'=>'insert'),
-		);
+            );
 	}
 
     public function defaultScope() {
@@ -89,10 +90,18 @@ class DepositDetails extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'check_incomes' => array(self::HAS_MANY, 'CheckIncome', 'deposit_id'),
+			'payments' => array(self::HAS_MANY, 'CheckIncome', 'deposit_id'),
+			'checks' => array(self::HAS_MANY, 
+                              'CheckIncome', 
+                              'deposit_id',
+                              'condition' => '(cash < 1)'),
+			'cash' => array(self::HAS_MANY, 
+                            'CheckIncome', 
+                            'deposit_id',
+                            'condition' => 'cash > 0'),
 			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
                                'order' => 'start_date'),
-		);
+            );
 	}
 
 	/**
@@ -117,8 +126,13 @@ class DepositDetails extends CActiveRecord
 			'hundreds' => '$100.00',
 			'session_id' => 'Session',
             'note' => 'Entered By',
-		);
+            );
 	}
+
+
+
+
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -163,6 +177,86 @@ class DepositDetails extends CActiveRecord
 
         return new CActiveDataProvider('DepositDetails', array(
                                            'criteria'=>$criteria,
-		));
+                                           ));
 	}
+
+    public function getTwenties_total()
+    {
+        return $this->twenties * 20.00;
+    }
+    
+    public function getFives_total()
+    {
+        return $this->fives * 5.00;
+    }
+    
+    public function getPennies_total()
+    {
+        return $this->pennies * 0.01;
+    }
+    
+    public function getQuarters_total()
+    {
+        return $this->quarters * 0.25;
+    }
+    
+    public function getNickels_total()
+    {
+        return $this->nickels * 0.05;
+    }
+    
+    public function getOnes_total()
+    {
+        return $this->ones * 1.00;
+    }
+    
+    public function getFifties_total()
+    {
+        return $this->fifties * 50.00;
+    }
+    
+    public function getTens_total()
+    {
+        return $this->tens * 10.00;
+    }
+    
+    public function getDollar_coins_total()
+    {
+        return $this->dollar_coins * 1.00;
+    }
+    
+    public function getHundreds_total()
+    {
+        return $this->hundreds * 100.00;
+    }
+    
+    public function getDimes_total()
+    {
+        return $this->dimes * 0.10;
+    }
+    
+
+    public function getSubtotal_cash()
+    {
+        return
+            $this->ones * 1.00 + 
+            $this->fives * 5.00 + 
+            $this->hundreds * 100.00 + 
+            $this->twenties * 20.00 + 
+            $this->fifties * 50.00 + 
+            $this->tens * 10.00 ;
+    }
+
+    public function getSubtotal_coin()
+    {
+
+        return $this->pennies * 0.01 + 
+            $this->nickels * 0.05 + 
+            $this->quarters * 0.25 + 
+            $this->dollar_coins * 1.00 + 
+            $this->dimes * 0.10 ;
+
+    }
+
+
 }
