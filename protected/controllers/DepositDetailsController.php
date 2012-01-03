@@ -32,8 +32,6 @@ class DepositDetailsController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
