@@ -276,7 +276,7 @@ where check_income.deposit_id = :id");
 
     public function populate($type = 'check')
     {
-        $cash_status = $type == 'check'  ? "< 1" : "> 1";
+        $cash_comparison = $type == 'check'  ? "check_income.cash < 1" : " check_income.cash > 1";
         
         /* XXX TODO, the rest of the criteria here!
            - enrolled count > minimum
@@ -287,7 +287,7 @@ where check_income.deposit_id = :id");
 from check_income
 where check_income.payee_id = :osspto
 and (check_income.deposit_id is null or check_income.deposit_id < 1)
-and check_income.cash $cash_status
+and ( $cash_comparison )
 and check_income.session_id = :sid
 and (check_income.returned is null or check_income.returned < '1000-01-01')
 ",
