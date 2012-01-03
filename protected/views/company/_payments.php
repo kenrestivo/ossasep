@@ -3,8 +3,8 @@
   //XXX this is not right at all!
 echo CHTML::link("Add Check for " . $model->name, 
                  array("CheckIncome/create",
-                       'company_id' => $model->id,
-                       'returnTo' => Yii::app()->request->requestUri));
+                       'company_id' => $model->id
+                     ));
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'income-grid',
