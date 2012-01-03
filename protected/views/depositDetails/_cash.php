@@ -1,10 +1,11 @@
 <?php 
 
-  //XXX this is not right at all!
-echo CHTML::link("Add Cash to deposit " . $model->summary, 
-                 array("CheckIncome/create",
-                       'company_id' => $model->id,
+
+echo CHTML::link("Auto-Populate Cash for " . $model->summary, 
+                 array("populateCash",
+                       'id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
+
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'cash-grid',
@@ -40,3 +41,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 </span>
 
 <div class="clear"> </div>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'subtotal_cash_payments:currency:Cash Total from Payments',
+		'subtotal_reconciliation:currency:Cash from Reconciliation',
+		'discrepancy:currency:Discrepancy',
+	),
+)); ?>

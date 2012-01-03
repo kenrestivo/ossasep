@@ -44,7 +44,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'deposited_date:date',
-		'total_amount',
+		'total_calculated:currency:Total Deposit',
+		'subtotal_checks:currency:Checks Subtotal',
+		'subtotal_cash:currency:Cash Subtotal',
+		'subtotal_coin:currency:Coins Subtotal',
         'note',
         'session.summary:text:Session',
 		array(

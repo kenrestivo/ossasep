@@ -9,7 +9,6 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'id'); ?>
     <?= $model->id ?>
@@ -38,12 +37,21 @@
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
-
+<?php
+      /*
+        this is meaningless at the moment, total is calculated
 	<div class="row">
 		<?php echo $form->labelEx($model,'total_amount'); ?>
 		<?php echo $form->textField($model,'total_amount',array('size'=>19,'maxlength'=>19)); ?>
 		<?php echo $form->error($model,'total_amount'); ?>
 	</div>
+      */
+?>
+
+    <?php $this->renderPartial("_cash_form", 
+                               array('model' => $model,
+                                   'form' => $form));
+     ?>
 
 
 	<div class="row buttons">

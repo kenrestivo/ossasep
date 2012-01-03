@@ -32,8 +32,6 @@ class DepositDetailsController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -171,4 +169,21 @@ class DepositDetailsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
+	public function actionPopulateChecks()
+	{
+        $model = $this->loadModel();
+        $model->populate('check');
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+	public function actionPopulateCash()
+	{
+        $model = $this->loadModel();
+        $model->populate('cash');
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+
 }

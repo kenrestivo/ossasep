@@ -3,7 +3,11 @@
 	'attributes'=>array(
 		'id',
 		'deposited_date:date',
-		'total_amount:currency',
+		'total_calculated:currency:Total Deposit',
+		'subtotal_checks:currency:Checks Subtotal',
+		'subtotal_cash_payments:currency:Cash Subtotal',
+		'subtotal_reconciliation:currency:Cash Reconciliation Subtotal',
+		'discrepancy:currency:Discrepancy',
         'note',
         'session.summary:text:Session',
 	),

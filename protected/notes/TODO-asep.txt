@@ -9,15 +9,17 @@ TODO tasks for ASEP
 * ui
 **	deposit form
 ***		either auto-enter AND a button to enter automatically
-			any checks to OSSPTO
 			which are joint checks
 			or which are for classes which are minimum
-***		show popup of the next one when entering
-		or my summary might be OK, using echosen
-			popup would be fun though.
+***  and a button to REMOVE the checks (NOT DELETE THEM)
+	 that will need to be an ajax button that sets the deposit_id to null
+	 and also refreshes the cgridview
 ***		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
+***		show popup of the next one when entering
+		or my summary might be OK, using echosen
+			popup would be fun though.
 ***  the cash amounts WILL HAVE TO TOTAL UP to the cash deposited amount!
 	 so, for each cash, make sure it adds up.
 	 NOT FUN. lots of javascript here, to make a spreadsheet basically.
