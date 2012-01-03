@@ -1,6 +1,6 @@
 <?php 
 
-  //XXX this is not right at all!
+
 echo CHTML::link("Auto-Populate Checks for " . $model->summary, 
                  array("populateChecks",
                        'id' => $model->id,
