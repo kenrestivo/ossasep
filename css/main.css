@@ -389,3 +389,7 @@ table.spacey{
   border-collapse:separate; 
   border-spacing:7px;
  }
+
+table.financial td{ 
+  text-align: right;
+ }

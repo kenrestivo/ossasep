@@ -1,5 +1,5 @@
 
-<table class="bordertable">
+<table class="bordertable financial">
 <tr>
 <th colspan="3">CASH RECONCILIATION</th>
 </tr>
