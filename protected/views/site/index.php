@@ -5,7 +5,7 @@ $this->breadcrumbs = array() ;
 ?>
 <h1>After-School Enrichment Program – <?= $this->savedSessionSummary() ?></h1>
 
-<h3>Classes begin <strong>January 9th</strong>.</h3>
+    <h3>Classes begin <strong><?= date('F jS', strtotime(ClassSession::current()->start_date)) ?></strong>.</h3>
     <!-- TODO: make the reservation begin date dynamically generated -->
 <h3>Reservations begin <strong>Wednesday, January 4th at 8am</strong>!</h3>
 
