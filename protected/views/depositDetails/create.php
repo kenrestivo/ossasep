@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Deposit Details'=>array('index'),
+	'Deposit'=>array('index'),
 	'Create',
 );
 
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create DepositDetails</h1>
+<h1>Create New Deposit</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -91,7 +91,7 @@ class DepositDetails extends CActiveRecord
 	{
 		return array(
 			'id' => 'Deposit #',
-			'deposited_date' => 'Deposited Date',
+			'deposited_date' => 'Deposit Submitted Date',
 			'total_amount' => 'Total Amount',
 			'pennies' => 'Pennies',
 			'nickels' => 'Nickels',
@@ -105,6 +105,7 @@ class DepositDetails extends CActiveRecord
 			'fifties' => 'Fifties',
 			'hundreds' => 'Hundreds',
 			'session_id' => 'Session',
+            'note' => 'Entered By',
 		);
 	}
 
