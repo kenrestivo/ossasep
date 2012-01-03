@@ -258,5 +258,17 @@ class DepositDetails extends CActiveRecord
 
     }
 
+    public function getSubtotal_checks()
+    {
+        //TODO
+    }
+
+
+    public function populate_checks()
+    {
+        
+    }
+
+
 
 }

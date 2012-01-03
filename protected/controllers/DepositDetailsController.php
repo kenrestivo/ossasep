@@ -171,4 +171,14 @@ class DepositDetailsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
+	public function actionPopulateChecks()
+	{
+        $model = $this->loadModel();
+        $model->populate_checks();
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+
 }
