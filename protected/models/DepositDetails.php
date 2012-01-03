@@ -61,11 +61,12 @@ class DepositDetails extends CActiveRecord
 			array('session_id', 'required'),
 			array('session_id, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'numerical', 'integerOnly'=>true),
 			array('total_amount', 'length', 'max'=>19),
+			array('note', 'length', 'max'=>255),
 			array('total_amount', 'numerical'),
 			array('deposited_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, session_id, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
+			array('id, session_id, note, deposited_date, total_amount, pennies, nickels, dimes, quarters, dollar_coins, ones, fives, tens, twenties, fifties, hundreds', 'safe', 'on'=>'search'),
             array('session_id','default',
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
