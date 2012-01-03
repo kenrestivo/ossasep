@@ -44,18 +44,6 @@
 	</div>
 
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
-		<?php echo $form->error($model,'payee_id'); ?>
-
-		<?php echo $form->error($model,'payee_id'); ?>
-	</div>
-
-
-
 
 
 	<div class="row">
@@ -80,6 +68,21 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'payee_id'); ?>
+    <?php echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
+		<?php echo $form->error($model,'payee_id'); ?>
+
+		<?php echo $form->error($model,'payee_id'); ?>
+	</div>
+
+
+
+
+
+
+	<div id="deposit_row" class="row">
 		<?php echo $form->labelEx($model,'deposit_id'); ?>
 <?php echo $form->dropDownList(
     $model,'deposit_id',
@@ -89,9 +92,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		<?php echo $form->error($model,'deposit_id'); ?>
 	</div>
 
-    <p>TODO: add javascript to only show deposit if company is PTO, and only show delviered if company is NOT pto </p>
-
-	<div class="row">
+	<div id="delivered_row" class="row">
 		<?php echo $form->labelEx($model,'delivered'); ?>
 
 <?php 
@@ -153,3 +154,27 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 <?php echo $this->renderPartial('/site/_unsaved_changes_warning',
                                 array('form_id'=>"#check-income-form")); ?>
+
+
+<?php Yii::app()->clientScript->registerCoreScript("jquery")?>
+
+<script type="text/javascript">
+     $(function(){
+$('#CheckIncome_payee_id').change(
+    function(v){
+        var v=$('#CheckIncome_payee_id option:selected').val();
+        if(v == 1){
+            $('#CheckIncome_deposit_id').removeAttr('disabled');
+            $('input#CheckIncome_delivered').attr('disabled', 'disabled');
+            $('#delivered_row').hide()
+            $('#deposit_row').show()
+        } else{
+            $('#CheckIncome_deposit_id').attr('disabled', 'disabled');
+            $('input#CheckIncome_delivered').removeAttr('disabled');
+            $('#deposit_row').hide()
+            $('#delivered_row').show()
+        }
+    }
+)
+    })
+ </script>
