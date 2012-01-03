@@ -36,7 +36,7 @@ $this->widget('zii.widgets.CDetailView', array(
 <?php 
 
 $un= $model->unassigned;
-if($un > 0){
+if($un == 0){
     echo "<div>Check completely assigned, no amounts to assign.</div>";
 }
   // could be a tab, but probably not necessary at the moment
