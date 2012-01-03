@@ -1,3 +1,5 @@
+<span class="span-8">
+
 <table class="bordertable financial">
 <tr>
 <th colspan="2">CASH</th>
@@ -41,6 +43,9 @@ echo $form->error($model,'hundreds'); ?></td>
 
 </table>
 
+</span>
+
+<span class="span-8 last">
 
 <table class="bordertable financial">
 <tr>
@@ -81,3 +86,5 @@ echo $form->error($model,'dollar_coins'); ?></td>
 
 </table>
 
+</span>
+<div class="clear"></div>

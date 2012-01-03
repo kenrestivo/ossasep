@@ -9,7 +9,6 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'id'); ?>
     <?= $model->id ?>
