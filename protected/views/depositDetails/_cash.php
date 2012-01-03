@@ -14,11 +14,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   ZHtml::clickableRow('CheckIncome/view', 'join'),
 
                   'columns'=>array(
-                      'check_num:ntext:Check #',
-                      'amount:currency:Check Amount',
+                      'check_num:ntext:Cash?',
+                      'amount:currency:Cash Amount',
                       'payer:ntext:Payer',
-                      'check_date:date:Check Date',
-                      'payee.name:text:Payee',
+                      'check_date:date:Cash Date',
                       'unassigned:currency:Un-Assigned',
                       'returned:date:Returned Date',
                       ),
