@@ -69,7 +69,11 @@ class CheckIncomeController extends Controller
 			$model->attributes=$_POST['CheckIncome'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
+		} else {
+            if(isset($_GET['company_id'])){
+                $model->payee_id = $_GET['company_id'];
+            }
+        }
 
 		$this->render('create',array(
                           'model'=>$model,

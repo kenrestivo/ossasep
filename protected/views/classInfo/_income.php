@@ -41,6 +41,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 echo CHTML::link(CHtml::encode("Add Check for " . $model->summary), 
                  array("CheckIncome/create",
                        'class_id' => $model->id,
+                       'company_id' => $model->company_id,
                        ));
 
     echo "</span><span class=\"span-9 last\">";
