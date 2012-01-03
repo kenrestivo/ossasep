@@ -209,6 +209,9 @@ class CheckIncomeController extends Controller
             } 
 
 		} else {
+            /* construct form, and pre-populate some important data,
+              like, what is owed
+             */
             if(isset($_GET['company_id'])){
                 $model->payee_id = $_GET['company_id'];
             }
@@ -218,8 +221,10 @@ class CheckIncomeController extends Controller
                 $total = 0;
                 $stu = Student::model()->findByPk($_GET['student_id']);
                 foreach($stu->owed as $owed){
+                    // TODO: do this in a more yii-ish, ar-ish criteria way
                     if($owed['payee']->id == $model->payee_id){
                         $inc=new Income();
+                        // pre populate it
                         $inc->student_id = $stu->id;
                         $inc->class_id = $owed['class']->id;
                         $inc->amount = $owed['amount'];
