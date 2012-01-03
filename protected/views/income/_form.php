@@ -58,6 +58,9 @@ echo $form->error($model,'student_id');
     echo $form->labelEx($model,'class_id');
 if(isset($model->student_id)){
     $cdrop= "CHtml::listData(Student::model()->findByPk(". $model->student_id. ")->classes, 'id', 'summary')";
+} else if(isset($model->check_id)){
+    $coid = $model->check->payee_id;
+    $cdrop= "CHtml::listData(ClassInfo::model()->findAll('company_id = $coid'), 'id', 'summary')";
 }else {
     $cdrop="CHtml::listData(ClassInfo::model()->findAll(), 'id', 'summary')";
 }
