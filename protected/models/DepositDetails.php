@@ -260,7 +260,12 @@ class DepositDetails extends CActiveRecord
 
     public function getSubtotal_checks()
     {
-        //TODO
+        return 0;
+    }
+
+    public function getTotal_calculated()
+    {
+        return $this->subtotal_coin + $this->subtotal_cash + $this->subtotal_checks;
     }
 
 
