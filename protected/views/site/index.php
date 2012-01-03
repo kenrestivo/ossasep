@@ -3,14 +3,20 @@
 $this->breadcrumbs = array() ;
 // reset 
 ?>
-<h1>Welcome to Ocean Shore ASEP</h2>
+<h1>After-School Enrichment Program – <?= $this->savedSessionSummary() ?></h1>
+
+<h3>Classes begin <strong>January 9th</strong>.</h3>
+    <!-- TODO: make the reservation begin date dynamically generated -->
+<h3>Reservations begin <strong>Wednesday, January 4th at 8am</strong>!</h3>
+
+
 <p>
-<?= CHtml::link("Check our Schedule", 
+<?= CHtml::link("Class Schedule", 
                  array("/report/weekday")); ?>
 </p>
 
 <p>
-<?= CHtml::link("Check our Descriptions", 
+<?= CHtml::link("Class Descriptions", 
                  array("/report/descriptions")); ?>
 </p>
 
