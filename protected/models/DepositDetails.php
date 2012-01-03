@@ -274,17 +274,20 @@ where check_income.deposit_id = :id");
     }
 
 
-    public function populate_checks()
+    public function populate($type = 'check')
     {
+        $cash_status = $cash == 'check'  ? "< 1" : "> 1";
+        
         /* XXX TODO, the rest of the criteria here!
            - enrolled count > minimum
            - income count > 1
-         */
+        */
         $c = Yii::app()->db->createCommand(
-"
+            "
 select check_income.*
 from check_income
 where check_income.payee_id = :osspto
+and check_income.cash $cash_status
 and check_income.session_id = :sid
 and (check_income.returned is null or check_income.returned < '1000-01-01')
 ");

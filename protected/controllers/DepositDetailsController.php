@@ -176,7 +176,14 @@ class DepositDetailsController extends Controller
 	public function actionPopulateChecks()
 	{
         $model = $this->loadModel();
-        $model->populate_checks();
+        $model->populate('check');
+        $this->redirect(array('view','id'=>$model->id));
+	}
+
+	public function actionPopulateCash()
+	{
+        $model = $this->loadModel();
+        $model->populate('cash');
         $this->redirect(array('view','id'=>$model->id));
 	}
 
