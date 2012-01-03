@@ -209,7 +209,7 @@ where check_id = :cid");
 
     public function getUnassigned()
     {
-        return (int)$this->assigned - (int)$this->amount;
+        return (int)$this->amount - (int)$this->assigned;
     }
 
 }
