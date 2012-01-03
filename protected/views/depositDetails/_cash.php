@@ -23,7 +23,20 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 
-
-$this->renderPartial("_cash_summary", 
-                     array('model' => $model));
 ?>
+
+<span class="span-8">
+
+<?php $this->renderPartial("_cash_summary", 
+                     array('model' => $model)); ?>
+
+</span>
+
+<span class="span-8 last">
+
+<?php  $this->renderPartial("_coin_summary", 
+                     array('model' => $model)); ?>
+
+</span>
+
+<div class="clear"> </div>
