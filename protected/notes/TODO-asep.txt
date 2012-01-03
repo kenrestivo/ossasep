@@ -130,24 +130,9 @@ TODO tasks for ASEP
 		
 * CLEANUP
 ** vital
-***	trap exceptions on save,  if there's an integrity constraint!
-		trap/catch errors when trying to delete linked tables
-***	also trap exceptions on double-delete, it happens in ajax-land
-		if the refresh isn't complete yet
-***	go through and make sure all my queries and searches are session-enabled
-		so i can change them later easily
-        this means the popups too.
-        default sort/scope for everytbing
-        search and such
-**** did i do this already?
-***	use wide layout with menu at top from roster for ALL things
-		it needs to be integrated into class for sure, and student
-        this is in roster, in main branch
-		i also have it in a branch menuthrash. works with clips, nice!
-***	use either breadcrumbs or returnto, but be consistent!
-		breadcrumbs is cleaner than returnto, but will it work?
 ** useful
 *** go through all the multi-link _forms, put <div row> before the issset
+	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
 		 do this stupidity in sql
 				 class
@@ -159,17 +144,31 @@ TODO tasks for ASEP
 	     choose existing check as option in unpaid
 		 an autocomplete with lists of checks with amounts still avail on them
 *** make session dropdown disabled css by default, checkbox to change
+	in almost every screen. session should always be default really
 ***	manually edit dates, in m/d/y format
 *** add  the returnto for zhtml::clickablerow
 	it's already in there for composite keys, but i need to add it for the other one
+	this is used only in a few places though.
 ***	today button, fix
 *** user login, password admin, use the database, not useridentity.php!
 *** add date validator
 *** allow multiple requirements, i.e contracts for several years
 	remove unique key constraint
 	in status, i'll need MAX() queries instead of AR stuff
+***	trap exceptions on save,  if there's an integrity constraint!
+		trap/catch errors when trying to delete linked tables
+		hmm, when woudl that exactly happen again?
+***	use either breadcrumbs or returnto, but be consistent!
+		breadcrumbs is cleaner than returnto, but will it work?
+***	also trap exceptions on double-delete, it happens in ajax-land
+		if the refresh isn't complete yet
+		Error 404: <h1>CHttpException
+		The requested page does not exist.
+	   it really is an error, you can't delete something that is already deleted
 ***	make search work with booleans/checkboxes
 *** make search work with linktables!
+	this i think will be some interesting criteria and joins perhaps
+	maybe not that hard, just some pdo stuff
 ***	make sort work with linked subviews
 		 not so easy
 ***	make company id 1  not editable or removable (company form/view)
@@ -195,6 +194,10 @@ TODO tasks for ASEP
 ***	a nice jui popup when hovering over a cell, showing description!
 ***	year bump buttons on the expired and received datepickers
 		didn't i do that already?
+***	use wide layout with menu at top from roster for ALL things
+		it needs to be integrated into class for sure, and student
+        this is in roster, in main branch
+		i also have it in a branch menuthrash. works with clips, nice!
 ***	signupsheet
 		strikethrough for cancelled
 		color/gray for waitlist?
@@ -238,6 +241,12 @@ TODO tasks for ASEP
 			i should start constraining those by session!
 			use named scope, it's easy, default scope is session now!
 		searches also, need to use the named scope or something
+***	go through and make sure all my queries and searches are session-enabled
+		so i can change them later easily
+        this means the popups too.
+        default sort/scope for everytbing
+        search and such
+**** did i do this already?
 ***	how to import/add new class from previous session
 		an ajaxything or something, a popup
 		relational deep copy! only a few tables though:
