@@ -84,7 +84,8 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 <?php echo $form->dropDownList(
     $model,'deposit_id',
     CHtml::listData(DepositDetails::model()->findAll(), 
-                    'id', 'deposited_date')); ?>
+                    'id', 'deposited_date'),
+    array('empty' => "None")); ?>
 		<?php echo $form->error($model,'deposit_id'); ?>
 	</div>
 
