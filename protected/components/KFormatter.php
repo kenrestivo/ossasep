@@ -77,5 +77,11 @@ class KFormatter extends CFormatter
         return  $value == 0 ? '' : '$' . $this->formatNumber($value);
     }
 
+    public function formatCurrencyZero($value)
+    {
+        //TODO: use CNumberFormatter to put in stuff.
+        return  '$' . $this->formatNumber($value);
+    }
+
 
 }

@@ -82,7 +82,7 @@ echo $form->error($model,'class_id');
 		<?php echo $form->labelEx($model,'amount'); ?>
     <?php echo $form->textField($model,'amount',array('size'=>19,'maxlength'=>19)); 
 if(isset($remaining)){
-    echo '  (' . Yii::app()->format->currency($remaining) . ' avail on check )';
+    echo '  (' . Yii::app()->format->currencyZero($remaining) . ' avail on check )';
 }	   
  echo $form->error($model,'amount'); ?>
 	</div>
