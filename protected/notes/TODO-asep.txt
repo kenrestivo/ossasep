@@ -82,26 +82,11 @@ TODO tasks for ASEP
 
 
 	
-* reports first! THEN DO THE UI AGAIN based on the reports. try that.
-* general gui questions MUST get dealt with
-	sorxting!
-	searching!
-
-
 * small ui things
 ** date/time conversions
 		do it in the load_model method!
 		and before save in update/create.
 		that is all. no problems, no muss, no fuss.
-**	finish putting datepickers in
-		check expense
-		check income
-		deposit
-		schoolcalendar
-		expensse
-		income
-
-
 * gui conundrums wrapped in enigmas
 **	clean up date and weekday formatting, using formatter in yii
 		not my zhtml hack
@@ -113,23 +98,14 @@ TODO tasks for ASEP
 			for every model that has dates in it. gah.
 			or a wrapper that transforms them before/after manually
 **	payments -> deposits
-		i'll really need a pick list here!
-		will need to pick the checks AT THE SAME TIME as entering
-		of all payments not yet assigned to a deposit.
-		how to move them to and fro?
-		deposits MUST calculate out too
-			there's a whole lot of reconciling that needs to go on here.
-		will need a picklist of checks-not-yet-deposited
-			this could be VERY easy.
-			by default, a new deposit should have all of them.
-	how to handle teachers who are students?
+**	how to handle teachers who are students?
 		reflextitve relation. dammit. they're not teachers of THIS
-	checks get returned, she said, if they're waitlisted
-		
+**	checks get returned, she said, if they're waitlisted
 * CLEANUP
 ** vital
 ** useful
 *** autocomplete the amount on income based on class
+*** in _income, make amount autopopulate ajax based on class chosen
 *** go through all the multi-link _forms, put <div row> before the issset
 	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
@@ -142,9 +118,6 @@ TODO tasks for ASEP
          link for new check, or assign existing check (unassigned)
 	     choose existing check as option in unpaid
 		 an autocomplete with lists of checks with amounts still avail on them
-*** in _income, make amount autopopulate ajax based on class chosen
-*** in _income, make classes constrainn to company if id is provided
-	i.e. when called from the owed screen
 *** make session dropdown disabled css by default, checkbox to change
 	in almost every screen. session should always be default really
 ***	manually edit dates, in m/d/y format
