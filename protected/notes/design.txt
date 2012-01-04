@@ -30,13 +30,13 @@
 		total
 
 **	W integrity check dashboard
+			make sure returned checks are not deposited or delivered!
 			unassigned check amounts		
 			   check status/dashboard, show that they add up!
 			unpaid classes (useful for checking)
 			instructors don't add up to > 100
 			classes overpaid, i.e. 2 or more checks for same class
 			instructors that don't add up to the company (class assignments)
-		
 		
 
 **	V	instructor detailed financial report

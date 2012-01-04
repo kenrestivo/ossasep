@@ -68,8 +68,6 @@ TODO tasks for ASEP
 		and maybe add ones for the others, the tab ones
 * bugfixen
 **	in paid, why are cancelleds payments not showing up at all?
-**	on student/_income, if cancelled, show the paids,
-		so find enrolled OR cancelled or just not waitlisted
 **	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
 
