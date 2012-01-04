@@ -48,7 +48,7 @@
 		payments received
 		payments owed
 		totals owed and totals  owing to instructor (see V though)
-		
+*** this is basically a STATEMENT. use an accounting system
 ** G  signup for instructor sees only their class! and only email-safe emails
 **	I	instructor report
 *** fields
@@ -75,19 +75,6 @@
 
 
         
-**	J "instructor paperwork"
-		teacher
-			type
-		class name
-		licence
-		insurace
-		fingerprint info
-		tb
-		contract
-		w9
-		agreement
-		notes (specific to this)
-
 **	E (sign up sheet?)
 		for heidi with paid/unpaid to instructor
 
