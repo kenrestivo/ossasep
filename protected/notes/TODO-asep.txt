@@ -12,15 +12,13 @@ TODO tasks for ASEP
 ***  and a button to REMOVE the checks (NOT DELETE THEM)
 	 that will need to be an ajax button that sets the deposit_id to null
 	 and also refreshes the cgridview
+	    llook at the code of cgridviewbuttton or just use/extend that
 ***		put in check number, autocomplete
 			populate the info on the check
 		will need some kind of undepposited status, total amount
 ***		show popup of the next one when entering
 		or my summary might be OK, using echosen
 			popup would be fun though.
-***  the cash amounts WILL HAVE TO TOTAL UP to the cash deposited amount!
-	 so, for each cash, make sure it adds up.
-	 NOT FUN. lots of javascript here, to make a spreadsheet basically.
 ** company checks
    an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
@@ -29,13 +27,11 @@ TODO tasks for ASEP
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
 **	check_income
-***	add an EMPTY as a default for deposit on checks!	
 *** make multi-entry form work for EDITING too
 	now the saving
 	create, student id provided
 	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
-***     checks/_income: if user chooses student, constrain classes based on unpaid
 **	validation and data entry error checking/warning
 *** ajax validation via yii built in -- errors
 ****   	[#A] the student must be signed up for that class before it gets paid
@@ -50,6 +46,7 @@ TODO tasks for ASEP
 ****    trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
 ****    change company name with instructors who are not in that company
+		this is an easy one, really. in fact i could do it as JS or ajax
 ****    duplicate key, unique validators, dupe checking! for all records really
 		all the linktables! it'll have to check key combos
 		first/last in student
@@ -57,21 +54,19 @@ TODO tasks for ASEP
 		school day in calendar
 *** js validation via yii built in
 	first make sure that the notice works, addNotice, i hope
+	well, no, ther is no NOTICE, only error. so, no go.
+	unless i create a notice box and notice fields in model!?
 ****     entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
 ****    class over capacity but student set to enrolled
+		i could really do that just as a status bar in the controller/view
 ****    change the day of week but there are active meetings
 *** not sure where
 ***		how?
                populate a js array with the data, and check it that way?
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
-**  class/_income: show checks with unpaid balance
-	calculate, and show a picklist, with their associated remaining balance
-	let the user pick them to assign, instead of new check
 * bugfixen
-**	[#A] in class/_owed, should include waitlisted!
-		checks do get entered, gets put in another envelope
 **	in paid, why are cancelleds payments not showing up at all?
 **	on student/_income, if cancelled, show the paids,
 		so find enrolled OR cancelled or just not waitlisted
