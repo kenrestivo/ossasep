@@ -441,7 +441,7 @@ where (check_income.returned > '1999-01-01')
      */
     public function getOwed()
     {
-        return ($this->costSummary * $this->enrolled_count) - $this->paid;
+        return ($this->costSummary * ($this->enrolled_count + $this->enrolled_count)) - $this->paid;
     }
 
 
