@@ -106,6 +106,7 @@ TODO tasks for ASEP
 ** useful
 *** autocomplete the amount on income based on class
 *** in _income, make amount autopopulate ajax based on class chosen
+	$("#form_field").chosen().change( … );
 *** go through all the multi-link _forms, put <div row> before the issset
 	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
@@ -166,6 +167,9 @@ TODO tasks for ASEP
 ***	now make the save() actions check breadcrumbs, not returnto
 ** cosmetic
 ***	use the roster as the template for any index views, i have the css nice
+*** the chosen fields are too narrow
+	there's a width set, but it's wrong
+	this.f_width = this.form_field_jq.width();
 ***	a nice jui popup when hovering over a cell, showing description!
 ***	year bump buttons on the expired and received datepickers
 		didn't i do that already?
