@@ -155,6 +155,8 @@ class Student extends CActiveRecord
             $paid = 0;
             $cs = $s->class->costSummary;
             $inc=$this->incomes;
+            /* XXX very stupid, there has to be a way to do this with 
+               scopes, criteria, or just raw sQL */
             foreach($inc as $i){
                 if($i->class_id == $s->class_id){
                     $paid += $i->amount;
