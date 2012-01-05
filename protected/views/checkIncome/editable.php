@@ -10,7 +10,13 @@ magna aliquam erat volutpat.</div>
 
 <script type="text/javascript">
 	jQuery(function($) {
-            $('.edit').editable('<?= $this->createUrl('CheckIncome/jsonUpdate') ?>');
+            $('.edit').editable(
+                '<?= $this->createUrl('CheckIncome/jsonUpdate') ?>', 
+                {
+                indicator : "<img src='<?= Yii::app()->baseUrl ?>/images/indicator.gif'>",
+                        tooltip   : "Click to edit...",
+                        style  : "inherit"
+                        });
         });
 
 </script>
