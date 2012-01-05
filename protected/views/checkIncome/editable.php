@@ -2,11 +2,18 @@
 <?php Yii::app()->clientScript->registerCoreScript("jquery")?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/static/jquery.jeditable.mini.js")?>
 
+<table class="bordertable">
+<tr><th>Check Num</th><th>Payer (click to edit)</th><th>Student(s)</th></tr>
+<?php
+foreach($models as $model){
+      echo '<tr><td>' . $model->check_num . '</td><td>' . $model->payer . '</td>';
+      echo '<td></td>';
+      echo '</tr>';
+}
 
-<div class="edit" id="div_1">Dolor</div>
-<div class="edit_area" id="div_2">Lorem ipsum dolor sit amet, consectetuer 
-adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat.</div>
+?>
+
+</table>
 
 <script type="text/javascript">
 	jQuery(function($) {

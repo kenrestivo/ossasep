@@ -344,13 +344,12 @@ class CheckIncomeController extends Controller
 
     public function actionEditable()
     {
-		$model=new CheckIncome('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['CheckIncome']))
-			$model->attributes=$_GET['CheckIncome'];
-
+        $models = CheckIncome::model()->findAllBySQL(
+            'select check_income.* from check_income 
+where (payer is null or payer < "")
+order by check_num');
 		$this->render('editable',array(
-                          'model'=>$model,
+                          'models'=>$models,
                           ));
         
     }
