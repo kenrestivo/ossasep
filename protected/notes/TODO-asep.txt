@@ -2,10 +2,6 @@
 TODO tasks for ASEP
 
 * live bugs to fix
-** autopopulate waitlist from student side
-   $("#Signup_class_id").chosen().change(function(item){alert($('#CheckIncome_payee_id option:selected').val());})
-** waitlist is supposed to be the default but isn't
-   lego
 ** tabular input for signups
 ** ASL paid by makes no sense ($240, should be $180. why?)
 ** joint checks show unpaid vs paid
