@@ -69,9 +69,12 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
 
 <script type="text/javascript">
 	$(function() {
-            $("#Signup_0_class_id").change(
+
+            function addAjax(id){
+
+            $("#Signup_" + id + "_class_id").change(
                 function(item){
-                    cid = $('#Signup_0_class_id  option:selected').val();
+                    cid = $('#Signup_' + id + '_class_id  option:selected').val();
                     $.ajax({
                         type:'POST', 
                                 dataType: 'json',
@@ -79,14 +82,18 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
                                 url:'<?= CController::createUrl('ClassInfo/json') ?>',
                                 success: 
                             function(data){
-                                $('#Signup_0_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
+                                $('#Signup_' + id + '_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
                                 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
-                                    $('#Signup_0_status').val('Waitlist');
+                                    $('#Signup_' + id + '_status').val('Waitlist');
                                 } else{
-                                    $('#Signup_0_status').val('Enrolled');
+                                    $('#Signup_' + id + '_status').val('Enrolled');
                                 }
                                 ;}
                         }
-                        )})});
+                        )})
+                };
+            addAjax(0);
+
+});
 
 </script>
