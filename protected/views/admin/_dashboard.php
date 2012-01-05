@@ -19,19 +19,25 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           'name'=>'Paid By Students',
                           'value'=>'$data->paid',
                           'type'=>'currency',
-                          'footer'=>Yii::app()->format->currency($dp->columnTotal('paid')),
+                          'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footer'=>
+                          Yii::app()->format->currency($dp->columnTotal('paid')),
                           ),
                       array(
                           'name'=>'Owed From Students',
                           'value'=>'$data->owed',
                           'type'=>'currency',
-                          'footer'=>Yii::app()->format->currency($dp->columnTotal('owed')),
+                          'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footer'=>
+                          Yii::app()->format->currency($dp->columnTotal('owed')),
                           ),
                       array(
                           'name'=>'Returned Payments',
                           'value'=>'$data->returned',
                           'type'=>'currency',
-                          'footer'=>Yii::app()->format->currency($dp->columnTotal('returned')),
+                          'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footer'=>
+                          Yii::app()->format->currency($dp->columnTotal('returned')),
                           ),
                       'note:text:Admin Note'
                       ),
