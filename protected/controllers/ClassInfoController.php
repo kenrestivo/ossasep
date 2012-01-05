@@ -195,6 +195,14 @@ class ClassInfoController extends Controller
         return $res;
     }
 
+	/**
+	 * Gives the roster as json
+	 */
+	public function actionJson()
+	{
+        echo CJSON::encode($this->loadModel());
+	}
 
 }
+
 ?>
