@@ -2,7 +2,7 @@
 <?php 
 
 $attributes=array(
-                      'class_name:ntext',
+                      'summary:ntext:Class',
                       'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
@@ -16,6 +16,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'classdashsboard-active-grid',
                   'htmlOptions'=>array('style'=>'cursor: pointer;'),
                   'selectionChanged'=>ZHtml::clickableRow('ClassInfo/view'),
+                  'summaryText' => '',
                   'dataProvider'=> new KArrayDataProvider(
                       $classes,
                       array('pagination' => false)),
@@ -32,6 +33,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
                   'dataProvider'=> new KArrayDataProvider($cancelled,
                       array('pagination' => false)),
+
                   'columns'=> $attributes,
                   )); 
 ?>

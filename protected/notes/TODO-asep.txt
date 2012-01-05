@@ -4,7 +4,7 @@ TODO tasks for ASEP
 * live bugs to fix
 ** tabular input for signups
 ** ASL paid by makes no sense ($240, should be $180. why?)
-** joint checks show unpaid vs paid
+** joint checks show unpaid vs paid classes as a separate group in dropdown
 
 
 * browser exploiter crap
@@ -12,6 +12,9 @@ TODO tasks for ASEP
 ** chosen hitting return gives a warning that page leaving in IE
    ah, becuase it has input fields not enclosed in form tags, that's why!
 
+* open questions
+** does she want the counts on the public signup summary?
+   available or signed up counts?
 
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
