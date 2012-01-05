@@ -1,14 +1,17 @@
 #-*- org -*-
 * reports
-**	D  (payment for companies)
-	   company name
-		amount
-**	H "receipt"
-		Student.name
-		CLASS
-		Contact Name
-		Cost
-		payments.Check#
+**	I	instructor report
+*** fields
+		class name
+		instructor
+			type (individual/company)
+			email
+			cell
+			otherphone
+			note
+*** notes
+	this is basicallly just the cgridview, but unpaged, i guess
+
 **	K deposit form -- VIEW
 		show deposit number at top
 		entered, date notes
@@ -21,6 +24,15 @@
 			amount
 		= totals
 		
+**	D  (payment for companies)
+	   company name
+	   amount
+**	H "receipt"
+		Student.name
+		CLASS
+		Contact Name
+		Cost
+		payments.Check#
 **	O (checks by companies)
 		class
 		check
@@ -51,18 +63,6 @@
 		totals owed and totals  owing to instructor (see V though)
 *** this is basically a STATEMENT. use an accounting system
 ** G  signup for instructor sees only their class! and only email-safe emails
-**	I	instructor report
-*** fields
-		class name
-		instructor
-			type (individual/company)
-			email
-			cell
-			otherphone
-			note
-*** notes
-	this is basicallly just the cgridview, but unpaged, i guess
-
 ** 	B deposit summary -- already done?
 		osspto deposit, date
         this is pretty much already in the deposit cgridview
