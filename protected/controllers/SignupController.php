@@ -219,7 +219,7 @@ class SignupController extends Controller
                 $models[$i]->student_id = $student->id; 
                 if($models[$i]->save()){
                     $v= $v && true;
-                    $flash .= $models[$i]->class->summary . ' succeeded for ' . $models[$i]->student->summary . "<br />";
+                    $flash .= CHtml::encode($models[$i]->class->summary) . ' succeeded for ' . CHtml::encode($models[$i]->student->summary) . "<br />";
                     // don't need to keep it around if it validated
                     // this is important for when one line fails
                     unset($models[$i]);
