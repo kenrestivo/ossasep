@@ -393,3 +393,7 @@ table.spacey{
 table.financial td{ 
   text-align: right;
  }
+
+table td.financial{ 
+text-align: right;
+ }
