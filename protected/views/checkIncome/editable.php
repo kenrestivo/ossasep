@@ -1,5 +1,6 @@
 <h3>Shows only checks with no payer (for now)</h3>
 <p>
+Click on a payer to edit directly. Press return or click elsewhere to save. Press Escape to cancel<br />
 <?php
 echo CHtml::link(CHtml::encode("Refresh to clean up and get just the empty payers"), 
                  array("CheckIncome/editable",
@@ -22,9 +23,10 @@ foreach($models as $model){
           echo $inc->student->full_name . ' ';
       }
       echo'</td><td>';
-      echo CHtml::link("View", 
+      echo CHtml::link('<img src="'.  Yii::app()->baseUrl  . '/images/view.png" alt="view" />', 
                  array("CheckIncome/view",
-                       'id' => $model->id
+                       'id' => $model->id,
+                       'returnTo' => Yii::app()->request->requestUri
                      ));
       echo '</td></tr>';
 }
