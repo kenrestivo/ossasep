@@ -1,3 +1,5 @@
+#-*- org -*-
+
 iasep notes
 
 yii has no accounting shit built in
@@ -1034,13 +1036,13 @@ to export to ical/caldav format, use this:
 	http://www.kigkonsult.se/iCalcreator/docs/using.html
 
 
-chosen doing autocomplete via ajax, a plugin to make it do that!
-http://blog.meltingice.net/programming/bootstrapping-chosen-ajax-autocomplete/
-actually here: http://github.com/meltingice/ajax-chosen
+* chosen doing autocomplete via ajax, a plugin to make it do that!
+  http://blog.meltingice.net/programming/bootstrapping-chosen-ajax-autocomplete/
+  actually here: http://github.com/meltingice/ajax-chosen
 	except, the demo doesn't work, so i think this probably doesn't work either
 
 
-so, picking session
+* so, picking session
 	if i'm between sessions (like right now) i want the NEXT one
 	so i want all sessions which havent ended yet, and pick the FIRST of those
 
@@ -1050,7 +1052,7 @@ so, picking session
 
 
 
-note: if i don't put session stuff in the db, nfsn puts it in /home/tmp
+* note: if i don't put session stuff in the db, nfsn puts it in /home/tmp
 [ossasep /home/tmp]$ ls -la
 -rw-------  1 web     web     171 Dec 23 22:51 sess_194e31acf050697520df9141d413ab26
 -rw-------  1 web     web     211 Dec 25 05:49 sess_9ae4259087d73d6b0e92faa28fc25bb9
@@ -1062,24 +1064,24 @@ that's probably fine for now. i don't need this thing hitting the db or storing 
 
 
 
-alpha pager?
+* alpha pager?
 	http://www.yiiframework.com/extension/alphapager/
 	maybe try on roster, just for grins
 
 
 
 
-auugh, but wait!! the checks that are for cancelled classses or students!!!
+* auugh, but wait!! the checks that are for cancelled classses or students!!!
 	it's assigned, but the class is cancelled, so techically it's not
 	this is a BIG FUCKING DEAL
 	i need to show it as underpaid somewhere
 	
 
-yay, flash messages!
+* yay, flash messages!
 	http://www.yiiframework.com/wiki/21/how-to-work-with-flash-messages/
 	this is how i will do my warnings
 
-validation!
+* validation!
 	good tutorial
 		http://learnyii.blogspot.com/2010/12/yii.html
 	so it does it via ajax at tab time. perfect.
@@ -1096,75 +1098,80 @@ validation!
 		http://www.yiiframework.com/wiki/56/reference-model-rules-validation
 
 
-total summary row at bottom of cgridview!
+* total summary row at bottom of cgridview!
 	http://www.yiiframework.com/forum/index.php?/topic/9636-cgridview-totals-or-summary-row/
 	it is NOT easy!
 
 
-	overflow:auto to make a scrollbox,if needed
+
+* overflow:auto to make a scrollbox,if needed
 
 
-for marking checks delivered to company
+* heidi aol
+	iwubwubu aol
+	krystalleaf  yahoo
+
+* heidi notes, 12/30
+    
+** for marking checks delivered to company
 	she piles them by class
 	so the entry place would be by class
 	for marrking them paid
 		maybe income, mark them all
 
-for  marking EXPENSE checks delivered to OSSPTO instructor
+** for  marking EXPENSE checks delivered to OSSPTO instructor
 	they're a pile, she has to enter them.
 		
 
-heidi aol
-	iwubwubu aol
-	krystalleaf  yahoo
+
+
+** need to have assignments of expenses to class
+  hmmm I see something that could end up interesting
+  when an instructor gets paid a partial amount due and has mulitple classes,
+  the money gets randomly dispersed...
+  could classes be selected for payment in that situation?
+  what if Art Studio isn't meeting it's minimum, yet I want to pay Elaine for
+  all her other classes?  
 
 
 
-dependent dropdown is not that hard
-	http://www.yiiframework.com/wiki/24/
-
-
-
-	hmmm I see something that could end up interesting... when an instructor gets paid a partial amount due and has mulitple classes, the money gets randomly dispersed... could classes be selected for payment in that situation?  what if Art Studio isn't meeting it's minimum, yet I want to pay Elaine for all her other classes?  
-
-
-
-negative amount for refund  check
-
-refunds
-	kid signed up for class, the check has been deposited,
+** negative amount for refund  check
+   
+** refunds
+***	kid signed up for class, the check has been deposited,
 		they decided to cancel,
 		refunded total or partial, happens all the time.
-	or if it was a multiple check, they cancel
+***	or if it was a multiple check, they cancel
 
 
 	never happens that an instructors get paid
 	it happens that they do that
 	
-if instructors get paid faster, a kid could drop after instructor paid
+** if instructors get paid faster, a kid could drop after instructor paid
 	then the instructor would have to  refundd it
 
 
-paid not freak out on negative numbers
-
-if the instructor does the refund
+** paid not freak out on negative numbers
+   
+** if the instructor does the refund
 	if there were refund from anywhere
 
 
-checks multiple classes
+** checks multiple classes
 	
-probably ok to have some stuff not perfectly clean
-
-report of negative numbers
-m2
+** probably ok to have some stuff not perfectly clean
+** report of negative numbers
 
 
-------
-use a proper accounting engine! use gnucash!
+* dependent dropdown is not that hard
+  http://www.yiiframework.com/wiki/24/
+
+
+
+* use a proper accounting engine! use gnucash!
   java -jar ~tmp/incoming/jgnucash/build/lib/jpf-boot.jar
 	ooh cool!
 	but, it is flaky
-
 
 http://ledger-cli.org/
 
@@ -1172,3 +1179,4 @@ http://www.openbravo.com/
 
 ooh, i can import invoices using gnucash and python (and probably guile too)
 http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
+
