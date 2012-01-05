@@ -5,6 +5,11 @@ TODO tasks for ASEP
 ** tabular input for signups
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 
+* backup
+** some kind of html-possible backup system
+   just run mysqldump as a shell command from php basically
+** store the files somewhere, i'm thinking s3
+** a cron job on something, probably portaserver, to run the backup
 
 * browser exploiter crap
 ** backspace makes the page go back, no warning, in IE

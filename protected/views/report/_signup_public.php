@@ -14,6 +14,21 @@
     </th>
   </tr>
 
+  <tr>
+    <td colspan="2" class="title">
+     <?php  
+     $avail = $model->max_students - $model->enrolled_count;
+if($avail > 0){
+    echo CHtml::encode(sprintf("%d more space%s available", 
+                               $avail,  
+                               $avail > 1 ? 's' : ''));
+} else  {
+    echo "Class Full";
+}
+     ?>
+    </td>
+  </tr>
+
 
 
 <?php
@@ -43,18 +58,5 @@
 
 
 ?>
-  <tr>
-    <td colspan="2" class="title">
-     <?php  
-     $avail = $model->max_students - $model->enrolled_count;
-if($avail > 0){
-    echo CHtml::encode("+ " . $avail . " spaces available");
-} else  {
-    echo "Class Full";
-}
-     ?>
-    </td>
-  </tr>
-
  
 </table>
