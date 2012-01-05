@@ -20,7 +20,7 @@ class SignupController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,14 +32,12 @@ class SignupController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
-				'users'=>array('admin'),
-			),
+                  'users'=>array('admin'),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	/**
@@ -48,8 +46,8 @@ class SignupController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 	/**
@@ -88,8 +86,8 @@ class SignupController extends Controller
         }
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -113,8 +111,8 @@ class SignupController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -143,8 +141,8 @@ class SignupController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Signup');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+                          'dataProvider'=>$dataProvider,
+                          ));
 	}
 
 	/**
@@ -158,8 +156,8 @@ class SignupController extends Controller
 			$model->attributes=$_GET['Signup'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -174,8 +172,8 @@ class SignupController extends Controller
                 // XXX this is stupid and tedious. fix.
 				$this->_model=Signup::model()->findbyPk(
                     array(
-                    'student_id' => $_GET['student_id'],
-                    'class_id' =>$_GET['class_id'])
+                        'student_id' => $_GET['student_id'],
+                        'class_id' =>$_GET['class_id'])
                     );
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
@@ -195,4 +193,20 @@ class SignupController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionCreateMulti()
+    {
+        $student = Student::model()->findByPk($_GET['student_id']);
+
+        if($student===null){
+            throw new CHttpException(404,'The requested page does not exist.');
+        }
+
+//TODO: error out if no student id
+// TODO: possibly double-end this with handling class id
+        $this->render('multi_entry',
+                      array('student' => $student));
+        
+    }
+
 }
