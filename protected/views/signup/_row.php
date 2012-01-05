@@ -50,8 +50,20 @@ echo $form->error($model,"[$index]class_id");
 <?php echo $form->error($model,"[$index]signup_date"); ?>
 
 </td>
-<td></td>
-<td></td>
-<td></td>
+<td>
+<?php echo $form->checkbox($model,"[$index]scholarship"); ?>
+<?php echo $form->error($model,"[$index]scholarship"); ?>
+
+</td>
+<td>
+<?php echo ZHtml::enumDropDownList( $model,"[$index]status"); ?>
+<div id="Signup_${index}_additional_info" class="infoMessage" ></div>
+    <?php echo $form->error($model,"[$index]status"); ?>
+
+</td>
+<td>
+<?php echo $form->textField($model,"[$index]note",array('size'=>20,'maxlength'=>256)); ?>
+<?php echo $form->error($model,"[$index]note"); ?>
+</td>
 <td>	<?php echo $form->errorSummary($model); ?></td>
 </tr>

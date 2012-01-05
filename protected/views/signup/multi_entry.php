@@ -38,7 +38,7 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Save All'); ?>
+		<?php echo CHtml::submitButton('Save'); ?>
 	</div>
 
 
