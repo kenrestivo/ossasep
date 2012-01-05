@@ -63,6 +63,16 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
 <?php echo $form->textField($model,"[$index]note",array('size'=>20,'maxlength'=>256)); ?>
 <?php echo $form->error($model,"[$index]note"); ?>
 </td>
+<td>
+<?php echo CHtml::link(
+    '<img src="' .  Yii::app()->baseUrl . '/images/delete.png" alt="Delete" />', 
+    '', 
+    array(
+        'class'=>'delete',
+        'onClick'=>'deleteRow($(this))', 
+   ));?>
+</td>
+
 </tr>
 
 

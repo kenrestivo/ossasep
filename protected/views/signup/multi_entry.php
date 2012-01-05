@@ -20,6 +20,7 @@
 <th>Scholarship</th>
 <th>Status</th>
 <th>Note</th>
+<th></th>
 </tr>
 
 <?php 
@@ -45,6 +46,19 @@
 <?php $this->endWidget(); ?>
 
 </div>
+
+<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+
+<script type="text/javascript">
+
+
+function deleteRow(button)
+{
+    button.parents('tr').detach();
+}
+ 
+</script>
+
 
 <?php echo $this->renderPartial('/site/_unsaved_changes_warning',
                                 array('form_id'=>"#multi-signup-form")); ?>
