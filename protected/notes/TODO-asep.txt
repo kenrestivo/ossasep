@@ -3,7 +3,6 @@ TODO tasks for ASEP
 
 * live bugs to fix
 ** tabular input for signups
-** ASL paid by makes no sense ($240, should be $180. why?)
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 
 

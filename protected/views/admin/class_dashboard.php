@@ -6,8 +6,8 @@ $attributes=array(
                       'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
-                      'owed:currency:Owed From Students',
                       'paid:currency:Paid By Students',
+                      'owed:currency:Owed From Students',
                       'returned:currency:Returned Payments',
                       'note:text:Admin Note'
     );
