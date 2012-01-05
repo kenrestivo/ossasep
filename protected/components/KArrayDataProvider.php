@@ -19,7 +19,9 @@ class KArrayDataProvider extends CArrayDataProvider
 		return $keys;
 	}
 
-
+    /*
+      This is  not very useful, since the reports show columns one at a time.
+     */
     public function reportTotals( $keys)
     {
         foreach($keys as $k){
@@ -29,6 +31,16 @@ class KArrayDataProvider extends CArrayDataProvider
             foreach($keys as $k){
                 $total[$k] += $data->$k;
             }
+        return $total;
+    }
+
+
+    public function columnTotal( $key)
+    {
+        $total = 0;
+        foreach($this->data as $data){
+            $total += $data->$key;
+        }
         return $total;
     }
 
