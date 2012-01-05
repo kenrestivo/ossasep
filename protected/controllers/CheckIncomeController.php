@@ -354,9 +354,42 @@ order by check_num');
         
     }
 
+    /*
+      Because I am tired of fighting with json and jquery.
+    */
+    public function postLoadModel()
+    {
+		if($this->_model===null)
+		{
+			if(isset($_POST['CheckIncome']) && $_POST['CheckIncome']['id'])
+                $this->_model=CheckIncome::model()->findbyPk($_POST['CheckIncome']['id']);
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+        }
+        return $this->_model;
+
+    }
+
     public function actionJsonUpdate()
     {
-        echo "foo";
+        $model=$this->postLoadModel();
+
+        // Uncomment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
+
+        if(isset($_POST['CheckIncome']))
+        {
+            //XXX try massively assigning with safe mode!
+            $model->payer = $_POST['CheckIncome']['payer'];
+
+            if($model->save()){
+                echo $model->payer;
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "You rang?";
+        }
         Yii::app()->end();
 
     }
