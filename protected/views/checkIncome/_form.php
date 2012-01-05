@@ -32,7 +32,7 @@
 
     <?php
     $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
-    'name'=>'payer',
+    'name'=>'CheckIncome[payer]',
     'source'=>Yii::app()->controller->createUrl("autocomplete"),
     // additional javascript options for the autocomplete plugin
     'options'=>array(
