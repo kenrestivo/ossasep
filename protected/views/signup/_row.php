@@ -92,7 +92,18 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
                         }
                         )})
                 };
-            addAjax(0);
+
+
+
+$.each(
+    $('select').filter(function() {
+        return this.id.match(/class_id/);
+    }),
+    function(i,s){
+        id=s.id.match(/Signup_(\d+?)_class_id/)[1];
+        addAjax(id);
+    })
+
 
 });
 
