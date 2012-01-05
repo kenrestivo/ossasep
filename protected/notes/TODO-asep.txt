@@ -2,6 +2,8 @@
 TODO tasks for ASEP
 
 * live bugs to fix
+** autopopulate waitlist from student side
+   $("#Signup_class_id").chosen().change(function(item){alert($('#CheckIncome_payee_id option:selected').val());})
 ** waitlist is supposed to be the default but isn't
    lego
 ** tabular input for signups
@@ -12,6 +14,7 @@ TODO tasks for ASEP
 * browser exploiter crap
 ** backspace makes the page go back, no warning, in IE
 ** chosen hitting return gives a warning that page leaving in IE
+   ah, becuase it has input fields not enclosed in form tags, that's why!
 
 
 * formatting
