@@ -17,7 +17,7 @@ echo CHTML::link("Add 1 Class for " . CHtml::encode($model->full_name),
 echo CHtml::beginForm(array('/Signup/createMulti', 'student_id' => $model->id));
     echo CHtml::submitButton('Add');
     echo CHtml::textField('count', 2, array('size' => 2));
-echo " Classes";
+echo " Classes for ". CHtml::encode($model->full_name);
     echo CHtml::endForm();
 ?>
 
