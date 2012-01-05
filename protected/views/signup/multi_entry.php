@@ -38,7 +38,7 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Save'); ?>
+		<?php echo CHtml::submitButton('Save All'); ?>
 	</div>
 
 
@@ -47,4 +47,4 @@
 
 
 <?php echo $this->renderPartial('/site/_unsaved_changes_warning',
-                                array('form_id'=>"#check-income-form")); ?>
+                                array('form_id'=>"#multi-signup-form")); ?>
