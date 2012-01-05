@@ -40,7 +40,7 @@ if($un == 0){
     echo "<div>Check completely assigned, no amounts to assign.</div>";
 }
   // could be a tab, but probably not necessary at the moment
-    echo CHTML::link("Add Split for " . CHtml::encode(Yii::app()->format->currency($un) . ' (of '. Yii::app()->format->currency($model->amount) .')'),
+    echo CHTML::link("Add Split for " . CHtml::encode(Yii::app()->format->currencyZero($un) . ' (of '. Yii::app()->format->currency($model->amount) .')'),
                  array("Income/create",
                        'check_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
