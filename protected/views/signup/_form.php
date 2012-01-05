@@ -53,9 +53,23 @@
                         $model->student->grade . '> max_grade_allowed'), 
                     'id', 'summary'),
                 ), 
-            array('class' => 'chzn-select')); 
+            array('class' => 'chzn-select',
+                              'ajax' => array(
+                  'type'=>'POST', 
+                  'dataType' => 'json',
+                  'url'=>CController::createUrl('ClassInfo/json'),
+                  'success' => 
+                  "function(data){
+$('#Signup_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
+if(parseInt(data['enrolled_count']) >= parseInt(data['max_students'])){
+    $('#Signup_status').val('Waitlist');
+} else{
+    $('#Signup_status').val('Enrolled');
+}
+;}",
+                                  ))); 
     }
-?>
+?> 
 
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
@@ -79,6 +93,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
     <?php echo ZHtml::enumDropDownList( $model,'status'); ?>
+    <div id="Signup_additional_info" class="infoMessage" ></div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
