@@ -147,6 +147,10 @@ class ClassInfo extends CActiveRecord
                 self::STAT, 
                 'Signup', 'class_id',
                 'condition' => 'status = "Cancelled"'), 
+            'owed_count' => array(
+                self::STAT, 
+                'Signup', 'class_id',
+                'condition' => 'status != "Cancelled" and scholarship  < 1'), 
             );
 	}
 
@@ -441,7 +445,7 @@ where (check_income.returned > '1999-01-01')
      */
     public function getOwed()
     {
-        return ($this->costSummary * ($this->enrolled_count + $this->waitlist_count)) - $this->paid;
+        return ($this->costSummary * $this->owed_count) - $this->paid;
     }
 
 
