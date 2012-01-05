@@ -207,6 +207,7 @@ class SignupController extends Controller
         for($i = 0; $i < $count; $i++){
             $models[$i] = new Signup;
             $models[$i]->student_id = $student->id; // pre-fill it
+            $models[$i]->signup_date = date ("Y-m-d H:i:s");
         }
 
 //TODO: error out if no student id

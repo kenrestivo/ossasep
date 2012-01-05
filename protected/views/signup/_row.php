@@ -45,7 +45,11 @@ echo $form->error($model,"[$index]class_id");
 
 
 </td>
-<td></td>
+<td>
+<?php echo $form->textField($model,"[$index]signup_date",array('size'=>20)) ?>
+<?php echo $form->error($model,"[$index]signup_date"); ?>
+
+</td>
 <td></td>
 <td></td>
 <td></td>
