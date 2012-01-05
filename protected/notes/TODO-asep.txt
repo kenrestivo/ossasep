@@ -1,6 +1,19 @@
 #-*- org -*-
 TODO tasks for ASEP
 
+* live bugs to fix
+** waitlist is supposed to be the default but isn't
+   lego
+** tabular input for signups
+** ASL paid by makes no sense ($240, should be $180. why?)
+** joint checks show unpaid vs paid
+
+
+* browser exploiter crap
+** backspace makes the page go back, no warning, in IE
+** chosen hitting return gives a warning that page leaving in IE
+
+
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
