@@ -22,6 +22,8 @@ foreach($models as $model){
                 {
                 indicator : "<img src='<?= Yii::app()->baseUrl ?>/images/indicator.gif'>",
                         tooltip   : "Click to edit...",
+                        name : 'CheckIncome[payer]',
+                        id: 'CheckIncome[id]',
                         style  : "inherit"
                         });
         });
