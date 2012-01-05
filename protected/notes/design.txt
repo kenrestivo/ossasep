@@ -44,6 +44,7 @@
 **	W integrity check dashboard
 ***			unpaid classes (useful for checking)
 ***			classes paid but not signed up
+****           this will probablly require linking signups to incomes in models
 ***			make sure returned checks are not deposited or delivered!
 ***			unassigned check amounts		
 ***			   check status/dashboard, show that they add up!
