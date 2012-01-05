@@ -48,7 +48,7 @@
      <?php  
      $avail = $model->max_students - $model->enrolled_count;
 if($avail > 0){
-    echo CHtml::encode("+ " . $avail . " still available");
+    echo CHtml::encode("+ " . $avail . " spaces available");
 } else  {
     echo "Class Full";
 }
