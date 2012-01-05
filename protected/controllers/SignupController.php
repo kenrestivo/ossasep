@@ -213,19 +213,22 @@ class SignupController extends Controller
             // the saving and redisplaying
             $v= true;
             foreach($_POST['Signup'] as $i => $s){
-                $models[$i] = new Signup;
-                $models[$i]->attributes = $_POST['Signup'][$i];
-                // XXX ugly, but cleaner than hidden form fields i think.
-                $models[$i]->student_id = $student->id; 
-                if($models[$i]->save()){
-                    $v= $v && true;
-                    $flash .= CHtml::encode($models[$i]->class->summary) . ' succeeded for ' . CHtml::encode($models[$i]->student->summary) . "<br />";
-                    // don't need to keep it around if it validated
-                    // this is important for when one line fails
-                    unset($models[$i]);
-                } else {
-                    // something died
-                    $v= $v && false;
+                // I'm not bothering with them if the class is 0, ignore
+                if($_POST['Signup'][$i]['class_id'] > 0){
+                    $models[$i] = new Signup;
+                    $models[$i]->attributes = $_POST['Signup'][$i];
+                    // XXX ugly, but cleaner than hidden form fields i think.
+                    $models[$i]->student_id = $student->id; 
+                    if($models[$i]->save()){
+                        $v= $v && true;
+                        $flash .= CHtml::encode($models[$i]->class->summary) . ' succeeded for ' . CHtml::encode($models[$i]->student->summary) . "<br />";
+                        // don't need to keep it around if it validated
+                        // this is important for when one line fails
+                        unset($models[$i]);
+                    } else {
+                        // something died
+                        $v= $v && false;
+                    }
                 }
             }
             Yii::app()->user->setFlash('success', $flash);
