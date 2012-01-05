@@ -19,6 +19,20 @@ class KArrayDataProvider extends CArrayDataProvider
 		return $keys;
 	}
 
+
+    public function reportTotals( $keys)
+    {
+        foreach($keys as $k){
+            $total[$k] = 0;
+        }
+        foreach($this->data as $data)
+            foreach($keys as $k){
+                $total[$k] += $data->$k;
+            }
+        return $total;
+    }
+
+
 } 
 
 
