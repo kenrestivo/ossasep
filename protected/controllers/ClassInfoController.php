@@ -59,7 +59,7 @@ class ClassInfoController extends Controller
 		$model=new ClassInfo;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['ClassInfo']))
 		{
@@ -86,7 +86,7 @@ class ClassInfoController extends Controller
 		$model=$this->loadModel();
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['ClassInfo']))
 		{

@@ -56,14 +56,20 @@
             array('class' => 'chzn-select',
                               'ajax' => array(
                   'type'=>'POST', 
+                  'dataType' => 'json',
                   'url'=>CController::createUrl('ClassInfo/json'),
                   'success' => 
                   "function(data){
-alert(data);
-$('#Signup_status').val('Waitlist');}",
+$('#Signup_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
+if(parseInt(data['enrolled_count']) >= parseInt(data['max_students'])){
+    $('#Signup_status').val('Waitlist');
+} else{
+    $('#Signup_status').val('Enrolled');
+}
+;}",
                                   ))); 
     }
-?>
+?> 
 
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
@@ -87,6 +93,7 @@ $('#Signup_status').val('Waitlist');}",
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
     <?php echo ZHtml::enumDropDownList( $model,'status'); ?>
+    <div id="Signup_additional_info" class="infoMessage" ></div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
