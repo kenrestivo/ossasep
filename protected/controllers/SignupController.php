@@ -209,24 +209,29 @@ class SignupController extends Controller
         $models = array();
 
 		if(isset($_POST['Signup'])){
-            $v=true;
             // the saving and redisplaying
+            $v= true;
             foreach($_POST['Signup'] as $i => $s){
                 $models[$i] = new Signup;
                 $models[$i]->attributes = $_POST['Signup'][$i];
                 // XXX ugly, but cleaner than hidden form fields i think.
                 $models[$i]->student_id = $student->id; 
-                $v = $v && $models[$i]->validate();
+                if($models[$i]->save()){
+                    $v= $v && true;
+                    // don't need to keep it around if it validated
+                    // this is important for when one line fails
+                    unset($models[$i]);
+                } else {
+                    // something died
+                    $v= $v && false;
+                }
             }
+            
             if($v){
-                $sv = true;
-                foreach($models as $m){
-                    $sv = $sv && $m->save();
-                }
-                if($sv){
-                    $this->redirect(array('student/view','id'=> $student->id));
-                }
+                //everything validated and saved, so redirect us
+                $this->redirect(array('student/view','id'=> $student->id));
             }
+
 
         } else {
 
