@@ -6,7 +6,7 @@
 <tr><th>Check Num</th><th>Payer (click to edit)</th><th>Student(s)</th></tr>
 <?php
 foreach($models as $model){
-      echo '<tr><td>' . $model->check_num . '</td><td>' . $model->payer . '</td>';
+      echo '<tr><td>' . $model->check_num . '</td><td class="edit" id="'. $model->id  . '">' . $model->payer . '</td>';
       echo '<td></td>';
       echo '</tr>';
 }
