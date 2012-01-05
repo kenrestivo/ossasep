@@ -347,7 +347,7 @@ class CheckIncomeController extends Controller
         $models = CheckIncome::model()->findAllBySQL(
             'select check_income.* from check_income 
 where (payer is null or payer < "")
-order by check_num');
+order by abs(check_num)');
 		$this->render('editable',array(
                           'models'=>$models,
                           ));
