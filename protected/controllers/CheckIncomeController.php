@@ -355,4 +355,12 @@ class CheckIncomeController extends Controller
         
     }
 
+    public function actionJsonUpdate()
+    {
+        echo "foo";
+        Yii::app()->end();
+
+    }
+
+
 }
