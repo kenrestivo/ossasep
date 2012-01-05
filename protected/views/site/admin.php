@@ -85,6 +85,13 @@
 </td>
 
 <td>
+<h1>Utilities/Fixes</h1>
+<?php
+echo CHtml::link(CHtml::encode("Fix checks with empty payer"), 
+                 array("CheckIncome/editable",
+                       ));
+?>
+
 </td>
 </tr>
 

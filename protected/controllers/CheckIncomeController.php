@@ -32,9 +32,6 @@ class CheckIncomeController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-                  'actions'=>array('index', 'view', 'create', 'update', 
-                                   'admin','delete', 'entry', 'multientry',
-                                   'autocomplete', 'multiupdate'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -214,8 +211,8 @@ class CheckIncomeController extends Controller
 
 		} else {
             /* construct form, and pre-populate some important data,
-              like, what is owed
-             */
+               like, what is owed
+            */
             if(isset($_GET['company_id'])){
                 $model->payee_id = $_GET['company_id'];
             }
@@ -312,10 +309,10 @@ class CheckIncomeController extends Controller
                 array_map(
                     function($r) { return $r[0]; },
                     $c->queryAll(
-                    false, 
-                    // this is where i put the %'s in
-                    // because PDO quotes my :text
-                    array('text' => '%' .$_GET['term'] . '%'))));
+                        false, 
+                        // this is where i put the %'s in
+                        // because PDO quotes my :text
+                        array('text' => '%' .$_GET['term'] . '%'))));
             Yii::app()->end();
         }
         //TODO error out, 404?
@@ -342,6 +339,61 @@ class CheckIncomeController extends Controller
             $res .= ' (' .Yii::app()->format->currency($un). ' discrepancy)';
         }
         return $res;
+    }
+
+
+    public function actionEditable()
+    {
+        $models = CheckIncome::model()->findAllBySQL(
+            'select check_income.* from check_income 
+where (payer is null or payer < "")
+order by abs(check_num)');
+		$this->render('editable',array(
+                          'models'=>$models,
+                          ));
+        
+    }
+
+    /*
+      Because I am tired of fighting with json and jquery.
+    */
+    public function postLoadModel()
+    {
+		if($this->_model===null)
+		{
+			if(isset($_POST['CheckIncome']) && $_POST['CheckIncome']['id'])
+                //NASTY HACK AROUND HTML NOT HANDLING NUMERIC DIV IDS!
+                $pkmangle = str_replace('check_id_', '', $_POST['CheckIncome']['id']);
+                $this->_model=CheckIncome::model()->findbyPk($pkmangle);
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+        }
+        return $this->_model;
+
+    }
+
+    public function actionJsonUpdate()
+    {
+        $model=$this->postLoadModel();
+
+        // Uncomment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
+
+        if(isset($_POST['CheckIncome']))
+        {
+            //XXX try massively assigning with safe mode!
+            $model->payer = $_POST['CheckIncome']['payer'];
+
+            if($model->save()){
+                echo CHtml::encode($model->payer);
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "You rang?";
+        }
+        Yii::app()->end();
+
     }
 
 
