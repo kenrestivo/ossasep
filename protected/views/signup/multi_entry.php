@@ -1,6 +1,6 @@
 <h3>Multi entry of classes for <?= $student->summary ?></h3>
 
-
+<div class="form wide">
 <?php $this->widget( 'ext.EChosen.EChosen'); ?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -44,7 +44,7 @@
 
 <?php $this->endWidget(); ?>
 
-
+</div>
 
 <?php echo $this->renderPartial('/site/_unsaved_changes_warning',
                                 array('form_id'=>"#multi-signup-form")); ?>
