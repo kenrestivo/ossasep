@@ -13,11 +13,12 @@ echo CHtml::link(CHtml::encode("Refresh to clean up and get just the empty payer
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/static/jquery.jeditable.mini.js")?>
 
 <table class="bordertable">
-<tr><th>Check Num</th><th>Check Date</th><th>Payer (click to edit)</th><th>Student(s)</th><th></th></tr>
+<tr><th>Check Num</th><th>Check Date</th><th>Amount</th><th>Payer (click to edit)</th><th>Student(s)</th><th></th></tr>
 <?php
 foreach($models as $model){
       echo '<tr><td class="financial">' . CHtml::encode($model->check_num) . '</td>';
       echo '<td class="financial">' . Yii::app()->format->date($model->check_date). '</td>';
+      echo '<td class="financial">' . Yii::app()->format->currency($model->amount). '</td>';
       echo '<td class="edit" id="check_id_'. $model->id  . '">' . CHtml::encode($model->payer) . '</td>';
       echo '<td>';
       foreach($model->incomes as $inc){
