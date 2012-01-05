@@ -69,7 +69,9 @@ if(isset($model->student_id)){
         $model,$form, 'class_id',
         $cdrop,
         'CHtml::encode($model->class->summary)',
-        array('class' => 'chzn-select'));
+        array('class' => 'chzn-select',
+              'empty' => "Choose One",
+));
 
 echo $form->error($model,'class_id'); 
 

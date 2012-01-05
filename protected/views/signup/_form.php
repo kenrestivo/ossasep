@@ -21,7 +21,9 @@
         $model, $form, 'student_id',
         "CHtml::listData(Student::model()->findAll(), 'id', 'full_name')",
        'CHtml::encode($model->student->full_name. " (" . Yii::app()->format->grade($model->student->grade) . ")")',
-                array('class' => 'chzn-select'));
+        array('class' => 'chzn-select',
+              'empty' => "Choose One",
+            ));
  ?>
 		<?php echo $form->error($model,'student_id'); ?>
 	</div>

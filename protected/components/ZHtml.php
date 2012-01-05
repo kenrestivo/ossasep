@@ -130,7 +130,9 @@ class ZHtml extends CHtml
       This really wants to be a widget, but it'll do as it is for now
      */
     public static function multiEndedDropDown($model, $form, $id, 
-                                              $data, $static, $options = array())
+                                              $data, $static, 
+                                              $options = array(
+                                                  'empty' => 'Choose One'))
     {
         if(isset($model->{$id}) && !$model->hasErrors()){
             echo $form->evaluateExpression($static, array('model' => $model));
