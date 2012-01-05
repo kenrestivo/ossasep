@@ -42,16 +42,30 @@
 		total
 
 **	W integrity check dashboard
-***			unpaid classes (useful for checking)
-***			classes paid but not signed up
+***	unpaid/overpaid classes (useful for checking)
+	select all the signups
+	determine what it should be (scholarship, etc)
+	for each signup, check that the sum of incomes for it equals what it should be
+***	classes paid but not signed up
+	for each income
+	check that there is a signup for it
+	and that it is not cancelled?
 ****           this will probablly require linking signups to incomes in models
-***			make sure returned checks are not deposited or delivered!
-***			unassigned check amounts		
-***			   check status/dashboard, show that they add up!
-***			instructors don't add up to > 100
-***			classes overpaid, i.e. 2 or more checks for same class
-***			instructors that don't add up to the company (class assignments)
-		
+***	make sure returned checks are not deposited or delivered!
+	that's really easy query, in fact it should be in validation!
+***	unassigned check amounts
+	that's easy, because it's already in student/_owed and elsewhere
+	in fact, i could hack it in php, just go through all checks and check unassigned
+	    ugly, but it'd work
+***	check status/dashboard, show that they add up!
+	that WHAT adds up?
+***	instructors don't add up to > 100
+	another easy one, that all classes instructors total 100, no more, no less
+*** company integrity
+	instructors with company are same as the classes they're assigned to (easy)
+	checks for company are same as the classes they pay for (harder)
+	instructors that don't add up to the company (class assignments)
+
 
 **	V	instructor detailed financial report
 		each class,
@@ -69,7 +83,7 @@
         this is pretty much already in the deposit cgridview
 		
             
-
+ 
 **	L "tentative schedule"
 		for the whole year 3 sessions
 		session m-f, notes
