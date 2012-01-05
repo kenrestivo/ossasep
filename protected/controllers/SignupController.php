@@ -231,8 +231,8 @@ class SignupController extends Controller
         } else {
 
             // create new form
+            $count = isset($_POST['count']) ? $_POST['count'] : 2;
             
-            $count = 3;
 
             for($i = 0; $i < $count; $i++){
                 $models[$i] = new Signup;
