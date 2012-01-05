@@ -207,6 +207,7 @@ class SignupController extends Controller
         // TODO: possibly double-end this with handling class id
         
         $models = array();
+        $flash = "";
 
 		if(isset($_POST['Signup'])){
             // the saving and redisplaying
@@ -218,9 +219,7 @@ class SignupController extends Controller
                 $models[$i]->student_id = $student->id; 
                 if($models[$i]->save()){
                     $v= $v && true;
-                    Yii::app()->user->setFlash(
-                        'success',
-                        $models[$i]->class->summary . ' succeeded for ' . $models[$i]->student->summary);
+                    $flash .= $models[$i]->class->summary . ' succeeded for ' . $models[$i]->student->summary . "<br />";
                     // don't need to keep it around if it validated
                     // this is important for when one line fails
                     unset($models[$i]);
@@ -229,6 +228,7 @@ class SignupController extends Controller
                     $v= $v && false;
                 }
             }
+            Yii::app()->user->setFlash('success', $flash);
             
             if($v){
                 //everything validated and saved, so redirect us
