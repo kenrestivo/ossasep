@@ -612,7 +612,7 @@ won't work though. because tabs are chosen in js, the server does not know
 
 
 my god, i need to do this hack
-http://codinginparadise.org/weblog/2005/08/ajax-tutorial-saving-session-across.html
+http://codinginparadise.org/weblog/2005/08/ajax4-tutorial-saving-session-across.html
 
 or use cjuitabs
 

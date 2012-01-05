@@ -32,8 +32,6 @@ class ClassInfoController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-                  'actions'=>array('index', 'view', 'create', 'update', 
-                                   'admin','delete', 'populate'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -196,11 +194,20 @@ class ClassInfoController extends Controller
     }
 
 	/**
-	 * Gives the roster as json
+	 * Gives the class status as json
 	 */
 	public function actionJson()
 	{
-        echo CJSON::encode($this->loadModel());
+        $model = ClassInfo::model()->findByPk($_POST['Signup']['class_id']);
+        echo CJSON::encode(
+            array('min_grade_allowed' => $model->min_grade_allowed,
+                  'max_grade_allowed' => $model->max_grade_allowed,
+                  'min_students' => $model->min_students,
+                  'max_students' => $model->max_students,
+                  'cost_per_class' => $model->cost_per_class,
+                  'enrolled_count' => $model->enrolled_count,
+                               )
+            );
 	}
 
 }

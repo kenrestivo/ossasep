@@ -53,7 +53,15 @@
                         $model->student->grade . '> max_grade_allowed'), 
                     'id', 'summary'),
                 ), 
-            array('class' => 'chzn-select')); 
+            array('class' => 'chzn-select',
+                              'ajax' => array(
+                  'type'=>'POST', 
+                  'url'=>CController::createUrl('ClassInfo/json'),
+                  'success' => 
+                  "function(data){
+alert(data);
+$('#Signup_status').val('Waitlist');}",
+                                  ))); 
     }
 ?>
 
