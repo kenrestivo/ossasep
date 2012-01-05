@@ -56,13 +56,14 @@
                     'id', 'summary'),
                 ), 
             array('class' => 'chzn-select',
-                              'ajax' => array(
-                  'type'=>'POST', 
-                  'dataType' => 'json',
-                  'url'=>CController::createUrl('ClassInfo/json'),
-                  'success' => 
-                  "function(data){
-$('#Signup_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
+                  'empty' => 'Choose One',
+                  'ajax' => array(
+                      'type'=>'POST', 
+                      'dataType' => 'json',
+                      'url'=>CController::createUrl('ClassInfo/json'),
+                      'success' => 
+                      "function(data){
+$('#Signup_additional_info').text('signup #' + data['enrolled_count'] + ' (' + data['max_students'] + ' max)');
 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
     $('#Signup_status').val('Waitlist');
 } else{
