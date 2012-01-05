@@ -196,16 +196,24 @@ class SignupController extends Controller
 
     public function actionCreateMulti()
     {
+        $count = 3;
+
         $student = Student::model()->findByPk($_GET['student_id']);
 
         if($student===null){
             throw new CHttpException(404,'The requested page does not exist.');
         }
+        $models = array();
+        for($i = 0; $i < $count; $i++){
+            $models[$i] = new Signup;
+            $models[$i]->student_id = $student->id; // pre-fill it
+        }
 
 //TODO: error out if no student id
 // TODO: possibly double-end this with handling class id
         $this->render('multi_entry',
-                      array('student' => $student));
+                      array('student' => $student,
+                          'models' => $models));
         
     }
 
