@@ -12,6 +12,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 
+
 <table class="signups">
 <tr>
 <th>Class</th>
@@ -19,7 +20,6 @@
 <th>Scholarship</th>
 <th>Status</th>
 <th>Note</th>
-<th></th>
 </tr>
 
 <?php 

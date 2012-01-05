@@ -1,3 +1,11 @@
+
+<?php
+$es  =$form->errorSummary($model);
+if(isset($es)){
+    echo '<tr><td colspan="5">' . $es .  '</td></tr>';
+}
+?>
+
 <tr>
 <td>
     <?php 
@@ -65,5 +73,5 @@ echo $form->error($model,"[$index]class_id");
 <?php echo $form->textField($model,"[$index]note",array('size'=>20,'maxlength'=>256)); ?>
 <?php echo $form->error($model,"[$index]note"); ?>
 </td>
-<td>	<?php echo $form->errorSummary($model); ?></td>
 </tr>
+
