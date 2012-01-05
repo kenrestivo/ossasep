@@ -32,9 +32,6 @@ class CheckIncomeController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-                  'actions'=>array('index', 'view', 'create', 'update', 
-                                   'admin','delete', 'entry', 'multientry',
-                                   'autocomplete', 'multiupdate'),
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -214,8 +211,8 @@ class CheckIncomeController extends Controller
 
 		} else {
             /* construct form, and pre-populate some important data,
-              like, what is owed
-             */
+               like, what is owed
+            */
             if(isset($_GET['company_id'])){
                 $model->payee_id = $_GET['company_id'];
             }
@@ -312,10 +309,10 @@ class CheckIncomeController extends Controller
                 array_map(
                     function($r) { return $r[0]; },
                     $c->queryAll(
-                    false, 
-                    // this is where i put the %'s in
-                    // because PDO quotes my :text
-                    array('text' => '%' .$_GET['term'] . '%'))));
+                        false, 
+                        // this is where i put the %'s in
+                        // because PDO quotes my :text
+                        array('text' => '%' .$_GET['term'] . '%'))));
             Yii::app()->end();
         }
         //TODO error out, 404?
@@ -344,5 +341,18 @@ class CheckIncomeController extends Controller
         return $res;
     }
 
+
+    public function actionEditable()
+    {
+		$model=new CheckIncome('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['CheckIncome']))
+			$model->attributes=$_GET['CheckIncome'];
+
+		$this->render('editable',array(
+                          'model'=>$model,
+                          ));
+        
+    }
 
 }
