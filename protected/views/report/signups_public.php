@@ -1,5 +1,6 @@
 <h1>Signup Sheet for <?= $this->savedSessionSummary() ?></h1>
 
+<p>Students listed in order of application/payment received</p>
 
 <table class="signups" >
 <?php

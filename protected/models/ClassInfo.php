@@ -322,7 +322,7 @@ order by class_info.class_name
        left join student on student.id = signup.student_id
       where signup.class_id = :cid
       order by FIND_IN_SET(status, 'Enrolled,Cancelled,Waitlist'), 
-        student.last_name ASC, student.first_name ASC
+        signup.signup_date asc, student.last_name ASC, student.first_name ASC
       ",
             array('cid' => $this->id));
     }

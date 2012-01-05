@@ -7,7 +7,7 @@
    * @property integer $student_id
    * @property integer $class_id
    * @property integer $scholarship
-   * @property string $signup
+   * @property string $signup_date
    * @property integer $status
    */
 class Signup extends CActiveRecord
