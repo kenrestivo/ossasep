@@ -49,6 +49,8 @@ TODO tasks for ASEP
 *** multi-form: should auto-javascript calculate totals applied and check them
 **	validation and data entry error checking/warning
 *** ajax validation via yii built in -- errors
+**** don't allow returned checks to be deposited/delivered!
+**** don't allow deposited/delivered checks to be returned!
 ****   	[#A] the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		i can use my duplicate validator as a guide
@@ -68,9 +70,6 @@ TODO tasks for ASEP
 		class meeting/class_id unique
 		school day in calendar
 *** js validation via yii built in
-	first make sure that the notice works, addNotice, i hope
-	well, no, ther is no NOTICE, only error. so, no go.
-	unless i create a notice box and notice fields in model!?
 ****     entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
 ****    class over capacity but student set to enrolled
