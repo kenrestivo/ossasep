@@ -73,7 +73,8 @@ echo $form->error($model,"[$index]class_id");
                     $.ajax({
                         type:'POST', 
                                 dataType: 'json',
-                                url:'<?= CController::createUrl('ClassInfo/json') ?>/' + cid,
+                                data: {'Signup[class_id]' : cid},
+                                url:'<?= CController::createUrl('ClassInfo/json') ?>',
                                 success: 
                             function(data){
                                 $('#Signup_0_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
