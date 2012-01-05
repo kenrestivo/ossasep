@@ -13,11 +13,7 @@
       <span style="float:right"><?= $model->gradeSummary('short') ?></span>
     </th>
   </tr>
-  <tr>
-    <td colspan="2" class="title">
-      <?= CHtml::encode($model->instructorNames(' and ')) ?>
-    </td>
-  </tr>
+
 
 
 <?php
@@ -47,6 +43,18 @@
 
 
 ?>
+  <tr>
+    <td colspan="2" class="title">
+     <?php  
+     $avail = $model->max_students - $model->enrolled_count;
+if($avail > 0){
+    echo CHtml::encode("+ " . $avail . " still available");
+} else  {
+    echo "Class Full";
+}
+     ?>
+    </td>
+  </tr>
 
  
 </table>
