@@ -31,6 +31,7 @@ if(isset($model->class_id) && !$model->hasErrors()){
                 'id', 'summary'),
             ), 
         array('class' => 'chzn-select',
+              'empty' => "Choose a class",
             )); 
 }
 
