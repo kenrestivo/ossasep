@@ -383,7 +383,7 @@ order by abs(check_num)');
             $model->payer = $_POST['CheckIncome']['payer'];
 
             if($model->save()){
-                echo $model->payer;
+                echo CHtml::encode($model->payer);
             } else {
                 echo "error";
             }
