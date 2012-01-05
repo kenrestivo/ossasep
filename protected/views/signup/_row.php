@@ -93,7 +93,7 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
                                 url:'<?= CController::createUrl('ClassInfo/json') ?>',
                                 success: 
                             function(data){
-                                $('#Signup_' + id + '_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
+                                $('#Signup_' + id + '_additional_info').html('signup #' + data['enrolled_count'] + '<br />(' + data['max_students'] + ' max)');
                                 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
                                     $('#Signup_' + id + '_status').val('Waitlist');
                                 } else{
