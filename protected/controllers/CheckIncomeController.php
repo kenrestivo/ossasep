@@ -362,7 +362,9 @@ order by abs(check_num)');
 		if($this->_model===null)
 		{
 			if(isset($_POST['CheckIncome']) && $_POST['CheckIncome']['id'])
-                $this->_model=CheckIncome::model()->findbyPk($_POST['CheckIncome']['id']);
+                //NASTY HACK AROUND HTML NOT HANDLING NUMERIC DIV IDS!
+                $pkmangle = str_replace('check_id_', '', $_POST['CheckIncome']['id']);
+                $this->_model=CheckIncome::model()->findbyPk($pkmangle);
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
         }
