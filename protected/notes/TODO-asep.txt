@@ -52,6 +52,8 @@ TODO tasks for ASEP
 *** multi-form: should auto-javascript calculate totals applied and check them
 **	validation and data entry error checking/warning
 *** ajax validation via yii built in -- errors
+**** don't allow returned checks to be deposited/delivered!
+**** don't allow deposited/delivered checks to be returned!
 ****   	[#A] the student must be signed up for that class before it gets paid
 		look up the keys, see that there's something there
 		i can use my duplicate validator as a guide
