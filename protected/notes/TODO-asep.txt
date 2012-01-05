@@ -12,9 +12,6 @@ TODO tasks for ASEP
    ah, becuase it has input fields not enclosed in form tags, that's why!
 
 * open questions
-** does she want the counts on the public signup summary?
-   available or signed up counts?
-
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
