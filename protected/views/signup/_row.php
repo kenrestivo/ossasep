@@ -51,8 +51,10 @@ echo $form->error($model,"[$index]class_id");
 
 </td>
 <td>
-<?php echo ZHtml::enumDropDownList( $model,"[$index]status"); ?>
-<div id="Signup_${index}_additional_info" class="infoMessage" ></div>
+<?php echo ZHtml::enumDropDownList( $model,"[$index]status"); 
+echo '<div id="Signup_'. $index. '_additional_info"  >';
+?>
+</div>
     <?php echo $form->error($model,"[$index]status"); ?>
 
 </td>
@@ -78,7 +80,7 @@ echo $form->error($model,"[$index]class_id");
                                 success: 
                             function(data){
                                 $('#Signup_0_additional_info').text('Student ' + data['enrolled_count'] + ' of ' + data['max_students']);
-                                if(parseInt(data['enrolled_count']) >= parseInt(data['max_students'])){
+                                if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
                                     $('#Signup_0_status').val('Waitlist');
                                 } else{
                                     $('#Signup_0_status').val('Enrolled');
