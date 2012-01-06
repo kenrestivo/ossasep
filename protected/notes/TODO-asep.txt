@@ -11,11 +11,12 @@ TODO tasks for ASEP
 ** store the files somewhere, i'm thinking s3
 ** a cron job on something, probably portaserver, to run the backup
 
-* browser exploiter crap
-** backspace makes the page go back, no warning, in IE
-** chosen hitting return gives a warning that page leaving in IE
-   ah, becuase it has input fields not enclosed in form tags, that's why!
-
+* user signin
+** this is BIG
+** instructor to user mapping
+** student parentt relaton for user signin
+   that is REALLY HARD, how do you map them conceptually?
+*** so a parent would be a user, and it would have to be tied to some # of students
 * open questions
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
@@ -86,13 +87,9 @@ TODO tasks for ASEP
                populate a js array with the data, and check it that way?
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
-* user signin
-** this is BIG
-** instructor to user mapping
-** student parentt relaton for user signin
-*** so a parent would be a user, and it would have to be tied to some # of students
 * bugfixen
 **	in paid, why are cancelleds payments not showing up at all?
+	is this still happening?
 **	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
 
@@ -100,6 +97,11 @@ TODO tasks for ASEP
 ** chozen does not like being provided with arrays from sql finds
    it makes the width of the box only as wide as teh FIRST item.
    i tried dataprovider but it did not help
+** browser exploiter crap
+*** backspace makes the page go back, no warning, in IE
+*** chosen hitting return gives a warning that page leaving in IE
+   	ah, becuase it has input fields not enclosed in form tags, that's why!
+
 * oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
 	or late refunds
@@ -129,8 +131,9 @@ TODO tasks for ASEP
 * CLEANUP
 ** vital
 ** useful
-*** autocomplete the amount on income based on class
 *** in _income, make amount autopopulate ajax based on class chosen
+**** autocomplete the amount on income based on class
+	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
 *** link the signup to income via model!
@@ -165,12 +168,17 @@ TODO tasks for ASEP
 		hmm, when woudl that exactly happen again?
 ***	use either breadcrumbs or returnto, but be consistent!
 		breadcrumbs is cleaner than returnto, but will it work?
+*** make the ajax/json checkincomecontroller payer save use massive assignemnt with safe
+	right now it's just a hack, $model->bar = $_POST[foo][bar]
 ***	also trap exceptions on double-delete, it happens in ajax-land
 		if the refresh isn't complete yet
 		Error 404: <h1>CHttpException
 		The requested page does not exist.
 	   it really is an error, you can't delete something that is already deleted
 ***	make search work with booleans/checkboxes
+*** move the code for student #x of max y from javascript to a php or js lib function
+	it's used in signup/_form and signup/_row, and it's slightly different
+*** more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row
 *** make search work with linktables!
 	this i think will be some interesting criteria and joins perhaps
 	maybe not that hard, just some pdo stuff
