@@ -30,6 +30,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                         $i += $j->class->costSummary; 
                                         return $i;})),
                           ),
+                      'note:ntext:Note',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
