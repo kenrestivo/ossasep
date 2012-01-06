@@ -6,6 +6,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->income,
                       array('pagination' => false)),
                   'showTableOnEmpty' => false,
+                  'emptyText' => '',
                   'summaryText' => '',
                   'columns'=>array(
                       'check.check_num:text:Check #',
