@@ -1,24 +1,18 @@
 #-*- org -*-
 * reports
 
-** Z students and email
-student name
- grade
- parent name
- email
- phone #s
- email and yes/no permission to email instructor
-
 ** Y  excel spreadhseet
 student name
- classes w/ following info: enrolled/waitlist
- ck #
- ck date
- ck total
- $ applied to class
- remainder due
+ classes w/ following info:
+   enrolled/waitlist
+   ck #
+   ck date
+   ck total
+   $ 	 applied to class
+   remainder due
  class note
 
+ 
 **	I	instructor report
 *** fields
 		class name
