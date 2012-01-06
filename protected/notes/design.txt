@@ -1,18 +1,6 @@
 #-*- org -*-
 * reports
 
-** Y  excel spreadhseet
-student name
- classes w/ following info:
-   enrolled/waitlist
-   ck #
-   ck date
-   ck total
-   $ 	 applied to class
-   remainder due
- class note
-
- 
 **	I	instructor report
 *** fields
 		class name
@@ -36,7 +24,7 @@ student name
 			check
 			amount
 		= totals
-		
+** ZZ show just unpaid classes and amounts owing (students)		
 **	D  (payment for companies)
 	   company name
 	   amount
