@@ -6,7 +6,7 @@ foreach($model->signups as $signup){
     echo '  <span class="span-4">' . $signup->status . '</span>';
     $owed = $signup->class->costSummary - $signup->paid;
     echo '  <span class="span-3 last">';
-    if($owed != 0){
+    if($owed != 0 && $signup->scholarship < 1){
         echo Yii::app()->format->currency($owed). ' owed';
      }
     echo '</span>';
