@@ -1,5 +1,24 @@
 #-*- org -*-
 * reports
+
+** Z students and email
+student name
+ grade
+ parent name
+ email
+ phone #s
+ email and yes/no permission to email instructor
+
+** Y  excel spreadhseet
+student name
+ classes w/ following info: enrolled/waitlist
+ ck #
+ ck date
+ ck total
+ $ applied to class
+ remainder due
+ class note
+
 **	I	instructor report
 *** fields
 		class name
@@ -50,7 +69,6 @@
 	for each income
 	check that there is a signup for it
 	and that it is not cancelled?
-****           this will probablly require linking signups to incomes in models
 ***	make sure returned checks are not deposited or delivered!
 	that's really easy query, in fact it should be in validation!
 ***	unassigned check amounts
