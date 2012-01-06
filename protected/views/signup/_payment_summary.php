@@ -1,31 +1,22 @@
 
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'income-grid',
+                  'id'=>'income-grid-' . $model->student_id. '-' .$model->class_id,
                   'dataProvider'=>new KArrayDataProvider(
-                      $model->income),
+                      $model->income,
+                      array('pagination' => false)),
                   'selectionChanged'=>
                   ZHtml::clickableRow('CheckIncome/view', 'join'),
+                  'summaryText' => '',
                   'columns'=>array(
-                      'class.summary:text:Class',
-                      'amount:currency:Split Check Amount Assigned',
                       'check.check_num:text:Check #',
-                      'check.payer:text:Payer',
-                      'check.amount:currency:Total Check Amount',
                       'check.check_date:date:Check Date',
-                      'check.delivered:date:Delivered to Company',
-                      'check.deposit.deposited_date:date:Deposited',
-                      'check.returned:date:Returned to Payer',
-                      array(
-                          'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'Income',
-                          'template'=>'{update}{delete}',
-                          'returnTo' => Yii::app()->request->requestUri
-                          ),
+                      'check.amount:currency:Total Check Amount',
+                      'amount:currency:Split Check Amount Assigned',
                       ),
                   )); 
 
 ?>
-   remainder due
+remainder due
 
 
