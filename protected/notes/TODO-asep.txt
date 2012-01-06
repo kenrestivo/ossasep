@@ -3,8 +3,6 @@ TODO tasks for ASEP
 
 * live bugs to fix
 ** tabular input for signups
-** joint checks show unpaid vs paid classes as a separate group in dropdown
-
 * backup
 ** some kind of html-possible backup system
    just run mysqldump as a shell command from php basically
@@ -17,11 +15,11 @@ TODO tasks for ASEP
 ** student parentt relaton for user signin
    that is REALLY HARD, how do you map them conceptually?
 *** so a parent would be a user, and it would have to be tied to some # of students
-* open questions
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
 * ui
+** joint checks show unpaid vs paid classes as a separate group in dropdown
 **	deposit form
 ***		either auto-enter AND a button to enter automatically
 			which are joint checks
@@ -339,3 +337,4 @@ TODO tasks for ASEP
 
 **	autoppopulate the check when adding
 		when adding well, i guess, when adding subthings
+* open questions
