@@ -20,7 +20,7 @@ class SignupController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,14 +32,12 @@ class SignupController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
-				'users'=>array('admin'),
-			),
+                  'users'=>array('admin'),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	/**
@@ -48,8 +46,8 @@ class SignupController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 	/**
@@ -88,8 +86,8 @@ class SignupController extends Controller
         }
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -113,8 +111,8 @@ class SignupController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -143,8 +141,8 @@ class SignupController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Signup');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+                          'dataProvider'=>$dataProvider,
+                          ));
 	}
 
 	/**
@@ -158,8 +156,8 @@ class SignupController extends Controller
 			$model->attributes=$_GET['Signup'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -174,8 +172,8 @@ class SignupController extends Controller
                 // XXX this is stupid and tedious. fix.
 				$this->_model=Signup::model()->findbyPk(
                     array(
-                    'student_id' => $_GET['student_id'],
-                    'class_id' =>$_GET['class_id'])
+                        'student_id' => $_GET['student_id'],
+                        'class_id' =>$_GET['class_id'])
                     );
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
@@ -195,4 +193,69 @@ class SignupController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionCreateMulti()
+    {
+
+        // ugly hack, but i need it
+        $student = Student::model()->findByPk($_GET['student_id']);
+
+        if($student===null){
+            throw new CHttpException(404,'The requested page does not exist.');
+        }
+        
+        // TODO: possibly double-end this with handling class id
+        
+        $models = array();
+        $flash = "";
+
+		if(isset($_POST['Signup'])){
+            // the saving and redisplaying
+            $v= true;
+            foreach($_POST['Signup'] as $i => $s){
+                // I'm not bothering with them if the class is 0, ignore
+                if($_POST['Signup'][$i]['class_id'] > 0){
+                    $models[$i] = new Signup;
+                    $models[$i]->attributes = $_POST['Signup'][$i];
+                    // XXX ugly, but cleaner than hidden form fields i think.
+                    $models[$i]->student_id = $student->id; 
+                    if($models[$i]->save()){
+                        $v= $v && true;
+                        $flash .= CHtml::encode($models[$i]->class->summary) . ' succeeded for ' . CHtml::encode($models[$i]->student->summary) . "<br />";
+                        // don't need to keep it around if it validated
+                        // this is important for when one line fails
+                        unset($models[$i]);
+                    } else {
+                        // something died
+                        $v= $v && false;
+                    }
+                }
+            }
+            Yii::app()->user->setFlash('success', $flash);
+            
+            if($v){
+                //everything validated and saved, so redirect us
+                $this->redirect(array('student/view','id'=> $student->id));
+            }
+
+
+        } else {
+
+            // create new form
+            $count = isset($_POST['count']) ? $_POST['count'] : 2;
+            
+
+            for($i = 0; $i < $count; $i++){
+                $models[$i] = new Signup;
+                $models[$i]->student_id = $student->id; // pre-fill it
+                $models[$i]->signup_date = date ("Y-m-d H:i:s");
+            }
+        }
+
+        $this->render('multi_entry',
+                      array('student' => $student,
+                            'models' => $models));
+        
+    }
+
 }

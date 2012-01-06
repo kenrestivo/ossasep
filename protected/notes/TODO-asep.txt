@@ -72,9 +72,6 @@ TODO tasks for ASEP
 		class meeting/class_id unique
 		school day in calendar
 *** js validation via yii built in
-	first make sure that the notice works, addNotice, i hope
-	well, no, ther is no NOTICE, only error. so, no go.
-	unless i create a notice box and notice fields in model!?
 ****     entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
 ****    class over capacity but student set to enrolled
