@@ -7,6 +7,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('pagination' => false)),
                   'selectionChanged'=>
                   ZHtml::clickableRow('CheckIncome/view', 'join'),
+                  'showTableOnEmpty' => false,
                   'summaryText' => '',
                   'columns'=>array(
                       'check.check_num:text:Check #',

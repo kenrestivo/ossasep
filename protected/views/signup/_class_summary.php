@@ -2,8 +2,8 @@
 <?php
 
 foreach($model->signups as $signup){
-    echo '<li><span>' . $signup->class->summary . '</span>';
-    echo '<span>' . $signup->status . '</span>';
+    echo '<li><h3><span>' . $signup->class->summary . '</span>';
+    echo '  <span>' . $signup->status . '</span></h3>';
     echo '<p>' . $signup->note . '</p>';
 
     $this->renderPartial(
