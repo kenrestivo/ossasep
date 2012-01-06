@@ -92,6 +92,9 @@ and (check_income.returned is null or check_income.returned < '2000-01-01')",
                       'sid' => $this->student_id));
     }
 
+    /*
+      XXX this is stupid. use criteria and cdb
+     */
     public function getPaid()
     {
         $paid = 0;
