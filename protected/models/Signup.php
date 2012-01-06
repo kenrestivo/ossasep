@@ -81,11 +81,12 @@ class Signup extends CActiveRecord
     */
     public function getIncome()
     {
-        return Income::model()->find(
-            array("condition" => "(class_id = :cid and student_id = :sid)",
-                  'params' => array(
+        return Income::model()->findAllBySql(
+            "select income.* from income 
+where (class_id = :cid and student_id = :sid)",
+                  array(
                       'cid' => $this->class_id,
-                      'sid' => $this->student_id)));
+                      'sid' => $this->student_id));
     }
 
 
