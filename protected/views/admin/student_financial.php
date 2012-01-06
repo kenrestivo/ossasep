@@ -1,12 +1,13 @@
+<ul>
 <?php
 foreach($models as $model){
-    echo '<h3>' . $model->full_name . '</h3>';
-
+    echo '<li><h3>' . $model->full_name . '</h3>';
     $this->renderPartial(
-        '/signup/_payment_summary',
+        '/signup/_class_summary',
         array('model' =>$model));
 
-
+    echo '</li>';
 }
 
 ?>
+</ul>
