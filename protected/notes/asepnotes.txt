@@ -1171,3 +1171,11 @@ http://www.openbravo.com/
 ooh, i can import invoices using gnucash and python (and probably guile too)
 http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 
+* heidi 1/5
+**  ceancelling
+*** assigned to zero
+***  went to class and cancelled it
+***  added k-5
+**  cancelled shoud be paid, not showing up in unpaid
+**  cancelled should not be showing up on the public page showing up as signed up
+  
