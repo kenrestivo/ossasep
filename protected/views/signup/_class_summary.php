@@ -6,9 +6,11 @@ foreach($model->signups as $signup){
     echo '  <span class="span-4">' . $signup->status . '</span>';
     $owed = $signup->class->costSummary - $signup->paid;
     echo '  <span class="span-3 last">';
-    if($owed != 0 && $signup->scholarship < 1){
+    if($signup->scholarship >0){
+        echo "Scholarship";
+    } else if($owed != 0){
         echo Yii::app()->format->currency($owed). ' owed';
-     }
+    }
     echo '</span>';
     echo '</h3>';
     echo '<p>' . CHtml::encode($signup->note) . '</p>';
