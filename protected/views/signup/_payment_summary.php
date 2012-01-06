@@ -5,8 +5,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'dataProvider'=>new KArrayDataProvider(
                       $model->income,
                       array('pagination' => false)),
-                  'selectionChanged'=>
-                  ZHtml::clickableRow('CheckIncome/view', 'join'),
                   'showTableOnEmpty' => false,
                   'summaryText' => '',
                   'columns'=>array(
