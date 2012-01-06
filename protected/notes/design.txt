@@ -71,6 +71,7 @@ student name
 	    ugly, but it'd work
 ***	check status/dashboard, show that they add up!
 	that WHAT adds up?
+	that the checks are all accounted for
 ***	instructors don't add up to > 100
 	another easy one, that all classes instructors total 100, no more, no less
 *** company integrity
