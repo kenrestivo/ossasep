@@ -34,7 +34,7 @@ if($avail > 0){
 <?php
 
      $ps = "";
-     foreach($model->sortedCancelled as $s){
+     foreach($model->sortedNoCancelled as $s){
          if($ps != $s->status){
              $i = 1;
              $ps = $s->status;

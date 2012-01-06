@@ -327,6 +327,24 @@ order by class_info.class_name
             array('cid' => $this->id));
     }
 
+    /*
+      Shows the cancelled first, then waitlist
+     */
+    public function getSortedNoCancelled()
+    {
+        return  Signup::model()->findAllBySql(
+            "select signup.*
+       from signup
+       left join student on student.id = signup.student_id
+      where signup.class_id = :cid
+      and signup.status != 'Cancelled'
+      order by FIND_IN_SET(status, 'Enrolled,Waitlist'), 
+        signup.signup_date asc, student.last_name ASC, student.first_name ASC
+      ",
+            array('cid' => $this->id));
+    }
+
+
 
     public function getFull()
     {
