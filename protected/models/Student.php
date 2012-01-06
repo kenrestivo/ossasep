@@ -152,18 +152,9 @@ class Student extends CActiveRecord
     {
         $res = array();
         foreach($this->signups as $s){
-            $paid = 0;
             $cs = $s->class->costSummary;
-            $inc=$this->incomes;
-            /* XXX very stupid, there has to be a way to do this with 
-               scopes, criteria, or just raw sQL */
-            foreach($inc as $i){
-                if($i->class_id == $s->class_id){
-                    $paid += $i->amount;
-                }
-            }
-            $owed  =  $cs - $paid;
-            if($s->scholarship < 1 && $owed > 0){
+            $owed  =  $cs - $s->paid;
+            if($s->scholarship < 1 && $owed > 0 && $s->status != 'Cancelled'){
                 $res[]= array('class' => $s->class,
                               'payee' => $s->class->company,
                               'amount' => $owed);

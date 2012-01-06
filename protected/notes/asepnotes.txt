@@ -454,14 +454,13 @@ almost helpful:
 			            array('order'=>'columnName'));
 
 
------------------
   
-let's try from class
+* let's try from class
 $cl = ClassInfo::model()->with('signups')->findAll();
 
 	  
----------------
-loading intermediate models
+
+* loading intermediate models
 
 	explicitly relate it: (eager loading)
 		'viewerWatchedMovies' => array(self::HAS_MANY,
@@ -473,20 +472,29 @@ loading intermediate models
 		ViewerWatchedMovie->movie->find($viewer)
 
 
-THIS ACTUALLY WORKS!!
+** THIS ACTUALLY WORKS!!
 	http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/page__st__40__gopid__123634#entry123634
 
 	$moviesJoin = $viewer->moviesJoin[0];
 	
-	For max effective you can do that:
+**	For max effective you can do that:
 	$viewer = Viewer::model()->with(array('movies','moviesJoin'))->findByPk($id);
 	 $viewer->jointable[3] 
      relates to to $viewer->movies[3]
 
 
+* cgridview
+array(            // display 'create_time' using an expression
+            'name'=>'create_time',
+            'value'=>'date("M j, Y", $data->create_time)',
+        ),
+
+
+	
+** gridview will be key for stuff like checks, classlists, everything really
 		
-----------
-thrashing on subviews
+
+* thrashing on subviews
 		http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
  http://www.yiiframework.com/forum/index.php?/topic/6844-arrays-as-dataprovider/
 
@@ -516,25 +524,16 @@ http://learnyii.blogspot.com/2010/12/yii-how-to-display-related-hasmany-grid.htm
 
 http://learnyii.blogspot.com/2010/12/yii-how-to-display-related-hasmany-grid.html
 	doesn't work
-------------
-enum for dropdown for status
+
+* enum for dropdown for status
 
 	http://www.yiiframework.com/forum/index.php?/topic/10079-enum-db-type-in-yii/
 	http://www.yiiframework.com/wiki/48/by-example-chtml
 
 
-these are AWESOME
+* these are AWESOME
 http://www.yiiframework.com/wiki/48/by-example-chtml/
 
-cgridview
-array(            // display 'create_time' using an expression
-            'name'=>'create_time',
-            'value'=>'date("M j, Y", $data->create_time)',
-        ),
-
-
-	
-gridview will be key for stuff like checks, classlists, everything really
 
 
 alter table class_info change day_of_week day_of_week ENUM('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') ;
@@ -548,8 +547,8 @@ portlets are interesting! they're like dialog boxes, or can be used as them
 		http://www.yiiframework.com/doc/blog/1.1/en/portlet.menu
 
 
---------------------
-more on save related
+
+* more on save related
 
 $user = User::Model()->findByBk($id);
 
@@ -582,22 +581,22 @@ Tg
 y
 
 
-auugh
+ auugh
   viewButtonUrl
   Yii::app()->urlManager->createUrl("Signup/view",$data->primaryKey)
 
 this is what started the madness
  http://www.yiiframework.com/forum/index.php?/topic/3741-auto-breadcrumbs/
  
---------------
- tabs, going to need them, this shit is getting hairy
-  	cjuitabview if i want ajax/jquuery, in core
-	or ctabview too, already  in there corredt oo
-	ctab is nicce, i can give it content, or view/partials
+ 
+* tabs, going to need them, this shit is getting hairy
+**  	cjuitabview if i want ajax/jquuery, in core
+**	or ctabview too, already  in there corredt oo
+**	ctab is nicce, i can give it content, or view/partials
 		http://www.eha.ee/labs/yiiplay/index.php/en/site/widget?view=tabs_simple
 
 
-auughgh!!!! getting/setting the state when coming back!!
+** auughgh!!!! getting/setting the state when coming back!!
 
     public function setTabState() {
         $state = Yii::app()->user->setState(
@@ -613,14 +612,16 @@ auughgh!!!! getting/setting the state when coming back!!
 won't work though. because tabs are chosen in js, the server does not know
 
 
-my god, i need to do this hack
+** i will need to blow off cjui tab anyway, because the ajaxiness makes entry painful
+
+** my god, i need to do this hack
 http://codinginparadise.org/weblog/2005/08/ajax4-tutorial-saving-session-across.html
 
 or use cjuitabs
 
 
---------------
-filtering the datepicker
+
+* filtering the datepicker
 
 $('.selector').datepicker({
    beforeShowDay: function(date) { ... }
@@ -663,14 +664,14 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
  interseting. modules and controllers amnd componetns can have thir own layouts
  	separate from the main site layout.
-2
 
-hmm, ajax time
+
+* hmm, ajax time
 	$('rasta')[3].value
 
 
--------------
-company for checks is a link
+
+* company for checks is a link
 	but it MUST MUST match up with the company for the instructors!
 	but here's the deal. checks are ALWAYS AND FOREVER done
 	once they're written, you can't change who they were written to
@@ -683,25 +684,25 @@ company for checks is a link
 	also, make check_num NOT INT, could be "cash"
 
 	
-ahaa! so it is just operations.li that needs to be inline to make horiz menu work
+* ahaa! so it is just operations.li that needs to be inline to make horiz menu work
 
 
 
-aha, batch update
+* aha, batch update
 	http://www.yiiframework.com/doc/guide/1.1/en/form.table
 	this might work for checks, or students, or all kinds of stuff
 
 
-select school_day from school_calendar where day_off = false and minimum = false and dayofweek(school_day) = 4 and school_day > '2011-10-01'  and school_day < '2011-12-14';
+* select school_day from school_calendar where day_off = false and minimum = false and dayofweek(school_day) = 4 and school_day > '2011-10-01'  and school_day < '2011-12-14';
 
 
-god DAMMIT! to have a single-sided create, i have to override some ar bullshi
+* god DAMMIT! to have a single-sided create, i have to override some ar bullshi
 	http://www.yiiframework.com/forum/index.php?/topic/11960-preferred-way-to-set-dynamic-default-values-in-a-cactiverecord-model/
 	HATE HATE HATE ACTIVERECORD!!
 
 
 
-custom validatino rules
+*  custom validatino rules
 http://www.yiiframework.com/forum/index.php?/topic/9205-difrent-validation-rules-depending-on-selected-options/
 just sstick it in the model!
 public function address1Required()
@@ -714,47 +715,46 @@ public function address1Required()
 
 
 
-scenarios
-http://php-thoughts.cubedwater.com/2009/validation-scenarios/
-
+* scenarios
+  http://php-thoughts.cubedwater.com/2009/validation-scenarios/
 
 that's it! i needed to have a scenario in place to not check validation for it!
 let's see if i can do that again
 
-------------
-some multiselect stuff
-	jamselct is very nice for select multiple
-	in yii http://www.yiiframework.com/extension/jamselect/
-	http://code.google.com/p/jquery-asmselect/
-	http://www.ryancramer.com/projects/asmselect/examples/example1.html
 
-	an even mroe bandcampy way:
+* some multiselect stuff
+**	jamselct is very nice for select multiple
+**	in yii http://www.yiiframework.com/extension/jamselect/
+**	http://code.google.com/p/jquery-asmselect/
+**	http://www.ryancramer.com/projects/asmselect/examples/example1.html
+
+**	an even mroe bandcampy way:
 		http://www.suumit.com/projects/bsmSelect/examples/index.html
 
 
 	
------
-tabular
-http://www.yiiframework.com/forum/index.php?/topic/6218-cform-and-tabular-input/
-http://www.yiiframework.com/wiki/141/javascript-tabular-input/
+	
+* tabular
+**  http://www.yiiframework.com/forum/index.php?/topic/6218-cform-and-tabular-input/
+**  http://www.yiiframework.com/wiki/141/javascript-tabular-input/
 
 
-editable!! jquery!
-	then stuff can be edited in place. excel-style. they'll love it.
+* editable!! jquery!
+** 	then stuff can be edited in place. excel-style. they'll love it.
 	not so much for adding though, but i could use wizards for that.
 	http://datatables.net/
 
-	this is the ajax + editable best example:
+** 	this is the ajax + editable best example:
 		http://datatables.net/release-datatables/examples/server_side/editable.html
 		though it is complex because it ajaxes the display
-	AHA! this is how to add id's for the rows, for clickbacks/tracking!
+**	AHA! this is how to add id's for the rows, for clickbacks/tracking!
 		http://datatables.net/release-datatables/examples/server_side/ids.html
 		
 	
-	http://www.appelsiini.net/projects/jeditable
+**	http://www.appelsiini.net/projects/jeditable
 		submitdata would be the way to get the id's (esp for composite) in	
 
-import follies!
+* import follies!
 0	Name
 (1 	nothing)
 2	Grade
@@ -805,60 +805,49 @@ better, summarixed
 10 descriopto
 
 
-------
 
-nice date-grouped gridview
-http://www.yiiframework.com/extension/xdateview/
+* date/tiem formatting is  hARD
+  http://www.yiiframework.com/wiki/197/local-time-zones-and-locales/d
 
-
-----
-
-better formatting
-
-	http://www.yiiframework.com/wiki/230/customizing-yii-s-formatting-rules-extending-cformatter/
-	clean up date formatting, use this:
-		http://www.yiiplayground.cubedwater.com/index.php?r=InternationalizationModule/datetime/basic
-
-more
-http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
-
-Yii::app()->format->boolean(1).
-
-ok, this works too
-  echo Yii::app()->dateFormatter->formatDateTime('2011-10-19')
-
- but, that's kind of stupid, why not just use strftime?
-
-
- getting date formats squared away
+**  getting date formats squared away
  	http://stackoverflow.com/questions/6811706/yii-how-to-change-datetime-format-displayed-on-the-view
 
 
-	oh YEAH
+**	oh YEAH
 	http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
 
-date/tiem formatting is  hARD
 
-http://www.yiiframework.com/wiki/197/local-time-zones-and-locales/d
+**	http://www.yiiframework.com/wiki/230/customizing-yii-s-formatting-rules-extending-cformatter/
+	clean up date formatting, use this:
+		http://www.yiiplayground.cubedwater.com/index.php?r=InternationalizationModule/datetime/basic
+
+** more gridview data
+   http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
+
+** Yii::app()->format->boolean(1).
+
+** ok, this works too
+  echo Yii::app()->dateFormatter->formatDateTime('2011-10-19')
+
+***  but, that's kind of stupid, why not just use strftime?
 
 
-in cgridview, i can do awesome stuff
-		selectionChanged, selectablerows!
 
-
-clickable rows
-http://thephuse.com/design-and-usability/clickable-table-rows-with-jquery/
-
-autocomplete is the way to go!
+** nice date-grouped gridview
+   http://www.yiiframework.com/extension/xdateview/
+* autocomplete is the way to go!
 	a jqueryui autocomplete pulldown like facebook
 	multiple populates:
 		http://af-design.com/blog/2010/05/12/using-jquery-uis-autocomplete-to-populate-a-form/
 	html version:
 	https://github.com/scottgonzalez/jquery-ui-extensions/blob/master/autocomplete/jquery.ui.autocomplete.html.js
 	yii version: http://www.yiiframework.com/doc/api/1.1/CJuiAutoComplete
+** a really simple autocompmlete, supposedly
+	http://www.yiiframework.com/wiki/162/a-simple-action-for-cjuiautocomplete/
 
 
-implement the signup form!
+
+* implement the signup form!
 	student 
 		fields (easy)
 			student name
@@ -893,88 +882,84 @@ implement the signup form!
 	the editing will be the really interesting bit too
 
 
-wow, jquery appendo, for cloning rows of forms for dependent stuff!
+* wow, jquery appendo, for cloning rows of forms for dependent stuff!
 	http://www.yiiframework.com/extension/jappendo/
 	but, it sucks. it doesn't name them right. they're column(row1, row2, row3)
 
 
-updating tabular input
+* updating tabular input
 	http://www.yiiframework.com/forum/index.php?/topic/23886-how-to-update-tabular-input/
 
 
-a really simple autocompmlete, supposedly
-	http://www.yiiframework.com/wiki/162/a-simple-action-for-cjuiautocomplete/
+* heidi 12/21/11
 
-----------
-heidi 12/21/11
-
-	she likes the schedule as a dashboard
-	she would start student, then add to class
+**	she likes the schedule as a dashboard
+**	she would start student, then add to class
 
 
 
 
-scholasrhip REQUEST will have to happen once we're online
+** scholasrhip REQUEST will have to happen once we're online
 
 
-scholarships are weird, but she can manually hack around
+** scholarships are weird, but she can manually hack around
 
-show as UNPAID if a returned check is there
+** show as UNPAID if a returned check is there
 
-they sign up and the check is wrong or somethign is wrong
+** they sign up and the check is wrong or somethign is wrong
 	return check if waitlist
 
 
-refund if it rarely doesn't meet minimum
+** refund if it rarely doesn't meet minimum
 
 
 
-treat returned checks as not actually paid, so don't include in totals
+** treat returned checks as not actually paid, so don't include in totals
 
 
-first pass put them aside
+** first pass put them aside
 	pile for deposited, class is good OR joint check
 	or waitlist pile
 	or return pile
 
-joint checks ALWAYS get deposited first
+** joint checks ALWAYS get deposited first
 	also all cash
 
 
-higher amounts first in deposit display (i did this kinda)
+** higher amounts first in deposit display (i did this kinda)
 
 
-limit of how many checks to enter on a deposit?
+** limit of how many checks to enter on a deposit?
 	heidi will ask debbie if that's required
 
-anyone can choose anyone, people can sign up kids
+** anyone can choose anyone, people can sign up kids
 	but, it's a possible security problem
 
 
-	she sends info to debbie, she generates checks
+** 	she sends info to debbie, she generates checks
 		drops them off, some get picked up by the instructors!
 		so this is really just a tracking thing, doublechecking
 
 
-----------------
-tablle widths
+
+* tablle widths
 	http://stackoverflow.com/questions/4457506/css-how-to-set-the-table-column-width-constant-regardless-of-the-amount-of-text
 
 
-well that is VERY odd, the student search works great AS LONG AS IT ISN'T BY NAME!	seriously?
+* well that is VERY odd, the student search works great AS LONG AS IT ISN'T BY NAME!	seriously?
 	phone works. grade works. parent works. email works
 	AHA! i had first_name = last_name in the search in the model. that's it!
 
 
-if i'm going  to autocomplete instead of dropdown box, i'll need the id:
+* if i'm going  to autocomplete instead of dropdown box, i'll need the id:
 	http://lukieb.blogspot.com/2011/02/cjuiautomcomplete-example.html
 	or
 	http://www.yiiframework.com/wiki/217/custom-autocomplete-display-and-value-submission/
 		this includees several ways in the comments too
 
------------
-clickable rows in cgridview
-http://www.yiiframework.com/forum/index.php?/topic/11281-make-row-of-cgridview-become-a-link/
+
+* clickable rows in cgridview
+  http://www.yiiframework.com/forum/index.php?/topic/11281-make-row-of-cgridview-become-a-link/
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
     ...
@@ -982,28 +967,31 @@ http://www.yiiframework.com/forum/index.php?/topic/11281-make-row-of-cgridview-b
     'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('controller/action', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
     ...
 )); ?>
+** clickable rows
+   http://thephuse.com/design-and-usability/clickable-table-rows-with-jquery/
+** in cgridview, i can do awesome stuff
+		selectionChanged, selectablerows!
 
-------------
-wrapping delete for foreign key constraints
+** i made my own utility for doing this, in ZHtml, i think,
+
+* wrapping delete for foreign key constraints
 	http://www.yiiframework.com/forum/index.php?/topic/9042-solved-mysql-integrity-check/
 
 	better
 	http://www.yiiframework.com/wiki/205/how-to-show-ajax-delete-status-in-cgridview-like-flash-messages/
 
 
----------------
-heidi 12-23-11
+
+
 	
-
-
-all emails there are ok
+* heidi 12-23-11
+** all emails there are ok
 	update student set public_email_ok = 1 where parent_email != '';
 	
 
 
---------------
-warning for unsaved changes
-http://stackoverflow.com/questions/1889404/jquery-ui-dialog-onbeforeunload
+* warning for unsaved changes
+  http://stackoverflow.com/questions/1889404/jquery-ui-dialog-onbeforeunload
 
 <script type="text/javascript">
     $(window).bind('beforeunload', function() {
@@ -1017,22 +1005,22 @@ http://stackoverflow.com/questions/1889404/jquery-ui-dialog-onbeforeunload
 </script>
 
 
-
-
-
 or this method to bind it to change event
 http://jonstjohn.com/node/23
 	__tom says it is nasty because if there are many inputs, it executes a lot
 
-use choosen for my dropdowns and autocompletes!
+
+
+* chosen awesome for dropdowns	
+** use choosen for my dropdowns and autocompletes!
 		http://harvesthq.github.com/chosen/
 	this is the bandcamp thingus!
 
-here it is
+** echosen
 http://www.yiiframework.com/extension/echosen/
 
 
-to export to ical/caldav format, use this:
+* to export to ical/caldav format, use this:
 	http://www.kigkonsult.se/iCalcreator/docs/using.html
 
 
@@ -1080,7 +1068,10 @@ that's probably fine for now. i don't need this thing hitting the db or storing 
 * yay, flash messages!
 	http://www.yiiframework.com/wiki/21/how-to-work-with-flash-messages/
 	this is how i will do my warnings
-
+** well, for warnings, have to add my own css
+   flash-warning (you have to add to your css)
+** flash via js?
+   http://www.yiiframework.com/extension/userflash
 * validation!
 	good tutorial
 		http://learnyii.blogspot.com/2010/12/yii.html
@@ -1180,3 +1171,12 @@ http://www.openbravo.com/
 ooh, i can import invoices using gnucash and python (and probably guile too)
 http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 
+* heidi 1/5
+**  ceancelling
+*** assigned to zero
+***  went to class and cancelled it
+***  added k-5
+**  cancelled shoud be paid, not showing up in unpaid
+	aha, i needed to add if $s->!= cancelled
+**  cancelled should not be showing up on the public page showing up as signed up
+	it is, crossed out. browser problem?

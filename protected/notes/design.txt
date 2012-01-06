@@ -1,5 +1,18 @@
 #-*- org -*-
 * reports
+
+** Y  excel spreadhseet
+student name
+ classes w/ following info:
+   enrolled/waitlist
+   ck #
+   ck date
+   ck total
+   $ 	 applied to class
+   remainder due
+ class note
+
+ 
 **	I	instructor report
 *** fields
 		class name
@@ -50,7 +63,6 @@
 	for each income
 	check that there is a signup for it
 	and that it is not cancelled?
-****           this will probablly require linking signups to incomes in models
 ***	make sure returned checks are not deposited or delivered!
 	that's really easy query, in fact it should be in validation!
 ***	unassigned check amounts
@@ -59,6 +71,7 @@
 	    ugly, but it'd work
 ***	check status/dashboard, show that they add up!
 	that WHAT adds up?
+	that the checks are all accounted for
 ***	instructors don't add up to > 100
 	another easy one, that all classes instructors total 100, no more, no less
 *** company integrity

@@ -113,6 +113,28 @@ order by student.last_name asc, student.first_name asc
                 'model' => $s));
     }
 
+    public function actionStudentFinancial()
+    {
+        $s = Student::model()->findAllBySql(
+"select student.*
+ from student
+ left join signup
+     on signup.student_id = student.id
+ left join class_info
+     on class_info.id = signup.class_id
+ where  class_info.session_id = :sid
+        and signup.class_id is not null
+ group by student.id
+ order by student.first_name asc, student.last_name asc",
+            array('sid' =>
+                  ClassSession::savedSessionId()));
+        $this->render(
+            'student_financial',
+            array(
+                'models' => $s));
+
+    }
+
 
 
 }
