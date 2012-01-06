@@ -81,13 +81,29 @@ class Signup extends CActiveRecord
     */
     public function getIncome()
     {
-        return Income::model()->find(
-            array("condition" => "(class_id = :cid and student_id = :sid)",
-                  'params' => array(
+        return Income::model()->findAllBySql(
+            "select income.* from income 
+left join check_income
+   on check_income.id = income.check_id
+where (class_id = :cid and student_id = :sid)
+and (check_income.returned is null or check_income.returned < '2000-01-01')",
+                  array(
                       'cid' => $this->class_id,
-                      'sid' => $this->student_id)));
+                      'sid' => $this->student_id));
     }
 
+    /*
+      XXX this is stupid. use criteria and cdb
+     */
+    public function getPaid()
+    {
+        $paid = 0;
+        foreach($this->income as $i){
+            $paid += $i->amount;
+        }
+        return $paid;
+        
+    }
 
     /**
      * @return array customized attribute labels (name=>label)
