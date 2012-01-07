@@ -44,4 +44,3 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   )); 
 ?>
 
-<p>Note: waitlists are <strong>NOT</strong> included in totals.</p>
