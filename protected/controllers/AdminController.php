@@ -198,11 +198,17 @@ order by student.first_name, student.last_name, class_info.class_name
 
     public function actionBackup()
     {
+        /*
+          I hate you, PHP.
+         */
+        $sucks=(explode(':',Yii::app()->db->connectionString));
+        $sucks2=explode(';',$sucks[1]);
+        foreach($sucks2 as $s){
+            $sucks3=explode('=',$s);
+            $cs[$sucks3[0]] = $sucks3[1];
+        }
 
-        $cs=Yii::app()->db->connectionString;
-        
-
-
+        // blast out the thing and let's do this.
         header('Content-Type: application/octet-stream');
         header(
             sprintf('Content-Disposition: attachment;filename="%s.sql.bz2"',
@@ -210,12 +216,13 @@ order by student.first_name, student.last_name, class_info.class_name
         header('Cache-Control: max-age=0');
 
         system(
-            sprintf('%s -h %s -u%s -p%s %s 2>&1',
+            sprintf('%s -h %s -u%s -p%s %s 2>/dev/null | %s -c',
                     Yii::app()->params['mysqldump'],
-                    $dbhost,
+                    $cs['host'],
                     Yii::app()->db->username,
                     Yii::app()->db->password,
-                    $dbname
+                    $cs['dbname'],
+                    Yii::app()->params['bzip2']
                 ));
         Yii::app()->end();
     }

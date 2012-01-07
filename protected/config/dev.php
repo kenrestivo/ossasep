@@ -87,5 +87,6 @@ return array(
         'defaultNumMeetings'=> 8,
         'timezone' => 'America/Los_Angeles',
         'mysqldump' => '/usr/bin/mysqldump',
+        'bzip2' => '/bin/bzip2',
 	),
 );
