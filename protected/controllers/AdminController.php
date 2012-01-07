@@ -31,7 +31,7 @@ class AdminController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  
+			array('allow',
                   'users'=>array('admin'),
                 ),
 			array('deny',  // deny all users
@@ -45,7 +45,7 @@ class AdminController extends Controller
         $cs = ClassSession::model()->findByPk(
             ClassSession::savedSessionId());
 		$this->render(
-            'signupsheet', 
+            'signupsheet',
             array(
                 'classes' => $cs->active_classes));
     }
@@ -58,7 +58,7 @@ class AdminController extends Controller
     {
         $s = ClassSession::model()->findByPk(
             ClassSession::savedSessionId());
-        
+
         $this->render(
             'class_dashboard',
             array(
@@ -75,7 +75,7 @@ class AdminController extends Controller
             'osspto_instructors',
             array(
                 'instructors' => ClassSession::current()->osspto_instructors));
-        
+
     }
 
     public function actionInstructorRequirements()
@@ -86,7 +86,7 @@ class AdminController extends Controller
             'instructor_paperwork',
             array(
                 'instructors' => ClassSession::current()->instructors));
-        
+
     }
 
 
@@ -106,7 +106,7 @@ order by student.last_name asc, student.first_name asc
 ",
             array('sid' =>
                   ClassSession::savedSessionId()));
-        
+
         $this->render(
             'scholarships',
             array(
@@ -139,10 +139,10 @@ order by student.last_name asc, student.first_name asc
     public function actionDunningReport()
     {
         $s = Signup::model()->findAllBySql(
-            "select 
+            "select
      (if(signup.status = 'Cancelled', 0,
         (class_info.cost_per_class * meeting.meetings) +
-           if(fees.total is null, 0, fees.total)) 
+           if(fees.total is null, 0, fees.total))
        -  if(income_summary.paid is null, 0, income_summary.paid)) as total_owed,
      signup.*
 from student
@@ -164,23 +164,23 @@ left join (
     extra_fee.class_id as class_id
     from extra_fee
     group by extra_fee.class_id
-    ) 
+    )
    as fees
      on signup.class_id = fees.class_id
 left join (
      select sum(income.amount) as paid ,
      income.class_id as class_id,
      income.student_id as student_id
-     from income 
+     from income
      left join check_income
         on check_income.id = income.check_id
-        and (check_income.returned is null 
+        and (check_income.returned is null
                    or check_income.returned < '2000-01-01')
-     group by income.class_id, income.student_id) 
+     group by income.class_id, income.student_id)
    as income_summary
    on signup.class_id = income_summary.class_id
       and signup.student_id = income_summary.student_id
-where signup.class_id is not null 
+where signup.class_id is not null
       and signup.student_id is not null
 group by signup.class_id, signup.student_id
 having total_owed != 0
@@ -196,5 +196,28 @@ order by student.first_name, student.last_name, class_info.class_name
 
     }
 
+    public function actionBackup()
+    {
+
+        $cs=Yii::app()->db->connectionString;
+        
+
+
+        header('Content-Type: application/octet-stream');
+        header(
+            sprintf('Content-Disposition: attachment;filename="%s.sql.bz2"',
+                    "name"));
+        header('Cache-Control: max-age=0');
+
+        system(
+            sprintf('%s -h %s -u%s -p%s %s 2>&1',
+                    Yii::app()->params['mysqldump'],
+                    $dbhost,
+                    Yii::app()->db->username,
+                    Yii::app()->db->password,
+                    $dbname
+                ));
+        Yii::app()->end();
+    }
 
 }
