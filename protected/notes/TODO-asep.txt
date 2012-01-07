@@ -2,7 +2,6 @@
 TODO tasks for ASEP
 
 * live bugs to fix
-** the summary owed report for students
 * backup
 ** some kind of html-possible backup system
    just run mysqldump as a shell command from php basically
