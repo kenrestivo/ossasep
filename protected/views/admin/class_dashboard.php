@@ -1,3 +1,10 @@
+<?php
+$this->breadcrumbs=array(
+	'Class Dashboard'=>array('class_dashboard'),
+	'Dashboard',
+);
+?>
+
 <h3>Active classes</h3>
 
 
