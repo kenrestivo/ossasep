@@ -3,11 +3,9 @@ TODO tasks for ASEP
 
 * live bugs to fix
 * backup
-** some kind of html-possible backup system
-   just run mysqldump as a shell command from php basically
-** store the files somewhere, i'm thinking s3
 ** a cron job on something, probably portaserver, to run the backup
-
+*** but it'll need to log in with some credential, somehow.
+	some alternate user auth/login method, perhaps?
 * user signin
 ** this is BIG
 ** instructor to user mapping
@@ -205,6 +203,9 @@ TODO tasks for ASEP
 *** the chosen fields are too narrow
 	there's a width set, but it's wrong
 	this.f_width = this.form_field_jq.width();
+*** the spans i'm using should be DIVS! everywhere (almost)!
+	just because it's called span-xx does NOT MEAN THEY ARE FOR SPANS
+	they're actually for divs, not spans, doh!
 ***	a nice jui popup when hovering over a cell, showing description!
 ***	year bump buttons on the expired and received datepickers
 		didn't i do that already?
