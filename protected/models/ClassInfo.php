@@ -436,7 +436,8 @@ left join check_income
      on check_income.id = income.check_id
 where (check_income.returned is null
         or check_income.returned < '1999-01-01')
-      and income.class_id = :cid");
+      and income.class_id = :cid
+group by income.class_id");
        $r=$c->queryRow(true, array('cid' => $this->id));
         return $r['total'];
     }
