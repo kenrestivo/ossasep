@@ -31,7 +31,6 @@ foreach($payees as $p){
                  array("Income/create",
                        'check_id' => $check->id,
                        'student_id' => $model->id,
-                       'company_id' => $p->id,
                        'returnTo' => Yii::app()->request->requestUri));
         echo CHtml::encode(': '.Yii::app()->format->currency($check->unassigned) . ' available');
         echo '<br />';

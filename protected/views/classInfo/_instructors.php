@@ -1,5 +1,5 @@
 <div>
-<span class="span-11">
+<div class="span-11">
 
 <?php 
 
@@ -11,11 +11,11 @@
 
 $un=$model->instructor_discrepancy;
 if($un  == 0){
-    echo "<div>Instructors completely assigned, no instructor percentage remaining.</div>";
+    echo "<br /><div>Instructors completely assigned, no instructor percentage remaining.</div>";
 }
 ?>
-</span>
-<span class="span-9 last">
+</div>
+<div class="span-9 last">
 
 
  <b><?php echo CHtml::encode($model->getAttributeLabel('company')); ?>:</b>
@@ -27,7 +27,7 @@ echo CHTML::link("(Change)",
 ?>
 
 
-</span>
+</div>
 </div>
 <div class="clear"></div>
 
