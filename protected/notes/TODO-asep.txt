@@ -220,14 +220,17 @@ TODO tasks for ASEP
 		it needs to be integrated into class for sure, and student
         this is in roster, in main branch
 		i also have it in a branch menuthrash. works with clips, nice!
-***	signupsheet
-		strikethrough for cancelled
-		color/gray for waitlist?
 ***	dependent date/timepickers, i.e. start/end intelligently
 ***	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it
-***	generate the signup form via PDF library, on the fly	
-
+***	generate the signup form via PDF library, on the fly
+	it's tcpdf, and it works.
+	but i'm not sure how it'll deal with all the javascript in my stuff.
+***  put in a db table
+**** datetime
+**** ipaddress
+**** username (can have multiple)
+***	 and show it as backup status, somewhere, like on admin page
 * STUCK
 ** open questions
 ***	how do you know who to write the check to (from that report)?
