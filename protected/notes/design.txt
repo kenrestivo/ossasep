@@ -24,7 +24,6 @@
 			check
 			amount
 		= totals
-** ZZ show just unpaid classes and amounts owing (students)		
 **	D  (payment for companies)
 	   company name
 	   amount
@@ -67,9 +66,7 @@
 	instructors with company are same as the classes they're assigned to (easy)
 	checks for company are same as the classes they pay for (harder)
 	instructors that don't add up to the company (class assignments)
-
-
-**	V	instructor detailed financial report
+**	V	instructor financial  dashboard
 		each class,
 		total paid to us,
 		scholarships,
@@ -77,8 +74,10 @@
 		then total paid to them
 		payments received
 		payments owed
-		totals owed and totals  owing to instructor (see V though)
-*** this is basically a STATEMENT. use an accounting system
+		totals owed and totals  owing to instructor
+		possibly with some backup detail
+*** the top-line is relatively easy to display
+*** the detail of this is basically a STATEMENT. use an accounting system
 ** G  signup for instructor sees only their class! and only email-safe emails
 ** 	B deposit summary -- already done?
 		osspto deposit, date

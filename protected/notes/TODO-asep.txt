@@ -9,10 +9,15 @@ TODO tasks for ASEP
 * user signin
 ** this is BIG
 ** instructor to user mapping
+***   instructr login just email
+*** user login, password admin, use the database, not useridentity.php!
+*** read cwebuser and cuseridentity to see what fthey does
 ** student parentt relaton for user signin
    that is REALLY HARD, how do you map them conceptually?
 *** so a parent would be a user, and it would have to be tied to some # of students
 * formatting
+** numeric sort for checks!
+   check abs sort in relations and in sort criteria
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
 * ui
@@ -39,9 +44,12 @@ TODO tasks for ASEP
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
 ** quicker entries
+*** ajax tabs for cjui! this is an easy and natural one i think!
+	do some ajax tabs
 *** a student signup screen
 	just a student pulldown, a few tabs, etc
 ***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
+** multiline entry for checks
 ** add cancelled date and hide/clear it on non cancelled
 ** expenses really do need to be assigned to classes (but not students)
 **	check_income
@@ -135,6 +143,7 @@ TODO tasks for ASEP
 	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
+*** make all the ->dropDown stuff have an array('empty' => 'Choose One') in options
 *** link the signup to income via model!
 	i.e. in income, belongs_to signup, link by multi fields
 	and in signup, has_many income. this will be key for reports!
@@ -157,7 +166,6 @@ TODO tasks for ASEP
 	it's already in there for composite keys, but i need to add it for the other one
 	this is used only in a few places though.
 ***	today button, fix
-*** user login, password admin, use the database, not useridentity.php!
 *** add date validator
 *** allow multiple requirements, i.e contracts for several years
 	remove unique key constraint
