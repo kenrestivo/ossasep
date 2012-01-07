@@ -57,7 +57,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                 array_reduce(
                                     $dp->data, 
                                     function($i,$j){ 
-                                        $i += $j->class->costSummary; 
+                                        $i += $j->owed; 
                                         return $i;})),
                           ),
                       'note:ntext:Note',
@@ -70,4 +70,3 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); ?>
 
-<p>Note: waitlists are included in totals.</p>
