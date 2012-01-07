@@ -4,7 +4,7 @@
 foreach($model->signups as $signup){
     echo '<li><h3><span class="span-10">' . CHtml::encode($signup->class->summary) . '</span>';
     echo '  <span class="span-4">' . $signup->status . '</span>';
-    $owed = $signup->class->costSummary - $signup->paid;
+    $owed = $signup->owed;
     echo '  <span class="span-3 last">';
     if($signup->scholarship >0){
         echo "Scholarship";

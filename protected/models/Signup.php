@@ -105,6 +105,16 @@ and (check_income.returned is null or check_income.returned < '2000-01-01')",
         
     }
 
+    /* 
+       XXX this, too, is stupid. use criteria
+    */
+
+    public function getOwed()
+    {
+        return $this->scholarship ? 0 : $this->class->costSummary - $this->paid;
+    }
+
+
     /**
      * @return array customized attribute labels (name=>label)
      */
