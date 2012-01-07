@@ -47,19 +47,20 @@
 	select all the signups
 	determine what it should be (scholarship, etc)
 	for each signup, check that the sum of incomes for it equals what it should be
+****	isn't this the dashboard??
 ***	classes paid but not signed up
 	for each income
 	check that there is a signup for it
 	and that it is not cancelled?
+**** easy
 ***	make sure returned checks are not deposited or delivered!
 	that's really easy query, in fact it should be in validation!
 ***	unassigned check amounts
 	that's easy, because it's already in student/_owed and elsewhere
 	in fact, i could hack it in php, just go through all checks and check unassigned
 	    ugly, but it'd work
-***	check status/dashboard, show that they add up!
-	that WHAT adds up?
-	that the checks are all accounted for
+	that the checks are all accounted for, they are properly balanced out
+	this is a really easy query, i think
 ***	instructors don't add up to > 100
 	another easy one, that all classes instructors total 100, no more, no less
 *** company integrity
