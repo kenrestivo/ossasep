@@ -2,16 +2,20 @@
 $this->breadcrumbs=array(
 	'Dunning Report'=>array('dunningreport'),
 	'Dunning Report',
-);
+    );
 ?>
 
 <h1>Dunning Report for <?= CHtml::encode(ClassSession::current()->summary) ?></h1>
+                                      
 <?php
 
 
 $dp = new KArrayDataProvider(
-                      $results,
-                      array('pagination' => false));
+    $results,
+    array('pagination' => false));
+
+// hack for calculating doubel lines
+$lastStudent = "";
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
@@ -20,7 +24,25 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'selectionChanged'=>
                   ZHtml::clickableRow('Student/view', 'join'),
                   'columns'=>array(
-                      'student.summary:text:Student',
+                      array(
+                          'header' => 'Student',
+                          'name' => 'student_id',
+                          'value' => 
+                          function($data,$row)   
+
+                          {
+                              global $lastStudent; //import the global variable
+
+                              if($lastStudent != $data->student_id)
+                              {
+                                  $lastStudent = $data->student_id;
+                                  return $data->student->summary;
+                              }
+                              else
+                                  return '';
+                          } 
+                          ), 
+
                       'class.summary:text:Class',
                       array('name' => 'Owed',
                             'value' => '$data->owed',
