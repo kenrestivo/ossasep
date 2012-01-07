@@ -91,7 +91,13 @@
 <td>
 <h1>Utilities/Fixes</h1>
 <?php
-echo CHtml::link(CHtml::encode("Fix checks with empty payer"), 
+echo CHtml::link("Backup Database", 
+                 array("Admin/backup",
+                       ));
+?>
+<br />
+<?php
+echo CHtml::link("Fix checks with empty payer", 
                  array("CheckIncome/editable",
                        ));
 ?>
