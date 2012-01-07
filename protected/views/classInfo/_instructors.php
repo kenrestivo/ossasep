@@ -11,7 +11,7 @@
 
 $un=$model->instructor_discrepancy;
 if($un  == 0){
-    echo "<div>Instructors completely assigned, no instructor percentage remaining.</div>";
+    echo "<br /><span>Instructors completely assigned, no instructor percentage remaining.</span>";
 }
 ?>
 </span>

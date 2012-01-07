@@ -1,8 +1,8 @@
 <?
 $am=$model->active_meetings;
-    echo '<div><span class="span-11">';
+    echo '<div><div class="span-11">';
     echo CHtml::beginForm(array('populate', 'id' => $model->id));
-echo "Auto-populate " . ZHtml::weekdayTranslation($model->day_of_week). " meeting dates: ";
+echo "<span>Auto-populate " . ZHtml::weekdayTranslation($model->day_of_week). " meeting dates: </span>";
     echo CHtml::textField('num', 8, array('size' => 2));
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
@@ -12,12 +12,12 @@ echo CHTML::link(CHtml::encode("Add 1 Meeting Date for ". $model->summary),
                        'class_id' => $model->id,
 					   'returnTo' => Yii::app()->request->requestUri));
 
-    echo "</span><span class=\"span-9 last\">Your session settings are: " 
+    echo "</div><div class=\"span-9 last\">Your session settings are: " 
     . ZHtml::mediumDate($model->session->start_date). 
     " - "
     . ZHtml::mediumDate($model->session->end_date)
     . "  ";
-    echo "</span>";
+    echo "</div>";
     echo '</div><div class="clear"></div>';
 ?>
 
