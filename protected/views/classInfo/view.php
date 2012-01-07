@@ -35,6 +35,9 @@ $this->widget('zii.widgets.jui.CJuiTabs',
                       'Students' =>
                       $this->renderPartial("_students", 
                                            array('model' => $model), true),
+                      'Owed'=>
+                      $this->renderPartial("_owed", 
+                                           array('model' => $model), true),
                       'Income'=>
                       $this->renderPartial("_income", 
                                            array('model' => $model), true),
