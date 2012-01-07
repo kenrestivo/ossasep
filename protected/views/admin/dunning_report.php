@@ -6,7 +6,8 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Dunning Report for <?= CHtml::encode(ClassSession::current()->summary) ?></h1>
-                                      
+
+<p>Note: Negative numbers indicate checks not yet returned or refunds not yet issued.</p>                                      
 <?php
 
 
@@ -45,6 +46,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
                       'class.summary:text:Class',
                       array('name' => 'Owed',
+                            'htmlOptions' => array(
+                                'style'=> 'text-align: right;'),
                             'value' => '$data->owed',
                             'type' => 'currency',
                             // how to make PHP look like javascript
