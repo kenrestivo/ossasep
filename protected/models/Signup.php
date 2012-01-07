@@ -105,6 +105,23 @@ and (check_income.returned is null or check_income.returned < '2000-01-01')",
         
     }
 
+    /* 
+       XXX this, too, is stupid. use criteria
+    */
+    public function getCost()
+    {
+        // this is very subtle though, note!
+        // the cost is 0 if it is cancelled. watch it!
+        return $this->status == 'Cancelled' ? 0 : $this->class->costSummary;
+    }
+
+
+    public function getOwed()
+    {
+        return $this->scholarship ? 0  : $this->cost  - $this->paid;
+    }
+
+
     /**
      * @return array customized attribute labels (name=>label)
      */

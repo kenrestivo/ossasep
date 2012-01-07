@@ -152,9 +152,10 @@ class Student extends CActiveRecord
     {
         $res = array();
         foreach($this->signups as $s){
-            $cs = $s->class->costSummary;
+            // NOTE! use the signup cost, which is 0 if cancelled
+            $cs = $s->cost;
             $owed  =  $cs - $s->paid;
-            if($s->scholarship < 1 && $owed > 0 && $s->status != 'Cancelled'){
+            if($s->scholarship < 1 && $owed > 0){
                 $res[]= array('class' => $s->class,
                               'payee' => $s->class->company,
                               'amount' => $owed);

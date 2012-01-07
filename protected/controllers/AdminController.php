@@ -116,7 +116,7 @@ order by student.last_name asc, student.first_name asc
     public function actionStudentFinancial()
     {
         $s = Student::model()->findAllBySql(
-"select student.*
+            "select student.*
  from student
  left join signup
      on signup.student_id = student.id
@@ -135,6 +135,66 @@ order by student.last_name asc, student.first_name asc
 
     }
 
+
+    public function actionDunningReport()
+    {
+        $s = Signup::model()->findAllBySql(
+            "select 
+     (if(signup.status = 'Cancelled', 0,
+        (class_info.cost_per_class * meeting.meetings) +
+           if(fees.total is null, 0, fees.total)) 
+       -  if(income_summary.paid is null, 0, income_summary.paid)) as total_owed,
+     signup.*
+from student
+left join signup
+     on student.id = signup.student_id
+          and signup.scholarship < 1
+left join class_info
+     on class_info.id = signup.class_id
+     and class_info.session_id = :sid
+left join (select count(class_meeting.id) as meetings,
+     class_meeting.class_id as class_id
+     from class_meeting
+     where  class_meeting.makeup < 1
+     group by class_meeting.class_id
+     ) as meeting
+     on signup.class_id = meeting.class_id
+left join (
+    select sum(extra_fee.amount) as total,
+    extra_fee.class_id as class_id
+    from extra_fee
+    group by extra_fee.class_id
+    ) 
+   as fees
+     on signup.class_id = fees.class_id
+left join (
+     select sum(income.amount) as paid ,
+     income.class_id as class_id,
+     income.student_id as student_id
+     from income 
+     left join check_income
+        on check_income.id = income.check_id
+        and (check_income.returned is null 
+                   or check_income.returned < '2000-01-01')
+     group by income.class_id, income.student_id) 
+   as income_summary
+   on signup.class_id = income_summary.class_id
+      and signup.student_id = income_summary.student_id
+where signup.class_id is not null 
+      and signup.student_id is not null
+group by signup.class_id, signup.student_id
+having total_owed != 0
+order by student.first_name, student.last_name, class_info.class_name
+",
+            array(
+                'sid' =>
+                ClassSession::savedSessionId()));
+        $this->render(
+            'dunning_report',
+            array(
+                'results' => $s));
+
+    }
 
 
 }
