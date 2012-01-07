@@ -45,6 +45,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           ), 
 
                       'class.summary:text:Class',
+                      'status:text:Status',
                       array('name' => 'Amount Receivable',
                             'htmlOptions' => array(
                                 'style'=> 'text-align: right;'),
