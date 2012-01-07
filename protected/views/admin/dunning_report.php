@@ -1,3 +1,10 @@
+<?php
+$this->breadcrumbs=array(
+	'Dunning Report'=>array('dunningreport'),
+	'Dunning Report',
+);
+?>
+
 <h1>Dunning Report for <?= CHtml::encode(ClassSession::current()->summary) ?></h1>
 <?php
 
@@ -10,10 +17,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'signup-grid',
                   'dataProvider'=>$dp,
                   'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
-                  'selectionChanged'=> ZHtml::compositeClickableRow(
-                      'Signup/update', 
-                      array('student_id', 'class_id'), 
-                      Yii::app()->request->requestUri),
+                  'selectionChanged'=>
+                  ZHtml::clickableRow('Student/view', 'join'),
                   'columns'=>array(
                       'student.summary:text:Student',
                       'class.summary:text:Class',
@@ -33,7 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'Signup',
-                          'template'=>'{update}',
+                          'template'=>'{view}',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
