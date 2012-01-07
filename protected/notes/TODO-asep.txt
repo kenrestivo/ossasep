@@ -2,7 +2,7 @@
 TODO tasks for ASEP
 
 * live bugs to fix
-** tabular input for signups
+** the summary owed report for students
 * backup
 ** some kind of html-possible backup system
    just run mysqldump as a shell command from php basically
@@ -41,6 +41,10 @@ TODO tasks for ASEP
 	  they are by class, which is how she files them
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
+** quicker entries
+*** a student signup screen
+	just a student pulldown, a few tabs, etc
+***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
 ** add cancelled date and hide/clear it on non cancelled
 ** expenses really do need to be assigned to classes (but not students)
 **	check_income
