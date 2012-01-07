@@ -61,12 +61,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                         return $i;})),
                           ),
                       'note:ntext:Note',
-                      array(
-                          'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'Signup',
-                          'template'=>'{view}',
-                          'returnTo' => Yii::app()->request->requestUri
-                          ),
                       ),
                   )); ?>
 
