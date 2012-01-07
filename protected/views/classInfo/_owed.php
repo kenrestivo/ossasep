@@ -1,21 +1,20 @@
-<?php 
 
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'signup-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $model->sortedSignups),
-                  'rowCssClassExpression' => 'ZHtml::rowHack($this, $data, $row)',
-                  'selectionChanged'=> ZHtml::compositeClickableRow(
-                      'Signup/update', 
-                      array('student_id', 'class_id'), 
-                      Yii::app()->request->requestUri),
-                  'summaryText' => $model->summaryCounts,
-                  'columns'=>array(
-                      'student.full_name:text:Name',
-                      'student.grade:grade:Grade',
-                      'status:text:Status',
-                      'owed:currency:Owed',
-                      'note:ntext:Note',
-                      ),
-                  )); ?>
 
+<table style="items">
+     <tr><th>Class</th><th>Status</th><th>Amount Receivable</th></tr>
+
+
+     <?php 
+
+     $students = array();
+foreach($model->sortedSignups as $s){
+    $owed = $s->owed;
+    if($owed != 0){
+        $students[] = $s->student;
+        echo '<tr><td>' . CHtml::encode($s->student->summary) . "</td><td>". $s->status . "</td><td>" . Yii::app()->format->currencyZero($s->owed) . "</td></tr>";
+    }
+ }
+
+    ?>
+
+        </table>
