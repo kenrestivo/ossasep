@@ -2,10 +2,6 @@
 TODO tasks for ASEP
 
 * live bugs to fix
-* backup
-** a cron job on something, probably portaserver, to run the backup
-*** but it'll need to log in with some credential, somehow.
-	some alternate user auth/login method, perhaps?
 * user signin
 ** this is BIG
 ** instructor to user mapping

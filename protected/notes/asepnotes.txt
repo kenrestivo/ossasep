@@ -1180,3 +1180,7 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 	aha, i needed to add if $s->!= cancelled
 **  cancelled should not be showing up on the public page showing up as signed up
 	it is, crossed out. browser problem?
+* backup via http, yes
+	wget --save-cookies asepcookies.txt --post-data 'LoginForm%5Busername%5D=username&LoginForm%5Bpassword%5D=password&LoginForm%5BrememberMe%5D=0&LoginForm%5BrememberMe%5D=1&yt0=Login' http://localhost/asepgui/index.php/site/login
+	wget --load-cookies asepcookies.txt --content-disposition http://localhost/asepgui/index.php/Admin/backup
+
