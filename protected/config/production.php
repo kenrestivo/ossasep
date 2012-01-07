@@ -87,5 +87,6 @@ return array(
         'timezone' => 'America/Los_Angeles',
         'mysqldump' => '/usr/local/bin/mysqldump',
         'bzip2' => '/usr/bin/bzip2',
+        'backupname' => 'asepbackup-live',
         ),
 );

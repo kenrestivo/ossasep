@@ -208,11 +208,14 @@ order by student.first_name, student.last_name, class_info.class_name
             $cs[$sucks3[0]] = $sucks3[1];
         }
 
+
         // blast out the thing and let's do this.
         header('Content-Type: application/octet-stream');
+
+        //today
         header(
             sprintf('Content-Disposition: attachment;filename="%s.sql.bz2"',
-                    "name"));
+                    Yii::app()->params['backupname'] . '-' . date('YmdHis')));
         header('Cache-Control: max-age=0');
 
         system(
