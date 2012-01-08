@@ -24,7 +24,7 @@ class ZHtml extends CHtml
     {
         return CHtml::activeDropDownList( 
             $model, 
-            $attribute,ZHtml::enumItem($model,  $attribute), 
+            $attribute,self::enumItem($model,  $attribute), 
             $htmlOptions);
     }
 
@@ -42,7 +42,7 @@ class ZHtml extends CHtml
     }
 
     public static function weekdayTranslation($weekday_num){
-        $weekdays = ZHtml::get_weekdays();
+        $weekdays = self::get_weekdays();
         return $weekdays[$weekday_num];
     }
 
@@ -53,7 +53,7 @@ class ZHtml extends CHtml
         return CHtml::activeDropDownList( 
             $model,
             $attribute,
-            ZHtml::get_weekdays());
+            self::get_weekdays());
 
     }
     //TODO make this use DateTime, and all that cruft
