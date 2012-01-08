@@ -136,6 +136,8 @@ TODO tasks for ASEP
 **** make that directory scriptaliased?
 **** move it to protected and make the cgi work there?
 **** pass in passwords, etc, rather than having it hardcoded in the cgi?
+*** make sure backup integrity is ok
+	run bunzip2 -t, a test decompression, after the backup
 *** in _income, make amount autopopulate ajax based on class chosen
 **** autocomplete the amount on income based on class
 	didn't i do that already?
