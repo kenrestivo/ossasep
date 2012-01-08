@@ -133,7 +133,7 @@ class ClassSession extends CActiveRecord
     public static function savedSessionId()
     {
         if(!isset(Yii::app()->session['saved_session_id'])){
-            Yii::app()->session['saved_session_id'] = ClassSession::sessionByDate()->id;
+            Yii::app()->session['saved_session_id'] = self::sessionByDate()->id;
         }
         return Yii::app()->session['saved_session_id'];
     }
@@ -166,7 +166,7 @@ class ClassSession extends CActiveRecord
      */
     public static function current()
     {
-        return ClassSession::model()->findByPk(ClassSession::savedSessionId());
+        return self::model()->findByPk(self::savedSessionId());
     }
 
 
