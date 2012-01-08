@@ -13,4 +13,5 @@ print
 
 # ok, now the data
 
-os.system("mysqldump -uroot -ptesting asep| bzip2 -c")
+os.system("ls -la")
+#os.system("mysqldump -uroot -ptesting asep| bzip2 -c")
