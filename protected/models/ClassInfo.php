@@ -371,6 +371,13 @@ order by class_info.class_name
         if($c > 0){
             $sum .= ", $c  waitlisted";
         }
+
+        $c = $this->scholarships_count;
+        if($c > 0){
+            $sum .= ", $c  scholarship";
+            $sum .= $c > 1 ? 's' : '';
+        }
+
         $c = $this->cancelled_count;
         if($c > 0){
             $sum .= ", $c  cancelled";
