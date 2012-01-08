@@ -1184,3 +1184,17 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 	wget --save-cookies asepcookies.txt --post-data 'LoginForm%5Busername%5D=username&LoginForm%5Bpassword%5D=password&LoginForm%5BrememberMe%5D=0&LoginForm%5BrememberMe%5D=1&yt0=Login' http://localhost/asepgui/index.php/site/login
 	wget --load-cookies asepcookies.txt --content-disposition http://localhost/asepgui/index.php/Admin/backup
 
+* user auth notes
+** setstate is not the place to store cookies or tokens, it gets sent to the browser via cleartext
+*** use setseession instead
+**** don't i already do that?
+**** wait, i though setstate saves to SESSION not cookie? wtf?
+** the webuser is the user, the identity is just for auth really
+** changing password
+   http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
+** cool! using email address as user id!
+   http://www.larryullman.com/2010/01/07/custom-authentication-using-the-yii-framework/
+   
+
+
+

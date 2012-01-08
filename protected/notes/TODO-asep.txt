@@ -182,6 +182,7 @@ TODO tasks for ASEP
 *** move the code for student #x of max y from javascript to a php or js lib function
 	it's used in signup/_form and signup/_row, and it's slightly different
 *** more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row
+*** this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION
 *** make search work with linktables!
 	this i think will be some interesting criteria and joins perhaps
 	maybe not that hard, just some pdo stuff
