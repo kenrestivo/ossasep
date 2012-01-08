@@ -15,6 +15,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'signup_status:text:Status',
                       'enrolled_count:nozero:Signed up',
                       'waitlist_count:nozero:Waitlisted',
+                      array('name' => 'Scholarships',
+                            'value' => '$data->scholarships_count',
+                            'type'=>'nozero',
+                            'htmlOptions'=>array('style'=>'text-align: right'),
+                            'footer'=>
+                          Yii::app()->format->nozero($dp->columnTotal('scholarships_count')),
+                          ),
                       array(
                           'name'=>'Paid By Students',
                           'value'=>'$data->paid',
