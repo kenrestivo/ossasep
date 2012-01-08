@@ -1,9 +1,7 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* live bugs to fix
 * user signin
-** this is BIG
 ** instructor to user mapping
 ***   instructr login just email
 *** user login, password admin, use the database, not useridentity.php!
@@ -134,6 +132,10 @@ TODO tasks for ASEP
 	note this tho: http://www.yiiframework.com/forum/index.php?/topic/24182-solved-cgridview-via-renderpartial-inside-of-cjuitabs/
 	so, be sure to processoutput, and hope it doesn't break anything!
 ** useful
+*** somehow protect that cgi a bit better
+**** make that directory scriptaliased?
+**** move it to protected and make the cgi work there?
+**** pass in passwords, etc, rather than having it hardcoded in the cgi?
 *** in _income, make amount autopopulate ajax based on class chosen
 **** autocomplete the amount on income based on class
 	didn't i do that already?

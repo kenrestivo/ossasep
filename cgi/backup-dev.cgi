@@ -4,8 +4,8 @@ D=`date '+%Y%m%d%H%M%S'`
 FNAME="asepbackup-dev"
 DUMP="/usr/bin/mysqldump"
 BZ="/bin/bzip2"
-USER="root"
-PW="testing"
+USER="backupscript"
+PW="f1e454584"
 DB="asep"
 HOST="127.0.0.1"
 
