@@ -2,8 +2,8 @@
 
 D=`date '+%Y%m%d%H%M%S'`
 FNAME="asepbackup-live"
-DUMP="/usr/bin/mysqldump"
-BZ="/bin/bzip2"
+DUMP="/usr/local/bin/mysqldump"
+BZ="/usr/bin/bzip2"
 USER="asep"
 PW="students"
 DB="asep"
