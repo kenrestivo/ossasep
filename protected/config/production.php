@@ -85,5 +85,6 @@ return array(
 		'adminEmail'=>'krestivo@restivo.org',
           'defaultNumMeetings'=> 8,
         'timezone' => 'America/Los_Angeles',
+        'backup_url' => '/cgi/backup-live.cgi',
        ),
 );
