@@ -7,5 +7,3 @@ print 'Content-Disposition: attachment;filename="%s.sql.bz2"' %(
     'asep-live-backup', )
 print
 
-print """
-""" % cgi.escape(message)
