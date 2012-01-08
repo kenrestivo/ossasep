@@ -8,6 +8,4 @@ echo "Content-Disposition: attachment;filename=\"${FNAME}-${D}.sql.bz2\""
 echo 'Cache-Control: max-age=0'
 echo
 
-ls -la
-
-#"mysqldump -uroot -ptesting asep| bzip2 -c"
+mysqldump -uroot -ptesting asep| bzip2 -c
