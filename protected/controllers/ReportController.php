@@ -93,7 +93,7 @@ class ReportController extends Controller
             $this->redirect(array('/site/index'));
         }
 
-        if(Yii::app()->user->role == 'office'){
+        if(Yii::app()->user->name == 'office'){
             $this->redirect(array('/site/index'));
         }
         
