@@ -1,10 +1,7 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* instructor signin
 * formatting
-** numeric sort for checks!
-   check abs sort in relations and in sort criteria
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!
 * ui
@@ -136,6 +133,18 @@ TODO tasks for ASEP
 	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
+*** instructors passwords
+**** a table with
+	 id
+	 password
+	 fk id
+	 fk table (i.e. instructor, parent, company, etc)
+***** how to handle non-parents, non-instructors?
+	  maybe another table of just plain old users? ugly, but it'd work.
+**** a screen to let them change their password
+**** a filter to force them to change it
+	 http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
+
 *** make all the ->dropDown stuff have an array('empty' => 'Choose One') in options
 *** link the signup to income via model!
 	i.e. in income, belongs_to signup, link by multi fields
@@ -160,6 +169,9 @@ TODO tasks for ASEP
 	this is used only in a few places though.
 ***	today button, fix
 *** add date validator
+*** admin simulation of instructor screens
+**** a chooser for instructor at the top.
+***** just an echosen probably, with an autosubmit or ajax
 *** allow multiple requirements, i.e contracts for several years
 	remove unique key constraint
 	in status, i'll need MAX() queries instead of AR stuff
