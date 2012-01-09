@@ -2,9 +2,7 @@
 
   // TODO: this needs to be refactored in a huge way, to be more MVC-ish.
   // move most of this code to the controller, just do the formatting here instead.
-
 $meetings = $model->active_meetings;
-$daysoff = $model->days_off;
 $full = $model->full;
 ?>
 
@@ -73,53 +71,13 @@ $<?= $model->cost_per_class ?> per week for an
 </u>
 <br />
 <br />
-<span class="span-14">
-<strong>Scheduled Meetings:</strong>
 <?php
-echo     implode(', ',
-            array_map(
-                function($i) { return $i->notated_date ; },
-                $meetings
-                ));
+    $this->renderPartial(
+        '/classInfo/_meeting_formatted',
+        array('meetings' => $meetings,
+            'model' => $model));
 ?>
-</span>
-<span class="span-5 last">
-<?php 
-if(count($daysoff) > 0){
-    echo CHtml::encode('--');
-    echo  'No classes on ' .   implode(', ',
-            array_map(
-                function($i) { return ZHtml::shortDate($i->school_day) ; },
-                $daysoff
-                ));
 
-}
-?>
-</span>
-<br />
-<span class="span-12">
-    &nbsp;
-</span>
-<span class="span-6 last">
-<?php
-// the notes
-$notes = array();
-foreach($meetings as $mtg){
-    if($mtg->note != ''){
-        $notes[] = $mtg;
-    }
-}
-if(count($notes) > 0){
-    echo  CHtml::encode('--');
-    foreach($notes as $m){
-        echo  CHtml::encode('*' . $m->note) . " on " . CHtml::encode(ZHtml::shortDate($m->meeting_date)). '<br />';
-    }
-
-}
-
-
-?>
-</span>
 <div class="clear"></div>
 <div>
 <?= nl2br(CHtml::encode($model->description)) ?>
