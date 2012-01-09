@@ -18,7 +18,8 @@ if(!isset($model) || $model->is_missing){
         $res = "OK";
     }
 }
-if(isset($model) && $model->note != ''){
+// NOTE! the note is only for admin to see
+if(isset($model) && $model->note != '' && Yii::app()->user->name == 'admin'){
     $res .= '<br />' . CHtml::encode($model->note);
 }
 ?>
