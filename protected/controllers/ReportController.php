@@ -37,7 +37,7 @@ class ReportController extends Controller
 			),
 			array('allow', 
                   'actions'=> array('signupspublic'),
-                  'users'=>array('parent', 'office'),
+                  'users'=>array('*'),
 			),
 			array('allow',  // public pages
                   'actions'=> array('weekday', 'signupboxes', 'descriptions'),
@@ -85,8 +85,28 @@ class ReportController extends Controller
                     
     }
 
+
+    private function redirectHack()
+    {
+        if(isset(Yii::app()->user->role) 
+                 && Yii::app()->user->role == 'instructor'){
+            $this->redirect(array('/site/index'));
+        }
+        
+        /// XXX NOTE ERRROR! Implicitly anyone who is not a guest gets in!
+        
+        if(Yii::app()->user->isGuest){
+            Yii::app()->user->setReturnUrl( Yii::app()->request->requestUri);
+            $this->redirect(array('/site/login'));
+        }
+
+    }
+
     public function actionSignupsPublic()
     {
+
+        $this->redirectHack();
+
         $days= range(2,6);
 
         $c=ClassInfo::findAllWeekdays($days,
