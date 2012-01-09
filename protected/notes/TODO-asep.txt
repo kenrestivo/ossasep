@@ -1,12 +1,6 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* fixen
-** add instructoor requirements, with no notes
-** page break optional?
-* formatting
-** put in $this->pageTitle= for all the pages! helps with breadcrumbs
-** the rest of the reports (like, 20 of them)!
 * ui
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 **	deposit form
@@ -78,21 +72,15 @@ TODO tasks for ASEP
                populate a js array with the data, and check it that way?
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
+* finish upreports
 * bugfixen
 **	in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
 **	they WERE paid. only returned checks shouldn't show up.
 		or maybe they should, just not in totals?
-
-
 ** chozen does not like being provided with arrays from sql finds
    it makes the width of the box only as wide as teh FIRST item.
    i tried dataprovider but it did not help
-** browser exploiter crap
-*** backspace makes the page go back, no warning, in IE
-*** chosen hitting return gives a warning that page leaving in IE
-   	ah, becuase it has input fields not enclosed in form tags, that's why!
-
 * oh crap. how to deal with partial refunds???
 	i.e. waitlist? or a cancellation of only ONE class, not all?
 	or late refunds
@@ -194,6 +182,11 @@ TODO tasks for ASEP
 		The requested page does not exist.
 	   it really is an error, you can't delete something that is already deleted
 ***	make search work with booleans/checkboxes
+*** browser exploiter crap
+**** backspace makes the page go back, no warning, in IE
+**** chosen hitting return gives a warning that page leaving in IE
+   	 ah, becuase it has input fields not enclosed in form tags, that's why!
+
 *** move the code for student #x of max y from javascript to a php or js lib function
 	it's used in signup/_form and signup/_row, and it's slightly different
 *** more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row
@@ -222,6 +215,7 @@ TODO tasks for ASEP
 ***	new on pulldowns!! so new instructor at end of pulldown for instructor
 ***	now make the save() actions check breadcrumbs, not returnto
 ** cosmetic
+*** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ***	use the roster as the template for any index views, i have the css nice
 *** the chosen fields are too narrow
 	there's a width set, but it's wrong

@@ -1,18 +1,6 @@
 #-*- org -*-
 * reports
 
-**	I	instructor report
-*** fields
-		class name
-		instructor
-			type (individual/company)
-			email
-			cell
-			otherphone
-			note
-*** notes
-	this is basicallly just the cgridview, but unpaged, i guess
-
 **	K deposit form -- VIEW
 		show deposit number at top
 		entered, date notes
@@ -78,7 +66,6 @@
 		possibly with some backup detail
 *** the top-line is relatively easy to display
 *** the detail of this is basically a STATEMENT. use an accounting system
-** G  signup for instructor sees only their class! and only email-safe emails
 ** 	B deposit summary -- already done?
 		osspto deposit, date
         this is pretty much already in the deposit cgridview
@@ -96,6 +83,18 @@
 		for heidi with paid/unpaid to instructor
 
 **	U classes by room and date
-		classes by room and date summary
+	classes by room and date summary
+***	just a simple table for now.
+****	sort by room, list dayofweek/time/class
+     |      | M    | T    | W    | T    | F |
+     | room | cls. | cls. | cls. | cls. |   |
+     |      |      | cls. | cls. |      |   |
+	 doing the data munging will be interesting
+*** in The Future, use the calendar plugin
+**** could even do it by student then, but  might not be necessary
+	 
+
+	 
+	 
 
 
