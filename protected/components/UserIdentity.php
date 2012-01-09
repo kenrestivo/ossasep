@@ -1,12 +1,16 @@
 <?php
 
-/**
- * UserIdentity represents the data needed to identity a user.
- * It contains the authentication method that checks if the provided
- * data can identity the user.
- */
+  /**
+   * UserIdentity represents the data needed to identity a user.
+   * It contains the authentication method that checks if the provided
+   * data can identity the user.
+   */
 class UserIdentity extends CUserIdentity
 {
+
+    // have to override this
+    private $_id = null;
+
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -45,7 +49,7 @@ class UserIdentity extends CUserIdentity
 		$users=array(
 			'admin'=>'***REMOVED***',
 			'parent'=>'***REMOVED***',
-		);
+            );
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if($users[$this->username]!==$this->password)
@@ -57,8 +61,30 @@ class UserIdentity extends CUserIdentity
 
 	public function authenticate_instructor()
 	{
+        $i = Instructor::model()->findByAttributes(
+            array(
+                'email'=>$this->username));
+
+        if ($i===null) { // No user found!
+            $this->errorCode=self::ERROR_USERNAME_INVALID;
+        } else if ($this->password !== '***REMOVED***' ) { 
+            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        } else { // Okay!
+            $this->errorCode=self::ERROR_NONE;
+            $this->setState('role', 'instructor');
+        };
+
+        $this->_id = $i->id;
+        $this->username = $i->full_name;
+
 		return !$this->errorCode;
 
+    }
+
+
+    public function getId()
+    {
+        return $this->_id;
     }
 
 }
