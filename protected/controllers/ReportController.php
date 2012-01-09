@@ -37,7 +37,7 @@ class ReportController extends Controller
 			),
 			array('allow', 
                   'actions'=> array('signupspublic'),
-				'users'=>array('parent'),
+                  'users'=>array('parent', 'office'),
 			),
 			array('allow',  // public pages
                   'actions'=> array('weekday', 'signupboxes', 'descriptions'),
