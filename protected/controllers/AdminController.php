@@ -34,6 +34,10 @@ class AdminController extends Controller
 			array('allow',
                   'users'=>array('admin'),
                 ),
+			array('allow',  
+                  'actions'=>array('signupsheet'),
+                  'users'=>array('patricia'),
+                ),
 			array('deny',  // deny all users
                   'users'=>array('*'),
                 ),
