@@ -1,8 +1,8 @@
 <?php 
 
 $dp = new KArrayDataProvider(
-                      $classes,
-                      array('pagination' => false));
+    $classes,
+    array('pagination' => false));
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>$id,
@@ -19,14 +19,16 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'value' => '$data->scholarships_count',
                             'type'=>'nozero',
                             'htmlOptions'=>array('style'=>'text-align: right'),
+                            'footerHtmlOptions'=>array('style'=>'text-align: right'),                            
                             'footer'=>
-                          Yii::app()->format->nozero($dp->columnTotal('scholarships_count')),
+                            Yii::app()->format->nozero($dp->columnTotal('scholarships_count')),
                           ),
                       array(
                           'name'=>'Paid By Students',
                           'value'=>'$data->paid',
                           'type'=>'currency',
                           'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footerHtmlOptions'=>array('style'=>'text-align: right'),                          
                           'footer'=>
                           Yii::app()->format->currency($dp->columnTotal('paid')),
                           ),
@@ -35,6 +37,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           'value'=>'$data->owed',
                           'type'=>'currency',
                           'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footerHtmlOptions'=>array('style'=>'text-align: right'),
                           'footer'=>
                           Yii::app()->format->currency($dp->columnTotal('owed')),
                           ),
