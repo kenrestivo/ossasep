@@ -15,7 +15,14 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+
 	public function authenticate()
+	{
+        return $this->authenticate_hardcoded();
+    }
+
+
+	public function authenticate_hardcoded()
 	{
 		$users=array(
 			'admin'=>'***REMOVED***',
