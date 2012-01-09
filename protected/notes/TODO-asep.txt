@@ -133,6 +133,9 @@ TODO tasks for ASEP
 	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
+*** a strategy for custom homepages, use a controller for the logic
+**** some kind of dispatch method, which homepage for which user
+**** what gets shown on what (maybe use roles?)
 *** instructors passwords
 **** a table with
 	 id
