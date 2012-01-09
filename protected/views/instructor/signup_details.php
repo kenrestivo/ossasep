@@ -1,4 +1,5 @@
-<h1>Enrollment for <?= CHtml::encode($instructor->full_name) ?> Classes</h1>
+<h1>Classes for <?= CHtml::encode($instructor->full_name) ?></h1>
+<div></div>
 <?php
 foreach($instructor->classes as $class){
     $this->renderPartial(
