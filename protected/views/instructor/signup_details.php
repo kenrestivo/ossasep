@@ -3,6 +3,7 @@
 <p>Students are listed alphabetically by first name.</p>
 <?php
 foreach($instructor->classes as $class){
+         echo '<hr />';
     $this->renderPartial(
         '/admin/_signup',
         array('model' => $class));
