@@ -35,6 +35,8 @@ class SiteController extends Controller
         } else if (isset(Yii::app()->user->role) 
                    && Yii::app()->user->role == 'instructor'){
             $this->render('instructor');
+        } else if(Yii::app()->user->name == 'office'){
+            $this->render('office');      
         } else {
             $this->render('index');
         }
