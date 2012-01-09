@@ -71,7 +71,8 @@ $<?= $model->cost_per_class ?> per week for an
 </u>
 <br />
 <br />
-<?    $this->renderPartial(
+<?php
+    $this->renderPartial(
         '/classInfo/_meeting_formatted',
         array('meetings' => $meetings,
             'model' => $model));
