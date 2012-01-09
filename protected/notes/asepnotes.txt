@@ -1199,3 +1199,4 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
   Yii::app()->user->login($i);
   print_r(Yii::app()->user->name)
   print_r(Yii::app()->user->id)
+  print_r(Yii::app()->user->role)
