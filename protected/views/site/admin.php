@@ -78,6 +78,7 @@
 </td>
 <td>
 <h1>Instructor Screens</h1>
+      <p>(Instructors log in with their email address to see)</p>
 </td>
 
 <td>
