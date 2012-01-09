@@ -18,6 +18,19 @@ class UserIdentity extends CUserIdentity
 
 	public function authenticate()
 	{
+
+        // first make sure it's even set
+		if(!isset($this->username)){
+			$this->errorCode=self::ERROR_USERNAME_INVALID;
+            return !$this->errorCode;
+        }
+
+        // same with password
+		if(!isset($this->password)){
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+            return !$this->errorCode;
+        }
+
         return $this->authenticate_hardcoded();
     }
 
