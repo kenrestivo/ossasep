@@ -6,14 +6,14 @@ if(Yii::app()->user->name != 'admin' ){
     echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 
 }
 ?>
+</h3>
 
-
-
+<p style="text-align:right;">
      <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?>, 
      <?php echo CHtml::encode(ZHtml::weekdayTranslation($model->day_of_week)); ?>, 
      <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?>, 
 <?= CHtml::encode($model->location) ?>
-</h3>
+</p>
 
 <?php
      
