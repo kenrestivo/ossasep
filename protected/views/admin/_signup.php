@@ -44,3 +44,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   )); 
 ?>
 
+<p  class="advisorybreak"></p>
