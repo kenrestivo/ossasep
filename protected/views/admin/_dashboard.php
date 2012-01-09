@@ -46,6 +46,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                           'value'=>'$data->returned',
                           'type'=>'currency',
                           'htmlOptions'=>array('style'=>'text-align: right'),
+                          'footerHtmlOptions'=>array('style'=>'text-align: right'),
                           'footer'=>
                           Yii::app()->format->currency($dp->columnTotal('returned')),
                           ),
