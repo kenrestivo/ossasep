@@ -1,6 +1,9 @@
 #-*- org -*-
 TODO tasks for ASEP
 
+* fixen
+** add instructoor requirements, with no notes
+** page break optional?
 * formatting
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ** the rest of the reports (like, 20 of them)!

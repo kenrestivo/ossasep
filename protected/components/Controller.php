@@ -59,6 +59,8 @@ class Controller extends CController
 
     /*
       Finds the matching activerecord, if any, of the keys
+      XXX this is incomprehensible. why would i do tihs instead of a relation
+      or a damn sql join? it's madness.
       $vals is an array of keyname => value, so it can handle composites
      */
     public function subById($sub, $vals)
