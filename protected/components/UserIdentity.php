@@ -31,6 +31,11 @@ class UserIdentity extends CUserIdentity
             return !$this->errorCode;
         }
 
+        if(substr_count($this->username, '@') > 0){
+            return $this->authenticate_instructor();
+        }
+
+        // fallthrough
         return $this->authenticate_hardcoded();
     }
 
@@ -49,4 +54,11 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_NONE;
 		return !$this->errorCode;
 	}
+
+	public function authenticate_instructor()
+	{
+		return !$this->errorCode;
+
+    }
+
 }
