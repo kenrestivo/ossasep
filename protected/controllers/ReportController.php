@@ -36,6 +36,7 @@ class ReportController extends Controller
 				'users'=>array('admin'),
 			),
 			array('allow', 
+                  /// XXX note this miserable hack!
                   'actions'=> array('signupspublic'),
                   'users'=>array('*'),
 			),
