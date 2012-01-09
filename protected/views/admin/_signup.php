@@ -1,5 +1,14 @@
-<h3><?= CHtml::link($model->summary, 
-                     array("/ClassInfo/view", 'id' => $model->id)) ?>
+<h3>
+<?php
+if(Yii::app()->user->name != 'admin' ){
+    echo CHtml::encode($model->summary);
+} else {
+    echo CHtml::link(CHtml::encode($model->summary), array('/ClassInfo/view', 'id'=>$model->id)); 
+}
+?>
+
+
+
      <?= $model->gradeSummary('long') ?> <?= CHtml::encode($model->instructorNames(' and ')) ?>, 
      <?php echo CHtml::encode(ZHtml::weekdayTranslation($model->day_of_week)); ?>, 
      <?php echo ZHtml::militaryToCivilian($model->start_time); ?> - <?php echo ZHtml::militaryToCivilian($model->end_time); ?>, 
