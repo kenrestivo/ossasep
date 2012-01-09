@@ -223,6 +223,8 @@ TODO tasks for ASEP
 *** the spans i'm using should be DIVS! everywhere (almost)!
 	just because it's called span-xx does NOT MEAN THEY ARE FOR SPANS
 	they're actually for divs, not spans, doh!
+*** remove all those style: alignt-right things and make it proper css!
+	it didn't work last i tried it though, there was some css selector problem
 ***	a nice jui popup when hovering over a cell, showing description!
 ***	year bump buttons on the expired and received datepickers
 		didn't i do that already?
