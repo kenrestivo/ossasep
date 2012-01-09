@@ -1,9 +1,9 @@
 <h3>
 <?php
 if(Yii::app()->user->name != 'admin' ){
-    echo CHtml::encode($model->summary);
+    echo CHtml::encode($model->class_name);
 } else {
-    echo CHtml::link(CHtml::encode($model->summary), array('/ClassInfo/view', 'id'=>$model->id)); 
+    echo CHtml::link(CHtml::encode($model->class_name), array('/ClassInfo/view', 'id'=>$model->id)); 
 }
 ?>
 
