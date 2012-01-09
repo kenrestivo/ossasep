@@ -1,14 +1,7 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* user signin
-** instructor to user mapping
-***   instructr login just email
-*** user login, password admin, use the database, not useridentity.php!
-*** read cwebuser and cuseridentity to see what fthey does
-** student parentt relaton for user signin
-   that is REALLY HARD, how do you map them conceptually?
-*** so a parent would be a user, and it would have to be tied to some # of students
+* instructor signin
 * formatting
 ** numeric sort for checks!
    check abs sort in relations and in sort criteria
@@ -237,6 +230,9 @@ TODO tasks for ASEP
 **** username (can have multiple)
 ***	 and show it as backup status, somewhere, like on admin page
 * STUCK
+** student parentt relaton for user signin
+*** so a parent would be a user, and it would have to be tied to some # of students
+***   that is REALLY HARD, how do you map them conceptually?
 ** open questions
 ***	how do you know who to write the check to (from that report)?
 	wtf does that actually mean?

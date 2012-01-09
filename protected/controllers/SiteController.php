@@ -29,8 +29,12 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+
         if(Yii::app()->user->name == 'admin'){
-            $this->render('admin');
+            $this->render('admin');      
+        } else if (isset(Yii::app()->user->role) 
+                   && Yii::app()->user->role == 'instructor'){
+            $this->render('instructor');
         } else {
             $this->render('index');
         }

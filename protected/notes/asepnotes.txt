@@ -1184,4 +1184,19 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 	wget --save-cookies asepcookies.txt --post-data 'LoginForm%5Busername%5D=username&LoginForm%5Bpassword%5D=password&LoginForm%5BrememberMe%5D=0&LoginForm%5BrememberMe%5D=1&yt0=Login' http://localhost/asepgui/index.php/site/login
 	wget --load-cookies asepcookies.txt --content-disposition http://localhost/asepgui/index.php/Admin/backup
 
+* rbac for instructors
+  $i = new UserIdentity('ken@restivo.org', '***REMOVED***')
+  print_r($i->authenticate())
+  Yii::app()->user->login($i);
+  print_r(Yii::app()->user->role)
+  print_r(Yii::app()->user->name)
+  print_r(Yii::app()->user->id)
 
+
+** for parent
+   $i = new UserIdentity('parent', '***REMOVED***')
+  print_r($i->authenticate())
+  Yii::app()->user->login($i);
+  print_r(Yii::app()->user->name)
+  print_r(Yii::app()->user->id)
+  print_r(Yii::app()->user->role)
