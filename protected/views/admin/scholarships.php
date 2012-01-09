@@ -21,7 +21,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       array('name' => 'Cost',
                             'value' => '$data->class->costSummary',
                             'type' => 'currency',
+                            'htmlOptions'=>array('style'=>'text-align: right'),
                             // how to make PHP look like javascript
+                            'footerHtmlOptions'=>array('style'=>'text-align: right'),
                             'footer' => 'TOTAL: ' .
                             Yii::app()->format->currency(
                                 array_reduce(
