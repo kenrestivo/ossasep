@@ -191,73 +191,72 @@ ajax menu?
 		http://code.google.com/p/yii/issues/detail?id=2008
 
 
-
-date widgets
-http://www.yiiframework.com/extension/cal/
-	WOW, this is a full calendar, google cal like!
-		http://arshaw.com/fullcalendar/
-	and it integrates with google cal too
-		http://arshaw.com/fullcalendar/docs/google_calendar/
-http://www.yiiframework.com/extension/activedatelist/
-http://www.yiiframework.com/extension/ehtmldataselect/
-http://www.yiiframework.com/extension/simple-calendar/
-http://www.yiiframework.com/extension/jtimepicker/
-	time picker, for start time?
-	it looks pretty good, has am/pm, and constraints too (end time)
-	http://fgelinas.com/code/timepicker/
-http://www.yiiframework.com/extension/fullcalendar/
-	full google-like calendar, looks like
-	apparently doesn't have working ajazy stuff
-http://www.yiiframework.com/extension/clockpick/
-http://www.yiiframework.com/extension/jui/
-	various jquery isms!
-http://www.yiiframework.com/extension/availability/
-	nice, for showing availability, like heidi's calendar
-http://www.yiiframework.com/extension/activedateselect/
-add a jtimepicker to jdatepicker:
-	http://trentrichardson.com/examples/timepicker/
-	
 unknown widgets
 http://www.yiiframework.com/extension/updatedaddthis/
 	naw, that's some kind of facebook/reddit thing
 
-popup dayofweek
+* date widgets
+** http://www.yiiframework.com/extension/cal/
+	WOW, this is a full calendar, google cal like!
+		http://arshaw.com/fullcalendar/
+	and it integrates with google cal too
+		http://arshaw.com/fullcalendar/docs/google_calendar/
+** http://www.yiiframework.com/extension/activedatelist/
+** http://www.yiiframework.com/extension/ehtmldataselect/
+** http://www.yiiframework.com/extension/simple-calendar/
+** http://www.yiiframework.com/extension/jtimepicker/
+	time picker, for start time?
+	it looks pretty good, has am/pm, and constraints too (end time)
+	http://fgelinas.com/code/timepicker/
+** http://www.yiiframework.com/extension/fullcalendar/
+	full google-like calendar, looks like
+	apparently doesn't have working ajazy stuff
+** http://www.yiiframework.com/extension/clockpick/
+** http://www.yiiframework.com/extension/jui/
+	various jquery isms!
+** http://www.yiiframework.com/extension/availability/
+	nice, for showing availability, like heidi's calendar
+** http://www.yiiframework.com/extension/activedateselect/
+** add a jtimepicker to jdatepicker:
+	http://trentrichardson.com/examples/timepicker/
+	
+
+**popup dayofweek
 	http://www.yiiframework.com/forum/index.php?/topic/4180-snippet-dropdown-date-picker/
 
 
-shit tonnes of datepickers
+** shit tonnes of datepickers
 http://www.bitrepository.com/a-collection-of-free-javascript-date-pickers.html
 including full calendars
 
 	
-formatting and dates
+* formatting and dates
 http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
 
 	other
-	exprot to eexcel
+* exprot to eexcel
 		http://www.yiiframework.com/extension/eexcelview/
 
-	signals
+* signals
 		http://www.yiiframework.com/extension/signals-module/
 		
----------
-todo
 
 
----------------------
 
-god damn, dealing with deleting foreign keys, it's a nightmare come back to me
+
+* god damn, dealing with deleting foreign keys, it's a nightmare come back to me
 	http://www.yiiframework.com/forum/index.php?/topic/12740-foreign-key-constraints/page__st__20
 
 
-i really should use innodb then.
+** i really should use innodb then.
+   done, i die
 
 note: the innodb_models version is very very good.
 
 
 and now cbuttoncolumn is fucked up
 
-this supposedely fixes it
+** this supposedely fixes it
 
 
 columns'=>array(
@@ -269,23 +268,22 @@ columns'=>array(
     ),
 // etc.
 
-no, that's stupid, here's another solution
+** no, that's stupid, here's another solution
 http://www.yiiframework.com/forum/index.php?/topic/7865-composite-primary-key/
 
 
-next steps
 
-activedropdownlist???!!!
+
+* activedropdownlist???!!!
 	there already is one?? and itworks
 
-ok seriously wtf
-	here's one approach
+**	here's one approach
 		http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/
 			GODD DAMN HOW TO VALIDATE!!!
-	here's another:
+**	here's another:
 		http://www.yiiframework.com/doc/api/1.1/CHtml#activeDropDownList-detail
 
-	detail view
+**	detail view
 		http://www.yiiframework.com/forum/index.php?/topic/11892-display-data-from-other-model-by-some-key/
 
 		detailviews suck though. i hate them. they want gridview, not detailview
@@ -298,26 +296,58 @@ ok seriously wtf
 
 
 
-i swear to fuck
+** activedropdown follies
 
 	public static string activeDropDownList(CModel $model, string $attribute, array $data, array $htmlOptions=array ( ))
 	public static string dropDownList(string $name, string $select, array $data, array $htmlOptions=array ( ))
 
 	ok i get it
-	Tis method is a wrapper of CHtml::activeDropDownList. Please check 
+**	Tis method is a wrapper of CHtml::activeDropDownList. Please check 
                CHtml::activeDropDownList for detailed information about the 
                parameters for this method."
 	so $form->dropDownList is the right thing to use
 
 
-java -jar /usr/local/share/schemaspy/SchemaSpy.jar -dp /usr/local/share/schemaspy/mysql-connector-java-5.1.6-bin.jar -t mysql -o schemas -host 127.0.0.1 -db asep -u root -p testing
+* schemaspy
+  java -jar /usr/local/share/schemaspy/SchemaSpy.jar -dp /usr/local/share/schemaspy/mysql-connector-java-5.1.6-bin.jar -t mysql -o schemas -host 127.0.0.1 -db asep -u root -p testing
+* ajaxlinks
+  http://www.yiiframework.com/forum/index.php?/topic/10254-ajaxlinks-with-renderpartial/page__p__50394__fromsearch__1&#entry50394
+	hmm, there is a bug in the ajax view. and debugging ajax ia a pita.
+		don't do it.
+	"The problem is with ClientScript, when your try to do too complicated stuffs it don't works fine."
 
 
+* ajax gridviews
+http://www.yiiframework.com/wiki/163/avoiding-rendering-entire-page-when-using-cgridview-via-ajax/
+http://www.yiiframework.com/forum/index.php?/topic/10861-renderpartial-ajax-cgridview/
+	this is for having an ajaxview being its own thing
+	i don't know how it would degrade though. advanced technique
+	and clientscripts breakd
 
------
-hairy ass multi joins and saves
+* sorting in cgridview, MUST HAVE NAME
+http://www.yiiframework.com/forum/index.php?/topic/25511-cgridview-sorting-strangefully-disappeared/
 
-i will need composite primary keys,
+* ajax buttonos for sumbit
+http://www.yiiframework.com/wiki/164/updating-fields-on-a-form-with-ajax-and-json/	this really isn't an ajaxsumbit, it's an ajax update dropdown list.
+	but very cool jus the same!
+
+
+* this is what i want!! for adding without going to a new page!
+**	http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
+		it openns a dialog box to do the entry. i like i like
+		there are hacks required to make it work right though
+	
+* 	this is very easy, just a simple datepicker jquery dropdown
+		http://www.hollowdevelopers.com/2011/01/09/cjuidatepicker-cactiveform-yii-framework/
+	
+
+		
+*	ajax validation
+	http://learnyii.blogspot.com/2010/12/yii.html
+
+
+* hairy ass multi joins and saves
+**  i will need composite primary keys,
 	http://yiiframework.ru/doc/guide/en/database.ar
 	http://www.yiiframework.com/doc/api/1.1/CActiveRecord#primaryKey%28%29-detail
 	crud won't work, but oh well.
@@ -336,7 +366,7 @@ i will need composite primary keys,
 	well what the fuck, someone wrote an extension to do this basic task:
 		http://www.yiiframework.com/extension/cadvancedarbehavior/
 		
-	even better and from core devs!
+**	even better and from core devs!
 		 https://github.com/yiiext/with-related-behavior
 		 	that does only the back-end AR stuff. doesn't do gui's
 		well, this is just saving i think.
@@ -344,12 +374,12 @@ i will need composite primary keys,
 			no it very sucks! it's one massive case statemnt, unreadable
 			and, it fucking doesn't work with arrays
 
-	tab view thenn
+**	tab view thenn
 		http://www.yiiframework.com/extension/jui/
 			this may conflict with other stuff though.
 
 
-aha! to save a multi-model form, subform, etc
+** aha! to save a multi-model form, subform, etc
 	http://www.yiiframework.com/doc/guide/1.1/en/form.builder
 			
 	worth noting
@@ -358,97 +388,61 @@ aha! to save a multi-model form, subform, etc
 
 I guess this is expected behavior. Issue was that 'id' was not a required attribute for this model. Hence massive assignment prohibited by CFormInputElement::evaluateVisible(). :rolleyes: 
 
-$models=Company::model()->with('companyTrainings','trainings')->findAll();
+** $models=Company::model()->with('companyTrainings','trainings')->findAll();
 	via http://www.yiiframework.com/forum/index.php?/topic/18275-relation-many-many-with-info-column-in-relation-table
 
-	this old skool
+**	this old skool
 		http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/
 		doing it manually, creating models, stuffing the id's in there, blah
 			but, could use withrelatedbehavior and have it work
 		
-ajax gridview
-http://www.yiiframework.com/forum/index.php?/topic/10861-renderpartial-ajax-cgridview/
-	this is for having an ajaxview being its own thing
-	i don't know how it would degrade though. advanced technique
-	and clientscripts breakd
-
-ajaxlinks
-http://www.yiiframework.com/forum/index.php?/topic/10254-ajaxlinks-with-renderpartial/page__p__50394__fromsearch__1&#entry50394
-	hmm, there is a bug in the ajax view. and debugging ajax ia a pita.
-		don't do it.
-	"The problem is with ClientScript, when your try to do too complicated stuffs it don't works fine."
-
-
-ajax gridviews
-http://www.yiiframework.com/wiki/163/avoiding-rendering-entire-page-when-using-cgridview-via-ajax/
-
-sorting in cgridview, MUST HAVE NAME
-http://www.yiiframework.com/forum/index.php?/topic/25511-cgridview-sorting-strangefully-disappeared/
-
-ajax buttonos for sumbit
-http://www.yiiframework.com/wiki/164/updating-fields-on-a-form-with-ajax-and-json/	this really isn't an ajaxsumbit, it's an ajax update dropdown list.
-	but very cool jus the same!
-
-
-this is what i want!! for adding without going to a new page!
-	http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
-		it openns a dialog box to do the entry. i like i like
-		there are hacks required to make it work right though
 	
-	http://www.hollowdevelopers.com/2011/01/09/cjuidatepicker-cactiveform-yii-framework/
-		this is very easy, just a simple datepicker jquery dropdown
-
-		
-	ajax validation
-	http://learnyii.blogspot.com/2010/12/yii.html
-
-
-wait, you can't select on join tables?
+** wait, you can't select on join tables?
 http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/
 
-this owrks:
-$si = Signup::model()->with('student','class')->findAll();
+** this owrks:
+	   $si = Signup::model()->with('student','class')->findAll();
 
-huh, this works too:
+** huh, this works too:
 	$criteria=new CDbCriteria;
 	$criteria=new CDbCriteria(array('condition'=>'t.status=4'));
 	$si = Signup::model()->with('student','class')->findAll($criteria);
 	
 	
 
-coudl use query builder for more flexible queries
+** coudl use query builder for more flexible queries
 	http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder
 	but it's ->object()->bullshit()->
 	$command = Yii::app()->db->createCommand();
 
-ooh cool, i can force regular sql in there!
+** ooh cool, i can force regular sql in there!
 
 	
-or dao
+** or dao
 	http://www.yiiframework.com/doc/guide/1.1/en/database.dao
 	   $connection=Yii::app()->db; 
  	  $command=$connection->createCommand('select * from student where id=1');
 	  
-	that didn't work. but this does:
+**	that didn't work. but this does:
 	  
  $c = Yii::app()->db->createCommand();
   $c->text = "select foo from bar where quux = :quux";
   $r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
 
 
-hmm, ok this works too:
-$c = Yii::app()->db->createCommand("select foo from bar where quux = :quux");
-$r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
-
-
-HEY THIS IS AWESOME!
-
-i can do sql queries on models!
-$data = Entries::model()->findBySql("SELECT * FROM entries WHERE id = $id");
+** hmm, ok this works too:
+   $c = Yii::app()->db->createCommand("select foo from bar where quux = :quux");
+   $r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
 
 
 
-almost helpful:
+** i can do sql queries on models!
+  $data = Entries::model()->findBySql("SELECT * FROM entries WHERE id = $id");
+  HEY THIS IS AWESOME!
+
+
+
+** almost helpful:
     Something::model()->findAllByAttributes(
 						array('attr'=>'value'), 
 			            array('order'=>'columnName'));
