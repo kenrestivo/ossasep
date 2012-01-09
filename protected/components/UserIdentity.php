@@ -56,6 +56,18 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 			$this->errorCode=self::ERROR_NONE;
+
+        // set roles
+        if($this->username == 'admin'){
+            $this->setState('role', 'admin');
+        }
+
+
+        if($this->username == 'parent'){
+            $this->setState('role', 'parent');
+        }
+        
+
 		return !$this->errorCode;
 	}
 
@@ -84,7 +96,7 @@ class UserIdentity extends CUserIdentity
 
     public function getId()
     {
-        return $this->_id;
+        return isset($this->_id) ? $this->_id : $this->username;
     }
 
 }
