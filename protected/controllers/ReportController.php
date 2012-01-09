@@ -92,6 +92,10 @@ class ReportController extends Controller
                  && Yii::app()->user->role == 'instructor'){
             $this->redirect(array('/site/index'));
         }
+
+        if(Yii::app()->user->role == 'office'){
+            $this->redirect(array('/site/index'));
+        }
         
         /// XXX NOTE ERRROR! Implicitly anyone who is not a guest gets in!
         
