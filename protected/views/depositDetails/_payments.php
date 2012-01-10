@@ -1,6 +1,3 @@
-label <div id="labelfoc"> </div> value<div id="idfoc"></div>
-
-
 <?php 
 
 
@@ -21,8 +18,6 @@ $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
 /// needed so that the id doesn't populate the select box
                       'focus'=>'js:function( event, ui ) {
           $( "#chuck_num_util" ).val( ui.item.label );
-$("#labelfoc").html( ui.item.label );
-$("#idfoc").html( ui.item.value ); 
    return false;
   }',
                       'select'=>'js:function( event, ui ) {
@@ -31,7 +26,14 @@ return false; }',
                       ),
                   ));
 echo CHtml::hiddenField("CheckIncome[id]"); 
-echo CHtml::submitButton('Add');
+echo CHtml::ajaxSubmitButton('Add',
+                             CHtml::normalizeUrl(
+                                 array('addcheck',
+                                       'id'=>$model->id)),
+                             array('success'=>'js: function(data) {
+$.fn.yiiGridView.update("check-income-grid");
+                    }'));
+
 echo CHtml::endForm();
 
 $this->widget('zii.widgets.grid.CGridView', array(

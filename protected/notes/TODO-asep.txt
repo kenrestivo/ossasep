@@ -20,10 +20,9 @@ TODO tasks for ASEP
 	 and also refreshes the cgridview
 	    llook at the code of cgridviewbuttton or just use/extend that
 *** a dropdown to manually enter
-	put in check number, an autocomplete
-	    not chosen because chosen doesn't do ajax well
-		populate the info on the check
-	will need some kind of undepposited status, total amount
+	submit it, let's try via ajax this time
+		$.fn.yiiGridView.update('check-income-grid')
+		will need some kind of undepposited status, total amount
 ****		show popup of the next one when entering
 		or my summary might be OK, using echosen
 			popup would be fun though.
