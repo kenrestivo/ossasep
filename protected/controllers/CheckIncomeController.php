@@ -399,20 +399,22 @@ order by abs(check_num)');
     public function actionCheckNumAC()
     {
         if(isset($_GET['term'])){
-            $c = Yii::app()->db->createCommand(
-                "select id,check_num from check_income where check_num like :text");
+            $c = CheckIncome::model()->findAllBySQL(
+                "select check_income.* from check_income 
+where check_num like :text",
+                // this is where i put the %'s in
+                        // because PDO quotes my :text
+                array('text' => '%' .$_GET['term'] . '%'));
             
             echo CJSON::encode(
                 array_map(
                     function($r) { 
                         return array(
-                            'label' => $r['check_num'],
-                            'value' => $r['id']); },
-                    $c->queryAll(
-                        true, 
-                        // this is where i put the %'s in
-                        // because PDO quotes my :text
-                        array('text' => '%' .$_GET['term'] . '%'))));
+                            'other' => $r->amount,
+                            'label' => $r->summary,
+                            'value' => $r->id); },
+                    $c));
+
             Yii::app()->end();
         }
         //TODO error out, 404?
