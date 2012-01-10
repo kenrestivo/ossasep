@@ -1,7 +1,7 @@
 <h3>Shows only checks with no payer (for now)</h3>
 <p>
 Click on a payer to edit directly. Press return or click elsewhere to save. Press Escape to cancel.<br />
-(P.S., don't even try this in Explorer, use Firefox, Chrome, Safari, etc. instead)<br />
+(P.S., do not even try this in Explorer. Use Firefox, Chrome, Safari, etc. instead.)<br />
 <?php
 echo CHtml::link(CHtml::encode("Refresh to clean up and get just the empty payers"), 
                  array("CheckIncome/editable",

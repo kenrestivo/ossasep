@@ -361,12 +361,14 @@ order by abs(check_num)');
     {
 		if($this->_model===null)
 		{
-			if(isset($_POST['CheckIncome']) && $_POST['CheckIncome']['id'])
+			if(isset($_POST['CheckIncome']) && $_POST['CheckIncome']['id']){
                 //NASTY HACK AROUND HTML NOT HANDLING NUMERIC DIV IDS!
                 $pkmangle = str_replace('check_id_', '', $_POST['CheckIncome']['id']);
                 $this->_model=CheckIncome::model()->findbyPk($pkmangle);
-			if($this->_model===null)
+            }
+			if($this->_model===null){
 				throw new CHttpException(404,'The requested page does not exist.');
+            }
         }
         return $this->_model;
 
@@ -433,6 +435,17 @@ array('text' => '%' .$_GET['term'] . '%',
         }
         //TODO error out, 404?
     }
+
+
+    public function actionUnDeposit()
+    {
+        $this->loadModel();
+        $this->_model->deposit_id = null;
+        $this->_model->save();
+        Yii::app()->end();
+    }
+
+
 
 
 }

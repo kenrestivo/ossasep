@@ -63,23 +63,24 @@ echo CHtml::endForm();
                       'columns'=>array(
                           'check_num:ntext:Check #',
                           'amount:currency:Check Amount',
+                          'unassigned:currency:Un-Assigned',
                           'payer:ntext:Payer',
                           'check_date:date:Check Date',
-                          'unassigned:currency:Un-Assigned',
                           array(
                               'class'=>'CButtonColumn',
                               'template'=>'{my_button}',
                               'buttons'=>array(
                                   'my_button'=>array(
-                                      'label'=>'Remove',
+                                      'label'=>'Un-Deposit',
                                       'url'=> 
-                                      'Yii::app()->controller->createUrl("/DepositDetails/removeCheck", array("id" => $data->id))',
+                                      'Yii::app()->controller->createUrl("/CheckIncome/undeposit", array("id" => $data->id))',
                                       'imageUrl'=>'',
                                       'options'=>array(
                                           'ajax'=>array(
                                               'type'=>'GET',
                                               'url'=>"js:$(this).attr('href')",
-                                              'success'=>'js:function(data){console.log("done")}',
+                                              'success'=>'js:function(data){
+$.fn.yiiGridView.update("check-income-grid");}',
                                               ),
                                           ),
                                       ),
