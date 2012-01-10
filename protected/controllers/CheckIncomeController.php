@@ -399,4 +399,53 @@ order by abs(check_num)');
     }
 
 
+/*
+  finds all the as-yet-undeposited, as-yet-undelievered checks 
+for possible deposit inclusion
+ */
+    public function actionCheckNumAC()
+    {
+        if(isset($_GET['term'])){
+            $c = CheckIncome::model()->findAllBySQL(
+"select check_income.* from check_income where
+(check_num like :text 
+or payer like :text)
+and session_id = :sid
+and cash < 1
+and (deposit_id is null or deposit_id < 1)
+and (delivered is null or delivered < '2000-01-01')
+and (returned is null or returned < '2000-01-01')
+order by abs(check_num)
+",
+                    // this is where i put the %'s in
+                    // because PDO quotes my :text
+array('text' => '%' .$_GET['term'] . '%',
+      'sid' => ClassSession::savedSessionId()));
+            
+            echo CJSON::encode(
+                array_map(
+                    function($r) { 
+                        return array(
+                            'other' => $r->amount,
+                            'label' => $r->summary,
+                            'value' => $r->id); },
+                    $c));
+
+            Yii::app()->end();
+        }
+        //TODO error out, 404?
+    }
+
+
+    public function actionUnDeposit()
+    {
+        $this->loadModel();
+        $this->_model->deposit_id = null;
+        $this->_model->save();
+        Yii::app()->end();
+    }
+
+
+
+
 }

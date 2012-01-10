@@ -18,7 +18,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'deposited_date'); ?>
-		<?php echo $form->textField($model,'deposited_date'); ?>
+<?php 
+$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+  'model'=>$model,
+  'attribute'=>'deposited_date',
+  'value'=>$model->deposited_date,
+  // additional javascript options for the date picker plugin
+  'options'=>array(
+    'showAnim'=>'fold',
+    'showButtonPanel'=>true,
+    'autoSize'=>true,
+    'dateFormat'=>'yy-mm-dd',
+    'defaultDate'=>$model->deposited_date,
+   ),
+));
+?>
+
 		<?php echo $form->error($model,'deposited_date'); ?>
 	</div>
 

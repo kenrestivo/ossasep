@@ -186,4 +186,19 @@ class DepositDetailsController extends Controller
 	}
 
 
+    public function actionAddCheck()
+    {
+        $this->loadModel();
+        if(isset($_POST['CheckIncome']) 
+           && isset($_POST['CheckIncome']['id'])){
+            $c = CheckIncome::model()->findByPk($_POST['CheckIncome']['id']);
+            $c->deposit_id = $this->_model->id;
+            $c->save();
+        }
+        Yii::app()->end();
+    }
+
+
+
+
 }
