@@ -10,6 +10,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
                   'dataProvider'=>new KArrayDataProvider(
                       $model->checks),
+                  'summaryText' => 'Subtotal Checks: ' . Yii::app()->format->currency($model->subtotal_checks),
+
                   'selectionChanged'=>
                   ZHtml::clickableRow('CheckIncome/view', 'join'),
 
@@ -22,7 +24,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 ?>
-
-<p></p>
-<p>Subtotal Checks: <?= Yii::app()->format->currency($model->subtotal_checks) ?> </p>
 
