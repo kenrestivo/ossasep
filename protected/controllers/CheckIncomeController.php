@@ -399,13 +399,19 @@ order by abs(check_num)');
     public function actionCheckNumAC()
     {
         if(isset($_GET['term'])){
-            $c = CheckIncome::model()->findAll(
-                array(
-                    'condition' => "check_num like :text or payer like :text or amount like :text or check_date like :text",
+            $c = CheckIncome::model()->findAllBySQL(
+"select check_income.* from check_income where
+(check_num like :text 
+or payer like :text 
+or amount like :text 
+or check_date like :text)
+and session_id = :sid
+order by abs(check_num)
+",
                     // this is where i put the %'s in
                     // because PDO quotes my :text
-                    'params' =>
-                    array('text' => '%' .$_GET['term'] . '%')));
+array('text' => '%' .$_GET['term'] . '%',
+      'sid' => ClassSession::savedSessionId()));
             
             echo CJSON::encode(
                 array_map(
