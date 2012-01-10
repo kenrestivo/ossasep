@@ -437,6 +437,9 @@ array('text' => '%' .$_GET['term'] . '%',
     }
 
 
+    /*
+      NOTE: this takes a normal ajax GET request
+     */
     public function actionUnDeposit()
     {
         $this->loadModel();
@@ -445,6 +448,11 @@ array('text' => '%' .$_GET['term'] . '%',
         Yii::app()->end();
     }
 
+
+/*
+  since this is coming from a jquery autoocomplete,
+  it has got its id posted, so we use postloadmodel here
+ */
 
     public function actionDeposit()
     {
