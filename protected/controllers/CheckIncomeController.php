@@ -399,12 +399,13 @@ order by abs(check_num)');
     public function actionCheckNumAC()
     {
         if(isset($_GET['term'])){
-            $c = CheckIncome::model()->findAllBySQL(
-                "select check_income.* from check_income 
-where check_num like :text",
-                // this is where i put the %'s in
-                        // because PDO quotes my :text
-                array('text' => '%' .$_GET['term'] . '%'));
+            $c = CheckIncome::model()->findAll(
+                array(
+                    'condition' => "check_num like :text",
+                    // this is where i put the %'s in
+                    // because PDO quotes my :text
+                    'params' =>
+                    array('text' => '%' .$_GET['term'] . '%')));
             
             echo CJSON::encode(
                 array_map(
