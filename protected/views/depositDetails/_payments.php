@@ -23,3 +23,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   )); 
 ?>
 
+<p></p>
+<p>Subtotal Checks: <?= Yii::app()->format->currency($model->subtotal_checks) ?> </p>
+
