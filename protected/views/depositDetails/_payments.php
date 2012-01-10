@@ -15,11 +15,14 @@ $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   // additional javascript options for the autocomplete plugin
                   'options'=>array(
                       'minLength'=>'2',
-                      ),
+                      'select'=>'js:function( event, ui ) {
+$("#labelhere").html( ui.item.label );
+$("#idhere").html( ui.item.value ); 
+return false; }',
+     ),
                   ));
 echo CHtml::submitButton('Add');
 echo CHtml::endForm();
-
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
@@ -39,4 +42,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 ?>
+
+label <div id="labelhere"> </div> value<div id="idhere"></div>
 

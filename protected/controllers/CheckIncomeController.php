@@ -400,14 +400,16 @@ order by abs(check_num)');
     {
         if(isset($_GET['term'])){
             $c = Yii::app()->db->createCommand(
-                "select payer from check_income where payer like :text 
-                    group by payer");
+                "select id,check_num from check_income where check_num like :text");
             
             echo CJSON::encode(
                 array_map(
-                    function($r) { return $r[0]; },
+                    function($r) { 
+                        return array(
+                            'label' => $r['check_num'],
+                            'value' => $r['id']); },
                     $c->queryAll(
-                        false, 
+                        true, 
                         // this is where i put the %'s in
                         // because PDO quotes my :text
                         array('text' => '%' .$_GET['term'] . '%'))));
