@@ -401,7 +401,7 @@ order by abs(check_num)');
         if(isset($_GET['term'])){
             $c = CheckIncome::model()->findAll(
                 array(
-                    'condition' => "check_num like :text",
+                    'condition' => "check_num like :text or payer like :text or amount like :text or check_date like :text",
                     // this is where i put the %'s in
                     // because PDO quotes my :text
                     'params' =>
