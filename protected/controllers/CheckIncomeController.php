@@ -409,6 +409,7 @@ for possible deposit inclusion
 (check_num like :text 
 or payer like :text)
 and session_id = :sid
+and cash < 1
 and (deposit_id is null or deposit_id < 1)
 and (delivered is null or delivered < '2000-01-01')
 and (returned is null or returned < '2000-01-01')
