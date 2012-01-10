@@ -396,16 +396,22 @@ order by abs(check_num)');
 
     }
 
+
+/*
+  finds all the as-yet-undeposited, as-yet-undelievered checks 
+for possible deposit inclusion
+ */
     public function actionCheckNumAC()
     {
         if(isset($_GET['term'])){
             $c = CheckIncome::model()->findAllBySQL(
 "select check_income.* from check_income where
 (check_num like :text 
-or payer like :text 
-or amount like :text 
-or check_date like :text)
+or payer like :text)
 and session_id = :sid
+and (deposit_id is null or deposit_id < 1)
+and (delivered is null or delivered < '2000-01-01')
+and (returned is null or returned < '2000-01-01')
 order by abs(check_num)
 ",
                     // this is where i put the %'s in
