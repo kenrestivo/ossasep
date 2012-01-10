@@ -6,6 +6,21 @@ echo CHTML::link("Auto-Populate Checks for " . $model->summary,
                        'id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 
+
+echo CHtml::beginForm(array('addcheck', 'id' => $model->id));
+echo "Add Check";
+$this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+                  'name'=>'CheckIncome[payer]',
+                  'source'=>Yii::app()->controller->createUrl("/CheckIncome/autocomplete"),
+                  // additional javascript options for the autocomplete plugin
+                  'options'=>array(
+                      'minLength'=>'2',
+                      ),
+                  ));
+echo CHtml::submitButton('Add');
+echo CHtml::endForm();
+
+
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
                   'dataProvider'=>new KArrayDataProvider(
