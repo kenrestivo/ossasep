@@ -1,7 +1,7 @@
 <div class="span-14">
-<?php 
+     <?php 
 
-echo CHtml::beginForm();
+     echo CHtml::beginForm();
 echo "Add One Check: ";
 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   'name'=>'chuck_num_util',
@@ -23,8 +23,8 @@ return false; }',
                   ));
 echo CHtml::hiddenField("CheckIncome[id]"); 
 echo CHtml::ajaxSubmitButton('Add',
-                                 array('addcheck',
-                                       'id'=>$model->id),
+                             array('addcheck',
+                                   'id'=>$model->id),
                              array('success'=>'js: function(data) {
           $( "#chuck_num_util" ).val( "" );
 $("#add_status").html( "Added:  " ); 
@@ -37,35 +37,56 @@ echo CHtml::endForm();
 
 <div><span id="add_status"></span><span id="add_details"></span></div>
 
-</div>
+    </div>
 
-<div class="span-5">
+    <div class="span-5">
 
-<?= CHTML::link("Auto-Populate Checks for deposit " . $model->summary, 
-                 array("populateChecks",
-                       'id' => $model->id,
-                       'returnTo' => Yii::app()->request->requestUri)); ?>
+    <?= CHTML::link("Auto-Populate Checks for deposit " . $model->summary, 
+                    array("populateChecks",
+                          'id' => $model->id,
+                          'returnTo' => Yii::app()->request->requestUri)); ?>
 
 </div>
 <div class="clear"></div>
 
-<?php
-$this->widget('zii.widgets.grid.CGridView', array(
-                  'id'=>'check-income-grid',
-                  'dataProvider'=>new KArrayDataProvider(
-                      $model->checks),
-                  'summaryText' => 'Subtotal Checks: ' . Yii::app()->format->currency($model->subtotal_checks),
+    <?php
+    $this->widget('zii.widgets.grid.CGridView', array(
+                      'id'=>'check-income-grid',
+                      'dataProvider'=>new KArrayDataProvider(
+                          $model->checks),
+                      'summaryText' => 'Subtotal Checks: ' . 
+                      Yii::app()->format->currency($model->subtotal_checks),
 
-                  'selectionChanged'=>
-                  ZHtml::clickableRow('CheckIncome/view', 'join'),
+                      'selectionChanged'=>
+                      ZHtml::clickableRow('CheckIncome/view', 'join'),
 
-                  'columns'=>array(
-                      'check_num:ntext:Check #',
-                      'amount:currency:Check Amount',
-                      'payer:ntext:Payer',
-                      'check_date:date:Check Date',
-                      'unassigned:currency:Un-Assigned',
-                      ),
-                  )); 
+                      'columns'=>array(
+                          'check_num:ntext:Check #',
+                          'amount:currency:Check Amount',
+                          'payer:ntext:Payer',
+                          'check_date:date:Check Date',
+                          'unassigned:currency:Un-Assigned',
+                          array(
+                              'class'=>'CButtonColumn',
+                              'template'=>'{my_button}',
+                              'buttons'=>array(
+                                  'my_button'=>array(
+                                      'label'=>'Remove',
+                                      'url'=> 
+                                      'Yii::app()->controller->createUrl("/DepositDetails/removeCheck", array("id" => $data->id))',
+                                      'imageUrl'=>'',
+                                      'options'=>array(
+                                          'ajax'=>array(
+                                              'type'=>'GET',
+                                              'url'=>"js:$(this).attr('href')",
+                                              'success'=>'js:function(data){console.log("done")}',
+                                              ),
+                                          ),
+                                      ),
+                                  ),
+                              ),
+
+                          ),
+                      )); 
 ?>
 
