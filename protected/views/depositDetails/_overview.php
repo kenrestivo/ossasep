@@ -1,5 +1,6 @@
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+    'id' => 'depositdetails-overview',
 	'attributes'=>array(
 		'id',
 		'deposited_date:date',
