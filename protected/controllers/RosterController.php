@@ -130,15 +130,8 @@ class RosterController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Roster('search');
-        /*
-        'sort'=>array(
-        'defaultOrder'=>'last_name ASC',
-        ),
-        */
-		$this->render('index',array(
-			'model'=>$model,
-		));
+
+        $this->actionAdmin();
 	}
 
 	/**
