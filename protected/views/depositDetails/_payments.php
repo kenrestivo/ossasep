@@ -1,3 +1,6 @@
+label <div id="labelfoc"> </div> value<div id="idfoc"></div>
+
+
 <?php 
 
 
@@ -10,14 +13,16 @@ echo CHTML::link("Auto-Populate Checks for " . $model->summary,
 echo CHtml::beginForm(array('addcheck', 'id' => $model->id));
 echo "Add Check";
 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
-                  'name'=>'CheckIncome[payer]',
+                  'name'=>'chuck_num_util',
                   'source'=>Yii::app()->controller->createUrl("/CheckIncome/checknumac"),
                   // additional javascript options for the autocomplete plugin
                   'options'=>array(
                       'minLength'=>'2',
 /// needed so that the id doesn't populate the select box
                       'focus'=>'js:function( event, ui ) {
-          $( "#CheckIncome[payer]" ).val( ui.item.label );
+          $( "#chuck_num_util" ).val( ui.item.label );
+$("#labelfoc").html( ui.item.label );
+$("#idfoc").html( ui.item.value ); 
    return false;
   }',
                       'select'=>'js:function( event, ui ) {
