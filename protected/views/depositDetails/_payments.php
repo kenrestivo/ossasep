@@ -22,9 +22,9 @@ return false; }',
                       ),
                   ));
 echo CHtml::hiddenField("CheckIncome[id]"); 
+echo CHtml::hiddenField("CheckIncome[deposit_id]", $model->id); 
 echo CHtml::ajaxSubmitButton('Add',
-                             array('addcheck',
-                                   'id'=>$model->id),
+                             array('/CheckIncome/deposit'),
                              array('success'=>'js: function(data) {
           $( "#chuck_num_util" ).val( "" );
 $("#add_status").html( "Added:  " ); 

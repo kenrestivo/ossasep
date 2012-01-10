@@ -446,6 +446,14 @@ array('text' => '%' .$_GET['term'] . '%',
     }
 
 
+    public function actionDeposit()
+    {
+        $this->postLoadModel();
+        $this->_model->attributes = $_POST['CheckIncome'];
+        $this->_model->save();
+        Yii::app()->end();
+    }
+
 
 
 }
