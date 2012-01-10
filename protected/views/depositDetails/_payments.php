@@ -63,7 +63,7 @@ echo CHtml::endForm();
                       'columns'=>array(
                           'check_num:ntext:Check #',
                           'amount:currency:Check Amount',
-                          'unassigned:currency:Un-Assigned',
+                          'unassigned:currency:Discrepancy',
                           'payer:ntext:Payer',
                           'check_date:date:Check Date',
                           array(
