@@ -1,14 +1,8 @@
+<div class="span-14">
 <?php 
 
-
-echo CHTML::link("Auto-Populate Checks for " . $model->summary, 
-                 array("populateChecks",
-                       'id' => $model->id,
-                       'returnTo' => Yii::app()->request->requestUri));
-
-
 echo CHtml::beginForm();
-echo "Add Check";
+echo "Add One Check: ";
 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   'name'=>'chuck_num_util',
                   'source'=>Yii::app()->controller->createUrl("/CheckIncome/checknumac"),
@@ -43,10 +37,19 @@ echo CHtml::endForm();
 
 <div><span id="add_status"></span><span id="add_details"></span></div>
 
-<?
+</div>
 
+<div class="span-5">
 
+<?= CHTML::link("Auto-Populate Checks for deposit " . $model->summary, 
+                 array("populateChecks",
+                       'id' => $model->id,
+                       'returnTo' => Yii::app()->request->requestUri)); ?>
 
+</div>
+<div class="clear"></div>
+
+<?php
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
                   'dataProvider'=>new KArrayDataProvider(
