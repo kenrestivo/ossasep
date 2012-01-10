@@ -15,10 +15,6 @@ $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   // additional javascript options for the autocomplete plugin
                   'options'=>array(
                       'minLength'=>'2',
-                      'focus'=>'js:function( event, ui ) {
-          $( "#CheckIncome[payer]" ).val( ui.item.label );
-   return false;
-  }',
                       ),
                   ));
 echo CHtml::submitButton('Add');
