@@ -1,7 +1,7 @@
 <?php 
 
 
-echo CHTML::link("Auto-Populate Cash for " . $model->summary, 
+echo CHtml::link("Auto-Populate Cash for " . $model->summary, 
                  array("populateCash",
                        'id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
