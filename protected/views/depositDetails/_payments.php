@@ -7,7 +7,7 @@ echo CHTML::link("Auto-Populate Checks for " . $model->summary,
                        'returnTo' => Yii::app()->request->requestUri));
 
 
-echo CHtml::beginForm(array('addcheck', 'id' => $model->id));
+echo CHtml::beginForm();
 echo "Add Check";
 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   'name'=>'chuck_num_util',
