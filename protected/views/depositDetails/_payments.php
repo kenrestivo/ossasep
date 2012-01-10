@@ -31,6 +31,7 @@ echo CHtml::ajaxSubmitButton('Add',
                                  array('addcheck',
                                        'id'=>$model->id)),
                              array('success'=>'js: function(data) {
+          $( "#chuck_num_util" ).val( "" );
 $.fn.yiiGridView.update("check-income-grid");
                     }'));
 
