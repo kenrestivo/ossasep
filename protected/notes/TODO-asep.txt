@@ -8,9 +8,10 @@ TODO tasks for ASEP
 **** payee is osspto
 **** is not already deposited
 **** is this session id
-**** all the incomes add up to the total
-**** ALL of the incomes of which link to enrolled (uncancelled, unwaitlisted)
-*****	ALL of the classes therin are
+**** all the incomes a
+***** add up to the total
+***** link to enrolled (uncancelled, unwaitlisted) signups
+***** ALL of the classes therin are
 ******	minimum
 ******	not cancelled
 ***  and a button to REMOVE the checks (NOT DELETE THEM)
