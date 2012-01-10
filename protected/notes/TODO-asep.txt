@@ -8,8 +8,9 @@ TODO tasks for ASEP
 **** payee is osspto
 **** is not already deposited
 **** is this session id
-**** all the incomes a
+**** all the incomes (subquery)
 ***** add up to the total
+**** another all  the incomes(subquery)
 ***** link to enrolled (uncancelled, unwaitlisted) signups
 ***** ALL of the classes therin are
 ******	minimum
