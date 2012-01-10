@@ -26,11 +26,11 @@ $("#idfoc").html( ui.item.value );
    return false;
   }',
                       'select'=>'js:function( event, ui ) {
-$("#labelhere").html( ui.item.label );
-$("#idhere").html( ui.item.value ); 
+$("input#CheckIncome_id").val( ui.item.value ); 
 return false; }',
                       ),
                   ));
+echo CHtml::hiddenField("CheckIncome[id]"); 
 echo CHtml::submitButton('Add');
 echo CHtml::endForm();
 
@@ -52,6 +52,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       ),
                   )); 
 ?>
-
-label <div id="labelhere"> </div> value<div id="idhere"></div>
 
