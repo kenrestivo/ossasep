@@ -1194,3 +1194,9 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
   print_r(Yii::app()->user->name)
   print_r(Yii::app()->user->id)
   print_r(Yii::app()->user->role)
+* heidi 1/9/12
+** deposit on wednesday, but thurs/fri ok
+*** monday is the real deadline
+** company checks delivery monday deadline
+** everything worked out ok today, people like the new system a lot
+** she had some email addresses incorrectly entered, she fixed them.
