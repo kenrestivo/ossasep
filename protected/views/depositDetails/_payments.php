@@ -21,6 +21,8 @@ $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
    return false;
   }',
                       'select'=>'js:function( event, ui ) {
+$("#add_details").html( ui.item.label ); 
+$("#add_status").html( "Click Add or return to add:  " ); 
 $("input#CheckIncome_id").val( ui.item.value ); 
 return false; }',
                       ),
@@ -31,10 +33,19 @@ echo CHtml::ajaxSubmitButton('Add',
                                        'id'=>$model->id),
                              array('success'=>'js: function(data) {
           $( "#chuck_num_util" ).val( "" );
+$("#add_status").html( "Added:  " ); 
 $.fn.yiiGridView.update("check-income-grid");
                     }'));
 
 echo CHtml::endForm();
+
+?>
+
+<div><span id="add_status"></span><span id="add_details"></span></div>
+
+<?
+
+
 
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'check-income-grid',
