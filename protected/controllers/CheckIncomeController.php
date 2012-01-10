@@ -396,5 +396,25 @@ order by abs(check_num)');
 
     }
 
+    public function actionCheckNumAC()
+    {
+        if(isset($_GET['term'])){
+            $c = Yii::app()->db->createCommand(
+                "select payer from check_income where payer like :text 
+                    group by payer");
+            
+            echo CJSON::encode(
+                array_map(
+                    function($r) { return $r[0]; },
+                    $c->queryAll(
+                        false, 
+                        // this is where i put the %'s in
+                        // because PDO quotes my :text
+                        array('text' => '%' .$_GET['term'] . '%'))));
+            Yii::app()->end();
+        }
+        //TODO error out, 404?
+    }
+
 
 }

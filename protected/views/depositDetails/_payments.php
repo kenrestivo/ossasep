@@ -11,10 +11,14 @@ echo CHtml::beginForm(array('addcheck', 'id' => $model->id));
 echo "Add Check";
 $this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                   'name'=>'CheckIncome[payer]',
-                  'source'=>Yii::app()->controller->createUrl("/CheckIncome/autocomplete"),
+                  'source'=>Yii::app()->controller->createUrl("/CheckIncome/checknumac"),
                   // additional javascript options for the autocomplete plugin
                   'options'=>array(
                       'minLength'=>'2',
+                      'focus'=>'js:function( event, ui ) {
+          $( "#CheckIncome[payer]" ).val( ui.item.label );
+   return false;
+  }',
                       ),
                   ));
 echo CHtml::submitButton('Add');
