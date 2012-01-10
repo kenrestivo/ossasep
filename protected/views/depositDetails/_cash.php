@@ -25,19 +25,19 @@ $this->widget('zii.widgets.grid.CGridView', array(
 
 ?>
 
-<span class="span-8">
+<div class="span-8">
 
 <?php $this->renderPartial("_cash_summary", 
                      array('model' => $model)); ?>
 
-</span>
+</div>
 
-<span class="span-8 last">
+<div class="span-8 last">
 
 <?php  $this->renderPartial("_coin_summary", 
                      array('model' => $model)); ?>
 
-</span>
+</div>
 
 <div class="clear"> </div>
 
