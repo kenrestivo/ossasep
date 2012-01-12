@@ -497,5 +497,17 @@ where (check_income.returned > '1999-01-01')
 
     }
 
+    public function getUnbalanced_instructors()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select sum(instructor_assignment.percentage) as total, 
+                   instructor_assignment.class_id as class_id
+           from instructor_assignment
+          where class_id = :cid
+           group by instructor_assignment.class_id");
+            $r=$c->queryRow(true, array('cid' => $this->id));
+            return $r['total'];
+    }
+
 
 }

@@ -40,6 +40,7 @@
     'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
 	'columns'=>array(
 		'class_name:text:Name',
+		'unbalanced_instructors:percent:Unbalanced Instructor Total',
 		'min_grade_allowed:grade:Min Grade',
 		'max_grade_allowed:grade:Max Grade',
         array('name' => 'Weekday',
