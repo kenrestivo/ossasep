@@ -303,6 +303,10 @@ and ($cash_comparison)
         return $this->subtotal_cash + $this->subtotal_coin;
     }
 
+    public function getTotal_submitted()
+    {
+        return $this->subtotal_checks + $this->subtotal_cash + $this->subtotal_coin;
+    }
 
     public function populate($type = 'check')
     {
