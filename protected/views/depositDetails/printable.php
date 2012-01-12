@@ -15,6 +15,14 @@
 
 
 <div class="span-12 last">
+
+<p><strong>Deposit #<?= $model->id ?></strong> </p>
+
+<p><strong>Deposited by</strong>: <?= CHtml::encode($model->note) ?></p>
+     
+<p><strong>Submitted On</strong>: <?= Yii::app()->format->date($model->deposited_date) ?></p>
+
+
 <?php $this->renderPartial("_check_summary", 
                      array('model' => $model)); ?>
 
@@ -24,3 +32,11 @@
 
 
 
+
+<hr />
+<p>Date _______________       OSSPTO Account _____________</p>
+
+
+<p>Approval ______________</p>
+
+     <p>Notes: <br /><br /><br /></p>
