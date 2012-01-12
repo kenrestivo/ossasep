@@ -1200,3 +1200,5 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 ** company checks delivery monday deadline
 ** everything worked out ok today, people like the new system a lot
 ** she had some email addresses incorrectly entered, she fixed them.
+* report printing with pdf
+  http://www.tcpdf.org/examples/example_048.phps

@@ -1,19 +1,9 @@
 #-*- org -*-
 TODO tasks for ASEP
 
+* integrate notes from droid
+
 * ui
-**	deposit form
-***	auto enter! all checks
-**** payee is osspto
-**** is not already deposited
-**** is this session id
-**** all the incomes (subquery)
-***** add up to the total
-**** another all  the incomes(subquery)
-***** link to enrolled (uncancelled, unwaitlisted) signups
-***** ALL of the classes therin are
-******	minimum
-******	not cancelled
 ** company checks
    an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
@@ -22,10 +12,7 @@ TODO tasks for ASEP
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
-** quicker entries
-*** ajax tabs for cjui! this is an easy and natural one i think!
-	do some ajax tabs
-*** a student signup screen
+** a student signup screen
 	just a student pulldown, a few tabs, etc
 ***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
 ** multiline entry for checks
@@ -70,7 +57,6 @@ TODO tasks for ASEP
                populate a js array with the data, and check it that way?
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
-* finish upreports
 * bugfixen
 **	in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
@@ -109,6 +95,11 @@ TODO tasks for ASEP
 * CLEANUP
 ** vital
 *** replace cjui tabs with some kind of NON JUI tab thing
+*** put in proper RBAC
+**** a proper guest role too
+**** change all the ->user to ->role everywhere
+*** redesign the homepage setup
+**** dispatch to different home pages based on role!
 ** useful
 *** somehow protect that cgi a bit better
 **** make that directory scriptaliased?
@@ -316,7 +307,7 @@ TODO tasks for ASEP
 
 * FOR NON-ADMIN USER LOGIN
 ** future/with user login security
-	let instructors edit descriptions
+***	let instructors edit descriptions
 		
 
 

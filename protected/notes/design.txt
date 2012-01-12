@@ -2,16 +2,7 @@
 * reports
 
 **	K deposit form -- VIEW
-		show deposit number at top
-		entered, date notes
-		deposit #, date, name entered by, differt date at bottom filled
-		deposit details
-			all of em
-		checks
-			name
-			check
-			amount
-		= totals
+	make it PRINT properly with pdf!
 **	D  (payment for companies)
 	   company name
 	   amount
