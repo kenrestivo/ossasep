@@ -8,6 +8,7 @@
                       $unassigned),
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
     'selectionChanged'=>ZHtml::clickableRow('CheckIncome/view'),
+    'emptyText' => "Everything OK, no problems found!",
 	'columns'=>array(
 		'check_num:ntext:Check #',
 		'amount:currency:Total Check Amount',
@@ -38,6 +39,7 @@
                       $instructorbalance),
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
     'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
+    'emptyText' => "Everything OK, no problems found!",
 	'columns'=>array(
 		'class_name:text:Name',
 		'unbalanced_instructors:percent:Unbalanced Instructor Total',
