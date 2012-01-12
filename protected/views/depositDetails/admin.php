@@ -46,8 +46,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'deposited_date:date',
 		'total_calculated:currency:Total Deposit',
 		'subtotal_checks:currency:Checks Subtotal',
-		'subtotal_cash:currency:Cash Subtotal',
-		'subtotal_coin:currency:Coins Subtotal',
+		'subtotal_cash_payments:currency:Cash Subtotal',
         'note',
         'session.summary:text:Session',
 		array(
