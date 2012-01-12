@@ -42,8 +42,6 @@
 **** easy
 ***	make sure returned checks are not deposited or delivered!
 	that's really easy query, in fact it should be in validation!
-***	instructors don't add up to > 100
-	another easy one, that all classes instructors total 100, no more, no less
 *** company integrity
 	instructors with company are same as the classes they're assigned to (easy)
 	checks for company are same as the classes they pay for (harder)
