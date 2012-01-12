@@ -108,9 +108,7 @@ TODO tasks for ASEP
 **	checks get returned, she said, if they're waitlisted
 * CLEANUP
 ** vital
-*** make cjui tabs load via ajax, this is too slow!
-	note this tho: http://www.yiiframework.com/forum/index.php?/topic/24182-solved-cgridview-via-renderpartial-inside-of-cjuitabs/
-	so, be sure to processoutput, and hope it doesn't break anything!
+*** replace cjui tabs with some kind of NON JUI tab thing
 ** useful
 *** somehow protect that cgi a bit better
 **** make that directory scriptaliased?

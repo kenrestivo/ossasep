@@ -27,6 +27,8 @@
 <a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/dunningreport">A/R Dunning Report</a>
 <br />
 <a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/studentfinancial">Student Financial Summary</a>
+<br />
+<a  href="<?php echo Yii::app()->baseUrl; ?>/index.php/Admin/integrityCheck">Data Integrity Check/Audit</a>
 
 
       <br />

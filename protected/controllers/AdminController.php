@@ -207,4 +207,25 @@ order by student.first_name, student.last_name, class_info.class_name
 
     }
 
+
+    public function actionIntegrityCheck()
+    {
+        $unassigned = CheckIncome::model()->findAllBySql(
+"select check_income.*
+from check_income
+left join  (select sum(income.amount) as total, 
+                   income.check_id as check_id
+           from income
+           group by income.check_id) as assigned
+on assigned.check_id = check_income.id
+where assigned.total != check_income.amount
+");
+        $this->render(
+            'integrity_check',
+            array(
+                'unassigned' => $unassigned));
+        
+
+    }
+
 }
