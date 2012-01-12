@@ -1202,3 +1202,5 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 ** she had some email addresses incorrectly entered, she fixed them.
 * report printing with pdf
   http://www.tcpdf.org/examples/example_048.phps
+**  there's also this:
+  http://www.tcpdf.org/examples/example_061.phps
