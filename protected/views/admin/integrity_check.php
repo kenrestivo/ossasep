@@ -1,3 +1,5 @@
+<h1>Data Integrity Check/Audit</h1>
+
 <h3>Checks with unassigned amounts</h3>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
