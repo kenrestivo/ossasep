@@ -220,10 +220,23 @@ left join  (select sum(income.amount) as total,
 on assigned.check_id = check_income.id
 where assigned.total != check_income.amount
 ");
+
+        $instructorbalance = ClassInfo::model()->findAllBySql(
+"select class_info.*
+from class_info
+left join  (select sum(instructor_assignment.percentage) as total, 
+                   instructor_assignment.class_id as class_id
+           from instructor_assignment
+           group by instructor_assignment.class_id) as assigned
+on assigned.class_id = class_info.id
+where assigned.total != 100");
+
         $this->render(
             'integrity_check',
             array(
-                'unassigned' => $unassigned));
+                'unassigned' => $unassigned,
+                'instructorbalance' => $instructorbalance,
+                ));
         
 
     }

@@ -26,3 +26,31 @@
 		),
 	),
 )); ?>
+
+
+<h3>Classes with instructors whose total assignment is not 100%</h3>
+
+
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'class-info-grid',
+	'dataProvider'=>new KArrayDataProvider(
+                      $instructorbalance),
+    'htmlOptions'=>array('style'=>'cursor: pointer;'),
+    'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
+	'columns'=>array(
+		'class_name:text:Name',
+		'min_grade_allowed:grade:Min Grade',
+		'max_grade_allowed:grade:Max Grade',
+        array('name' => 'Weekday',
+              'value' => 'ZHtml::weekdayTranslation($data->day_of_week)'),
+		'location:text:Location',
+		'company.name:ntext:Company',
+		'status:text:Status',
+		'session.summary:text:Session',
+		array(
+			'class'=>'CButtonColumn',
+            'template'=>'{view}',
+		),
+	),
+)); 
