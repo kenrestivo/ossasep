@@ -313,13 +313,46 @@ and ($cash_comparison)
            - income count > 1
         */
         $r = CheckIncome::model()->findAllBySql(
-            "select check_income.*
+            "
+select check_income.*
 from check_income
-where check_income.payee_id = :osspto
-and (check_income.deposit_id is null or check_income.deposit_id < 1)
-and ( $cash_comparison )
-and check_income.session_id = :sid
-and (check_income.returned is null or check_income.returned < '2000-01-01')
+left join  (select sum(income.amount) as total,
+                   income.check_id as check_id
+            from income
+            group by income.check_id
+          ) as income_summary
+on income_summary.check_id = check_income.id
+left join  (select income.check_id as check_id,
+                count(signup.class_id) as unenrolled_count
+            from income
+            left join signup
+                on signup.class_id = income.class_id
+                    and signup.student_id = income.student_id
+            left join (
+                        select count(signup.student_id) as total_enrolled,
+                               class_info.min_students as min,
+                               class_info.status as status,
+                               signup.class_id as class_id 
+                        from class_info
+                        left join signup
+                             on class_info.id = signup.class_id
+                        where signup.status = 'Enrolled'
+                        group by class_id
+                     ) as class_summary
+            on class_summary.class_id = signup.class_id
+            where signup.status != 'Enrolled'
+                or class_summary.total_enrolled < class_summary.min
+                or  class_summary.status = 'Cancelled'
+            group by income.check_id
+          ) as signup_status
+on signup_status.check_id = check_income.id
+where income_summary.total = check_income.amount
+      and signup_status.unenrolled_count is null
+      and check_income.payee_id = :osspto
+      and (check_income.deposit_id is null or check_income.deposit_id < 1)
+      and ( $cash_comparison )
+      and check_income.session_id = :sid
+      and (check_income.returned is null or check_income.returned < '2000-01-01')
 ",
             array( 'osspto' => Company::OSSPTO_COMPANY,
                    'sid' => ClassSession::savedSessionId()));
