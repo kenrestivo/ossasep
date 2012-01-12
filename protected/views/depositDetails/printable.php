@@ -15,3 +15,11 @@
 
 <p><strong>TOTAL DEPOSIT<strong>  <?= Yii::app()->format->currency($model->total_submitted)  ?></p> 
 
+
+
+<?php $this->renderPartial("_check_summary", 
+                     array('model' => $model)); ?>
+
+
+
+
