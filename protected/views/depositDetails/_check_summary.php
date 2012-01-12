@@ -1,5 +1,5 @@
 
-<table class="bordertable financial">
+<table class="bordertable">
 <tr>
 <th colspan="3">CHECK DEPOSIT</th>
 </tr>
@@ -15,8 +15,8 @@
  foreach($model->checks as $check){
      echo '<tr>';
      echo '<td>' . CHtml::encode($check->payer)  . '</td>';
-     echo '<td>' . CHtml::encode($check->check_num)  . '</td>';
-     echo '<td>' . Yii::app()->format->currency($check->amount)  . '</td>';
+     echo '<td class="financial">' . CHtml::encode($check->check_num)  . '</td>';
+     echo '<td class="financial">' . Yii::app()->format->currency($check->amount)  . '</td>';
      echo '</tr>';
  }
 ?>
@@ -24,7 +24,7 @@
 
 <tr>
 <th colspan="2">SUBTOTAL CHECKS</th>
-<th class="financial"><?= Yii::app()->format->currency($model->subtotal_checks) ?></th>
+<th ><?= Yii::app()->format->currency($model->subtotal_checks) ?></th>
 </tr>
 
 </table>
