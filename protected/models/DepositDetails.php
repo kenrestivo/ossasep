@@ -297,12 +297,20 @@ and ($cash_comparison)
         return $this->subtotal_cash_payments + $this->subtotal_checks;
     }
 
-
+    /*
+      as shown on the deposit form. used for checking against the calculated one!
+     */
     public function getSubtotal_reconciliation()
     {
         return $this->subtotal_cash + $this->subtotal_coin;
     }
 
+    /*
+      the amount submitted on the actual form to the treasurer.
+      this will include the cash actually in the reconciliation,
+      the coins in the reconciliation, and the checks as added/shown
+
+     */
     public function getTotal_submitted()
     {
         return $this->subtotal_checks + $this->subtotal_cash + $this->subtotal_coin;
