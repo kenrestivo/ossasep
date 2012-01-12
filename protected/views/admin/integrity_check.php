@@ -9,6 +9,7 @@
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
     'selectionChanged'=>ZHtml::clickableRow('CheckIncome/view'),
     'emptyText' => "Everything OK, no problems found!",
+    'showTableOnEmpty' => false,
 	'columns'=>array(
 		'check_num:ntext:Check #',
 		'amount:currency:Total Check Amount',
@@ -40,6 +41,7 @@
     'htmlOptions'=>array('style'=>'cursor: pointer;'),
     'selectionChanged'=> ZHtml::clickableRow('ClassInfo/view'),
     'emptyText' => "Everything OK, no problems found!",
+    'showTableOnEmpty' => false,
 	'columns'=>array(
 		'class_name:text:Name',
 		'unbalanced_instructors:percent:Unbalanced Instructor Total',
