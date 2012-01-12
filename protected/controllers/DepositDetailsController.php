@@ -187,6 +187,12 @@ class DepositDetailsController extends Controller
 
 
 
+	public function actionPrint()
+	{
+		$this->render('printable',array(
+			'model'=>$this->loadModel(),
+		));
+	}
 
 
 }

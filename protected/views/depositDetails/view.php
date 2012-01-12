@@ -14,6 +14,13 @@ $this->menu=array(
 
 <h1>View Deposit <?php echo $model->summary; ?> </h1>
 
+<p>
+<? echo CHtml::link("Printable Deposit Sheet",
+                    array("DepositDetails/print",
+                          'id' => $model->id));
+?>
+</p>
+
 <?php
 
 $this->widget('zii.widgets.jui.CJuiTabs', 
