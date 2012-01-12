@@ -394,6 +394,6 @@ table.financial td{
   text-align: right;
  }
 
-table th,td.financial{ 
+table td.financial{ 
 text-align: right;
  }
