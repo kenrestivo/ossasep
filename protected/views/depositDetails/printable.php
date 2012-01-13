@@ -18,7 +18,7 @@
 
 <p><strong>Deposit #<?= $model->id ?></strong> </p>
 
-<p><strong>Deposited by</strong>: <?= CHtml::encode($model->note) ?></p>
+<p><strong>Prepared by</strong>: <?= CHtml::encode($model->note) ?></p>
      
 <p><strong>Submitted On</strong>: <?= Yii::app()->format->date($model->deposited_date) ?></p>
 

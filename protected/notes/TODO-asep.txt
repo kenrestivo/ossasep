@@ -1,7 +1,6 @@
 #-*- org -*-
 TODO tasks for ASEP
 
-* integrate notes from droid
 * ui
 ** company checks
    an undelivered checks screen, by class
@@ -190,6 +189,9 @@ TODO tasks for ASEP
 ***	trap exception on populate for school days
 *** clean up massive sql queries and translate them into cdbcriteria
 	so i can have searches and sorts, also sums and totals!
+*** make the deposit form editable in the same format as the printabel one
+	in other words, make the "printable" report into a form, with edit
+	i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
 ***	to avoid confusion, special case the company stuff with js
 		if company is not PTO, or is type company, show delivered, not deposited
 			else  show deposited, not delivered
