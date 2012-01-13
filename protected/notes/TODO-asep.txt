@@ -2,7 +2,6 @@
 TODO tasks for ASEP
 
 * integrate notes from droid
-
 * ui
 ** company checks
    an undelivered checks screen, by class
@@ -146,6 +145,7 @@ TODO tasks for ASEP
 *** make session dropdown disabled css by default, checkbox to change
 	in almost every screen. session should always be default really
 ***	manually edit dates, in m/d/y format
+*** remove search/sort for nonsortable columns
 *** add  the returnto for zhtml::clickablerow
 	it's already in there for composite keys, but i need to add it for the other one
 	this is used only in a few places though.
@@ -154,9 +154,6 @@ TODO tasks for ASEP
 *** admin simulation of instructor screens
 **** a chooser for instructor at the top.
 ***** just an echosen probably, with an autosubmit or ajax
-*** allow multiple requirements, i.e contracts for several years
-	remove unique key constraint
-	in status, i'll need MAX() queries instead of AR stuff
 ***	trap exceptions on save,  if there's an integrity constraint!
 		trap/catch errors when trying to delete linked tables
 		hmm, when woudl that exactly happen again?
@@ -223,9 +220,12 @@ TODO tasks for ASEP
 ***	dependent date/timepickers, i.e. start/end intelligently
 ***	the goddamned times are wrong, they're not in am/pm time! they don't convert
 		this is the timepicker brokenness, fix it
-***	generate the signup form via PDF library, on the fly
-	it's tcpdf, and it works.
-	but i'm not sure how it'll deal with all the javascript in my stuff.
+***	generate via pdf
+**** what
+***** signup form
+***** descriptions
+**** how
+***** tcpdf! it seems to work
 ***  put in a db table
 **** datetime
 **** ipaddress
@@ -289,7 +289,18 @@ TODO tasks for ASEP
 		delete from instructor_assignment where class_id=:cid
 		delete from class_meeting where class_id=:cid
 		delete from class_info where id=:cid
-*** dynamically generate the PDF of the signup form and week/month schedule
+*** requirements per class, i.e. for agreement
+**** remove unique key constraint
+**** checkbox for requirement per class
+**** fk to class id
+**** hide fk if checkbox not checed
+**** in report check each class if checkbox chcked.
+**** in status, i'll need MAX() queries instead of AR stuff
+**** allow multiple requirements, i.e contracts for several years
+*** the signup form and week/month schedule
+**** add fields for the TEXT of the form!
+	 so that heidi can edit it
+**** this will probably require tcpdf (see elsewhere)
 ** must have for NEXT YEAR:
 ***	need some way to track the current school year. 
 		yes, i remember now!!!! it took today's date, calculated month!
