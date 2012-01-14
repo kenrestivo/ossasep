@@ -1204,3 +1204,13 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
   http://www.tcpdf.org/examples/example_048.phps
 **  there's also this:
   http://www.tcpdf.org/examples/example_061.phps
+
+** test script
+   rm foo.pdf; wget -O foo.pdf http://localhost/tcpdf/test.php; xr foo.pdf 
+** multi collumns
+***   example 7 : crashes apache
+***   example 10 : weird OOP stuff and it flows the columns
+***   example 17 : appears to work
+**** multicell apparently takes html, this is good news
+*** example 48: uses html tables, not css
+
