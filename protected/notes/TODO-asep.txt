@@ -1,7 +1,17 @@
 #-*- org -*-
 TODO tasks for ASEP
 
+* bugs
+** delete all button for checks/deposit
+** fix deletes for cash, not working (why?)
+** check 0867 (sandbox) fix unbalance formula!
+** searchable link fields (unassigned), or set filter => null on column
+** i'm validating email addresses on parents, make it stop
+** don't count scholarships who cancel (dashboard, elsewhere probably too)
 * ui
+** check income
+***   undeposit for cash
+*** 
 ** company checks
    an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
@@ -56,6 +66,8 @@ TODO tasks for ASEP
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 * bugfixen
+** unbalanced checks formula is wrong
+*** it's missing check 0867
 **	in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
 **	they WERE paid. only returned checks shouldn't show up.
@@ -201,6 +213,7 @@ TODO tasks for ASEP
 		javascript in forms, something else in view
 ***	new on pulldowns!! so new instructor at end of pulldown for instructor
 ***	now make the save() actions check breadcrumbs, not returnto
+*** instructors need to use both email addresses to login if they have > 1
 ** cosmetic
 *** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 ***	use the roster as the template for any index views, i have the css nice
