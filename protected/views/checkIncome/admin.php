@@ -50,7 +50,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'amount:currency',
 		'check_date:date',
 		'payee.name:text:Payee',
-        'unassigned:currency:Un-Assigned',
+        array(
+            'name' => 'unassigned',
+            'filter' => false,
+            'value' => 'Yii::app()->format->currency($data->unassigned)'),
 		'deposit.deposited_date:date:Deposited On',
         'delivered:date',
         'returned:date',
