@@ -70,4 +70,19 @@ $.fn.yiiGridView.update("cash-grid");}',
 		'subtotal_reconciliation:currency:Cash from Reconciliation',
 		'discrepancy:currency:Discrepancy',
 	),
-)); ?>
+));
+
+echo '<div><br /></div>';
+echo CHTML::link("Un-Deposit all Cash from " . $model->summary, 
+                 '#',
+                 array(
+                     'submit'=>array(
+                         'unassignAll',
+                         'id' => $model->id,
+                         'type' => 'cash',
+                         'returnTo' => Yii::app()->request->requestUri),
+                     'confirm'=>'Really remove all cash from deposit?')); 
+
+
+
+ ?>

@@ -2,13 +2,9 @@
 TODO tasks for ASEP
 
 * bugs
-** delete all button for checks/deposit
 ** searchable link fields (unassigned), or set filter => null on column
 ** don't count scholarships who cancel (dashboard, elsewhere probably too)
 * ui
-** check income
-***   undeposit for cash
-*** 
 ** company checks
    an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
