@@ -90,5 +90,13 @@ $.fn.yiiGridView.update("check-income-grid");}',
 
                           ),
                       )); 
+
+
+    echo CHTML::link("Unassign all Checks from " . $model->summary, 
+                    array("unassignAll",
+                          'id' => $model->id,
+                          'type' => 'checks',
+                          'returnTo' => Yii::app()->request->requestUri)); 
+
 ?>
 

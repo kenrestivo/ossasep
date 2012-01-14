@@ -195,4 +195,16 @@ class DepositDetailsController extends Controller
 	}
 
 
+    public function actionUnassignAll($type='checks'){
+        $cash = $type == 'checks' ? 0 : 1;
+        $model = $this->loadModel();
+        foreach($model->checks as $c){
+            if($c->cash == $cash){
+                $c->deposit_id = null;
+                $c->save();
+            }
+        }
+        $this->redirect(array('view','id'=>$model->id));
+    }
+
 }
