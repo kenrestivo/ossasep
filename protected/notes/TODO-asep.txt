@@ -2,7 +2,6 @@
 TODO tasks for ASEP
 
 * bugs
-** searchable link fields (unassigned), or set filter => null on column
 * ui
 ** company checks
    an undelivered checks screen, by class
@@ -149,6 +148,7 @@ TODO tasks for ASEP
 	in almost every screen. session should always be default really
 ***	manually edit dates, in m/d/y format
 *** remove search/sort for nonsortable columns
+	set filter => false
 *** add  the returnto for zhtml::clickablerow
 	it's already in there for composite keys, but i need to add it for the other one
 	this is used only in a few places though.
@@ -182,6 +182,7 @@ TODO tasks for ASEP
 *** make search work with linktables!
 	this i think will be some interesting criteria and joins perhaps
 	maybe not that hard, just some pdo stuff
+	http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx
 ***	make sort work with linked subviews
 		 not so easy
 ***	make company id 1  not editable or removable (company form/view)
