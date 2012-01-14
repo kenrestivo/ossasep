@@ -20,7 +20,7 @@ class DepositDetailsController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+            );
 	}
 
 	/**
@@ -32,12 +32,12 @@ class DepositDetailsController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'users'=>array('admin'),
-			),
+                  'users'=>array('admin'),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	/**
@@ -46,8 +46,8 @@ class DepositDetailsController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 	/**
@@ -72,8 +72,8 @@ class DepositDetailsController extends Controller
         }
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -95,8 +95,8 @@ class DepositDetailsController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -137,8 +137,8 @@ class DepositDetailsController extends Controller
 			$model->attributes=$_GET['DepositDetails'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+                          'model'=>$model,
+                          ));
 	}
 
 	/**
@@ -190,21 +190,19 @@ class DepositDetailsController extends Controller
 	public function actionPrint()
 	{
 		$this->render('printable',array(
-			'model'=>$this->loadModel(),
-		));
+                          'model'=>$this->loadModel(),
+                          ));
 	}
 
 
-    public function actionUnassignAll($type='checks'){
-        $cash = $type == 'checks' ? 0 : 1;
+    public function actionUnassignAll($type='cash'){
         $model = $this->loadModel();
-        foreach($model->checks as $c){
-            if($c->cash == $cash){
-                $c->deposit_id = null;
-                $c->save();
-            }
+        $r = $type == 'cash' ? $model->cash : $model->checks;
+        foreach($r as $c){
+            $c->deposit_id = null;
+            $c->save();
         }
         $this->redirect(array('view','id'=>$model->id));
     }
-
+    
 }

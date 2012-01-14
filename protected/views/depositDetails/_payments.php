@@ -92,7 +92,7 @@ $.fn.yiiGridView.update("check-income-grid");}',
                       )); 
 
 
-echo CHTML::link("Unassign all Checks from " . $model->summary, 
+echo CHTML::link("Un-Deposit all Checks from " . $model->summary, 
                  '#',
                  array(
                      'submit'=>array(
@@ -100,7 +100,7 @@ echo CHTML::link("Unassign all Checks from " . $model->summary,
                          'id' => $model->id,
                          'type' => 'checks',
                          'returnTo' => Yii::app()->request->requestUri),
-                     'confirm'=>'Really unassign all checks from deposit?')); 
+                     'confirm'=>'Really remove all checks from deposit?')); 
 
 ?>
 
