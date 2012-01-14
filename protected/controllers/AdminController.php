@@ -218,8 +218,10 @@ left join  (select sum(income.amount) as total,
            from income
            group by income.check_id) as assigned
 on assigned.check_id = check_income.id
-where assigned.total != check_income.amount
+where coalesce(assigned.total,0) != coalesce(check_income.amount,0)
 ");
+
+
 
         $instructorbalance = ClassInfo::model()->findAllBySql(
 "select class_info.*
@@ -229,7 +231,7 @@ left join  (select sum(instructor_assignment.percentage) as total,
            from instructor_assignment
            group by instructor_assignment.class_id) as assigned
 on assigned.class_id = class_info.id
-where assigned.total != 100");
+where coalesce(assigned.total,0) != 100");
 
         $this->render(
             'integrity_check',
