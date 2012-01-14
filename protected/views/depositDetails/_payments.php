@@ -69,7 +69,7 @@ echo CHtml::endForm();
                           array(
                               'class'=>'CButtonColumn',
                               'template'=>'{my_button}',
-                          // TODO: make this a widget/subclass!!!
+                              // TODO: make this a widget/subclass!!!
                               'buttons'=>array(
                                   'my_button'=>array(
                                       'label'=>'Un-Deposit',
@@ -92,18 +92,15 @@ $.fn.yiiGridView.update("check-income-grid");}',
                       )); 
 
 
-    echo CHTML::link("Unassign all Checks from " . $model->summary, 
-                    array("unassignAll",
-                          'id' => $model->id,
-                          'type' => 'checks',
-                          'returnTo' => Yii::app()->request->requestUri),
-                    array(
-                        'submit'=>array(
-                            'unassignAll',
-                            'id' => $model->id,
-                            'type' => 'checks',
-                          'returnTo' => Yii::app()->request->requestUri),
-                        'confirm'=>'Really unassign all checks from deposit?')); 
+echo CHTML::link("Unassign all Checks from " . $model->summary, 
+                 '#',
+                 array(
+                     'submit'=>array(
+                         'unassignAll',
+                         'id' => $model->id,
+                         'type' => 'checks',
+                         'returnTo' => Yii::app()->request->requestUri),
+                     'confirm'=>'Really unassign all checks from deposit?')); 
 
 ?>
 
