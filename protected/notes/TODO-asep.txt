@@ -3,7 +3,6 @@ TODO tasks for ASEP
 
 * bugs
 ** searchable link fields (unassigned), or set filter => null on column
-** don't count scholarships who cancel (dashboard, elsewhere probably too)
 * ui
 ** company checks
    an undelivered checks screen, by class

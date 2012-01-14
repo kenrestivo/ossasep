@@ -154,7 +154,7 @@ class ClassInfo extends CActiveRecord
             'scholarships_count' => array(
                 self::STAT, 
                 'Signup', 'class_id',
-                'condition' => 'scholarship > 0'), 
+                'condition' => 'scholarship > 0 and status != "Cancelled"'), 
             );
 	}
 
