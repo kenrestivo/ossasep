@@ -96,7 +96,14 @@ $.fn.yiiGridView.update("check-income-grid");}',
                     array("unassignAll",
                           'id' => $model->id,
                           'type' => 'checks',
-                          'returnTo' => Yii::app()->request->requestUri)); 
+                          'returnTo' => Yii::app()->request->requestUri),
+                    array(
+                        'submit'=>array(
+                            'unassignAll',
+                            'id' => $model->id,
+                            'type' => 'checks',
+                          'returnTo' => Yii::app()->request->requestUri),
+                        'confirm'=>'Really unassign all checks from deposit?')); 
 
 ?>
 
