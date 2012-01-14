@@ -4,7 +4,6 @@ TODO tasks for ASEP
 * bugs
 ** delete all button for checks/deposit
 ** searchable link fields (unassigned), or set filter => null on column
-** i'm validating email addresses on parents, make it stop
 ** don't count scholarships who cancel (dashboard, elsewhere probably too)
 * ui
 ** check income
