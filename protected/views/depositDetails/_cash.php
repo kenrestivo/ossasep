@@ -20,6 +20,28 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'payer:ntext:Payer',
                       'check_date:date:Cash Date',
                       'unassigned:currency:Un-Assigned',
+                      array(
+                          'class'=>'CButtonColumn',
+                          'template'=>'{my_button}',
+                          // TODO: make this a widget/subclass!!!
+                          'buttons'=>array(
+                              'my_button'=>array(
+                                  'label'=>'Un-Deposit',
+                                  'url'=> 
+                                  'Yii::app()->controller->createUrl("/CheckIncome/undeposit", array("id" => $data->id))',
+                                  'imageUrl'=>'',
+                                  'options'=>array(
+                                      'ajax'=>array(
+                                          'type'=>'GET',
+                                          'url'=>"js:$(this).attr('href')",
+                                          'success'=>'js:function(data){
+$.fn.yiiGridView.update("cash-grid");}',
+                                          ),
+                                      ),
+                                      ),
+                                  ),
+                              )
+
                       ),
                   )); 
 

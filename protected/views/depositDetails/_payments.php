@@ -69,6 +69,7 @@ echo CHtml::endForm();
                           array(
                               'class'=>'CButtonColumn',
                               'template'=>'{my_button}',
+                          // TODO: make this a widget/subclass!!!
                               'buttons'=>array(
                                   'my_button'=>array(
                                       'label'=>'Un-Deposit',
