@@ -1,3 +1,5 @@
+<?php   Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/printabletable.css', 'print'); ?>
+
 <div class="span-10">
 <img src="<?= Yii::app()->request->baseUrl; ?>/images/CashCheckReconciliation-img1.jpg" alt="logo" />
 
