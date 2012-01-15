@@ -1214,6 +1214,13 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 **** multicell apparently takes html, this is good news
 *** example 48: uses html tables, not css
 
+** test script for the real thing, no doesn't work
+	wget --save-cookies asepcookies.txt -O /dev/null --post-data 'LoginForm%5Busername%5D=admin&LoginForm%5Bpassword%5D=***REMOVED***&LoginForm%5BrememberMe%5D=0&yt0=Login'  http://localhost/asepgui/index.php/site/login
+	wget --load-cookies asepcookies.txt --content-disposition http://localhost/asepgui/index.php/DepositDetails/print/1
+** curl version, also does not work
+   curl -D - -c testcookies -o /dev/null --data-urlencode 'LoginForm[username]=admin&LoginForm[password]=***REMOVED***&LoginForm[rememberMe]=1&yt0=Login'  http://localhost/asepgui/index.php/site/login
+   curl -D - -c testcookies  http://localhost/asepgui/index.php/DepositDetails/print/1
+
 * heidi 1/14/12
 ** leave cgridview pager 10 but provide an ajax button to show all (no pager)
 *** especially in checks
