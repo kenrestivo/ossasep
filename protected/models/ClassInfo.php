@@ -103,7 +103,13 @@ class ClassInfo extends CActiveRecord
 			'incomes' => array(
                 self::HAS_MANY, 
                 'Income', 
-                'class_id'),
+                'class_id',
+                /* XXX i'm worried about deep loops with this,
+                   so, not using it.
+                'with' => 'check',
+                'order' => 'abs(check.check_num) asc'
+                */
+                ),
             'checks' => array(
                 self::HAS_MANY, 
                 'CheckIncome', 
