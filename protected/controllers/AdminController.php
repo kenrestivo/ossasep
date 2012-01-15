@@ -144,10 +144,10 @@ order by student.last_name asc, student.first_name asc
     {
         $s = Signup::model()->findAllBySql(
             "select
-     (if(signup.status = 'Cancelled', 0,
+     (if(signup.status != 'Enrolled', 0,
         (class_info.cost_per_class * meeting.meetings) +
-           if(fees.total is null, 0, fees.total))
-       -  if(income_summary.paid is null, 0, income_summary.paid)) as total_owed,
+           coalesce(fees.total,0))
+       -  coalesce(income_summary.paid, 0)) as total_owed,
      signup.*
 from student
 left join signup
