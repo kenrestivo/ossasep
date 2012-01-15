@@ -1,6 +1,6 @@
 <h1>Data Integrity Check/Audit</h1>
 
-<h3>Unbalanced checks with unassigned amounts</h3>
+<h3>Unbalanced, unreturned checks with unassigned amounts</h3>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'check-income-grid',
