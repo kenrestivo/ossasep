@@ -149,20 +149,19 @@ order by student.last_name asc, student.first_name asc
            coalesce(fees.total,0))
        -  coalesce(income_summary.paid, 0)) as total_owed,
      signup.*
-from student
-left join signup
-     on student.id = signup.student_id
-          and signup.scholarship < 1
+from signup
+left join student
+  on student.id = signup.student_id
 left join class_info
-     on class_info.id = signup.class_id
+  on class_info.id = signup.class_id
      and class_info.session_id = :sid
 left join (select count(class_meeting.id) as meetings,
      class_meeting.class_id as class_id
      from class_meeting
      where  class_meeting.makeup < 1
-     group by class_meeting.class_id
-     ) as meeting
-     on signup.class_id = meeting.class_id
+     group by class_meeting.class_id) 
+     as meeting
+  on signup.class_id = meeting.class_id
 left join (
     select sum(extra_fee.amount) as total,
     extra_fee.class_id as class_id
@@ -181,11 +180,13 @@ left join (
         and (check_income.returned is null
                    or check_income.returned < '2000-01-01')
      group by income.class_id, income.student_id)
-   as income_summary
-   on signup.class_id = income_summary.class_id
+     as income_summary
+ on signup.class_id = income_summary.class_id
       and signup.student_id = income_summary.student_id
 where signup.class_id is not null
       and signup.student_id is not null
+       and signup.scholarship < 1
+        and signup.status = 'Enrolled'
 group by signup.class_id, signup.student_id
 having total_owed != 0
 order by student.first_name, student.last_name, class_info.class_name
