@@ -6,7 +6,7 @@ TODO tasks for ASEP
 ** company checks
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
-   an undelivered checks screen, by class
+*** an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
       pick which checks are delivered!
 	  they are by class, which is how she files them
@@ -17,7 +17,7 @@ TODO tasks for ASEP
 **** possibly more pdf here
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 ** a student signup screen
-	just a student pulldown, a few tabs, etc
+   just a student pulldown, a few tabs, etc
 ***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
 ** multiline entry for checks
 ** add cancelled date and hide/clear it on non cancelled
@@ -117,14 +117,13 @@ TODO tasks for ASEP
 *** leave cgridview pager 10 but provide an ajax button to show all (no pager)
 **** especially in checks
 **** there's pagination in karraydataprovider, also cpagination
-***** an extension that makes it somewhat more flexible:
-	  http://www.yiiframework.com/extension/pagesize/
-****** NOTE requires yii 1.1.8, which i think i have
 **** also this: http://www.yiiframework.com/forum/index.php?/topic/27742-where-to-set-default-pagesize/
 ***** Edit CPagination (Yuck!)
 ***** Extend CPagination and have your version pull the data out of config.
-	  Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
-	  You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
+****** like this:  http://www.yiiframework.com/extension/pagesize/
+******* NOTE requires yii 1.1.8, which i think i have
+***** Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
+	   You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
 *** in _income, make amount autopopulate ajax based on class chosen
 **** autocomplete the amount on income based on class
 	didn't i do that already?
