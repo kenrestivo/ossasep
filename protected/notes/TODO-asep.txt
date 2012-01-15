@@ -3,8 +3,6 @@ TODO tasks for ASEP
 
 * bugs
 * ui
-** leave cgridview pager 10 but provide an ajax button to show all (no pager)
-*** especially in checks
 ** company checks
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
@@ -116,6 +114,17 @@ TODO tasks for ASEP
 **** pass in passwords, etc, rather than having it hardcoded in the cgi?
 *** make sure backup integrity is ok
 	run bunzip2 -t, a test decompression, after the backup
+*** leave cgridview pager 10 but provide an ajax button to show all (no pager)
+**** especially in checks
+**** there's pagination in karraydataprovider, also cpagination
+***** an extension that makes it somewhat more flexible:
+	  http://www.yiiframework.com/extension/pagesize/
+****** NOTE requires yii 1.1.8, which i think i have
+**** also this: http://www.yiiframework.com/forum/index.php?/topic/27742-where-to-set-default-pagesize/
+***** Edit CPagination (Yuck!)
+***** Extend CPagination and have your version pull the data out of config.
+	  Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
+	  You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
 *** in _income, make amount autopopulate ajax based on class chosen
 **** autocomplete the amount on income based on class
 	didn't i do that already?
