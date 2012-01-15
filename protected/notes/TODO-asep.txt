@@ -3,13 +3,19 @@ TODO tasks for ASEP
 
 * bugs
 * ui
+** leave cgridview pager 10 but provide an ajax button to show all (no pager)
+*** especially in checks
 ** company checks
+*** look at her spreadsheet to see
+*** show check # date, and scholarship (they have to see it)
    an undelivered checks screen, by class
    just checkboxes, and a date, and mark delivered for all of them.
       pick which checks are delivered!
 	  they are by class, which is how she files them
 	  classinfo/_income
 	  a checkbox, mark all, save, would be fine
+*** a printout of it for the company, or let them log in to see
+**** possibly more pdf here
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 ** a student signup screen
 	just a student pulldown, a few tabs, etc
@@ -234,10 +240,12 @@ TODO tasks for ASEP
 ***** descriptions
 **** how
 ***** tcpdf! it seems to work
-***  put in a db table
+***  put in a db table for tracking?
 **** datetime
 **** ipaddress
 **** username (can have multiple)
+*** make all monetary fields NOT NULL default 0!
+**** be careful though, it might break stuff. i.e. the model, required validation
 ***	 and show it as backup status, somewhere, like on admin page
 * STUCK
 ** student parentt relaton for user signin

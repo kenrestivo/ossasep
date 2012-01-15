@@ -1214,3 +1214,11 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 **** multicell apparently takes html, this is good news
 *** example 48: uses html tables, not css
 
+* heidi 1/14/12
+** leave cgridview pager 10 but provide an ajax button to show all (no pager)
+*** especially in checks
+** need company thing
+*** show check # date, and scholarship (they have to see it)
+**** look at her spreadsheet to see
+
+
