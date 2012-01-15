@@ -1220,5 +1220,5 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 ** need company thing
 *** show check # date, and scholarship (they have to see it)
 **** look at her spreadsheet to see
-
+** the joint checks need to be deposited really
 
