@@ -24,7 +24,7 @@
 
 <tr>
 <th colspan="2">SUBTOTAL CHECKS</th>
-<th ><?= Yii::app()->format->currency($model->subtotal_checks) ?></th>
+<th ><?= Yii::app()->format->currencyZero($model->subtotal_checks) ?></th>
 </tr>
 
 </table>
