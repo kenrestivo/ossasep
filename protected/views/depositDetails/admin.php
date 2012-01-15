@@ -40,6 +40,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'deposit-details-grid',
 	'dataProvider'=>$model->search(),
+    'selectionChanged'=> ZHtml::clickableRow('DepositDetails/view'),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
