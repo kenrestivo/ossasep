@@ -220,6 +220,7 @@ left join  (select sum(income.amount) as total,
            group by income.check_id) as assigned
 on assigned.check_id = check_income.id
 where coalesce(assigned.total,0) != coalesce(check_income.amount,0)
+and (check_income.returned is null or check_income.returned < '2000-01-01')
 ");
 
 
