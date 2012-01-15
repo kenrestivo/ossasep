@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	'Deposit Details'=>array('index'),
 	$model->id,
-);
+    );
 
 $this->menu=array(
 	array('label'=>'Create DepositDetails', 'url'=>array('create')),
@@ -15,15 +15,18 @@ $this->menu=array(
                   'id'=>$model->id),
               'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage DepositDetails', 'url'=>array('admin')),
-);
+    );
 ?>
 
 <h1>View Deposit <?php echo $model->summary; ?> </h1>
 
 <p>
-<? echo CHtml::link("Printable Deposit Sheet",
-                    array("DepositDetails/print",
-                          'id' => $model->id));
+<? echo CHtml::link(
+    "Printable Deposit Sheet ".
+    CHtml::image(Yii::app()->request->baseUrl.'/images/printer24.png',
+                 'Print'),
+    array("DepositDetails/print",
+          'id' => $model->id));
 ?>
 </p>
 
