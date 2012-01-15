@@ -53,7 +53,8 @@ echo CHtml::endForm();
     $this->widget('zii.widgets.grid.CGridView', array(
                       'id'=>'check-income-grid',
                       'dataProvider'=>new KArrayDataProvider(
-                          $model->checks),
+                          $model->checks,
+                          array('pagination' => false)),
                       'summaryText' => 'Subtotal Checks: ' . 
                       Yii::app()->format->currencyZero($model->subtotal_checks),
 
