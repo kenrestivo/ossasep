@@ -57,7 +57,6 @@ echo CHtml::endForm();
                           array('pagination' => false)),
                       'summaryText' => 'Subtotal Checks: ' . 
                       Yii::app()->format->currencyZero($model->subtotal_checks),
-
                       'selectionChanged'=>
                       ZHtml::clickableRow('CheckIncome/view', 'join'),
 
