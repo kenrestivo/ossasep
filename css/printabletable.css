@@ -159,3 +159,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clear {clear:both;}
 
 table.bordertable { border-collapse: collapse; }
+
+#header{ display:none; }
+#mainmenu{ display:none; }
+#breadcrumbs{ display:none; }
