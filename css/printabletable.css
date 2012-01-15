@@ -163,3 +163,5 @@ table.bordertable { border-collapse: collapse; }
 #header{ display:none; }
 #mainmenu{ display:none; }
 #breadcrumbs{ display:none; }
+
+img{ border:none; }
