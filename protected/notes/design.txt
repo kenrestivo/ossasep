@@ -6,12 +6,6 @@
 **	D  (payment for companies)
 	   company name
 	   amount
-**	H "receipt"
-		Student.name
-		CLASS
-		Contact Name
-		Cost
-		payments.Check#
 **	O (checks by companies)
 		class
 		check
@@ -20,6 +14,12 @@
 			amount
 		total
 
+**	H "receipt"
+		Student.name
+		CLASS
+		Contact Name
+		Cost
+		payments.Check#
 **	W integrity check dashboard
 ***	unpaid/overpaid classes (useful for checking)
 	select all the signups
