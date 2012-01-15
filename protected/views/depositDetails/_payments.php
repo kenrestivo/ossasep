@@ -55,7 +55,7 @@ echo CHtml::endForm();
                       'dataProvider'=>new KArrayDataProvider(
                           $model->checks),
                       'summaryText' => 'Subtotal Checks: ' . 
-                      Yii::app()->format->currency($model->subtotal_checks),
+                      Yii::app()->format->currencyZero($model->subtotal_checks),
 
                       'selectionChanged'=>
                       ZHtml::clickableRow('CheckIncome/view', 'join'),

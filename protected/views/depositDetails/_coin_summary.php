@@ -16,7 +16,7 @@
 <tr><td><?= Yii::app()->format->noZero($model->dollar_coins) ?></td><td><?= $model->getAttributeLabel('dollar_coins'); ?></td><td><?= Yii::app()->format->currency($model->dollar_coins_total) ?></td></tr>
 
 <tr><th colspan="2">SUBTOTAL COIN</th>
-     <th><?= Yii::app()->format->currency($model->subtotal_coin) ?></th>
+     <th><?= Yii::app()->format->currencyZero($model->subtotal_coin) ?></th>
 </tr>
 
 </table>

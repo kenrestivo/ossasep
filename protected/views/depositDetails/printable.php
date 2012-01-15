@@ -40,7 +40,7 @@
 <div class="clear"></div>
 
 
-<p><strong>TOTAL DEPOSIT</strong>  <?= Yii::app()->format->currency($model->total_submitted)  ?></p> 
+<p><strong>TOTAL DEPOSIT</strong>  <?= Yii::app()->format->currencyZero($model->total_submitted)  ?></p> 
 
 
 
