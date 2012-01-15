@@ -150,7 +150,7 @@ class ClassInfo extends CActiveRecord
             'owed_count' => array(
                 self::STAT, 
                 'Signup', 'class_id',
-                'condition' => 'status != "Cancelled" and scholarship  < 1'), 
+                'condition' => 'status = "Enrolled" and scholarship  < 1'), 
             'scholarships_count' => array(
                 self::STAT, 
                 'Signup', 'class_id',
