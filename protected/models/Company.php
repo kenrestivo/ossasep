@@ -104,7 +104,7 @@ from income
 left join check_income 
    on income.check_id = check_income.id
 where check_income.payee_id = :id
-order by check_income.check_num asc",
+order by abs(check_income.check_num) asc",
             array('id' => $this->id));
     }
 
