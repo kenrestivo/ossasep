@@ -1,8 +1,6 @@
 #-*- org -*-
 * reports
 
-**	K deposit form -- VIEW
-	make it PRINT properly with pdf!
 **	D  (payment for companies)
 	   company name
 	   amount
