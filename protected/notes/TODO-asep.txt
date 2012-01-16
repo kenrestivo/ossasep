@@ -28,37 +28,6 @@ TODO tasks for ASEP
 	create, student id provided
 	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
-**	validation and data entry error checking/warning
-*** ajax validation via yii built in -- errors
-**** don't allow returned checks to be deposited/delivered!
-**** don't allow deposited/delivered checks to be returned!
-****   	[#A] the student must be signed up for that class before it gets paid
-		look up the keys, see that there's something there
-		i can use my duplicate validator as a guide
-		but! better to constrain isn't it?
-****    [#B] a check or split where totals exceed check
-		make sure the incomes are not more or less than the total check
-		it's probably ok if the incomes are LESS than total check tho
-****    instructor percentages don't exceed 100%
-*** trapping sql/fk errors through ajax validation
-****    trying to delete things that have foreign keys
-	 in check, for sure, but also everywhere really
-****    change company name with instructors who are not in that company
-		this is an easy one, really. in fact i could do it as JS or ajax
-****    duplicate key, unique validators, dupe checking! for all records really
-		all the linktables! it'll have to check key combos
-		first/last in student
-		class meeting/class_id unique
-		school day in calendar
-*** js validation via yii built in
-****     entering to a session not the current default
-*** ajax validation via yii built in -- warnings/notice
-****    class over capacity but student set to enrolled
-		i could really do that just as a status bar in the controller/view
-****    change the day of week but there are active meetings
-*** not sure where
-***		how?
-               populate a js array with the data, and check it that way?
 **	in general, make menu on views like checkincome (just edit and delete)
 		and maybe add ones for the others, the tab ones
 * bugfixen
@@ -104,16 +73,26 @@ TODO tasks for ASEP
 **** then make the cgridviews not page; show them all by default
 *** put in proper RBAC
 **** a proper guest role too
+**** and multiple admin accounts
 **** change all the ->user to ->role everywhere
 *** redesign the homepage setup
 **** dispatch to different home pages based on role!
+**** a strategy for custom homepages, use a controller for the logic
+***** some kind of dispatch method, which homepage for which user
+***** what gets shown on what (maybe use roles?)
 ** useful
-*** somehow protect that cgi a bit better
-**** make that directory scriptaliased?
-**** move it to protected and make the cgi work there?
-**** pass in passwords, etc, rather than having it hardcoded in the cgi?
-*** make sure backup integrity is ok
+*** backup refinements
+**** somehow protect that cgi a bit better
+***** make that directory scriptaliased?
+***** move it to protected and make the cgi work there?
+***** pass in passwords, etc, rather than having it hardcoded in the cgi?
+**** make sure backup integrity is ok
 	run bunzip2 -t, a test decompression, after the backup
+**** and show it as backup status, somewhere, like on admin page
+***** that's mean a db table saving date/ip of last backup
+****** datetime
+****** ipaddress
+****** username (can have multiple)
 *** leave cgridview pager 10 but provide an ajax button to show all (no pager)
 **** especially in checks
 **** there's pagination in karraydataprovider, also cpagination
@@ -129,9 +108,6 @@ TODO tasks for ASEP
 	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
-*** a strategy for custom homepages, use a controller for the logic
-**** some kind of dispatch method, which homepage for which user
-**** what gets shown on what (maybe use roles?)
 *** instructors passwords
 **** a table with
 	 id
@@ -148,6 +124,7 @@ TODO tasks for ASEP
 *** link the signup to income via model!
 	i.e. in income, belongs_to signup, link by multi fields
 	and in signup, has_many income. this will be key for reports!
+****	didn't i do this? did it not work? why?
 *** go through all the multi-link _forms, put <div row> before the issset
 	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
@@ -162,6 +139,37 @@ TODO tasks for ASEP
 		 an autocomplete with lists of checks with amounts still avail on them
 *** make session dropdown disabled css by default, checkbox to change
 	in almost every screen. session should always be default really
+***	validation and data entry error checking/warning
+**** ajax validation via yii built in -- errors
+***** don't allow returned checks to be deposited/delivered!
+***** don't allow deposited/delivered checks to be returned!
+*****   	[#A] the student must be signed up for that class before it gets paid
+		 look up the keys, see that there's something there
+		 i can use my duplicate validator as a guide
+		 but! better to constrain isn't it?
+*****    [#B] a check or split where totals exceed check
+		 make sure the incomes are not more or less than the total check
+		 it's probably ok if the incomes are LESS than total check tho
+*****    instructor percentages don't exceed 100%
+**** trapping sql/fk errors through ajax validation
+*****    trying to delete things that have foreign keys
+	  in check, for sure, but also everywhere really
+*****    change company name with instructors who are not in that company
+		 this is an easy one, really. in fact i could do it as JS or ajax
+*****    duplicate key, unique validators, dupe checking! for all records really
+		 all the linktables! it'll have to check key combos
+		 first/last in student
+		 class meeting/class_id unique
+		 school day in calendar
+**** js validation via yii built in
+*****     entering to a session not the current default
+**** ajax validation via yii built in -- warnings/notice
+*****    class over capacity but student set to enrolled
+		 i could really do that just as a status bar in the controller/view
+*****    change the day of week but there are active meetings
+**** not sure where
+****		how?
+               	populate a js array with the data, and check it that way?
 ***	manually edit dates, in m/d/y format
 *** remove search/sort for nonsortable columns
 	set filter => false
@@ -185,7 +193,16 @@ TODO tasks for ASEP
 		Error 404: <h1>CHttpException
 		The requested page does not exist.
 	   it really is an error, you can't delete something that is already deleted
-***	make search work with booleans/checkboxes
+*** search/sort
+****	make search work with booleans/checkboxes
+**** make search work with linktables!
+	 this i think will be some interesting criteria and joins perhaps
+	 maybe not that hard, just some pdo stuff
+	 http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx
+****	make sort work with linked subviews
+		  not so easy
+**** clean up massive sql queries and translate them into cdbcriteria
+	 so i can have searches and sorts, also sums and totals!
 *** browser exploiter crap
 **** backspace makes the page go back, no warning, in IE
 **** chosen hitting return gives a warning that page leaving in IE
@@ -195,31 +212,23 @@ TODO tasks for ASEP
 	it's used in signup/_form and signup/_row, and it's slightly different
 *** more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row
 *** this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION
-*** make search work with linktables!
-	this i think will be some interesting criteria and joins perhaps
-	maybe not that hard, just some pdo stuff
-	http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx
-***	make sort work with linked subviews
-		 not so easy
 ***	make company id 1  not editable or removable (company form/view)
 ***	autocompletes not dropdowns
-		students
-		classes
-		roster import
+**** students
+**** classes
+****roster import
 *** make date pickers have longer terms for some things (meetings, paperwork)
 ***	trap exception on populate for school days
-*** clean up massive sql queries and translate them into cdbcriteria
-	so i can have searches and sorts, also sums and totals!
 *** make the deposit form editable in the same format as the printabel one
 	in other words, make the "printable" report into a form, with edit
 	i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
 ***	to avoid confusion, special case the company stuff with js
-		if company is not PTO, or is type company, show delivered, not deposited
-			else  show deposited, not delivered
-		if instructor type is company, show the company popup
-			else hide company popup
-		if is not company, don't show company popup at all
-		javascript in forms, something else in view
+****		if company is not PTO, or is type company, show delivered, not deposited
+*****			else  show deposited, not delivered
+****		if instructor type is company, show the company popup
+*****			else hide company popup
+****		if is not company, don't show company popup at all
+****		javascript in forms, something else in view
 ***	new on pulldowns!! so new instructor at end of pulldown for instructor
 ***	now make the save() actions check breadcrumbs, not returnto
 *** instructors need to use both email addresses to login if they have > 1
@@ -250,13 +259,8 @@ TODO tasks for ASEP
 ***** descriptions
 **** how
 ***** tcpdf! it seems to work
-***  put in a db table for tracking?
-**** datetime
-**** ipaddress
-**** username (can have multiple)
 *** make all monetary fields NOT NULL default 0!
 **** be careful though, it might break stuff. i.e. the model, required validation
-***	 and show it as backup status, somewhere, like on admin page
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
