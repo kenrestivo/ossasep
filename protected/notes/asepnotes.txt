@@ -322,12 +322,12 @@ http://www.yiiframework.com/wiki/164/updating-fields-on-a-form-with-ajax-and-jso
 		it openns a dialog box to do the entry. i like i like
 		there are hacks required to make it work right though
 	
-* 	this is very easy, just a simple datepicker jquery dropdown
+* this is very easy, just a simple datepicker jquery dropdown
 		http://www.hollowdevelopers.com/2011/01/09/cjuidatepicker-cactiveform-yii-framework/
 	
 
 		
-*	ajax validation
+* ajax validation
 	http://learnyii.blogspot.com/2010/12/yii.html
 
 

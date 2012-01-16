@@ -47,12 +47,6 @@
 		possibly with some backup detail
 *** the top-line is relatively easy to display
 *** the detail of this is basically a STATEMENT. use an accounting system
-** 	B deposit summary -- already done?
-		osspto deposit, date
-        this is pretty much already in the deposit cgridview
-		
-            
- 
 **	L "tentative schedule"
 		for the whole year 3 sessions
 		session m-f, notes
