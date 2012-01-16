@@ -599,8 +599,12 @@ http://codinginparadise.org/weblog/2005/08/ajax4-tutorial-saving-session-across.
 
 or use cjuitabs
 
+** cjui tabs do NOT work with cgridview, hacks required
+   http://www.yiiframework.com/forum/index.php?/topic/24182-solved-cgridview-via-renderpartial-inside-of-cjuitabs/
 
-
+*** could just home-roll it
+	http://htmldog.com/articles/tabs/
+   
 * filtering the datepicker
 
 $('.selector').datepicker({
