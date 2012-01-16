@@ -1,152 +1,137 @@
-#-*- org -*-
+# -*- mode:org; -*-
 
-iasep notes
+asep notes
 
-yii has no accounting shit built in
-
-
-php accounting sw
-	http://www.weberp.org/
-	http://www.ledgersmb.org/
+* yii has no accounting shit built in
+* php accounting sw
+**	http://www.weberp.org/
+**	http://www.ledgersmb.org/
 		no payroll?
-	http://www.bambooinvoice.org/
+**	http://www.bambooinvoice.org/
 		no payroll
-	http://phpbms.org/
+**	http://phpbms.org/
 		mostly an order system
 
 
-what does she need really?
-	- products are simple, just classes with limited # of spots
-		- scheduling?
-	- A/R
-	- payroll (possibly A/P?)
-	- some simple reporting
-	- yeah, online ordering would be nice
-
-
-
-	http://hostname/path/to/index.php?r=tTeacher
-
-dependent ajax dropdowns
+* what does she need really?
+** products are simple, just classes with limited # of spots
+** scheduling?
+** A/R
+** payroll (possibly A/P?)
+** some simple reporting
+** yeah, online ordering would be nice
+* 	http://hostname/path/to/index.php?r=tTeacher
+* dependent ajax dropdowns
 	http://www.yiiframework.com/wiki/24/
 	this is a MUCH better version
 		chttml dropdown already has an ajax update function built in!
 	nice! with ajaxhtml, you can output html, and it'll  get pooted into the page!
 		like, a NEW form!
 
-----------------------
-heidi notes 10/19/11
 
-agreements are per class per teacher per YEAR (not per session)
+* heidi notes 10/19/11
 
-businesses have to have licenses, insurance, tb, contract, and agreement, fingerpr (soon)
+** agreements are per class per teacher per YEAR (not per session)
 
-teachers, just contrract, w9 and agreement
+** busainesses have to have licenses, insurance, tb, contract, and agreement, fingerpr (soon)
 
-parents, need fingerprint, tb, contract, w9, and agreement
+** teachers, just contrract, w9 and agreement
 
-fingerprint
+** parents, need fingerprint, tb, contract, w9, and agreement
+
+** fingerprint
 	process (in process)
 	pass
 
 
-nice to have links to
+** nice to have links to
 	w9
 	fielduseapp  (facilities use permit)
 
 
-deposit form, for the osspto treasurer
+** deposit form, for the osspto treasurer
 	in excel format
 
 
-for each class, some list of dates
+** for each class, some list of dates
 	calendar popup
 	auto populate from SCHOOL calendar
 
-maybe dump it into google calendar
+** maybe dump it into google calendar
 	then we don't need this at all
 
-there are ALWAYS exceptions to the number of students
+** there are ALWAYS exceptions to the number of students
 
-waitlist
-	turn in check
-	check gets held
-	check gets returned
-
-
-note payee that it is correct on check
-
-there's a formula for teachers by class
+** waitlist
+***	turn in check
+***	check gets held
+***	check gets returned
 
 
-there's a date they get paid
-	she requests the check, the check gets written, she receives it,
-		note the date, check# and amount
-	if they add people later in session
-	there are checks in and checks out then
+** note payee that it is correct on check
 
-when people add later
+** there's a formula for teachers by class
+
+
+** there's a date they get paid
+***	she requests the check, the check gets written, she receives it,
+****		note the date, check# and amount
+***	if they add people later in session
+***	there are checks in and checks out then
+** when people add later
 	they can pay for some less than maximum # of sessions
 
-auto enter stuff
+** auto enter stuff
 
-enrollment form is sometiems incorrect
-	she needs to prepopulate
-	roster is now in xl yay
-
-
-
-
-----------------
-great general notes on mysql
-	http://www.anchor.com.au/hosting/support/CreatingAQuickMySQLRelationalDatabase
+** enrollment form is sometiems incorrect
+***	she needs to prepopulate
+***	roster is now in xl yay
+* great general notes on mysql
+  http://www.anchor.com.au/hosting/support/CreatingAQuickMySQLRelationalDatabase
 
 
-google calendar api
+* calendar	
+** google calendar api
 	http://code.google.com/apis/calendar/data/2.0/developers_guide_protocol.html
 	oauth to get in
 	http://code.google.com/apis/calendar/data/2.0/developers_guide_protocol.html#Auth
 
 
-caldav (android)
+** caldav (android)
 	http://wiki.davical.org/w/CalDAV_Clients/Android
 
-yii calendar
+** yii calendar
 	http://www.yiiframework.com/extension/calendar/
 	somewhat more crude: http://www.yiiframework.com/extension/simple-calendar/
 
 	
-note: models in sql are fk is PARENT. so parents don't have awareness of children, children only have awareness of parents.
-
---------------------
-
-for things like picking requirements
-	it'll be a choose from choose from
+* note: models in sql are fk is PARENT. so parents don't have awareness of children, children only have awareness of parents.
+* for things like picking requirements
+**	it'll be a choose from choose from
 	
-there will be a fair amount of fillingin via code/model 
+** there will be a fair amount of fillingin via code/model 
 
-
-import csv
+   
+* import csv
+** the stupid, broken way
 	http://www.yiiframework.com/extension/importcsv/
 	no, it doesn't work, and fails in a stupid way. fuck that.
-
-
-on windoze, this:
+** on windoze, this:
 LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n';
 
 
-on linux, this:
+** on linux, this:
 LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	parent_4, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3, 	email_parent_4, 	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
 
-omit "local" if the file is on the server
+** omit "local" if the file is on the server
 
-the order IS IMPORTANT, if it's wrong, everythign breaks
+* the order IS IMPORTANT, if it's wrong, everythign breaks
 
 
-nested forms are sub forms
+* nested forms are sub forms
 http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
 
-tabular forms, grids
+* tabular forms, grids
 	http://www.yiiframework.com/doc/guide/1.1/en/form.table
 	http://www.yiiframework.com/extension/htmltable/
 		it is just sortable, not pagable. good for small data sets?
@@ -161,7 +146,7 @@ tabular forms, grids
 	http://www.yiiframework.com/wiki/141/javascript-tabular-input/
 		javascript style, ztabular uses it
 
-drag/drop, trees, combo boxes and stuff
+* drag/drop, trees, combo boxes and stuff
 	http://www.yiiframework.com/extension/emultiselect/
 		very nice multiselect drag and drop, jquery-ish, orderable
 	http://www.yiiframework.com/extension/combobox/
@@ -170,28 +155,28 @@ drag/drop, trees, combo boxes and stuff
 	http://radakovicstevan.wordpress.com/2011/10/04/45/
 	CTree widget really, works jsut fine
 	
-form add this
+* form add this
 http://www.yiiframework.com/extension/activecolumn/
 
-ajax tabs?
+* ajax tabs?
 	http://www.yiiframework.com/extension/sl-ajax-tabs/
 
-grid columns with running totals
+* grid columns with running totals
 http://www.yiiframework.com/extension/gridcolumns/
 	http://www.yiiframework.com/extension/gridcolumns
 
 
-multilevel dropdown
+* multilevel dropdown
 http://www.yiiframework.com/extension/mcdropdown/
 
-ajax menu?
+* ajax menu?
 	http://www.yiiframework.com/extension/ajaxmenu/
-
+	
 	ajax submit is here:
 		http://code.google.com/p/yii/issues/detail?id=2008
 
 
-unknown widgets
+* unknown widgets
 http://www.yiiframework.com/extension/updatedaddthis/
 	naw, that's some kind of facebook/reddit thing
 
@@ -530,14 +515,14 @@ http://www.yiiframework.com/wiki/48/by-example-chtml/
 
 
 
-alter table class_info change day_of_week day_of_week ENUM('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') ;
+** alter table class_info change day_of_week day_of_week ENUM('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') ;
 
 
-portlets are interesting! they're like dialog boxes, or can be used as them
-	you just echo a bunch of html, it puts it in that little dialog
-	could be a GREAT way to do popups
+* portlets are interesting! they're like dialog boxes, or can be used as them
+**	you just echo a bunch of html, it puts it in that little dialog
+**	could be a GREAT way to do popups
 		i'd still need ajax submit though. portlets are just css presentation
-	more on portlets
+**	more on portlets
 		http://www.yiiframework.com/doc/blog/1.1/en/portlet.menu
 
 
@@ -555,12 +540,13 @@ $user->withRelated->save(true, array('things'));
 
 
 
-WOW, relation listbox!!
+** WOW, relation listbox!!
 	http://www.yiiframework.com/extension/relation/
 	automatically populates, most of what i need?
 	used it for checkboxes, it works. the 2-pane does not tho
 
 
+** what it shows up as in post/firebug:
 RequirementType[description]=Fingerprint
 RequirementType[InstructorType][]=1
 RequirementType[InstructorType][]=2
@@ -569,17 +555,17 @@ RequirementType[InstructorType][]=4
 yt0=Save
 
 
-hmm, why wrong?
+** hmm, why wrong?
 was: insert into required_for (instructor_type_id, requirement_type_id) values ('5', '1') 
 Tg
 y
 
 
- auugh
+** auugh
   viewButtonUrl
   Yii::app()->urlManager->createUrl("Signup/view",$data->primaryKey)
 
-this is what started the madness
+** this is what started the madness
  http://www.yiiframework.com/forum/index.php?/topic/3741-auto-breadcrumbs/
  
  
@@ -661,10 +647,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 * hmm, ajax time
-	$('rasta')[3].value
-
-
-
+  $('rasta')[3].value
 * company for checks is a link
 	but it MUST MUST match up with the company for the instructors!
 	but here's the deal. checks are ALWAYS AND FOREVER done
@@ -696,7 +679,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 
-*  custom validatino rules
+* custom validatino rules
 http://www.yiiframework.com/forum/index.php?/topic/9205-difrent-validation-rules-depending-on-selected-options/
 just sstick it in the model!
 public function address1Required()
@@ -724,10 +707,6 @@ let's see if i can do that again
 
 **	an even mroe bandcampy way:
 		http://www.suumit.com/projects/bsmSelect/examples/index.html
-
-
-	
-	
 * tabular
 **  http://www.yiiframework.com/forum/index.php?/topic/6218-cform-and-tabular-input/
 **  http://www.yiiframework.com/wiki/141/javascript-tabular-input/

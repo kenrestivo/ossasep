@@ -1,4 +1,4 @@
-#-*- org -*-
+# -*- mode:org; -*-
 * reports
 
 **	D  (payment for companies)

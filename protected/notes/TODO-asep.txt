@@ -1,4 +1,4 @@
-#-*- org -*-
+# -*- mode:org; -*-
 TODO tasks for ASEP
 
 * bugs
