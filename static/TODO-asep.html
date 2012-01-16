@@ -6,7 +6,7 @@ lang="en" xml:lang="en">
 <title>TODO-asep</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012/01/14 12:09:16 PM"/>
+<meta name="generated" content="2012/01/16 10:41:42 AM"/>
 <meta name="author" content="lken"/>
 <style type="text/css">
   html {
@@ -36,391 +36,248 @@ lang="en" xml:lang="en">
 <h1 class="title">TODO-asep</h1>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#sec-1">1 ui</a>
+<li><a href="#sec-1">1 bugs</a></li>
+<li><a href="#sec-2">2 ui still to do</a>
 <ul>
-<li><a href="#sec-2">1.1 company checks</a></li>
-<li><a href="#sec-3">1.2 joint checks show unpaid vs paid classes as a separate group in dropdown</a></li>
-<li><a href="#sec-4">1.3 a student signup screen</a>
+<li><a href="#sec-3">2.1 company checks</a>
 <ul>
-<li><a href="#sec-5">1.3.1 [[http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/][http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/]]</a></li>
+<li><a href="#sec-4">2.1.1 look at her spreadsheet to see</a></li>
+<li><a href="#sec-5">2.1.2 show check # date, and scholarship (they have to see it)</a></li>
+<li><a href="#sec-6">2.1.3 an undelivered checks screen, by class</a></li>
+<li><a href="#sec-7">2.1.4 a joint as example: [[http://localhost/asepgui/index.php/Company/2][http://localhost/asepgui/index.php/Company/2]]</a></li>
+<li><a href="#sec-8">2.1.5 a printout of it for the company, or let them log in to see</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">1.4 multiline entry for checks</a></li>
-<li><a href="#sec-7">1.5 add cancelled date and hide/clear it on non cancelled</a></li>
-<li><a href="#sec-8">1.6 expenses really do need to be assigned to classes (but not students)</a></li>
-<li><a href="#sec-9">1.7 check_income</a>
-<ul>
-<li><a href="#sec-10">1.7.1 make multi-entry form work for EDITING too</a></li>
-<li><a href="#sec-11">1.7.2 multi-form: should auto-javascript calculate totals applied and check them</a></li>
+<li><a href="#sec-9">2.2 joint checks show unpaid vs paid classes as a separate group in dropdown</a></li>
 </ul>
 </li>
-<li><a href="#sec-12">1.8 validation and data entry error checking/warning</a>
+<li><a href="#sec-10">3 CLEANUP</a>
 <ul>
-<li><a href="#sec-13">1.8.1 ajax validation via yii built in -- errors</a></li>
-<li><a href="#sec-14">1.8.2 trapping sql/fk errors through ajax validation</a></li>
-<li><a href="#sec-15">1.8.3 js validation via yii built in</a></li>
-<li><a href="#sec-16">1.8.4 ajax validation via yii built in -- warnings/notice</a></li>
-<li><a href="#sec-17">1.8.5 not sure where</a></li>
-<li><a href="#sec-18">1.8.6 how?</a></li>
+<li><a href="#sec-11">3.1 vital</a>
+<ul>
+<li><a href="#sec-12">3.1.1 use ajax tabs!</a></li>
+<li><a href="#sec-13">3.1.2 put in proper RBAC</a></li>
+<li><a href="#sec-14">3.1.3 redesign the homepage setup</a></li>
 </ul>
 </li>
-<li><a href="#sec-19">1.9 in general, make menu on views like checkincome (just edit and delete)</a></li>
+<li><a href="#sec-15">3.2 useful</a>
+<ul>
+<li><a href="#sec-16">3.2.1 backup refinements</a></li>
+<li><a href="#sec-17">3.2.2 cgridview pager fix</a></li>
+<li><a href="#sec-18">3.2.3 in _income, make amount autopopulate ajax based on class chosen</a></li>
+<li><a href="#sec-19">3.2.4 instructors passwords</a></li>
+<li><a href="#sec-20">3.2.5 make all the -&gt;dropDown stuff have an array('empty' =&gt; 'Choose One') in options</a></li>
+<li><a href="#sec-21">3.2.6 a student signup screen</a></li>
+<li><a href="#sec-22">3.2.7 link the signup to income via model!</a></li>
+<li><a href="#sec-23">3.2.8 go through all the multi-link _forms, put &lt;div row&gt; before the issset</a></li>
+<li><a href="#sec-24">3.2.9 redo the unpaid thing, this is ridiculous</a></li>
+<li><a href="#sec-25">3.2.10 make session dropdown disabled css by default, checkbox to change</a></li>
+<li><a href="#sec-26">3.2.11 validation and data entry error checking/warning</a></li>
+<li><a href="#sec-27">3.2.12 date formatting and saving cleanups             </a></li>
+<li><a href="#sec-28">3.2.13 remove search/sort for nonsortable columns</a></li>
+<li><a href="#sec-29">3.2.14 add  the returnto for zhtml::clickablerow</a></li>
+<li><a href="#sec-30">3.2.15 today button, fix</a></li>
+<li><a href="#sec-31">3.2.16 admin simulation of instructor screens</a></li>
+<li><a href="#sec-32">3.2.17 trap exceptions on save,  if there's an integrity constraint!</a></li>
+<li><a href="#sec-33">3.2.18 use either breadcrumbs or returnto, but be consistent!</a></li>
+<li><a href="#sec-34">3.2.19 make the ajax/json checkincomecontroller payer save use massive assignemnt with safe</a></li>
+<li><a href="#sec-35">3.2.20 also trap exceptions on double-delete, it happens in ajax-land</a></li>
+<li><a href="#sec-36">3.2.21 search/sort</a></li>
+<li><a href="#sec-37">3.2.22 browser exploiter crap</a></li>
+<li><a href="#sec-38">3.2.23 multiline entry for checks</a></li>
+<li><a href="#sec-39">3.2.24 move the code for student #x of max y from javascript to a php or js lib function</a></li>
+<li><a href="#sec-40">3.2.25 more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row</a></li>
+<li><a href="#sec-41">3.2.26 this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION</a></li>
+<li><a href="#sec-42">3.2.27 signups: add cancelled date and hide/clear it on non cancelled</a></li>
+<li><a href="#sec-43">3.2.28 make company id 1  not editable or removable (company form/view)</a></li>
+<li><a href="#sec-44">3.2.29 autocompletes not dropdowns</a></li>
+<li><a href="#sec-45">3.2.30 trap exception on populate for school days</a></li>
+<li><a href="#sec-46">3.2.31 make the deposit form editable in the same format as the printabel one</a></li>
+<li><a href="#sec-47">3.2.32 to avoid confusion, special case the company stuff with js</a></li>
+<li><a href="#sec-48">3.2.33 new on pulldowns!! so new instructor at end of pulldown for instructor</a></li>
+<li><a href="#sec-49">3.2.34 now make the save() actions check breadcrumbs, not returnto</a></li>
+<li><a href="#sec-50">3.2.35 instructors need to use both email addresses to login if they have &gt; 1</a></li>
 </ul>
 </li>
-<li><a href="#sec-20">2 bugfixen</a>
+<li><a href="#sec-51">3.3 cosmetic</a>
 <ul>
-<li><a href="#sec-21">2.1 in paid, why are cancelleds payments not showing up at all?</a></li>
-<li><a href="#sec-22">2.2 they WERE paid. only returned checks shouldn't show up.</a></li>
-<li><a href="#sec-23">2.3 chozen does not like being provided with arrays from sql finds</a>
+<li><a href="#sec-52">3.3.1 put in $this-&gt;pageTitle= for all the pages! helps with breadcrumbs</a></li>
+<li><a href="#sec-53">3.3.2 use the roster as the template for any index views, i have the css nice</a></li>
+<li><a href="#sec-54">3.3.3 the chosen fields are too narrow</a></li>
+<li><a href="#sec-55">3.3.4 the spans i'm using should be DIVS! everywhere (almost)!</a></li>
+<li><a href="#sec-56">3.3.5 remove all those style: alignt-right things and make it proper css!</a></li>
+<li><a href="#sec-57">3.3.6 in general, make menu on views like checkincome (just edit and delete)</a></li>
+<li><a href="#sec-58">3.3.7 a nice jui popup when hovering over a cell, showing description!</a></li>
+<li><a href="#sec-59">3.3.8 use wide layout with menu at top from roster for ALL things</a></li>
+<li><a href="#sec-60">3.3.9 the goddamned times are wrong, they're not in am/pm time! they don't convert</a></li>
+<li><a href="#sec-61">3.3.10 generate via pdf</a></li>
+<li><a href="#sec-62">3.3.11 make all monetary fields NOT NULL default 0!</a></li>
+</ul>
+</li>
+<li><a href="#sec-63">3.4 bugfixen</a>
 <ul>
-<li><a href="#sec-24">2.3.1 it sends the right stuff, but no search is actually occurring</a></li>
+<li><a href="#sec-64">3.4.1 unbalanced checks formula is wrong</a></li>
+<li><a href="#sec-65">3.4.2 in paid, why are cancelleds payments not showing up at all?</a></li>
+<li><a href="#sec-66">3.4.3 they WERE paid. only returned checks shouldn't show up.</a></li>
+<li><a href="#sec-67">3.4.4 chozen does not like being provided with arrays from sql finds</a></li>
+<li><a href="#sec-68">3.4.5 oh crap. how to deal with partial refunds???</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-25">3 oh crap. how to deal with partial refunds???</a></li>
-<li><a href="#sec-26">4 small ui things</a>
+<li><a href="#sec-69">4 STUCK</a>
 <ul>
-<li><a href="#sec-27">4.1 date/time conversions</a></li>
+<li><a href="#sec-70">4.1 student parentt relaton for user signin</a>
+<ul>
+<li><a href="#sec-71">4.1.1 so a parent would be a user, and it would have to be tied to some # of students</a></li>
+<li><a href="#sec-72">4.1.2 that is REALLY HARD, how do you map them conceptually?</a></li>
 </ul>
 </li>
-<li><a href="#sec-28">5 gui conundrums wrapped in enigmas</a>
+<li><a href="#sec-73">4.2 open questions</a>
 <ul>
-<li><a href="#sec-29">5.1 clean up date and weekday formatting, using formatter in yii</a></li>
-<li><a href="#sec-30">5.2 payments -&gt; deposits</a></li>
-<li><a href="#sec-31">5.3 how to handle teachers who are students?</a></li>
-<li><a href="#sec-32">5.4 checks get returned, she said, if they're waitlisted</a></li>
+<li><a href="#sec-74">4.2.1 how do you know who to write the check to (from that report)?</a></li>
+<li><a href="#sec-75">4.2.2 will you have a case where the materials fee is NOT PER CLASS</a></li>
 </ul>
 </li>
-<li><a href="#sec-33">6 CLEANUP</a>
-<ul>
-<li><a href="#sec-34">6.1 vital</a>
-<ul>
-<li><a href="#sec-35">6.1.1 replace cjui tabs with some kind of NON JUI tab thing</a></li>
-<li><a href="#sec-36">6.1.2 put in proper RBAC</a></li>
-<li><a href="#sec-37">6.1.3 redesign the homepage setup</a></li>
+<li><a href="#sec-76">4.3 student payment status, i.e. enrollment with payment status</a></li>
+<li><a href="#sec-77">4.4 ok, forms starting to make sense</a></li>
 </ul>
 </li>
-<li><a href="#sec-38">6.2 useful</a>
+<li><a href="#sec-78">5 FUTURE REQUIRD</a>
 <ul>
-<li><a href="#sec-39">6.2.1 somehow protect that cgi a bit better</a></li>
-<li><a href="#sec-40">6.2.2 make sure backup integrity is ok</a></li>
-<li><a href="#sec-41">6.2.3 in _income, make amount autopopulate ajax based on class chosen</a></li>
-<li><a href="#sec-42">6.2.4 a strategy for custom homepages, use a controller for the logic</a></li>
-<li><a href="#sec-43">6.2.5 instructors passwords</a></li>
-<li><a href="#sec-44">6.2.6 make all the -&gt;dropDown stuff have an array('empty' =&gt; 'Choose One') in options</a></li>
-<li><a href="#sec-45">6.2.7 link the signup to income via model!</a></li>
-<li><a href="#sec-46">6.2.8 go through all the multi-link _forms, put &lt;div row&gt; before the issset</a></li>
-<li><a href="#sec-47">6.2.9 redo the unpaid thing, this is ridiculous</a></li>
-<li><a href="#sec-48">6.2.10 make session dropdown disabled css by default, checkbox to change</a></li>
-<li><a href="#sec-49">6.2.11 manually edit dates, in m/d/y format</a></li>
-<li><a href="#sec-50">6.2.12 remove search/sort for nonsortable columns</a></li>
-<li><a href="#sec-51">6.2.13 add  the returnto for zhtml::clickablerow</a></li>
-<li><a href="#sec-52">6.2.14 today button, fix</a></li>
-<li><a href="#sec-53">6.2.15 add date validator</a></li>
-<li><a href="#sec-54">6.2.16 admin simulation of instructor screens</a></li>
-<li><a href="#sec-55">6.2.17 trap exceptions on save,  if there's an integrity constraint!</a></li>
-<li><a href="#sec-56">6.2.18 use either breadcrumbs or returnto, but be consistent!</a></li>
-<li><a href="#sec-57">6.2.19 make the ajax/json checkincomecontroller payer save use massive assignemnt with safe</a></li>
-<li><a href="#sec-58">6.2.20 also trap exceptions on double-delete, it happens in ajax-land</a></li>
-<li><a href="#sec-59">6.2.21 make search work with booleans/checkboxes</a></li>
-<li><a href="#sec-60">6.2.22 browser exploiter crap</a></li>
-<li><a href="#sec-61">6.2.23 move the code for student #x of max y from javascript to a php or js lib function</a></li>
-<li><a href="#sec-62">6.2.24 more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row</a></li>
-<li><a href="#sec-63">6.2.25 this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION</a></li>
-<li><a href="#sec-64">6.2.26 make search work with linktables!</a></li>
-<li><a href="#sec-65">6.2.27 make sort work with linked subviews</a></li>
-<li><a href="#sec-66">6.2.28 make company id 1  not editable or removable (company form/view)</a></li>
-<li><a href="#sec-67">6.2.29 autocompletes not dropdowns</a></li>
-<li><a href="#sec-68">6.2.30 make date pickers have longer terms for some things (meetings, paperwork)</a></li>
-<li><a href="#sec-69">6.2.31 trap exception on populate for school days</a></li>
-<li><a href="#sec-70">6.2.32 clean up massive sql queries and translate them into cdbcriteria</a></li>
-<li><a href="#sec-71">6.2.33 make the deposit form editable in the same format as the printabel one</a></li>
-<li><a href="#sec-72">6.2.34 to avoid confusion, special case the company stuff with js</a></li>
-<li><a href="#sec-73">6.2.35 new on pulldowns!! so new instructor at end of pulldown for instructor</a></li>
-<li><a href="#sec-74">6.2.36 now make the save() actions check breadcrumbs, not returnto</a></li>
+<li><a href="#sec-79">5.1 must have for NEXT SESSION!</a>
+<ul>
+<li><a href="#sec-80">5.1.1 add db field for registration start date/time for session</a></li>
+<li><a href="#sec-81">5.1.2 for setting session, for now, just a simple non-ajax screen, nothing fancy</a></li>
+<li><a href="#sec-82">5.1.3 go through and make sure all my queries and searches are session-enabled</a></li>
+<li><a href="#sec-83">5.1.4 how to import/add new class from previous session</a></li>
+<li><a href="#sec-84">5.1.5 delete a class</a></li>
+<li><a href="#sec-85">5.1.6 requirements per class, i.e. for agreement</a></li>
+<li><a href="#sec-86">5.1.7 the signup form and week/month schedule</a></li>
 </ul>
 </li>
-<li><a href="#sec-75">6.3 cosmetic</a>
+<li><a href="#sec-87">5.2 must have for NEXT YEAR:</a>
 <ul>
-<li><a href="#sec-76">6.3.1 put in $this-&gt;pageTitle= for all the pages! helps with breadcrumbs</a></li>
-<li><a href="#sec-77">6.3.2 use the roster as the template for any index views, i have the css nice</a></li>
-<li><a href="#sec-78">6.3.3 the chosen fields are too narrow</a></li>
-<li><a href="#sec-79">6.3.4 the spans i'm using should be DIVS! everywhere (almost)!</a></li>
-<li><a href="#sec-80">6.3.5 remove all those style: alignt-right things and make it proper css!</a></li>
-<li><a href="#sec-81">6.3.6 a nice jui popup when hovering over a cell, showing description!</a></li>
-<li><a href="#sec-82">6.3.7 year bump buttons on the expired and received datepickers</a></li>
-<li><a href="#sec-83">6.3.8 use wide layout with menu at top from roster for ALL things</a></li>
-<li><a href="#sec-84">6.3.9 dependent date/timepickers, i.e. start/end intelligently</a></li>
-<li><a href="#sec-85">6.3.10 the goddamned times are wrong, they're not in am/pm time! they don't convert</a></li>
-<li><a href="#sec-86">6.3.11 generate via pdf</a></li>
-<li><a href="#sec-87">6.3.12 put in a db table</a></li>
-<li><a href="#sec-88">6.3.13 and show it as backup status, somewhere, like on admin page</a></li>
+<li><a href="#sec-88">5.2.1 need some way to track the current school year. </a></li>
+<li><a href="#sec-89">5.2.2 picklist of STUDENTS could get huge, and need to be pared down</a></li>
+<li><a href="#sec-90">5.2.3 i will DEFINITELY need some kind of de-duping system</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-89">7 STUCK</a>
+<li><a href="#sec-91">6 FOR NON-ADMIN USER LOGIN</a>
 <ul>
-<li><a href="#sec-90">7.1 student parentt relaton for user signin</a>
+<li><a href="#sec-92">6.1 future/with user login security</a>
 <ul>
-<li><a href="#sec-91">7.1.1 so a parent would be a user, and it would have to be tied to some # of students</a></li>
-<li><a href="#sec-92">7.1.2 that is REALLY HARD, how do you map them conceptually?</a></li>
-</ul>
-</li>
-<li><a href="#sec-93">7.2 open questions</a>
-<ul>
-<li><a href="#sec-94">7.2.1 how do you know who to write the check to (from that report)?</a></li>
-<li><a href="#sec-95">7.2.2 will you have a case where the materials fee is NOT PER CLASS</a></li>
-</ul>
-</li>
-<li><a href="#sec-96">7.3 student payment status, i.e. enrollment with payment status</a></li>
-<li><a href="#sec-97">7.4 ok, forms starting to make sense</a></li>
-</ul>
-</li>
-<li><a href="#sec-98">8 FUTURE REQUIRD</a>
-<ul>
-<li><a href="#sec-99">8.1 must have for NEXT SESSION!</a>
-<ul>
-<li><a href="#sec-100">8.1.1 add db field for registration start date/time for session</a></li>
-<li><a href="#sec-101">8.1.2 for setting session, for now, just a simple non-ajax screen, nothing fancy</a></li>
-<li><a href="#sec-102">8.1.3 go through and make sure all my queries and searches are session-enabled</a></li>
-<li><a href="#sec-103">8.1.4 how to import/add new class from previous session</a></li>
-<li><a href="#sec-104">8.1.5 delete a class</a></li>
-<li><a href="#sec-105">8.1.6 requirements per class, i.e. for agreement</a></li>
-<li><a href="#sec-106">8.1.7 the signup form and week/month schedule</a></li>
-</ul>
-</li>
-<li><a href="#sec-107">8.2 must have for NEXT YEAR:</a>
-<ul>
-<li><a href="#sec-108">8.2.1 need some way to track the current school year. </a></li>
-<li><a href="#sec-109">8.2.2 picklist of STUDENTS could get huge, and need to be pared down</a></li>
-<li><a href="#sec-110">8.2.3 i will DEFINITELY need some kind of de-duping system</a></li>
+<li><a href="#sec-93">6.1.1 let instructors edit descriptions</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-111">9 FOR NON-ADMIN USER LOGIN</a>
+<li><a href="#sec-94">7 BELOW THE LINE</a>
 <ul>
-<li><a href="#sec-112">9.1 future/with user login security</a>
+<li><a href="#sec-95">7.1 maybe make location a link column, not let them be in same place</a></li>
+<li><a href="#sec-96">7.2 try editable datatable!</a></li>
+<li><a href="#sec-97">7.3 expenses really do need to be assigned to classes (but not students)</a></li>
+<li><a href="#sec-98">7.4 have a checkbox on income page to select which classes to pay</a></li>
+<li><a href="#sec-99">7.5 visual show/add meeting dates</a></li>
+<li><a href="#sec-100">7.6 new student wizard really. ajaxy: class-&gt;student-&gt;import-&gt;signup</a></li>
+<li><a href="#sec-101">7.7 finish the relational mappings</a>
 <ul>
-<li><a href="#sec-113">9.1.1 let instructors edit descriptions</a></li>
-</ul></li>
+<li><a href="#sec-102">7.7.1 a way to create/edit/save a dependent model with ONE field in relation</a></li>
+<li><a href="#sec-103">7.7.2 gui splits for income/expense</a></li>
 </ul>
 </li>
-<li><a href="#sec-114">10 BELOW THE LINE</a>
-<ul>
-<li><a href="#sec-115">10.1 maybe make location a link column, not let them be in same place</a></li>
-<li><a href="#sec-116">10.2 try editable datatable!</a></li>
-<li><a href="#sec-117">10.3 make a validation rule to make sure that the instructors aren't getting &gt; 100 % !!</a></li>
-<li><a href="#sec-118">10.4 have a checkbox on income page to select which classes to pay</a></li>
-<li><a href="#sec-119">10.5 visual show/add meeting dates</a></li>
-<li><a href="#sec-120">10.6 new student wizard really. ajaxy: class-&gt;student-&gt;import-&gt;signup</a></li>
-<li><a href="#sec-121">10.7 finish the relational mappings</a>
-<ul>
-<li><a href="#sec-122">10.7.1 a way to create/edit/save a dependent model with ONE field in relation</a></li>
-<li><a href="#sec-123">10.7.2 gui splits for income/expense</a></li>
+<li><a href="#sec-104">7.8 autoppopulate the check when adding</a></li>
+<li><a href="#sec-105">7.9 how to handle teachers who are students?</a></li>
 </ul>
 </li>
-<li><a href="#sec-124">10.8 autoppopulate the check when adding</a></li>
-</ul>
-</li>
-<li><a href="#sec-125">11 open questions</a></li>
+<li><a href="#sec-106">8 open questions</a></li>
 </ul>
 
-<h2><a name="sec-1">1 ui</a></h2>
+<h2><a name="sec-1">1 bugs</a></h2>
 
 
-<h3><a name="sec-2">1.1 company checks</a></h3>
+<h2><a name="sec-2">2 ui still to do</a></h2>
 
-<p>an undelivered checks screen, by class
-just checkboxes, and a date, and mark delivered for all of them.
+
+<h3><a name="sec-3">2.1 company checks</a></h3>
+
+
+<h4><a name="sec-4">2.1.1 look at her spreadsheet to see</a></h4>
+
+
+<h4><a name="sec-5">2.1.2 show check # date, and scholarship (they have to see it)</a></h4>
+
+
+<h4><a name="sec-6">2.1.3 an undelivered checks screen, by class</a></h4>
+
+<p>just checkboxes, and a date, and mark delivered for all of them.
 pick which checks are delivered!
 they are by class, which is how she files them
 classinfo/_income
 a checkbox, mark all, save, would be fine
 </p>
-<h3><a name="sec-3">1.2 joint checks show unpaid vs paid classes as a separate group in dropdown</a></h3>
+<h4><a name="sec-7">2.1.4 a joint as example: <a href="http://localhost/asepgui/index.php/Company/2">http://localhost/asepgui/index.php/Company/2</a></a></h4>
 
 
-<h3><a name="sec-4">1.3 a student signup screen</a></h3>
-
-<p>just a student pulldown, a few tabs, etc
-</p>
-<h4><a name="sec-5">1.3.1 <a href="http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/">http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/</a></a></h4>
-
-
-<h3><a name="sec-6">1.4 multiline entry for checks</a></h3>
-
-
-<h3><a name="sec-7">1.5 add cancelled date and hide/clear it on non cancelled</a></h3>
-
-
-<h3><a name="sec-8">1.6 expenses really do need to be assigned to classes (but not students)</a></h3>
-
-
-<h3><a name="sec-9">1.7 check_income</a></h3>
-
-
-<h4><a name="sec-10">1.7.1 make multi-entry form work for EDITING too</a></h4>
-
-<p>now the saving
-create, student id provided
-create, nothing provided
-</p>
-<h4><a name="sec-11">1.7.2 multi-form: should auto-javascript calculate totals applied and check them</a></h4>
-
-
-<h3><a name="sec-12">1.8 validation and data entry error checking/warning</a></h3>
-
-
-<h4><a name="sec-13">1.8.1 ajax validation via yii built in -- errors</a></h4>
+<h4><a name="sec-8">2.1.5 a printout of it for the company, or let them log in to see</a></h4>
 
 <ul>
-<li>don't allow returned checks to be deposited/delivered!<br/>
-</li>
-<li>don't allow deposited/delivered checks to be returned!<br/>
-</li>
-<li>[#A] the student must be signed up for that class before it gets paid<br/>
-look up the keys, see that there's something there
-i can use my duplicate validator as a guide
-but! better to constrain isn't it?
-</li>
-<li>[#B] a check or split where totals exceed check<br/>
-make sure the incomes are not more or less than the total check
-it's probably ok if the incomes are LESS than total check tho
-</li>
-<li>instructor percentages don't exceed 100%<br/>
+<li>possibly more pdf here<br/>
 </li>
 </ul>
-<h4><a name="sec-14">1.8.2 trapping sql/fk errors through ajax validation</a></h4>
+<h3><a name="sec-9">2.2 joint checks show unpaid vs paid classes as a separate group in dropdown</a></h3>
+
+
+<h2><a name="sec-10">3 CLEANUP</a></h2>
+
+
+<h3><a name="sec-11">3.1 vital</a></h3>
+
+
+<h4><a name="sec-12">3.1.1 use ajax tabs!</a></h4>
 
 <ul>
-<li>trying to delete things that have foreign keys<br/>
-in check, for sure, but also everywhere really
+<li>it's possible! just need to do what i did for income, use true,false for renderpartial<br/>
 </li>
-<li>change company name with instructors who are not in that company<br/>
-this is an easy one, really. in fact i could do it as JS or ajax
+<li>and, i need to make the edit links use createurl explicitly<br/>
 </li>
-<li>duplicate key, unique validators, dupe checking! for all records really<br/>
-all the linktables! it'll have to check key combos
-first/last in student
-class meeting/class_id unique
-school day in calendar
-</li>
-</ul>
-<h4><a name="sec-15">1.8.3 js validation via yii built in</a></h4>
-
+<li>it totally breaks my auto-enter stuff in deposits though!<br/>
 <ul>
-<li>entering to a session not the current default<br/>
+<li>on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!<br/>
+</li>
+</ul></li>
+<li>delete links don't work though. why?<br/>
 </li>
 </ul>
-<h4><a name="sec-16">1.8.4 ajax validation via yii built in -- warnings/notice</a></h4>
-
-<ul>
-<li>class over capacity but student set to enrolled<br/>
-i could really do that just as a status bar in the controller/view
-</li>
-<li>change the day of week but there are active meetings<br/>
-</li>
-</ul>
-<h4><a name="sec-17">1.8.5 not sure where</a></h4>
-
-
-<h4><a name="sec-18">1.8.6 how?</a></h4>
-
-<p>populate a js array with the data, and check it that way?
-</p>
-<h3><a name="sec-19">1.9 in general, make menu on views like checkincome (just edit and delete)</a></h3>
-
-<p>and maybe add ones for the others, the tab ones
-</p>
-<h2><a name="sec-20">2 bugfixen</a></h2>
-
-
-<h3><a name="sec-21">2.1 in paid, why are cancelleds payments not showing up at all?</a></h3>
-
-<p>is this still happening?
-</p>
-<h3><a name="sec-22">2.2 they WERE paid. only returned checks shouldn't show up.</a></h3>
-
-<p>or maybe they should, just not in totals?
-</p>
-<h3><a name="sec-23">2.3 chozen does not like being provided with arrays from sql finds</a></h3>
-
-<p>it makes the width of the box only as wide as teh FIRST item.
-i tried dataprovider but it did not help
-</p>
-<h4><a name="sec-24">2.3.1 it sends the right stuff, but no search is actually occurring</a></h4>
-
-
-<h2><a name="sec-25">3 oh crap. how to deal with partial refunds???</a></h2>
-
-<p>i.e. waitlist? or a cancellation of only ONE class, not all?
-or late refunds
-DO I NEED TO TRACK REFUND CHECKS?
-</p>
-
-
-
-<h2><a name="sec-26">4 small ui things</a></h2>
-
-
-<h3><a name="sec-27">4.1 date/time conversions</a></h3>
-
-<p>do it in the load_model method!
-and before save in update/create.
-that is all. no problems, no muss, no fuss.
-</p>
-<h2><a name="sec-28">5 gui conundrums wrapped in enigmas</a></h2>
-
-
-<h3><a name="sec-29">5.1 clean up date and weekday formatting, using formatter in yii</a></h3>
-
-<p>not my zhtml hack
-but beware the afterfind/beforevalidate crap!
-it could break my model start/end stuff VERY IMPORTANT!
-do it by overloading load_model and beforevalidate, instead
-BE CAREFUL!
-i could create a separate get/set that wraps it
-for every model that has dates in it. gah.
-or a wrapper that transforms them before/after manually
-</p>
-<h3><a name="sec-30">5.2 payments -&gt; deposits</a></h3>
-
-
-<h3><a name="sec-31">5.3 how to handle teachers who are students?</a></h3>
-
-<p>reflextitve relation. dammit. they're not teachers of THIS
-</p>
-<h3><a name="sec-32">5.4 checks get returned, she said, if they're waitlisted</a></h3>
-
-
-<h2><a name="sec-33">6 CLEANUP</a></h2>
-
-
-<h3><a name="sec-34">6.1 vital</a></h3>
-
-
-<h4><a name="sec-35">6.1.1 replace cjui tabs with some kind of NON JUI tab thing</a></h4>
-
-
-<h4><a name="sec-36">6.1.2 put in proper RBAC</a></h4>
+<h4><a name="sec-13">3.1.2 put in proper RBAC</a></h4>
 
 <ul>
 <li>a proper guest role too<br/>
 </li>
+<li>and multiple admin accounts<br/>
+</li>
 <li>change all the -&gt;user to -&gt;role everywhere<br/>
 </li>
 </ul>
-<h4><a name="sec-37">6.1.3 redesign the homepage setup</a></h4>
+<h4><a name="sec-14">3.1.3 redesign the homepage setup</a></h4>
 
 <ul>
 <li>dispatch to different home pages based on role!<br/>
 </li>
+<li>a strategy for custom homepages, use a controller for the logic<br/>
+<ul>
+<li>some kind of dispatch method, which homepage for which user<br/>
+</li>
+<li>what gets shown on what (maybe use roles?)<br/>
+</li>
+</ul></li>
 </ul>
-<h3><a name="sec-38">6.2 useful</a></h3>
+<h3><a name="sec-15">3.2 useful</a></h3>
 
 
-<h4><a name="sec-39">6.2.1 somehow protect that cgi a bit better</a></h4>
+<h4><a name="sec-16">3.2.1 backup refinements</a></h4>
 
+<ul>
+<li>somehow protect that cgi a bit better<br/>
 <ul>
 <li>make that directory scriptaliased?<br/>
 </li>
@@ -428,12 +285,56 @@ or a wrapper that transforms them before/after manually
 </li>
 <li>pass in passwords, etc, rather than having it hardcoded in the cgi?<br/>
 </li>
+</ul></li>
+<li>make sure backup integrity is ok<br/>
+run bunzip2 -t, a test decompression, after the backup
+</li>
+<li>and show it as backup status, somewhere, like on admin page<br/>
+<ul>
+<li>that's mean a db table saving date/ip of last backup<br/>
+<ul>
+<li>datetime<br/>
+</li>
+<li>ipaddress<br/>
+</li>
+<li>username (can have multiple)<br/>
+</li>
+</ul></li>
+</ul></li>
 </ul>
-<h4><a name="sec-40">6.2.2 make sure backup integrity is ok</a></h4>
+<h4><a name="sec-17">3.2.2 cgridview pager fix</a></h4>
 
-<p>run bunzip2 -t, a test decompression, after the backup
-</p>
-<h4><a name="sec-41">6.2.3 in _income, make amount autopopulate ajax based on class chosen</a></h4>
+<ul>
+<li>somehow force KArrayDataProvider to use no pagination as default?<br/>
+</li>
+<li>leave cgridview pager 10 but provide an ajax button to show all (no pager)<br/>
+<ul>
+<li>especially in checks<br/>
+</li>
+<li>there's pagination in karraydataprovider, also cpagination<br/>
+<ul>
+<li>but how? init doesn't work, __construct doesn't work. wtf?<br/>
+</li>
+</ul></li>
+<li>also this: <a href="http://www.yiiframework.com/forum/index.php?/topic/27742-where-to-set-default-pagesize/">http://www.yiiframework.com/forum/index.php?/topic/27742-where-to-set-default-pagesize/</a><br/>
+<ul>
+<li>Edit CPagination (Yuck!)<br/>
+</li>
+<li>Extend CPagination and have your version pull the data out of config.<br/>
+<ul>
+<li>like this:  <a href="http://www.yiiframework.com/extension/pagesize/">http://www.yiiframework.com/extension/pagesize/</a><br/>
+<ul>
+<li>NOTE requires yii 1.1.8, which i think i have<br/>
+</li>
+</ul></li>
+</ul></li>
+<li>Then set it as the pagination object for CActiveDataProvider with the setPagination() method.<br/>
+You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
+</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4><a name="sec-18">3.2.3 in _income, make amount autopopulate ajax based on class chosen</a></h4>
 
 <ul>
 <li>autocomplete the amount on income based on class<br/>
@@ -442,15 +343,7 @@ $("#form_field").chosen().change( … );
 didn't i do that already?
 </li>
 </ul>
-<h4><a name="sec-42">6.2.4 a strategy for custom homepages, use a controller for the logic</a></h4>
-
-<ul>
-<li>some kind of dispatch method, which homepage for which user<br/>
-</li>
-<li>what gets shown on what (maybe use roles?)<br/>
-</li>
-</ul>
-<h4><a name="sec-43">6.2.5 instructors passwords</a></h4>
+<h4><a name="sec-19">3.2.4 instructors passwords</a></h4>
 
 <ul>
 <li>a table with<br/>
@@ -470,19 +363,29 @@ maybe another table of just plain old users? ugly, but it'd work.
 
 </li>
 </ul>
-<h4><a name="sec-44">6.2.6 make all the -&gt;dropDown stuff have an array('empty' =&gt; 'Choose One') in options</a></h4>
+<h4><a name="sec-20">3.2.5 make all the -&gt;dropDown stuff have an array('empty' =&gt; 'Choose One') in options</a></h4>
 
 
-<h4><a name="sec-45">6.2.7 link the signup to income via model!</a></h4>
+<h4><a name="sec-21">3.2.6 a student signup screen</a></h4>
+
+<p>just a student pulldown, a few tabs, etc
+</p><ul>
+<li><a href="http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/">http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/</a><br/>
+</li>
+</ul>
+<h4><a name="sec-22">3.2.7 link the signup to income via model!</a></h4>
 
 <p>i.e. in income, belongs_to signup, link by multi fields
 and in signup, has_many income. this will be key for reports!
-</p>
-<h4><a name="sec-46">6.2.8 go through all the multi-link _forms, put &lt;div row&gt; before the issset</a></h4>
+</p><ul>
+<li>didn't i do this? did it not work? why?<br/>
+</li>
+</ul>
+<h4><a name="sec-23">3.2.8 go through all the multi-link _forms, put &lt;div row&gt; before the issset</a></h4>
 
 <p>WHY? exactly?
 </p>
-<h4><a name="sec-47">6.2.9 redo the unpaid thing, this is ridiculous</a></h4>
+<h4><a name="sec-24">3.2.9 redo the unpaid thing, this is ridiculous</a></h4>
 
 <p>do this stupidity in sql
 class
@@ -494,28 +397,135 @@ link for new check, or assign existing check (unassigned)
 choose existing check as option in unpaid
 an autocomplete with lists of checks with amounts still avail on them
 </p>
-<h4><a name="sec-48">6.2.10 make session dropdown disabled css by default, checkbox to change</a></h4>
+<h4><a name="sec-25">3.2.10 make session dropdown disabled css by default, checkbox to change</a></h4>
 
 <p>in almost every screen. session should always be default really
 </p>
-<h4><a name="sec-49">6.2.11 manually edit dates, in m/d/y format</a></h4>
+<h4><a name="sec-26">3.2.11 validation and data entry error checking/warning</a></h4>
 
+<ul>
+<li>ajax validation via yii built in -- errors<br/>
+<ul>
+<li>don't allow returned checks to be deposited/delivered!<br/>
+</li>
+<li>don't allow deposited/delivered checks to be returned!<br/>
+</li>
+<li>[#A] the student must be signed up for that class before it gets paid<br/>
+look up the keys, see that there's something there
+i can use my duplicate validator as a guide
+but! better to constrain isn't it?
+</li>
+<li>[#B] a check or split where totals exceed check<br/>
+make sure the incomes are not more or less than the total check
+it's probably ok if the incomes are LESS than total check tho
+</li>
+<li>instructor percentages don't exceed 100%<br/>
+<ul>
+<li>make a validation rule to make sure that the instructors aren't getting &gt; 100 % !!<br/>
+i.e. check to see if a class has &gt; 100% total
 
-<h4><a name="sec-50">6.2.12 remove search/sort for nonsortable columns</a></h4>
+<p>
+in the some popup (chosen?), the # is breaking stuff
+i decided not to use it, so this is below the line for now
+</p>
 
+</li>
+</ul></li>
+</ul></li>
+<li>trapping sql/fk errors through ajax validation<br/>
+<ul>
+<li>trying to delete things that have foreign keys<br/>
+in check, for sure, but also everywhere really
+</li>
+<li>change company name with instructors who are not in that company<br/>
+this is an easy one, really. in fact i could do it as JS or ajax
+</li>
+<li>duplicate key, unique validators, dupe checking! for all records really<br/>
+all the linktables! it'll have to check key combos
+first/last in student
+class meeting/class_id unique
+school day in calendar
+</li>
+</ul></li>
+<li>js validation via yii built in<br/>
+<ul>
+<li>entering to a session not the current default<br/>
+</li>
+</ul></li>
+<li>ajax validation via yii built in -- warnings/notice<br/>
+<ul>
+<li>class over capacity but student set to enrolled<br/>
+i could really do that just as a status bar in the controller/view
+</li>
+<li>change the day of week but there are active meetings<br/>
+</li>
+</ul></li>
+<li>not sure where<br/>
+</li>
+<li>how?<br/>
+populate a js array with the data, and check it that way?
+</li>
+</ul>
+<h4><a name="sec-27">3.2.12 date formatting and saving cleanups             </a></h4>
 
-<h4><a name="sec-51">6.2.13 add  the returnto for zhtml::clickablerow</a></h4>
+<ul>
+<li>manually edit dates, in m/d/y format<br/>
+</li>
+<li>clean up date and weekday formatting, using formatter in yii<br/>
+<ul>
+<li>not my zhtml hack<br/>
+</li>
+<li>date/time conversions<br/>
+<ul>
+<li>do it in the load_model method!<br/>
+</li>
+<li>and before save in update/create.<br/>
+</li>
+<li>that is all. no problems, no muss, no fuss.<br/>
+</li>
+</ul></li>
+<li>but beware the afterfind/beforevalidate crap!<br/>
+<ul>
+<li>it could break my model start/end stuff VERY IMPORTANT!<br/>
+</li>
+<li>do it by overloading load_model and beforevalidate, instead<br/>
+</li>
+<li>BE CAREFUL!<br/>
+</li>
+</ul></li>
+<li>i could create a separate get/set that wraps it<br/>
+<ul>
+<li>for every model that has dates in it. gah.<br/>
+</li>
+<li>or a wrapper that transforms them before/after manually<br/>
+</li>
+</ul></li>
+</ul></li>
+<li>add date validator<br/>
+</li>
+<li>make date pickers have longer terms for some things (meetings, paperwork)<br/>
+</li>
+<li>year bump buttons on the expired and received datepickers<br/>
+<ul>
+<li>didn't i do that already?<br/>
+</li>
+</ul></li>
+<li>dependent date/timepickers, i.e. start/end intelligently<br/>
+</li>
+</ul>
+<h4><a name="sec-28">3.2.13 remove search/sort for nonsortable columns</a></h4>
+
+<p>set filter =&gt; false
+</p>
+<h4><a name="sec-29">3.2.14 add  the returnto for zhtml::clickablerow</a></h4>
 
 <p>it's already in there for composite keys, but i need to add it for the other one
 this is used only in a few places though.
 </p>
-<h4><a name="sec-52">6.2.14 today button, fix</a></h4>
+<h4><a name="sec-30">3.2.15 today button, fix</a></h4>
 
 
-<h4><a name="sec-53">6.2.15 add date validator</a></h4>
-
-
-<h4><a name="sec-54">6.2.16 admin simulation of instructor screens</a></h4>
+<h4><a name="sec-31">3.2.16 admin simulation of instructor screens</a></h4>
 
 <ul>
 <li>a chooser for instructor at the top.<br/>
@@ -524,30 +534,44 @@ this is used only in a few places though.
 </li>
 </ul></li>
 </ul>
-<h4><a name="sec-55">6.2.17 trap exceptions on save,  if there's an integrity constraint!</a></h4>
+<h4><a name="sec-32">3.2.17 trap exceptions on save,  if there's an integrity constraint!</a></h4>
 
 <p>trap/catch errors when trying to delete linked tables
 hmm, when woudl that exactly happen again?
 </p>
-<h4><a name="sec-56">6.2.18 use either breadcrumbs or returnto, but be consistent!</a></h4>
+<h4><a name="sec-33">3.2.18 use either breadcrumbs or returnto, but be consistent!</a></h4>
 
 <p>breadcrumbs is cleaner than returnto, but will it work?
 </p>
-<h4><a name="sec-57">6.2.19 make the ajax/json checkincomecontroller payer save use massive assignemnt with safe</a></h4>
+<h4><a name="sec-34">3.2.19 make the ajax/json checkincomecontroller payer save use massive assignemnt with safe</a></h4>
 
 <p>right now it's just a hack, $model-&gt;bar = $_POST[foo][bar]
 </p>
-<h4><a name="sec-58">6.2.20 also trap exceptions on double-delete, it happens in ajax-land</a></h4>
+<h4><a name="sec-35">3.2.20 also trap exceptions on double-delete, it happens in ajax-land</a></h4>
 
 <p>if the refresh isn't complete yet
 Error 404: &lt;h1&gt;CHttpException
 The requested page does not exist.
 it really is an error, you can't delete something that is already deleted
 </p>
-<h4><a name="sec-59">6.2.21 make search work with booleans/checkboxes</a></h4>
+<h4><a name="sec-36">3.2.21 search/sort</a></h4>
 
-
-<h4><a name="sec-60">6.2.22 browser exploiter crap</a></h4>
+<ul>
+<li>make search work with booleans/checkboxes<br/>
+</li>
+<li>make search work with linktables!<br/>
+this i think will be some interesting criteria and joins perhaps
+maybe not that hard, just some pdo stuff
+<a href="http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx">http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx</a>
+</li>
+<li>make sort work with linked subviews<br/>
+not so easy
+</li>
+<li>clean up massive sql queries and translate them into cdbcriteria<br/>
+so i can have searches and sorts, also sums and totals!
+</li>
+</ul>
+<h4><a name="sec-37">3.2.22 browser exploiter crap</a></h4>
 
 <ul>
 <li>backspace makes the page go back, no warning, in IE<br/>
@@ -557,108 +581,119 @@ ah, becuase it has input fields not enclosed in form tags, that's why!
 
 </li>
 </ul>
-<h4><a name="sec-61">6.2.23 move the code for student #x of max y from javascript to a php or js lib function</a></h4>
+<h4><a name="sec-38">3.2.23 multiline entry for checks</a></h4>
+
+<ul>
+<li>make multi-entry form work for EDITING too<br/>
+now the saving
+create, student id provided
+create, nothing provided
+</li>
+<li>multi-form: should auto-javascript calculate totals applied and check them<br/>
+</li>
+</ul>
+<h4><a name="sec-39">3.2.24 move the code for student #x of max y from javascript to a php or js lib function</a></h4>
 
 <p>it's used in signup/_form and signup/_row, and it's slightly different
 </p>
-<h4><a name="sec-62">6.2.24 more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row</a></h4>
+<h4><a name="sec-40">3.2.25 more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row</a></h4>
 
 
-<h4><a name="sec-63">6.2.25 this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION</a></h4>
+<h4><a name="sec-41">3.2.26 this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION</a></h4>
 
 
-<h4><a name="sec-64">6.2.26 make search work with linktables!</a></h4>
-
-<p>this i think will be some interesting criteria and joins perhaps
-maybe not that hard, just some pdo stuff
-</p>
-<h4><a name="sec-65">6.2.27 make sort work with linked subviews</a></h4>
-
-<p>not so easy
-</p>
-<h4><a name="sec-66">6.2.28 make company id 1  not editable or removable (company form/view)</a></h4>
+<h4><a name="sec-42">3.2.27 signups: add cancelled date and hide/clear it on non cancelled</a></h4>
 
 
-<h4><a name="sec-67">6.2.29 autocompletes not dropdowns</a></h4>
-
-<p>students
-classes
-roster import
-</p>
-<h4><a name="sec-68">6.2.30 make date pickers have longer terms for some things (meetings, paperwork)</a></h4>
+<h4><a name="sec-43">3.2.28 make company id 1  not editable or removable (company form/view)</a></h4>
 
 
-<h4><a name="sec-69">6.2.31 trap exception on populate for school days</a></h4>
+<h4><a name="sec-44">3.2.29 autocompletes not dropdowns</a></h4>
+
+<ul>
+<li>students<br/>
+</li>
+<li>classes<br/>
+</li>
+<li>roster import<br/>
+</li>
+</ul>
+<h4><a name="sec-45">3.2.30 trap exception on populate for school days</a></h4>
 
 
-<h4><a name="sec-70">6.2.32 clean up massive sql queries and translate them into cdbcriteria</a></h4>
-
-<p>so i can have searches and sorts, also sums and totals!
-</p>
-<h4><a name="sec-71">6.2.33 make the deposit form editable in the same format as the printabel one</a></h4>
+<h4><a name="sec-46">3.2.31 make the deposit form editable in the same format as the printabel one</a></h4>
 
 <p>in other words, make the "printable" report into a form, with edit
 i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
 </p>
-<h4><a name="sec-72">6.2.34 to avoid confusion, special case the company stuff with js</a></h4>
+<h4><a name="sec-47">3.2.32 to avoid confusion, special case the company stuff with js</a></h4>
 
-<p>if company is not PTO, or is type company, show delivered, not deposited
-else  show deposited, not delivered
-if instructor type is company, show the company popup
-else hide company popup
-if is not company, don't show company popup at all
-javascript in forms, something else in view
-</p>
-<h4><a name="sec-73">6.2.35 new on pulldowns!! so new instructor at end of pulldown for instructor</a></h4>
-
-
-<h4><a name="sec-74">6.2.36 now make the save() actions check breadcrumbs, not returnto</a></h4>
-
-
-<h3><a name="sec-75">6.3 cosmetic</a></h3>
-
-
-<h4><a name="sec-76">6.3.1 put in $this-&gt;pageTitle= for all the pages! helps with breadcrumbs</a></h4>
-
-
-<h4><a name="sec-77">6.3.2 use the roster as the template for any index views, i have the css nice</a></h4>
+<ul>
+<li>if company is not PTO, or is type company, show delivered, not deposited<br/>
+<ul>
+<li>else  show deposited, not delivered<br/>
+</li>
+</ul></li>
+<li>if instructor type is company, show the company popup<br/>
+<ul>
+<li>else hide company popup<br/>
+</li>
+</ul></li>
+<li>if is not company, don't show company popup at all<br/>
+</li>
+<li>javascript in forms, something else in view<br/>
+</li>
+</ul>
+<h4><a name="sec-48">3.2.33 new on pulldowns!! so new instructor at end of pulldown for instructor</a></h4>
 
 
-<h4><a name="sec-78">6.3.3 the chosen fields are too narrow</a></h4>
+<h4><a name="sec-49">3.2.34 now make the save() actions check breadcrumbs, not returnto</a></h4>
+
+
+<h4><a name="sec-50">3.2.35 instructors need to use both email addresses to login if they have &gt; 1</a></h4>
+
+
+<h3><a name="sec-51">3.3 cosmetic</a></h3>
+
+
+<h4><a name="sec-52">3.3.1 put in $this-&gt;pageTitle= for all the pages! helps with breadcrumbs</a></h4>
+
+
+<h4><a name="sec-53">3.3.2 use the roster as the template for any index views, i have the css nice</a></h4>
+
+
+<h4><a name="sec-54">3.3.3 the chosen fields are too narrow</a></h4>
 
 <p>there's a width set, but it's wrong
 this.f_width = this.form_field_jq.width();
 </p>
-<h4><a name="sec-79">6.3.4 the spans i'm using should be DIVS! everywhere (almost)!</a></h4>
+<h4><a name="sec-55">3.3.4 the spans i'm using should be DIVS! everywhere (almost)!</a></h4>
 
 <p>just because it's called span-xx does NOT MEAN THEY ARE FOR SPANS
 they're actually for divs, not spans, doh!
 </p>
-<h4><a name="sec-80">6.3.5 remove all those style: alignt-right things and make it proper css!</a></h4>
+<h4><a name="sec-56">3.3.5 remove all those style: alignt-right things and make it proper css!</a></h4>
 
 <p>it didn't work last i tried it though, there was some css selector problem
 </p>
-<h4><a name="sec-81">6.3.6 a nice jui popup when hovering over a cell, showing description!</a></h4>
+<h4><a name="sec-57">3.3.6 in general, make menu on views like checkincome (just edit and delete)</a></h4>
 
-
-<h4><a name="sec-82">6.3.7 year bump buttons on the expired and received datepickers</a></h4>
-
-<p>didn't i do that already?
+<p>and maybe add ones for the others, the tab ones
 </p>
-<h4><a name="sec-83">6.3.8 use wide layout with menu at top from roster for ALL things</a></h4>
+<h4><a name="sec-58">3.3.7 a nice jui popup when hovering over a cell, showing description!</a></h4>
+
+
+<h4><a name="sec-59">3.3.8 use wide layout with menu at top from roster for ALL things</a></h4>
 
 <p>it needs to be integrated into class for sure, and student
 this is in roster, in main branch
 i also have it in a branch menuthrash. works with clips, nice!
 </p>
-<h4><a name="sec-84">6.3.9 dependent date/timepickers, i.e. start/end intelligently</a></h4>
-
-
-<h4><a name="sec-85">6.3.10 the goddamned times are wrong, they're not in am/pm time! they don't convert</a></h4>
+<h4><a name="sec-60">3.3.9 the goddamned times are wrong, they're not in am/pm time! they don't convert</a></h4>
 
 <p>this is the timepicker brokenness, fix it
 </p>
-<h4><a name="sec-86">6.3.11 generate via pdf</a></h4>
+<h4><a name="sec-61">3.3.10 generate via pdf</a></h4>
 
 <ul>
 <li>what<br/>
@@ -674,48 +709,73 @@ i also have it in a branch menuthrash. works with clips, nice!
 </li>
 </ul></li>
 </ul>
-<h4><a name="sec-87">6.3.12 put in a db table</a></h4>
+<h4><a name="sec-62">3.3.11 make all monetary fields NOT NULL default 0!</a></h4>
 
 <ul>
-<li>datetime<br/>
-</li>
-<li>ipaddress<br/>
-</li>
-<li>username (can have multiple)<br/>
+<li>be careful though, it might break stuff. i.e. the model, required validation<br/>
 </li>
 </ul>
-<h4><a name="sec-88">6.3.13 and show it as backup status, somewhere, like on admin page</a></h4>
+<h3><a name="sec-63">3.4 bugfixen</a></h3>
 
 
-<h2><a name="sec-89">7 STUCK</a></h2>
+<h4><a name="sec-64">3.4.1 unbalanced checks formula is wrong</a></h4>
+
+<ul>
+<li>it's missing check 0867<br/>
+</li>
+</ul>
+<h4><a name="sec-65">3.4.2 in paid, why are cancelleds payments not showing up at all?</a></h4>
+
+<p>is this still happening?
+</p>
+<h4><a name="sec-66">3.4.3 they WERE paid. only returned checks shouldn't show up.</a></h4>
+
+<p>or maybe they should, just not in totals?
+</p>
+<h4><a name="sec-67">3.4.4 chozen does not like being provided with arrays from sql finds</a></h4>
+
+<p>it makes the width of the box only as wide as teh FIRST item.
+i tried dataprovider but it did not help
+</p><ul>
+<li>it sends the right stuff, but no search is actually occurring<br/>
+</li>
+</ul>
+<h4><a name="sec-68">3.4.5 oh crap. how to deal with partial refunds???</a></h4>
+
+<p>i.e. waitlist? or a cancellation of only ONE class, not all?
+or late refunds
+DO I NEED TO TRACK REFUND CHECKS?
+</p>
+
+<h2><a name="sec-69">4 STUCK</a></h2>
 
 
-<h3><a name="sec-90">7.1 student parentt relaton for user signin</a></h3>
+<h3><a name="sec-70">4.1 student parentt relaton for user signin</a></h3>
 
 
-<h4><a name="sec-91">7.1.1 so a parent would be a user, and it would have to be tied to some # of students</a></h4>
+<h4><a name="sec-71">4.1.1 so a parent would be a user, and it would have to be tied to some # of students</a></h4>
 
 
-<h4><a name="sec-92">7.1.2 that is REALLY HARD, how do you map them conceptually?</a></h4>
+<h4><a name="sec-72">4.1.2 that is REALLY HARD, how do you map them conceptually?</a></h4>
 
 
-<h3><a name="sec-93">7.2 open questions</a></h3>
+<h3><a name="sec-73">4.2 open questions</a></h3>
 
 
-<h4><a name="sec-94">7.2.1 how do you know who to write the check to (from that report)?</a></h4>
+<h4><a name="sec-74">4.2.1 how do you know who to write the check to (from that report)?</a></h4>
 
 <p>wtf does that actually mean?
 </p>
-<h4><a name="sec-95">7.2.2 will you have a case where the materials fee is NOT PER CLASS</a></h4>
+<h4><a name="sec-75">4.2.2 will you have a case where the materials fee is NOT PER CLASS</a></h4>
 
 <p>i.e. per year?
 </p>
 
 
-<h3><a name="sec-96">7.3 student payment status, i.e. enrollment with payment status</a></h3>
+<h3><a name="sec-76">4.3 student payment status, i.e. enrollment with payment status</a></h3>
 
 
-<h3><a name="sec-97">7.4 ok, forms starting to make sense</a></h3>
+<h3><a name="sec-77">4.4 ok, forms starting to make sense</a></h3>
 
 <p>for adding a check from student or class, DO NOT NEED TO SPLIT IT
 hell, i alredy know the student, class, AND amount! 
@@ -733,19 +793,19 @@ what if the students are already in there? it's just a signup.
 most will be.
 if not, then an entry?
 </p>
-<h2><a name="sec-98">8 FUTURE REQUIRD</a></h2>
+<h2><a name="sec-78">5 FUTURE REQUIRD</a></h2>
 
 
-<h3><a name="sec-99">8.1 must have for NEXT SESSION!</a></h3>
+<h3><a name="sec-79">5.1 must have for NEXT SESSION!</a></h3>
 
 
-<h4><a name="sec-100">8.1.1 add db field for registration start date/time for session</a></h4>
+<h4><a name="sec-80">5.1.1 add db field for registration start date/time for session</a></h4>
 
 <ul>
 <li>and dynamically show that on index/home page!<br/>
 </li>
 </ul>
-<h4><a name="sec-101">8.1.2 for setting session, for now, just a simple non-ajax screen, nothing fancy</a></h4>
+<h4><a name="sec-81">5.1.2 for setting session, for now, just a simple non-ajax screen, nothing fancy</a></h4>
 
 <p>then i have to start using it in queries. named scope, seems right.
 the big issue will be all the dropdowns, which use findAll()
@@ -753,7 +813,7 @@ i should start constraining those by session!
 use named scope, it's easy, default scope is session now!
 searches also, need to use the named scope or something
 </p>
-<h4><a name="sec-102">8.1.3 go through and make sure all my queries and searches are session-enabled</a></h4>
+<h4><a name="sec-82">5.1.3 go through and make sure all my queries and searches are session-enabled</a></h4>
 
 <p>so i can change them later easily
 this means the popups too.
@@ -763,7 +823,7 @@ search and such
 <li>did i do this already?<br/>
 </li>
 </ul>
-<h4><a name="sec-103">8.1.4 how to import/add new class from previous session</a></h4>
+<h4><a name="sec-83">5.1.4 how to import/add new class from previous session</a></h4>
 
 <p>an ajaxything or something, a popup
 relational deep copy! only a few tables though:
@@ -771,7 +831,7 @@ instructors, it'll need to create new joins for them. just them!
 and extra fees
 not students though. until parents sign them up! or income.
 </p>
-<h4><a name="sec-104">8.1.5 delete a class</a></h4>
+<h4><a name="sec-84">5.1.5 delete a class</a></h4>
 
 <p>first fix the link, it's not a-werken (missing js?)
 only delete class is no students signed up
@@ -781,7 +841,7 @@ delete from instructor_assignment where class_id=:cid
 delete from class_meeting where class_id=:cid
 delete from class_info where id=:cid
 </p>
-<h4><a name="sec-105">8.1.6 requirements per class, i.e. for agreement</a></h4>
+<h4><a name="sec-85">5.1.6 requirements per class, i.e. for agreement</a></h4>
 
 <ul>
 <li>remove unique key constraint<br/>
@@ -799,7 +859,7 @@ delete from class_info where id=:cid
 <li>allow multiple requirements, i.e contracts for several years<br/>
 </li>
 </ul>
-<h4><a name="sec-106">8.1.7 the signup form and week/month schedule</a></h4>
+<h4><a name="sec-86">5.1.7 the signup form and week/month schedule</a></h4>
 
 <ul>
 <li>add fields for the TEXT of the form!<br/>
@@ -808,83 +868,77 @@ so that heidi can edit it
 <li>this will probably require tcpdf (see elsewhere)<br/>
 </li>
 </ul>
-<h3><a name="sec-107">8.2 must have for NEXT YEAR:</a></h3>
+<h3><a name="sec-87">5.2 must have for NEXT YEAR:</a></h3>
 
 
-<h4><a name="sec-108">8.2.1 need some way to track the current school year. </a></h4>
+<h4><a name="sec-88">5.2.1 need some way to track the current school year. </a></h4>
 
 <p>yes, i remember now!!!! it took today's date, calculated month!
 so based on where you were in the calendar, you were this year or next
 aha, i think it will be a named scope
 </p>
-<h4><a name="sec-109">8.2.2 picklist of STUDENTS could get huge, and need to be pared down</a></h4>
+<h4><a name="sec-89">5.2.2 picklist of STUDENTS could get huge, and need to be pared down</a></h4>
 
 <p>how to determine when kids are no longer in ocean shore??
 um, graduate them? when updating grades, if grade &gt; 8, remove
 current flag?
 also, grade needs to be updated every year somehow
 </p>
-<h4><a name="sec-110">8.2.3 i will DEFINITELY need some kind of de-duping system</a></h4>
+<h4><a name="sec-90">5.2.3 i will DEFINITELY need some kind of de-duping system</a></h4>
 
 <p>like i had to do for the coop. it'll have to happen.
 </p>
 
 
 
-<h2><a name="sec-111">9 FOR NON-ADMIN USER LOGIN</a></h2>
+<h2><a name="sec-91">6 FOR NON-ADMIN USER LOGIN</a></h2>
 
 
-<h3><a name="sec-112">9.1 future/with user login security</a></h3>
+<h3><a name="sec-92">6.1 future/with user login security</a></h3>
 
 
-<h4><a name="sec-113">9.1.1 let instructors edit descriptions</a></h4>
-
-
-
-
-
-<h2><a name="sec-114">10 BELOW THE LINE</a></h2>
-
-
-<h3><a name="sec-115">10.1 maybe make location a link column, not let them be in same place</a></h3>
+<h4><a name="sec-93">6.1.1 let instructors edit descriptions</a></h4>
 
 
 
-<h3><a name="sec-116">10.2 try editable datatable!</a></h3>
+
+
+<h2><a name="sec-94">7 BELOW THE LINE</a></h2>
+
+
+<h3><a name="sec-95">7.1 maybe make location a link column, not let them be in same place</a></h3>
+
+
+
+<h3><a name="sec-96">7.2 try editable datatable!</a></h3>
 
 <p>go back and replace many_many and advanced with has_many and with-related
 requirementtype
 instructortype
 </p>
 
-<h3><a name="sec-117">10.3 make a validation rule to make sure that the instructors aren't getting &gt; 100 % !!</a></h3>
+<h3><a name="sec-97">7.3 expenses really do need to be assigned to classes (but not students)</a></h3>
 
-<p>i.e. check to see if a class has &gt; 100% total
-</p>
-<p>
-in the some popup (chosen?), the # is breaking stuff
-i decided not to use it, so this is below the line for now
-</p>
 
-<h3><a name="sec-118">10.4 have a checkbox on income page to select which classes to pay</a></h3>
+<h3><a name="sec-98">7.4 have a checkbox on income page to select which classes to pay</a></h3>
 
 
 
-<h3><a name="sec-119">10.5 visual show/add meeting dates</a></h3>
+<h3><a name="sec-99">7.5 visual show/add meeting dates</a></h3>
 
 <p>a very quick datepicker adder!
 just a date, not hidden, and boom, it adds, maybe even ajaxy.
 in the meetingdates, join to school calendar and show that stuff!
 </p>
 
-<h3><a name="sec-120">10.6 new student wizard really. ajaxy: class-&gt;student-&gt;import-&gt;signup</a></h3>
+<h3><a name="sec-100">7.6 new student wizard really. ajaxy: class-&gt;student-&gt;import-&gt;signup</a></h3>
 
 
 
-<h3><a name="sec-121">10.7 finish the relational mappings</a></h3>
+<h3><a name="sec-101">7.7 finish the relational mappings</a></h3>
 
 
-<h4><a name="sec-122">10.7.1 a way to create/edit/save a dependent model with ONE field in relation</a></h4>
+<h4><a name="sec-102">7.7.1 a way to create/edit/save a dependent model with ONE field in relation</a></h4>
 
 <p>or a FEW maybe
 use tom__'s stuff i think
@@ -895,22 +949,26 @@ signup
 instructorassignmeent
 requirementstatus
 </p>
-<h4><a name="sec-123">10.7.2 gui splits for income/expense</a></h4>
+<h4><a name="sec-103">7.7.2 gui splits for income/expense</a></h4>
 
 <p>for now handle it like instructors
 but the data entry would be way too complicated that way
 </p>
 
 
-<h3><a name="sec-124">10.8 autoppopulate the check when adding</a></h3>
+<h3><a name="sec-104">7.8 autoppopulate the check when adding</a></h3>
 
 <p>when adding well, i guess, when adding subthings
 </p>
-<h2><a name="sec-125">11 open questions</a></h2>
+<h3><a name="sec-105">7.9 how to handle teachers who are students?</a></h3>
+
+<p>reflextitve relation. dammit. they're not teachers of THIS
+</p>
+<h2><a name="sec-106">8 open questions</a></h2>
 
 <p class="author"> Author: lken
 <a href="mailto:lken@aieee.restivo.org">&lt;lken@aieee.restivo.org&gt;</a>
 </p>
-<p class="date"> Date: 2012/01/14 12:09:16 PM</p>
+<p class="date"> Date: 2012/01/16 10:41:42 AM</p>
 </body>
 </html>
