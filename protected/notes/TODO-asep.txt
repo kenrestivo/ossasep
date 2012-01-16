@@ -80,10 +80,7 @@ TODO tasks for ASEP
 *** a student signup screen
    	just a student pulldown, a few tabs, etc
 ****   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
-*** link the signup to income via model!
-	i.e. in income, belongs_to signup, link by multi fields
-	and in signup, has_many income. this will be key for reports!
-****	didn't i do this? did it not work? why?
+**** easier http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
 *** go through all the multi-link _forms, put <div row> before the issset
 	WHY? exactly?
 ***	redo the unpaid thing, this is ridiculous
