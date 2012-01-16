@@ -69,8 +69,13 @@ TODO tasks for ASEP
 **	checks get returned, she said, if they're waitlisted
 * CLEANUP
 ** vital
-*** replace cjui tabs with some kind of NON JUI tab thing
-**** then make the cgridviews not page; show them all by default
+*** use ajax tabs!
+**** it's possible! just need to do what i did for income, use true,false for renderpartial
+**** and, i need to make the edit links use createurl explicitly
+**** it totally breaks my auto-enter stuff in deposits though!
+*****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
+**** delete links don't work though. why?
+*** make the cgridviews not page; show them all by default
 *** put in proper RBAC
 **** a proper guest role too
 **** and multiple admin accounts
