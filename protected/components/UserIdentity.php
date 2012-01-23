@@ -90,12 +90,13 @@ class UserIdentity extends CUserIdentity
             $this->username = $i->full_name;
         };
 		return !$this->errorCode;
-
     }
 
 
     public function getId()
     {
+        // only instructors have ids. parents/admin/office just have username
+        // and certain things REQUIRE an id, so i have to return somnething
         return isset($this->_id) ? $this->_id : $this->username;
     }
 
