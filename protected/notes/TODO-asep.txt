@@ -41,8 +41,15 @@ TODO tasks for ASEP
 **** a proper guest role too
 **** and multiple admin accounts
 **** change all the ->user to ->role everywhere
+**** this needs to happen BEFORE i get to the choosing of the schoolyear
+***** because the schoolyearchooser needs to be constrained by user role
+***** only admins can change to unpublished classsessions
+***** well, no, instructors can see them too, if it's THEIR class
+	  just the listing of this can get wild and hairy, i.e. homepage
 *** redesign the homepage setup
 **** dispatch to different home pages based on role!
+***** right now it looks like sitecontroller/index does that
+***** there's code in the office one that belongs in controller
 **** a strategy for custom homepages, use a controller for the logic
 ***** some kind of dispatch method, which homepage for which user
 ***** what gets shown on what (maybe use roles?)
