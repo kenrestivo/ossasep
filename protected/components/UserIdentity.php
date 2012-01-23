@@ -35,6 +35,7 @@ class UserIdentity extends CUserIdentity
             return !$this->errorCode;
         }
 
+        // COUGH, HACK.
         if(substr_count($this->username, '@') > 0){
             return $this->authenticate_instructor();
         }
@@ -85,11 +86,9 @@ class UserIdentity extends CUserIdentity
         } else { // Okay!
             $this->errorCode=self::ERROR_NONE;
             $this->setState('role', 'instructor');
+            $this->_id = $i->id;
+            $this->username = $i->full_name;
         };
-
-        $this->_id = $i->id;
-        $this->username = $i->full_name;
-
 		return !$this->errorCode;
 
     }

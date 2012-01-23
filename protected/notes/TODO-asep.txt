@@ -24,6 +24,20 @@ TODO tasks for ASEP
 *****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
 **** delete links don't work though. why?
 *** put in proper RBAC
+**** instructors passwords
+***** a table with
+	  id
+	  password
+	  fk id
+	  fk table (i.e. instructor, parent, company, etc)
+****** how to handle non-parents, non-instructors?
+	   maybe another table of just plain old users? ugly, but it'd work.
+	   yep, with username, i.e. office, parent?
+	   really only parent, since office can be patricia's email
+***** a screen to let them change their password
+***** a filter to force them to change it
+	  http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
+
 **** a proper guest role too
 **** and multiple admin accounts
 **** change all the ->user to ->role everywhere
@@ -63,18 +77,6 @@ TODO tasks for ASEP
 	didn't i do that already?
 	$("#form_field").chosen().change( … );
 	didn't i do that already?
-*** instructors passwords
-**** a table with
-	 id
-	 password
-	 fk id
-	 fk table (i.e. instructor, parent, company, etc)
-***** how to handle non-parents, non-instructors?
-	  maybe another table of just plain old users? ugly, but it'd work.
-**** a screen to let them change their password
-**** a filter to force them to change it
-	 http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
-
 *** make all the ->dropDown stuff have an array('empty' => 'Choose One') in options
 *** a student signup screen
    	just a student pulldown, a few tabs, etc
