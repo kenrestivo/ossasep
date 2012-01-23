@@ -96,8 +96,6 @@ TODO tasks for ASEP
 *** it totally breaks my auto-enter stuff in deposits though!
 ****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
 *** delete links don't work though. why?
-** future/with user login security
-***	let instructors edit descriptions
 * useful
 ** backup refinements
 *** somehow protect that cgi a bit better
@@ -212,6 +210,8 @@ TODO tasks for ASEP
    it's already in there for composite keys, but i need to add it for the other one
    this is used only in a few places though.
 **	today button, fix
+**	let instructors edit descriptions
+*** this will require maybe another flag to disable that, from admin
 ** admin simulation of instructor screens
 *** a chooser for instructor at the top.
 **** just an echosen probably, with an autosubmit or ajax
@@ -301,8 +301,6 @@ TODO tasks for ASEP
 ** make all monetary fields NOT NULL default 0!
 *** be careful though, it might break stuff. i.e. the model, required validation
 * bugfixen
-** unbalanced checks formula is wrong
-*** it's missing check 0867
 **	in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
 **	they WERE paid. only returned checks shouldn't show up.
