@@ -21,8 +21,6 @@ TODO tasks for ASEP
 	   	then i have to start using it in queries. named scope, seems right.
 *** this will have to be permission-enabled!
 	only admin can pick sessions that are not yet public
-** make session dropdown disabled css by default, checkbox to change
-   in almost every screen. session should always be default really
 ** go through and make sure all my queries and searches are session-enabled
 	   so i can change them later easily
 	   this means the popups too.
@@ -48,15 +46,9 @@ TODO tasks for ASEP
 	   delete from instructor_assignment where class_id=:cid
 	   delete from class_meeting where class_id=:cid
 	   delete from class_info where id=:cid
-** requirements per class, i.e. for agreement
-*** remove unique key constraint
-*** checkbox for requirement per class
-*** fk to class id
-*** hide fk if checkbox not checed
-*** in report check each class if checkbox chcked.
-*** in status, i'll need MAX() queries instead of AR stuff
-*** allow multiple requirements, i.e contracts for several years
-** the signup form and week/month schedule
+** make session dropdown disabled css by default, checkbox to change
+   in almost every screen. session should always be default really
+** the checkbox signup form and week/month schedule
 *** add fields for the TEXT of the form!
 	so that heidi can edit it
 *** i can do this in raw html now, i learned how via the deposit form!
@@ -127,6 +119,12 @@ TODO tasks for ASEP
 *** a strategy for custom homepages, use a controller for the logic
 **** some kind of dispatch method, which homepage for which user
 **** what gets shown on what (maybe use roles?)
+** revisit current session (sessionbyDate)?
+      this'll need to check privileges, there will need to be
+      a public flag in session, and it'll need to return the LATEST (desc)
+      class session that is public.
+      Or maybe a different function for the public one, I dunno.
+
 ** a student signup screen
    just a student pulldown, a few tabs, etc
 ***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
@@ -312,6 +310,14 @@ TODO tasks for ASEP
 	 DO I NEED TO TRACK REFUND CHECKS?
 	 
 * must have for NEXT YEAR:
+** requirements per class, i.e. for agreement
+*** remove unique key constraint
+*** checkbox for requirement per class
+*** fk to class id
+*** hide fk if checkbox not checed
+*** in report check each class if checkbox chcked.
+*** in status, i'll need MAX() queries instead of AR stuff
+*** allow multiple requirements, i.e contracts for several years
 **	need some way to track the current school year.
 ***		yes, i remember now!!!! it took today's date, calculated month!
 	   so based on where you were in the calendar, you were this year or next
