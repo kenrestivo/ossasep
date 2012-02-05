@@ -141,10 +141,10 @@ class ClassSession extends CActiveRecord
 
 
     /*
-      Picks the earilest class session that has not ended yet.
+      Picks the earliest class session that has not ended yet.
       That'll be the current one, until that one ends, then it'll be the next.
       TODO: this'll need to check privileges, there will need to be
-      a public flag in session, and it'll need to return the LATEST (DESC)
+      a public flag in session, and it'll need to return the LATEST (desc)
       class session that is public.
       Or maybe a different function for the public one, I dunno.
       This returns a session object.
@@ -156,7 +156,9 @@ class ClassSession extends CActiveRecord
         }
         $r=ClassSession::model()->findBySql(
             "select class_session.* from class_session 
-            where end_date >= :date order by start_date asc limit 1",
+            where end_date >= :date 
+            order by start_date asc 
+            limit 1",
             array('date' => $date));
         return $r;
     }
