@@ -143,10 +143,8 @@ class ClassSession extends CActiveRecord
     /*
       Picks the earliest class session that has not ended yet.
       That'll be the current one, until that one ends, then it'll be the next.
-      TODO: this'll need to check privileges, there will need to be
-      a public flag in session, and it'll need to return the LATEST (desc)
-      class session that is public.
-      Or maybe a different function for the public one, I dunno.
+      You can give it a date to check what would be the current session 
+      for a particular date.
       This returns a session object.
      */
     public static function sessionByDate($date = null)
