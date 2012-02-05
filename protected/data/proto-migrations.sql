@@ -1,0 +1,1 @@
+alter table class_session add column `registration_starts` datetime DEFAULT NULL;
