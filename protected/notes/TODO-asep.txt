@@ -17,43 +17,13 @@ TODO tasks for ASEP
 * must have for NEXT SESSION!
 ** add db field for registration start date/time for session
 *** and dynamically show that on index/home page!
-** add db field for public or not (sessions)!
-*** so admin can have sessions not yet publicly visible
-** put in proper RBAC
-*** instructors passwords
-**** a table with
-	 id
-	 password
-	 fk id
-	 fk table (i.e. instructor, parent, company, etc)
-***** how to handle non-parents, non-instructors?
-	  maybe another table of just plain old users? ugly, but it'd work.
-	  yep, with username, i.e. office, parent?
-	  really only parent, since office can be patricia's email
-**** a screen to let them change their password
-**** a filter to force them to change it
-	 http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
-
-*** a proper guest role too
-*** and multiple admin accounts
-*** change all the ->user to ->role everywhere
-*** this needs to happen BEFORE i get to the choosing of the schoolyear
-**** because the schoolyearchooser needs to be constrained by user role
-**** only admins can change to unpublished classsessions
-**** well, no, instructors can see them too, if it's THEIR class
-	 just the listing of this can get wild and hairy, i.e. homepage
-** redesign the homepage setup
-*** dispatch to different home pages based on role!
-**** right now it looks like sitecontroller/index does that
-**** there's code in the office one that belongs in controller
-*** a strategy for custom homepages, use a controller for the logic
-**** some kind of dispatch method, which homepage for which user
-**** what gets shown on what (maybe use roles?)
-**	for setting session, for now, just a simple non-ajax screen, nothing fancy
-	   then i have to start using it in queries. named scope, seems right.
+** for setting session, for now, just a simple non-ajax screen, nothing fancy
+	   	then i have to start using it in queries. named scope, seems right.
 *** this will have to be permission-enabled!
 	only admin can pick sessions that are not yet public
-**	go through and make sure all my queries and searches are session-enabled
+** make session dropdown disabled css by default, checkbox to change
+   in almost every screen. session should always be default really
+** go through and make sure all my queries and searches are session-enabled
 	   so i can change them later easily
 	   this means the popups too.
 	   default sort/scope for everytbing
@@ -63,7 +33,8 @@ TODO tasks for ASEP
 		   use named scope, it's easy, default scope is session now!
 	   searches also, need to use the named scope or something
 *** did i do this already?
-**	how to import/add new class from previous session
+** how to import/add new class from previous session
+*** WHERE to put it?
 ***		an ajaxything or something, a popup
 ***		relational deep copy! only a few tables though:
 ****		  instructors, it'll need to create new joins for them. just them!
@@ -88,7 +59,8 @@ TODO tasks for ASEP
 ** the signup form and week/month schedule
 *** add fields for the TEXT of the form!
 	so that heidi can edit it
-*** this will probably require tcpdf (see elsewhere)
+*** i can do this in raw html now, i learned how via the deposit form!
+**** do the formatting of the checkboxes in an array, then split up left/right columns
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
@@ -125,9 +97,36 @@ TODO tasks for ASEP
 ** in _income, make amount autopopulate ajax based on class chosen
 *** autocomplete the amount on income based on class
    didn't i do that already?
-   $("#form_field").chosen().change( … );
+   $("#form_field").chosen().change( â¦ );
    didn't i do that already?
+** put in proper RBAC
+*** instructors passwords
+**** a table with
+	 id
+	 password
+	 fk id
+	 fk table (i.e. instructor, parent, company, etc)
+***** how to handle non-parents, non-instructors?
+	  maybe another table of just plain old users? ugly, but it'd work.
+	  yep, with username, i.e. office, parent?
+	  really only parent, since office can be patricia's email
+**** a screen to let them change their password
+**** a filter to force them to change it
+	 http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
+
+*** a proper guest role too
+*** and multiple admin accounts
+*** change all the ->user to ->role everywhere
+** add db field for public or not (sessions?)
+*** so admin can have sessions not yet publicly visible
 ** make all the ->dropDown stuff have an array('empty' => 'Choose One') in options
+** redesign the homepage setup
+*** dispatch to different home pages based on role!
+**** right now it looks like sitecontroller/index does that
+**** there's code in the office one that belongs in controller
+*** a strategy for custom homepages, use a controller for the logic
+**** some kind of dispatch method, which homepage for which user
+**** what gets shown on what (maybe use roles?)
 ** a student signup screen
    just a student pulldown, a few tabs, etc
 ***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
@@ -144,8 +143,6 @@ TODO tasks for ASEP
 		link for new check, or assign existing check (unassigned)
 		choose existing check as option in unpaid
 		an autocomplete with lists of checks with amounts still avail on them
-** make session dropdown disabled css by default, checkbox to change
-   in almost every screen. session should always be default really
 **	validation and data entry error checking/warning
 *** ajax validation via yii built in -- errors
 **** don't allow returned checks to be deposited/delivered!
