@@ -1,5 +1,8 @@
 <?php
 
+ini_set('max_execution_time', 30000); 
+ini_set('max_input_time', 30000); 
+
   /* Config file hack for use with phpsh
    */
 
