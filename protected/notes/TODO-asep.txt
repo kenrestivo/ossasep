@@ -15,8 +15,6 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-** add db field for registration start date/time for session
-*** and dynamically show that on index/home page!
 ** for setting session, for now, just a simple non-ajax screen, nothing fancy
 	   	then i have to start using it in queries. named scope, seems right.
 *** this will have to be permission-enabled!
@@ -32,8 +30,7 @@ TODO tasks for ASEP
 	   searches also, need to use the named scope or something
 *** did i do this already?
 ** how to import/add new class from previous session
-*** WHERE to put it?
-***		an ajaxything or something, a popup
+***	just a stupid link from the class info admin page, its own page
 ***		relational deep copy! only a few tables though:
 ****		  instructors, it'll need to create new joins for them. just them!
 ****	      extra fees

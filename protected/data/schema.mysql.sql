@@ -152,6 +152,7 @@ CREATE TABLE `class_session` (
   `description` varchar(128) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
+  `registration_starts` datetime DEFAULT NULL,
   `public` tinyint(1) default false NOT NULL,
   PRIMARY KEY (`id`),
   KEY `school_year_id` (`school_year_id`),

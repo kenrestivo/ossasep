@@ -70,6 +70,12 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'registration_starts'); ?>
+    <?php echo $form->textField($model,'registration_starts',array('size'=>20)) ?>
+		<?php echo $form->error($model,'registration_starts'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'public'); ?>
 		<?php echo $form->checkbox($model,'public'); ?>
 		<?php echo $form->error($model,'public'); ?>

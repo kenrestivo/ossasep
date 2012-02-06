@@ -45,6 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'school_year.description:School Year',
 		'start_date:date',
 		'end_date:date',
+        'registration_starts:datetime:Registration Starts',
 		'description',
         'public:boolean',
 		array(
