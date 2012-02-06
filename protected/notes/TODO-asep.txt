@@ -46,6 +46,7 @@ TODO tasks for ASEP
    in classsessioncontroller
 ** maybe try a cjui dialog? then reload the page?
 *** look at the calendar thing, as an example.
+** reimport the new rasta.csv (it was updated)
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
@@ -325,6 +326,7 @@ TODO tasks for ASEP
 ***		like i had to do for the coop. it'll have to happen.
 
 
+** some better way of importing the rasta, direct from xl probably
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
