@@ -186,13 +186,19 @@ class ClassSession extends CActiveRecord
 /*
   TODO: at some point i'll need to make this an ajax dependent dropdown
   and have it select on school year too.
+  
+  TODO: this also screams for cdbbuilder
  */
 
-    public static function allSessions()
+    public static function allSessions($public = false)
     {
+        $constraint = $public ? "where public > 0" : "";
+        $limit = $public ? "limit 2" : "";
         return self::model()->findBySql(
             "select class_session.* from class_session 
+             $constraint
             order by start_date desc
+            $limit
             ");
     }
 
