@@ -15,40 +15,37 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-** for setting session, for now, just a simple non-ajax screen, nothing fancy
-	   	then i have to start using it in queries. named scope, seems right.
-		i do use it in a few other places alreay, in raw sql
-*** the dropdown idea is totally braindead
-**** mbmenu is a peice of shit
-**** and a dropdown embedded in cmenu is also a non-starter.
-*** maybe try a cjui dialog? then reload the page?
-**** look at the calendar thing, as an example.
-*** this will have to be permission-enabled!
-	only admin can pick sessions that are not yet public
-	non-admins can pick only the current and latest, or only one
 ** import/add new class from previous session
 ***	just a stupid link from the class info admin page, its own page
 ***		relational deep copy! only a few tables though:
 ****		  instructors, it'll need to create new joins for them. just them!
 ****	      extra fees
 ****		  not students though. until parents sign them up! or income.
+**** do it as a transaction
 **	delete a class
-	   first fix the link, it's not a-werken (missing js?)
-	   only delete class is no students signed up
-	   do not let them delete otherwise
-	   DO automatically delete all the dates and instructors
-	   delete from instructor_assignment where class_id=:cid
-	   delete from class_meeting where class_id=:cid
-	   delete from class_info where id=:cid
+***	   first fix the link, it's not a-werken (missing js?)
+***	   only delete class is no students signed up
+****	   do not let them delete otherwise
+***  queries all ready to go, in this order:
+	 delete from instructor_assignment where class_id=:cid
+	 delete from class_meeting where class_id=:cid
+	 delete from class_info where id=:cid
+*** do it as a transaction, and back out of the transactino if it fails
 **   the big issue will be all the dropdowns, which use findAll()
 		   i should start constraining those by session!
 		   use named scope, it's easy, default scope is session now!
 	   searches also, need to use the named scope or something
-** go through and make sure all my queries and searches are session-enabled
+*** then i have to start using it in queries. named scope, seems right.
+		i do use it in a few other places alreay, in raw sql
+*** go through and make sure all my queries and searches are session-enabled
 	   so i can change them later easily
 	   this means the popups too.
 	   default sort/scope for everytbing
 	   search and such
+** do some validation to make sure the user can change to that session
+   in classsessioncontroller
+** maybe try a cjui dialog? then reload the page?
+*** look at the calendar thing, as an example.
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial

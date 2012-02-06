@@ -124,10 +124,8 @@ LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY '
 LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	parent_4, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3, 	email_parent_4, 	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
 
 ** omit "local" if the file is on the server
-
-* the order IS IMPORTANT, if it's wrong, everythign breaks
-
-
+   
+** the order IS IMPORTANT, if it's wrong, everythign breaks
 * nested forms are sub forms
 http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
 
@@ -1216,3 +1214,7 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 **** look at her spreadsheet to see
 ** the joint checks need to be deposited really
 
+
+* the dropdown idea is totally braindead
+** mbmenu is a peice of shit
+** and a dropdown embedded in cmenu is also a non-starter.
