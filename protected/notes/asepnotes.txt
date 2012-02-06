@@ -1218,3 +1218,8 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 * the dropdown idea is totally braindead
 ** mbmenu is a peice of shit
 ** and a dropdown embedded in cmenu is also a non-starter.
+*** try emenu?
+**** it is TOTAL GARBAGE, useless, unwise. bleh.
+
+** superfish? via cdropdownmenu? supposedly depreciated and doesn't like the mainmenu of gii app
+http://www.yiiframework.com/extension/cdropdownmenu

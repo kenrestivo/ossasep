@@ -42,6 +42,7 @@ TODO tasks for ASEP
 	   this means the popups too.
 	   default sort/scope for everytbing
 	   search and such
+** and the defaults!!! like for when entering. EVERYWHERE
 ** do some validation to make sure the user can change to that session
    in classsessioncontroller
 ** better way to do the chooser
@@ -49,7 +50,6 @@ TODO tasks for ASEP
 **** look at the calendar thing, as an example.
 **** bah, it's nasty to do on EVERY page
 	 http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
-*** try emenu?
 ** reimport the new rasta.csv (it was updated)
 * vital
 ** use ajax tabs!

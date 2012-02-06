@@ -134,6 +134,7 @@ class ClassInfoController extends Controller
 	{
 		$model=new ClassInfo('search');
 		$model->unsetAttributes();  // clear any default values
+        $model->session_id = ClassSession::savedSessionId();
 		if(isset($_GET['ClassInfo']))
 			$model->attributes=$_GET['ClassInfo'];
 
@@ -198,6 +199,7 @@ class ClassInfoController extends Controller
 	 */
 	public function actionJson()
 	{
+
         $model = ClassInfo::model()->findByPk($_POST['Signup']['class_id']);
         echo CJSON::encode(
             array('min_grade_allowed' => $model->min_grade_allowed,
