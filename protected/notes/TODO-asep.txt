@@ -18,6 +18,7 @@ TODO tasks for ASEP
 ** import/add new class from previous session
 ***	just a stupid link from the class info admin page, its own page
 *** relational deep copy! only a few tables though:
+**** class, of course, minus the session!! override that, doh. and id.
 **** instructors, it'll need to create new joins for them. just them!
 **** extra fees
 **** not students though. until parents sign them up! or income.
@@ -32,16 +33,31 @@ TODO tasks for ASEP
 	 delete from class_info where id=:cid
 *** do it as a transaction, and back out of the transactino if it fails
 ** the big issue will be all the dropdowns, which use findAll()
-	 i should start constraining those by session!
-	 use named scope, it's easy, default scope is session now!
-	 searches also, need to use the named scope or something
+***	 i should start constraining those by session!
+***	 use named scope, it's easy, default scope is session now!
+***	 searches also, need to use the named scope or something
 *** then i have to start using it in queries. named scope, seems right.
 	i do use it in a few other places alreay, in raw sql
 *** go through and make sure all my queries and searches are session-enabled
-	 so i can change them later easily
-	 this means the popups too.
-	 default sort/scope for everytbing
-	 search and such
+****	 so i can change them later easily
+****	 this means the popups too.
+****	 default sort/scope for everytbing
+****	 search and such
+*** or, just a simple damn condition to the findall! 
+*** these are all the ones i can find with just a grep:
+**** views/checkIncome/entry_form.php
+**** views/classMeeting/_form.php
+**** views/extraFee/_form.php
+**** views/income/_form.php
+**** views/instructorAssignment/_form.php
+**** views/signup/_form.php
+**** views/signup/_row.php
+**** views/expense/_form.php
+**** views/checkIncome/entry_form.php
+**** views/checkIncome/_form.php
+*** what other ones???!
+**** the income (link to check in order to be sessioned?? NASTY!)
+**** what about students?
 ** do some validation to make sure the user can change to that session
  in classsessioncontroller
 ** better way to do the chooser
