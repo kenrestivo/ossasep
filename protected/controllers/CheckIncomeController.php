@@ -58,6 +58,10 @@ class CheckIncomeController extends Controller
 	{
 		$model=new CheckIncome;
 
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
