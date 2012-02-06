@@ -86,6 +86,14 @@ class ReportController extends Controller
                     
     }
 
+/*
+  XXX THIS miserable hack is the reason why i have to redo the homepage
+  and permissions dispatch. the redirects are stupid. stop this.
+  use partialss. use something. ugh.
+
+  XXX also, seriously, wtf? why is this in report controller? WRONG.
+ */
+
 
     private function redirectHack()
     {

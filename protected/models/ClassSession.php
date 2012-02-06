@@ -194,7 +194,7 @@ class ClassSession extends CActiveRecord
     {
         $constraint = $public ? "where public > 0" : "";
         $limit = $public ? "limit 2" : "";
-        return self::model()->findBySql(
+        return self::model()->findAllBySql(
             "select class_session.* from class_session 
              $constraint
             order by start_date desc

@@ -32,9 +32,11 @@ class ClassSessionController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
 				'users'=>array('admin'),
+			),
+			array('allow',  // public pages
+                  'actions'=> array('chooseSession'),
+                  'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -169,4 +171,20 @@ class ClassSessionController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionChooseSession()
+    {
+        
+		$this->render(
+            '_session_chooser', 
+            array(
+                /// right. if it's not admin, then constrain to public only.
+                'sessions' =>  
+                ClassSession::allSessions(Yii::app()->user->name != 'admin'),
+                // not reallly necessary, but mvc-ish
+                'saved' => ClassSession::savedSessionId()
+                ));
+        
+    }
+
 }
