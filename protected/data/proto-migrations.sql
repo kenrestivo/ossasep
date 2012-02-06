@@ -1,1 +1,1 @@
-alter table class_session add column `registration_starts` datetime DEFAULT NULL;
+alter table class_session add column `registration_starts` datetime DEFAULT '0000-00-00 00:00:00';

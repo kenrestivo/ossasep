@@ -26,8 +26,9 @@ $this->menu=array(
 	'attributes'=>array(
 		'school_year.description',
 		'description',
-		'start_date',
-		'end_date',
+		'start_date:date',
+		'end_date:date',
+        'registration_starts:datetime',
         'public:boolean',
 	),
 )); ?>
