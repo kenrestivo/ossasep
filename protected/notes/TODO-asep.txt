@@ -18,8 +18,14 @@ TODO tasks for ASEP
 ** for setting session, for now, just a simple non-ajax screen, nothing fancy
 	   	then i have to start using it in queries. named scope, seems right.
 		i do use it in a few other places alreay, in raw sql
+*** the dropdown idea is totally braindead
+**** mbmenu is a peice of shit
+**** and a dropdown embedded in cmenu is also a non-starter.
+*** maybe try a cjui dialog? then reload the page?
+**** look at the calendar thing, as an example.
 *** this will have to be permission-enabled!
 	only admin can pick sessions that are not yet public
+	non-admins can pick only the current and latest, or only one
 ** go through and make sure all my queries and searches are session-enabled
 	   so i can change them later easily
 	   this means the popups too.
