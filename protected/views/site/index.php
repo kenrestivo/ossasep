@@ -7,7 +7,11 @@ $this->breadcrumbs = array() ;
 
     <h3>Classes begin <strong><?= date('F jS', strtotime(ClassSession::current()->start_date)) ?></strong>.</h3>
     <!-- TODO: make the reservation begin date dynamically generated -->
-    <h3>Reservations begin <strong>Wednesday, January 4th at 8am</strong>!</h3>
+    <h3>Reservations begin <strong>
+<?php
+    echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
+?>
+</strong>!</h3>
 
 
     <p>
