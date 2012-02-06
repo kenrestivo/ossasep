@@ -606,7 +606,7 @@ or use cjuitabs
 
 *** could just home-roll it
 	http://htmldog.com/articles/tabs/
-   
+    
 * filtering the datepicker
 
 $('.selector').datepicker({
@@ -921,7 +921,7 @@ better, summarixed
 
 
 
-* tablle widths
+* table widths
 	http://stackoverflow.com/questions/4457506/css-how-to-set-the-table-column-width-constant-regardless-of-the-amount-of-text
 
 

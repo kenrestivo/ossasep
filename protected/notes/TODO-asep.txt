@@ -44,8 +44,12 @@ TODO tasks for ASEP
 	   search and such
 ** do some validation to make sure the user can change to that session
    in classsessioncontroller
-** maybe try a cjui dialog? then reload the page?
-*** look at the calendar thing, as an example.
+** better way to do the chooser
+*** maybe try a cjui dialog? then reload the page?
+**** look at the calendar thing, as an example.
+**** bah, it's nasty to do on EVERY page
+	 http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
+*** try emenu?
 ** reimport the new rasta.csv (it was updated)
 * vital
 ** use ajax tabs!
@@ -53,6 +57,8 @@ TODO tasks for ASEP
 *** and, i need to make the edit links use createurl explicitly
 *** it totally breaks my auto-enter stuff in deposits though!
 ****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
+**** try this hack:  Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+	 mentioned in http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton
 *** delete links don't work though. why?
 * useful
 ** the checkbox signup form and week/month schedule
