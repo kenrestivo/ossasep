@@ -6,45 +6,45 @@ TODO tasks for ASEP
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
 *** an undelivered checks screen, by class
-   just checkboxes, and a date, and mark delivered for all of them.
-      pick which checks are delivered!
-	  they are by class, which is how she files them
-	  classinfo/_income
-	  a checkbox, mark all, save, would be fine
+ just checkboxes, and a date, and mark delivered for all of them.
+ pick which checks are delivered!
+	 they are by class, which is how she files them
+	 classinfo/_income
+	 a checkbox, mark all, save, would be fine
 *** a joint as example: http://localhost/asepgui/index.php/Company/2
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
 ** import/add new class from previous session
 ***	just a stupid link from the class info admin page, its own page
-***		relational deep copy! only a few tables though:
-****		  instructors, it'll need to create new joins for them. just them!
-****	      extra fees
-****		  not students though. until parents sign them up! or income.
+*** relational deep copy! only a few tables though:
+**** instructors, it'll need to create new joins for them. just them!
+**** extra fees
+**** not students though. until parents sign them up! or income.
 **** do it as a transaction
 **	delete a class
-***	   first fix the link, it's not a-werken (missing js?)
-***	   only delete class is no students signed up
-****	   do not let them delete otherwise
-***  queries all ready to go, in this order:
+***	 first fix the link, it's not a-werken (missing js?)
+***	 only delete class is no students signed up
+****	 do not let them delete otherwise
+*** queries all ready to go, in this order:
 	 delete from instructor_assignment where class_id=:cid
 	 delete from class_meeting where class_id=:cid
 	 delete from class_info where id=:cid
 *** do it as a transaction, and back out of the transactino if it fails
-**   the big issue will be all the dropdowns, which use findAll()
-		   i should start constraining those by session!
-		   use named scope, it's easy, default scope is session now!
-	   searches also, need to use the named scope or something
+** the big issue will be all the dropdowns, which use findAll()
+	 i should start constraining those by session!
+	 use named scope, it's easy, default scope is session now!
+	 searches also, need to use the named scope or something
 *** then i have to start using it in queries. named scope, seems right.
-		i do use it in a few other places alreay, in raw sql
+	i do use it in a few other places alreay, in raw sql
 *** go through and make sure all my queries and searches are session-enabled
-	   so i can change them later easily
-	   this means the popups too.
-	   default sort/scope for everytbing
-	   search and such
+	 so i can change them later easily
+	 this means the popups too.
+	 default sort/scope for everytbing
+	 search and such
 ** and the defaults!!! like for when entering. EVERYWHERE
 ** do some validation to make sure the user can change to that session
-   in classsessioncontroller
+ in classsessioncontroller
 ** better way to do the chooser
 *** maybe try a cjui dialog? then reload the page?
 **** look at the calendar thing, as an example.
@@ -56,8 +56,8 @@ TODO tasks for ASEP
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
 *** and, i need to make the edit links use createurl explicitly
 *** it totally breaks my auto-enter stuff in deposits though!
-****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
-**** try this hack:  Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+**** on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
+**** try this hack: Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 	 mentioned in http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton
 *** delete links don't work though. why?
 * useful
@@ -74,14 +74,14 @@ TODO tasks for ASEP
 **** move it to protected and make the cgi work there?
 **** pass in passwords, etc, rather than having it hardcoded in the cgi?
 *** make sure backup integrity is ok
-   run bunzip2 -t, a test decompression, after the backup
+ run bunzip2 -t, a test decompression, after the backup
 *** and show it as backup status, somewhere, like on admin page
 **** that's mean a db table saving date/ip of last backup
 ***** datetime
 ***** ipaddress
 ***** username (can have multiple)
 ** make session dropdown disabled css by default, checkbox to change
-   in almost every screen. session should always be default really
+ in almost every screen. session should always be default really
 ** cgridview pager fix
 *** somehow force KArrayDataProvider to use no pagination as default?
 *** leave cgridview pager 10 but provide an ajax button to show all (no pager)
@@ -91,15 +91,15 @@ TODO tasks for ASEP
 **** also this: http://www.yiiframework.com/forum/index.php?/topic/27742-where-to-set-default-pagesize/
 ***** Edit CPagination (Yuck!)
 ***** Extend CPagination and have your version pull the data out of config.
-****** like this:  http://www.yiiframework.com/extension/pagesize/
+****** like this: http://www.yiiframework.com/extension/pagesize/
 ******* NOTE requires yii 1.1.8, which i think i have
 ***** Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
-	   You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
+	 You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
 ** in _income, make amount autopopulate ajax based on class chosen
 *** autocomplete the amount on income based on class
-   didn't i do that already?
-   $("#form_field").chosen().change( â¦ );
-   didn't i do that already?
+ didn't i do that already?
+ $("#form_field").chosen().change( â¦ );
+ didn't i do that already?
 ** put in proper RBAC
 *** instructors passwords
 **** a table with
@@ -108,9 +108,9 @@ TODO tasks for ASEP
 	 fk id
 	 fk table (i.e. instructor, parent, company, etc)
 ***** how to handle non-parents, non-instructors?
-	  maybe another table of just plain old users? ugly, but it'd work.
-	  yep, with username, i.e. office, parent?
-	  really only parent, since office can be patricia's email
+	 maybe another table of just plain old users? ugly, but it'd work.
+	 yep, with username, i.e. office, parent?
+	 really only parent, since office can be patricia's email
 **** a screen to let them change their password
 **** a filter to force them to change it
 	 http://www.yiiframework.com/wiki/237/force-a-user-to-change-their-password-changepasswordfilter/
@@ -127,102 +127,102 @@ TODO tasks for ASEP
 **** some kind of dispatch method, which homepage for which user
 **** what gets shown on what (maybe use roles?)
 ** a student signup screen
-   just a student pulldown, a few tabs, etc
-***   http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
+ just a student pulldown, a few tabs, etc
+*** http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
 *** easier http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
 ** go through all the multi-link _forms, put <div row> before the issset
-   WHY? exactly?
+ WHY? exactly?
 **	redo the unpaid thing, this is ridiculous
-		do this stupidity in sql
-				class
-				cost - income.amount for this student and class
-			where this student,
-				and the cost - paid is > 0!
-			sort by payee
-		link for new check, or assign existing check (unassigned)
-		choose existing check as option in unpaid
-		an autocomplete with lists of checks with amounts still avail on them
+	do this stupidity in sql
+	class
+	cost - income.amount for this student and class
+	where this student,
+	and the cost - paid is > 0!
+	sort by payee
+	link for new check, or assign existing check (unassigned)
+	choose existing check as option in unpaid
+	an autocomplete with lists of checks with amounts still avail on them
 **	validation and data entry error checking/warning
 *** ajax validation via yii built in -- errors
 **** don't allow returned checks to be deposited/delivered!
 **** don't allow deposited/delivered checks to be returned!
-****   	[#A] the student must be signed up for that class before it gets paid
-		look up the keys, see that there's something there
-		i can use my duplicate validator as a guide
-		but! better to constrain isn't it?
-****    [#B] a check or split where totals exceed check
-		make sure the incomes are not more or less than the total check
-		it's probably ok if the incomes are LESS than total check tho
-****    instructor percentages don't exceed 100%
+**** 	[#A] the student must be signed up for that class before it gets paid
+	look up the keys, see that there's something there
+	i can use my duplicate validator as a guide
+	but! better to constrain isn't it?
+**** [#B] a check or split where totals exceed check
+	make sure the incomes are not more or less than the total check
+	it's probably ok if the incomes are LESS than total check tho
+**** instructor percentages don't exceed 100%
 ***** make a validation rule to make sure that the instructors aren't getting > 100 % !!
-	   i.e. check to see if a class has > 100% total
+	 i.e. check to see if a class has > 100% total
 
-	   in the some popup (chosen?), the # is breaking stuff
-		   i decided not to use it, so this is below the line for now
+	 in the some popup (chosen?), the # is breaking stuff
+	 i decided not to use it, so this is below the line for now
 
 
 *** trapping sql/fk errors through ajax validation
-****    trying to delete things that have foreign keys
+**** trying to delete things that have foreign keys
 	 in check, for sure, but also everywhere really
-****    change company name with instructors who are not in that company
-		this is an easy one, really. in fact i could do it as JS or ajax
-****    duplicate key, unique validators, dupe checking! for all records really
-		all the linktables! it'll have to check key combos
-		first/last in student
-		class meeting/class_id unique
-		school day in calendar
+**** change company name with instructors who are not in that company
+	this is an easy one, really. in fact i could do it as JS or ajax
+**** duplicate key, unique validators, dupe checking! for all records really
+	all the linktables! it'll have to check key combos
+	first/last in student
+	class meeting/class_id unique
+	school day in calendar
 *** js validation via yii built in
-****     entering to a session not the current default
+**** entering to a session not the current default
 *** ajax validation via yii built in -- warnings/notice
-****    class over capacity but student set to enrolled
-		i could really do that just as a status bar in the controller/view
-****    change the day of week but there are active meetings
+**** class over capacity but student set to enrolled
+	i could really do that just as a status bar in the controller/view
+**** change the day of week but there are active meetings
 *** not sure where
-***		how?
-			   populate a js array with the data, and check it that way?
+***	how?
+	 populate a js array with the data, and check it that way?
 ** date formatting and saving cleanups
 ***	manually edit dates, in m/d/y format
 ***	clean up date and weekday formatting, using formatter in yii
-****		not my zhtml hack
+****	not my zhtml hack
 **** date/time conversions
-*****		 do it in the load_model method!
-*****		 and before save in update/create.
-*****		 that is all. no problems, no muss, no fuss.
-****		but beware the afterfind/beforevalidate crap!
-*****			it could break my model start/end stuff VERY IMPORTANT!
-*****			do it by overloading load_model and beforevalidate, instead
-*****			BE CAREFUL!
-****		i could create a separate get/set that wraps it
-*****			for every model that has dates in it. gah.
-*****			or a wrapper that transforms them before/after manually
+*****	 do it in the load_model method!
+*****	 and before save in update/create.
+*****	 that is all. no problems, no muss, no fuss.
+****	but beware the afterfind/beforevalidate crap!
+*****	it could break my model start/end stuff VERY IMPORTANT!
+*****	do it by overloading load_model and beforevalidate, instead
+*****	BE CAREFUL!
+****	i could create a separate get/set that wraps it
+*****	for every model that has dates in it. gah.
+*****	or a wrapper that transforms them before/after manually
 *** add date validator
 *** make date pickers have longer terms for some things (meetings, paperwork)
 ***	year bump buttons on the expired and received datepickers
-****		 didn't i do that already?
+****	 didn't i do that already?
 ***	dependent date/timepickers, i.e. start/end intelligently
 ** remove search/sort for nonsortable columns
-   set filter => false
-** add  the returnto for zhtml::clickablerow
-   it's already in there for composite keys, but i need to add it for the other one
-   this is used only in a few places though.
+ set filter => false
+** add the returnto for zhtml::clickablerow
+ it's already in there for composite keys, but i need to add it for the other one
+ this is used only in a few places though.
 **	today button, fix
 **	let instructors edit descriptions
 *** this will require maybe another flag to disable that, from admin
 ** admin simulation of instructor screens
 *** a chooser for instructor at the top.
 **** just an echosen probably, with an autosubmit or ajax
-**	trap exceptions on save,  if there's an integrity constraint!
-	   trap/catch errors when trying to delete linked tables
-	   hmm, when woudl that exactly happen again?
+**	trap exceptions on save, if there's an integrity constraint!
+	 trap/catch errors when trying to delete linked tables
+	 hmm, when woudl that exactly happen again?
 **	use either breadcrumbs or returnto, but be consistent!
-	   breadcrumbs is cleaner than returnto, but will it work?
+	 breadcrumbs is cleaner than returnto, but will it work?
 ** make the ajax/json checkincomecontroller payer save use massive assignemnt with safe
-   right now it's just a hack, $model->bar = $_POST[foo][bar]
+ right now it's just a hack, $model->bar = $_POST[foo][bar]
 **	also trap exceptions on double-delete, it happens in ajax-land
-	   if the refresh isn't complete yet
-	   Error 404: <h1>CHttpException
-	   The requested page does not exist.
-	  it really is an error, you can't delete something that is already deleted
+	 if the refresh isn't complete yet
+	 Error 404: <h1>CHttpException
+	 The requested page does not exist.
+	 it really is an error, you can't delete something that is already deleted
 ** search/sort
 ***	make search work with booleans/checkboxes
 *** make search work with linktables!
@@ -230,7 +230,7 @@ TODO tasks for ASEP
 	maybe not that hard, just some pdo stuff
 	http://www.mrsoundless.com/post/2011/05/09/Searching-and-sorting-a-column-from-a-related-table-in-a-CGridView.aspx
 ***	make sort work with linked subviews
-		 not so easy
+	 not so easy
 *** clean up massive sql queries and translate them into cdbcriteria
 	so i can have searches and sorts, also sums and totals!
 ** browser exploiter crap
@@ -245,26 +245,26 @@ TODO tasks for ASEP
 	create, nothing provided
 *** multi-form: should auto-javascript calculate totals applied and check them
 ** move the code for student #x of max y from javascript to a php or js lib function
-   it's used in signup/_form and signup/_row, and it's slightly different
+ it's used in signup/_form and signup/_row, and it's slightly different
 ** more the check waitlist function on signup/multientry from that stupid $('select') to just a function in _row
 ** this returnurl GET param crap is broken. the right yii-ish way is to use getreturnurl/setreturnurl in SESSION
 ** signups: add cancelled date and hide/clear it on non cancelled
-**	make company id 1  not editable or removable (company form/view)
+**	make company id 1 not editable or removable (company form/view)
 **	autocompletes not dropdowns
 *** students
 *** classes
 ***roster import
 **	trap exception on populate for school days
 ** make the deposit form editable in the same format as the printabel one
-   in other words, make the "printable" report into a form, with edit
-   i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
+ in other words, make the "printable" report into a form, with edit
+ i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
 **	to avoid confusion, special case the company stuff with js
-***		if company is not PTO, or is type company, show delivered, not deposited
-****			else  show deposited, not delivered
-***		if instructor type is company, show the company popup
-****			else hide company popup
-***		if is not company, don't show company popup at all
-***		javascript in forms, something else in view
+***	if company is not PTO, or is type company, show delivered, not deposited
+****	else show deposited, not delivered
+***	if instructor type is company, show the company popup
+****	else hide company popup
+***	if is not company, don't show company popup at all
+***	javascript in forms, something else in view
 **	new on pulldowns!! so new instructor at end of pulldown for instructor
 **	now make the save() actions check breadcrumbs, not returnto
 ** instructors need to use both email addresses to login if they have > 1
@@ -272,22 +272,22 @@ TODO tasks for ASEP
 ** put in $this->pageTitle= for all the pages! helps with breadcrumbs
 **	use the roster as the template for any index views, i have the css nice
 ** the chosen fields are too narrow
-   there's a width set, but it's wrong
-   this.f_width = this.form_field_jq.width();
+ there's a width set, but it's wrong
+ this.f_width = this.form_field_jq.width();
 ** the spans i'm using should be DIVS! everywhere (almost)!
-   just because it's called span-xx does NOT MEAN THEY ARE FOR SPANS
-   they're actually for divs, not spans, doh!
+ just because it's called span-xx does NOT MEAN THEY ARE FOR SPANS
+ they're actually for divs, not spans, doh!
 ** remove all those style: alignt-right things and make it proper css!
-   it didn't work last i tried it though, there was some css selector problem
+ it didn't work last i tried it though, there was some css selector problem
 ** in general, make menu on views like checkincome (just edit and delete)
-		and maybe add ones for the others, the tab ones
+	and maybe add ones for the others, the tab ones
 **	a nice jui popup when hovering over a cell, showing description!
 **	use wide layout with menu at top from roster for ALL things
-	   it needs to be integrated into class for sure, and student
-	   this is in roster, in main branch
-	   i also have it in a branch menuthrash. works with clips, nice!
+	 it needs to be integrated into class for sure, and student
+	 this is in roster, in main branch
+	 i also have it in a branch menuthrash. works with clips, nice!
 **	the goddamned times are wrong, they're not in am/pm time! they don't convert
-	   this is the timepicker brokenness, fix it
+	 this is the timepicker brokenness, fix it
 **	generate via pdf
 *** what
 **** signup form
@@ -302,8 +302,8 @@ TODO tasks for ASEP
 **	they WERE paid. only returned checks shouldn't show up.
 	or maybe they should, just not in totals?
 ** chozen does not like being provided with arrays from sql finds
-   it makes the width of the box only as wide as teh FIRST item.
-   i tried dataprovider but it did not help
+ it makes the width of the box only as wide as teh FIRST item.
+ i tried dataprovider but it did not help
 *** it sends the right stuff, but no search is actually occurring
 ** oh crap. how to deal with partial refunds???
 	 i.e. waitlist? or a cancellation of only ONE class, not all?
@@ -320,55 +320,55 @@ TODO tasks for ASEP
 *** in status, i'll need MAX() queries instead of AR stuff
 *** allow multiple requirements, i.e contracts for several years
 **	need some way to track the current school year.
-***		yes, i remember now!!!! it took today's date, calculated month!
-	   so based on where you were in the calendar, you were this year or next
-	   aha, i think it will be a named scope
+***	yes, i remember now!!!! it took today's date, calculated month!
+	 so based on where you were in the calendar, you were this year or next
+	 aha, i think it will be a named scope
 **	picklist of STUDENTS could get huge, and need to be pared down
 ***	how to determine when kids are no longer in ocean shore??
 ***	um, graduate them? when updating grades, if grade > 8, remove
-***		also, grade needs to be updated every year somehow
-***		current flag?
+***	also, grade needs to be updated every year somehow
+***	current flag?
 **	i will DEFINITELY need some kind of de-duping system
-***		like i had to do for the coop. it'll have to happen.
+***	like i had to do for the coop. it'll have to happen.
 
 
 ** some better way of importing the rasta, direct from xl probably
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
-***   that is REALLY HARD, how do you map them conceptually?
+*** that is REALLY HARD, how do you map them conceptually?
 ** open questions
 ***	how do you know who to write the check to (from that report)?
 	wtf does that actually mean?
 ***	will you have a case where the materials fee is NOT PER CLASS
-		i.e. per year?
+	i.e. per year?
 
 
 ** student payment status, i.e. enrollment with payment status
 ** ok, forms starting to make sense
 	for adding a check from student or class, DO NOT NEED TO SPLIT IT
-		hell, i alredy know the student, class, AND amount! 
-		just a single line, try cform builder!
-		and, i can not bother with a popup for check
-		hell, i can have an ajax popup for splits.
-			make that form optional for create, but NOT optional for editing
+	hell, i alredy know the student, class, AND amount! 
+	just a single line, try cform builder!
+	and, i can not bother with a popup for check
+	hell, i can have an ajax popup for splits.
+	make that form optional for create, but NOT optional for editing
 	for adding payment through class or instructor, do NOT probably need it.
-		ask heidi about that one tho. maybe redirect for now.
+	ask heidi about that one tho. maybe redirect for now.
 	for adding check through checks, put a tabular input!
-		keep it simple. js to add/remove rows.
+	keep it simple. js to add/remove rows.
 	for adding a payment through checks, will need tabular input
 	for adding a STUDENT to a class, just do one form with both models!
-		what if the students are already in there? it's just a signup.
-			most will be.
-			if not, then an entry?
+	what if the students are already in there? it's just a signup.
+	most will be.
+	if not, then an entry?
 * FOR NON-ADMIN USER LOGIN
 * BELOW THE LINE
 ** maybe make location a link column, not let them be in same place
 
 ** try editable datatable!
 	go back and replace many_many and advanced with has_many and with-related
-		requirementtype
-		instructortype
+	requirementtype
+	instructortype
 
 ** expenses really do need to be assigned to classes (but not students)
 ** have a checkbox on income page to select which classes to pay
@@ -377,26 +377,26 @@ TODO tasks for ASEP
 	a very quick datepicker adder!
 	just a date, not hidden, and boom, it adds, maybe even ajaxy.
 	in the meetingdates, join to school calendar and show that stuff!
-		
+	
 **	new student wizard really. ajaxy: class->student->import->signup
 
 ** finish the relational mappings
 ***	a way to create/edit/save a dependent model with ONE field in relation
-		or a FEW maybe
-		use tom__'s stuff i think
-		a common pattern, for a few important things
-			income
-			expense
-			signup
-			instructorassignmeent
-			requirementstatus
+	or a FEW maybe
+	use tom__'s stuff i think
+	a common pattern, for a few important things
+	income
+	expense
+	signup
+	instructorassignmeent
+	requirementstatus
 ***	gui splits for income/expense
-		for now handle it like instructors
-			but the data entry would be way too complicated that way
-		
+	for now handle it like instructors
+	but the data entry would be way too complicated that way
+	
 
 **	autoppopulate the check when adding
-		when adding well, i guess, when adding subthings
+	when adding well, i guess, when adding subthings
 **	how to handle teachers who are students?
-		reflextitve relation. dammit. they're not teachers of THIS
+	reflextitve relation. dammit. they're not teachers of THIS
 * open questions
