@@ -17,6 +17,7 @@ TODO tasks for ASEP
 * must have for NEXT SESSION!
 ** for setting session, for now, just a simple non-ajax screen, nothing fancy
 	   	then i have to start using it in queries. named scope, seems right.
+		i do use it in a few other places alreay, in raw sql
 *** this will have to be permission-enabled!
 	only admin can pick sessions that are not yet public
 ** go through and make sure all my queries and searches are session-enabled
@@ -28,7 +29,6 @@ TODO tasks for ASEP
 		   i should start constraining those by session!
 		   use named scope, it's easy, default scope is session now!
 	   searches also, need to use the named scope or something
-*** did i do this already?
 ** how to import/add new class from previous session
 ***	just a stupid link from the class info admin page, its own page
 ***		relational deep copy! only a few tables though:
@@ -43,13 +43,6 @@ TODO tasks for ASEP
 	   delete from instructor_assignment where class_id=:cid
 	   delete from class_meeting where class_id=:cid
 	   delete from class_info where id=:cid
-** make session dropdown disabled css by default, checkbox to change
-   in almost every screen. session should always be default really
-** the checkbox signup form and week/month schedule
-*** add fields for the TEXT of the form!
-	so that heidi can edit it
-*** i can do this in raw html now, i learned how via the deposit form!
-**** do the formatting of the checkboxes in an array, then split up left/right columns
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
@@ -58,6 +51,13 @@ TODO tasks for ASEP
 ****  on the checks page, it makes it submit the deleteall link for the CASH page? WTF??!
 *** delete links don't work though. why?
 * useful
+** the checkbox signup form and week/month schedule
+*** add fields for the TEXT of the form!
+	so that heidi can edit it
+*** i can do this in raw html now, i learned how via the deposit form!
+**** do the formatting of the checkboxes in an array, then split up left/right columns
+*** the hard part will be that messy matrix with the summary of dates!
+**** maybe try parenscript?
 ** backup refinements
 *** somehow protect that cgi a bit better
 **** make that directory scriptaliased?
@@ -70,6 +70,8 @@ TODO tasks for ASEP
 ***** datetime
 ***** ipaddress
 ***** username (can have multiple)
+** make session dropdown disabled css by default, checkbox to change
+   in almost every screen. session should always be default really
 ** cgridview pager fix
 *** somehow force KArrayDataProvider to use no pagination as default?
 *** leave cgridview pager 10 but provide an ajax button to show all (no pager)
