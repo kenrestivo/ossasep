@@ -174,6 +174,13 @@ class ClassSessionController extends Controller
 
     public function actionChooseSession()
     {
+
+		if(isset($_POST['ClassSession'])){
+            // TODO validate! make sure they can only set to what they're allowed
+            Yii::app()->session['saved_session_id'] =  
+                $_POST['ClassSession']['id'];
+            // TODO: redirect, or, if it's ajax, hide.
+        }
         
 		$this->render(
             '_session_chooser', 
