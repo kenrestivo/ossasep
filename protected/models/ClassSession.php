@@ -165,6 +165,27 @@ class ClassSession extends CActiveRecord
         return $r;
     }
 
+/*
+  Finds the LAST class session that is not ended yet and is public.
+  This means, as soon as the session goes public, this will return it,
+  even if there is a session already in progress.
+ */
+    public static function lastPublic($date = null)
+    {
+        if(!isset($date)){
+            $date = date('Y-m-d');
+        }
+        $r=ClassSession::model()->findBySql(
+            "select class_session.* from class_session 
+            where end_date >= :date 
+            public > 0
+            order by start_date desc
+            limit 1",
+            array('date' => $date));
+        return $r;
+    }
+
+
     /* 
        Just a utility function, often getting this session! returns obj
      */
