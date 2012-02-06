@@ -179,7 +179,9 @@ class ClassSessionController extends Controller
             // TODO validate! make sure they can only set to what they're allowed
             Yii::app()->session['saved_session_id'] =  
                 $_POST['ClassSession']['id'];
-            // TODO: redirect, or, if it's ajax, hide.
+            if(isset($_GET['returnTo'])){
+                $this->redirect($_GET['returnTo']);
+            }
         }
         
 		$this->render(

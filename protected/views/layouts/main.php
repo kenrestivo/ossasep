@@ -35,7 +35,9 @@
 
                 //TODO: make this clickable/changable
 				array('label'=>$this->savedSessionSummary(),
-                      'url'=>array('/ClassSession/ChooseSession'), 
+                      'url'=>array('/ClassSession/ChooseSession',
+                                   'returnTo' => Yii::app()->request->requestUri
+), 
                     ),
 
 				array('label'=>'Login', 
