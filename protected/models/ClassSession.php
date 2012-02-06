@@ -156,13 +156,12 @@ class ClassSession extends CActiveRecord
         if(!isset($date)){
             $date = date('Y-m-d');
         }
-        $r=ClassSession::model()->findBySql(
+        return self::model()->findBySql(
             "select class_session.* from class_session 
             where end_date >= :date 
             order by start_date asc 
             limit 1",
             array('date' => $date));
-        return $r;
     }
 
 /*
@@ -175,15 +174,53 @@ class ClassSession extends CActiveRecord
         if(!isset($date)){
             $date = date('Y-m-d');
         }
-        $r=ClassSession::model()->findBySql(
+        return self::model()->findBySql(
             "select class_session.* from class_session 
             where end_date >= :date 
-            public > 0
+                 and public > 0
             order by start_date desc
             limit 1",
             array('date' => $date));
-        return $r;
     }
+
+/*
+  TODO: at some point i'll need to make this an ajax dependent dropdown
+  and have it select on school year too.
+ */
+
+    public static function allSessions()
+    {
+        return self::model()->findBySql(
+            "select class_session.* from class_session 
+            order by start_date desc
+            ");
+    }
+
+
+
+/*
+  Finds recent public classes. Usually this will just be current and past,
+  or current and future if the next session is already public.
+  It's in reverse chron, so the freshest will be at the top.
+
+  XXX this is kinda stupid because it's the EXACT same one as above, 
+  but returnes > 1 so it's findallbysql
+
+ */
+    public static function recentPublic($date = null)
+    {
+        if(!isset($date)){
+            $date = date('Y-m-d');
+        }
+        return self::model()->findAllBySql(
+            "select class_session.* from class_session 
+            where end_date >= :date 
+                 and public > 0
+            order by start_date desc
+            limit 2",
+            array('date' => $date));
+    }
+
 
 
     /* 
@@ -196,6 +233,7 @@ class ClassSession extends CActiveRecord
 
 
     /* 
+       Only the OSSPTO instructrs.
        XXX couldn't this be done through AR with a through => classes??
        what about the sorts though. hmm.
      */
@@ -216,6 +254,10 @@ order by instructor.last_name asc, instructor.first_name asc",
 
     }
 
+
+/*
+  ALL current instructors, no matter what their company is
+*/
     public function getInstructors()
     {
         return Instructor::model()->findAllBySql(

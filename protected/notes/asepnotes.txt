@@ -20,7 +20,7 @@ asep notes
 ** payroll (possibly A/P?)
 ** some simple reporting
 ** yeah, online ordering would be nice
-* 	http://hostname/path/to/index.php?r=tTeacher
+** 	http://hostname/path/to/index.php?r=tTeacher
 * dependent ajax dropdowns
 	http://www.yiiframework.com/wiki/24/
 	this is a MUCH better version
