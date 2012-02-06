@@ -26,16 +26,7 @@ TODO tasks for ASEP
 *** this will have to be permission-enabled!
 	only admin can pick sessions that are not yet public
 	non-admins can pick only the current and latest, or only one
-** go through and make sure all my queries and searches are session-enabled
-	   so i can change them later easily
-	   this means the popups too.
-	   default sort/scope for everytbing
-	   search and such
-***   the big issue will be all the dropdowns, which use findAll()
-		   i should start constraining those by session!
-		   use named scope, it's easy, default scope is session now!
-	   searches also, need to use the named scope or something
-** how to import/add new class from previous session
+** import/add new class from previous session
 ***	just a stupid link from the class info admin page, its own page
 ***		relational deep copy! only a few tables though:
 ****		  instructors, it'll need to create new joins for them. just them!
@@ -49,6 +40,15 @@ TODO tasks for ASEP
 	   delete from instructor_assignment where class_id=:cid
 	   delete from class_meeting where class_id=:cid
 	   delete from class_info where id=:cid
+**   the big issue will be all the dropdowns, which use findAll()
+		   i should start constraining those by session!
+		   use named scope, it's easy, default scope is session now!
+	   searches also, need to use the named scope or something
+** go through and make sure all my queries and searches are session-enabled
+	   so i can change them later easily
+	   this means the popups too.
+	   default sort/scope for everytbing
+	   search and such
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
