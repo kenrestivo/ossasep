@@ -58,8 +58,14 @@ class ClassInfoController extends Controller
 	{
 		$model=new ClassInfo;
 
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
 
 		if(isset($_POST['ClassInfo']))
 		{
@@ -67,7 +73,7 @@ class ClassInfoController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+        // handle single-endeds, gah!!
         if(isset($_GET['session_id'])){
             $model->session_id = $_GET['session_id'];
         }
@@ -134,6 +140,7 @@ class ClassInfoController extends Controller
 	{
 		$model=new ClassInfo('search');
 		$model->unsetAttributes();  // clear any default values
+        // set the default session id if it isn't set in the search
         $model->session_id = ClassSession::savedSessionId();
 		if(isset($_GET['ClassInfo']))
 			$model->attributes=$_GET['ClassInfo'];
