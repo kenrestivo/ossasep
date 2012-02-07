@@ -224,7 +224,8 @@ class ClassInfoController extends Controller
 
 		if(isset($_POST['ClassInfo'])){
 
-            // do it
+            ClassInfo::copyClass($_POST['ClassInfo']['id'], 
+                                 ClassSession::savedSessionId());
 
             if(isset($_GET['returnTo'])){
                 $this->redirect($_GET['returnTo']);

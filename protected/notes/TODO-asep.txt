@@ -16,7 +16,6 @@ TODO tasks for ASEP
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
 ** import/add new class from previous session
-***	just a stupid link from the class info admin page, its own page
 *** relational deep copy! only a few tables though:
 **** class, of course, minus the session!! override that, doh. and id.
 **** instructors, it'll need to create new joins for them. just them!

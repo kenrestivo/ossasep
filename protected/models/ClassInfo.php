@@ -516,4 +516,29 @@ where (check_income.returned > '1999-01-01')
     }
 
 
+    public static function copyClass($old_cid, $new_sid)
+    {
+        $old= self::model()->findByPK($old_cid);
+        $new= new self;
+        
+        $new->attributes = $old->attributes;
+        $new->session_id = $new_sid;
+        
+        if($new->save()){
+            foreach($old->instructor_assignments as $oa){
+                $na = new InstructorAssignment;
+                $na->attributes = $oa->attributes;
+                $na->class_id = $new->id;
+                $na->save();
+            }
+            foreach($old->extra_fees as $of){
+                $nf = new ExtraFee;
+                $nf->attributes = $of->attributes;
+                $nf->class_id = $new->id;
+                $nf->save();
+            }            
+        }
+    }
+
+
 }
