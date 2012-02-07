@@ -234,7 +234,18 @@ class ClassSession extends CActiveRecord
      */
     public static function current()
     {
-        return self::model()->findByPk(self::savedSessionId());
+        $cur = self::model()->findByPk(self::savedSessionId());
+        if(isset($cur)){
+            return $cur;
+        }
+
+        // this should NOT HAPPEN
+        trace(Yii::app()->session['saved_session_id']);
+        // reset it
+        unset(Yii::app()->session['saved_session_id']);
+        // recurse, try again!
+        return self::current(); 
+        
     }
 
 
