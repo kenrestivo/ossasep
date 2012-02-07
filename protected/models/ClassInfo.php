@@ -106,8 +106,8 @@ class ClassInfo extends CActiveRecord
                 'class_id',
                 /* XXX i'm worried about deep loops with this,
                    so, not using it.
-                'with' => 'check',
-                'order' => 'abs(check.check_num) asc'
+                   'with' => 'check',
+                   'order' => 'abs(check.check_num) asc'
                 */
                 ),
             'checks' => array(
@@ -307,7 +307,7 @@ order by class_info.class_name
 
 /*
   In magic order based on the enum: enrolled, waitlist, then cancelled
- */
+*/
 
     public function getSortedSignups()
     {
@@ -323,7 +323,7 @@ order by class_info.class_name
 
     /*
       Shows the cancelled first, then waitlist
-     */
+    */
     public function getSortedCancelled()
     {
         return  Signup::model()->findAllBySql(
@@ -339,7 +339,7 @@ order by class_info.class_name
 
     /*
       Shows the cancelled first, then waitlist
-     */
+    */
     public function getSortedNoCancelled()
     {
         return  Signup::model()->findAllBySql(
@@ -425,7 +425,7 @@ where school_calendar.school_day > :start
     }
 
 
-   public function getInstructor_percent()
+    public function getInstructor_percent()
     {
         $c = Yii::app()->db->createCommand(
             "select sum(instructor_assignment.percentage) as total from instructor_assignment
@@ -442,12 +442,12 @@ where class_id = :cid");
 
 /*
   This is everything paid by the parents, refunds excluded
- */
+*/
 
     public function getPaid()
     {
-       $c = Yii::app()->db->createCommand(
- "select sum(income.amount) as total
+        $c = Yii::app()->db->createCommand(
+            "select sum(income.amount) as total
 from income
 left join check_income
      on check_income.id = income.check_id
@@ -455,30 +455,30 @@ where (check_income.returned is null
         or check_income.returned < '1999-01-01')
       and income.class_id = :cid
 group by income.class_id");
-       $r=$c->queryRow(true, array('cid' => $this->id));
+        $r=$c->queryRow(true, array('cid' => $this->id));
         return $r['total'];
     }
 /*
   Returned check portions for this class.
- */
+*/
 
     public function getReturned()
     {
-       $c = Yii::app()->db->createCommand(
- "select sum(income.amount) as total
+        $c = Yii::app()->db->createCommand(
+            "select sum(income.amount) as total
 from income
 left join check_income
      on check_income.id = income.check_id
 where (check_income.returned > '1999-01-01')
       and income.class_id = :cid");
-       $r=$c->queryRow(true, array('cid' => $this->id));
+        $r=$c->queryRow(true, array('cid' => $this->id));
         return $r['total'];
     }
 
     /*
       Not yet paid by parents.
 
-     */
+    */
     public function getOwed()
     {
         return ($this->costSummary * $this->owed_count) - $this->paid;
@@ -511,33 +511,50 @@ where (check_income.returned > '1999-01-01')
            from instructor_assignment
           where class_id = :cid
            group by instructor_assignment.class_id");
-            $r=$c->queryRow(true, array('cid' => $this->id));
-            return $r['total'];
+        $r=$c->queryRow(true, array('cid' => $this->id));
+        return $r['total'];
     }
 
 
     public static function copyClass($old_cid, $new_sid)
     {
-        $old= self::model()->findByPK($old_cid);
-        $new= new self;
+
+        $transaction= Yii::app()->db->beginTransaction();
+ 
+        try
+        {
+            $transaction->commit();
+
+            $old= self::model()->findByPK($old_cid);
+            $new= new self;
         
-        $new->attributes = $old->attributes;
-        $new->session_id = $new_sid;
+            $new->attributes = $old->attributes;
+            $new->session_id = $new_sid;
         
-        if($new->save()){
-            foreach($old->instructor_assignments as $oa){
-                $na = new InstructorAssignment;
-                $na->attributes = $oa->attributes;
-                $na->class_id = $new->id;
-                $na->save();
+            if($new->save()){
+                foreach($old->instructor_assignments as $oa){
+                    $na = new InstructorAssignment;
+                    $na->attributes = $oa->attributes;
+                    $na->class_id = $new->id;
+                    $na->save();
+                }
+                foreach($old->extra_fees as $of){
+                    $nf = new ExtraFee;
+                    $nf->attributes = $of->attributes;
+                    $nf->class_id = $new->id;
+                    $nf->save();
+                }            
             }
-            foreach($old->extra_fees as $of){
-                $nf = new ExtraFee;
-                $nf->attributes = $of->attributes;
-                $nf->class_id = $new->id;
-                $nf->save();
-            }            
+
+
         }
+        catch(Exception $e)
+        {
+            $transaction->rollBack();
+            // TODO: report the error somehow! flash?
+        }
+
+
     }
 
 

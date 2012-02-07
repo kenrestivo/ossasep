@@ -15,13 +15,6 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-** import/add new class from previous session
-*** relational deep copy! only a few tables though:
-**** class, of course, minus the session!! override that, doh. and id.
-**** instructors, it'll need to create new joins for them. just them!
-**** extra fees
-**** not students though. until parents sign them up! or income.
-**** do it as a transaction
 **	delete a class
 ***	 first fix the link, it's not a-werken (missing js?)
 ***	 only delete class is no students signed up
