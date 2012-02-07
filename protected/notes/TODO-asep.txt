@@ -34,8 +34,6 @@ TODO tasks for ASEP
 **** views/extraFee/_form.php
 **** views/income/_form.php
 **** views/instructorAssignment/_form.php
-**** views/signup/_form.php
-**** views/signup/_row.php
 **** views/expense/_form.php
 **** views/checkIncome/entry_form.php
 **** views/checkIncome/_form.php
