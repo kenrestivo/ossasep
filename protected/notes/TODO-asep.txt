@@ -15,17 +15,9 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-**	delete a class
-***	 first fix the link, it's not a-werken (missing js?)
-***	 only delete class is no students signed up
-****	 do not let them delete otherwise
-*** queries all ready to go, in this order:
-	 delete from instructor_assignment where class_id=:cid
-	 delete from class_meeting where class_id=:cid
-	 delete from class_info where id=:cid
-*** do it as a transaction, and back out of the transactino if it fails
 ** the big issue will be all the dropdowns, which use findAll()
 ***	 i should start constraining those by session!
+**** example being the one i just did for the copy class dropdown!
 ***	 use named scope, it's easy, default scope is session now!
 ***	 searches also, need to use the named scope or something
 *** then i have to start using it in queries. named scope, seems right.
@@ -51,7 +43,7 @@ TODO tasks for ASEP
 **** the income (link to check in order to be sessioned?? NASTY!)
 **** what about students?
 ** do some validation to make sure the user can change to that session
- in classsessioncontroller
+ in classsessioncontroller, are they allowed? find out first.
 ** better way to do the chooser
 *** maybe try a cjui dialog? then reload the page?
 **** look at the calendar thing, as an example.
@@ -102,6 +94,17 @@ TODO tasks for ASEP
 ******* NOTE requires yii 1.1.8, which i think i have
 ***** Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
 	 You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
+** deep delete a class
+***	 first fix the link, it's not a-werken (missing js?)
+**** i see, it kinda works, you have to delete twice
+**** the delete from the overview appears borken.
+***	 only delete class is no students signed up
+****	 do not let them delete otherwise
+*** queries all ready to go, in this order:
+	 delete from instructor_assignment where class_id=:cid
+	 delete from class_meeting where class_id=:cid
+	 delete from class_info where id=:cid
+*** do it as a transaction, and back out of the transactino if it fails
 ** in _income, make amount autopopulate ajax based on class chosen
 *** autocomplete the amount on income based on class
  didn't i do that already?
