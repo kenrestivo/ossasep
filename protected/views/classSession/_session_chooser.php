@@ -6,6 +6,7 @@ echo CHtml::dropDownList('ClassSession[id]',
                          array('submit' => '',
                              )) ;
 
+echo '&nbsp;';
 echo CHtml::submitButton('Change'); 
 
 echo CHtml::endForm();
