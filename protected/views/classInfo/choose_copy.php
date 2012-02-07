@@ -10,6 +10,8 @@
                            'session_id = :sid',
                            array('sid' => $fromsession->id)), 
                        'id', 'summary'),
-       array('submit' => '')) ;
+       array('submit' => '',
+             'empty' => 'Choose One',
+           )) ;
    echo CHtml::endForm();
 ?>
