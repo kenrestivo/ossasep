@@ -1,11 +1,11 @@
-<h3>Choose class to copy to current session from previous session</h3>
+<h3>Choose class to copy from <?= $fromsession->summary ?> to <?= ClassSession::current()->summary ?> </h3>
 
 <?php
    echo CHtml::form(); 
    echo CHtml::dropDownList(
        'ClassInfo[id]', 
        '',
-       // NOTE: this really is findall, up until such time as there's a dropdown
+//TODO: let them pick session from a dropdown dammit
        CHtml::listData(ClassInfo::model()->findAll(
                            'session_id = :sid',
                            array('sid' => $fromsession->id)), 

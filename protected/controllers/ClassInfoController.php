@@ -234,6 +234,7 @@ class ClassInfoController extends Controller
         
 		$this->render(
             'choose_copy',
+            // XXX note, i'm assuming here that we're not  in the current session
             array('fromsession' => ClassSession::sessionByDate()
                 ));
 
