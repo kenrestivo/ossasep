@@ -45,14 +45,15 @@
                 'In Grade Range' =>
                 CHtml::listData(
                     ClassInfo::model()->findAll(
-                        $model->student->grade . '>= min_grade_allowed and '.
-                        $model->student->grade . '<= max_grade_allowed'), 
+                        ':grade >= min_grade_allowed and :grade <= max_grade_allowed',
+                        array('grade' =>
+                              $model->student->grade )), 
                     'id', 'summary'),
                 'Outside Grade Range' =>
                 CHtml::listData(
                     ClassInfo::model()->findAll(
-                        $model->student->grade . '< min_grade_allowed or '.
-                        $model->student->grade . '> max_grade_allowed'), 
+                        ':grade < min_grade_allowed or :grade > max_grade_allowed',
+                        array('grade' => $model->student->grade )), 
                     'id', 'summary'),
                 ), 
             array('class' => 'chzn-select',
