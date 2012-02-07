@@ -240,10 +240,6 @@ class ClassInfoController extends Controller
     }
 
 
-    public function actionCopy()
-    {
-                
-    }
 
 }
 
