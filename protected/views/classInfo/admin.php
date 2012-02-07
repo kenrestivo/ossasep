@@ -76,7 +76,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div>
 
 <div class="span-10 last">
-<?= CHTML::link("Copy Another Class",
+<?= CHTML::link("Copy Existing Class",
                  array("ClassInfo/chooseCopy",
                        'returnTo' => Yii::app()->request->requestUri));
 ?>

@@ -1135,9 +1135,6 @@ that's probably fine for now. i don't need this thing hitting the db or storing 
 
 * dependent dropdown is not that hard
   http://www.yiiframework.com/wiki/24/
-
-
-
 * use a proper accounting engine! use gnucash!
   java -jar ~tmp/incoming/jgnucash/build/lib/jpf-boot.jar
 	ooh cool!

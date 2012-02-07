@@ -221,7 +221,21 @@ class ClassInfoController extends Controller
 
     public function actionChooseCopy()
     {
+
+		if(isset($_POST['ClassInfo'])){
+
+            // do it
+
+            if(isset($_GET['returnTo'])){
+                $this->redirect($_GET['returnTo']);
+            }
+        }
         
+		$this->render(
+            'choose_copy'
+                );
+
+   
     }
 
 
