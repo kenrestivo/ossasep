@@ -219,6 +219,17 @@ class ClassInfoController extends Controller
             );
 	}
 
+    public function actionChooseCopy()
+    {
+        
+    }
+
+
+    public function actionCopy()
+    {
+                
+    }
+
 }
 
 ?>
