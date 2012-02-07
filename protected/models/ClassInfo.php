@@ -526,6 +526,9 @@ where (check_income.returned > '1999-01-01')
             $transaction->commit();
 
             $old= self::model()->findByPK($old_cid);
+            if(!isset($old)){
+                return false;
+            }
             $new= new self;
         
             $new->attributes = $old->attributes;
@@ -553,7 +556,8 @@ where (check_income.returned > '1999-01-01')
             $transaction->rollBack();
             // TODO: report the error somehow! flash?
         }
-
+        
+        return true;
 
     }
 

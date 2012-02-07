@@ -224,14 +224,16 @@ class ClassInfoController extends Controller
 
 		if(isset($_POST['ClassInfo'])){
 
-            ClassInfo::copyClass($_POST['ClassInfo']['id'], 
-                                 ClassSession::savedSessionId());
+            if(ClassInfo::copyClass($_POST['ClassInfo']['id'], 
+                                    ClassSession::savedSessionId())){
 
-            if(isset($_GET['returnTo'])){
-                $this->redirect($_GET['returnTo']);
+                if(isset($_GET['returnTo'])){
+                    $this->redirect($_GET['returnTo']);
+                }
             }
         }
-        
+
+        // TODO: display any errors set from the copyclass function
 		$this->render(
             'choose_copy',
             // XXX note, i'm assuming here that we're not  in the current session
