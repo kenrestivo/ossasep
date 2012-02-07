@@ -27,7 +27,11 @@ TODO tasks for ASEP
 ****	 this means the popups too.
 ****	 default sort/scope for everytbing
 ****	 search and such
-*** or, just a simple damn condition to the findall! 
+*** or, just a simple damn condition to the findall!
+*** the models! the relations are all broken!!! have to be redone with sql!
+**** the income display/view for student (paid, possibly unpaid)
+**** classes display for instructor too
+**** much brokenness everywhere now.
 *** these are all the ones i can find with just a grep:
 **** views/income/_form.php
 **** views/instructorAssignment/_form.php
