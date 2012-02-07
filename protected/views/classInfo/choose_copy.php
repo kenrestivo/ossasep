@@ -1,3 +1,5 @@
+<h3>Choose class to copy from previous session</h3>
+
 <?php
    echo CHtml::form(); 
    echo CHtml::dropDownList(
