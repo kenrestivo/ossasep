@@ -96,6 +96,7 @@ class Company extends CActiveRecord
 		));
 	}
 
+/* because activerecord sucks */
     function getIncomes()
     {
         return Income::model()->findAllBySql(
@@ -104,9 +105,12 @@ from income
 left join check_income 
    on income.check_id = check_income.id
 where check_income.payee_id = :id
+  and check_income.session_id = :sid
 order by abs(check_income.check_num) asc",
-            array('id' => $this->id));
+            array('id' => $this->id,
+                'sid' => ClassSession::savedSessionId()));
     }
+/* because activerecord sucks */
 
     function getClasses()
     {
@@ -118,8 +122,10 @@ left join instructor_assignment
 left join instructor
    on instructor_assignment.instructor_id = instructor.id
 where instructor.company_id = :id
+  and class_info.session_id = :sid
 order by class_info.class_name asc",
-            array('id' => $this->id));
+            array('id' => $this->id,
+                  'sid' => ClassSession::savedSessionId()));
 
     }
 

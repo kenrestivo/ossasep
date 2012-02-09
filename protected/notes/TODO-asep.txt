@@ -33,11 +33,9 @@ TODO tasks for ASEP
 **** the income display/view for student (paid, possibly unpaid)
 **** classes display for instructor too
 **** much brokenness everywhere now
-***** Student.php, classes AND CHECKS and income
 ***** ClassInfo? active maybe?
-***** ClassSession.php
-***** Company.php
-***** Instructor.php CHECKS and expenses!
+***** ClassSession.php?
+***** Instructor.php CHECKS and expenses!?
 ***** Income.php?
 *** these are all the ones i can find with just a grep:
 **** views/income/_form.php
