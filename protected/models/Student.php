@@ -79,13 +79,11 @@ class Student extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'incomes' => array(self::HAS_MANY, 'Income', 'student_id'),
 			'classes' => array(
                 self::HAS_MANY, 
                 'ClassInfo', 
                 'class_id', 
                 'through' => 'signups'),
-			'signups' => array(self::HAS_MANY, 'Signup', 'student_id'),
 			'checks' => array(
                 self::HAS_MANY, 
                 'CheckIncome', 
@@ -93,6 +91,41 @@ class Student extends CActiveRecord
                 'through' => 'incomes'),
             );
 	}
+
+    /* because activerecord sucks */
+
+    public function getSignups()
+    {
+        return Signup::model()->findAllBySql(
+            'select signup.* 
+              from signup
+              left join class_info
+               on signup.class_id = class_info.id
+              where signup.student_id = :stid
+                and class_info.session_id = :ssid',
+            array('ssid' => ClassSession::savedSessionId(),
+                'stid' => $this->id)
+            );
+
+    }
+
+    /* because activerecord sucks */
+
+    public function getIncomes()
+    {
+        return Income::model()->findAllBySql(
+            'select income.* 
+              from income
+              left join class_info
+               on income.class_id = class_info.id
+              where income.student_id = :stid
+                and class_info.session_id = :ssid',
+            array('ssid' => ClassSession::savedSessionId(),
+                'stid' => $this->id)
+            );
+
+    }
+
 
 	/**
 	 * @return array customized attribute labels (name=>label)
