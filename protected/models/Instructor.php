@@ -101,10 +101,6 @@ class Instructor extends CActiveRecord
                 self::MANY_MANY, 
                 'RequirementType', 
                 'requirement_status(instructor_id, requirement_type_id)'),
-			'instructor_assignments' => array(
-                self::HAS_MANY, 
-                'InstructorAssignment', 
-                'instructor_id'),
 			'expenses' => array(
                 self::HAS_MANY, 
                 'Expense', 
@@ -121,6 +117,25 @@ class Instructor extends CActiveRecord
                 'condition' => "status != 'Cancelled'"),
             );
 	}
+
+    /*
+      Blow off all this idiotic activerecord crap and just do it RIGHT in sql.
+     */
+
+    public function getInstructor_assignments()
+    {
+        return InstructorAssignment::model()->findAllBySql(
+            'select instructor_assignment.* 
+              from instructor_assignment
+              left join class_info
+               on instructor_assignment.class_id = class_info.id
+              where instructor_assignment.instructor_id = :iid
+                and class_info.session_id = :sid',
+            array('sid' => ClassSession::savedSessionId(),
+                'iid' => $this->id)
+            );
+
+    }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
