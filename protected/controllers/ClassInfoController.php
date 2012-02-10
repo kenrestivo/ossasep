@@ -207,7 +207,7 @@ class ClassInfoController extends Controller
 	public function actionJson()
 	{
 
-        $model = ClassInfo::model()->findByPk($_POST['Signup']['class_id']);
+        $model = ClassInfo::model()->findByPk($_POST['id']);
         echo CJSON::encode(
             array('min_grade_allowed' => $model->min_grade_allowed,
                   'max_grade_allowed' => $model->max_grade_allowed,
