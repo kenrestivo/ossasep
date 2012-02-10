@@ -215,6 +215,7 @@ class ClassInfoController extends Controller
                   'max_students' => $model->max_students,
                   'cost_per_class' => $model->cost_per_class,
                   'enrolled_count' => $model->enrolled_count,
+                  'cost_summary' => $model->costSummary,
                                )
             );
 	}

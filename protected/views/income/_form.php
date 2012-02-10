@@ -78,7 +78,7 @@ if(isset($model->student_id)){
                   'url'=>CController::createUrl('ClassInfo/json'),
                   'success' => 
                   "function(data){
-                   console.log(data['cost_per_class']);
+                    $('#Income_amount').val(data['cost_summary']);
                    }",
               
                   )));
