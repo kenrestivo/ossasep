@@ -61,10 +61,20 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
-		<?php echo $form->error($model,'payee_id'); ?>
+
+    <?php 
+    if(isset($model->payee_id)){
+        echo CHtml::encode($model->payee->name);
+        echo $form->hiddenField($model, 'payee_id');
+    } else
+        
+        echo $form->dropDownList(
+            $model,'payee_id',
+            CHtml::listData(Company::model()->findAll(), 'id', 'name')); 
+
+?>
+
+
 
 		<?php echo $form->error($model,'payee_id'); ?>
 	</div>
