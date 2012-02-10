@@ -63,10 +63,11 @@
                   'ajax' => array(
                       'type'=>'POST', 
                       'dataType' => 'json',
+                      'data' => 'js:{id:$("#Signup_class_id").val()}',
                       'url'=>CController::createUrl('ClassInfo/json'),
                       'success' => 
                       "function(data){
-$('#Signup_additional_info').text('signup #' + (data['enrolled_count'] + 1) + ' (' + data['max_students'] + ' max)');
+$('#Signup_additional_info').text('signup #' + data['enrolled_count']  + ' (' + data['max_students'] + ' max)');
 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
     $('#Signup_status').val('Waitlist');
 } else{
