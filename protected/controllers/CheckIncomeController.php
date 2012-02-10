@@ -162,6 +162,12 @@ class CheckIncomeController extends Controller
 		return $this->_model;
 	}
 
+
+/* 
+   This was an unused experiment for a single-entry.
+   It's mostly cruft now. Get rid of it?
+ */
+
     public function actionEntry()
     {
 
@@ -190,6 +196,8 @@ class CheckIncomeController extends Controller
     public function actionMultiEntry()
     {
 		$model=new CheckIncome;
+        // set default correctly
+        $model->session_id = ClassSession::savedSessionId();
         $income = array();
 
 		// Uncomment the following line if AJAX validation is needed
