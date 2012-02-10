@@ -37,6 +37,12 @@ TODO tasks for ASEP
 ***** ClassSession.php?
 ***** Instructor.php CHECKS and expenses!?
 ***** Income.php?
+*** BIGGER problems!
+**** i have to redo classes and ANYTHING THAT USES THROUGH as raw sql now!
+***** CheckExpense.php
+***** ClassInfo.php
+***** ClassSession.php
+***** Instructor.php
 *** big problems
 **** checkincome multi-entry
 ***** it needs to first of all default to THIS SESSION
