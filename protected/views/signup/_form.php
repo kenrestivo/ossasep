@@ -67,7 +67,7 @@
                       'url'=>CController::createUrl('ClassInfo/json'),
                       'success' => 
                       "function(data){
-$('#Signup_additional_info').text('signup #' + data['enrolled_count']  + ' (' + data['max_students'] + ' max)');
+$('#Signup_additional_info').text( data['enrolled_count']  + ' signed up (' + data['max_students'] + ' max)');
 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
     $('#Signup_status').val('Waitlist');
 } else{
@@ -79,6 +79,7 @@ if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
 ?> 
 
 		<?php echo $form->error($model,'class_id'); ?>
+    <div id="Signup_additional_info" class="infoMessage" ></div>
 	</div>
 
 
@@ -100,7 +101,6 @@ if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
     <?php echo ZHtml::enumDropDownList( $model,'status'); ?>
-    <div id="Signup_additional_info" class="infoMessage" ></div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
