@@ -183,6 +183,9 @@ class CheckIncomeController extends Controller
 
     }
 
+/* 
+   this function ought to be taken out and shot
+ */
 
     public function actionMultiEntry()
     {
