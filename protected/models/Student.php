@@ -104,6 +104,8 @@ class Student extends CActiveRecord
 
     }
 
+    /* because activerecord sucks */
+
     public function getClasses()
     {
         return ClassInfo::model()->findAllBySql(
