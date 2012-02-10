@@ -40,6 +40,7 @@ if(isset($model->class_id) && !$model->hasErrors()){
 }
 
 echo $form->error($model,"[$index]class_id"); 
+echo '<div id="Signup_'. $index. '_additional_info"  >';
 
 ?> 
 
@@ -57,7 +58,6 @@ echo $form->error($model,"[$index]class_id");
 </td>
 <td>
 <?php echo ZHtml::enumDropDownList( $model,"[$index]status"); 
-echo '<div id="Signup_'. $index. '_additional_info"  >';
 ?>
 </div>
     <?php echo $form->error($model,"[$index]status"); ?>
@@ -93,11 +93,11 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
                     $.ajax({
                         type:'POST', 
                                 dataType: 'json',
-                                data: {'Signup[class_id]' : cid},
+                                data: {'id' : cid},
                                 url:'<?= CController::createUrl('ClassInfo/json') ?>',
                                 success: 
                             function(data){
-                                $('#Signup_' + id + '_additional_info').html('signup #' + (data['enrolled_count'] + 1) + '<br />(' + data['max_students'] + ' max)');
+                                $('#Signup_' + id + '_additional_info').html(data['enrolled_count']  + ' signed up (' + data['max_students'] + ' max)');
                                 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
                                     $('#Signup_' + id + '_status').val('Waitlist');
                                 } else{
