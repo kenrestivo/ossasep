@@ -37,6 +37,11 @@ TODO tasks for ASEP
 ***** ClassSession.php?
 ***** Instructor.php CHECKS and expenses!?
 ***** Income.php?
+*** big problems
+**** checkincome multi-entry
+***** it needs to first of all default to THIS SESSION
+***** secondly, it needs to auto-repopulate the sub-income class amounts!!
+****** ajax, methinks?
 *** these are all the ones i can find with just a grep:
 **** views/income/_form.php
 **** views/instructorAssignment/_form.php
