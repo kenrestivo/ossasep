@@ -29,6 +29,12 @@ TODO tasks for ASEP
 ****	 default sort/scope for everytbing
 ****	 search and such
 **** or, just a simple damn condition to the findall!
+*** really, anywhere session_id is used, PUT ZHTMLMULTIENTRY in there!
+**** and make sure ALL the creates have current session as default
+**** it's really the right thing to do.
+***** DepositDetails.php
+***** ClassInfo.php
+***** CheckExpense.php
 *** the models! the relations are all broken!!! have to be redone with sql!
 **** the income display/view for student (paid, possibly unpaid)
 **** classes display for instructor too
@@ -43,10 +49,6 @@ TODO tasks for ASEP
 ***** ClassInfo.php
 ***** ClassSession.php
 ***** Instructor.php
-*** big problems
-**** checkincome multi-entry
-***** it needs to first of all default to THIS SESSION
-***** secondly, it needs to auto-repopulate the sub-income class amounts!!
 ****** ajax, methinks?
 *** these are all the ones i can find with just a grep:
 **** views/income/_form.php
@@ -85,6 +87,8 @@ TODO tasks for ASEP
 **** do the formatting of the checkboxes in an array, then split up left/right columns
 *** the hard part will be that messy matrix with the summary of dates!
 **** maybe try parenscript?
+** in checkincome multientry, make the amount ajax populate with the AMOUNT OWED
+*** not the costsummary for the class, but what that student actually owes for it!
 ** backup refinements
 *** somehow protect that cgi a bit better
 **** make that directory scriptaliased?
