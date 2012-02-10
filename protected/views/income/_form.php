@@ -74,12 +74,12 @@ if(isset($model->student_id)){
               'ajax' => array(
                   'type'=>'POST', 
                   'dataType' => 'json',
+                  'data' => 'js:{id:$("#Income_class_id").val()}',
                   'url'=>CController::createUrl('ClassInfo/json'),
                   'success' => 
                   "function(data){
                    console.log(data['cost_per_class']);
                    }",
-
               
                   )));
 
