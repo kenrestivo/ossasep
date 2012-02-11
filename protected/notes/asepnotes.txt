@@ -1222,3 +1222,4 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 http://www.yiiframework.com/extension/cdropdownmenu
 * it is a GOOD THING to REQUIRE that the page reloads after changing session
 so it's ok to have it be something they have to click off of the page to do.
+* i already have default scope to be sessionified, so things SHOULD work, i think.

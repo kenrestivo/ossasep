@@ -13,18 +13,10 @@ TODO tasks for ASEP
 	 a checkbox, mark all, save, would be fine
 *** a joint as example: http://localhost/asepgui/index.php/Company/2
 *** a printout of it for the company, or let them log in to see
-** checkexpense is broken, needs returnTo
-*** also needs payer autocomplete or something
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
 ** the big issue will be all the dropdowns, which use findAll()
 ***	 i should start constraining those by session!
-**** example being the one i just did for the copy class dropdown!
-***	 use named scope, it's easy, default scope is session now!
-***	 searches also, need to use the named scope or something
-*** then i have to start using it in queries. named scope, seems right.
-	i do use it in a few other places alreay, in raw sql
-**** WAAAIT! the default scope is already there, already sessionified!!
 *** queries and searches
 **** go through and make sure all my queries and searches are session-enabled
 ****	 so i can change them later easily
@@ -37,9 +29,7 @@ TODO tasks for ASEP
 **** the income display/view for student (paid, possibly unpaid)
 **** classes display for instructor too
 **** much brokenness everywhere now
-***** ClassInfo? active maybe?
-***** ClassSession.php?
-***** Instructor.php CHECKS and expenses!?
+***** Instructor.php expenses!
 ***** Income.php?
 *** BIGGER problems!
 **** i have to redo classes and ANYTHING THAT USES THROUGH as raw sql now!
