@@ -191,24 +191,6 @@ CREATE TABLE `deposit_details` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `expense`
---
-
-DROP TABLE IF EXISTS `expense`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `expense` (
-  `check_id` int(11) NOT NULL,
-  `instructor_id` int(11) NOT NULL,
-  `amount` decimal(19,2) NOT NULL,
-  PRIMARY KEY (`check_id`,`instructor_id`),
-  KEY `instructor_id` (`instructor_id`),
-  CONSTRAINT `expense_ibfk_1` FOREIGN KEY (`check_id`) REFERENCES `check_expense` (`id`),
-  CONSTRAINT `expense_ibfk_2` FOREIGN KEY (`instructor_id`) REFERENCES `instructor` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `extra_fee`
 --
 

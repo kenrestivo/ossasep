@@ -1,7 +1,7 @@
 <?php 
 echo CHTML::link("Add Payment for ". $model->full_name, 
-                 array("Expense/create",
-                       'instructor_id' => $model->id,
+                 array("CheckExpense/create",
+                       'payee_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'requiermentstatus-grid',
@@ -9,12 +9,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->expenses
                       ),
                   'columns'=>array(
-                      'check.amount:number:Check Total Amount',
+                      'check.check_num:ntext:Check #',
+                      'check.amount:currency:Total Check Amount',
                       'check.check_date:date:Check Date',
-                      'check.delivered:date:Delivered To Instructor',
+                      'check.payer:text:Payer',
+                      'check.delivered:date:Delivered to Company',
                       array(
                           'class'=>'CompositeButtonColumn',
-                          'modelClassName' => 'Expense',
+                          'modelClassName' => 'CheckExpense',
                           'returnTo' => Yii::app()->request->requestUri
                           ),
                       ),
