@@ -103,9 +103,17 @@ through
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'session_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'session_id',
-        CHtml::listData(ClassSession::model()->findAll(), 'id', 'summary')); ?>
+
+
+    <?php 
+      // NOTE: DO NOT LET THEM CHANGE THE SESSION!!!
+    ZHtml::multiEndedDropDown(
+        $model, $form, 'session_id',
+        "CHtml::listData(ClassSession::model()->findAll(), 
+                        'id', 'summary')",
+        'CHtml::encode($model->session->summary)');
+?>
+
 		<?php echo $form->error($model,'session_id'); ?>
 	</div>
 

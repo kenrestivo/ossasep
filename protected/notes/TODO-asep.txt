@@ -22,19 +22,15 @@ TODO tasks for ASEP
 ***	 searches also, need to use the named scope or something
 *** then i have to start using it in queries. named scope, seems right.
 	i do use it in a few other places alreay, in raw sql
+**** WAAAIT! the default scope is already there, already sessionified!!
 *** queries and searches
-****go through and make sure all my queries and searches are session-enabled
+**** go through and make sure all my queries and searches are session-enabled
 ****	 so i can change them later easily
 ****	 this means the popups too.
 ****	 default sort/scope for everytbing
 ****	 search and such
 **** or, just a simple damn condition to the findall!
-*** really, anywhere session_id is used, PUT ZHTMLMULTIENTRY in there!
-**** and make sure ALL the creates have current session as default
-**** it's really the right thing to do.
-***** DepositDetails.php
-***** ClassInfo.php
-***** CheckExpense.php
+*** the integrity check/audit needs to be sessionified!
 *** the models! the relations are all broken!!! have to be redone with sql!
 **** the income display/view for student (paid, possibly unpaid)
 **** classes display for instructor too
