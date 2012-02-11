@@ -84,6 +84,7 @@ class CheckExpenseController extends Controller
 
         if(isset($_GET['payee_id'])){
             $model->payee_id = $_GET['payee_id'];
+            $model->amount = $model->payee->owed;
         }
 
 
