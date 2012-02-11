@@ -17,7 +17,6 @@ TODO tasks for ASEP
 * must have for NEXT SESSION!
 ** sessionify
 *** the income display/view for student (paid, possibly unpaid)
-*** Instructor.php expenses!
 **** Income.php?
 *** BIGGER problems!
 **** i have to redo classes and ANYTHING THAT USES THROUGH as raw sql now!
