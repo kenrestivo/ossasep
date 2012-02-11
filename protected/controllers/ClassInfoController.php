@@ -58,8 +58,14 @@ class ClassInfoController extends Controller
 	{
 		$model=new ClassInfo;
 
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
 
 		if(isset($_POST['ClassInfo']))
 		{
@@ -67,7 +73,7 @@ class ClassInfoController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+        // handle single-endeds, gah!!
         if(isset($_GET['session_id'])){
             $model->session_id = $_GET['session_id'];
         }
@@ -134,6 +140,8 @@ class ClassInfoController extends Controller
 	{
 		$model=new ClassInfo('search');
 		$model->unsetAttributes();  // clear any default values
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
 		if(isset($_GET['ClassInfo']))
 			$model->attributes=$_GET['ClassInfo'];
 
@@ -198,7 +206,8 @@ class ClassInfoController extends Controller
 	 */
 	public function actionJson()
 	{
-        $model = ClassInfo::model()->findByPk($_POST['Signup']['class_id']);
+
+        $model = ClassInfo::model()->findByPk($_POST['id']);
         echo CJSON::encode(
             array('min_grade_allowed' => $model->min_grade_allowed,
                   'max_grade_allowed' => $model->max_grade_allowed,
@@ -209,6 +218,32 @@ class ClassInfoController extends Controller
                                )
             );
 	}
+
+    public function actionChooseCopy()
+    {
+
+		if(isset($_POST['ClassInfo'])){
+
+            if(ClassInfo::copyClass($_POST['ClassInfo']['id'], 
+                                    ClassSession::savedSessionId())){
+
+                if(isset($_GET['returnTo'])){
+                    $this->redirect($_GET['returnTo']);
+                }
+            }
+        }
+
+        // TODO: display any errors set from the copyclass function
+		$this->render(
+            'choose_copy',
+            // XXX note, i'm assuming here that we're not  in the current session
+            array('fromsession' => ClassSession::sessionByDate()
+                ));
+
+   
+    }
+
+
 
 }
 

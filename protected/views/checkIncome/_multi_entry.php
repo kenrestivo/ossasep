@@ -61,10 +61,20 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(Company::model()->findAll(), 'id', 'name')); ?>
-		<?php echo $form->error($model,'payee_id'); ?>
+
+    <?php 
+    if(isset($model->payee_id)){
+        echo CHtml::encode($model->payee->name);
+        echo $form->hiddenField($model, 'payee_id');
+    } else
+        
+        echo $form->dropDownList(
+            $model,'payee_id',
+            CHtml::listData(Company::model()->findAll(), 'id', 'name')); 
+
+?>
+
+
 
 		<?php echo $form->error($model,'payee_id'); ?>
 	</div>
@@ -72,35 +82,21 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'session_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'session_id',
-        CHtml::listData(ClassSession::model()->findAll(), 'id', 'summary')); ?>
+    <?php 
+      // NOTE: DO NOT LET THEM CHANGE THE SESSION!!!
+    ZHtml::multiEndedDropDown(
+        $model, $form, 'session_id',
+        "CHtml::listData(ClassSession::model()->findAll(), 
+                        'id', 'summary')",
+        'CHtml::encode($model->session->summary)');
+?>
 		<?php echo $form->error($model,'session_id'); ?>
 	</div>
 
 
 
-<table>
-<tr><th>Class</th><th>Amount</th><th></th></tr>
-<?php foreach($income as $i=>$inc): ?>
-<tr>
-    <td><?php echo $inc->class->summary . " (". $inc->class->company->name . ")"; 
-          echo CHtml::activeHiddenField($inc,"[$i]class_id"); 
-         echo CHtml::activeHiddenField($inc,"[$i]student_id"); ?></td>
-<td><?php echo CHtml::activeTextField($inc,"[$i]amount");?></td>
-<td>
-<?php echo CHtml::link(
-    'Un-assign', 
-    '', 
-    array(
-        'class'=>'delete',
-        'onClick'=>'deleteRow($(this))', 
-   ));?>
-</td>
-</tr>
-<?php endforeach; ?>
-</table>
-
+<?php echo $this->renderPartial('_income_subrecords', array('model'=>$model,
+                                    'income' => $income)); ?>
 
 
 

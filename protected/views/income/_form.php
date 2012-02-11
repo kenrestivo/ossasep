@@ -71,7 +71,17 @@ if(isset($model->student_id)){
         'CHtml::encode($model->class->summary)',
         array('class' => 'chzn-select',
               'empty' => "Choose One",
-));
+              'ajax' => array(
+                  'type'=>'POST', 
+                  'dataType' => 'json',
+                  'data' => 'js:{id:$("#Income_class_id").val()}',
+                  'url'=>CController::createUrl('ClassInfo/json'),
+                  'success' => 
+                  "function(data){
+                    $('#Income_amount').val(data['cost_summary']);
+                   }",
+              
+                  )));
 
 echo $form->error($model,'class_id'); 
 

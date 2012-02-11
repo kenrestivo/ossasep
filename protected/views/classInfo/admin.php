@@ -65,11 +65,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); 
+?>
 
-echo CHTML::link("Add New Class",
+<div class="span-10">
+<?= CHTML::link("Add New Class",
                  array("ClassInfo/create",
                        'returnTo' => Yii::app()->request->requestUri));
-
-
-
 ?>
+
+</div>
+
+<div class="span-10 last">
+<?= CHTML::link("Copy Existing Class",
+                 array("ClassInfo/chooseCopy",
+                       'returnTo' => Yii::app()->request->requestUri));
+?>
+</div>
+

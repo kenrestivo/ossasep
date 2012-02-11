@@ -20,7 +20,7 @@ asep notes
 ** payroll (possibly A/P?)
 ** some simple reporting
 ** yeah, online ordering would be nice
-* 	http://hostname/path/to/index.php?r=tTeacher
+** 	http://hostname/path/to/index.php?r=tTeacher
 * dependent ajax dropdowns
 	http://www.yiiframework.com/wiki/24/
 	this is a MUCH better version
@@ -124,10 +124,8 @@ LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY '
 LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	parent_4, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3, 	email_parent_4, 	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
 
 ** omit "local" if the file is on the server
-
-* the order IS IMPORTANT, if it's wrong, everythign breaks
-
-
+   
+** the order IS IMPORTANT, if it's wrong, everythign breaks
 * nested forms are sub forms
 http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
 
@@ -608,7 +606,7 @@ or use cjuitabs
 
 *** could just home-roll it
 	http://htmldog.com/articles/tabs/
-   
+    
 * filtering the datepicker
 
 $('.selector').datepicker({
@@ -923,7 +921,7 @@ better, summarixed
 
 
 
-* tablle widths
+* table widths
 	http://stackoverflow.com/questions/4457506/css-how-to-set-the-table-column-width-constant-regardless-of-the-amount-of-text
 
 
@@ -1137,9 +1135,6 @@ that's probably fine for now. i don't need this thing hitting the db or storing 
 
 * dependent dropdown is not that hard
   http://www.yiiframework.com/wiki/24/
-
-
-
 * use a proper accounting engine! use gnucash!
   java -jar ~tmp/incoming/jgnucash/build/lib/jpf-boot.jar
 	ooh cool!
@@ -1216,3 +1211,15 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 **** look at her spreadsheet to see
 ** the joint checks need to be deposited really
 
+
+* the dropdown idea is totally braindead
+** mbmenu is a peice of shit
+** and a dropdown embedded in cmenu is also a non-starter.
+*** try emenu?
+**** it is TOTAL GARBAGE, useless, unwise. bleh.
+
+** superfish? via cdropdownmenu? supposedly depreciated and doesn't like the mainmenu of gii app
+http://www.yiiframework.com/extension/cdropdownmenu
+* it is a GOOD THING to REQUIRE that the page reloads after changing session
+so it's ok to have it be something they have to click off of the page to do.
+* i already have default scope to be sessionified, so things SHOULD work, i think.

@@ -53,8 +53,9 @@ class Controller extends CController
 
     public function savedSessionSummary()
     {
-        return ClassSession::model()->findByPk(
-            ClassSession::savedSessionId())->summary;
+        // XXX this is stupid. i don't need this here.
+        /// just replace all calls to this nonsense with the classsession static
+        return ClassSession::current()->summary;
     }
 
     /*

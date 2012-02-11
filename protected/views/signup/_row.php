@@ -20,22 +20,27 @@ if(isset($model->class_id) && !$model->hasErrors()){
             'In Grade Range' =>
             CHtml::listData(
                 ClassInfo::model()->findAll(
-                    $model->student->grade . '>= min_grade_allowed and '.
-                    $model->student->grade . '<= max_grade_allowed'), 
+                    '(:grade >= min_grade_allowed and :grade <= max_grade_allowed) and session_id = :sid',
+                    array('grade' =>
+                          $model->student->grade,
+                          'sid' => ClassSession::savedSessionId())), 
                 'id', 'summary'),
             'Outside Grade Range' =>
             CHtml::listData(
                 ClassInfo::model()->findAll(
-                    $model->student->grade . '< min_grade_allowed or '.
-                    $model->student->grade . '> max_grade_allowed'), 
-                'id', 'summary'),
-            ), 
-        array('class' => 'chzn-select',
-              'empty' => "Choose a class",
-            )); 
+                    '(:grade < min_grade_allowed or :grade > max_grade_allowed) and session_id = :sid',
+                    array('grade' => $model->student->grade,
+                          'sid' => ClassSession::savedSessionId())), 
+                
+                    'id', 'summary'),
+                ), 
+            array('class' => 'chzn-select',
+                  'empty' => "Choose a class",
+                )); 
 }
 
 echo $form->error($model,"[$index]class_id"); 
+echo '<div id="Signup_'. $index. '_additional_info"  >';
 
 ?> 
 
@@ -53,7 +58,6 @@ echo $form->error($model,"[$index]class_id");
 </td>
 <td>
 <?php echo ZHtml::enumDropDownList( $model,"[$index]status"); 
-echo '<div id="Signup_'. $index. '_additional_info"  >';
 ?>
 </div>
     <?php echo $form->error($model,"[$index]status"); ?>
@@ -89,11 +93,11 @@ echo '<div id="Signup_'. $index. '_additional_info"  >';
                     $.ajax({
                         type:'POST', 
                                 dataType: 'json',
-                                data: {'Signup[class_id]' : cid},
+                                data: {'id' : cid},
                                 url:'<?= CController::createUrl('ClassInfo/json') ?>',
                                 success: 
                             function(data){
-                                $('#Signup_' + id + '_additional_info').html('signup #' + data['enrolled_count'] + '<br />(' + data['max_students'] + ' max)');
+                                $('#Signup_' + id + '_additional_info').html(data['enrolled_count']  + ' signed up (' + data['max_students'] + ' max)');
                                 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
                                     $('#Signup_' + id + '_status').val('Waitlist');
                                 } else{

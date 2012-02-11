@@ -14,10 +14,12 @@ print '</tr>';
 print '<tr>';
     foreach($days as $day){
         echo '<td>';
-        foreach($classes[$day] as $c){
-            echo  $this->renderPartial(
-                         '_signup_public', 
-                         array('model'=>$c));
+        if(isset($classes[$day])){
+            foreach($classes[$day] as $c){
+                echo  $this->renderPartial(
+                    '_signup_public', 
+                    array('model'=>$c));
+            }
         }
         echo'</td>';
     }

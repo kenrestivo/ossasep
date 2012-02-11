@@ -62,6 +62,12 @@ class CheckExpenseController extends Controller
 	{
 		$model=new CheckExpense;
 
+
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
+
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -74,6 +80,13 @@ class CheckExpenseController extends Controller
             // XXX why do i have to set defaults here, and default in rules doesn't cut it?
             $model->payer='OSS PTO';
         }
+
+
+        if(isset($_GET['payee_id'])){
+            $model->payee_id = $_GET['payee_id'];
+            $model->amount = $model->payee->owed;
+        }
+
 
 		$this->render('create',array(
 			'model'=>$model,

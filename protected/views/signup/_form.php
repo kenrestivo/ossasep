@@ -45,14 +45,17 @@
                 'In Grade Range' =>
                 CHtml::listData(
                     ClassInfo::model()->findAll(
-                        $model->student->grade . '>= min_grade_allowed and '.
-                        $model->student->grade . '<= max_grade_allowed'), 
+                        '(:grade >= min_grade_allowed and :grade <= max_grade_allowed) and session_id = :sid',
+                        array('grade' =>
+                              $model->student->grade,
+                              'sid' => ClassSession::savedSessionId())), 
                     'id', 'summary'),
                 'Outside Grade Range' =>
                 CHtml::listData(
                     ClassInfo::model()->findAll(
-                        $model->student->grade . '< min_grade_allowed or '.
-                        $model->student->grade . '> max_grade_allowed'), 
+                        '(:grade < min_grade_allowed or :grade > max_grade_allowed) and session_id = :sid',
+                        array('grade' => $model->student->grade,
+                            'sid' => ClassSession::savedSessionId())), 
                     'id', 'summary'),
                 ), 
             array('class' => 'chzn-select',
@@ -60,10 +63,11 @@
                   'ajax' => array(
                       'type'=>'POST', 
                       'dataType' => 'json',
+                      'data' => 'js:{id:$("#Signup_class_id").val()}',
                       'url'=>CController::createUrl('ClassInfo/json'),
                       'success' => 
                       "function(data){
-$('#Signup_additional_info').text('signup #' + data['enrolled_count'] + ' (' + data['max_students'] + ' max)');
+$('#Signup_additional_info').text( data['enrolled_count']  + ' signed up (' + data['max_students'] + ' max)');
 if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
     $('#Signup_status').val('Waitlist');
 } else{
@@ -75,6 +79,7 @@ if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
 ?> 
 
 		<?php echo $form->error($model,'class_id'); ?>
+    <div id="Signup_additional_info" class="infoMessage" ></div>
 	</div>
 
 
@@ -96,7 +101,6 @@ if(parseInt(data['enrolled_count']) > parseInt(data['max_students'])){
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
     <?php echo ZHtml::enumDropDownList( $model,'status'); ?>
-    <div id="Signup_additional_info" class="infoMessage" ></div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

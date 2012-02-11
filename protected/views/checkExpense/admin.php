@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Payment', 'url'=>array('create')),
+	array('label'=>'Create Check Payables', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -39,16 +39,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'check-expense-grid',
 	'dataProvider'=>$model->search(),
+    'selectionChanged'=>ZHtml::clickableRow('CheckExpense/update'),
 	'filter'=>$model,
 	'columns'=>array(
+		'check_num:ntext',
 		'amount:currency',
-		'payer',
-		'payee.full_name:ntext:Instructor',
-		'check_num',
 		'check_date:date',
+		'payee.full_name:text:Payee',
         'delivered:date',
-        'session.summary:text:Session',
+		'payer:ntext',
 		array(
 			'class'=>'CButtonColumn',
+            'template'=>'{update}{delete}',
 		),
         ))); ?>

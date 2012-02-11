@@ -32,9 +32,11 @@ class ClassSessionController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'actions'=>array('index', 'view', 'create', 'update', 
-                                 'admin','delete'),
 				'users'=>array('admin'),
+			),
+			array('allow',  // public pages
+                  'actions'=> array('chooseSession'),
+                  'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -169,4 +171,29 @@ class ClassSessionController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    public function actionChooseSession()
+    {
+
+		if(isset($_POST['ClassSession'])){
+            // TODO validate! make sure they can only set to what they're allowed
+            Yii::app()->session['saved_session_id'] =  
+                $_POST['ClassSession']['id'];
+            if(isset($_GET['returnTo'])){
+                $this->redirect($_GET['returnTo']);
+            }
+        }
+        
+		$this->render(
+            '_session_chooser', 
+            array(
+                /// right. if it's not admin, then constrain to public only.
+                'sessions' =>  
+                ClassSession::allSessions(Yii::app()->user->name != 'admin'),
+                // not reallly necessary, but mvc-ish
+                'saved' => ClassSession::savedSessionId()
+                ));
+        
+    }
+
 }

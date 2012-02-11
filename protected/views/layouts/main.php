@@ -34,10 +34,18 @@
 				array('label'=>'Enrollment Status', 'url'=>array('/Report/signupsPublic')),
 
                 //TODO: make this clickable/changable
-				array('label'=>$this->savedSessionSummary()),
+				array('label'=>$this->savedSessionSummary(),
+                      'url'=>array('/ClassSession/ChooseSession',
+                                   'returnTo' => Yii::app()->request->requestUri
+), 
+                    ),
 
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Login', 
+                      'url'=>array('/site/login'), 
+                      'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 
+                      'url'=>array('/site/logout'), 
+                      'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->

@@ -58,6 +58,10 @@ class DepositDetailsController extends Controller
 	{
 		$model=new DepositDetails;
 
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

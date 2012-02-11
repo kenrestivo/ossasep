@@ -58,6 +58,10 @@ class CheckIncomeController extends Controller
 	{
 		$model=new CheckIncome;
 
+        // set the default session id if it isn't set in the search
+        $model->session_id = ClassSession::savedSessionId();
+
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -158,6 +162,12 @@ class CheckIncomeController extends Controller
 		return $this->_model;
 	}
 
+
+/* 
+   This was an unused experiment for a single-entry.
+   It's mostly cruft now. Get rid of it?
+ */
+
     public function actionEntry()
     {
 
@@ -179,10 +189,15 @@ class CheckIncomeController extends Controller
 
     }
 
+/* 
+   this function ought to be taken out and shot
+ */
 
     public function actionMultiEntry()
     {
 		$model=new CheckIncome;
+        // set default correctly
+        $model->session_id = ClassSession::savedSessionId();
         $income = array();
 
 		// Uncomment the following line if AJAX validation is needed

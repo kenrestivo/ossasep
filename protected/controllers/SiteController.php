@@ -110,4 +110,13 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+
+   public function actionRev()
+    {
+        echo shell_exec('git log -n1 --pretty=format:%h HEAD');
+        Yii::app()->end();
+
+    }
+
 }

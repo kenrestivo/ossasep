@@ -79,11 +79,10 @@ class Instructor extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'check_expenses' => array(
+			'expenses' => array(
                 self::HAS_MANY, 
                 'CheckExpense', 
-                'instructor_id',
-                'through' => 'expenses'),
+                'payee_id'),
 			'instructor_type' => array(
                 self::BELONGS_TO, 
                 'InstructorType', 
@@ -92,23 +91,10 @@ class Instructor extends CActiveRecord
                 self::BELONGS_TO, 
                 'Company', 
                 'company_id'),
-			'classes' => array(
-                self::HAS_MANY, 
-                'ClassInfo', 
-                'class_id',
-                'through' => 'instructor_assignments'),
 			'requirement_types' => array(
                 self::MANY_MANY, 
                 'RequirementType', 
                 'requirement_status(instructor_id, requirement_type_id)'),
-			'instructor_assignments' => array(
-                self::HAS_MANY, 
-                'InstructorAssignment', 
-                'instructor_id'),
-			'expenses' => array(
-                self::HAS_MANY, 
-                'Expense', 
-                'instructor_id'),
 			'requirement_status' => array(
                 self::HAS_MANY, 
                 'RequirementStatus', 
@@ -121,6 +107,47 @@ class Instructor extends CActiveRecord
                 'condition' => "status != 'Cancelled'"),
             );
 	}
+
+    /*
+      Blow off all this idiotic activerecord crap and just do it RIGHT in sql.
+     */
+
+    public function getInstructor_assignments()
+    {
+        return InstructorAssignment::model()->findAllBySql(
+            'select instructor_assignment.* 
+              from instructor_assignment
+              left join class_info
+               on instructor_assignment.class_id = class_info.id
+              where instructor_assignment.instructor_id = :iid
+                and class_info.session_id = :sid',
+            array('sid' => ClassSession::savedSessionId(),
+                'iid' => $this->id)
+            );
+
+    }
+
+
+    /*
+      Blow off all this idiotic activerecord crap and just do it RIGHT in sql.
+     */
+
+    public function getClasses()
+    {
+        return ClassInfo::model()->findAllBySql(
+            'select class_info.* 
+              from class_info
+              left join instructor_assignment
+               on instructor_assignment.class_id = class_info.id
+              where instructor_assignment.instructor_id = :iid
+                and class_info.session_id = :sid',
+            array('sid' => ClassSession::savedSessionId(),
+                'iid' => $this->id)
+            );
+
+    }
+
+
 
 	/**
 	 * @return array customized attribute labels (name=>label)
