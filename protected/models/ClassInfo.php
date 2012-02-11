@@ -52,7 +52,9 @@ class ClassInfo extends CActiveRecord
 	}
 
     public function defaultScope() {
-        return array('order' => 'class_name ASC');
+        return array(
+            'condition' => 'session_id = ' . ClassSession::savedSessionId(),
+            'order' => 'class_name ASC');
     }
 
 

@@ -6,7 +6,7 @@ TODO tasks for ASEP
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
 *** an undelivered checks screen, by class
- just checkboxes, and a date, and mark delivered for all of them.
+ ojust checkboxes, and a date, and mark delivered for all of them.
  pick which checks are delivered!
 	 they are by class, which is how she files them
 	 classinfo/_income
@@ -17,13 +17,6 @@ TODO tasks for ASEP
 * must have for NEXT SESSION!
 ** the big issue will be all the dropdowns, which use findAll()
 ***	 i should start constraining those by session!
-*** queries and searches
-**** go through and make sure all my queries and searches are session-enabled
-****	 so i can change them later easily
-****	 this means the popups too.
-****	 default sort/scope for everytbing
-****	 search and such
-**** or, just a simple damn condition to the findall!
 *** the integrity check/audit needs to be sessionified!
 *** the models! the relations are all broken!!! have to be redone with sql!
 **** the income display/view for student (paid, possibly unpaid)
