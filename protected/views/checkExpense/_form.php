@@ -18,22 +18,19 @@
       // I have to constrain based on company here.
 
 if(isset($model->payee_id) && !$model->hasErrors()){
-        echo CHtml::encode($model->payee->full_name);
-        echo $form->hiddenField($model,"payee_id"); 
-    } else {
-          $instparams=array();
-          $constraint = "";
-          if(isset($model->class_id)){
-              $instparams = array(
-                  'condition'=>'company_id = :coid',
-                  'params'=>array(':coid' => $model->class->company_id));
-              $constraint = " (only for ". $model->class->company->name . ")";
-          }
+    echo CHtml::encode($model->payee->full_name);
+    echo $form->hiddenField($model,"payee_id"); 
+} else {
+    $instparams = array(
+        'condition'=>'company_id = :coid',
+        'params'=>array(':coid' => Company::OSSPTO_COMPANY));
+    $constraint = " (expense checks only for OSSPTO)";
 
-          echo $form->dropDownList(
-              $model,'payee_id',
-              CHtml::listData(Instructor::model()->findAll($instparams), 
-                              'id', 'full_name'),
+    
+    echo $form->dropDownList(
+        $model,'payee_id',
+        CHtml::listData(Instructor::model()->findAll($instparams), 
+                        'id', 'full_name'),
         array(
             'ajax' => array(
                 'type'=>'POST', //request type
@@ -41,8 +38,8 @@ if(isset($model->payee_id) && !$model->hasErrors()){
                 'success'=>'function(data){
                 $("input#CheckExpense_amount").val(jQuery.parseJSON(data));}',
                 )));
-          echo $constraint;
-    } 
+    echo $constraint;
+} 
 
 echo $form->error($model,'payee_id'); 
 
