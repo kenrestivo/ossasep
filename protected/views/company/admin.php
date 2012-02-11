@@ -52,4 +52,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 		),
 	),
-)); ?>
+));
+
+
+echo CHTML::link("Add New Company",
+                 array("Company/create",
+                       'returnTo' => Yii::app()->request->requestUri));
+
+
+
+ ?>
