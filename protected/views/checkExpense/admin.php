@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Payment', 'url'=>array('create')),
+	array('label'=>'Create Check Payables', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
