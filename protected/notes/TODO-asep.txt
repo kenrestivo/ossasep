@@ -15,15 +15,11 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-** the big issue will be all the dropdowns, which use findAll()
-***	 i should start constraining those by session!
-*** the integrity check/audit needs to be sessionified!
-*** the models! the relations are all broken!!! have to be redone with sql!
-**** the income display/view for student (paid, possibly unpaid)
-**** classes display for instructor too
-**** much brokenness everywhere now
-***** Instructor.php expenses!
-***** Income.php?
+** sessionify
+*** ahaa!! the expense table is CRUFT. unused. make it go awaaaay.
+*** the income display/view for student (paid, possibly unpaid)
+*** Instructor.php expenses!
+**** Income.php?
 *** BIGGER problems!
 **** i have to redo classes and ANYTHING THAT USES THROUGH as raw sql now!
 ***** CheckExpense.php
