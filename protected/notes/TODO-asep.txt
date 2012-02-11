@@ -16,7 +16,6 @@ TODO tasks for ASEP
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
 ** sessionify
-*** ahaa!! the expense table is CRUFT. unused. make it go awaaaay.
 *** the income display/view for student (paid, possibly unpaid)
 *** Instructor.php expenses!
 **** Income.php?
