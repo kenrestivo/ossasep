@@ -41,12 +41,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		'check_num:ntext',
 		'amount:currency',
-		'payer',
-		'payee.full_name:ntext:Instructor',
-		'check_num',
 		'check_date:date',
+		'payee.full_name:text:Payee',
         'delivered:date',
+		'payer:ntext',
 		array(
 			'class'=>'CButtonColumn',
 		),
