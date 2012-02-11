@@ -47,7 +47,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'check_num',
 		'check_date:date',
         'delivered:date',
-        'session.summary:text:Session',
 		array(
 			'class'=>'CButtonColumn',
 		),
