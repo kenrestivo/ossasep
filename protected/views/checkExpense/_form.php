@@ -12,10 +12,28 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payee_id'); ?>
-    <?php echo $form->dropDownList(
-        $model,'payee_id',
-        CHtml::listData(ClassSession::current()->osspto_instructors,
-                        'id', 'full_name'),
+
+<?php
+      // This is another odd one, so i'm not using ZHtml here either
+      // I have to constrain based on company here.
+
+if(isset($model->payee_id) && !$model->hasErrors()){
+        echo CHtml::encode($model->payee->full_name);
+        echo $form->hiddenField($model,"payee_id"); 
+    } else {
+          $instparams=array();
+          $constraint = "";
+          if(isset($model->class_id)){
+              $instparams = array(
+                  'condition'=>'company_id = :coid',
+                  'params'=>array(':coid' => $model->class->company_id));
+              $constraint = " (only for ". $model->class->company->name . ")";
+          }
+
+          echo $form->dropDownList(
+              $model,'payee_id',
+              CHtml::listData(Instructor::model()->findAll($instparams), 
+                              'id', 'full_name'),
         array(
             'ajax' => array(
                 'type'=>'POST', //request type
@@ -23,10 +41,12 @@
                 'success'=>'function(data){
                 $("input#CheckExpense_amount").val(jQuery.parseJSON(data));}',
                 )));
-?> (Only OSSPTO instructors are paid with expense checks)
-		<?php echo $form->error($model,'payee_id'); ?>
+          echo $constraint;
+    } 
 
-		<?php echo $form->error($model,'payee_id'); ?>
+echo $form->error($model,'payee_id'); 
+
+?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'amount'); ?>

@@ -9,11 +9,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       $model->expenses
                       ),
                   'columns'=>array(
-                      'check.check_num:ntext:Check #',
-                      'check.amount:currency:Total Check Amount',
-                      'check.check_date:date:Check Date',
-                      'check.payer:text:Payer',
-                      'check.delivered:date:Delivered to Company',
+                      'check_num:ntext:Check #',
+                      'amount:currency:Total Check Amount',
+                      'check_date:date:Check Date',
+                      'payer:text:Payer',
+                      'delivered:date:Delivered to Company',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'CheckExpense',

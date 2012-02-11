@@ -81,6 +81,12 @@ class CheckExpenseController extends Controller
             $model->payer='OSS PTO';
         }
 
+
+        if(isset($_GET['payee_id'])){
+            $model->payee_id = $_GET['payee_id'];
+        }
+
+
 		$this->render('create',array(
 			'model'=>$model,
 		));
