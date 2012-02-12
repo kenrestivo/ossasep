@@ -86,15 +86,17 @@ class CheckExpense extends CActiveRecord
 	{
 		return array(
             'expenses' => array(self::HAS_MANY, 'Expense', 'check_id'),
-			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
+			'session' => array(self::BELONGS_TO, 
+                               'ClassSession', 
+                               'session_id',
                                'order' => 'start_date'),
             // this is kind of ugly, but instructors might change,
             // and checks are forever once written
 			'payee' => array(self::BELONGS_TO, 'Instructor', 'payee_id'),
-			'instructors' => array(
-                self::HAS_MANY, 
+			'instructor' => array(
+                self::BELONGS_TO, 
                 'Instructor', 
-                'instructor_id',
+                'payee_id',
                 'through' => 'expenses'),
 		);
 	}

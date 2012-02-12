@@ -251,8 +251,8 @@ where paids.instructor_id = :inst"
     public function getPaid()
     {
         $c = Yii::app()->db->createCommand(
-            "select sum(expense.amount) as total from expense
- where  expense.instructor_id = :id");
+            "select sum(check_expense.amount) as total from check_expense
+ where  check_expense.payee_id = :id");
         $r=$c->queryRow(true, array('id' => $this->id));
         return $r['total'];
 
@@ -266,11 +266,9 @@ where paids.instructor_id = :inst"
     public function getDelivered()
     {
         $c = Yii::app()->db->createCommand(
-            "select sum(expense.amount) as total from expense
-left join check_expense 
-    on check_expense.id = expense.check_id
+            "select sum(check_expense.amount) as total from check_expense
 where check_expense.delivered > '1999-01-01'
-  and expense.instructor_id = :id");
+  and check_expense.payee_id = :id");
         $r=$c->queryRow(true, array('id' => $this->id));
         return $r['total'];
 

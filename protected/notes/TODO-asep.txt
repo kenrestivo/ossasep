@@ -16,27 +16,6 @@ TODO tasks for ASEP
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
 ** sessionify
-*** the income display/view for student (paid, possibly unpaid)
-**** Income.php?
-*** BIGGER problems!
-**** i have to redo classes and ANYTHING THAT USES THROUGH as raw sql now!
-***** CheckExpense.php
-***** ClassInfo.php
-***** ClassSession.php
-***** Instructor.php
-****** ajax, methinks?
-*** these are all the ones i can find with just a grep:
-**** views/income/_form.php
-**** views/instructorAssignment/_form.php
-**** views/checkIncome/entry_form.php
-**** views/checkIncome/_form.php
-**** views/checkIncome/entry_form.php
-**** views/classMeeting/_form.php
-**** views/extraFee/_form.php
-**** views/expense/_form.php
-*** what other ones???!
-**** the income (link to check in order to be sessioned?? NASTY!)
-**** what about students?
 ** do some validation to make sure the user can change to that session
  in classsessioncontroller, are they allowed? find out first.
 ** better way to do the chooser
@@ -209,6 +188,15 @@ TODO tasks for ASEP
 ***	dependent date/timepickers, i.e. start/end intelligently
 ** remove search/sort for nonsortable columns
  set filter => false
+** possible check for unsessionified findalls?
+*** views/income/_form.php
+*** views/instructorAssignment/_form.php
+*** views/checkIncome/entry_form.php
+*** views/checkIncome/_form.php
+*** views/checkIncome/entry_form.php
+*** views/classMeeting/_form.php
+*** views/extraFee/_form.php
+*** views/expense/_form.php
 ** add the returnto for zhtml::clickablerow
  it's already in there for composite keys, but i need to add it for the other one
  this is used only in a few places though.
