@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h3>Active classes</h3>
+<h3>Active classes for <?= CHtml::encode(ClassSession::current()->summary) ?></h3>
 
 
 <?php    $this->renderPartial(
@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 ?>
 
 
-<h3>Cancelled classes</h3>
+<h3>Cancelled classes for <?= CHtml::encode(ClassSession::current()->summary) ?></h3>
 <?php    $this->renderPartial(
     '_dashboard',
     array('classes' =>$cancelled,

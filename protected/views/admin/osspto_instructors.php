@@ -1,4 +1,4 @@
-<h1>OSSPTO-paid Instructors</h1>
+<h1>OSSPTO-paid Instructors for <?= CHtml::encode(ClassSession::current()->summary) ?> </h1>
 
 <table class="bordertable">
 <tr><th>Instructor</th><th>Owed</th><th>Paid</th><th>Delivered</th></tr>

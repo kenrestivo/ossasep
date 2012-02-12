@@ -1,3 +1,5 @@
+<h1> <?= CHtml::encode(ClassSession::current()->summary) ?></h1>
+
 <ul>
 <?php
 foreach($models as $model){
