@@ -221,7 +221,9 @@ left join  (select sum(income.amount) as total,
 on assigned.check_id = check_income.id
 where coalesce(assigned.total,0) != coalesce(check_income.amount,0)
 and (check_income.returned is null or check_income.returned < '2000-01-01')
-");
+and check_income.session_id = :sid
+",
+array('sid' =>             ClassSession::savedSessionId()            ));
 
 
 
@@ -233,7 +235,10 @@ left join  (select sum(instructor_assignment.percentage) as total,
            from instructor_assignment
            group by instructor_assignment.class_id) as assigned
 on assigned.class_id = class_info.id
-where coalesce(assigned.total,0) != 100");
+where coalesce(assigned.total,0) != 100
+and class_info.session_id = :sid
+",
+array('sid' =>             ClassSession::savedSessionId()            ));
 
         $this->render(
             'integrity_check',
