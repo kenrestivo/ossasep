@@ -7,7 +7,7 @@ $this->breadcrumbs = array() ;
 $instructor = Instructor::model()->findByPk(Yii::app()->user->id); 
 
 ?>
-<h1>After-School Enrichment Program – <?= $this->savedSessionSummary() ?></h1>
+<h1>After-School Enrichment Program – <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
     <h3>Instructor Requirements Status for <?= CHtml::encode($instructor->full_name) ?> </h3>
     <?php echo $this->renderPartial(

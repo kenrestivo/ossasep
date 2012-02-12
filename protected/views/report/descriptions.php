@@ -1,4 +1,4 @@
-<h1>Class Descriptions for <?= $this->savedSessionSummary() ?></h1>
+<h1>Class Descriptions for <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
 <?php
 foreach($classes as $class){

@@ -1,4 +1,4 @@
-<h1>Enrollment Status for <?= $this->savedSessionSummary() ?></h1>
+<h1>Enrollment Status for <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
 <p>Students listed in order of application/payment received.</p>
 

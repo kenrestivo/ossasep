@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Classes for <?= $this->savedSessionSummary() ?></h1>
+<h1>Classes for <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
 <p>Use admin view</p>

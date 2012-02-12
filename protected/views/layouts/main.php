@@ -34,7 +34,7 @@
 				array('label'=>'Enrollment Status', 'url'=>array('/Report/signupsPublic')),
 
                 //TODO: make this clickable/changable
-				array('label'=>$this->savedSessionSummary(),
+				array('label'=>CHtml::encode($this->savedSessionSummary()),
                       'url'=>array('/ClassSession/ChooseSession',
                                    'returnTo' => Yii::app()->request->requestUri
 ), 

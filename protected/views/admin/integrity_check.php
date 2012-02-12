@@ -1,4 +1,4 @@
-<h1>Data Integrity Check/Audit</h1>
+<h1>Data Integrity Check/Audit for <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
 <h3>Unbalanced, unreturned checks with unassigned amounts</h3>
 

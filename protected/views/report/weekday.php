@@ -1,4 +1,4 @@
-<h1>Schedule for <?= $this->savedSessionSummary() ?></h1>
+<h1>Schedule for <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 <?php
  /*
    This is nested stupidly like this because I will probbaly want to put tthat _schedule inside of something else sometime, like a proper signup packet, or put it directly on the homepage, etc etc
