@@ -1,4 +1,4 @@
-<h1>Signup Sheet - Front Office</h1>
+<h1>Signup Sheet - Front Office - for <?= CHtml::encode(ClassSession::current()->summary) ?></h1>
 <?php
 foreach($classes as $class){
     $this->renderPartial(
