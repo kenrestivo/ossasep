@@ -527,7 +527,14 @@ where (check_income.returned > '1999-01-01')
         {
             $transaction->commit();
 
-            $old= self::model()->findByPK($old_cid);
+            /* XXX I HATE ACTIVERECORD HATE HATE HATE
+             this stupid hack required in order to override the "default scope"
+             which isn't actually default, it's REQUIRED, 
+             there's no way to override it, and all findbypks fail.
+            */
+            $old= self::model()->findBySql(
+                'select class_info.* from class_info where id = :cid', 
+                array ('cid' => $old_cid));
             if(!isset($old)){
                 return false;
             }
@@ -535,6 +542,9 @@ where (check_income.returned > '1999-01-01')
         
             $new->attributes = $old->attributes;
             $new->session_id = $new_sid;
+            // by default, if i'm copying it, it's not new anymore!
+            // and i'll assume it's active
+            $new->status = 'Active'; 
         
             if($new->save()){
                 foreach($old->instructor_assignments as $oa){

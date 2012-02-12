@@ -6,8 +6,10 @@ echo CHtml::dropDownList(
     'ClassInfo[id]', 
     '',
 //TODO: let them pick session from a dropdown dammit
-    CHtml::listData(ClassInfo::model()->findAll(
-                        'session_id = :sid',
+    /// NOTE! this is bysql here, can't use default scope anymore
+    // because the default scope is only THIS session doh!
+    CHtml::listData(ClassInfo::model()->findAllBySql(
+                        'select class_info.* from class_info where session_id = :sid',
                         array('sid' => $fromsession->id)), 
                     'id', 'summary'),
     array('submit' => '',
