@@ -15,14 +15,6 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * must have for NEXT SESSION!
-** sessionify
-** do some validation to make sure the user can change to that session
- in classsessioncontroller, are they allowed? find out first.
-** better way to do the chooser
-*** maybe try a cjui dialog? then reload the page?
-**** look at the calendar thing, as an example.
-**** bah, it's nasty to do on EVERY page
-	 http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
 ** reimport the new rasta.csv (it was updated)
 * vital
 ** use ajax tabs!
@@ -116,6 +108,14 @@ TODO tasks for ASEP
  just a student pulldown, a few tabs, etc
 *** http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
 *** easier http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
+** sessionify cleanups
+*** do some validation to make sure the user can change to that session
+ in classsessioncontroller, are they allowed? find out first.
+*** better way to do the chooser
+**** maybe try a cjui dialog? then reload the page?
+***** look at the calendar thing, as an example.
+***** bah, it's nasty to do on EVERY page
+	  http://www.yiiframework.com/wiki/145/cjuidialog-for-create-new-model/
 ** go through all the multi-link _forms, put <div row> before the issset
  WHY? exactly?
 **	redo the unpaid thing, this is ridiculous
