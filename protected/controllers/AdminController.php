@@ -106,6 +106,7 @@ left join student
 where class_info.status != 'Cancelled'
     and signup.status != 'Cancelled'
     and signup.scholarship > 0
+   and class_info.session_id = :sid
 order by student.last_name asc, student.first_name asc
 ",
             array('sid' =>

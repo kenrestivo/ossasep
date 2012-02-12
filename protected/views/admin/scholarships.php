@@ -19,7 +19,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                       'student.full_name:text:Name',
                       'class.summary:text:Class',
                       array('name' => 'Cost',
-                            'value' => '$data->class->costSummary',
+                            'value' => 'isset($data->class) ? $data->class->costSummary : 0',
                             'type' => 'currency',
                             'htmlOptions'=>array('style'=>'text-align: right'),
                             // how to make PHP look like javascript
@@ -29,7 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                 array_reduce(
                                     $dp->data, 
                                     function($i,$j){ 
-                                        $i += $j->class->costSummary; 
+                                        $i += isset($j->class) ? $j->class->costSummary : 0; 
                                         return $i;})),
                           ),
                       'note:ntext:Note',
