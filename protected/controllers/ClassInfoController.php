@@ -227,9 +227,7 @@ class ClassInfoController extends Controller
             if(ClassInfo::copyClass($_POST['ClassInfo']['id'], 
                                     ClassSession::savedSessionId())){
 
-                if(isset($_GET['returnTo'])){
-                    $this->redirect($_GET['returnTo']);
-                }
+                $this->redirect(array('index'));
             }
         }
 
@@ -237,7 +235,7 @@ class ClassInfoController extends Controller
 		$this->render(
             'choose_copy',
             // XXX note, i'm assuming here that we're not  in the current session
-            array('fromsession' => ClassSession::sessionByDate()
+            array('fromsession' => ClassSession::lastPublic()
                 ));
 
    
