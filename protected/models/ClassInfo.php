@@ -101,6 +101,10 @@ class ClassInfo extends CActiveRecord
                                        'ClassMeeting', 
                                        'class_id',
                                        'condition' => 'makeup < 1'), 
+			'noted_meetings' => array(self::HAS_MANY, 
+                                       'ClassMeeting', 
+                                       'class_id',
+                                       'condition' => '(note is not null and note != "")'), 
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(
                 self::HAS_MANY, 
@@ -143,6 +147,10 @@ class ClassInfo extends CActiveRecord
                 self::STAT, 
                 'ClassMeeting', 'class_id',
                 'condition' => 'makeup < 1'), 
+            'makeup_day_count' => array(
+                self::STAT, 
+                'ClassMeeting', 'class_id',
+                'condition' => 'makeup > 0'), 
             'enrolled_count' => array(
                 self::STAT, 
                 'Signup', 'class_id',
@@ -288,7 +296,7 @@ order by class_info.class_name
     public function getCostSummary()
     {
 
-        $total =  count($this->active_meetings)  * $this->cost_per_class;
+        $total =  $this->active_mtg_count  * $this->cost_per_class;
 
         foreach($this->extra_fees as $f){
             $total += $f->amount;

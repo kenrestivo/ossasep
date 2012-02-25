@@ -30,7 +30,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'id'=>'meetingdate-grid',
                   'dataProvider'=>new CArrayDataProvider(
                       $model->meetings),
-                  'summaryText' => "" . count($am) . " meetings, ". (count($model->meetings) - count($am) ). " makeup day(s)",
+                  'summaryText' => "" . $model->active_mtg_count . " meetings, ". ($model->makeup_day_count ). " makeup day(s)",
                   'columns'=>array(
                       'meeting_date:date:Date',
                       'note:ntext:Note',

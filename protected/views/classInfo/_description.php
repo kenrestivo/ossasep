@@ -58,7 +58,7 @@ up to <?= $model->max_students  ?>
 <br />
 
 $<?= $model->cost_per_class ?> per week for an
-     <?= count($meetings) ?>-week session
+    <?= $model->active_mtg_count ?>-week session
 
 <?php 
      foreach($model->extra_fees as $fee){
