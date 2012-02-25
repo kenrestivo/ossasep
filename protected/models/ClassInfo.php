@@ -506,7 +506,7 @@ where (check_income.returned > '1999-01-01')
         } elseif($count < $this->min_students){
             return 'Needs '. ($this->min_students - $this->enrolled_count) . ' more student(s)';
         } elseif($count >= $this->max_students){
-            return 'Class Full';
+            return 'Full';
         } else {
             return'OK';
         }
