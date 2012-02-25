@@ -9,7 +9,8 @@ $daysoff = $model->days_off;
 echo     implode(', ',
             array_map(
                 function($i) { return $i->notated_date ; },
-                $meetings
+                // NOTE we want ALL meetings, not active, to show makeup days
+                $model->meetings
                 ));
 ?>
 </span>

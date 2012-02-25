@@ -19,8 +19,7 @@ if(Yii::app()->user->name != 'admin' ){
      
     $this->renderPartial(
         '/classInfo/_meeting_formatted',
-        array('meetings' => $model->active_meetings,
-            'model' => $model));
+        array('model' => $model));
 
 
 
