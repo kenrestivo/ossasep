@@ -1,8 +1,7 @@
 # -*- mode:org; -*-
 TODO tasks for ASEP
 
-* must have for NEXT SESSION!
-** meeting makeup days
+* must have for NEXT SESSION! (march 5th?)
 ** signup sheet (with no master calendar!)
 ** show the new session publicly on homepage
 *** optionally fix the menu temmplate to make dropdowns work
