@@ -1,7 +1,13 @@
 # -*- mode:org; -*-
 TODO tasks for ASEP
 
-* ui still to do
+* must have for NEXT SESSION!
+** meeting makeup days
+** signup sheet (with no master calendar!)
+** show the new session publicly on homepage
+*** optionally fix the menu temmplate to make dropdowns work
+** reimport the new rasta.csv (it was updated)
+* ui still to doa
 ** company checks
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
@@ -14,8 +20,6 @@ TODO tasks for ASEP
 *** a joint as example: http://localhost/asepgui/index.php/Company/2
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
-* must have for NEXT SESSION!
-** reimport the new rasta.csv (it was updated)
 * vital
 ** use ajax tabs!
 *** it's possible! just need to do what i did for income, use true,false for renderpartial
