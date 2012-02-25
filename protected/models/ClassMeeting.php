@@ -106,7 +106,9 @@ class ClassMeeting extends CActiveRecord
 
     public function getNotated_date()
     {
-        if($this->note == ''){
+        if($this->makeup > 0){
+            return '<strong>' . CHtml::encode(ZHtml::shortDate($this->meeting_date)) . '</strong>' . CHtml::encode('+');
+        } else if($this->note == ''){
             return CHtml::encode(ZHtml::shortDate($this->meeting_date));
         } else {
             return '<strong>' . CHtml::encode(ZHtml::shortDate($this->meeting_date)) . '</strong>' . CHtml::encode('*');
