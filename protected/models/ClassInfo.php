@@ -108,6 +108,11 @@ class ClassInfo extends CActiveRecord
                 'ClassMeeting', 
                 'class_id',
                 'condition' => 'makeup < 1'), 
+			'makeup_days' => array(
+                self::HAS_MANY, 
+                'ClassMeeting', 
+                'class_id',
+                'condition' => 'makeup > 0'), 
 			'noted_meetings' => array(
                 self::HAS_MANY, 
                 'ClassMeeting', 
