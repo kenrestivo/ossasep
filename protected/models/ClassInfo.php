@@ -94,17 +94,25 @@ class ClassInfo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'session' => array(self::BELONGS_TO, 'ClassSession', 'session_id',
-                               'order' => 'start_date'),
-			'meetings' => array(self::HAS_MANY, 'ClassMeeting', 'class_id'),
-			'active_meetings' => array(self::HAS_MANY, 
-                                       'ClassMeeting', 
-                                       'class_id',
-                                       'condition' => 'makeup < 1'), 
-			'noted_meetings' => array(self::HAS_MANY, 
-                                       'ClassMeeting', 
-                                       'class_id',
-                                       'condition' => '(note is not null and note != "")'), 
+			'session' => array(
+                self::BELONGS_TO,
+                'ClassSession', 
+                'session_id',
+                'order' => 'start_date'),
+			'meetings' => array(
+                self::HAS_MANY,
+                'ClassMeeting', 
+                'class_id'),
+			'active_meetings' => array(
+                self::HAS_MANY, 
+                'ClassMeeting', 
+                'class_id',
+                'condition' => 'makeup < 1'), 
+			'noted_meetings' => array(
+                self::HAS_MANY, 
+                'ClassMeeting', 
+                'class_id',
+                'condition' => '(note is not null and note != "")'), 
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
 			'incomes' => array(
                 self::HAS_MANY, 
@@ -536,9 +544,9 @@ where (check_income.returned > '1999-01-01')
             $transaction->commit();
 
             /* XXX I HATE ACTIVERECORD HATE HATE HATE
-             this stupid hack required in order to override the "default scope"
-             which isn't actually default, it's REQUIRED, 
-             there's no way to override it, and all findbypks fail.
+               this stupid hack required in order to override the "default scope"
+               which isn't actually default, it's REQUIRED, 
+               there's no way to override it, and all findbypks fail.
             */
             $old= self::model()->findBySql(
                 'select class_info.* from class_info where id = :cid', 
