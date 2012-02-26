@@ -1212,14 +1212,25 @@ http://current.workingdirectory.net/posts/2011/gnucash-python-bindings/
 ** the joint checks need to be deposited really
 
 
-* the dropdown idea is totally braindead
+* the dropdown idea is miserable pain
 ** mbmenu is a peice of shit
 ** and a dropdown embedded in cmenu is also a non-starter.
 *** try emenu?
 **** it is TOTAL GARBAGE, useless, unwise. bleh.
-
 ** superfish? via cdropdownmenu? supposedly depreciated and doesn't like the mainmenu of gii app
-http://www.yiiframework.com/extension/cdropdownmenu
+   http://www.yiiframework.com/extension/cdropdownmenu
+** apparently there's a simple 10-line jquery solution:
+$(document).ready(function () {    
+    $('#navigation li').hover(
+        function () {
+            $('ul', this).slideDown(100);
+        }, 
+        function () {
+            $('ul', this).slideUp(100);            
+        }
+    );
+});
+*** just put the ul's under the li's. not sure how to do THAT but maybe...
 * it is a GOOD THING to REQUIRE that the page reloads after changing session
 so it's ok to have it be something they have to click off of the page to do.
 * i already have default scope to be sessionified, so things SHOULD work, i think.
