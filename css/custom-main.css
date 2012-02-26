@@ -1,0 +1,169 @@
+table.bordertable {
+  width: auto;
+}
+
+
+
+table.bordertable  td,th
+{
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  vertical-align: top;
+  width: auto;
+}
+
+table.bordertable th,td.short{
+  width:auto;
+}
+
+.schedule table{
+  width: 910px;
+  border-collapse: collapse;
+}
+
+
+.schedule td,th
+{
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 182px;
+  vertical-align: top;
+}
+
+.schedule th
+{
+  background: 	#0000FF;
+  color: #fff;
+}
+
+.schedule a
+{
+  text-decoration: none;
+}
+
+.catalog
+{ 
+  border-color: #0000ff;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  line-height: 18px;
+  
+}
+
+.strikethrough{ 
+  text-decoration: line-through;
+}
+
+
+.waitlist { 
+  background: #C1C1C1;
+}
+
+
+
+table.emailable {
+  width: 160px;
+  float: left;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+table.emailable  td,th
+{
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  vertical-align: top;
+  border-collapse: collapse;
+  width: auto;
+}
+
+table.emailable .waitlist{ 
+  background: #ccffff;
+}
+
+table.emailable .title {
+  background: #009ACD;
+  color: #ffffff;
+}
+
+table.emailable a{ 
+  color:#ffffff;
+  text-decoration: none;
+
+}
+
+table.emailable .grade{ 
+  text-align: center;
+}
+
+table.emailable .row{ 
+  text-align: right;
+}
+
+.full{ 
+  float:right;
+  font-weight: bold;
+}
+
+.cancelled{ 
+  float:right;
+  font-weight: bold;
+  color: #FF3030;
+}
+
+.checkbackground{ 
+  background: #FEF5CA;
+}
+
+.signups {
+  width: 910px;
+  border-collapse: collapse;
+}
+
+
+.signups td,th
+{
+  border-style: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 182px;
+  vertical-align: top;
+}
+
+.signups th { 
+  border-color: #600;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+
+}
+.status-ok{ 
+  background-color:#ccffcc; 
+}
+
+.status-warning{ 
+  background-color:#ffff00;
+}
+
+.status-error{ 
+  background-color:#ff99cc;
+}
+
+table.spacey{ 
+  border-collapse:separate; 
+  border-spacing:7px;
+}
+
+table.financial td{ 
+  text-align: right;
+}
+
+table td.financial{ 
+  text-align: right;
+}
