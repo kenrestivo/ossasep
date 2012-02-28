@@ -33,21 +33,21 @@ class ReportController extends Controller
 		return array(
 			array('allow', 
                   // all
-				'users'=>array('admin'),
-			),
+                  'users'=>array('admin'),
+                ),
 			array('allow', 
                   /// XXX note this miserable hack!
                   'actions'=> array('signupspublic'),
                   'users'=>array('*'),
-			),
+                ),
 			array('allow',  // public pages
                   'actions'=> array('weekday', 'signupboxes', 'descriptions'),
                   'users'=>array('*'),
-			),
+                ),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+                  'users'=>array('*'),
+                ),
+            );
 	}
 
 	public function actionWeekday()
@@ -67,11 +67,19 @@ class ReportController extends Controller
     {
         $cs = ClassSession::model()->findByPk(
             ClassSession::savedSessionId());
+
+
+        // ugly, but it works
+        $ac=$cs->active_classes;
+        $half = round(count($ac)/2);
+        $classes=array(
+            array_slice($ac, 0, $half),
+            array_slice($ac,$half));
+
 		$this->render(
             'signupboxes', 
             array(
-                'classes' => $cs->active_classes));
-                    
+                'classes' => $classes));
     }
 
 
@@ -92,13 +100,13 @@ class ReportController extends Controller
   use partialss. use something. ugh.
 
   XXX also, seriously, wtf? why is this in report controller? WRONG.
- */
+*/
 
 
     private function redirectHack()
     {
         if(isset(Yii::app()->user->role) 
-                 && Yii::app()->user->role == 'instructor'){
+           && Yii::app()->user->role == 'instructor'){
             $this->redirect(array('/site/index'));
         }
 
@@ -129,7 +137,7 @@ class ReportController extends Controller
             'signups_public', 
             array(
                 'classes' => $c,
-                          'days'=> $days,
+                'days'=> $days,
                 ));
     }
 
