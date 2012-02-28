@@ -1,3 +1,6 @@
+
+<?php   Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/printabletable.css', 'print'); ?>
+
 <h1>Signup Form (checkboxes)</h1>
 
 <div class="span-11">
