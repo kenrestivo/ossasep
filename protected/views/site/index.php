@@ -26,7 +26,7 @@ $this->breadcrumbs = array() ;
 
 
 <p>
-<?php echo $this->renderPartial('/report/_signup_form'); ?>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form</a>
 </p>
 
 

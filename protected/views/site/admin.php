@@ -10,9 +10,7 @@
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/descriptions">Descriptions</a>
       <br />
-      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form (checkboxes)</a>
-      <br />
-      <?php echo $this->renderPartial('/report/_signup_form'); ?>
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form</a>
     </td>
 
 
