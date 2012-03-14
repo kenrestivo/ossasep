@@ -136,6 +136,12 @@ class ClassSession extends CActiveRecord
 
     public static function savedSessionId()
     {
+        /// HACK! only admins get to save sessions. Everyone else gets this!
+        if(Yii::app()->user->name != 'admin'){
+            return self::lastPublic()->id;
+        }
+
+        // fallthru for admins
         if(!isset(Yii::app()->session['saved_session_id'])){
             Yii::app()->session['saved_session_id'] = self::sessionByDate()->id;
         }

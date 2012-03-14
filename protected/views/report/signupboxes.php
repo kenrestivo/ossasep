@@ -3,6 +3,12 @@
 
 <h1>Signup Form (checkboxes)</h1>
 
+<div class="span-17">
+</div>
+
+
+<div class="clear"></div>
+
 <div class="span-8">
 
 
