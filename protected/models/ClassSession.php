@@ -295,7 +295,10 @@ order by instructor.last_name asc, instructor.first_name asc",
                 ));
 
     }
-
+    
+    /*
+      Returns an array[month][day] = count of classes for that day
+     */
 
     public function getMeeting_summary()
     {
