@@ -83,5 +83,9 @@ class KFormatter extends CFormatter
         return  '$' . $this->formatNumber($value);
     }
 
+    public function formatMonthName($value)
+    {
+        return date("F", mktime(0, 0, 0, $value, 10));
+    }
 
 }

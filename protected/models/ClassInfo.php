@@ -538,6 +538,22 @@ where (check_income.returned > '1999-01-01')
         return $r['total'];
     }
 
+    /*
+      The summary of dates by month, in order, in an array of month[day] = day
+     */
+    public function getMeeting_summary()
+    {
+        $c = Yii::app()->db->createCommand(
+            "select month(meeting_date) as m, dayofmonth(meeting_date) as d from class_meeting where class_id = :cid order by meeting_date");
+        $roze=$c->queryAll(true, array('cid' => $this->id));
+        
+        $dates = array();
+        foreach($roze as $r){
+            $dates[$r['m']][$r['d']] = $r['d']; 
+        }
+        return $dates;
+    }
+
 
     public static function copyClass($old_cid, $new_sid)
     {

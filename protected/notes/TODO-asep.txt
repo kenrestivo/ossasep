@@ -2,10 +2,8 @@
 TODO tasks for ASEP
 
 * must have for NEXT SESSION! (march 5th?)
-** signup sheet (with no master calendar!)
-** show the new session publicly on homepage
-*** optionally fix the menu temmplate to make dropdowns work
 ** reimport the new rasta.csv (it was updated)
+** let parents be able to pick the old session (in a box, i'd guess)
 * ui still to doa
 ** company checks
 *** look at her spreadsheet to see
