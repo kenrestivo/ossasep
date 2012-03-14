@@ -95,8 +95,8 @@ Return this completed form, with payment, to the Front Office</h3>
 
 <p>I, ______________________ (print name), have read and agree to the above policies, and I give permission for my child to attend the ASEP classes for which he/she is enrolled.</p>
 <p>_________________________________________ _________________<br>
-Signature                                      Date</p>
+      Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                      Date</p>
 
- Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrol ed in this session.<br> Do not release my email address to class instructors. <br>
+ Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br> Do not release my email address to class instructors. <br>
 Revised 1/3/2012<br>
 </div>
