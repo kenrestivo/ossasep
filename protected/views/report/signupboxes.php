@@ -1,4 +1,3 @@
-
 <?php   Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/printabletable.css', 'print'); ?>
 
 <div class="span-17">
@@ -14,7 +13,7 @@
 
 
 <h3>Important Notes about Enrollment Process:</h3>
-<ul>
+<ol>
 <li>  Many classes fil  up quickly!  </li>
      First come, first served: </li>
 Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li>
@@ -27,7 +26,7 @@ with “scholarship pending” listed to hold a spot in a class (especial y for 
 Coordinator. There are exceptions in some (not al ) classes.</li>
 For questions or concerns, please contact the ASEP coordinator,</li>
 Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmail.com</a> or cell 415-203-3812. </li>
-</ul>
+</ol>
 <p>Revised 1/3/2012</p>
 <hr>
 
@@ -36,18 +35,14 @@ Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmai
 <div class="clear advisorybreak"></div>
 
 
-<div class="span-17">
-
-<h1><?= CHtml::encode($this->savedSessionSummary()) ?> ASEP ENROLLMENT FORM</h1>
-    <h3>Reservations begin <strong>
+<h1 class="fakespan-17 center"><?= CHtml::encode($this->savedSessionSummary()) ?> ASEP ENROLLMENT FORM</h1>
+    <h3 class="fakespan-17 center" >Reservations begin <strong>
 <?php
     echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
 ?>
-</strong>!</h3>
-
-
-<h3>Please fill out one form per child</h3>
-<h3>Return this completed form, with payment, to the Front Office</h3>
+</strong>!<br />
+Please fill out one form per child<br />
+Return this completed form, with payment, to the Front Office</h3>
 
 <p>For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cel  415-203-3812</p>
 
@@ -57,10 +52,6 @@ Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmai
 <p>Daytime Contact #s (1)_________________  (2)__________________ (3) ___________________</p>
 <p><b>&gt;&gt; Please write your child’s name on the check! &lt;&lt;</b></p>
 
-</div>
-
-
-<div class="clear"></div>
 
 <div class="span-8">
 
@@ -100,11 +91,12 @@ Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmai
 <li>Once you have paid for a class, the contract is between you and the instructor.  Please see the instructor with questions or concerns.  If there are serious concerns, please contact an ASEP Coordinator immediately. </li>
 <li>If a child is excessively disruptive, he/she may be removed from class. A refund <i><b>may</b></i> be provided. </li>
 </ol>
-I, ______________________ (print name), have read and agree to the above policies, and I give permission for my child <br>to attend the ASEP classes for which he/she is enrol ed.<br>
-_________________________________________<br>
-_________________<br>
-Signature<br>
-Date<br>
+
+
+<p>I, ______________________ (print name), have read and agree to the above policies, and I give permission for my child to attend the ASEP classes for which he/she is enrolled.</p>
+<p>_________________________________________ _________________<br>
+Signature                                      Date</p>
+
  Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrol ed in this session.<br> Do not release my email address to class instructors. <br>
 Revised 1/3/2012<br>
 </div>
