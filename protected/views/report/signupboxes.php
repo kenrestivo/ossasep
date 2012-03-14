@@ -12,10 +12,11 @@
 
 
 <h3>Important Notes about Enrollment Process:</h3>
-<ol>
-<li>  Many classes fil  up quickly!  </li>
+<ul>
+<li>  Many classes fill up quickly! 
+<ul><li>
      First come, first served: </li>
-Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li>
+    <ul><li>Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li></ul></ul></li>
 <li> You wil  receive a school-wide e-mail confirmation to confirm enrol ment or a notice in your family folder (for non-computer users.)</li>
 <li> Wait-lists do not rol  over from the previous sessions.  If your child is placed on a waitlist, you wil  be notified via email or phone.  You may choose to stay on the waitlist or have your check returned to you.  If you choose to remain on the waitlist, you wil  be notified if a space becomes available.  You may request to be removed from the waitlist at any time and your check wil  be returned.</li>
 <li> If you write a check for multiple classes, the check wil  be cashed.  If a class is canceled, a refund check wil  be written (refunds can take up to two weeks to be processed).</li>
@@ -25,7 +26,7 @@ with “scholarship pending” listed to hold a spot in a class (especial y for 
 Coordinator. There are exceptions in some (not al ) classes.</li>
 For questions or concerns, please contact the ASEP coordinator,</li>
 Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmail.com</a> or cell 415-203-3812. </li>
-</ol>
+</ul>
 <p>Revised 1/3/2012</p>
 <hr>
 
