@@ -1,17 +1,17 @@
 <?php
 
-/**
- * This is the model class for table "class_session".
- *
- * The followings are the available columns in table 'class_session':
- * @property integer $id
- * @property integer $school_year_id
- * @property string $start_date
- * @property string $end_date
- * @property string $registration_starts
- * @property string $description
- * @property integer $public
- */
+  /**
+   * This is the model class for table "class_session".
+   *
+   * The followings are the available columns in table 'class_session':
+   * @property integer $id
+   * @property integer $school_year_id
+   * @property string $start_date
+   * @property string $end_date
+   * @property string $registration_starts
+   * @property string $description
+   * @property integer $public
+   */
 class ClassSession extends CActiveRecord
 {
 	/**
@@ -48,7 +48,7 @@ class ClassSession extends CActiveRecord
 			// Please remove those attributes that should not be searched.
 			array('id, school_year_id, public, registration_starts, description, start_date, end_date', 
                   'safe', 'on'=>'search'),
-		);
+            );
 	}
 
 	/**
@@ -77,7 +77,7 @@ class ClassSession extends CActiveRecord
                 'session_id',
                 'condition' => "status = 'Cancelled'",
                 'order' => 'class_name'),
-		);
+            );
 	}
 
 	/**
@@ -102,7 +102,7 @@ class ClassSession extends CActiveRecord
 			'school_year_id' => 'School Year',
 			'description' => 'Description',
             'public' => "Show this session publicly",
-		);
+            );
 	}
 
 	/**
@@ -130,8 +130,8 @@ class ClassSession extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider('ClassSession', array(
-			'criteria'=>$criteria,
-		));
+                                           'criteria'=>$criteria,
+                                           ));
 	}
 
     public static function savedSessionId()
@@ -156,7 +156,7 @@ class ClassSession extends CActiveRecord
       You can give it a date to check what would be the current session 
       for a particular date.
       This returns a session object.
-     */
+    */
     public static function sessionByDate($date = null)
     {
         if(!isset($date)){
@@ -174,7 +174,7 @@ class ClassSession extends CActiveRecord
   Finds the LAST class session that is not ended yet and is public.
   This means, as soon as the session goes public, this will return it,
   even if there is a session already in progress.
- */
+*/
     public static function lastPublic($date = null)
     {
         if(!isset($date)){
@@ -194,7 +194,7 @@ class ClassSession extends CActiveRecord
   and have it select on school year too.
   
   TODO: this also screams for cdbbuilder
- */
+*/
 
     public static function allSessions($public = false)
     {
@@ -218,7 +218,7 @@ class ClassSession extends CActiveRecord
   XXX this is kinda stupid because it's the EXACT same one as above, 
   but returnes > 1 so it's findallbysql
 
- */
+*/
     public static function recentPublic($date = null)
     {
         if(!isset($date)){
@@ -237,7 +237,7 @@ class ClassSession extends CActiveRecord
 
     /* 
        Just a utility function, often getting this session! returns obj
-     */
+    */
     public static function current()
     {
         $cur = self::model()->findByPk(self::savedSessionId());
@@ -259,7 +259,7 @@ class ClassSession extends CActiveRecord
        Only the OSSPTO instructrs.
        XXX couldn't this be done through AR with a through => classes??
        what about the sorts though. hmm.
-     */
+    */
     public function getOsspto_Instructors()
     {
         return Instructor::model()->findAllBySql(
@@ -297,4 +297,23 @@ order by instructor.last_name asc, instructor.first_name asc",
     }
 
 
+    public function getMeeting_summary()
+    {
+        $dates = array();
+        foreach($this->active_classes as $c){ 
+            $ms = $c->meeting_summary; 
+            foreach($ms as $m => $days){ 
+                foreach($days as $d){
+                    if(array_key_exists($m, $dates) &&
+                       array_key_exists($d, $dates[$m])){
+                        $dates[$m][$d]++;
+                    } else {
+                        $dates[$m][$d] = 1;
+                    }
+                }
+            }
+        }
+        return ($dates);
+
+    }
 }
