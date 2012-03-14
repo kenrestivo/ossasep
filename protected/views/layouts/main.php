@@ -35,10 +35,13 @@
 				array('label'=>'Enrollment Status', 'url'=>array('/Report/signupsPublic')),
 
                 //TODO: make this clickable/changable
+                Yii::app()->user->name == 'admin' ?
 				array('label'=>CHtml::encode($this->savedSessionSummary()),
                       'url'=>array('/ClassSession/ChooseSession',
                                    'returnTo' => Yii::app()->request->requestUri
 ), 
+                    ) : 
+                array('label'=>CHtml::encode($this->savedSessionSummary()),
                     ),
 
 				array('label'=>'Login', 
