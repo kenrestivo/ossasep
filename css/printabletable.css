@@ -201,11 +201,10 @@ img{ border:none; }
 
 a{   color: #000;  }
 
-a:link {
+a:link, a:visited {
   text-decoration: none; 
 }
-
-a:after { 
+a:link:after, a:visited:after {
   display:none; 
 }
 
