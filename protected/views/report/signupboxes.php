@@ -38,15 +38,24 @@ Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmai
 
 <div class="span-17">
 
-<A name=2></a><b>Winter 2012 ASEP ENROLLMENT FORM</b><br>
-Reservations begin <b>Wednesday, January 4th at 8am!</b><br>
-<b>Please fill out one form per child</b><br>
-<b>Return this completed form, with payment, to the Front Office</b><br>
-For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cel  415-203-3812<br>
-Child’s Name ___________________________________________  Grade ______<br>
-Parent(s) or Guardian’s Name(s)  ____________________________ Email __________________ <br>
-Daytime Contact #s (1)_________________  (2)__________________ (3) ___________________<br>
-<b>&gt;&gt; Please write your child’s name on the check! &lt;&lt;</b><br>
+<h1><?= CHtml::encode($this->savedSessionSummary()) ?> ASEP ENROLLMENT FORM</h1>
+    <h3>Reservations begin <strong>
+<?php
+    echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
+?>
+</strong>!</h3>
+
+
+<h3>Please fill out one form per child</h3>
+<h3>Return this completed form, with payment, to the Front Office</h3>
+
+<p>For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cel  415-203-3812</p>
+
+
+<p>Child’s Name ___________________________________________  Grade ______</p>
+<p>Parent(s) or Guardian’s Name(s)  ____________________________ Email __________________ </p>
+<p>Daytime Contact #s (1)_________________  (2)__________________ (3) ___________________</p>
+<p><b>&gt;&gt; Please write your child’s name on the check! &lt;&lt;</b></p>
 
 </div>
 
@@ -81,8 +90,16 @@ Daytime Contact #s (1)_________________  (2)__________________ (3) _____________
 <div class="span-17">
 
 
-Notes: ________________________________________________________________________________________<br>
-<b>ASEP Policies</b>.<br>1. Students must be picked up <i><b>immediately</b></i> after class.  <br>2. If your child goes to after-school care, please remember to inform the provider about the class.<br>3. If a student is attending a late Wednesday class, he/she must be under adult supervision while awaiting their class.<br>4. Students must wait quietly outside the classroom until the instructor is present at the start of class.<br>5. Once you have paid for a class, the contract is between you and the instructor.  Please see the instructor with <br>questions or concerns.  If there are serious concerns, please contact an ASEP Coordinator immediately. <br>6. If a child is excessively disruptive, he/she may be removed from class. A refund <i><b>may</b></i> be provided. <br>
+<p>Notes: ________________________________________________________________________________________</p>
+<h3>ASEP Policies.</h3>
+<ol> 
+<li>Students must be picked up <i><b>immediately</b></i> after class.  </li>
+<li>If your child goes to after-school care, please remember to inform the provider about the class.</li>
+<li>If a student is attending a late Wednesday class, he/she must be under adult supervision while awaiting their class.</li>
+<li>Students must wait quietly outside the classroom until the instructor is present at the start of class.</li>
+<li>Once you have paid for a class, the contract is between you and the instructor.  Please see the instructor with questions or concerns.  If there are serious concerns, please contact an ASEP Coordinator immediately. </li>
+<li>If a child is excessively disruptive, he/she may be removed from class. A refund <i><b>may</b></i> be provided. </li>
+</ol>
 I, ______________________ (print name), have read and agree to the above policies, and I give permission for my child <br>to attend the ASEP classes for which he/she is enrol ed.<br>
 _________________________________________<br>
 _________________<br>
