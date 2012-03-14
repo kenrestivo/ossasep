@@ -4,7 +4,7 @@
 <h1 class="fakespan-17 center">After-School Enrichment Program – <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
     <h3 class="fakespan-17 center">Classes begin <strong><?= date('F jS', strtotime(ClassSession::current()->start_date)) ?></strong>.<br />
-    <h3 class="fakespan-17 center">Reservations begin <strong>
+    Reservations begin <strong>
 <?php
     echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
 ?>
@@ -15,20 +15,17 @@
 <ul>
 <li>  Many classes fill up quickly! 
 <ul><li>
-     First come, first served: </li>
-    <ul><li>Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li></ul></ul></li>
-<li> You wil  receive a school-wide e-mail confirmation to confirm enrol ment or a notice in your family folder (for non-computer users.)</li>
-<li> Wait-lists do not rol  over from the previous sessions.  If your child is placed on a waitlist, you wil  be notified via email or phone.  You may choose to stay on the waitlist or have your check returned to you.  If you choose to remain on the waitlist, you wil  be notified if a space becomes available.  You may request to be removed from the waitlist at any time and your check wil  be returned.</li>
-<li> If you write a check for multiple classes, the check wil  be cashed.  If a class is canceled, a refund check wil  be written (refunds can take up to two weeks to be processed).</li>
+     First come, first served:
+    <ul><li>Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li></ul></li></ul></li>
+<li> You will receive a school-wide e-mail confirmation to confirm enrollment or a notice in your family folder (for non-computer users.)</li>
+<li> Wait-lists do not roll over from the previous sessions.  If your child is placed on a waitlist, you will be notified via email or phone.  You may choose to stay on the waitlist or have your check returned to you.  If you choose to remain on the waitlist, you will be notified if a space becomes available.  You may request to be removed from the waitlist at any time and your check will be returned.</li>
+<li> If you write a check for multiple classes, the check will be cashed.  If a class is canceled, a refund check will be written (refunds can take up to two weeks to be processed).</li>
 <li> Scholarships are available . Please contact the principal, Karen Gnusti, if you are interested.  Please turn in a form 
-with “scholarship pending” listed to hold a spot in a class (especial y for classes that sel  out quickly).</li>
-<li> If a student is interested in a class, but does not fit the grade range or other criteria, please contact an ASEP </li>
-Coordinator. There are exceptions in some (not al ) classes.</li>
-For questions or concerns, please contact the ASEP coordinator,</li>
-Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmail.com</a> or cell 415-203-3812. </li>
+with “scholarship pending” listed to hold a spot in a class (especially for classes that sell out quickly).</li>
+<li> If a student is interested in a class, but does not fit the grade range or other criteria, please contact an ASEP Coordinator. There are exceptions in some (not all) classes.</li>
+<li>For questions or concerns, please contact the ASEP coordinator, Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmail.com</a> or cell 415-203-3812. </li>
 </ul>
 <p>Revised 1/3/2012</p>
-<hr>
 
 </div>
 
@@ -44,7 +41,7 @@ Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmai
 Please fill out one form per child<br />
 Return this completed form, with payment, to the Front Office</h3>
 
-<p>For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cel  415-203-3812</p>
+<p>For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cell 415-203-3812</p>
 
 
 <p>Child’s Name ___________________________________________  Grade ______</p>
@@ -94,9 +91,9 @@ Return this completed form, with payment, to the Front Office</h3>
 
 
 <p>I, ______________________ (print name), have read and agree to the above policies, and I give permission for my child to attend the ASEP classes for which he/she is enrolled.</p>
-<p>_________________________________________ _________________<br>
+<p>_________________________________________ _________________<br/>
       Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                      Date</p>
 
- Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br> Do not release my email address to class instructors. <br>
-Revised 1/3/2012<br>
+ Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br /> Do not release my email address to class instructors. <br />
+Revised 1/3/2012<br />
 </div>
