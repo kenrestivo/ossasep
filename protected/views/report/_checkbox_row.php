@@ -1,5 +1,5 @@
 <tr>
-          <td class="short"></td>
+          <td class="short"><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
           <td>
 <?php
 if(Yii::app()->user->name != 'admin'){
@@ -7,7 +7,7 @@ if(Yii::app()->user->name != 'admin'){
 } else {
     echo CHtml::link(CHtml::encode($class->class_name), array('/ClassInfo/view', 'id'=>$class->id)); 
 }      
-     ?>&nbsp;
+     ?>
           <?=$class->gradeSummary('long')?>
           </td>
           <td>$<?= $class->costSummary ?> to 

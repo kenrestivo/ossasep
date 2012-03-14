@@ -3,7 +3,7 @@
 
 <h1>Signup Form (checkboxes)</h1>
 
-<div class="span-11">
+<div class="span-8">
 
 
 <?php 
@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="span-11 last">
+<div class="span-8 last">
 
 
 <?php 
