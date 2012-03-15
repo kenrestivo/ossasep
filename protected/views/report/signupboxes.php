@@ -23,9 +23,10 @@
 <li> Scholarships are available . Please contact the principal, Karen Gnusti, if you are interested.  Please turn in a form 
 with “scholarship pending” listed to hold a spot in a class (especially for classes that sell out quickly).</li>
 <li> If a student is interested in a class, but does not fit the grade range or other criteria, please contact an ASEP Coordinator. There are exceptions in some (not all) classes.</li>
-<li>For questions or concerns, please contact the ASEP coordinator, Heidi Lucey via email<a href="mailto:leopictures@hotmail.com">leopictures@hotmail.com</a> or cell 415-203-3812. </li>
+<li>For questions or concerns, please contact the ASEP coordinators, Angelica or
+    Vas Teaupa, via email<a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone (415) 350-5425. </li>
 </ul>
-<p>Revised 1/3/2012</p>
+<p>Revised 3/14/2012</p>
 
 </div>
 
@@ -41,7 +42,9 @@ with “scholarship pending” listed to hold a spot in a class (especially for 
 Please fill out one form per child<br />
 Return this completed form, with payment, to the Front Office</h3>
 
-<p>For questions or concerns, please contact Heidi Lucey via email at leopictures@hotmail.com or cell 415-203-3812</p>
+<p>For questions or concerns, please contact Angelica or
+    Vas Teaupa, via email<a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone (415) 350-5425. </p>
+
 
 
 <p>Child’s Name ___________________________________________  Grade ______</p>
@@ -95,5 +98,5 @@ Return this completed form, with payment, to the Front Office</h3>
       Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                      Date</p>
 
  Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br /> Do not release my email address to class instructors. <br />
-Revised 1/3/2012<br />
+Revised 3/14/2012<br />
 </div>
