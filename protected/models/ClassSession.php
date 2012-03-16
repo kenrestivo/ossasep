@@ -211,7 +211,7 @@ class ClassSession extends CActiveRecord
 
 
 /*
-  Finds recent public classes. Usually this will just be current and past,
+  Finds recent public sessions. Usually this will just be current and past,
   or current and future if the next session is already public.
   It's in reverse chron, so the freshest will be at the top.
 
@@ -231,6 +231,22 @@ class ClassSession extends CActiveRecord
             order by start_date desc
             limit 2",
             array('date' => $date));
+    }
+
+
+/*
+  Finds the LAST class session that was public NOT INCLUDING the saved session.
+  This is a miserable hack. This whole session business needs rethinking/cleaning
+*/
+    public static function previousPublic()
+    {
+        return self::model()->findBySql(
+            "select class_session.* from class_session 
+                 where public > 0
+                 and id != :currentid   
+            order by start_date desc
+            limit 1",
+            array('currentid' => ClassSession::savedSessionId()));
     }
 
 

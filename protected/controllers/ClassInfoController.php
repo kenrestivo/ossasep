@@ -221,7 +221,7 @@ class ClassInfoController extends Controller
 
     public function actionChooseCopy()
     {
-
+        /// this is the DO action
 		if(isset($_POST['ClassInfo'])){
 
             if(ClassInfo::copyClass($_POST['ClassInfo']['id'], 
@@ -235,7 +235,7 @@ class ClassInfoController extends Controller
 		$this->render(
             'choose_copy',
             // XXX note, i'm assuming here that we're not  in the current session
-            array('fromsession' => ClassSession::lastPublic()
+            array('fromsession' => ClassSession::previousPublic()
                 ));
 
    
