@@ -85,7 +85,6 @@ class CheckExpense extends CActiveRecord
 	public function relations()
 	{
 		return array(
-            'expenses' => array(self::HAS_MANY, 'Expense', 'check_id'),
 			'session' => array(self::BELONGS_TO, 
                                'ClassSession', 
                                'session_id',
@@ -93,11 +92,6 @@ class CheckExpense extends CActiveRecord
             // this is kind of ugly, but instructors might change,
             // and checks are forever once written
 			'payee' => array(self::BELONGS_TO, 'Instructor', 'payee_id'),
-			'instructor' => array(
-                self::BELONGS_TO, 
-                'Instructor', 
-                'payee_id',
-                'through' => 'expenses'),
 		);
 	}
 
