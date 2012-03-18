@@ -540,7 +540,7 @@ where (check_income.returned > '1999-01-01')
 
     /*
       The summary of dates by month, in order, in an array of month[day] = day
-     */
+    */
     public function getMeeting_summary()
     {
         $c = Yii::app()->db->createCommand(
@@ -562,7 +562,6 @@ where (check_income.returned > '1999-01-01')
  
         try
         {
-            $transaction->commit();
 
             /* XXX I HATE ACTIVERECORD HATE HATE HATE
                this stupid hack required in order to override the "default scope"
@@ -597,7 +596,7 @@ where (check_income.returned > '1999-01-01')
                     $nf->save();
                 }            
             }
-
+            $transaction->commit();
 
         }
         catch(Exception $e)
@@ -610,5 +609,29 @@ where (check_income.returned > '1999-01-01')
 
     }
 
+    public function deepDelete()
+    {
+        $transaction= Yii::app()->db->beginTransaction();
+ 
+        try
+        {
+            foreach(array(
+                        'delete from instructor_assignment where class_id=:cid limit 1',
+                        'delete from class_meeting where class_id=:cid limit 1'
+                        ) as $q){
+                $c = Yii::app()->db->createCommand($q);
+                $c->execute(array('cid' => $this->id));
+            }
+            $this->delete();
+
+            $transaction->commit();
+        }
+        catch(Exception $e)
+        {
+            $transaction->rollBack();
+			throw $e;
+        }
+
+    }
 
 }
