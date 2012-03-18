@@ -628,8 +628,8 @@ where class_info.id = :cid");
         $r=$c->queryRow(true, array('cid' => $this->id));
         if($r['no_no_count'] > 0){
             throw new CHttpException(
-                404,
-                "You cannot delete a class that has signups or checks. You can only change its status to cancelled");
+                400,
+                "You cannot delete a class that has signups or payments! You can only change its status to cancelled");
         }
 
         $transaction= Yii::app()->db->beginTransaction();
