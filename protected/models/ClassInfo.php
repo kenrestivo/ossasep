@@ -609,27 +609,57 @@ where (check_income.returned > '1999-01-01')
 
     }
 
+    /*
+      Delete the class, after first deleting its meeting dates and instructors.
+
+     */
     public function deepDelete()
     {
+
+
+        $c = Yii::app()->db->createCommand(
+        "select count(signup.student_id) + count(income.check_id) as no_no_count
+from class_info
+left join income
+     on income.class_id = class_info.id
+left join signup
+     on signup.class_id = class_info.id
+where class_info.id = :cid");
+        $r=$c->queryRow(true, array('cid' => $this->id));
+        if($r['no_no_count'] > 0){
+            throw new CHttpException(
+                404,
+                "You cannot delete a class that has signups or checks. You can only change its status to cancelled");
+        }
+
         $transaction= Yii::app()->db->beginTransaction();
- 
+        $success = false;
         try
         {
-            foreach(array(
-                        'delete from instructor_assignment where class_id=:cid limit 1',
-                        'delete from class_meeting where class_id=:cid limit 1'
-                        ) as $q){
+            foreach(
+                array(
+                    'delete from instructor_assignment where class_id=:cid',
+                    'delete from extra_fee where class_id=:cid',
+                    'delete from class_meeting where class_id=:cid'
+                    ) as $q){
                 $c = Yii::app()->db->createCommand($q);
                 $c->execute(array('cid' => $this->id));
             }
-            $this->delete();
 
             $transaction->commit();
+            $success = true;
         }
         catch(Exception $e)
         {
             $transaction->rollBack();
 			throw $e;
+        }
+
+        // have to do the above before we do this.
+        // AND, we can't have it in the transaction, or it will fail.
+        // hence, this silly $success flag
+        if($success){
+            $this->delete();
         }
 
     }
