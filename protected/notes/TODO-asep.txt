@@ -63,17 +63,6 @@ TODO tasks for ASEP
 ******* NOTE requires yii 1.1.8, which i think i have
 ***** Then set it as the pagination object for CActiveDataProvider with the setPagination() method.
 	 You could even extend CActiveDataProvider so it used your Pagination class as it's default Pagination object.
-** deep delete a class
-***	 first fix the link, it's not a-werken (missing js?)
-**** i see, it kinda works, you have to delete twice
-**** the delete from the overview appears borken.
-***	 only delete class is no students signed up
-****	 do not let them delete otherwise
-*** queries all ready to go, in this order:
-	 delete from instructor_assignment where class_id=:cid
-	 delete from class_meeting where class_id=:cid
-	 delete from class_info where id=:cid
-*** do it as a transaction, and back out of the transactino if it fails
 ** in _income, make amount autopopulate ajax based on class chosen
 *** autocomplete the amount on income based on class
  didn't i do that already?
