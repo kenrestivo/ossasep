@@ -2,4 +2,4 @@
 
 <?= CHtml::link(CHtml::encode("Signup Form (PDF) ") . 
                 '<img src="images/pdficon_small.gif" alt="PDF" />' , 
-                Yii::app()->baseUrl . "/static/Winter2012Signupform.pdf"); ?>
+                Yii::app()->baseUrl . "/static/Spring2012SignUp.pdf"); ?>
