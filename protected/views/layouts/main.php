@@ -80,6 +80,7 @@ if ($flashMessages) {
 	<?php echo $content; ?>
 
 	<div id="footer">
+    <p>A program of the <a href="http://www.oceanshoreschool.org">Ocean Shore School PTO</a></p>
 	</div><!-- footer -->
 
 </div><!-- page -->
