@@ -138,7 +138,12 @@ class ClassSession extends CActiveRecord
     {
         /// HACK! only admins get to save sessions. Everyone else gets this!
         if(Yii::app()->user->name != 'admin'){
-            return self::lastPublic()->id;
+            $lp=self::lastPublic();
+            if(isset($lp)){
+                return self::lastPublic()->id;
+            } else {
+                return self::sessionByDate()->id;
+            }
         }
 
         // fallthru for admins
