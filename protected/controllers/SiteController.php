@@ -56,15 +56,19 @@ class SiteController extends Controller
 	    }
 	}
 
+    /* just for testing the error reporting */
+    public function actionErrorTest()
+    {
+        throw new CHttpException(
+            500,
+            "Testing error checker.");
+    }
+
 	/**
 	 * Displays the contact page
 	 */
 	public function actionContact()
 	{
-        throw new CHttpException(
-            500,
-            "No contact page, testing error checker.");
-
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
