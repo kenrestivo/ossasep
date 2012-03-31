@@ -69,6 +69,11 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning, debug,trace',
 				),
+                array(
+                    'class'=>'CEmailLogRoute',
+                    'levels'=>'error',
+                    'emails'=>array('ken@restivo.org'),
+                ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
