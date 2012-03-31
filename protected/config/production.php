@@ -72,7 +72,7 @@ return array(
                 array(
                     'class'=>'CEmailLogRoute',
                     'levels'=>'error',
-                    'emails'=>array('ken@restivo.org'),
+                    'emails'=>array('krestivo@restivo.org'),
                 ),
 				// uncomment the following to show log messages on web pages
 				/*
