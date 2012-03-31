@@ -12,13 +12,13 @@ class SiteController extends Controller
 			'captcha'=>array(
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
-			),
+                ),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
-			),
-		);
+                ),
+            );
 	}
 
 	/**
@@ -61,6 +61,10 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
+        throw new CHttpException(
+            500,
+            "No contact page, testing error checker.");
+
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
@@ -112,7 +116,7 @@ class SiteController extends Controller
 	}
 
 
-   public function actionRev()
+    public function actionRev()
     {
         echo shell_exec('git log -n1 --pretty=format:%h HEAD');
         Yii::app()->end();
