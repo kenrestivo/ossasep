@@ -142,6 +142,7 @@ class ClassSession extends CActiveRecord
             if(isset($lp)){
                 return self::lastPublic()->id;
             } else {
+                // XXX this is stupid
                 return self::sessionByDate()->id;
             }
         }
@@ -180,18 +181,14 @@ class ClassSession extends CActiveRecord
   This means, as soon as the session goes public, this will return it,
   even if there is a session already in progress.
 */
-    public static function lastPublic($date = null)
+    public static function lastPublic()
     {
-        if(!isset($date)){
-            $date = date('Y-m-d');
-        }
         return self::model()->findBySql(
             "select class_session.* from class_session 
-            where end_date >= :date 
-                 and public > 0
+            where 
+                 public > 0
             order by start_date desc
-            limit 1",
-            array('date' => $date));
+            limit 1");
     }
 
 /*
