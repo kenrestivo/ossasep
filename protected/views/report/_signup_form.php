@@ -3,5 +3,5 @@
 <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form</a>
 
 <?= CHtml::link(CHtml::encode("(PDF)") . 
-                '<img src="images/pdficon_small.gif" alt="PDF" />' , 
+                '<img src="' . Yii::app()->baseUrl . '/images/pdficon_small.gif" alt="PDF" />' , 
                 Yii::app()->baseUrl . "/static/Spring2012SignUp.pdf"); ?>
