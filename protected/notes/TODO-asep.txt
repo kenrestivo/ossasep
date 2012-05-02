@@ -1,6 +1,12 @@
 # -*- mode:org; -*-
 TODO tasks for ASEP
 
+#+TITLE:     TODO tasks for ASEP app
+#+AUTHOR:    ken restivo
+#+EMAIL:     ken@restivo.org
+#+LANGUAGE:  en
+#+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
+
 * must have for NEXT SESSION! (march 5th?)
 ** reimport the new rasta.csv (it was updated)
 ** let parents be able to pick the old session (in a box, i'd guess)
