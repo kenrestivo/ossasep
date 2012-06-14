@@ -41,6 +41,7 @@ TODO tasks for ASEP
 ** some better way of importing the rasta, direct from xl probably
 *** there are plenty of php xl importers, yo
 * ui still to do
+** an upload form, for the signup PDF (if available)
 ** company checks
 *** look at her spreadsheet to see
 *** show check # date, and scholarship (they have to see it)
@@ -55,6 +56,11 @@ TODO tasks for ASEP
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * vital
 * useful
+** deepDelete for  Deposit model
+*** so you can deep delete a deposit, first undepositing all the checks in it.
+*** for each check, null out its depositdate, then save it.
+*** then delete the deposit.
+*** can adapt deepDelete from ClassInfo model, though it's different
 ** the checkbox signup form and week/month schedule
 *** add fields for the TEXT of the form!
 	so that heidi can edit it
