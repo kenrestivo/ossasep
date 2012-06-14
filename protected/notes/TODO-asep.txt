@@ -7,9 +7,39 @@ TODO tasks for ASEP
 #+LANGUAGE:  en
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
-* must have for NEXT SESSION! (march 5th?)
-** reimport the new rasta.csv (it was updated)
-** let parents be able to pick the old session (in a box, i'd guess)
+* must have for NEXT YEAR (2012-2013):
+** TODO [#A] import the new rasta (it was updated)
+** TODO [#A] import the new school year calendar
+** requirements per class, i.e. for agreement
+*** remove unique key constraint
+*** checkbox for requirement per class
+*** fk to class id
+**** this means also converting all the previous year's data as well?
+*** hide fk if checkbox not checed
+**** do you mean classid fk?
+*** in report check each class if checkbox chcked.
+*** in status, i'll need MAX() queries instead of AR stuff
+*** allow multiple requirements, i.e contracts for several years
+**	need some way to track and be in the current school year.
+*** [#A] the quick hack is to just default to max of whatever year(s) is in db
+**** not that much actually uses schoolyear, IIRC
+***	yes, i remember now!!!! it took today's date, calculated month!
+	 so based on where you were in the calendar, you were this year or next
+	 aha, i think it will be a named scope
+**	picklist of STUDENTS could get huge, and need to be pared down
+***	how to determine when kids are no longer in ocean shore??
+***	um, graduate them? when updating grades, if grade > 8, remove
+****	also, grade needs to be updated every year somehow
+***	current flag?
+*** can re-import roster though, for new students, that's easy.
+**** remember roster is not students, they are different tables
+**	i will DEFINITELY need some kind of de-duping system
+***	like i had to do for the coop. it'll have to happen.
+
+
+*** REALLY? why? what dupe? no, i don't think so.
+** some better way of importing the rasta, direct from xl probably
+*** there are plenty of php xl importers, yo
 * ui still to do
 ** company checks
 *** look at her spreadsheet to see
@@ -286,6 +316,7 @@ TODO tasks for ASEP
 **** tcpdf! it seems to work
 ** make all monetary fields NOT NULL default 0!
 *** be careful though, it might break stuff. i.e. the model, required validation
+** let parents be able to pick the old session (in a box, i'd guess)
 * bugfixen
 **	in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
@@ -300,36 +331,6 @@ TODO tasks for ASEP
 	 or late refunds
 	 DO I NEED TO TRACK REFUND CHECKS?
 	 
-* must have for NEXT YEAR:
-** import the new school year calendar
-** requirements per class, i.e. for agreement
-*** remove unique key constraint
-*** checkbox for requirement per class
-*** fk to class id
-**** this means also converting all the previous year's data as well?
-*** hide fk if checkbox not checed
-**** do you mean classid fk?
-*** in report check each class if checkbox chcked.
-*** in status, i'll need MAX() queries instead of AR stuff
-*** allow multiple requirements, i.e contracts for several years
-**	need some way to track the current school year.
-***	yes, i remember now!!!! it took today's date, calculated month!
-	 so based on where you were in the calendar, you were this year or next
-	 aha, i think it will be a named scope
-**	picklist of STUDENTS could get huge, and need to be pared down
-***	how to determine when kids are no longer in ocean shore??
-***	um, graduate them? when updating grades, if grade > 8, remove
-****	also, grade needs to be updated every year somehow
-***	current flag?
-*** can re-import roster though, for new students, that's easy.
-**** remember roster is not students, they are different tables
-**	i will DEFINITELY need some kind of de-duping system
-***	like i had to do for the coop. it'll have to happen.
-
-
-*** REALLY? why? what dupe? no, i don't think so.
-** some better way of importing the rasta, direct from xl probably
-*** there are plenty of php xl importers, yo
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
