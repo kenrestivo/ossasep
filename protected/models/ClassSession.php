@@ -159,6 +159,7 @@ class ClassSession extends CActiveRecord
     /*
       Picks the earliest class session that has not ended yet.
       That'll be the current one, until that one ends, then it'll be the next.
+      If there are no sessions, picks the last session.
       You can give it a date to check what would be the current session 
       for a particular date.
       This returns a session object.
@@ -168,12 +169,23 @@ class ClassSession extends CActiveRecord
         if(!isset($date)){
             $date = date('Y-m-d');
         }
-        return self::model()->findBySql(
+        $ret =  self::model()->findBySql(
             "select class_session.* from class_session 
             where end_date >= :date 
             order by start_date asc 
             limit 1",
             array('date' => $date));
+
+        /* cough, hack. Have to have a valid session to log in, even if
+           there are no current sessions (i.e. end of year, between sessions).
+         */
+        if(!isset($ret)){
+            $ret =  self::model()->findBySql(
+                "select class_session.* from class_session 
+            order by start_date desc 
+            limit 1");
+        }
+        return $ret;
     }
 
 /*
@@ -316,7 +328,7 @@ order by instructor.last_name asc, instructor.first_name asc",
     
     /*
       Returns an array[month][day] = count of classes for that day
-     */
+    */
 
     public function getMeeting_summary()
     {
