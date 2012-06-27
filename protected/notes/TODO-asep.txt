@@ -9,7 +9,6 @@ TODO tasks for ASEP
 
 * must have for NEXT YEAR (2012-2013):
 ** TODO [#A] import the new rasta (it was updated)
-** TODO [#A] import the new school year calendar
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
 *** checkbox for requirement per class

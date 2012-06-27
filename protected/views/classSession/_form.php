@@ -13,7 +13,10 @@
 		<?php echo $form->labelEx($model,'school_year_id'); ?>
     <?php echo $form->dropDownList(
         $model,'school_year_id',
-        CHtml::listData(SchoolYear::model()->findAll(), 'id', 'description')); ?>
+        CHtml::listData(
+            SchoolYear::model()->findAll(
+                array('order' => 'start_date DESC')), 
+            'id', 'description')); ?>
 
 
 		<?php echo $form->error($model,'school_year_id'); ?>
