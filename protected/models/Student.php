@@ -68,8 +68,7 @@ class Student extends CActiveRecord
 
 
     public function defaultScope() {
-        return array('order' => 'first_name ASC, last_name ASC',
-			'condition' => 'grade < 9');
+        return array('order' => 'first_name ASC, last_name ASC');
     }
 
 	/**
