@@ -8,9 +8,6 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for NEXT YEAR (2012-2013):
-** TODO [#A] only show non-gradudated students
-*** need to keep history around, sorry.
-*** show only students where grade < 9
 ** TODO [#A] import the new rasta (it was updated)
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
