@@ -8,9 +8,10 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for NEXT YEAR (2012-2013):
-** TODO [#A] only show non-gradudated students
-*** need to keep history around, sorry.
-*** show only students where grade < 9
+** TODO [#A] handle the extra fee
+*** do the migration to add the pay_to_instructor
+*** auto-add the fee to all classes at create time
+*** modify the teacher payment stuff to remove it from paid owed
 ** TODO [#A] import the new rasta (it was updated)
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
@@ -45,6 +46,7 @@ TODO tasks for ASEP
 * must have for FUTURE YEAR (2013-2014)
 ** button to  graduate the kids
 *** executes "update student set grade = grade+1;", is all
+** merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
 * ui still to do
 ** an upload form, for the signup PDF (if available)
 ** company checks
