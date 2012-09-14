@@ -8,6 +8,9 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for NEXT YEAR (2012-2013):
+** TODO [#A] only show non-gradudated students
+*** need to keep history around, sorry.
+*** show only students where grade < 9
 ** TODO [#A] import the new rasta (it was updated)
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
@@ -39,6 +42,9 @@ TODO tasks for ASEP
 *** REALLY? why? what dupe? no, i don't think so.
 ** some better way of importing the rasta, direct from xl probably
 *** there are plenty of php xl importers, yo
+* must have for FUTURE YEAR (2013-2014)
+** button to  graduate the kids
+*** executes "update student set grade = grade+1;", is all
 * ui still to do
 ** an upload form, for the signup PDF (if available)
 ** company checks
