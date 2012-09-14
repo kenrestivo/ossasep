@@ -1,12 +1,17 @@
 <?
-$am=$model->active_meetings;
+   $am=$model->active_meetings;
     echo '<div><div class="span-11">';
+if(count($am) < 1){
     echo CHtml::beginForm(array('populate', 'id' => $model->id));
 echo "<span>Auto-populate " . ZHtml::weekdayTranslation($model->day_of_week). " meeting dates: </span>";
     echo CHtml::textField('num', 8, array('size' => 2));
     echo CHtml::submitButton('Add');
     echo CHtml::endForm();
-echo '<br /> or ';
+    echo '<br /> or ';
+} else {
+    echo "<span>You already have " . count($am) . " meeting dates.</span><br />";
+}
+
 echo CHTML::link(CHtml::encode("Add 1 Meeting Date for ". $model->summary), 
 				 array("ClassMeeting/create",
                        'class_id' => $model->id,

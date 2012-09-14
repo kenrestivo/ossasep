@@ -323,9 +323,11 @@ TODO tasks for ASEP
 *** be careful though, it might break stuff. i.e. the model, required validation
 ** let parents be able to pick the old session (in a box, i'd guess)
 * bugfixen
-**	in paid, why are cancelleds payments not showing up at all?
+** don't let them add dates for a class that already has them
+CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '71-2012-09-26' for key 'idx_date'. The SQL statement executed was: INSERT INTO `class_meeting` (`makeup`, `meeting_date`, `class_id`) VALUES (:yp0, :yp1, :yp2). Bound with :yp0=0, :yp1='2012-09-26', :yp2=71 
+** in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
-***	they WERE paid. only returned checks shouldn't show up.
+*** they WERE paid. only returned checks shouldn't show up.
 	 or maybe they should, just not in totals?
 ** chozen does not like being provided with arrays from sql finds
  it makes the width of the box only as wide as teh FIRST item.
