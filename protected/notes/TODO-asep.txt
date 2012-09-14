@@ -8,6 +8,10 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for NEXT YEAR (2012-2013):
+** TODO [#A] handle the extra fee
+*** do the migration to add the pay_to_instructor
+*** auto-add the fee to all classes at create time
+*** modify the teacher payment stuff to remove it from paid owed
 ** TODO [#A] import the new rasta (it was updated)
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
