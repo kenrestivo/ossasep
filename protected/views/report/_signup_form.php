@@ -4,4 +4,4 @@
 
 <?= CHtml::link(CHtml::encode("(PDF)") . 
                 '<img src="' . Yii::app()->baseUrl . '/images/pdficon_small.gif" alt="PDF" />' , 
-                Yii::app()->baseUrl . "/static/Spring2012SignUp.pdf"); ?>
+                Yii::app()->baseUrl . "/static/signup.pdf"); ?>
