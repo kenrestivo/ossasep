@@ -18,7 +18,6 @@ TODO tasks for ASEP
 **** I'll modify the calculation for paying the instructors so that it won't include fees that don't have that checkbox checked. Simple enough.
 **** At some point before the next session, I'll make another modification to the ccode so that the system will automatically create this fee every time you create a new class.
 **** assumes that these fees are ONLY for ossptoo!
-** TODO [#A] import the new rasta (it was updated)
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
 *** checkbox for requirement per class
@@ -29,31 +28,31 @@ TODO tasks for ASEP
 *** in report check each class if checkbox chcked.
 *** in status, i'll need MAX() queries instead of AR stuff
 *** allow multiple requirements, i.e contracts for several years
-**	need some way to track and be in the current school year.
+** need some way to track and be in the current school year.
 *** [#A] the quick hack is to just default to max of whatever year(s) is in db
 **** not that much actually uses schoolyear, IIRC
-***	yes, i remember now!!!! it took today's date, calculated month!
-	 so based on where you were in the calendar, you were this year or next
-	 aha, i think it will be a named scope
-**	picklist of STUDENTS could get huge, and need to be pared down
-***	how to determine when kids are no longer in ocean shore??
-***	um, graduate them? when updating grades, if grade > 8, remove
-****	also, grade needs to be updated every year somehow
-***	current flag?
+*** yes, i remember now!!!! it took today's date, calculated month!
+**** so based on where you were in the calendar, you were this year or next
+**** aha, i think it will be a named scope
+*** didn't i DO this already?
+** picklist of STUDENTS could get huge, and need to be pared down
+*** how to determine when kids are no longer in ocean shore??
+*** um, graduate them? when updating grades, if grade > 8, remove
+**** also, grade needs to be updated every year somehow
+*** current flag?
 *** can re-import roster though, for new students, that's easy.
 **** remember roster is not students, they are different tables
-**	i will DEFINITELY need some kind of de-duping system
-***	like i had to do for the coop. it'll have to happen.
-
-
+** i will DEFINITELY need some kind of de-duping system
+*** like i had to do for the coop. it'll have to happen.
 *** REALLY? why? what dupe? no, i don't think so.
-** some better way of importing the rasta, direct from xl probably
-*** there are plenty of php xl importers, yo
 * must have for FUTURE YEAR (2013-2014)
 ** button to  graduate the kids
 *** executes "update student set grade = grade+1;", is all
 ** merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
 *** it's basically in constraints for student grade < 9
+** [#B] some better way of importing the rasta, direct from xl probably
+*** there are plenty of php xl importers, yo
+*** import rasta! via csv like i have it, or some kind of better excel importer
 * ui still to do
 ** an upload form, for the signup PDF (if available)
 ** company checks
@@ -338,6 +337,10 @@ TODO tasks for ASEP
 *** be careful though, it might break stuff. i.e. the model, required validation
 ** let parents be able to pick the old session (in a box, i'd guess)
 * bugfixen
+** instructors whose classes are not balanced, the line click works but the view icon click does not
+*** from this page: http://www.ossasep.org/index.php/Admin/integrityCheck
+*** this link is broken: http://www.ossasep.org/index.php/admin/70
+*** not admin, should be ClassInfo
 ** in paid, why are cancelleds payments not showing up at all?
 	is this still happening?
 *** they WERE paid. only returned checks shouldn't show up.
