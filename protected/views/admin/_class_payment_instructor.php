@@ -4,7 +4,7 @@
     echo '<table class="catalog">';
     foreach($assignments as $c){
     echo "<tr>";
-        $s = $c->split($c->class->paid);
+        $s = $c->split($c->class->paidMinusFees);
         $owed += $s;
         echo '<td>'. Yii::app()->format->percent($c->percentage) . ' of ';
       echo CHtml::encode($c->class->summary) . '</td>';

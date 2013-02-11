@@ -13,6 +13,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                   'columns'=>array(
                       'description',
                       'amount',
+					  'pay_to_instructor:boolean',
                       array(
                           'class'=>'CompositeButtonColumn',
                           'modelClassName' => 'ExtraFee',

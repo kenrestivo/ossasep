@@ -1242,3 +1242,8 @@ so it's ok to have it be something they have to click off of the page to do.
 ** there are other schools with these who'd be interested in it, call schools, private
 
 *** she got thrown at lots of proprietary software, knows how to get around in it
+* dev important stuff
+**  setting up sshfs
+	sshfs -oworkaround=rename -onoforget ken@192.168.122.80:/ /mnt/lamp
+** mysql dev machine root pw is testing, duh.
+*** pretty sure port is same

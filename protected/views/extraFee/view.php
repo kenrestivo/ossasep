@@ -22,5 +22,6 @@ $this->menu=array(
 		'amount',
 		'description',
 		'class.summary',
+		'pay_to_instructor:boolean',
 	),
 )); ?>

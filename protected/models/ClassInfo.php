@@ -481,6 +481,48 @@ group by income.class_id");
         $r=$c->queryRow(true, array('cid' => $this->id));
         return $r['total'];
     }
+
+/*
+  Everything paid, minus refunds, and minus any fees paid by currently enrolled kids.
+ */
+
+    public function getPaidMinusFees()
+    {
+        $c = Yii::app()->db->createCommand(
+			"select (sum(income.amount) - sum(signup_with_non_instructor_fees.non_instructor_total))
+              as total_paid_minus_pto_fees,
+             income.class_id as class_id
+            from income
+            left join check_income
+                 on check_income.id = income.check_id
+            left join class_info
+                 on class_info.id = income.class_id
+			left join
+                  (select signup.class_id, signup.status, signup.student_id,
+ 				  		  ifnull(non_instructor_fees.amount,0) as non_instructor_total 
+                           from signup
+                            left join 
+                              (select sum(extra_fee.amount) as amount, extra_fee.class_id as class_id
+                                                 from extra_fee
+                                                  where extra_fee.pay_to_instructor < 1
+                                                   group by extra_fee.class_id)
+                            as non_instructor_fees
+                             on non_instructor_fees.class_id = signup.class_id)
+					as signup_with_non_instructor_fees
+                on (signup_with_non_instructor_fees.class_id = income.class_id
+                    and signup_with_non_instructor_fees.student_id = income.student_id)
+            where (check_income.returned is null
+                    or check_income.returned < '1999-01-01')
+                    and signup_with_non_instructor_fees.status = 'Enrolled'
+                  and income.class_id = :cid
+            group by income.class_id");
+        $r=$c->queryRow(true, array('cid' => $this->id));
+        return $r['total_paid_minus_pto_fees'];
+    }
+
+
+
+
 /*
   Returned check portions for this class.
 */

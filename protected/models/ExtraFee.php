@@ -37,12 +37,12 @@ class ExtraFee extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('amount, description, class_id', 'required'),
-			array('class_id', 'numerical', 'integerOnly'=>true),
+			array('class_id,pay_to_instructor', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>19),
 			array('description', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, amount, description, class_id', 'safe', 'on'=>'search'),
+			array('id, amount, description, pay_to_instructor, class_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +67,7 @@ class ExtraFee extends CActiveRecord
 			'id' => 'Id',
 			'amount' => 'Amount',
 			'description' => 'Description',
+			'pay_to_instructor' => "Pay to instructor?",
 			'class_id' => 'Class',
 		);
 	}
@@ -87,6 +88,7 @@ class ExtraFee extends CActiveRecord
 		$criteria->compare('amount',$this->amount,true);
 
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('pay_to_instructor',$this->pay_to_instructor,true);
 
 		$criteria->compare('class_id',$this->class_id);
 

@@ -30,6 +30,13 @@
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'pay_to_instructor'); ?>
+		<?php echo $form->checkbox($model,'pay_to_instructor'); ?>
+		<?php echo $form->error($model,'pay_to_instructor'); ?>
+	</div>
+
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
