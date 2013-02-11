@@ -12,12 +12,11 @@ TODO tasks for ASEP
 *** do the migration to add the pay_to_instructor
 *** auto-add the fee to all osspto classes at create time
 *** modify the teacher payment stuff to remove it from paid owed
-*** as sent
-**** For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
-**** At some point over the next month, and before you pay the teachers, I'll add a checkbox to each extra fee which'll be "Pay to Instructor?". By default it'll be on. But for the OSS processing fee, it'll be off.
 **** I'll modify the calculation for paying the instructors so that it won't include fees that don't have that checkbox checked. Simple enough.
-**** At some point before the next session, I'll make another modification to the ccode so that the system will automatically create this fee every time you create a new class.
-**** assumes that these fees are ONLY for ossptoo!
+*** DONE For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
+*** At some point over the next month, and before you pay the teachers, I'll add a checkbox to each extra fee which'll be "Pay to Instructor?". By default it'll be on. But for the OSS processing fee, it'll be off.
+*** At some point before the next session, I'll make another modification to the ccode so that the system will automatically create this fee every time you create a new class.
+*** DONE assumes that these fees are ONLY for ossptoo!
 ** requirements per class, i.e. for agreement
 *** remove unique key constraint
 *** checkbox for requirement per class
