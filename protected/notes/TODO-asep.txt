@@ -8,9 +8,9 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for THIS YEAR (2012-2013):
-** TODO [#A] handle the extra fee
+** [#A] handle the extra fee
 *** DONE do the migration to add the pay_to_instructor
-*** auto-add the fee to all osspto classes at create time
+*** TODO auto-add the fee to all osspto classes at create time
 **** At some point before the next session, I'll make another modification to the ccode so that the system will automatically create this fee every time you create a new class.
 *** DONE modify the teacher payment stuff to remove it from paid owed
 **** DONE I'll modify the calculation for paying the instructors so that it won't include fees that don't have that checkbox checked. Simple enough.
