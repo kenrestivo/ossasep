@@ -67,6 +67,34 @@ TODO tasks for ASEP
 *** a printout of it for the company, or let them log in to see
 ** joint checks show unpaid vs paid classes as a separate group in dropdown
 * vital
+* friendly exceptions needed
+** delete income when it's already used
+REQUEST_URI=/index.php/checkIncome/delete/605?ajax=check-income-grid
+2013/02/03 21:10:38 [error] [system.db.CDbCommand]
+CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint
+violation: 1451 Cannot delete or update a parent row: a foreign key
+constraint fails (`asep`.`income`, CONSTRAINT `income_ibfk_1` FOREIGN
+KEY (`check_id`) REFERENCES `check_income` (`id`)). The SQL statement
+executed was: DELETE FROM `check_income` WHERE
+`check_income`.`id`=605.
+2013/02/03 21:10:38 [error] [exception.CDbException] exception
+'CDbException' with message 'CDbCommand failed to execute the SQL
+statement: SQLSTATE[23000]: Integrity constraint violation: 1451
+Cannot delete or update a parent row: a foreign key constraint fails
+(`asep`.`income`, CONSTRAINT `income_ibfk_1` FOREIGN KEY (`check_id`)
+REFERENCES `check_income` (`id`))' in
+/f5/ossasep/protected/yii-framework/db/CDbCommand.php:336
+*** looks like it was assigned, then got unassigned in preparation for deleting
+** duplicate schoolday
+   SQLSTATE[23000]: Integrity constraint
+violation: 1062 Duplicate entry '2013-02-12' for key 'school_day'. The
+SQL statement executed was: INSERT INTO `school_calendar` (`day_off`,
+`minimum`, `school_day`, `school_year_id`, `note`) VALUES (:yp0, :yp1,
+:yp2, :yp3, :yp4).
+2013/02/04 21:49:27 [error] [exception.CDbException] exception
+'CDbException' with message 'CDbCommand failed to execute the SQL
+statement: SQLSTATE[23000]: Integrity constraint violation: 1062
+Duplicate entry '2013-02-12' for key 'school_day'' in
 * useful
 ** deepDelete for  Deposit model
 *** so you can deep delete a deposit, first undepositing all the checks in it.
@@ -352,7 +380,20 @@ TODO tasks for ASEP
 	 i.e. waitlist? or a cancellation of only ONE class, not all?
 	 or late refunds
 	 DO I NEED TO TRACK REFUND CHECKS?
-	 
+
+** missing checks, not showing up in financial summary but in somewhere else waht?
+    I know when Vas and I were trying to do the deposit there were missing checks in
+the financial summary but when we went to look them up individually they
+were all there.  Not sure why this is happening.  I also went home and
+reprinted the financial summary and I too was missing a few checks,
+different from the last report and had to add them in manually.  Perhaps a
+
+** pto fund problem? (this in winter 2013 session_id 4)
+   Vas mentioned he was gonna email you about two discrepancies with the allocation of
+funds for two classes. The were off by $2. I believe it was Elaine and the other was a split class so each
+instructor was off by $1. Perhaps due to the PTO funds
+glitch of some sort.
+
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
@@ -367,7 +408,7 @@ TODO tasks for ASEP
 ** student payment status, i.e. enrollment with payment status
 ** ok, forms starting to make sense
 	for adding a check from student or class, DO NOT NEED TO SPLIT IT
-	hell, i alredy know the student, class, AND amount! 
+	hell, i alredy know the student, class, AND amount!
 	just a single line, try cform builder!
 	and, i can not bother with a popup for check
 	hell, i can have an ajax popup for splits.
@@ -397,7 +438,7 @@ TODO tasks for ASEP
 	a very quick datepicker adder!
 	just a date, not hidden, and boom, it adds, maybe even ajaxy.
 	in the meetingdates, join to school calendar and show that stuff!
-	
+
 **	new student wizard really. ajaxy: class->student->import->signup
 
 ** finish the relational mappings
@@ -413,7 +454,7 @@ TODO tasks for ASEP
 ***	gui splits for income/expense
 	for now handle it like instructors
 	but the data entry would be way too complicated that way
-	
+
 
 **	autoppopulate the check when adding
 	when adding well, i guess, when adding subthings
