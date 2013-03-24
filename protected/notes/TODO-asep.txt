@@ -18,6 +18,7 @@ TODO tasks for ASEP
 *** how?
 **** immutable links to revisions! structural sharing!
 ***** i keep in the db a list of edits, and the latest one gets used for the current session?
+***** the hard part is knowing when to switch to the latest one.
 ***** thus keeping the history around forever?
 ** [#A] handle the extra fee
 *** DONE do the migration to add the pay_to_instructor
