@@ -1,19 +1,18 @@
-<?php   Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/printabletable.css', 'print'); ?>
+<?php   Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/printabletable.css', 'print'); 
+ $reg_begin_tmp =  date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
+
+// XXX MOVE THIS TO DB!
+$signup_contact_move_to_db = 'Kimberly Repp , via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
+// XXX MOVE THIS TO DB!
+$revised_date_move_to_db = "3/24/13";
+
+?>
 
 <div class="span-17">
 <h1 class="fakespan-17 center">After-School Enrichment Program – <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
     <h3 class="fakespan-17 center">Classes begin <strong><?= date('F jS', strtotime(ClassSession::current()->start_date)) ?></strong>.<br />
-    Reservations begin <strong>
-<?php
-    echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
-
-// XXX MOVE THIS TO DB!
-$signup_contact_move_to_db = 'Kimberly Repp , via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
-$revised_date_move_to_db = "3/24/13";
-
-?>
-</strong>!</h3>
+    Reservations begin  <strong> <?= $reg_begin_tmp ?> </strong>!</h3>
 
 
 <h3>Important Notes about Enrollment Process:</h3>
@@ -30,7 +29,7 @@ with “scholarship pending” listed to hold a spot in a class (especially for 
 <li> If a student is interested in a class, but does not fit the grade range or other criteria, please contact an ASEP Coordinator. There are exceptions in some (not all) classes.</li>
 	<li>For questions or concerns, please contact the ASEP coordinator,  <?php echo $signup_contact_move_to_db; ?> </li>
 </ul>
-<p>Revised  <?php echo $revised_date_move_to_db;  ?>2</p>
+<p>Revised  <?= $revised_date_move_to_db;  ?>2</p>
 
 </div>
 
@@ -38,15 +37,11 @@ with “scholarship pending” listed to hold a spot in a class (especially for 
 
 
 <h1 class="fakespan-17 center"><?= CHtml::encode($this->savedSessionSummary()) ?> ASEP ENROLLMENT FORM</h1>
-    <h3 class="fakespan-17 center" >Reservations begin <strong>
-<?php
-    echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
-?>
-</strong>!<br />
+    <h3 class="fakespan-17 center" >Reservations begin <strong> <?= $reg_begin_tmp ?> </strong>!<br />
 Please fill out one form per child<br />
 Return this completed form, with payment, to the Front Office</h3>
 
-<p>For questions or concerns, please contact  <?php echo $signup_contact_move_to_db; ?></p>
+<p>For questions or concerns, please contact  <?= $signup_contact_move_to_db; ?></p>
 
 
 
@@ -101,5 +96,5 @@ Return this completed form, with payment, to the Front Office</h3>
       Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                      Date</p>
 
  Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br /> Do not release my email address to class instructors. <br />
-																 Revised <?php echo $revised_date_move_to_db;  ?><br />
+																 Revised <?= $revised_date_move_to_db;  ?><br />
 </div>
