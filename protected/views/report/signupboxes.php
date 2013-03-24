@@ -8,7 +8,9 @@
 <?php
     echo date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
 
-$signup_contact_move_to_db = 'Angelica or Vas Teaupa, via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone (415) 350-5425.';
+// XXX MOVE THIS TO DB!
+$signup_contact_move_to_db = 'Kimberly Repp , via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
+$revised_date_move_to_db = "3/24/13";
 
 ?>
 </strong>!</h3>
@@ -26,9 +28,9 @@ $signup_contact_move_to_db = 'Angelica or Vas Teaupa, via email <a href="mailto:
 <li> Scholarships are available . Please contact the principal, Karen Gnusti, if you are interested.  Please turn in a form 
 with “scholarship pending” listed to hold a spot in a class (especially for classes that sell out quickly).</li>
 <li> If a student is interested in a class, but does not fit the grade range or other criteria, please contact an ASEP Coordinator. There are exceptions in some (not all) classes.</li>
-	<li>For questions or concerns, please contact the ASEP coordinators,  <?php echo $signup_contact_move_to_db; ?> </li>
+	<li>For questions or concerns, please contact the ASEP coordinator,  <?php echo $signup_contact_move_to_db; ?> </li>
 </ul>
-<p>Revised 3/14/2012</p>
+<p>Revised  <?php echo $revised_date_move_to_db;  ?>2</p>
 
 </div>
 
@@ -99,5 +101,5 @@ Return this completed form, with payment, to the Front Office</h3>
       Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                      Date</p>
 
  Provide my email address to the instructor(s) of the class(es) that my son/daughter has enrolled in this session.<br /> Do not release my email address to class instructors. <br />
-Revised 3/14/2012<br />
+																 Revised <?php echo $revised_date_move_to_db;  ?><br />
 </div>
