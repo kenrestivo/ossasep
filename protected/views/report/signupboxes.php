@@ -2,7 +2,7 @@
  $reg_begin_tmp =  date("l, F jS \a\\t g:i a", strtotime(ClassSession::current()->registration_starts));
 
 // XXX MOVE THIS TO DB!
-$signup_contact_move_to_db = 'Kimberly Repp , via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
+$signup_contact_move_to_db = 'Kimberly Repp, via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
 // XXX MOVE THIS TO DB!
 $revised_date_move_to_db = "3/24/13";
 
@@ -12,7 +12,7 @@ $revised_date_move_to_db = "3/24/13";
 <h1 class="fakespan-17 center">After-School Enrichment Program – <?= CHtml::encode($this->savedSessionSummary()) ?></h1>
 
     <h3 class="fakespan-17 center">Classes begin <strong><?= date('F jS', strtotime(ClassSession::current()->start_date)) ?></strong>.<br />
-    Reservations begin  <strong> <?= $reg_begin_tmp ?> </strong>!</h3>
+    Reservations begin  <strong> <?= $reg_begin_tmp ?></strong>!</h3>
 
 
 <h3>Important Notes about Enrollment Process:</h3>
@@ -37,7 +37,7 @@ with “scholarship pending” listed to hold a spot in a class (especially for 
 
 
 <h1 class="fakespan-17 center"><?= CHtml::encode($this->savedSessionSummary()) ?> ASEP ENROLLMENT FORM</h1>
-    <h3 class="fakespan-17 center" >Reservations begin <strong> <?= $reg_begin_tmp ?> </strong>!<br />
+    <h3 class="fakespan-17 center" >Reservations begin <strong> <?= $reg_begin_tmp ?></strong>!<br />
 Please fill out one form per child<br />
 Return this completed form, with payment, to the Front Office</h3>
 
