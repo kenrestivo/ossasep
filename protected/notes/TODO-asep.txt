@@ -8,6 +8,17 @@ TODO tasks for ASEP
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
 * must have for THIS YEAR (2012-2013):
+** Move some stuff to the db
+*** things
+**** TODO the standard OSSPTO fee for new classes
+**** TODO the pdf yes/no checkbox
+**** TODO the actual pdf upload itself!
+**** TODO the contact info for the administrator (phone,email,name)
+**** TODO policies and revised date?
+*** how?
+**** immutable links to revisions! structural sharing!
+***** i keep in the db a list of edits, and the latest one gets used for the current session?
+***** thus keeping the history around forever?
 ** [#A] handle the extra fee
 *** DONE do the migration to add the pay_to_instructor
 *** TODO auto-add the fee to all osspto classes at create time
