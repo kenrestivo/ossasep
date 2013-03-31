@@ -15,6 +15,7 @@ if($r['count'] < 1 ){
 
 echo CHTML::link("Add Date to ". $model->description, 
                  array("SchoolCalendar/create",
+                       'school_year_id' => $model->id,
                        'returnTo' => Yii::app()->request->requestUri));
 
 

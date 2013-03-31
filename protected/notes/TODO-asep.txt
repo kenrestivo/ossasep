@@ -324,8 +324,8 @@ Duplicate entry '2013-02-12' for key 'school_day'' in
 **	autocompletes not dropdowns
 *** students
 *** classes
-***roster import
-**	trap exception on populate for school days
+*** roster import
+** trap exception on populate for school days
 ** make the deposit form editable in the same format as the printabel one
  in other words, make the "printable" report into a form, with edit
  i'm pretty much halfway there with the payee enter, the coin form, and the add/undeposit javascript
