@@ -61,7 +61,7 @@ $<?= $model->cost_per_class ?> per week for an
 
 <?php 
      foreach($model->extra_fees as $fee){
-         echo "plus $" . $fee->amount . " for " . $fee->description;
+         echo " plus $" . $fee->amount . " for " . $fee->description;
      }
 ?>
 ;
