@@ -1,7 +1,7 @@
 
 <?php 
  // TODO: do not hard code this, put it in the database 
-$show_pdf = false; 
+$show_pdf = true; 
 ?>
 
 <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Report/signupboxes">Signup Form</a>
