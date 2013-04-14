@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List ClassMeeting', 'url'=>array('index')),
-	array('label'=>'Manage ClassMeeting', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Create ClassMeeting 

@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Income', 'url'=>array('index')),
-	array('label'=>'Manage Income', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Assign Check Split</h1>

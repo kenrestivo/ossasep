@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Signup', 'url'=>array('index')),
-	array('label'=>'Manage Signup', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Create Signup

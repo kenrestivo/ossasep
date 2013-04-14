@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List InstructorAssignment', 'url'=>array('index')),
-	array('label'=>'Manage InstructorAssignment', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Create InstructorAssignment

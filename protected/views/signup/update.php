@@ -5,12 +5,6 @@ $this->breadcrumbs=array(
     );
 
 
-$this->menu=array(
-	array('label'=>'List Signup', 'url'=>array('index')),
-	array('label'=>'Create Signup', 'url'=>array('create')),
-	array('label'=>'View Signup', 'url'=>array('view', 'student_id'=>$model->student_id, 'class_id' => $model->class_id)),
-	array('label'=>'Manage Signup', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Update Signup <?php echo CHtml::encode($model->student->full_name). " " . CHtml::encode($model->class->summary)  ?></h1>
