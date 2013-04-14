@@ -5,12 +5,6 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List CheckIncome', 'url'=>array('index')),
-	array('label'=>'Create CheckIncome', 'url'=>array('create')),
-	array('label'=>'View CheckIncome', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage CheckIncome', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Update Check <?php echo $model->summary; ?> (received)</h1>
