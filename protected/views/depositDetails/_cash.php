@@ -29,7 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                   'label'=>'Un-Deposit',
                                   'url'=> 
                                   'Yii::app()->controller->createUrl("/CheckIncome/undeposit", array("id" => $data->id))',
-                                  'imageUrl'=>'',
+                                  'imageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',
                                   'options'=>array(
                                       'ajax'=>array(
                                           'type'=>'GET',
