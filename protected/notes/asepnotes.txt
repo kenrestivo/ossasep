@@ -122,6 +122,11 @@ LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY '
 
 ** on linux, this:
 LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	parent_4, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3, 	email_parent_4, 	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
+*** NEW
+LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name, 	first_name, 	grade, 	teacher, 	parent_1, 	parent_2, 	parent_3, 	phone, 	cell__parent_1, 	cell_parent_2, 	email_parent_1, 	email__parent_2, 	email_parent_3,  	home_address, 	home_city, 	zip_code, 	home_address_2, 	school_job);
+**** and MUST do this now, on latest version
+	 --local_infile=1
+
 
 ** omit "local" if the file is on the server
    
