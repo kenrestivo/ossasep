@@ -1,10 +1,10 @@
 # -*- mode:org; -*-
 * reports
 
-**	D  (payment for companies)
+** D  (payment for companies)
 	   company name
 	   amount
-**	O (checks by companies)
+** O (checks by companies)
 		class
 		check
 			payer
@@ -12,30 +12,30 @@
 			amount
 		total
 
-**	H "receipt"
+** H "receipt"
 		Student.name
 		CLASS
 		Contact Name
 		Cost
 		payments.Check#
-**	W integrity check dashboard
-***	unpaid/overpaid classes (useful for checking)
+** W integrity check dashboard
+*** unpaid/overpaid classes (useful for checking)
 	select all the signups
 	determine what it should be (scholarship, etc)
 	for each signup, check that the sum of incomes for it equals what it should be
-****	isn't this the dashboard??
-***	classes paid but not signed up
+**** isn't this the dashboard??
+*** classes paid but not signed up
 	for each income
 	check that there is a signup for it
 	and that it is not cancelled?
 **** easy
-***	make sure returned checks are not deposited or delivered!
+*** make sure returned checks are not deposited or delivered!
 	that's really easy query, in fact it should be in validation!
 *** company integrity
 	instructors with company are same as the classes they're assigned to (easy)
 	checks for company are same as the classes they pay for (harder)
 	instructors that don't add up to the company (class assignments)
-**	V	instructor financial  dashboard
+** V	instructor financial  dashboard
 		each class,
 		total paid to us,
 		scholarships,
@@ -47,20 +47,20 @@
 		possibly with some backup detail
 *** the top-line is relatively easy to display
 *** the detail of this is basically a STATEMENT. use an accounting system
-**	L "tentative schedule"
+** L "tentative schedule"
 		for the whole year 3 sessions
 		session m-f, notes
 		(also separate report-let: list of dates, not really needed)
 
 
         
-**	E (sign up sheet?)
+** E (sign up sheet?)
 		for heidi with paid/unpaid to instructor
 
-**	U classes by room and date
+** U classes by room and date
 	classes by room and date summary
-***	just a simple table for now.
-****	sort by room, list dayofweek/time/class
+*** just a simple table for now.
+**** sort by room, list dayofweek/time/class
      |      | M    | T    | W    | T    | F |
      | room | cls. | cls. | cls. | cls. |   |
      |      |      | cls. | cls. |      |   |
