@@ -11,7 +11,7 @@
 
 echo 
 CHtml::listBox('rasta', null,
-               CHtml::listData(Roster::model()->findAll(), 
+               CHtml::listData(Roster::model()->findAll(array('order'=>'last_name, first_name')), 
                                'id', 'full_name'),
                array('size' => 20)
     );
