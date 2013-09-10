@@ -4,7 +4,7 @@
 // XXX MOVE THIS TO DB!
 $signup_contact_move_to_db = 'Kimberly Repp, via email <a href="mailto:oss.asep@gmail.com">oss.asep@gmail.com</a> or phone 650-575-0616.';
 // XXX MOVE THIS TO DB!
-$revised_date_move_to_db = "3/24/13";
+$revised_date_move_to_db = "9/10/13";
 
 ?>
 
@@ -21,7 +21,7 @@ $revised_date_move_to_db = "3/24/13";
 <ul><li>
      First come, first served:
     <ul><li>Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li></ul></li></ul></li>
-<li> You will receive a school-wide e-mail confirmation to confirm enrollment or a notice in your family folder (for non-computer users.)</li>
+	<li>To confirm enrollment, view enrollment status online at www.ossasep.org. The login is: parent and the password is: ***REMOVED***.</li>
 <li> Wait-lists do not roll over from the previous sessions.  If your child is placed on a waitlist, you will be notified via email or phone.  You may choose to stay on the waitlist or have your check returned to you.  If you choose to remain on the waitlist, you will be notified if a space becomes available.  You may request to be removed from the waitlist at any time and your check will be returned.</li>
 <li> If you write a check for multiple classes, the check will be cashed.  If a class is canceled, a refund check will be written (refunds can take up to two weeks to be processed).</li>
 <li> Scholarships are available . Please contact the principal, Karen Gnusti, if you are interested.  Please turn in a form 
