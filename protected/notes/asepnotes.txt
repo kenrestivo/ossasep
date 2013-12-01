@@ -1241,7 +1241,7 @@ asep notes
 	sshfs -oworkaround=rename -onoforget ken@192.168.122.80:/ /mnt/lamp
 ** mysql dev machine root pw is testing, duh.
 *** pretty sure port is same
-* bug in oss pto fees?
+* DONE bug in oss pto fees-- fixed
 ** email from kimberly
    Wanted to touch base about a
    descrepancy that took place last session that I have been meaning to email
@@ -1291,3 +1291,4 @@ asep notes
 *** it's double counting the $2
 
 **** need to SUM the income first, before it does that join
+**** DONE fixed in 3545f78
