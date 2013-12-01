@@ -110,9 +110,36 @@ class CheckIncomeController extends Controller
 	 */
 	public function actionDelete()
 	{
+		// we only allow deletion via POST request
 		if(Yii::app()->request->isPostRequest)
 		{
-			// we only allow deletion via POST request
+
+			// First make sure there's no existing foreign keys.
+			$c = Yii::app()->db->createCommand(
+				"select  count(income.check_id) as no_no_count
+from income
+where income.check_id = :cid");
+			$r=$c->queryRow(true, array('cid' => $this->loadModel()->id));
+			if($r['no_no_count'] > 0){
+				throw new CHttpException(
+					400,
+					"You cannot delete a check that has been used to pay for a class. You must first delete all payment assignments made for this class.");
+			}
+
+
+
+/*
+  Hmm, this seems like a good idea, but not sure.
+
+			if ($this->loadModel()->deposit_id > 0){
+				throw new CHttpException(
+					400,
+					"You also can't delete a check that's been deposited already either. Sorry, that'd be bad.");
+			}
+*/
+
+
+
 			$this->loadModel()->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -166,7 +193,7 @@ class CheckIncomeController extends Controller
 /* 
    This was an unused experiment for a single-entry.
    It's mostly cruft now. Get rid of it?
- */
+*/
 
     public function actionEntry()
     {
@@ -191,7 +218,7 @@ class CheckIncomeController extends Controller
 
 /* 
    this function ought to be taken out and shot
- */
+*/
 
     public function actionMultiEntry()
     {
@@ -416,13 +443,13 @@ order by abs(check_num)');
 
 /*
   finds all the as-yet-undeposited, as-yet-undelievered checks 
-for possible deposit inclusion
- */
+  for possible deposit inclusion
+*/
     public function actionCheckNumAC()
     {
         if(isset($_GET['term'])){
             $c = CheckIncome::model()->findAllBySQL(
-"select check_income.* from check_income where
+				"select check_income.* from check_income where
 (check_num like :text 
 or payer like :text)
 and session_id = :sid
@@ -432,10 +459,10 @@ and (delivered is null or delivered < '2000-01-01')
 and (returned is null or returned < '2000-01-01')
 order by abs(check_num)
 ",
-                    // this is where i put the %'s in
-                    // because PDO quotes my :text
-array('text' => '%' .$_GET['term'] . '%',
-      'sid' => ClassSession::savedSessionId()));
+				// this is where i put the %'s in
+				// because PDO quotes my :text
+				array('text' => '%' .$_GET['term'] . '%',
+					  'sid' => ClassSession::savedSessionId()));
             
             echo CJSON::encode(
                 array_map(
@@ -454,7 +481,7 @@ array('text' => '%' .$_GET['term'] . '%',
 
     /*
       NOTE: this takes a normal ajax GET request
-     */
+	*/
     public function actionUnDeposit()
     {
         $this->loadModel();
@@ -467,7 +494,7 @@ array('text' => '%' .$_GET['term'] . '%',
 /*
   since this is coming from a jquery autoocomplete,
   it has got its id posted, so we use postloadmodel here
- */
+*/
 
     public function actionDeposit()
     {

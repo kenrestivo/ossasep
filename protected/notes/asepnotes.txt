@@ -1289,3 +1289,5 @@ asep notes
 +----------+----------+------------+----------------------+
 
 *** it's double counting the $2
+
+**** need to SUM the income first, before it does that join
