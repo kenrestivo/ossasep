@@ -90,7 +90,7 @@ asep notes
   http://www.anchor.com.au/hosting/support/CreatingAQuickMySQLRelationalDatabase
 
 
-* calendar  
+* calendar
 ** google calendar api
    http://code.google.com/apis/calendar/data/2.0/developers_guide_protocol.html
    oauth to get in
@@ -104,14 +104,14 @@ asep notes
    http://www.yiiframework.com/extension/calendar/
    somewhat more crude: http://www.yiiframework.com/extension/simple-calendar/
 
-   
+
 * note: models in sql are fk is PARENT. so parents don't have awareness of children, children only have awareness of parents.
 * for things like picking requirements
 **  it'll be a choose from choose from
-	
-** there will be a fair amount of fillingin via code/model 
 
-   
+** there will be a fair amount of fillingin via code/model
+
+
 * import csv
 ** the stupid, broken way
    http://www.yiiframework.com/extension/importcsv/
@@ -129,7 +129,7 @@ asep notes
 
 
 ** omit "local" if the file is on the server
-   
+
 ** the order IS IMPORTANT, if it's wrong, everythign breaks
 * nested forms are sub forms
   http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
@@ -157,7 +157,7 @@ asep notes
   this is really more of a tree view with drag and drop actualy
   http://radakovicstevan.wordpress.com/2011/10/04/45/
   CTree widget really, works jsut fine
-  
+
 * form add this
   http://www.yiiframework.com/extension/activecolumn/
 
@@ -174,7 +174,7 @@ asep notes
 
 * ajax menu?
   http://www.yiiframework.com/extension/ajaxmenu/
-  
+
   ajax submit is here:
   http://code.google.com/p/yii/issues/detail?id=2008
 
@@ -207,7 +207,7 @@ asep notes
 ** http://www.yiiframework.com/extension/activedateselect/
 ** add a jtimepicker to jdatepicker:
    http://trentrichardson.com/examples/timepicker/
-   
+
 
    **popup dayofweek
    http://www.yiiframework.com/forum/index.php?/topic/4180-snippet-dropdown-date-picker/
@@ -217,7 +217,7 @@ asep notes
    http://www.bitrepository.com/a-collection-of-free-javascript-date-pickers.html
    including full calendars
 
-   
+
 * formatting and dates
   http://www.yiiframework.com/forum/index.php?/topic/11042-format-gridview-data/
 
@@ -227,7 +227,7 @@ asep notes
 
 * signals
   http://www.yiiframework.com/extension/signals-module/
-  
+
 
 
 
@@ -290,8 +290,8 @@ asep notes
    public static string dropDownList(string $name, string $select, array $data, array $htmlOptions=array ( ))
 
    ok i get it
-**  Tis method is a wrapper of CHtml::activeDropDownList. Please check 
-    CHtml::activeDropDownList for detailed information about the 
+**  Tis method is a wrapper of CHtml::activeDropDownList. Please check
+    CHtml::activeDropDownList for detailed information about the
     parameters for this method."
 	so $form->dropDownList is the right thing to use
 
@@ -324,12 +324,12 @@ asep notes
 **  http://www.yiiframework.com/wiki/72/cjuidialog-and-ajaxsubmitbutton/
     it openns a dialog box to do the entry. i like i like
     there are hacks required to make it work right though
-	
+
 * this is very easy, just a simple datepicker jquery dropdown
   http://www.hollowdevelopers.com/2011/01/09/cjuidatepicker-cactiveform-yii-framework/
-  
 
-  
+
+
 * ajax validation
   http://learnyii.blogspot.com/2010/12/yii.html
 
@@ -353,7 +353,7 @@ asep notes
     i will have to index the keys in innodb, dunno about isam tho
 	well what the fuck, someone wrote an extension to do this basic task:
     http://www.yiiframework.com/extension/cadvancedarbehavior/
-    
+
 **  even better and from core devs!
     https://github.com/yiiext/with-related-behavior
     that does only the back-end AR stuff. doesn't do gui's
@@ -369,12 +369,12 @@ asep notes
 
 ** aha! to save a multi-model form, subform, etc
    http://www.yiiframework.com/doc/guide/1.1/en/form.builder
-   
+
    worth noting
    http://tipstank.com/2010/06/18/yii-uses-database-primary-key-when-findbypk-using-composite-key/
 
 
-   I guess this is expected behavior. Issue was that 'id' was not a required attribute for this model. Hence massive assignment prohibited by CFormInputElement::evaluateVisible(). :rolleyes: 
+   I guess this is expected behavior. Issue was that 'id' was not a required attribute for this model. Hence massive assignment prohibited by CFormInputElement::evaluateVisible(). :rolleyes:
 
 ** $models=Company::model()->with('companyTrainings','trainings')->findAll();
    via http://www.yiiframework.com/forum/index.php?/topic/18275-relation-many-many-with-info-column-in-relation-table
@@ -383,8 +383,8 @@ asep notes
     http://www.larryullman.com/2010/08/10/handling-related-models-in-yii-forms/
     doing it manually, creating models, stuffing the id's in there, blah
     but, could use withrelatedbehavior and have it work
-    
-	
+
+
 ** wait, you can't select on join tables?
    http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/
 
@@ -395,8 +395,8 @@ asep notes
    $criteria=new CDbCriteria;
    $criteria=new CDbCriteria(array('condition'=>'t.status=4'));
    $si = Signup::model()->with('student','class')->findAll($criteria);
-   
-   
+
+
 
 ** coudl use query builder for more flexible queries
    http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder
@@ -405,14 +405,14 @@ asep notes
 
 ** ooh cool, i can force regular sql in there!
 
-   
+
 ** or dao
    http://www.yiiframework.com/doc/guide/1.1/en/database.dao
-   $connection=Yii::app()->db; 
+   $connection=Yii::app()->db;
    $command=$connection->createCommand('select * from student where id=1');
-   
+
 **  that didn't work. but this does:
-    
+
 	$c = Yii::app()->db->createCommand();
 	$c->text = "select foo from bar where quux = :quux";
 	$r=$c->queryRow(true, array('quux' => $model->quux)); // or query, or whatever
@@ -432,15 +432,15 @@ asep notes
 
 ** almost helpful:
    Something::model()->findAllByAttributes(
-   array('attr'=>'value'), 
+   array('attr'=>'value'),
    array('order'=>'columnName'));
 
 
-   
+
 * let's try from class
   $cl = ClassInfo::model()->with('signups')->findAll();
 
-  
+
 
 * loading intermediate models
 
@@ -458,10 +458,10 @@ asep notes
    http://www.yiiframework.com/forum/index.php?/topic/8581-selecting-join-table-with-mant-to-many/page__st__40__gopid__123634#entry123634
 
    $moviesJoin = $viewer->moviesJoin[0];
-   
+
 **  For max effective you can do that:
 	$viewer = Viewer::model()->with(array('movies','moviesJoin'))->findByPk($id);
-	$viewer->jointable[3] 
+	$viewer->jointable[3]
     relates to to $viewer->movies[3]
 
 
@@ -472,9 +472,9 @@ asep notes
   ),
 
 
-  
+
 ** gridview will be key for stuff like checks, classlists, everything really
-   
+
 
 * thrashing on subviews
   http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
@@ -483,14 +483,14 @@ asep notes
   hmm, this
   hp $this->widget('zii.widgets.grid.CGridView', array(
   'dataProvider'=>new CArrayDataProvider($list, array()),
-  )); 
+  ));
   ?>
 
-  
+
 
   curl -D - -c /home/localkens/oceanshore/asep/testcookies -o /home/localkens/oceanshore/asep/logs/errordealer.php --trace-ascii /tmp/dump -d "XDEBUG_SESSION_START=emacs" http://localhost/asepgui/index.php/classInfo/index
 
-  
+
   works.
   now, cbuttoncolumn is my beeyatch
   http://www.yiiframework.com/wiki/106/using-cbuttoncolumn-to-customize-buttons-in-cgridview/
@@ -556,7 +556,7 @@ asep notes
 
 
 ** hmm, why wrong?
-   was: insert into required_for (instructor_type_id, requirement_type_id) values ('5', '1') 
+   was: insert into required_for (instructor_type_id, requirement_type_id) values ('5', '1')
    Tg
    y
 
@@ -567,8 +567,8 @@ asep notes
 
 ** this is what started the madness
    http://www.yiiframework.com/forum/index.php?/topic/3741-auto-breadcrumbs/
-   
-   
+
+
 * tabs, going to need them, this shit is getting hairy
 **    cjuitabview if i want ajax/jquuery, in core
 **  or ctabview too, already  in there corredt oo
@@ -582,7 +582,7 @@ asep notes
    $state = Yii::app()->user->setState(
    'tabstate',
    array(Yii::app()->request->requestUri => '');
-   
+
    }
 
    public function getTabState() {
@@ -608,7 +608,7 @@ asep notes
 
 *** could just home-roll it
 	http://htmldog.com/articles/tabs/
-    
+
 * filtering the datepicker
 
   $('.selector').datepicker({
@@ -668,7 +668,7 @@ asep notes
   maybe a validatino constraint at enter or save time
   also, make check_num NOT INT, could be "cash"
 
-  
+
 * ahaa! so it is just operations.li that needs to be inline to make horiz menu work
 
 
@@ -730,10 +730,10 @@ asep notes
      though it is complex because it ajaxes the display
 **  AHA! this is how to add id's for the rows, for clickbacks/tracking!
     http://datatables.net/release-datatables/examples/server_side/ids.html
-    
-	
+
+
 **  http://www.appelsiini.net/projects/jeditable
-    submitdata would be the way to get the id's (esp for composite) in  
+    submitdata would be the way to get the id's (esp for composite) in
 
 * import follies!
   0  Name
@@ -746,7 +746,7 @@ asep notes
   7  3rd Emergency Contact
   (8  Check amt)
   (9  check num)
-  10  Notes  
+  10  Notes
 
 
 
@@ -829,7 +829,7 @@ asep notes
 
 
 * implement the signup form!
-  student 
+  student
   fields (easy)
   student name
   grade
@@ -964,11 +964,11 @@ asep notes
 
 
 
-  
+
 * heidi 12-23-11
 ** all emails there are ok
    update student set public_email_ok = 1 where parent_email != '';
-   
+
 
 
 * warning for unsaved changes
@@ -992,7 +992,7 @@ asep notes
 
 
 
-* chosen awesome for dropdowns  
+* chosen awesome for dropdowns
 ** use choosen for my dropdowns and autocompletes!
    http://harvesthq.github.com/chosen/
    this is the bandcamp thingus!
@@ -1044,7 +1044,7 @@ asep notes
   it's assigned, but the class is cancelled, so techically it's not
   this is a BIG FUCKING DEAL
   i need to show it as underpaid somewhere
-  
+
 
 * yay, flash messages!
   http://www.yiiframework.com/wiki/21/how-to-work-with-flash-messages/
@@ -1083,7 +1083,7 @@ asep notes
   iwubwubu aol
   krystalleaf  yahoo
 * heidi notes, 12/30
-  
+
 ** for marking checks delivered to company
    she piles them by class
    so the entry place would be by class
@@ -1092,7 +1092,7 @@ asep notes
 
 ** for  marking EXPENSE checks delivered to OSSPTO instructor
    they're a pile, she has to enter them.
-   
+
 
 
 
@@ -1102,12 +1102,12 @@ asep notes
    the money gets randomly dispersed...
    could classes be selected for payment in that situation?
    what if Art Studio isn't meeting it's minimum, yet I want to pay Elaine for
-   all her other classes?  
+   all her other classes?
 
 
 
 ** negative amount for refund  check
-   
+
 ** refunds
 ***  kid signed up for class, the check has been deposited,
      they decided to cancel,
@@ -1117,19 +1117,19 @@ asep notes
 
 	 never happens that an instructors get paid
 	 it happens that they do that
-	 
+
 ** if instructors get paid faster, a kid could drop after instructor paid
    then the instructor would have to  refundd it
 
 
 ** paid not freak out on negative numbers
-   
+
 ** if the instructor does the refund
    if there were refund from anywhere
 
 
 ** checks multiple classes
-   
+
 ** probably ok to have some stuff not perfectly clean
 ** report of negative numbers
 
@@ -1187,7 +1187,7 @@ asep notes
 **  there's also this:
 	http://www.tcpdf.org/examples/example_061.phps
 ** test script
-   rm foo.pdf; wget -O foo.pdf http://localhost/tcpdf/test.php; xr foo.pdf 
+   rm foo.pdf; wget -O foo.pdf http://localhost/tcpdf/test.php; xr foo.pdf
 ** multi collumns
 ***   example 7 : crashes apache
 ***   example 10 : weird OOP stuff and it flows the columns
@@ -1215,13 +1215,13 @@ asep notes
 ** superfish? via cdropdownmenu? supposedly depreciated and doesn't like the mainmenu of gii app
    http://www.yiiframework.com/extension/cdropdownmenu
 ** apparently there's a simple 10-line jquery solution:
-   $(document).ready(function () {    
+   $(document).ready(function () {
    $('#navigation li').hover(
    function () {
    $('ul', this).slideDown(100);
-   }, 
+   },
    function () {
-   $('ul', this).slideUp(100);            
+   $('ul', this).slideUp(100);
    }
    );
    });
@@ -1246,8 +1246,8 @@ asep notes
    Wanted to touch base about a
    descrepancy that took place last session that I have been meaning to email
    you about.  Elaine Mckeen was underpaid by $2, she should have received
-   $2,350 as you can see below from the text from an email she sent to me.                                          
-   Can you let me know how the Art Studio got off by $2.  I tried to research                                      
+   $2,350 as you can see below from the text from an email she sent to me.
+   Can you let me know how the Art Studio got off by $2.  I tried to research
    it and all the money was paid correctly and in full for Art Studio but it
    is short by $2.  I at least figuired out that it was the Art Studio class
    not her other classes but I am not sure why this happened.  Can you look
@@ -1265,3 +1265,6 @@ asep notes
    Cooking: 7 students x $130 = $910
 
    Total = $2350
+** it's class id 187
+** backtrace
+   	$s = $c->split($c->class->paidMinusFees);
