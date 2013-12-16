@@ -16,9 +16,11 @@ print '<tr>';
         echo '<td>';
         if(isset($classes[$day])){
             foreach($classes[$day] as $c){
-                echo  $this->renderPartial(
-                    '_signup_public', 
-                    array('model'=>$c));
+				if($c->status != "Cancelled"){
+					echo  $this->renderPartial(
+						'_signup_public', 
+						array('model'=>$c));
+				}
             }
         }
         echo'</td>';
