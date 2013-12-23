@@ -13,7 +13,7 @@ if(!isset($model) || $model->is_missing){
 } else {
     $class = "status-ok";
     if(isset($model->expired)){
-        $res = CHtml::encode("OK til " . Yii::app()->format->date($model->expired));
+        $res = CHtml::encode("OK " . ($model->expired > 0 ? "til " : "") . Yii::app()->format->date($model->expired));
     } else {
         $res = "OK";
     }

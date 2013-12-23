@@ -24,7 +24,7 @@ TODO tasks for ASEP
 **** TODO the actual pdf upload itself!
 **** TODO the contact info for the administrator (phone,email,name)
 **** TODO policies and revised date?
-*** how?
+*** pdf how?
 **** immutable links to revisions! structural sharing!
 ***** i keep in the db a list of edits, and the latest one gets used for the current session?
 ***** the hard part is knowing when to switch to the latest one.
@@ -38,7 +38,7 @@ TODO tasks for ASEP
 *** DONE For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
 *** DONE At some point over the next month, and before you pay the teachers, I'll add a checkbox to each extra fee which'll be "Pay to Instructor?". By default it'll be on. But for the OSS processing fee, it'll be off.
 *** DONE assumes that these fees are ONLY for ossptoo!
-** requirements per class, i.e. for agreement
+** [#A] requirements per class, i.e. for agreement
 *** remove unique key constraint
 *** checkbox for requirement per class
 *** fk to class id
@@ -46,6 +46,7 @@ TODO tasks for ASEP
 *** hide fk if checkbox not checed
 **** do you mean classid fk?
 *** in report check each class if checkbox chcked.
+	_requirement_status.php => $model->requirement_status => views/requirementStatus/_cell.php
 *** in status, i'll need MAX() queries instead of AR stuff
 *** allow multiple requirements, i.e contracts for several years
 ** need some way to track and be in the current school year.

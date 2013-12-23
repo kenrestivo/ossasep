@@ -1,14 +1,15 @@
 <table class="bordertable">
      <tr>
-     <?php 
-     $reqs=$model->instructor_type->requirements;
-$rs = $model->requirement_status;
+<?php 
+// column headings
+$reqs=$model->instructor_type->requirements;
 foreach($reqs as $r){ 
     echo '<th>' . $r->description . "</th>";
 }
-
 echo '</tr><tr>';
 
+// the actual requirements
+$rs = $model->requirement_status;
 foreach($reqs as $r){ 
     // XXX this smells very bad
     // shouldn't this be done with sql instead? or a relation?
