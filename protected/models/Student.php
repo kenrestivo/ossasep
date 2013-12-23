@@ -1,20 +1,20 @@
 <?php
 
-  /**
-   * This is the model class for table "student".
-   *
-   * The followings are the available columns in table 'student':
-   * @property integer $id
-   * @property string $first_name
-   * @property string $last_name
-   * @property integer $grade
-   * @property integer $public_email_ok
-   * @property string $contact
-   * @property string $emergency_1
-   * @property string $emergency_2
-   * @property string $emergency_3
-   * @property string $parent_email
-   */
+/**
+ * This is the model class for table "student".
+ *
+ * The followings are the available columns in table 'student':
+ * @property integer $id
+ * @property string $first_name
+ * @property string $last_name
+ * @property integer $grade
+ * @property integer $public_email_ok
+ * @property string $contact
+ * @property string $emergency_1
+ * @property string $emergency_2
+ * @property string $emergency_3
+ * @property string $parent_email
+ */
 class Student extends CActiveRecord
 {
 
@@ -69,6 +69,9 @@ class Student extends CActiveRecord
 
     public function defaultScope() {
         return array('order' => 'first_name ASC, last_name ASC');
+					 // DO NOT DO THIS HERE BY DEFAULT
+					 // if you do, it breaks showing previous sessions from previous years.
+					 // 'condition' => 'grade < 9');
     }
 
 	/**
@@ -99,7 +102,7 @@ class Student extends CActiveRecord
               where signup.student_id = :stid
                 and class_info.session_id = :ssid',
             array('ssid' => ClassSession::savedSessionId(),
-                'stid' => $this->id)
+				  'stid' => $this->id)
             );
 
     }
@@ -116,7 +119,7 @@ class Student extends CActiveRecord
               where signup.student_id = :stid
                 and class_info.session_id = :ssid',
             array('ssid' => ClassSession::savedSessionId(),
-                'stid' => $this->id)
+				  'stid' => $this->id)
             );
 
     }
@@ -135,7 +138,7 @@ class Student extends CActiveRecord
               where income.student_id = :stid
                 and class_info.session_id = :ssid',
             array('ssid' => ClassSession::savedSessionId(),
-                'stid' => $this->id)
+				  'stid' => $this->id)
             );
 
     }

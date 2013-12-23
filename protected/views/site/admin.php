@@ -67,6 +67,8 @@
       <br />
       <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/RequirementType">Requirement Types</a>
       <br />
+      <a href="<?php echo Yii::app()->baseUrl; ?>/index.php/Language">Languages</a>
+      <br />
     </td>
 
   </tr>

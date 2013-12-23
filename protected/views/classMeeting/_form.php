@@ -51,6 +51,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 
 		<?php echo $form->error($model,'class_id'); ?>
 	</div>
+
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'makeup'); ?>
 		<?php echo $form->checkbox($model,'makeup'); ?>

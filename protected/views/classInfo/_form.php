@@ -119,11 +119,6 @@ through
 
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>20, 'cols'=>120)); ?>
-		<?php echo $form->error($model,'description'); ?>
-	</div>
-	<div class="row">
 		<?php echo $form->labelEx($model,'note'); ?>
 		<?php echo $form->textField($model,'note',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'note'); ?>

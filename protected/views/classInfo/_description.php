@@ -79,6 +79,14 @@ $<?= $model->cost_per_class ?> per week for an
 
 <div class="clear"></div>
 <div>
-<?= nl2br(CHtml::encode($model->description)) ?>
+
+<?php
+// TODO: THIS  is where you select whichever language is the locale, or chosen, or default.
+ foreach($model->class_descriptions as $d){
+	  //echo "<p><strong>" . $d->language->description . ":</strong></p>";
+      echo "<div>" . nl2br(CHtml::encode($d->description)) . "</div>";
+}
+?>
+
 </div>
 </div>

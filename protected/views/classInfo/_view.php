@@ -48,9 +48,6 @@
   <b><?php echo CHtml::encode($data->getAttributeLabel('session_id')); ?>:</b>
   <?php echo CHtml::encode($data->session->summary); ?>
   <br />
-  <b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-  <?php echo CHtml::encode($data->description); ?>
-  <br />
 
 
 

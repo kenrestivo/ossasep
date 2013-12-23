@@ -10,7 +10,6 @@
    * @property integer $max_grade_allowed
    * @property string $start_time
    * @property string $end_time
-   * @property string $description
    * @property string $cost_per_class
    * @property integer $max_students
    * @property integer $min_students
@@ -75,10 +74,10 @@ class ClassInfo extends CActiveRecord
 			array(' min_grade_allowed,max_grade_allowed,min_students,max_students', 'length', 'max'=>3),
             //TODO: check that the value is valid for the enum
 			array('location, note', 'length', 'max'=>256),
-			array('start_time, end_time, description, note', 'safe'),
+			array('start_time, end_time, note', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, description, cost_per_class, max_students, min_students, day_of_week, location, status, session_id, company_id', 'safe', 'on'=>'search'),
+			array('id, class_name, min_grade_allowed, max_grade_allowed, start_time, end_time, cost_per_class, max_students, min_students, day_of_week, location, status, session_id, company_id', 'safe', 'on'=>'search'),
             array('session_id','default',
                   'value'=> ClassSession::savedSessionId(),
                   'setOnEmpty'=>true,
@@ -119,6 +118,7 @@ class ClassInfo extends CActiveRecord
                 'class_id',
                 'condition' => '(note is not null and note != "")'), 
 			'extra_fees' => array(self::HAS_MANY, 'ExtraFee', 'class_id'),
+			'class_descriptions' => array(self::HAS_MANY, 'ClassDescription', 'class_id'),
 			'incomes' => array(
                 self::HAS_MANY, 
                 'Income', 
@@ -199,7 +199,6 @@ class ClassInfo extends CActiveRecord
 			'max_grade_allowed' => 'Max Grade Allowed',
 			'start_time' => 'Start Time',
 			'end_time' => 'End Time',
-			'description' => 'Description',
 			'cost_per_class' => 'Cost Per Class',
 			'min_students' => 'Min Students',
 			'max_students' => 'Max Students',
@@ -234,8 +233,6 @@ class ClassInfo extends CActiveRecord
 		$criteria->compare('start_time',$this->start_time,true);
 
 		$criteria->compare('end_time',$this->end_time,true);
-
-		$criteria->compare('description',$this->description,true);
 
 		$criteria->compare('cost_per_class',$this->cost_per_class,true);
 

@@ -1,5 +1,8 @@
 <?php
 
+define('YII_DEBUG',true);
+
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -71,11 +74,10 @@ return array(
 					'levels'=>'error, warning, debug,trace',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
 				array(
 					'class'=>'CWebLogRoute',
+					'enabled' => YII_DEBUG,
 				),
-				*/
 			),
 		),
 	),

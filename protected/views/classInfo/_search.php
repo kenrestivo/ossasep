@@ -35,10 +35,6 @@
 		<?php echo $form->textField($model,'end_time'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'cost_per_class'); ?>
