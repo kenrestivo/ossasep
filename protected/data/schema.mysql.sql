@@ -69,6 +69,27 @@ CREATE TABLE `check_income` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `class_description`
+--
+
+DROP TABLE IF EXISTS `class_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `class_description` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` longtext NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_class_description` (`class_id`,`language_id`),
+  KEY `class_id` (`class_id`),
+  KEY `language_id` (`language_id`),
+  CONSTRAINT `class_description_ibfk_1` FOREIGN KEY (`language_id`) REFERENCES `language` (`id`),
+  CONSTRAINT `class_description_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `class_info` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `class_info`
 --
 
@@ -82,7 +103,6 @@ CREATE TABLE `class_info` (
   `max_grade_allowed` int(11) DEFAULT NULL,
   `start_time` time DEFAULT NULL,
   `end_time` time DEFAULT NULL,
-  `description` longtext,
   `cost_per_class` decimal(19,2) DEFAULT NULL,
   `min_students` int(11) DEFAULT NULL,
   `max_students` int(11) DEFAULT NULL,
@@ -287,6 +307,22 @@ CREATE TABLE `instructor_type` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `language`
+--
+
+DROP TABLE IF EXISTS `language`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code_name` varchar(128) NOT NULL,
+  `description` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code_name` (`code_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `required_for`
 --
 
@@ -462,4 +498,4 @@ CREATE TABLE `student` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-22 23:14:14
+-- Dump completed on 2013-12-23  2:17:25
