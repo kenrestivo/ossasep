@@ -48,6 +48,7 @@ TODO tasks for ASEP
 *** in report check each class if checkbox chcked.
 	_requirement_status.php => $model->requirement_status => views/requirementStatus/_cell.php
 *** in status, i'll need MAX() queries instead of AR stuff
+**** there is no status, it's is_missing? expired? no?
 *** allow multiple requirements, i.e contracts for several years
 ** need some way to track and be in the current school year.
 *** [#A] the quick hack is to just default to max of whatever year(s) is in db
