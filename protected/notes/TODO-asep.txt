@@ -38,8 +38,10 @@ TODO tasks for ASEP
 *** DONE For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
 *** DONE At some point over the next month, and before you pay the teachers, I'll add a checkbox to each extra fee which'll be "Pay to Instructor?". By default it'll be on. But for the OSS processing fee, it'll be off.
 *** DONE assumes that these fees are ONLY for ossptoo!
-** [#A] requirements per class, i.e. for agreement
-*** remove unique key constraint
+** TODO [#A] requirements per class, i.e. for agreement
+*** remove composite key constraint in requirementstatus
+	  PRIMARY KEY (`instructor_id`,`requirement_type_id`),
+**** [#B] wait? and create a synthetic id instead?
 *** checkbox for requirement per class
 *** fk to class id
 **** this means also converting all the previous year's data as well?
