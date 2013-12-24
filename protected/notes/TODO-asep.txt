@@ -38,7 +38,8 @@ TODO tasks for ASEP
 *** DONE For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
 *** DONE At some point over the next month, and before you pay the teachers, I'll add a checkbox to each extra fee which'll be "Pay to Instructor?". By default it'll be on. But for the OSS processing fee, it'll be off.
 *** DONE assumes that these fees are ONLY for ossptoo!
-** TODO [#A] requirements per class, i.e. for agreement
+** [#A] requirements per class, i.e. for agreement
+*** i experimented with this AND IT IS A NIGHTMARE!  DO NOT WANT!
 *** remove composite key constraint in requirementstatus
 	  PRIMARY KEY (`instructor_id`,`requirement_type_id`),
 **** [#B] wait? and create a synthetic id instead?
@@ -421,6 +422,8 @@ funds for two classes. The were off by $2. I believe it was Elaine and the other
 instructor was off by $1. Perhaps due to the PTO funds
 glitch of some sort.
 
+** TODO do NOT put companyid defaults in for companyid in class and instructor
+*** it breaks the pulldowns.
 * STUCK
 ** student parentt relaton for user signin
 *** so a parent would be a user, and it would have to be tied to some # of students
