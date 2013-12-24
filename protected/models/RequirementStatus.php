@@ -126,7 +126,7 @@ class RequirementStatus extends CActiveRecord
     public function getIs_missing()
     {
         // no date or 0 date means doesn't expire
-        return $this->received == ''  ||strtotime($this->received) < 100 ;
+        return $this->received == ''  || strtotime($this->received) < 100 ;
 
     }
     /*

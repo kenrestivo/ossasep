@@ -17,6 +17,7 @@ foreach($reqs as $r){
                       array('instructor_id' => $model->id,
                             'requirement_type_id' => $r->id
                           ));
+
     $this->renderPartial("/requirementStatus/_cell", 
                          array('model' => $s));
 

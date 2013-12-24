@@ -1,4 +1,8 @@
 <?php
+
+// $model in this case is a requirementstatus
+// $class is CSS class, for highlighting
+
 $res="";
 $class="";
 if(!isset($model) || $model->is_missing){

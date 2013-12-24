@@ -43,7 +43,7 @@ TODO tasks for ASEP
 	  PRIMARY KEY (`instructor_id`,`requirement_type_id`),
 **** [#B] wait? and create a synthetic id instead?
 *** checkbox for requirement per class
-*** fk to class id
+*** fk from requirementstatus to class id (as well as instructor)
 **** this means also converting all the previous year's data as well?
 *** hide fk if checkbox not checed
 **** do you mean classid fk?
@@ -110,6 +110,7 @@ Cannot delete or update a parent row: a foreign key constraint fails
 REFERENCES `check_income` (`id`))' in
 /f5/ossasep/protected/yii-framework/db/CDbCommand.php:336
 *** looks like it was assigned, then got unassigned in preparation for deleting
+*** didn't i do this already?
 ** duplicate schoolday
    SQLSTATE[23000]: Integrity constraint
 violation: 1062 Duplicate entry '2013-02-12' for key 'school_day'. The
@@ -120,6 +121,7 @@ SQL statement executed was: INSERT INTO `school_calendar` (`day_off`,
 'CDbException' with message 'CDbCommand failed to execute the SQL
 statement: SQLSTATE[23000]: Integrity constraint violation: 1062
 Duplicate entry '2013-02-12' for key 'school_day'' in
+*** not often going to be a problem, but still
 * useful
 ** deepDelete for  Deposit model
 *** so you can deep delete a deposit, first undepositing all the checks in it.
