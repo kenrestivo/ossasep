@@ -1,10 +1,10 @@
-<h2>Choose Session:</h2>
-
+<h2>Choose Language:</h2>
 <?php
+ // TODO: put this in some kind o div to look like a dialog box
 echo CHtml::form(); 
-echo CHtml::dropDownList('ClassSession[id]', 
+echo CHtml::dropDownList('Language[id]', 
                          $saved, 
-                         CHtml::listData($sessions, 'id','summary' ), 
+                         CHtml::listData($languages, 'id','description' ), 
                          array('submit' => '',
                              )) ;
 

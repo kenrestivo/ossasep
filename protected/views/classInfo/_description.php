@@ -81,11 +81,14 @@ $<?= $model->cost_per_class ?> per week for an
 <div>
 
 <?php
-// TODO: THIS  is where you select whichever language is the locale, or chosen, or default.
- foreach($model->class_descriptions as $d){
-	  //echo "<p><strong>" . $d->language->description . ":</strong></p>";
-      echo "<div>" . nl2br(CHtml::encode($d->description)) . "</div>";
+  $d = $model->description;
+if($model->description->language_id != Language::savedLanguageId()){
+	echo "<div class='langnotfound'>(" . Language::current()->description . 
+		   " translation not available, showing English)</div>";
 }
+
+echo "<div>" . nl2br(CHtml::encode($d->description)) . "</div>";
+
 ?>
 
 </div>

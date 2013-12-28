@@ -20,7 +20,7 @@ class LanguageController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+			);
 	}
 
 	/**
@@ -32,21 +32,17 @@ class LanguageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				  'actions'=>array('index','view'),
+				  'users'=>array('*'),
+				),
+			array('allow',  // public pages
+                  'actions'=> array('chooseLanguage'),
+                  'users'=>array('*'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+				  'users'=>array('*'),
+				),
+			);
 	}
 
 	/**
@@ -55,8 +51,8 @@ class LanguageController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+						  'model'=>$this->loadModel(),
+						  ));
 	}
 
 	/**
@@ -78,8 +74,8 @@ class LanguageController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -101,8 +97,8 @@ class LanguageController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -143,8 +139,8 @@ class LanguageController extends Controller
 			$model->attributes=$_GET['Language'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -175,4 +171,32 @@ class LanguageController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+ 
+    public function actionChooseLanguage()
+    {
+
+		// TODO validate! make sure they can only set to what they're allowed
+		if(isset($_POST['Language'])){
+			// TODO: more mvcish to move the setting of the thing to the model or controller
+			Language::setLanguageId($_POST['Language']['id']);
+            if(isset($_GET['returnTo'])){
+                $this->redirect($_GET['returnTo']);
+            }
+        }
+        
+		$this->render(
+            '_language_chooser', 
+            array(
+                'languages' =>  
+                Language::enabledLanguages(
+					Yii::app()->user->name != 'admin'),
+                // not reallly necessary, but mvc-ish
+                'saved' => Language::savedLanguageId()
+                ));
+        
+    }
+
+
+
 }

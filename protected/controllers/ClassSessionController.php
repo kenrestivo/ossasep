@@ -20,7 +20,7 @@ class ClassSessionController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-		);
+			);
 	}
 
 	/**
@@ -32,16 +32,16 @@ class ClassSessionController extends Controller
 	{
 		return array(
 			array('allow', // admin only
-				'users'=>array('admin'),
-			),
+				  'users'=>array('admin'),
+				),
 			array('allow',  // public pages
                   'actions'=> array('chooseSession'),
                   'users'=>array('*'),
-			),
+				),
 			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+				  'users'=>array('*'),
+				),
+			);
 	}
 
 	/**
@@ -50,8 +50,8 @@ class ClassSessionController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
-		));
+						  'model'=>$this->loadModel(),
+						  ));
 	}
 
 	/**
@@ -73,8 +73,8 @@ class ClassSessionController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -96,8 +96,8 @@ class ClassSessionController extends Controller
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -139,8 +139,8 @@ class ClassSessionController extends Controller
 			$model->attributes=$_GET['ClassSession'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
+						  'model'=>$model,
+						  ));
 	}
 
 	/**
@@ -175,10 +175,9 @@ class ClassSessionController extends Controller
     public function actionChooseSession()
     {
 
+		// TODO validate! make sure they can only set to what they're allowed
 		if(isset($_POST['ClassSession'])){
-            // TODO validate! make sure they can only set to what they're allowed
-            Yii::app()->session['saved_session_id'] =  
-                $_POST['ClassSession']['id'];
+			ClassSession::setSessionId($_POST['ClassSession']['id']);
             if(isset($_GET['returnTo'])){
                 $this->redirect($_GET['returnTo']);
             }

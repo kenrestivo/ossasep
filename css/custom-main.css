@@ -167,3 +167,8 @@ table.financial td{
 table td.financial{ 
   text-align: right;
 }
+
+
+.langnotfound{ 
+background-color:yellow;
+ }

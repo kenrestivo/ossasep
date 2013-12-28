@@ -155,6 +155,15 @@ class ClassSession extends CActiveRecord
     }
 
 
+	/*
+	  This sets the (confusing terminology) session for the session. Wha?
+      It sets the cookie (user browser session) storing the ClassSession->id !
+	 */
+	public static function setSessionId($id)
+	{
+		Yii::app()->session['saved_session_id'] =  $id;
+	}
+
 
     /*
       Picks the earliest class session that has not ended yet.

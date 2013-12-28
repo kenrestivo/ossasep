@@ -10,6 +10,9 @@
  */
 class Language extends CActiveRecord
 {
+
+    const DEFAULT_LANGUAGE_ID = 1; // english
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Language the static model class
@@ -46,7 +49,7 @@ class Language extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, code_name, description', 'safe', 'on'=>'search'),
-		);
+			);
 	}
 
 	/**
@@ -58,7 +61,7 @@ class Language extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'class_descriptions' => array(self::HAS_MANY, 'ClassDescription', 'language_id'),
-		);
+			);
 	}
 
 	/**
@@ -70,7 +73,7 @@ class Language extends CActiveRecord
 			'id' => 'Id',
 			'code_name' => 'Code Name',
 			'description' => 'Description',
-		);
+			);
 	}
 
 	/**
@@ -91,7 +94,57 @@ class Language extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider('Language', array(
-			'criteria'=>$criteria,
-		));
+										   'criteria'=>$criteria,
+										   ));
 	}
+
+
+
+    public static function enabledLanguages($public = true)
+    {
+		// TODO: enable hiding languages
+        return self::model()->findAll();
+    }
+
+
+	public static function setLanguageId($id)
+	{
+
+		Yii::app()->session['saved_language_id'] =  $id;
+
+	}
+
+
+    public static function savedLanguageId()
+    {
+
+		// english unless they've chosen something else
+        if(!isset(Yii::app()->session['saved_language_id'])){
+            Yii::app()->session['saved_language_id'] = self::DEFAULT_LANGUAGE_ID;
+        }
+        return Yii::app()->session['saved_language_id'];
+    }
+
+
+
+    /* 
+       Just a utility function, often getting this session! returns obj
+    */
+    public static function current()
+    {
+        $cur = self::model()->findByPk(self::savedLanguageId());
+        if(isset($cur)){
+            return $cur;
+        }
+
+        // this should NOT HAPPEN
+        trace(Yii::app()->language['saved_language_id']);
+        // reset it
+        unset(Yii::app()->language['saved_language_id']);
+        // recurse, try again!
+        return self::current(); 
+        
+    }
+
+
 }

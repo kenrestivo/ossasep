@@ -14,7 +14,15 @@ TODO tasks for ASEP
 *** DONE do not show the class/lang if updating or if provided in params!
 *** DONE do not show langs already present for this class when adding!
 **** this is a findAll in the form zhtml thing
-** TODO show the descriptions in the description page
+** DONE show the correct description language based on a session var
+*** change any views necessary
+** DONE show the correct form language based on session var
+*** TODO i18n all of the signup form, hell, why not all of the site too?
+**** waiting for jonathan.
+** TODO enable/disable languages
+*** in the languagecontroller and language view/form enabled/disabled checkbox
+*** this means a database change.
+** DONE how the descriptions in the description page
 ** DONE remove the description from the class_info models and the sql
 * must have for THIS YEAR (2012-2013):
 ** Move some stuff to the db

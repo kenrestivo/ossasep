@@ -1,24 +1,24 @@
 <?php
 
-  /**
-   * This is the model class for table "class_info".
-   *
-   * The followings are the available columns in table 'class_info':
-   * @property integer $id
-   * @property string $class_name
-   * @property integer $min_grade_allowed
-   * @property integer $max_grade_allowed
-   * @property string $start_time
-   * @property string $end_time
-   * @property string $cost_per_class
-   * @property integer $max_students
-   * @property integer $min_students
-   * @property integer $day_of_week
-   * @property string $location
-   * @property integer $status
-   * @property integer $session_id
-   * @property integer $company_id
-   */
+/**
+ * This is the model class for table "class_info".
+ *
+ * The followings are the available columns in table 'class_info':
+ * @property integer $id
+ * @property string $class_name
+ * @property integer $min_grade_allowed
+ * @property integer $max_grade_allowed
+ * @property string $start_time
+ * @property string $end_time
+ * @property string $cost_per_class
+ * @property integer $max_students
+ * @property integer $min_students
+ * @property integer $day_of_week
+ * @property string $location
+ * @property integer $status
+ * @property integer $session_id
+ * @property integer $company_id
+ */
 class ClassInfo extends CActiveRecord
 {
 	/**
@@ -481,12 +481,12 @@ group by income.class_id");
 
 /*
   Everything paid, minus refunds, and minus any fees paid by currently enrolled kids.
- */
+*/
 
     public function getPaidMinusFees()
     {
         $c = Yii::app()->db->createCommand(
- "
+			"
         select (sum(income_summary.total_paid_pto_fees) -
                sum(signup_with_non_instructor_fees.non_instructor_total))
               as total_paid_minus_pto_fees,
@@ -657,13 +657,13 @@ where (check_income.returned > '1999-01-01')
     /*
       Delete the class, after first deleting its meeting dates and instructors.
 
-     */
+	*/
     public function deepDelete()
     {
 
 
         $c = Yii::app()->db->createCommand(
-        "select count(signup.student_id) + count(income.check_id) as no_no_count
+			"select count(signup.student_id) + count(income.check_id) as no_no_count
 from class_info
 left join income
      on income.class_id = class_info.id
@@ -709,4 +709,25 @@ where class_info.id = :cid");
 
     }
 
+	// Gets the description for the current language
+    // TODO: Move this to the description model instead?
+	public function getDescription()
+	{
+       // TODO: also, use the more yii-ish activerecord means of constraining instead of sql joins
+		$found = ClassDescription::model()->findBySql(
+			'select class_description.* from class_description
+                     where class_id = :cid 
+                        and language_id = :lid', 
+			array ('cid' => $this->id,
+				   'lid' => Language::savedLanguageId()));
+		return isset($found) ? 
+			$found : 
+			ClassDescription::model()->findBySql(
+				'select class_description.* from class_description
+                     where class_id = :cid 
+                        and language_id = :lid', 
+				array ('cid' => $this->id,
+					   'lid' => Language::DEFAULT_LANGUAGE_ID));
+	}
 }
+
