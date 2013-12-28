@@ -6,6 +6,7 @@ echo CHtml::dropDownList('Language[id]',
                          $saved, 
                          CHtml::listData($languages, 'id','description' ), 
                          array('submit' => '',
+							   'size' => 5,
                              )) ;
 
 echo '&nbsp;';

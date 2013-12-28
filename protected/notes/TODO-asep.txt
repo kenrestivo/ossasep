@@ -18,8 +18,10 @@ TODO tasks for ASEP
 *** change any views necessary
 ** DONE show the correct form language based on session var
 *** TODO i18n all of the signup form, hell, why not all of the site too?
+*** why not also make the language chooser box more ajaxy, less modal.
+*** DONE show all the languages, depth of chooser?cv
 **** waiting for jonathan.
-** TODO enable/disable languages
+** enable/disable languages
 *** in the languagecontroller and language view/form enabled/disabled checkbox
 *** this means a database change.
 ** DONE how the descriptions in the description page
