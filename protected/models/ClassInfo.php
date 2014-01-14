@@ -685,6 +685,7 @@ where class_info.id = :cid");
                 array(
                     'delete from instructor_assignment where class_id=:cid',
                     'delete from extra_fee where class_id=:cid',
+                    'delete from class_description where class_id=:cid',
                     'delete from class_meeting where class_id=:cid'
                     ) as $q){
                 $c = Yii::app()->db->createCommand($q);
