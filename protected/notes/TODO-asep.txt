@@ -89,7 +89,9 @@ TODO tasks for ASEP
 *** DONE will need a "are you sure" confirmation. it's non-reversible
 ** TODO show only non-graduated kids
 *** TODO it's complicated! it depends on year! definitely need to show them for past years
-*** DONE merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
+*** TODO will need to not do it in model, but instead only in various places where student lists come up
+*** hmm, is this even really necessary? does she need this?
+*** NOWHERE merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
 *** it's basically in constraints for student grade < 9
 ** TODO [#B] some better way of importing the rasta, direct from xl probably
 *** there are plenty of php xl importers, yo
