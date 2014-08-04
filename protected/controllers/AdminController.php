@@ -20,7 +20,7 @@ class AdminController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-            );
+			);
 	}
 
 	/**
@@ -32,72 +32,72 @@ class AdminController extends Controller
 	{
 		return array(
 			array('allow',
-                  'users'=>array('admin'),
-                ),
+			      'users'=>array('admin'),
+				),
 			array('allow',  
-                  'actions'=>array('signupsheet'),
-                  'users'=>array('patricia'),
-                ),
+			      'actions'=>array('signupsheet'),
+			      'users'=>array('patricia'),
+				),
 			array('deny',  // deny all users
-                  'users'=>array('*'),
-                ),
-            );
+			      'users'=>array('*'),
+				),
+			);
 	}
 
-    public function actionSignupsheet()
-    {
-        $cs = ClassSession::model()->findByPk(
-            ClassSession::savedSessionId());
+	public function actionSignupsheet()
+	{
+		$cs = ClassSession::model()->findByPk(
+			ClassSession::savedSessionId());
 		$this->render(
-            'signupsheet',
-            array(
-                'classes' => $cs->active_classes));
-    }
+			'signupsheet',
+			array(
+				'classes' => $cs->active_classes));
+	}
 
 
 
 
 
-    public function actionClassDashboard()
-    {
-        $s = ClassSession::model()->findByPk(
-            ClassSession::savedSessionId());
+	public function actionClassDashboard()
+	{
+		$s = ClassSession::model()->findByPk(
+			ClassSession::savedSessionId());
 
-        $this->render(
-            'class_dashboard',
-            array(
-                'classes' => $s->active_classes,
-                'cancelled' => $s->cancelled_classes));
-    }
-
-
-    public function actionOSSPTOInstructorPayments()
-    {
-
-        // TODO:: move this find to the model perhaps, may need it elsewhere?
-        $this->render(
-            'osspto_instructors',
-            array(
-                'instructors' => ClassSession::current()->osspto_instructors));
-
-    }
-
-    public function actionInstructorRequirements()
-    {
-
-        // TODO:: move this find to the model perhaps, may need it elsewhere?
-        $this->render(
-            'instructor_paperwork',
-            array(
-                'instructors' => ClassSession::current()->instructors));
-
-    }
+		$this->render(
+			'class_dashboard',
+			array(
+				'classes' => $s->active_classes,
+				'cancelled' => $s->cancelled_classes));
+	}
 
 
-    public function actionScholarships()
-    {
-        $s = Signup::model()->findAllBySql(
-            "select signup.*
+	public function actionOSSPTOInstructorPayments()
+	{
+
+		// TODO:: move this find to the model perhaps, may need it elsewhere?
+		$this->render(
+			'osspto_instructors',
+			array(
+				'instructors' => ClassSession::current()->osspto_instructors));
+
+	}
+
+	public function actionInstructorRequirements()
+	{
+
+		// TODO:: move this find to the model perhaps, may need it elsewhere?
+		$this->render(
+			'instructor_paperwork',
+			array(
+				'instructors' => ClassSession::current()->instructors));
+
+	}
+
+
+	public function actionScholarships()
+	{
+		$s = Signup::model()->findAllBySql(
+			"select signup.*
 from signup
 left join class_info
    on class_info.id = signup.class_id
@@ -109,19 +109,19 @@ where class_info.status != 'Cancelled'
    and class_info.session_id = :sid
 order by student.last_name asc, student.first_name asc
 ",
-            array('sid' =>
-                  ClassSession::savedSessionId()));
+			array('sid' =>
+			      ClassSession::savedSessionId()));
 
-        $this->render(
-            'scholarships',
-            array(
-                'model' => $s));
-    }
+		$this->render(
+			'scholarships',
+			array(
+				'model' => $s));
+	}
 
-    public function actionStudentFinancial()
-    {
-        $s = Student::model()->findAllBySql(
-            "select student.*
+	public function actionStudentFinancial()
+	{
+		$s = Student::model()->findAllBySql(
+			"select student.*
  from student
  left join signup
      on signup.student_id = student.id
@@ -131,20 +131,20 @@ order by student.last_name asc, student.first_name asc
         and signup.class_id is not null
  group by student.id
  order by student.first_name asc, student.last_name asc",
-            array('sid' =>
-                  ClassSession::savedSessionId()));
-        $this->render(
-            'student_financial',
-            array(
-                'models' => $s));
+			array('sid' =>
+			      ClassSession::savedSessionId()));
+		$this->render(
+			'student_financial',
+			array(
+				'models' => $s));
 
-    }
+	}
 
 
-    public function actionDunningReport()
-    {
-        $s = Signup::model()->findAllBySql(
-            "select
+	public function actionDunningReport()
+	{
+		$s = Signup::model()->findAllBySql(
+			"select
      (if(signup.status != 'Enrolled', 0,
         (class_info.cost_per_class * meeting.meetings) +
            coalesce(fees.total,0))
@@ -192,28 +192,38 @@ group by signup.class_id, signup.student_id
 having total_owed != 0
 order by student.first_name, student.last_name, class_info.class_name
 ",
-            array(
-                'sid' =>
-                ClassSession::savedSessionId()));
-        $this->render(
-            'dunning_report',
-            array(
-                'results' => $s));
+			array(
+				'sid' =>
+				ClassSession::savedSessionId()));
+		$this->render(
+			'dunning_report',
+			array(
+				'results' => $s));
 
-    }
+	}
 
-    public function actionBackup()
-    {
-        Yii::app()->request->redirect(
-            Yii::app()->baseUrl . Yii::app()->params['backup_url']);
+	public function actionBackup()
+	{
+		Yii::app()->request->redirect(
+			Yii::app()->baseUrl . Yii::app()->params['backup_url']);
 
-    }
+	}
 
 
-    public function actionIntegrityCheck()
-    {
-        $unassigned = CheckIncome::model()->findAllBySql(
-"select check_income.*
+	public function actionGraduate()
+	{
+		$c = Yii::app()->db->createCommand("update student set grade = grade+1");
+		$c->execute();
+		$this->redirect(array('/Student/index'));
+
+	}
+
+
+
+	public function actionIntegrityCheck()
+	{
+		$unassigned = CheckIncome::model()->findAllBySql(
+			"select check_income.*
 from check_income
 left join  (select sum(income.amount) as total, 
                    income.check_id as check_id
@@ -224,12 +234,12 @@ where coalesce(assigned.total,0) != coalesce(check_income.amount,0)
 and (check_income.returned is null or check_income.returned < '2000-01-01')
 and check_income.session_id = :sid
 ",
-array('sid' =>             ClassSession::savedSessionId()            ));
+			array('sid' =>             ClassSession::savedSessionId()            ));
 
 
 
-        $instructorbalance = ClassInfo::model()->findAllBySql(
-"select class_info.*
+		$instructorbalance = ClassInfo::model()->findAllBySql(
+			"select class_info.*
 from class_info
 left join  (select sum(instructor_assignment.percentage) as total, 
                    instructor_assignment.class_id as class_id
@@ -239,16 +249,16 @@ on assigned.class_id = class_info.id
 where coalesce(assigned.total,0) != 100
 and class_info.session_id = :sid
 ",
-array('sid' =>             ClassSession::savedSessionId()            ));
+			array('sid' =>             ClassSession::savedSessionId()            ));
 
-        $this->render(
-            'integrity_check',
-            array(
-                'unassigned' => $unassigned,
-                'instructorbalance' => $instructorbalance,
-                ));
+		$this->render(
+			'integrity_check',
+			array(
+				'unassigned' => $unassigned,
+				'instructorbalance' => $instructorbalance,
+				));
         
 
-    }
+	}
 
 }

@@ -17,7 +17,8 @@ TODO tasks for ASEP
 ** DONE show the correct description language based on a session var
 *** change any views necessary
 ** DONE show the correct form language based on session var
-*** TODO i18n all of the signup form, hell, why not all of the site too?
+*** TODO i18n the rest of the signup form,
+*** TODO hell, why not all of the site too?
 *** why not also make the language chooser box more ajaxy, less modal.
 *** DONE show all the languages, depth of chooser?cv
 **** waiting for jonathan.
@@ -28,12 +29,11 @@ TODO tasks for ASEP
 ** DONE remove the description from the class_info models and the sql
 * must have for THIS YEAR (2012-2013):
 ** Move some stuff to the db
-*** things
-**** TODO the standard OSSPTO fee for new classes
-**** TODO the pdf yes/no checkbox
-**** TODO the actual pdf upload itself!
-**** TODO the contact info for the administrator (phone,email,name)
-**** TODO policies and revised date?
+*** TODO the standard OSSPTO fee for new classes
+*** TODO the pdf yes/no checkbox
+*** TODO the actual pdf upload itself!
+*** TODO the contact info for the administrator (phone,email,name)
+*** TODO policies and revised date?
 *** pdf how?
 **** immutable links to revisions! structural sharing!
 ***** i keep in the db a list of edits, and the latest one gets used for the current session?
@@ -42,7 +42,8 @@ TODO tasks for ASEP
 ** [#A] handle the extra fee
 *** DONE do the migration to add the pay_to_instructor
 *** TODO auto-add the fee to all osspto classes at create time
-**** At some point before the next session, I'll make another modification to the ccode so that the system will automatically create this fee every time you create a new class.
+**** At some point before the next session, I'll make another modification to the ccode
+	 so that the system will automatically create this fee every time you create a new class.
 *** DONE modify the teacher payment stuff to remove it from paid owed
 **** DONE I'll modify the calculation for paying the instructors so that it won't include fees that don't have that checkbox checked. Simple enough.
 *** DONE For now, you'll have to manually add an Extra Fee for each class, and name it something descriptive (maybe ask the board what they want to call it).
@@ -81,11 +82,12 @@ TODO tasks for ASEP
 *** like i had to do for the coop. it'll have to happen.
 *** REALLY? why? what dupe? no, i don't think so.
 * must have for FUTURE YEAR (2013-2014)
-** button to  graduate the kids
-*** executes "update student set grade = grade+1;", is all
-** merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
+** DONE button to  graduate the kids
+*** DONE executes "update student set grade = grade+1;", is all
+*** DONE will need a "are you sure" confirmation. it's non-reversible
+** TODO merge in the show only non-graduated kids commit db9c318a9ab528f885c5a810e4af6d4635e5fab8
 *** it's basically in constraints for student grade < 9
-** [#B] some better way of importing the rasta, direct from xl probably
+** TODO [#B] some better way of importing the rasta, direct from xl probably
 *** there are plenty of php xl importers, yo
 *** import rasta! via csv like i have it, or some kind of better excel importer
 * ui still to do

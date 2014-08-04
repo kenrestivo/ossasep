@@ -104,6 +104,14 @@ echo CHtml::link("Fix checks with empty payer",
                  array("CheckIncome/editable",
                        ));
 ?>
+<br />
+<?php
+echo CHtml::link(
+	'Graduate all students',
+	array("Admin/graduate"),
+	array('confirm' => "All 1st graders will now be 2nd graders, up the line, all 8th graders will be 9th graders and graduated, etc. \nThis action is not reversible!\nAre you sure you want to do this?"));
+
+?>
 
 </td>
 </tr>
