@@ -80,10 +80,6 @@ class ClassSession extends CActiveRecord
 			);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-
 	public function getSummary(){
 		return sprintf(
 			'Session %s %s', 
@@ -91,6 +87,10 @@ class ClassSession extends CActiveRecord
 			$this->school_year->description);
  
 	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
 
 	public function attributeLabels()
 	{
