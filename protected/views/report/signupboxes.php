@@ -21,7 +21,7 @@ $revised_date_move_to_db = "9/10/13";
 <ul><li>
      First come, first served:
     <ul><li>Enrollment is determined by the order in which Patricia, in the front office, receives it.  </li></ul></li></ul></li>
-	<li>To confirm enrollment, view enrollment status online at www.ossasep.org. The login is: parent and the password is: ***REMOVED***.</li>
+	<li>To confirm enrollment, view enrollment status online at www.ossasep.org. The login is: parent and the password is: <?= Yii::app()->params['parent_pass'] ?>.</li>
 <li> Wait-lists do not roll over from the previous sessions.  If your child is placed on a waitlist, you will be notified via email or phone.  You may choose to stay on the waitlist or have your check returned to you.  If you choose to remain on the waitlist, you will be notified if a space becomes available.  You may request to be removed from the waitlist at any time and your check will be returned.</li>
 <li> If you write a check for multiple classes, the check will be cashed.  If a class is canceled, a refund check will be written (refunds can take up to two weeks to be processed).</li>
 <li> Scholarships are available . Please contact the principal, Karen Gnusti, if you are interested.  Please turn in a form 

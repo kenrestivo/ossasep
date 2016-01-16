@@ -1,5 +1,13 @@
 <?php
 
+/// A terrible hack, this really needs to be in the db, and in a proper RBAC. But this'll do for nowe
+require_once('passwords.php');
+
+if ($ASEP_ADMIN_PASS == ""){
+    throw new CException("empty passwords file or no passwords file");
+}
+
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -20,25 +28,25 @@ return array(
 
 	'modules'=>array(
         /*
-		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'thetest',
-		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('*'),
-		),
+          'gii'=>array(
+          'class'=>'system.gii.GiiModule',
+          'password'=>'thetest',
+          // If removed, Gii defaults to localhost only. Edit carefully to taste.
+          'ipFilters'=>array('*'),
+          ),
         */
 	),
 
 	// application components
 	'components'=>array(
-         'format'=>array(
+        'format'=>array(
             'class'=>'KFormatter',
         ),
 		'user'=>array(
 		),
-         'assetManager'=>array(
-                'class'=>'application.extensions.SafeModeAssetManager',
-             ),
+        'assetManager'=>array(
+            'class'=>'application.extensions.SafeModeAssetManager',
+        ),
 		// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -76,9 +84,9 @@ return array(
                 ),
 				// uncomment the following to show log messages on web pages
 				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
+                  array(
+                  'class'=>'CWebLogRoute',
+                  ),
 				*/
 			),
 		),
@@ -89,8 +97,14 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'krestivo@restivo.org',
-          'defaultNumMeetings'=> 8,
+        'defaultNumMeetings'=> 8,
         'timezone' => 'America/Los_Angeles',
         'backup_url' => '/cgi/backup-live.cgi',
-       ),
+        'admin_pass' => $ASEP_ADMIN_PASS,
+        'parent_pass' => $ASEP_PARENT_PASS,
+        'office_pass' => $ASEP_OFFICE_PASS,
+        'instructor_pass' => $ASEP_INSTRUCTOR_PASS,
+    ),
+
+
 );

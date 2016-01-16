@@ -1,5 +1,6 @@
 <?php
 
+
   /**
    * UserIdentity represents the data needed to identity a user.
    * It contains the authentication method that checks if the provided
@@ -48,9 +49,9 @@ class UserIdentity extends CUserIdentity
 	public function authenticate_hardcoded()
 	{
 		$users=array(
-			'admin'=>'***REMOVED***',
-			'parent'=>'***REMOVED***',
-            'office' => '***REMOVED***',
+			'admin'=>Yii::app()->params['admin_pass'],
+			'parent'=> Yii::app()->params['parent_pass'],
+            'office' => Yii::app()->params['office_pass'],
             );
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -81,7 +82,7 @@ class UserIdentity extends CUserIdentity
 
         if ($i===null) { // No user found!
             $this->errorCode=self::ERROR_USERNAME_INVALID;
-        } else if ($this->password !== '***REMOVED***' ) { 
+        } else if ($this->password !== Yii::app()->params['instructor_pass'] ) { 
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         } else { // Okay!
             $this->errorCode=self::ERROR_NONE;
