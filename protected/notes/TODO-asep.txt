@@ -7,6 +7,10 @@ TODO tasks for ASEP
 #+LANGUAGE:  en
 #+OPTIONS:   H:1 num:nil toc:nil  \n:nil @:t ::t |:t ^:nil *:t TeX:t LaTeX:nil
 
+* bug fixes for nfsn
+** TODO NFSN doesn't support absolute paths in symlinks.
+   the SafeModeAssetManager seems to use them. CAssetManager doesn't
+   this will need replaced or modified to use relative links.
 * i18n
 ** DONE utf-8
 ** DONE models and crud for languages and descriptions
