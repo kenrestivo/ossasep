@@ -1,7 +1,7 @@
 <?php
 
   // change the following paths if necessary
-$yii=$_SERVER['NFSN_SITE_ROOT'].'/protected/yii-framework/yii.php';
+$yii=dirname(__FILE__).'/../protected/yii-framework/yii.php';
 $glob=dirname(__FILE__).'/protected/globals.php';
 $config=dirname(__FILE__).'/protected/config/production.php';
 
