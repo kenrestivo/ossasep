@@ -502,7 +502,7 @@ public function renderCheckBoxListSelection()
 					array('multiple' => 'multiple'));
 	}
 
-	public function handleAjaxRequest($_POST) {
+	public function handleAjaxRequest($nothing) {
 		print_r($_POST);
 	}
 
