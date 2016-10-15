@@ -2,7 +2,7 @@
 
 asep notes
 
-* yii has no accounting shit built in
+* yii has no accounting stuff built in
 * php accounting sw
 **  http://www.weberp.org/
 **  http://www.ledgersmb.org/
@@ -115,7 +115,7 @@ asep notes
 * import csv
 ** the stupid, broken way
    http://www.yiiframework.com/extension/importcsv/
-   no, it doesn't work, and fails in a stupid way. fuck that.
+   no, it doesn't work, and fails in a stupid way. screw that.
 ** on windoze, this:
    LOAD DATA local INFILE '/tmp/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n';
 
@@ -213,7 +213,7 @@ asep notes
    http://www.yiiframework.com/forum/index.php?/topic/4180-snippet-dropdown-date-picker/
 
 
-** shit tonnes of datepickers
+** stuff tonnes of datepickers
    http://www.bitrepository.com/a-collection-of-free-javascript-date-pickers.html
    including full calendars
 
@@ -242,7 +242,7 @@ asep notes
    note: the innodb_models version is very very good.
 
 
-   and now cbuttoncolumn is fucked up
+   and now cbuttoncolumn is screwed up
 
 ** this supposedely fixes it
 
@@ -351,7 +351,7 @@ asep notes
     'category_id' => $arCategory->id);
     $arTypeCategory->save();
     i will have to index the keys in innodb, dunno about isam tho
-	well what the fuck, someone wrote an extension to do this basic task:
+	well what the screw, someone wrote an extension to do this basic task:
     http://www.yiiframework.com/extension/cadvancedarbehavior/
 
 **  even better and from core devs!
@@ -360,7 +360,7 @@ asep notes
     well, this is just saving i think.
     it is, however, very cool!!
     no it very sucks! it's one massive case statemnt, unreadable
-    and, it fucking doesn't work with arrays
+    and, it screwing doesn't work with arrays
 
 **  tab view thenn
     http://www.yiiframework.com/extension/jui/
@@ -400,7 +400,7 @@ asep notes
 
 ** coudl use query builder for more flexible queries
    http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder
-   but it's ->object()->bullshit()->
+   but it's ->object()->bullstuff()->
    $command = Yii::app()->db->createCommand();
 
 ** ooh cool, i can force regular sql in there!
@@ -569,7 +569,7 @@ asep notes
    http://www.yiiframework.com/forum/index.php?/topic/3741-auto-breadcrumbs/
 
 
-* tabs, going to need them, this shit is getting hairy
+* tabs, going to need them, this stuff is getting hairy
 **    cjuitabview if i want ajax/jquuery, in core
 **  or ctabview too, already  in there corredt oo
 **  ctab is nicce, i can give it content, or view/partials
@@ -1042,7 +1042,7 @@ asep notes
 
 * auugh, but wait!! the checks that are for cancelled classses or students!!!
   it's assigned, but the class is cancelled, so techically it's not
-  this is a BIG FUCKING DEAL
+  this is a BIG SCREWING DEAL
   i need to show it as underpaid somewhere
 
 
@@ -1208,7 +1208,7 @@ asep notes
 **** look at her spreadsheet to see
 ** the joint checks need to be deposited really
 * the dropdown idea is miserable pain
-** mbmenu is a peice of shit
+** mbmenu is a peice of stuff
 ** and a dropdown embedded in cmenu is also a non-starter.
 *** try emenu?
 **** it is TOTAL GARBAGE, useless, unwise. bleh.
