@@ -121,15 +121,22 @@ asep notes
 
 
 ** on linux, this:
-   LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name,   first_name,   grade,   teacher,   parent_1,   parent_2,   parent_3,   parent_4,   phone,   cell__parent_1,   cell_parent_2,   email_parent_1,   email__parent_2,   email_parent_3,   email_parent_4,   home_address,   home_city,   zip_code,   home_address_2,   school_job);
+
+*** OLD
+   #+BEGIN_SRC sql
+	LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name,   first_name,   grade,   teacher,   parent_1,   parent_2,   parent_3,   parent_4,   phone,   cell__parent_1,   cell_parent_2,   email_parent_1,   email__parent_2,   email_parent_3,   email_parent_4,   home_address,   home_city,   zip_code,   home_address_2,   school_job);
+ #+END_SRC
+
 *** NEW
-	LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name,   first_name,   grade,   teacher,   parent_1,   parent_2,   parent_3,   phone,   cell__parent_1,   cell_parent_2,   email_parent_1,   email__parent_2,   email_parent_3,    home_address,   home_city,   zip_code,   home_address_2,   school_job);
+	#+BEGIN_SRC sql
+	LOAD DATA local INFILE '/home/localkens/oceanshore/rasta.csv' INTO TABLE roster FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\' LINES TERMINATED BY '\n' (last_name,   first_name,   grade,   teacher,   parent_1,   parent_2,   parent_3,   phone,   cell__parent_1,   cell_parent_2,  email_parent_4, email_parent_1,   email__parent_2,   email_parent_3,    home_address,   home_city,   zip_code,   home_address_2,   school_job);
+#+END_SRC
+
 **** and MUST do this now, on latest version
 	 --local_infile=1
 
-
+**** also, note email_parent_4 no longer exists, and there is a new cell_parent_3 field that needs to be added
 ** omit "local" if the file is on the server
-
 ** the order IS IMPORTANT, if it's wrong, everythign breaks
 * nested forms are sub forms
   http://www.yiiframework.com/forum/index.php?/topic/7098-solved-how-to-associate-model-with-sub-form/
