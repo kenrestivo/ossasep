@@ -133,7 +133,10 @@ asep notes
 #+END_SRC
 
 **** and MUST do this now, on latest version
+#+BEGIN_SRC sh
 	 --local_infile=1
+ mysql --local_infile=1 -uroot -p -P3307
+#+END_SRC
 
 **** also, note email_parent_4 no longer exists, and there is a new cell_parent_3 field that needs to be added
 ** omit "local" if the file is on the server
